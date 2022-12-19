@@ -4,9 +4,14 @@ data:
   - name: DataStructure
     pages:
     - icon: ':warning:'
-      path: DataStructure/UnionFind.cpp
-      title: DataStructure/UnionFind.cpp
+      path: DataStructure/UnionFind.hpp
+      title: DataStructure/UnionFind.hpp
   verificationCategories:
+  - name: test/AOJ
+    pages:
+    - icon: ':x:'
+      path: test/AOJ/UnionFind_Checker.test.cpp
+      title: test/AOJ/UnionFind_Checker.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
