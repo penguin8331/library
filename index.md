@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.hpp
       title: DataStructure/UnionFind.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/UnionFind_Checker.test.cpp
       title: test/AOJ/UnionFind_Checker.test.cpp
   - name: test
