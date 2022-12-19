@@ -5,13 +5,11 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B
-  bundledCode: "#line 1 \"example.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B\"\
+  bundledCode: "#line 1 \"test/example_test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B\"\
     \n#include <algorithm>\n#include <iostream>\n#include <vector>\n#define REP(i,\
     \ n) for (int i = 0; (i) < (int)(n); ++ (i))\n#define ALL(x) std::begin(x), std::end(x)\n\
     using namespace std;\n\nint main() {\n    int n; cin >> n;\n    vector<int> s(n);\n\
@@ -26,16 +24,16 @@ data:
     \ cnt = 0;\n    while (q --) {\n        int t_i; cin >> t_i;\n        cnt += binary_search(ALL(s),\
     \ t_i);\n    }\n    cout << cnt << endl;\n    return 0;\n}\n"
   dependsOn: []
-  isVerificationFile: true
-  path: example.test.cpp
+  isVerificationFile: false
+  path: test/example_test.cpp
   requiredBy: []
-  timestamp: '2022-12-19 17:32:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-12-19 20:26:49+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: example.test.cpp
+documentation_of: test/example_test.cpp
 layout: document
 redirect_from:
-- /verify/example.test.cpp
-- /verify/example.test.cpp.html
-title: example.test.cpp
+- /library/test/example_test.cpp
+- /library/test/example_test.cpp.html
+title: test/example_test.cpp
 ---
