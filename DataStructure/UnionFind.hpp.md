@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/UnionFind_Checker.test.cpp
     title: test/AOJ/UnionFind_Checker.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/UnionFind.hpp\"\nstruct UnionFind {\n    vector<int>\
@@ -44,7 +44,7 @@ data:
   path: DataStructure/UnionFind.hpp
   requiredBy: []
   timestamp: '2022-12-19 21:17:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/UnionFind_Checker.test.cpp
 documentation_of: DataStructure/UnionFind.hpp
