@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A"
-#include <bits/stdc++.h>
-using namespace std;
 #include "DataStructure/UnionFind.hpp"
+#include "template/template.hpp"
 
 int main() {
     int N, Q;
