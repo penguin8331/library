@@ -14,7 +14,7 @@ int main() {
     while (Q--) {
         int t_i;
         cin >> t_i;
-        cnt += binary_search(all(s), t_i);
+        cnt += binary_search(all(S), t_i);
     }
     cout << cnt << endl;
     return 0;
