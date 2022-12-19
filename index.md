@@ -1,11 +1,16 @@
 ---
 data:
   libraryCategories:
-  - name: test
+  - name: DataStructure
     pages:
     - icon: ':warning:'
-      path: test/example_test.cpp
-      title: test/example_test.cpp
+      path: DataStructure/UnionFind.cpp
+      title: DataStructure/UnionFind.cpp
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: example_test.cpp
+      title: example_test.cpp
   verificationCategories: []
 layout: toppage
 ---
