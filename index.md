@@ -54,7 +54,7 @@ data:
     - icon: ':warning:'
       path: graph/bfs2d.hpp
       title: graph/bfs2d.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
   - name: math/combinatorics
@@ -130,7 +130,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_4_A.test.cpp
       title: test/AOJ/DSL_4_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
   - name: test/yosupo

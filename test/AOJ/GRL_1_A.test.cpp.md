@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
@@ -50,23 +50,25 @@ data:
     \n\nint main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
     \ G(N);\n    for (int i = 0; i < E; i++) {\n        int s, t, d;\n        cin\
     \ >> s >> t >> d;\n        G[s].push_back(make_edge(t, d));\n    }\n    auto res\
-    \ = dijkstra(G, r);\n    for (int i = 0; i < N; i++) {\n        cout << (res[i]\
-    \ == INF ? \"INF\" : res[i]) << endl;\n    }\n}\n"
+    \ = dijkstra(G, r);\n    for (int i = 0; i < N; i++) {\n        if (res[i] ==\
+    \ INF) {\n            cout << \"INF\" << endl;\n        } else {\n           \
+    \ cout << res[i] << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \n#include \"template/template.hpp\"\n#include \"graph/dijkstra.hpp\"\n\nint main()\
     \ {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>> G(N);\n\
     \    for (int i = 0; i < E; i++) {\n        int s, t, d;\n        cin >> s >>\
     \ t >> d;\n        G[s].push_back(make_edge(t, d));\n    }\n    auto res = dijkstra(G,\
-    \ r);\n    for (int i = 0; i < N; i++) {\n        cout << (res[i] == INF ? \"\
-    INF\" : res[i]) << endl;\n    }\n}\n"
+    \ r);\n    for (int i = 0; i < N; i++) {\n        if (res[i] == INF) {\n     \
+    \       cout << \"INF\" << endl;\n        } else {\n            cout << res[i]\
+    \ << endl;\n        }\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/dijkstra.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 23:08:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-20 23:12:01+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_A.test.cpp
 layout: document
