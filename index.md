@@ -1,6 +1,20 @@
 ---
 data:
   libraryCategories:
+  - name: Algorithm
+    pages:
+    - icon: ':warning:'
+      path: Algorithm/Compress.hpp
+      title: Algorithm/Compress.hpp
+    - icon: ':warning:'
+      path: Algorithm/Compress2D.hpp
+      title: Algorithm/Compress2D.hpp
+    - icon: ':warning:'
+      path: Algorithm/SectionSum.hpp
+      title: Algorithm/SectionSum.hpp
+    - icon: ':warning:'
+      path: Algorithm/SectionSum2D.hpp
+      title: Algorithm/SectionSum2D.hpp
   - name: DataStructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -12,6 +26,9 @@ data:
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
+    - icon: ':warning:'
+      path: DataStructure/Eratostenes.hpp
+      title: DataStructure/Eratostenes.hpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Inversion Number.hpp
       title: DataStructure/Inversion Number.hpp
@@ -24,6 +41,14 @@ data:
     - icon: ':warning:'
       path: DataStructure/priority_deque.hpp
       title: DataStructure/priority_deque.hpp
+  - name: Geomeny
+    pages:
+    - icon: ':warning:'
+      path: Geomeny/geomeny-others.hpp
+      title: Geomeny/geomeny-others.hpp
+    - icon: ':warning:'
+      path: Geomeny/geomeny.hpp
+      title: Geomeny/geomeny.hpp
   - name: GraphTheory
     pages:
     - icon: ':heavy_check_mark:'
@@ -35,6 +60,53 @@ data:
     - icon: ':warning:'
       path: GraphTheory/Dijkstra.hpp
       title: GraphTheory/Dijkstra.hpp
+  - name: Math/Combinatorics
+    pages:
+    - icon: ':warning:'
+      path: Math/Combinatorics/BinomialCoefficient_naivety.hpp
+      title: Math/Combinatorics/BinomialCoefficient_naivety.hpp
+    - icon: ':warning:'
+      path: Math/Combinatorics/modpow.hpp
+      title: Math/Combinatorics/modpow.hpp
+    - icon: ':warning:'
+      path: Math/Combinatorics/next_combination.hpp
+      title: Math/Combinatorics/next_combination.hpp
+  - name: Math/NumberTheory
+    pages:
+    - icon: ':warning:'
+      path: Math/NumberTheory/DectoN.hpp
+      title: Math/NumberTheory/DectoN.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/Dvisors.hpp
+      title: Math/NumberTheory/Dvisors.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/NtoDec.hpp
+      title: Math/NumberTheory/NtoDec.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/Primenumber Enumeration.hpp
+      title: Math/NumberTheory/Primenumber Enumeration.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/isprime.hpp
+      title: Math/NumberTheory/isprime.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/pow.hpp
+      title: Math/NumberTheory/pow.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/prime_factorization.hpp
+      title: Math/NumberTheory/prime_factorization.hpp
+    - icon: ':warning:'
+      path: Math/NumberTheory/randInt.hpp
+      title: Math/NumberTheory/randInt.hpp
+  - name: Others
+    pages:
+    - icon: ':warning:'
+      path: Others/date.hpp
+      title: Others/date.hpp
+  - name: String
+    pages:
+    - icon: ':warning:'
+      path: String/RLE.hpp
+      title: String/RLE.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
