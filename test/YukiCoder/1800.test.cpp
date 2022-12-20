@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/1800"
+#define PROBLEM "https://yukicoder.me/problems/1800"
 #include "template/template.hpp"
 #include "DataStructure/Static_ModularArithmetic.hpp"
 
