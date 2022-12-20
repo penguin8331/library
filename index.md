@@ -26,7 +26,7 @@ data:
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: data-structure/dynamic_modular-arithmetic.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/eratostenes.hpp
       title: data-structure/eratostenes.hpp
     - icon: ':warning:'

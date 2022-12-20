@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/0009.test.cpp
+    title: test/AOJ/0009.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/1160.test.cpp
     title: test/AOJ/1160.test.cpp
@@ -69,6 +72,7 @@ data:
   - test/AOJ/1160.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/DSL_4_A.test.cpp
+  - test/AOJ/0009.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
   - test/AOJ/GRL_1_A.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
