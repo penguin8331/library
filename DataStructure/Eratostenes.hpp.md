@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/AOJ/ALDS1_1_C.cpp
+    title: test/AOJ/ALDS1_1_C.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -34,7 +37,11 @@ data:
     \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
     \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
     \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};\n"
+    \      return res;\n    }\n};\nstruct IsPrime {\n    vector<bool> isprime;\n\n\
+    \    IsPrime(int MAX) : isprime(MAX + 1, true) {\n        isprime[0] = isprime[1]\
+    \ = false;\n        for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i])\
+    \ continue;\n            for (int j = i * 2; j <= MAX; j += i) {\n           \
+    \     isprime[j] = false;\n            }\n        }\n    }\n};\n"
   code: "struct Eratos {\n    vector<int> primes;\n    vector<bool> isprime;\n   \
     \ vector<int> mebius;\n    vector<int> min_factor;\n\n    Eratos(int MAX) : primes(),\n\
     \                      isprime(MAX + 1, true),\n                      mebius(MAX\
@@ -60,12 +67,17 @@ data:
     \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
     \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
     \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};"
+    \      return res;\n    }\n};\nstruct IsPrime {\n    vector<bool> isprime;\n\n\
+    \    IsPrime(int MAX) : isprime(MAX + 1, true) {\n        isprime[0] = isprime[1]\
+    \ = false;\n        for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i])\
+    \ continue;\n            for (int j = i * 2; j <= MAX; j += i) {\n           \
+    \     isprime[j] = false;\n            }\n        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/Eratostenes.hpp
-  requiredBy: []
-  timestamp: '2022-12-20 16:11:47+09:00'
+  requiredBy:
+  - test/AOJ/ALDS1_1_C.cpp
+  timestamp: '2022-12-20 16:50:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/Eratostenes.hpp

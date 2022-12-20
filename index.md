@@ -83,9 +83,6 @@ data:
       path: Math/NumberTheory/NtoDec.hpp
       title: Math/NumberTheory/NtoDec.hpp
     - icon: ':warning:'
-      path: Math/NumberTheory/Primenumber Enumeration.hpp
-      title: Math/NumberTheory/Primenumber Enumeration.hpp
-    - icon: ':warning:'
       path: Math/NumberTheory/isprime.hpp
       title: Math/NumberTheory/isprime.hpp
     - icon: ':warning:'
@@ -112,6 +109,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/AOJ
+    pages:
+    - icon: ':warning:'
+      path: test/AOJ/ALDS1_1_C.cpp
+      title: test/AOJ/ALDS1_1_C.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
