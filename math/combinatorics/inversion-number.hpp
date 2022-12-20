@@ -1,4 +1,4 @@
-#include "DataStructure/Binary Indexed Tree.hpp"
+#include "data-structure/binary-indexed-tree.hpp"
 
 template <class T>
 long long inversion_number(const vector<T> &a) {
