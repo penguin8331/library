@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
-#include "template/template.hpp"
 #include "graph/dijkstra.hpp"
+#include "template/template.hpp"
 
 int main() {
     int N, E, r;
@@ -13,6 +13,6 @@ int main() {
     }
     auto res = dijkstra(G, r);
     for (int i = 0; i < N; i++) {
-        cout << res[i] << endl;
+        cout << (res[i] == INF ? "INF" : res[i]) << endl;
     }
 }
