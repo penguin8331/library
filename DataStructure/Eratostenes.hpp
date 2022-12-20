@@ -68,3 +68,16 @@ struct Eratos {
         return res;
     }
 };
+struct IsPrime {
+    vector<bool> isprime;
+
+    IsPrime(int MAX) : isprime(MAX + 1, true) {
+        isprime[0] = isprime[1] = false;
+        for (int i = 2; i <= MAX; ++i) {
+            if (!isprime[i]) continue;
+            for (int j = i * 2; j <= MAX; j += i) {
+                isprime[j] = false;
+            }
+        }
+    }
+};
