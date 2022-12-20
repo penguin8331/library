@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/AOJ/1160.test.cpp
+    title: test/AOJ/1160.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_A.test.cpp
     title: test/AOJ/DSL_1_A.test.cpp
   _isVerificationFailed: false
@@ -46,6 +49,7 @@ data:
   timestamp: '2022-12-19 21:17:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/1160.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
 documentation_of: DataStructure/UnionFind.hpp
 layout: document

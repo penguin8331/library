@@ -3,12 +3,18 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
+    - icon: ':x:'
+      path: DataStructure/Binary Indexed Tree.hpp
+      title: DataStructure/Binary Indexed Tree.hpp
     - icon: ':warning:'
       path: DataStructure/BinomialCoefficient.hpp
       title: DataStructure/BinomialCoefficient.hpp
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
+    - icon: ':x:'
+      path: DataStructure/Inversion Number.hpp
+      title: DataStructure/Inversion Number.hpp
     - icon: ':warning:'
       path: DataStructure/Static_ModularArithmetic.hpp
       title: DataStructure/Static_ModularArithmetic.hpp
@@ -26,17 +32,26 @@ data:
     - icon: ':warning:'
       path: GraphTheory/BFS2D.hpp
       title: GraphTheory/BFS2D.hpp
+    - icon: ':warning:'
+      path: GraphTheory/Dijkstra.hpp
+      title: GraphTheory/Dijkstra.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/1160.test.cpp
+      title: test/AOJ/1160.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/ALDS1_5_D.test.cpp
+      title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
