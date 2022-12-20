@@ -3,12 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
-  attributes:
-    links:
-    - https://judge.yosupo.jp/problem/static_range_sum
+  _verificationStatusIcon: ':x:'
+  attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -28,16 +26,16 @@ data:
     \ a);\n    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n        int l,\
     \ r;\n        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n    }\n}"
   dependsOn: []
-  isVerificationFile: false
-  path: test/yosupo/static-range-sum.cpp
+  isVerificationFile: true
+  path: test/yosupo/static-range-sum.test.cpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/yosupo/static-range-sum.cpp
+documentation_of: test/yosupo/static-range-sum.test.cpp
 layout: document
 redirect_from:
-- /library/test/yosupo/static-range-sum.cpp
-- /library/test/yosupo/static-range-sum.cpp.html
-title: test/yosupo/static-range-sum.cpp
+- /verify/test/yosupo/static-range-sum.test.cpp
+- /verify/test/yosupo/static-range-sum.test.cpp.html
+title: test/yosupo/static-range-sum.test.cpp
 ---

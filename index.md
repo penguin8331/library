@@ -109,11 +109,6 @@ data:
     - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-  - name: test/yosupo
-    pages:
-    - icon: ':warning:'
-      path: test/yosupo/static-range-sum.cpp
-      title: test/yosupo/static-range-sum.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -132,6 +127,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
+  - name: test/yosupo
+    pages:
+    - icon: ':x:'
+      path: test/yosupo/static-range-sum.test.cpp
+      title: test/yosupo/static-range-sum.test.cpp
 layout: toppage
 ---
 [![Tyson8331](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FTyson8331)](https://atcoder.jp/users/Tyson8331)
