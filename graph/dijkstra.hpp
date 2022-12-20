@@ -2,6 +2,12 @@ struct Edge {
     long long to;
     long long cost;
 };
+Edge make_edge(int to, int cost) {
+    Edge a;
+    a.to = to;
+    a.cost = cost;
+    return a;
+}
 vector<long long> dijkstra(const vector<vector<Edge>> &G, int s) {
     int N = G.size();
     vector<long long> dis(N, INF);
