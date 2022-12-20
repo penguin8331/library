@@ -1,20 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: Algorithm
-    pages:
-    - icon: ':warning:'
-      path: Algorithm/Compress2D.hpp
-      title: Algorithm/Compress2D.hpp
-    - icon: ':warning:'
-      path: Algorithm/compress.hpp
-      title: Algorithm/compress.hpp
-    - icon: ':warning:'
-      path: Algorithm/section-sum.hpp
-      title: Algorithm/section-sum.hpp
-    - icon: ':warning:'
-      path: Algorithm/section-sum2d.hpp
-      title: Algorithm/section-sum2d.hpp
   - name: Geomeny
     pages:
     - icon: ':warning:'
