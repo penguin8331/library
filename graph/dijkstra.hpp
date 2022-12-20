@@ -28,4 +28,5 @@ vector<long long> dijkstra(const vector<vector<Edge>> &G, int s) {
             }
         }
     }
+    return dis;
 }
