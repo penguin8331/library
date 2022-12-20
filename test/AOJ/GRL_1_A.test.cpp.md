@@ -46,7 +46,7 @@ data:
     \ &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {  // \u6700\u77ED\
     \u8DDD\u96E2\u5019\u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n     \
     \           dis[e.to] = dis[v] + e.cost;\n                pq.emplace(dis[e.to],\
-    \ e.to);\n            }\n        }\n    }\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\
+    \ e.to);\n            }\n        }\n    }\n    return dis;\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\
     \n\nint main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
     \ G(N);\n    for (int i = 0; i < E; i++) {\n        int s, t, d;\n        cin\
     \ >> s >> t >> d;\n        G[s].push_back(make_edge(t, d));\n    }\n    auto res\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 22:58:27+09:00'
+  timestamp: '2022-12-20 23:08:12+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_A.test.cpp

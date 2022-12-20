@@ -25,7 +25,7 @@ data:
     \ &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {  // \u6700\u77ED\
     \u8DDD\u96E2\u5019\u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n     \
     \           dis[e.to] = dis[v] + e.cost;\n                pq.emplace(dis[e.to],\
-    \ e.to);\n            }\n        }\n    }\n}\n"
+    \ e.to);\n            }\n        }\n    }\n    return dis;\n}\n"
   code: "struct Edge {\n    long long to;\n    long long cost;\n};\nEdge make_edge(int\
     \ to, int cost) {\n    Edge a;\n    a.to = to;\n    a.cost = cost;\n    return\
     \ a;\n}\nvector<long long> dijkstra(const vector<vector<Edge>> &G, int s) {\n\
@@ -40,12 +40,12 @@ data:
     \ (dis[e.to] > dis[v] + e.cost) {  // \u6700\u77ED\u8DDD\u96E2\u5019\u88DC\u306A\
     \u3089 priority_queue \u306B\u8FFD\u52A0\n                dis[e.to] = dis[v] +\
     \ e.cost;\n                pq.emplace(dis[e.to], e.to);\n            }\n     \
-    \   }\n    }\n}"
+    \   }\n    }\n    return dis;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2022-12-20 22:45:33+09:00'
+  timestamp: '2022-12-20 23:08:12+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/GRL_1_A.test.cpp
