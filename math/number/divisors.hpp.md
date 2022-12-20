@@ -1,0 +1,35 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "#line 1 \"math/number/divisors.hpp\"\nvector<long long> divisors(long\
+    \ long n) {\r\n    vector<long long> res;\r\n    for (long long i = 1LL; i * i\
+    \ <= n; ++i) {\r\n        if (n % i == 0) {\r\n            res.push_back(i);\r\
+    \n            long long j = n / i;\r\n            if (j != i) res.push_back(j);\r\
+    \n        }\r\n    }\r\n    sort(res.begin(), res.end());\r\n    return res;\r\
+    \n}\n"
+  code: "vector<long long> divisors(long long n) {\r\n    vector<long long> res;\r\
+    \n    for (long long i = 1LL; i * i <= n; ++i) {\r\n        if (n % i == 0) {\r\
+    \n            res.push_back(i);\r\n            long long j = n / i;\r\n      \
+    \      if (j != i) res.push_back(j);\r\n        }\r\n    }\r\n    sort(res.begin(),\
+    \ res.end());\r\n    return res;\r\n}"
+  dependsOn: []
+  isVerificationFile: false
+  path: math/number/divisors.hpp
+  requiredBy: []
+  timestamp: '2022-12-20 22:03:14+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: math/number/divisors.hpp
+layout: document
+redirect_from:
+- /library/math/number/divisors.hpp
+- /library/math/number/divisors.hpp.html
+title: math/number/divisors.hpp
+---

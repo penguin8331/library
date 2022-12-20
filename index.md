@@ -1,61 +1,20 @@
 ---
 data:
   libraryCategories:
-  - name: Geomeny
+  - name: algorithm
     pages:
     - icon: ':warning:'
-      path: Geomeny/geomeny-others.hpp
-      title: Geomeny/geomeny-others.hpp
+      path: algorithm/compress.hpp
+      title: algorithm/compress.hpp
     - icon: ':warning:'
-      path: Geomeny/geomeny.hpp
-      title: Geomeny/geomeny.hpp
-  - name: Math/Combinatorics
-    pages:
+      path: algorithm/compress2d.hpp
+      title: algorithm/compress2d.hpp
+    - icon: ':heavy_check_mark:'
+      path: algorithm/section-sum.hpp
+      title: algorithm/section-sum.hpp
     - icon: ':warning:'
-      path: Math/Combinatorics/binomial-coefficient-naivety.hpp
-      title: Math/Combinatorics/binomial-coefficient-naivety.hpp
-    - icon: ':warning:'
-      path: Math/Combinatorics/inversion-number.hpp
-      title: Math/Combinatorics/inversion-number.hpp
-    - icon: ':warning:'
-      path: Math/Combinatorics/modpow.hpp
-      title: Math/Combinatorics/modpow.hpp
-    - icon: ':warning:'
-      path: Math/Combinatorics/next-combination.hpp
-      title: Math/Combinatorics/next-combination.hpp
-  - name: Math/number
-    pages:
-    - icon: ':warning:'
-      path: Math/number/dec-to-n.hpp
-      title: Math/number/dec-to-n.hpp
-    - icon: ':warning:'
-      path: Math/number/divisors.hpp
-      title: Math/number/divisors.hpp
-    - icon: ':warning:'
-      path: Math/number/isprime.hpp
-      title: Math/number/isprime.hpp
-    - icon: ':warning:'
-      path: Math/number/n-to-dec.hpp
-      title: Math/number/n-to-dec.hpp
-    - icon: ':warning:'
-      path: Math/number/pow.hpp
-      title: Math/number/pow.hpp
-    - icon: ':warning:'
-      path: Math/number/prime-factorization.hpp
-      title: Math/number/prime-factorization.hpp
-    - icon: ':warning:'
-      path: Math/number/randInt.hpp
-      title: Math/number/randInt.hpp
-  - name: Others
-    pages:
-    - icon: ':warning:'
-      path: Others/date.hpp
-      title: Others/date.hpp
-  - name: String
-    pages:
-    - icon: ':warning:'
-      path: String/RLE.hpp
-      title: String/RLE.hpp
+      path: algorithm/section-sum2d.hpp
+      title: algorithm/section-sum2d.hpp
   - name: data-structure
     pages:
     - icon: ':warning:'
@@ -79,6 +38,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: data-structure/union-find.hpp
+  - name: geomeny
+    pages:
+    - icon: ':warning:'
+      path: geomeny/geomeny-others.hpp
+      title: geomeny/geomeny-others.hpp
+    - icon: ':warning:'
+      path: geomeny/geomeny.hpp
+      title: geomeny/geomeny.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -90,6 +57,53 @@ data:
     - icon: ':warning:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
+  - name: math/combinatorics
+    pages:
+    - icon: ':warning:'
+      path: math/combinatorics/binomial-coefficient-naivety.hpp
+      title: math/combinatorics/binomial-coefficient-naivety.hpp
+    - icon: ':warning:'
+      path: math/combinatorics/inversion-number.hpp
+      title: math/combinatorics/inversion-number.hpp
+    - icon: ':warning:'
+      path: math/combinatorics/modpow.hpp
+      title: math/combinatorics/modpow.hpp
+    - icon: ':warning:'
+      path: math/combinatorics/next-combination.hpp
+      title: math/combinatorics/next-combination.hpp
+  - name: math/number
+    pages:
+    - icon: ':warning:'
+      path: math/number/dec-to-n.hpp
+      title: math/number/dec-to-n.hpp
+    - icon: ':warning:'
+      path: math/number/divisors.hpp
+      title: math/number/divisors.hpp
+    - icon: ':warning:'
+      path: math/number/isprime.hpp
+      title: math/number/isprime.hpp
+    - icon: ':warning:'
+      path: math/number/n-to-dec.hpp
+      title: math/number/n-to-dec.hpp
+    - icon: ':warning:'
+      path: math/number/pow.hpp
+      title: math/number/pow.hpp
+    - icon: ':warning:'
+      path: math/number/prime-factorization.hpp
+      title: math/number/prime-factorization.hpp
+    - icon: ':warning:'
+      path: math/number/randInt.hpp
+      title: math/number/randInt.hpp
+  - name: others
+    pages:
+    - icon: ':warning:'
+      path: others/date.hpp
+      title: others/date.hpp
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/rle.hpp
+      title: string/rle.hpp
   - name: template
     pages:
     - icon: ':question:'
@@ -115,7 +129,7 @@ data:
       title: test/AOJ/DSL_1_A.test.cpp
   - name: test/yosupo
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
 layout: toppage

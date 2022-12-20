@@ -20,24 +20,24 @@ data:
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: DataStructure/Binary\
     \ Indexed Tree.hpp: line -1: no such header\n"
-  code: "#include \"DataStructure/Binary Indexed Tree.hpp\"\n\ntemplate <class T>\n\
-    long long inversion_number(const vector<T> &a) {\n    int n = (int)a.size();\n\
-    \    vector<T> b = a;\n    sort(b.begin(), b.end());\n    b.erase(unique(b.begin(),\
-    \ b.end()), b.end());\n\n    long long res = 0;\n    BIT<int> bit(n + 1);\n  \
-    \  for (int i = 0; i < n; ++i) {\n        int order = lower_bound(b.begin(), b.end(),\
-    \ a[i]) - b.begin();\n        ++order;\n        res += bit.sum(order + 1, n +\
-    \ 1);\n        bit.add(order, 1);\n    }\n    return res;\n}"
+  code: "#include \"DataStructure/Binary Indexed Tree.hpp\"\r\n\r\ntemplate <class\
+    \ T>\r\nlong long inversion_number(const vector<T> &a) {\r\n    int n = (int)a.size();\r\
+    \n    vector<T> b = a;\r\n    sort(b.begin(), b.end());\r\n    b.erase(unique(b.begin(),\
+    \ b.end()), b.end());\r\n\r\n    long long res = 0;\r\n    BIT<int> bit(n + 1);\r\
+    \n    for (int i = 0; i < n; ++i) {\r\n        int order = lower_bound(b.begin(),\
+    \ b.end(), a[i]) - b.begin();\r\n        ++order;\r\n        res += bit.sum(order\
+    \ + 1, n + 1);\r\n        bit.add(order, 1);\r\n    }\r\n    return res;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: Math/Combinatorics/inversion-number.hpp
+  path: math/combinatorics/inversion-number.hpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/Combinatorics/inversion-number.hpp
+documentation_of: math/combinatorics/inversion-number.hpp
 layout: document
 redirect_from:
-- /library/Math/Combinatorics/inversion-number.hpp
-- /library/Math/Combinatorics/inversion-number.hpp.html
-title: Math/Combinatorics/inversion-number.hpp
+- /library/math/combinatorics/inversion-number.hpp
+- /library/math/combinatorics/inversion-number.hpp.html
+title: math/combinatorics/inversion-number.hpp
 ---
