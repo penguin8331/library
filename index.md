@@ -26,7 +26,7 @@ data:
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: data-structure/dynamic_modular-arithmetic.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: data-structure/eratostenes.hpp
       title: data-structure/eratostenes.hpp
     - icon: ':warning:'
@@ -106,15 +106,12 @@ data:
       title: string/rle.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':x:'
-      path: test/AOJ/0009.test.cpp
-      title: test/AOJ/0009.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp

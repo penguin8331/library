@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0009.test.cpp
-    title: test/AOJ/0009.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
@@ -77,9 +74,8 @@ data:
   path: data-structure/eratostenes.hpp
   requiredBy: []
   timestamp: '2022-12-20 21:47:53+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/AOJ/0009.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: data-structure/eratostenes.hpp
 layout: document
 redirect_from:
