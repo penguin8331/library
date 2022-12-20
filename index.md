@@ -20,7 +20,7 @@ data:
       title: DataStructure/priority_deque.hpp
   - name: GraphTheory
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: GraphTheory/BFS.hpp
       title: GraphTheory/BFS.hpp
     - icon: ':warning:'
@@ -35,8 +35,16 @@ data:
   - name: test/AOJ
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/ALDS1_11_C.test.cpp
+      title: test/AOJ/ALDS1_11_C.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
+  - name: test/YukiCoder
+    pages:
+    - icon: ':x:'
+      path: test/YukiCoder/1800.test.cpp
+      title: test/YukiCoder/1800.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

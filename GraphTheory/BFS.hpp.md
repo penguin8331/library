@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_11_C.test.cpp
+    title: test/AOJ/ALDS1_11_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"GraphTheory/BFS.hpp\"\nvector<int> BFS(const vector<vector<int>>\
@@ -43,8 +46,9 @@ data:
   path: GraphTheory/BFS.hpp
   requiredBy: []
   timestamp: '2022-12-20 12:47:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/ALDS1_11_C.test.cpp
 documentation_of: GraphTheory/BFS.hpp
 layout: document
 redirect_from:
