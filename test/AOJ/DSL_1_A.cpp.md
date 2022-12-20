@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: DataStructure/UnionFind.hpp
     title: DataStructure/UnionFind.hpp
   - icon: ':heavy_check_mark:'
@@ -11,22 +11,19 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-  bundledCode: "#line 1 \"test/AOJ/UnionFind_Checker.test.cpp\"\n#define PROBLEM \"\
-    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\n#line 1 \"\
-    template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"\
-    O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii =\
-    \ pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define mp\
-    \ make_pair\n#define mt make_tuple\n#define all(x) (x).begin(), (x).end()\n#define\
-    \ rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N, X)\
-    \ ((N + X - 1) / X)\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios\
-    \ {\n    fast_ios() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+  bundledCode: "#line 1 \"test/AOJ/DSL_1_A.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
+    \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
+    \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
+    using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
+    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
+    \ mp make_pair\n#define mt make_tuple\n#define all(x) (x).begin(), (x).end()\n\
+    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
+    \ X) ((N + X - 1) / X)\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct\
+    \ fast_ios {\n    fast_ios() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
     \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
     \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
@@ -46,11 +43,11 @@ data:
     \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
     \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
     \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
-    \        }\n        return res;\n    }\n};\n#line 4 \"test/AOJ/UnionFind_Checker.test.cpp\"\
-    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
-    \  for (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >>\
-    \ x >> y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else\
-    \ {\n            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
+    \        }\n        return res;\n    }\n};\n#line 4 \"test/AOJ/DSL_1_A.cpp\"\n\
+    \nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n    for\
+    \ (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >> x >>\
+    \ y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else {\n\
+    \            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
     \n#include \"template/template.hpp\"\n#include \"DataStructure/UnionFind.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
@@ -60,16 +57,16 @@ data:
   dependsOn:
   - template/template.hpp
   - DataStructure/UnionFind.hpp
-  isVerificationFile: true
-  path: test/AOJ/UnionFind_Checker.test.cpp
+  isVerificationFile: false
+  path: test/AOJ/DSL_1_A.cpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-12-20 12:55:12+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/AOJ/UnionFind_Checker.test.cpp
+documentation_of: test/AOJ/DSL_1_A.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/UnionFind_Checker.test.cpp
-- /verify/test/AOJ/UnionFind_Checker.test.cpp.html
-title: test/AOJ/UnionFind_Checker.test.cpp
+- /library/test/AOJ/DSL_1_A.cpp
+- /library/test/AOJ/DSL_1_A.cpp.html
+title: test/AOJ/DSL_1_A.cpp
 ---
