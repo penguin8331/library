@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/AOJ/DSL_1_A.cpp
-    title: test/AOJ/DSL_1_A.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_1_A.test.cpp
+    title: test/AOJ/DSL_1_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/UnionFind.hpp\"\nstruct UnionFind {\n    vector<int>\
@@ -42,11 +42,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/UnionFind.hpp
-  requiredBy:
-  - test/AOJ/DSL_1_A.cpp
+  requiredBy: []
   timestamp: '2022-12-19 21:17:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/DSL_1_A.test.cpp
 documentation_of: DataStructure/UnionFind.hpp
 layout: document
 redirect_from:

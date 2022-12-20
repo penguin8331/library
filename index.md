@@ -12,7 +12,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/Static_ModularArithmetic.hpp
       title: DataStructure/Static_ModularArithmetic.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.hpp
       title: DataStructure/UnionFind.hpp
     - icon: ':warning:'
@@ -31,12 +31,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':warning:'
-      path: test/AOJ/DSL_1_A.cpp
-      title: test/AOJ/DSL_1_A.cpp
-  verificationCategories:
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DSL_1_A.test.cpp
+      title: test/AOJ/DSL_1_A.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

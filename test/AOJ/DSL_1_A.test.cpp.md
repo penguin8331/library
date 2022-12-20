@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/UnionFind.hpp
     title: DataStructure/UnionFind.hpp
   - icon: ':heavy_check_mark:'
@@ -11,11 +11,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-  bundledCode: "#line 1 \"test/AOJ/DSL_1_A.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
+  bundledCode: "#line 1 \"test/AOJ/DSL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -43,11 +45,11 @@ data:
     \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
     \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
     \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
-    \        }\n        return res;\n    }\n};\n#line 4 \"test/AOJ/DSL_1_A.cpp\"\n\
-    \nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n    for\
-    \ (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >> x >>\
-    \ y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else {\n\
-    \            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
+    \        }\n        return res;\n    }\n};\n#line 4 \"test/AOJ/DSL_1_A.test.cpp\"\
+    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
+    \  for (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >>\
+    \ x >> y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else\
+    \ {\n            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
     \n#include \"template/template.hpp\"\n#include \"DataStructure/UnionFind.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
@@ -57,16 +59,16 @@ data:
   dependsOn:
   - template/template.hpp
   - DataStructure/UnionFind.hpp
-  isVerificationFile: false
-  path: test/AOJ/DSL_1_A.cpp
+  isVerificationFile: true
+  path: test/AOJ/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 12:55:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2022-12-20 12:59:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/DSL_1_A.cpp
+documentation_of: test/AOJ/DSL_1_A.test.cpp
 layout: document
 redirect_from:
-- /library/test/AOJ/DSL_1_A.cpp
-- /library/test/AOJ/DSL_1_A.cpp.html
-title: test/AOJ/DSL_1_A.cpp
+- /verify/test/AOJ/DSL_1_A.test.cpp
+- /verify/test/AOJ/DSL_1_A.test.cpp.html
+title: test/AOJ/DSL_1_A.test.cpp
 ---
