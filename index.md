@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: DataStructure/Static_ModularArithmetic.hpp
       title: DataStructure/Static_ModularArithmetic.hpp
     - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
       title: GraphTheory/BFS2D.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -40,11 +40,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
-  - name: test/YukiCoder
-    pages:
-    - icon: ':x:'
-      path: test/YukiCoder/1800.test.cpp
-      title: test/YukiCoder/1800.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
