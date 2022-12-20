@@ -1,4 +1,5 @@
 #include "DataStructure/Binary Indexed Tree.hpp"
+
 template <class T>
 long long inversion_number(const vector<T> &a) {
     int n = (int)a.size();
@@ -7,7 +8,7 @@ long long inversion_number(const vector<T> &a) {
     b.erase(unique(b.begin(), b.end()), b.end());
 
     long long res = 0;
-    BIT<int> bit(n);
+    BIT<int> bit(n + 1);
     for (int i = 0; i < n; ++i) {
         int order = lower_bound(b.begin(), b.end(), a[i]) - b.begin();
         ++order;
