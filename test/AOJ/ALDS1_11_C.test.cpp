@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C"
 #include "template/template.hpp"
-#include "GraphTheory/BFS.hpp"
+#include "graph/bfs.hpp"
 
 int main() {
     int N;
