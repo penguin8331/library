@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: DataStructure/Static_ModularArithmetic.hpp
       title: DataStructure/Static_ModularArithmetic.hpp
     - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
       title: GraphTheory/BFS2D.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
