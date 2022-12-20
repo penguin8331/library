@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Binary Indexed Tree.hpp
       title: DataStructure/Binary Indexed Tree.hpp
     - icon: ':warning:'
@@ -12,7 +12,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Inversion Number.hpp
       title: DataStructure/Inversion Number.hpp
     - icon: ':warning:'
@@ -37,7 +37,7 @@ data:
       title: GraphTheory/Dijkstra.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -49,7 +49,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'

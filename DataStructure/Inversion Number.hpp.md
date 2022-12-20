@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/Binary Indexed Tree.hpp
     title: DataStructure/Binary Indexed Tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/Binary Indexed Tree.hpp\"\ntemplate <class\
@@ -27,18 +27,18 @@ data:
     \ - sum(a);\n    }\n\n    // debug\n    void print() {\n#ifdef LOCAL\n       \
     \ for (int i = 0; i < (int)dat.size(); ++i)\n            cout << sum(i, i + 1)\
     \ << \",\";\n        cout << endl;\n#endif\n    }\n};\n#line 2 \"DataStructure/Inversion\
-    \ Number.hpp\"\ntemplate <class T>\nlong long inversion_number(const vector<T>\
+    \ Number.hpp\"\n\ntemplate <class T>\nlong long inversion_number(const vector<T>\
     \ &a) {\n    int n = (int)a.size();\n    vector<T> b = a;\n    sort(b.begin(),\
     \ b.end());\n    b.erase(unique(b.begin(), b.end()), b.end());\n\n    long long\
-    \ res = 0;\n    BIT<int> bit(n);\n    for (int i = 0; i < n; ++i) {\n        int\
-    \ order = lower_bound(b.begin(), b.end(), a[i]) - b.begin();\n        ++order;\n\
+    \ res = 0;\n    BIT<int> bit(n + 1);\n    for (int i = 0; i < n; ++i) {\n    \
+    \    int order = lower_bound(b.begin(), b.end(), a[i]) - b.begin();\n        ++order;\n\
     \        res += bit.sum(order + 1, n + 1);\n        bit.add(order, 1);\n    }\n\
     \    return res;\n}\n"
-  code: "#include \"DataStructure/Binary Indexed Tree.hpp\"\ntemplate <class T>\n\
+  code: "#include \"DataStructure/Binary Indexed Tree.hpp\"\n\ntemplate <class T>\n\
     long long inversion_number(const vector<T> &a) {\n    int n = (int)a.size();\n\
     \    vector<T> b = a;\n    sort(b.begin(), b.end());\n    b.erase(unique(b.begin(),\
-    \ b.end()), b.end());\n\n    long long res = 0;\n    BIT<int> bit(n);\n    for\
-    \ (int i = 0; i < n; ++i) {\n        int order = lower_bound(b.begin(), b.end(),\
+    \ b.end()), b.end());\n\n    long long res = 0;\n    BIT<int> bit(n + 1);\n  \
+    \  for (int i = 0; i < n; ++i) {\n        int order = lower_bound(b.begin(), b.end(),\
     \ a[i]) - b.begin();\n        ++order;\n        res += bit.sum(order + 1, n +\
     \ 1);\n        bit.add(order, 1);\n    }\n    return res;\n}"
   dependsOn:
@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: DataStructure/Inversion Number.hpp
   requiredBy: []
-  timestamp: '2022-12-20 15:08:38+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-12-20 15:19:14+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: DataStructure/Inversion Number.hpp
