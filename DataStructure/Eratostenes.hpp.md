@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/AOJ/ALDS1_1_C.cpp
-    title: test/AOJ/ALDS1_1_C.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/ALDS1_1_C.test.cpp
+    title: test/AOJ/ALDS1_1_C.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/Eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
@@ -75,11 +75,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/Eratostenes.hpp
-  requiredBy:
-  - test/AOJ/ALDS1_1_C.cpp
+  requiredBy: []
   timestamp: '2022-12-20 16:50:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/ALDS1_1_C.test.cpp
 documentation_of: DataStructure/Eratostenes.hpp
 layout: document
 redirect_from:

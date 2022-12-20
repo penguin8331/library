@@ -26,7 +26,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/Dynamic_ModularArithmetic.hpp
       title: DataStructure/Dynamic_ModularArithmetic.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: DataStructure/Eratostenes.hpp
       title: DataStructure/Eratostenes.hpp
     - icon: ':heavy_check_mark:'
@@ -106,14 +106,9 @@ data:
       title: String/RLE.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-  - name: test/AOJ
-    pages:
-    - icon: ':warning:'
-      path: test/AOJ/ALDS1_1_C.cpp
-      title: test/AOJ/ALDS1_1_C.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -123,6 +118,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/ALDS1_1_C.test.cpp
+      title: test/AOJ/ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp

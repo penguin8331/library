@@ -1,21 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: DataStructure/Eratostenes.hpp
     title: DataStructure/Eratostenes.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
-  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -60,7 +62,7 @@ data:
     \    IsPrime(int MAX) : isprime(MAX + 1, true) {\n        isprime[0] = isprime[1]\
     \ = false;\n        for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i])\
     \ continue;\n            for (int j = i * 2; j <= MAX; j += i) {\n           \
-    \     isprime[j] = false;\n            }\n        }\n    }\n};\n#line 4 \"test/AOJ/ALDS1_1_C.cpp\"\
+    \     isprime[j] = false;\n            }\n        }\n    }\n};\n#line 4 \"test/AOJ/ALDS1_1_C.test.cpp\"\
     \n\nint main() {\n    IsPrime era(100000000);\n    int N;\n    cin >> N;\n   \
     \ int ans = 0;\n    for (int i = 0; i < N; i++) {\n        int a;\n        cin\
     \ >> a;\n        ans += era.isprime(a);\n    }\n    cout << ans << endl;\n}\n"
@@ -72,16 +74,16 @@ data:
   dependsOn:
   - template/template.hpp
   - DataStructure/Eratostenes.hpp
-  isVerificationFile: false
-  path: test/AOJ/ALDS1_1_C.cpp
+  isVerificationFile: true
+  path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 16:50:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2022-12-20 16:54:48+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/AOJ/ALDS1_1_C.cpp
+documentation_of: test/AOJ/ALDS1_1_C.test.cpp
 layout: document
 redirect_from:
-- /library/test/AOJ/ALDS1_1_C.cpp
-- /library/test/AOJ/ALDS1_1_C.cpp.html
-title: test/AOJ/ALDS1_1_C.cpp
+- /verify/test/AOJ/ALDS1_1_C.test.cpp
+- /verify/test/AOJ/ALDS1_1_C.test.cpp.html
+title: test/AOJ/ALDS1_1_C.test.cpp
 ---
