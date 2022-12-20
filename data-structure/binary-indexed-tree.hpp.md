@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/combinatorics/inversion-number.hpp
+    title: math/combinatorics/inversion-number.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_5_D.test.cpp
+    title: test/AOJ/ALDS1_5_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree.hpp\"\ntemplate <class\
@@ -36,10 +42,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-indexed-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - math/combinatorics/inversion-number.hpp
   timestamp: '2022-12-20 21:47:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: data-structure/binary-indexed-tree.hpp
 layout: document
 redirect_from:

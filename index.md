@@ -17,7 +17,7 @@ data:
       title: algorithm/section-sum2d.hpp
   - name: data-structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
       title: data-structure/binary-indexed-tree.hpp
     - icon: ':warning:'
@@ -62,7 +62,7 @@ data:
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient-naivety.hpp
       title: math/combinatorics/binomial-coefficient-naivety.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: math/combinatorics/inversion-number.hpp
     - icon: ':warning:'
@@ -121,7 +121,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
