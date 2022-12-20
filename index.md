@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: algorithm/compress.hpp
       title: algorithm/compress.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/compress2d.hpp
       title: algorithm/compress2d.hpp
     - icon: ':heavy_check_mark:'
@@ -26,7 +26,7 @@ data:
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: data-structure/dynamic_modular-arithmetic.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: data-structure/eratostenes.hpp
       title: data-structure/eratostenes.hpp
     - icon: ':warning:'
@@ -54,7 +54,7 @@ data:
     - icon: ':warning:'
       path: graph/bfs2d.hpp
       title: graph/bfs2d.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
   - name: math/combinatorics
@@ -92,8 +92,8 @@ data:
       path: math/number/prime-factorization.hpp
       title: math/number/prime-factorization.hpp
     - icon: ':warning:'
-      path: math/number/randInt.hpp
-      title: math/number/randInt.hpp
+      path: math/number/rand-int.hpp
+      title: math/number/rand-int.hpp
   - name: others
     pages:
     - icon: ':warning:'
@@ -112,21 +112,27 @@ data:
   verificationCategories:
   - name: test/AOJ
     pages:
+    - icon: ':x:'
+      path: test/AOJ/0009.test.cpp
+      title: test/AOJ/0009.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
-    - icon: ':x:'
-      path: test/AOJ/ALDS1_1_C.test.cpp
-      title: test/AOJ/ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DSL_4_A.test.cpp
+      title: test/AOJ/DSL_4_A.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/GRL_1_A.test.cpp
+      title: test/AOJ/GRL_1_A.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

@@ -9,15 +9,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_11_C.test.cpp
     title: test/AOJ/ALDS1_11_C.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/ALDS1_1_C.test.cpp
-    title: test/AOJ/ALDS1_1_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_A.test.cpp
     title: test/AOJ/DSL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_4_A.test.cpp
+    title: test/AOJ/DSL_4_A.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/GRL_1_A.test.cpp
+    title: test/AOJ/GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
@@ -65,8 +68,9 @@ data:
   verifiedWith:
   - test/AOJ/1160.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
+  - test/AOJ/DSL_4_A.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
-  - test/AOJ/ALDS1_1_C.test.cpp
+  - test/AOJ/GRL_1_A.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
   - test/yosupo/static-range-sum.test.cpp
 documentation_of: template/template.hpp
