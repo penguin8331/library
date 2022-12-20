@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"DataStructure/BinomialCoefficient.hpp\"\ntemplate <class\
+  bundledCode: "#line 1 \"data-structure/binomial-coefficient.hpp\"\ntemplate <class\
     \ T>\nstruct BiCoef {\n    vector<T> fact_, inv_, finv_;\n    constexpr BiCoef()\
     \ {}\n    constexpr BiCoef(int n) noexcept : fact_(n, 1), inv_(n, 1), finv_(n,\
     \ 1) {\n        init(n);\n    }\n    constexpr void init(int n) noexcept {\n \
@@ -42,15 +42,15 @@ data:
     \   }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: DataStructure/BinomialCoefficient.hpp
+  path: data-structure/binomial-coefficient.hpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/BinomialCoefficient.hpp
+documentation_of: data-structure/binomial-coefficient.hpp
 layout: document
 redirect_from:
-- /library/DataStructure/BinomialCoefficient.hpp
-- /library/DataStructure/BinomialCoefficient.hpp.html
-title: DataStructure/BinomialCoefficient.hpp
+- /library/data-structure/binomial-coefficient.hpp
+- /library/data-structure/binomial-coefficient.hpp.html
+title: data-structure/binomial-coefficient.hpp
 ---

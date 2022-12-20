@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"DataStructure/Dynamic_ModularArithmetic.hpp\"\ntemplate\
+  bundledCode: "#line 1 \"data-structure/dynamic_modular-arithmetic.hpp\"\ntemplate\
     \ <int IND = 0>\nstruct Fp {\n    long long val;\n    constexpr Fp(long long v\
     \ = 0) noexcept : val(v % MODS[IND]) {\n        if (val < 0) val += MODS[IND];\n\
     \    }\n    constexpr int getmod() const { return MODS[IND]; }\n    constexpr\
@@ -77,15 +77,15 @@ data:
     \ return Fp<IND>(u);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: DataStructure/Dynamic_ModularArithmetic.hpp
+  path: data-structure/dynamic_modular-arithmetic.hpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/Dynamic_ModularArithmetic.hpp
+documentation_of: data-structure/dynamic_modular-arithmetic.hpp
 layout: document
 redirect_from:
-- /library/DataStructure/Dynamic_ModularArithmetic.hpp
-- /library/DataStructure/Dynamic_ModularArithmetic.hpp.html
-title: DataStructure/Dynamic_ModularArithmetic.hpp
+- /library/data-structure/dynamic_modular-arithmetic.hpp
+- /library/data-structure/dynamic_modular-arithmetic.hpp.html
+title: data-structure/dynamic_modular-arithmetic.hpp
 ---

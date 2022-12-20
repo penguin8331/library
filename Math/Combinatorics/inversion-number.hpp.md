@@ -3,10 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
-  _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -17,24 +18,26 @@ data:
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/combinatorics/inversion-number.hpp:\
-    \ line -1: no such header\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
-    \n#include \"template/template.hpp\"\n#include \"math/combinatorics/inversion-number.hpp\"\
-    \n\nint main() {\n    int N;\n    cin >> N;\n    vector<int> A(N);\n    for (int\
-    \ i = 0; i < N; i++) {\n        cin >> A[i];\n    }\n    cout << inversion_number(A)\
-    \ << endl;\n}"
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: DataStructure/Binary\
+    \ Indexed Tree.hpp: line -1: no such header\n"
+  code: "#include \"DataStructure/Binary Indexed Tree.hpp\"\n\ntemplate <class T>\n\
+    long long inversion_number(const vector<T> &a) {\n    int n = (int)a.size();\n\
+    \    vector<T> b = a;\n    sort(b.begin(), b.end());\n    b.erase(unique(b.begin(),\
+    \ b.end()), b.end());\n\n    long long res = 0;\n    BIT<int> bit(n + 1);\n  \
+    \  for (int i = 0; i < n; ++i) {\n        int order = lower_bound(b.begin(), b.end(),\
+    \ a[i]) - b.begin();\n        ++order;\n        res += bit.sum(order + 1, n +\
+    \ 1);\n        bit.add(order, 1);\n    }\n    return res;\n}"
   dependsOn: []
-  isVerificationFile: true
-  path: test/AOJ/ALDS1_5_D.test.cpp
+  isVerificationFile: false
+  path: Math/Combinatorics/inversion-number.hpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/AOJ/ALDS1_5_D.test.cpp
+documentation_of: Math/Combinatorics/inversion-number.hpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/ALDS1_5_D.test.cpp
-- /verify/test/AOJ/ALDS1_5_D.test.cpp.html
-title: test/AOJ/ALDS1_5_D.test.cpp
+- /library/Math/Combinatorics/inversion-number.hpp
+- /library/Math/Combinatorics/inversion-number.hpp.html
+title: Math/Combinatorics/inversion-number.hpp
 ---

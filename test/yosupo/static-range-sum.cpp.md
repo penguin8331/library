@@ -3,10 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links:
+    - https://judge.yosupo.jp/problem/static_range_sum
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -17,24 +19,25 @@ data:
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/combinatorics/inversion-number.hpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: algorithm/section-sum.hpp:\
     \ line -1: no such header\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
-    \n#include \"template/template.hpp\"\n#include \"math/combinatorics/inversion-number.hpp\"\
-    \n\nint main() {\n    int N;\n    cin >> N;\n    vector<int> A(N);\n    for (int\
-    \ i = 0; i < N; i++) {\n        cin >> A[i];\n    }\n    cout << inversion_number(A)\
-    \ << endl;\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
+    \ \"template/template.hpp\"\n#include \"algorithm/section-sum.hpp\"\n\nint main()\
+    \ {\n    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n    for (int\
+    \ i = 0; i < N; i++) {\n        int a;\n        cin >> a;\n        A.update(i,\
+    \ a);\n    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n        int l,\
+    \ r;\n        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n    }\n}"
   dependsOn: []
-  isVerificationFile: true
-  path: test/AOJ/ALDS1_5_D.test.cpp
+  isVerificationFile: false
+  path: test/yosupo/static-range-sum.cpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/AOJ/ALDS1_5_D.test.cpp
+documentation_of: test/yosupo/static-range-sum.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/ALDS1_5_D.test.cpp
-- /verify/test/AOJ/ALDS1_5_D.test.cpp.html
-title: test/AOJ/ALDS1_5_D.test.cpp
+- /library/test/yosupo/static-range-sum.cpp
+- /library/test/yosupo/static-range-sum.cpp.html
+title: test/yosupo/static-range-sum.cpp
 ---

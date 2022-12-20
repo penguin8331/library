@@ -13,14 +13,8 @@ data:
     path: test/AOJ/ALDS1_1_C.test.cpp
     title: test/AOJ/ALDS1_1_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/AOJ/ALDS1_5_D.test.cpp
-    title: test/AOJ/ALDS1_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_A.test.cpp
     title: test/AOJ/DSL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/example.test.cpp
-    title: test/example.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -63,12 +57,10 @@ data:
   timestamp: '2022-12-20 12:47:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/example.test.cpp
   - test/AOJ/1160.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
   - test/AOJ/ALDS1_1_C.test.cpp
-  - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

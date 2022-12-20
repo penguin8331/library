@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: GraphTheory/BFS.hpp
-    title: GraphTheory/BFS.hpp
+    path: graph/bfs.hpp
+    title: graph/bfs.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -32,7 +32,7 @@ data:
     \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
     \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
     \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"GraphTheory/BFS.hpp\"\nvector<int> BFS(const vector<vector<int>>\
+    \ MOD = 1e9 + 7;\n#line 1 \"graph/bfs.hpp\"\nvector<int> BFS(const vector<vector<int>>\
     \ &G, int s) {\n    int N = (int)G.size();    // \u9802\u70B9\u6570\n    vector<int>\
     \ dist(N, -1);  // \u3059\u3079\u3066\u306E\u9802\u70B9\u3092\u672A\u8A2A\u554F\
     \u306B\u521D\u671F\u5316\n    queue<int> que;\n\n    // \u521D\u671F\u6761\u4EF6\
@@ -54,8 +54,8 @@ data:
     \  }\n    }\n    auto res = BFS(G, 0);\n    for (int i = 0; i < N; i++) {\n  \
     \      cout << i + 1 << \" \" << res[i] << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\
-    \n#include \"template/template.hpp\"\n#include \"GraphTheory/BFS.hpp\"\n\nint\
-    \ main() {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
+    \n#include \"template/template.hpp\"\n#include \"graph/bfs.hpp\"\n\nint main()\
+    \ {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
     \    for (int i = 0; i < N; i++) {\n        int u, k;\n        cin >> u >> k;\n\
     \        u--;\n        for (int j = 0; j < k; j++) {\n            int v;\n   \
     \         cin >> v;\n            v--;\n            G[u].push_back(v);\n      \
@@ -63,11 +63,11 @@ data:
     \      cout << i + 1 << \" \" << res[i] << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
-  - GraphTheory/BFS.hpp
+  - graph/bfs.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 14:02:12+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp

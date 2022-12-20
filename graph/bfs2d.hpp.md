@@ -8,10 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"GraphTheory/BFS2D.hpp\"\nvector<vector<int>> BFS(int H,\
-    \ int W, const vector<string> &G, pair<int, int> s) {\n    vector<vector<int>>\
-    \ dist(H, vector<int>(W, -1));  //\u3059\u3079\u3066\u306E\u9802\u70B9\u3092\u672A\
-    \u8A2A\u554F\u306B\u521D\u671F\u5316\n    queue<pair<int, int>> que;\n\n    //\u521D\
+  bundledCode: "#line 1 \"graph/bfs2d.hpp\"\nvector<vector<int>> BFS(int H, int W,\
+    \ const vector<string> &G, pair<int, int> s) {\n    vector<vector<int>> dist(H,\
+    \ vector<int>(W, -1));  //\u3059\u3079\u3066\u306E\u9802\u70B9\u3092\u672A\u8A2A\
+    \u554F\u306B\u521D\u671F\u5316\n    queue<pair<int, int>> que;\n\n    //\u521D\
     \u671F\u6761\u4EF6 (\u9802\u70B9s\u3092\u521D\u671F\u9802\u70B9\u3068\u3059\u308B\
     )\n    dist[s.first][s.second] = 0;\n    que.push(s);  // s\u3092\u63A2\u7D22\u6E08\
     \u307F\u9802\u70B9\u306B\n\n    // BFS\u958B\u59CB\n    while (!que.empty()) {\n\
@@ -46,15 +46,15 @@ data:
     }"
   dependsOn: []
   isVerificationFile: false
-  path: GraphTheory/BFS2D.hpp
+  path: graph/bfs2d.hpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: GraphTheory/BFS2D.hpp
+documentation_of: graph/bfs2d.hpp
 layout: document
 redirect_from:
-- /library/GraphTheory/BFS2D.hpp
-- /library/GraphTheory/BFS2D.hpp.html
-title: GraphTheory/BFS2D.hpp
+- /library/graph/bfs2d.hpp
+- /library/graph/bfs2d.hpp.html
+title: graph/bfs2d.hpp
 ---

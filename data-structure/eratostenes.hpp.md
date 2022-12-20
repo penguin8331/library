@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"DataStructure/Eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
+  bundledCode: "#line 1 \"data-structure/eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
     \ primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n    vector<int>\
     \ min_factor;\n\n    Eratos(int MAX) : primes(),\n                      isprime(MAX\
     \ + 1, true),\n                      mebius(MAX + 1, 1),\n                   \
@@ -74,16 +74,16 @@ data:
     \     isprime[j] = false;\n            }\n        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: DataStructure/Eratostenes.hpp
+  path: data-structure/eratostenes.hpp
   requiredBy: []
-  timestamp: '2022-12-20 16:50:57+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_1_C.test.cpp
-documentation_of: DataStructure/Eratostenes.hpp
+documentation_of: data-structure/eratostenes.hpp
 layout: document
 redirect_from:
-- /library/DataStructure/Eratostenes.hpp
-- /library/DataStructure/Eratostenes.hpp.html
-title: DataStructure/Eratostenes.hpp
+- /library/data-structure/eratostenes.hpp
+- /library/data-structure/eratostenes.hpp.html
+title: data-structure/eratostenes.hpp
 ---

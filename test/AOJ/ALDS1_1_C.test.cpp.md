@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':x:'
-    path: DataStructure/Eratostenes.hpp
-    title: DataStructure/Eratostenes.hpp
+    path: data-structure/eratostenes.hpp
+    title: data-structure/eratostenes.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -32,7 +32,7 @@ data:
     \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
     \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
     \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"DataStructure/Eratostenes.hpp\"\nstruct Eratos {\n\
+    \ MOD = 1e9 + 7;\n#line 1 \"data-structure/eratostenes.hpp\"\nstruct Eratos {\n\
     \    vector<int> primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n\
     \    vector<int> min_factor;\n\n    Eratos(int MAX) : primes(),\n            \
     \          isprime(MAX + 1, true),\n                      mebius(MAX + 1, 1),\n\
@@ -67,17 +67,17 @@ data:
     \ int ans = 0;\n    for (int i = 0; i < N; i++) {\n        int a;\n        cin\
     \ >> a;\n        ans += era.isprime(a);\n    }\n    cout << ans << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n#include \"template/template.hpp\"\n#include\"DataStructure/Eratostenes.hpp\"\
+    \n#include \"template/template.hpp\"\n#include \"data-structure/eratostenes.hpp\"\
     \n\nint main() {\n    IsPrime era(100000000);\n    int N;\n    cin >> N;\n   \
     \ int ans = 0;\n    for (int i = 0; i < N; i++) {\n        int a;\n        cin\
     \ >> a;\n        ans += era.isprime(a);\n    }\n    cout << ans << endl;\n}"
   dependsOn:
   - template/template.hpp
-  - DataStructure/Eratostenes.hpp
+  - data-structure/eratostenes.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 16:54:48+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

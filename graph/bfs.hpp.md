@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"GraphTheory/BFS.hpp\"\nvector<int> BFS(const vector<vector<int>>\
+  bundledCode: "#line 1 \"graph/bfs.hpp\"\nvector<int> BFS(const vector<vector<int>>\
     \ &G, int s) {\n    int N = (int)G.size();    // \u9802\u70B9\u6570\n    vector<int>\
     \ dist(N, -1);  // \u3059\u3079\u3066\u306E\u9802\u70B9\u3092\u672A\u8A2A\u554F\
     \u306B\u521D\u671F\u5316\n    queue<int> que;\n\n    // \u521D\u671F\u6761\u4EF6\
@@ -43,16 +43,16 @@ data:
     }"
   dependsOn: []
   isVerificationFile: false
-  path: GraphTheory/BFS.hpp
+  path: graph/bfs.hpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_11_C.test.cpp
-documentation_of: GraphTheory/BFS.hpp
+documentation_of: graph/bfs.hpp
 layout: document
 redirect_from:
-- /library/GraphTheory/BFS.hpp
-- /library/GraphTheory/BFS.hpp.html
-title: GraphTheory/BFS.hpp
+- /library/graph/bfs.hpp
+- /library/graph/bfs.hpp.html
+title: graph/bfs.hpp
 ---

@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"DataStructure/priority_deque.hpp\"\ntemplate <class T>\n\
+  bundledCode: "#line 1 \"data-structure/priority_deque.hpp\"\ntemplate <class T>\n\
     struct priority_deque {\n    vector<T> d;\n    priority_deque() {}\n    priority_deque(const\
     \ vector<T>& d_) : d(d_) { make_heap(); }\n    template <class Iter>\n    priority_deque(Iter\
     \ first, Iter last) : d(first, last) {\n        make_heap();\n    }\n    void\
@@ -75,15 +75,15 @@ data:
     \ d[k]);\n            k = p;\n        }\n        return k;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: DataStructure/priority_deque.hpp
+  path: data-structure/priority_deque.hpp
   requiredBy: []
-  timestamp: '2022-12-20 12:47:13+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/priority_deque.hpp
+documentation_of: data-structure/priority_deque.hpp
 layout: document
 redirect_from:
-- /library/DataStructure/priority_deque.hpp
-- /library/DataStructure/priority_deque.hpp.html
-title: DataStructure/priority_deque.hpp
+- /library/data-structure/priority_deque.hpp
+- /library/data-structure/priority_deque.hpp.html
+title: data-structure/priority_deque.hpp
 ---

@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: DataStructure/UnionFind.hpp
-    title: DataStructure/UnionFind.hpp
+    path: data-structure/union-find.hpp
+    title: data-structure/union-find.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -32,10 +32,10 @@ data:
     \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
     \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
     \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"DataStructure/UnionFind.hpp\"\nstruct UnionFind {\n\
-    \    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n, -1)\
-    \ {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n \
-    \       if (par[x] < 0)\n            return x;\n        else\n            return\
+    \ MOD = 1e9 + 7;\n#line 1 \"data-structure/union-find.hpp\"\nstruct UnionFind\
+    \ {\n    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n,\
+    \ -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n\
+    \        if (par[x] < 0)\n            return x;\n        else\n            return\
     \ par[x] = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return\
     \ root(x) == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
     \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
@@ -51,18 +51,18 @@ data:
     \ x >> y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else\
     \ {\n            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \n#include \"template/template.hpp\"\n#include \"DataStructure/UnionFind.hpp\"\
+    \n#include \"template/template.hpp\"\n#include \"data-structure/union-find.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
     \  for (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >>\
     \ x >> y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else\
     \ {\n            cout << uf.issame(x, y) << endl;\n        }\n    }\n}"
   dependsOn:
   - template/template.hpp
-  - DataStructure/UnionFind.hpp
+  - data-structure/union-find.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-20 12:59:12+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_A.test.cpp

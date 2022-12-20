@@ -8,8 +8,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"GraphTheory/Dijkstra.hpp\"\nstruct Edge {\n    long long\
-    \ to;\n    long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
+  bundledCode: "#line 1 \"graph/dijkstra.hpp\"\nstruct Edge {\n    long long to;\n\
+    \    long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
     \ &G, int s) {\n    int N = G.size();\n    vector<long long> dis(N, INF);\n  \
     \  priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long\
     \ long, int>>> pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\
@@ -37,15 +37,15 @@ data:
     \ e.to);\n            }\n        }\n    }\n}"
   dependsOn: []
   isVerificationFile: false
-  path: GraphTheory/Dijkstra.hpp
+  path: graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2022-12-20 15:08:38+09:00'
+  timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: GraphTheory/Dijkstra.hpp
+documentation_of: graph/dijkstra.hpp
 layout: document
 redirect_from:
-- /library/GraphTheory/Dijkstra.hpp
-- /library/GraphTheory/Dijkstra.hpp.html
-title: GraphTheory/Dijkstra.hpp
+- /library/graph/dijkstra.hpp
+- /library/graph/dijkstra.hpp.html
+title: graph/dijkstra.hpp
 ---
