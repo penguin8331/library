@@ -4,11 +4,11 @@ data:
   - name: Algorithm
     pages:
     - icon: ':warning:'
-      path: Algorithm/Compress.hpp
-      title: Algorithm/Compress.hpp
-    - icon: ':warning:'
       path: Algorithm/Compress2D.hpp
       title: Algorithm/Compress2D.hpp
+    - icon: ':warning:'
+      path: Algorithm/compress.hpp
+      title: Algorithm/compress.hpp
     - icon: ':warning:'
       path: Algorithm/section-sum.hpp
       title: Algorithm/section-sum.hpp
