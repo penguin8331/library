@@ -30,10 +30,13 @@ data:
     \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
     \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
     \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
-    \ = b, true) : (false)); }\n#line 1 \"DataStructure/UnionFind.hpp\"\nstruct UnionFind\
-    \ {\n    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n,\
-    \ -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n\
-    \        if (par[x] < 0)\n            return x;\n        else\n            return\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"DataStructure/UnionFind.hpp\"\nstruct UnionFind {\n\
+    \    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n, -1)\
+    \ {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n \
+    \       if (par[x] < 0)\n            return x;\n        else\n            return\
     \ par[x] = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return\
     \ root(x) == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
     \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
@@ -60,7 +63,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/UnionFind_Checker.test.cpp
   requiredBy: []
-  timestamp: '2022-12-19 21:41:34+09:00'
+  timestamp: '2022-12-20 12:47:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/UnionFind_Checker.test.cpp

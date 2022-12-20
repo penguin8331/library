@@ -26,12 +26,14 @@ data:
     \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
     \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
     \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
-    \ = b, true) : (false)); }\n#line 3 \"test/example.test.cpp\"\n\nint main() {\n\
-    \    int N;\n    cin >> N;\n    vector<int> S(N);\n    for (int i = 0; i < N;\
-    \ i++) {\n        cin >> S[i];\n    }\n    int Q;\n    cin >> Q;\n    int cnt\
-    \ = 0;\n    while (Q--) {\n        int t_i;\n        cin >> t_i;\n        cnt\
-    \ += binary_search(all(S), t_i);\n    }\n    cout << cnt << endl;\n    return\
-    \ 0;\n}\n"
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 3 \"test/example.test.cpp\"\n\nint main() {\n    int N;\n\
+    \    cin >> N;\n    vector<int> S(N);\n    for (int i = 0; i < N; i++) {\n   \
+    \     cin >> S[i];\n    }\n    int Q;\n    cin >> Q;\n    int cnt = 0;\n    while\
+    \ (Q--) {\n        int t_i;\n        cin >> t_i;\n        cnt += binary_search(all(S),\
+    \ t_i);\n    }\n    cout << cnt << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B\"\
     \n#include \"template/template.hpp\"\n\nint main() {\n    int N;\n    cin >> N;\n\
     \    vector<int> S(N);\n    for (int i = 0; i < N; i++) {\n        cin >> S[i];\n\
@@ -43,7 +45,7 @@ data:
   isVerificationFile: true
   path: test/example.test.cpp
   requiredBy: []
-  timestamp: '2022-12-19 21:41:34+09:00'
+  timestamp: '2022-12-20 12:47:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/example.test.cpp

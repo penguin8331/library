@@ -3,14 +3,39 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
+    - icon: ':warning:'
+      path: DataStructure/BinomialCoefficient.hpp
+      title: DataStructure/BinomialCoefficient.hpp
+    - icon: ':warning:'
+      path: DataStructure/Dynamic_ModularArithmetic.hpp
+      title: DataStructure/Dynamic_ModularArithmetic.hpp
+    - icon: ':warning:'
+      path: DataStructure/Static_ModularArithmetic.hpp
+      title: DataStructure/Static_ModularArithmetic.hpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.hpp
       title: DataStructure/UnionFind.hpp
+    - icon: ':warning:'
+      path: DataStructure/priority_deque.hpp
+      title: DataStructure/priority_deque.hpp
+  - name: GraphTheory
+    pages:
+    - icon: ':warning:'
+      path: GraphTheory/BFS.hpp
+      title: GraphTheory/BFS.hpp
+    - icon: ':warning:'
+      path: GraphTheory/BFS2D.hpp
+      title: GraphTheory/BFS2D.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/Yosupo
+    pages:
+    - icon: ':warning:'
+      path: test/Yosupo/Solution1.cpp
+      title: test/Yosupo/Solution1.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
