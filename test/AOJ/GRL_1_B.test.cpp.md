@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/bellman-ford.hpp
     title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
@@ -44,24 +44,26 @@ data:
     \ es(E);\n    for (int i = 0; i < E; i++) {\n        Edge a;\n        cin >> a.from\
     \ >> a.to >> a.cost;\n        es[i] = a;\n    }\n    vector<ll> dis(V);\n    if\
     \ (bellman_ford(es, V, r, dis)) {\n        cout << \"NEGATIVE CYCLE\" << endl;\n\
-    \    } else {\n        for (int i = 0; i < V; i++) {\n            cout << dis[i]\
-    \ << endl;\n        }\n    }\n}\n"
+    \    } else {\n        for (int i = 0; i < V; i++) {\n            if (dis[i] ==\
+    \ INF) {\n                cout << \"INF\" << endl;\n            } else {\n   \
+    \             cout << dis[i] << endl;\n            }\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n#include \"template/template.hpp\"\n#include \"graph/bellman-ford.hpp\"\n\n\
     int main() {\n    int V, E, r;\n    cin >> V >> E >> r;\n    vector<Edge> es(E);\n\
     \    for (int i = 0; i < E; i++) {\n        Edge a;\n        cin >> a.from >>\
     \ a.to >> a.cost;\n        es[i] = a;\n    }\n    vector<ll> dis(V);\n    if (bellman_ford(es,\
     \ V, r, dis)) {\n        cout << \"NEGATIVE CYCLE\" << endl;\n    } else {\n \
-    \       for (int i = 0; i < V; i++) {\n            cout << dis[i] << endl;\n \
-    \       }\n    }\n}"
+    \       for (int i = 0; i < V; i++) {\n            if (dis[i] == INF) {\n    \
+    \            cout << \"INF\" << endl;\n            } else {\n                cout\
+    \ << dis[i] << endl;\n            }\n        }\n    }\n}"
   dependsOn:
   - template/template.hpp
   - graph/bellman-ford.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 22:37:59+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-21 22:45:43+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_B.test.cpp
 layout: document

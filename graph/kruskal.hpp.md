@@ -64,8 +64,5 @@ data:
   - test/AOJ/GRL_2_A.test.cpp
 documentation_of: graph/kruskal.hpp
 layout: document
-redirect_from:
-- /library/graph/kruskal.hpp
-- /library/graph/kruskal.hpp.html
-title: graph/kruskal.hpp
+title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
 ---

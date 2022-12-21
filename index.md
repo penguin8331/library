@@ -43,7 +43,7 @@ data:
         \u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
+      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
     - icon: ':warning:'
       path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
       title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217(\u5FA9\u5143\u3042\u308A)"
@@ -63,7 +63,7 @@ data:
       title: geomeny/geomeny.hpp
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
       title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
     - icon: ':heavy_check_mark:'
@@ -87,7 +87,7 @@ data:
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
-      title: graph/kruskal.hpp
+      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
@@ -99,6 +99,9 @@ data:
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient-naivety.hpp
       title: "\u4E8C\u9805\u4FC2\u6570"
+    - icon: ':warning:'
+      path: math/combinatorics/binomial-coefficient.hpp
+      title: math/combinatorics/binomial-coefficient.hpp
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
@@ -110,9 +113,6 @@ data:
       title: next_combination
   - name: math/number
     pages:
-    - icon: ':warning:'
-      path: math/number/binomial-coefficient.hpp
-      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
     - icon: ':warning:'
       path: math/number/dec-to-n.hpp
       title: "10\u9032\u6570\u3092N\u9032\u6570\u306B\u5909\u63DB"
@@ -149,7 +149,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -188,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_B.test.cpp
       title: test/AOJ/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'

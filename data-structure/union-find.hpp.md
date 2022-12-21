@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
-    title: graph/kruskal.hpp
+    title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/1160.test.cpp
