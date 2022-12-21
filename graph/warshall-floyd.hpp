@@ -1,4 +1,4 @@
-void warshallfloyd(vector<vector<long long>> dp, int V) {
+void warshallfloyd(vector<vector<long long>> &dp, int V) {
     // i->jの経路についてi->k->jを検討する
     for (int k = 0; k < V; ++k) {
         for (int i = 0; i < V; ++i) {

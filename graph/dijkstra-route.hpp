@@ -2,10 +2,16 @@ struct Edge {
     long long to;
     long long cost;
 };
-void dijkstra(const vector<vector<Edge>> &G, int s, vector<long long> &dis, vector<int> &prev) {
+Edge make_edge(int to, int cost) {
+    Edge a;
+    a.to = to;
+    a.cost = cost;
+    return a;
+}
+vector<long long> dijkstra(const vector<vector<Edge>> &G, int s, vector<int> &prev) {
     int N = G.size();
-    dis.resize(N, INF);
-    prev.resize(N, -1);  // 初期化
+    vector<long long> dis(N, INF);
+    prev.assign(N, -1);  // 初期化
     priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;
     dis[s] = 0;
     pq.emplace(dis[s], s);
@@ -24,6 +30,7 @@ void dijkstra(const vector<vector<Edge>> &G, int s, vector<long long> &dis, vect
             }
         }
     }
+    return dis;
 }
 vector<int> get_path(const vector<int> &prev, int t) {
     vector<int> path;
