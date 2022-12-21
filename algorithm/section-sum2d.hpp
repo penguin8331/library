@@ -1,17 +1,24 @@
 template <class T>
-vector<vector<T>> pre_process(vector<vector<T>> const &a) {
-    int H = (int)a.size();
-    int W = (int)a[0].size();
-    vector<vector<T>> res(H + 1, vector<T>(W + 1));
-    for (int h = 1; h < H + 1; h++) {
-        for (int w = 1; w < W + 1; w++) {
-            res[h][w] = a[h - 1][w - 1] + res[h][w - 1] + res[h - 1][w] - res[h - 1][w - 1];
+struct sectionsum2d {
+    vector<vector<T>> data;
+
+    sectionsum2d(int H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}
+
+    void update(int x, int y, const T& z) {
+        x++;
+        y++;
+        data[x][y] = z;
+    }
+
+    void build() {
+        for (int i = 1; i < data.size(); i++) {
+            for (int j = 1; j < data[i].size(); j++) {
+                data[i][j] += data[i][j - 1] + data[i - 1][j] - data[i - 1][j - 1];
+            }
         }
     }
-    return res;
-}
-// [h1,h2)×[w1,w2) の区間和を求める
-template <class T>
-T query(int h1, int h2, int w1, int w2, vector<vector<T>> const &S) {
-    return S[h2][w2] - S[h1][w2] - S[h2][w1] + S[h1][w1];
-}
+
+    T get(int sx, int sy, int gx, int gy) const {
+        return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);
+    }
+};
