@@ -17,7 +17,7 @@ data:
       title: algorithm/section-sum.hpp
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum2d.hpp
-      title: algorithm/section-sum2d.hpp
+      title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'

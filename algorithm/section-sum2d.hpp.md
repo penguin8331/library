@@ -40,8 +40,5 @@ data:
   - test/AOJ/0560.test.cpp
 documentation_of: algorithm/section-sum2d.hpp
 layout: document
-redirect_from:
-- /library/algorithm/section-sum2d.hpp
-- /library/algorithm/section-sum2d.hpp.html
-title: algorithm/section-sum2d.hpp
+title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
 ---
