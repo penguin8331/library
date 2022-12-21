@@ -3,7 +3,7 @@ title: ベルマンフォード法
 documentation_of: //graph/bellman-ford.hpp
 ---
 
-##　概要
+## 概要
 
 $bellmanford(Es,s,t,dis)$<br>
 入力: 全ての辺$Es$, 頂点数$V$, 開始点 $s$, 最短経路を記録する$dis$<br>

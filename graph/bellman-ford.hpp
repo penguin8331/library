@@ -3,7 +3,6 @@ struct Edge {
     long long to;
     long long cost;
 };
-const long long INF = 1LL << 60;
 bool bellman_ford(const vector<Edge> &Es, int V, int s, vector<long long> &dis) {
     dis.resize(V, INF);
     dis[s] = 0;

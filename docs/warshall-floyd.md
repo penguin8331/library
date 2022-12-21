@@ -1,7 +1,9 @@
 ---
 title: Warshall-Floyd法
-documentation_of: //graph/warshall-floyd
+documentation_of: //graph/warshall-floyd.hpp
 ---
+
+## 概要
 
 $dp[a][b]$ := $a$ から $b$ への距離として初期化しておいて、アルゴリズム終了後には<br>
 $dp[a][b]$ := $a$ から $b$ への最短距離が格納される。注意点として、初期化時に $dp[a][a]$ = 0 となるようにする必要がある。なお負閉路判定に用いることもできて、
