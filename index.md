@@ -11,7 +11,7 @@ data:
       title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':warning:'
       path: algorithm/doubling.hpp
-      title: algorithm/doubling.hpp
+      title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: "\u7D2F\u7A4D\u548C"
@@ -69,15 +69,34 @@ data:
       title: geomeny/geomeny.hpp
   - name: graph
     pages:
+    - icon: ':warning:'
+      path: graph/bellman-ford.hpp
+      title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
     - icon: ':heavy_check_mark:'
       path: graph/bfs.hpp
-      title: graph/bfs.hpp
+      title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
     - icon: ':warning:'
       path: graph/bfs2d.hpp
-      title: graph/bfs2d.hpp
+      title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
+    - icon: ':warning:'
+      path: graph/dfs.hpp
+      title: graph/dfs.hpp
+    - icon: ':warning:'
+      path: graph/dfs2d.hpp
+      title: graph/dfs2d.hpp
+    - icon: ':warning:'
+      path: graph/dijkstra-route.hpp
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
+        \u308A)"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
-      title: graph/dijkstra.hpp
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+    - icon: ':warning:'
+      path: graph/low-link.hpp
+      title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
+    - icon: ':warning:'
+      path: graph/warshall-floyd.hpp
+      title: graph/warshall-floyd.hpp
   - name: math/combinatorics
     pages:
     - icon: ':warning:'
@@ -96,7 +115,7 @@ data:
     pages:
     - icon: ':warning:'
       path: math/number/dec-to-n.hpp
-      title: "10\u9032\u6CD5\u306E\u3082\u306E\u3092N\u9032\u6CD5\u306B\u5909\u63DB"
+      title: "10\u9032\u6570\u3092N\u9032\u6570\u306B\u5909\u63DB"
     - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: "\u7D04\u6570\u5217\u6319"
@@ -105,7 +124,7 @@ data:
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
     - icon: ':warning:'
       path: math/number/n-to-dec.hpp
-      title: "N\u9032\u6CD5\u306E\u3082\u306E\u309210\u9032\u6CD5\u306B\u5909\u63DB"
+      title: "N\u9032\u6570\u309210\u9032\u6570\u306B\u5909\u63DB"
     - icon: ':warning:'
       path: math/number/pow.hpp
       title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"

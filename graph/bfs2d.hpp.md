@@ -53,8 +53,5 @@ data:
   verifiedWith: []
 documentation_of: graph/bfs2d.hpp
 layout: document
-redirect_from:
-- /library/graph/bfs2d.hpp
-- /library/graph/bfs2d.hpp.html
-title: graph/bfs2d.hpp
+title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
 ---

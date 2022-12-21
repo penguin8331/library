@@ -34,11 +34,7 @@ data:
     \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
     \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
     \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};\nstruct IsPrime {\n    vector<bool> isprime;\n\n\
-    \    IsPrime(int MAX) : isprime(MAX + 1, true) {\n        isprime[0] = isprime[1]\
-    \ = false;\n        for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i])\
-    \ continue;\n            for (int j = i * 2; j <= MAX; j += i) {\n           \
-    \     isprime[j] = false;\n            }\n        }\n    }\n};\n"
+    \      return res;\n    }\n};\n"
   code: "struct Eratos {\n    vector<int> primes;\n    vector<bool> isprime;\n   \
     \ vector<int> mebius;\n    vector<int> min_factor;\n\n    Eratos(int MAX) : primes(),\n\
     \                      isprime(MAX + 1, true),\n                      mebius(MAX\
@@ -64,16 +60,12 @@ data:
     \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
     \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
     \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};\nstruct IsPrime {\n    vector<bool> isprime;\n\n\
-    \    IsPrime(int MAX) : isprime(MAX + 1, true) {\n        isprime[0] = isprime[1]\
-    \ = false;\n        for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i])\
-    \ continue;\n            for (int j = i * 2; j <= MAX; j += i) {\n           \
-    \     isprime[j] = false;\n            }\n        }\n    }\n};"
+    \      return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/eratostenes.hpp
   requiredBy: []
-  timestamp: '2022-12-20 21:47:53+09:00'
+  timestamp: '2022-12-21 16:26:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/eratostenes.hpp

@@ -27,5 +27,5 @@ data:
   verifiedWith: []
 documentation_of: math/number/dec-to-n.hpp
 layout: document
-title: "10\u9032\u6CD5\u306E\u3082\u306E\u3092N\u9032\u6CD5\u306B\u5909\u63DB"
+title: "10\u9032\u6570\u3092N\u9032\u6570\u306B\u5909\u63DB"
 ---

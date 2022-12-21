@@ -35,8 +35,5 @@ data:
   verifiedWith: []
 documentation_of: algorithm/doubling.hpp
 layout: document
-redirect_from:
-- /library/algorithm/doubling.hpp
-- /library/algorithm/doubling.hpp.html
-title: algorithm/doubling.hpp
+title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
 ---
