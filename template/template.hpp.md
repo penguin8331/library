@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/AOJ/GRL_1_B.cpp
+    title: test/AOJ/GRL_1_B.cpp
+  - icon: ':warning:'
+    path: test/AOJ/GRL_2_A.cpp
+    title: test/AOJ/GRL_2_A.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0560.test.cpp
@@ -98,7 +104,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy: []
+  requiredBy:
+  - test/AOJ/GRL_2_A.cpp
+  - test/AOJ/GRL_1_B.cpp
   timestamp: '2022-12-21 18:41:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

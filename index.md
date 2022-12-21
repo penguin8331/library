@@ -24,9 +24,6 @@ data:
       path: data-structure/binary-indexed-tree.hpp
       title: Binary Indexed Tree
     - icon: ':warning:'
-      path: data-structure/binomial-coefficient.hpp
-      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
-    - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
     - icon: ':warning:'
@@ -88,6 +85,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+    - icon: ':warning:'
+      path: graph/kruskal.hpp
+      title: graph/kruskal.hpp
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
@@ -110,6 +110,9 @@ data:
       title: next_combination
   - name: math/number
     pages:
+    - icon: ':warning:'
+      path: math/number/binomial-coefficient.hpp
+      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
     - icon: ':warning:'
       path: math/number/dec-to-n.hpp
       title: "10\u9032\u6570\u3092N\u9032\u6570\u306B\u5909\u63DB"
@@ -149,6 +152,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/AOJ
+    pages:
+    - icon: ':warning:'
+      path: test/AOJ/GRL_1_B.cpp
+      title: test/AOJ/GRL_1_B.cpp
+    - icon: ':warning:'
+      path: test/AOJ/GRL_2_A.cpp
+      title: test/AOJ/GRL_2_A.cpp
   verificationCategories:
   - name: test/AOJ
     pages:

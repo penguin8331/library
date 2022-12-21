@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/kruskal.hpp
+    title: graph/kruskal.hpp
+  - icon: ':warning:'
+    path: test/AOJ/GRL_2_A.cpp
+    title: test/AOJ/GRL_2_A.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/1160.test.cpp
@@ -45,7 +51,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.hpp
-  requiredBy: []
+  requiredBy:
+  - test/AOJ/GRL_2_A.cpp
+  - graph/kruskal.hpp
   timestamp: '2022-12-20 21:47:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

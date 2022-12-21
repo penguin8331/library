@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/AOJ/GRL_1_B.cpp
+    title: test/AOJ/GRL_1_B.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -10,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"graph/bellman-ford.hpp\"\nstruct Edge {\n    long long from;\n\
     \    long long to;\n    long long cost;\n};\nbool bellman_ford(const vector<Edge>\
-    \ &Es, int V, int s, vector<long long> &dis) {\n    dis.resize(V, INF);\n    dis[s]\
+    \ &Es, int V, int s, vector<long long> &dis) {\n    dis.assign(V, INF);\n    dis[s]\
     \ = 0;\n    int cnt = 0;\n    while (cnt < V) {\n        bool end = true;\n  \
     \      for (auto e : Es) {\n            if (dis[e.from] != INF && dis[e.from]\
     \ + e.cost < dis[e.to]) {\n                dis[e.to] = dis[e.from] + e.cost;\n\
@@ -18,7 +21,7 @@ data:
     \        cnt++;\n    }\n    return (cnt == V);\n}\n"
   code: "struct Edge {\n    long long from;\n    long long to;\n    long long cost;\n\
     };\nbool bellman_ford(const vector<Edge> &Es, int V, int s, vector<long long>\
-    \ &dis) {\n    dis.resize(V, INF);\n    dis[s] = 0;\n    int cnt = 0;\n    while\
+    \ &dis) {\n    dis.assign(V, INF);\n    dis[s] = 0;\n    int cnt = 0;\n    while\
     \ (cnt < V) {\n        bool end = true;\n        for (auto e : Es) {\n       \
     \     if (dis[e.from] != INF && dis[e.from] + e.cost < dis[e.to]) {\n        \
     \        dis[e.to] = dis[e.from] + e.cost;\n                end = false;\n   \
@@ -27,8 +30,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/bellman-ford.hpp
-  requiredBy: []
-  timestamp: '2022-12-21 16:37:09+09:00'
+  requiredBy:
+  - test/AOJ/GRL_1_B.cpp
+  timestamp: '2022-12-21 22:31:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/bellman-ford.hpp

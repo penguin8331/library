@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/binomial-coefficient.hpp\"\ntemplate <class\
+  bundledCode: "#line 1 \"math/number/binomial-coefficient.hpp\"\ntemplate <class\
     \ T>\nstruct BiCoef {\n    vector<T> fact_, inv_, finv_;\n    constexpr BiCoef()\
     \ {}\n    constexpr BiCoef(int n) noexcept : fact_(n, 1), inv_(n, 1), finv_(n,\
     \ 1) {\n        init(n);\n    }\n    constexpr void init(int n) noexcept {\n \
@@ -42,12 +42,12 @@ data:
     \   }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/binomial-coefficient.hpp
+  path: math/number/binomial-coefficient.hpp
   requiredBy: []
-  timestamp: '2022-12-20 21:47:53+09:00'
+  timestamp: '2022-12-21 22:31:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: data-structure/binomial-coefficient.hpp
+documentation_of: math/number/binomial-coefficient.hpp
 layout: document
 title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
 ---
