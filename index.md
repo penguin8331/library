@@ -101,7 +101,7 @@ data:
       title: "\u4E8C\u9805\u4FC2\u6570"
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient.hpp
-      title: math/combinatorics/binomial-coefficient.hpp
+      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
