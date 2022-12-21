@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
@@ -52,7 +52,9 @@ data:
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
     \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
     \     cin >> s >> t;\n        G[s].push_back(t);\n        G[t].push_back(s);\n\
-    \    }\n    LowLink A;\n    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n\
+    \    }\n    LowLink A;\n    A.solve(G);\n    auto ans = A.brs;\n    for (int i\
+    \ = 0; i < ans.size(); i++) {\n        if (ans[i].first > ans[i].second) {\n \
+    \           swap(ans[i].first, ans[i].second);\n        }\n    }\n    sort(all(ans));\n\
     \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
     \ \" << ans[i].second << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
@@ -60,17 +62,19 @@ data:
     \ {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
     \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
     \        G[s].push_back(t);\n        G[t].push_back(s);\n    }\n    LowLink A;\n\
-    \    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n    for (int i =\
-    \ 0; i < ans.size(); i++) {\n        cout << ans[i].first << \" \" << ans[i].second\
-    \ << endl;\n    }\n}"
+    \    A.solve(G);\n    auto ans = A.brs;\n    for (int i = 0; i < ans.size(); i++)\
+    \ {\n        if (ans[i].first > ans[i].second) {\n            swap(ans[i].first,\
+    \ ans[i].second);\n        }\n    }\n    sort(all(ans));\n    for (int i = 0;\
+    \ i < ans.size(); i++) {\n        cout << ans[i].first << \" \" << ans[i].second\
+    \ << endl;\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/low-link.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 18:54:53+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-21 19:06:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_B.test.cpp
 layout: document

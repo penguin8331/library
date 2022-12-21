@@ -88,7 +88,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
@@ -146,7 +146,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -191,7 +191,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_A.test.cpp
       title: test/AOJ/GRL_3_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_B.test.cpp
       title: test/AOJ/GRL_3_B.test.cpp
     - icon: ':heavy_check_mark:'
