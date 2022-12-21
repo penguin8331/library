@@ -16,7 +16,6 @@ int main() {
     A.solve(G);
     auto ans = A.brs;
     sort(all(ans));
-    debug(ans);
     for (int i = 0; i < ans.size(); i++) {
         cout << ans[i].first << " " << ans[i].second << endl;
     }
