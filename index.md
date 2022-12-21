@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/compress2d.hpp
       title: algorithm/compress2d.hpp
+    - icon: ':warning:'
+      path: algorithm/doubling.hpp
+      title: algorithm/doubling.hpp
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: algorithm/section-sum.hpp
@@ -38,6 +41,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: data-structure/union-find.hpp
+  - name: dynamic-programming
+    pages:
+    - icon: ':warning:'
+      path: dynamic-programming/longest-common-subsequence-restoration.hpp
+      title: dynamic-programming/longest-common-subsequence-restoration.hpp
+    - icon: ':warning:'
+      path: dynamic-programming/longest-common-subsequence.hpp
+      title: dynamic-programming/longest-common-subsequence.hpp
+    - icon: ':warning:'
+      path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
+      title: dynamic-programming/longest-increasing-subsequence-restoration.hpp
+    - icon: ':warning:'
+      path: dynamic-programming/longest-increasing-subsequence.hpp
+      title: dynamic-programming/longest-increasing-subsequence.hpp
+    - icon: ':warning:'
+      path: dynamic-programming/traveling-salesman-problem.hpp
+      title: dynamic-programming/traveling-salesman-problem.hpp
   - name: geomeny
     pages:
     - icon: ':warning:'
