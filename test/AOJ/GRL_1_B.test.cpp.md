@@ -1,21 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/bellman-ford.hpp
     title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
-  bundledCode: "#line 1 \"test/AOJ/GRL_1_B.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_1_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -37,7 +39,7 @@ data:
     \ end = true;\n        for (auto e : Es) {\n            if (dis[e.from] != INF\
     \ && dis[e.from] + e.cost < dis[e.to]) {\n                dis[e.to] = dis[e.from]\
     \ + e.cost;\n                end = false;\n            }\n        }\n        if\
-    \ (end) break;\n        cnt++;\n    }\n    return (cnt == V);\n}\n#line 4 \"test/AOJ/GRL_1_B.cpp\"\
+    \ (end) break;\n        cnt++;\n    }\n    return (cnt == V);\n}\n#line 4 \"test/AOJ/GRL_1_B.test.cpp\"\
     \n\nint main() {\n    int V, E, r;\n    cin >> V >> E >> r;\n    vector<Edge>\
     \ es(E);\n    for (int i = 0; i < E; i++) {\n        Edge a;\n        cin >> a.from\
     \ >> a.to >> a.cost;\n        es[i] = a;\n    }\n    vector<ll> dis(V);\n    if\
@@ -55,16 +57,16 @@ data:
   dependsOn:
   - template/template.hpp
   - graph/bellman-ford.hpp
-  isVerificationFile: false
-  path: test/AOJ/GRL_1_B.cpp
+  isVerificationFile: true
+  path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 22:31:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2022-12-21 22:37:59+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/AOJ/GRL_1_B.cpp
+documentation_of: test/AOJ/GRL_1_B.test.cpp
 layout: document
 redirect_from:
-- /library/test/AOJ/GRL_1_B.cpp
-- /library/test/AOJ/GRL_1_B.cpp.html
-title: test/AOJ/GRL_1_B.cpp
+- /verify/test/AOJ/GRL_1_B.test.cpp
+- /verify/test/AOJ/GRL_1_B.test.cpp.html
+title: test/AOJ/GRL_1_B.test.cpp
 ---

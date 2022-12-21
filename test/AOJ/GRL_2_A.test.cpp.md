@@ -4,21 +4,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
-  bundledCode: "#line 1 \"test/AOJ/GRL_2_A.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_2_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -58,9 +60,9 @@ data:
     \        sum = 0;\n        for (auto e : edges) {\n            if (!uft.issame(e.u,\
     \ e.v)) {  // \u9589\u8DEF\u306B\u306A\u3089\u306A\u3051\u308C\u3070\u52A0\u3048\
     \u308B\n                uft.unite(e.u, e.v);\n                sum += e.cost;\n\
-    \            }\n        }\n    }\n};\n#line 4 \"test/AOJ/GRL_2_A.cpp\"\n\nint\
-    \ main() {\n    int V, E;\n    cin >> V >> E;\n    vector<Edge> es(E);\n    for\
-    \ (int i = 0; i < E; i++) {\n        cin >> es[i].u >> es[i].v >> es[i].cost;\n\
+    \            }\n        }\n    }\n};\n#line 4 \"test/AOJ/GRL_2_A.test.cpp\"\n\n\
+    int main() {\n    int V, E;\n    cin >> V >> E;\n    vector<Edge> es(E);\n   \
+    \ for (int i = 0; i < E; i++) {\n        cin >> es[i].u >> es[i].v >> es[i].cost;\n\
     \    }\n    Kruskal A(es, V);\n    cout << A.sum << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n#include \"template/template.hpp\"\n#include \"graph/kruskal.hpp\"\n\nint main()\
@@ -71,16 +73,16 @@ data:
   - template/template.hpp
   - graph/kruskal.hpp
   - data-structure/union-find.hpp
-  isVerificationFile: false
-  path: test/AOJ/GRL_2_A.cpp
+  isVerificationFile: true
+  path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 22:31:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2022-12-21 22:37:59+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/GRL_2_A.cpp
+documentation_of: test/AOJ/GRL_2_A.test.cpp
 layout: document
 redirect_from:
-- /library/test/AOJ/GRL_2_A.cpp
-- /library/test/AOJ/GRL_2_A.cpp.html
-title: test/AOJ/GRL_2_A.cpp
+- /verify/test/AOJ/GRL_2_A.test.cpp
+- /verify/test/AOJ/GRL_2_A.test.cpp.html
+title: test/AOJ/GRL_2_A.test.cpp
 ---

@@ -43,7 +43,7 @@ data:
         \u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
-      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
+      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
     - icon: ':warning:'
       path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
       title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217(\u5FA9\u5143\u3042\u308A)"
@@ -63,7 +63,7 @@ data:
       title: geomeny/geomeny.hpp
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/bellman-ford.hpp
       title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
     - icon: ':heavy_check_mark:'
@@ -85,7 +85,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
     - icon: ':heavy_check_mark:'
@@ -149,17 +149,9 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-  - name: test/AOJ
-    pages:
-    - icon: ':warning:'
-      path: test/AOJ/GRL_1_B.cpp
-      title: test/AOJ/GRL_1_B.cpp
-    - icon: ':warning:'
-      path: test/AOJ/GRL_2_A.cpp
-      title: test/AOJ/GRL_2_A.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -196,9 +188,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/GRL_1_B.test.cpp
+      title: test/AOJ/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_C.test.cpp
       title: test/AOJ/GRL_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/GRL_2_A.test.cpp
+      title: test/AOJ/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_A.test.cpp
       title: test/AOJ/GRL_3_A.test.cpp

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/AOJ/GRL_1_B.cpp
-    title: test/AOJ/GRL_1_B.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/GRL_1_B.test.cpp
+    title: test/AOJ/GRL_1_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/bellman-ford.hpp\"\nstruct Edge {\n    long long from;\n\
@@ -30,11 +30,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/bellman-ford.hpp
-  requiredBy:
-  - test/AOJ/GRL_1_B.cpp
+  requiredBy: []
   timestamp: '2022-12-21 22:31:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/GRL_1_B.test.cpp
 documentation_of: graph/bellman-ford.hpp
 layout: document
 title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"

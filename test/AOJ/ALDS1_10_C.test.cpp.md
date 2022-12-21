@@ -3,8 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/longest-common-subsequence.hpp
-    title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
-  - icon: ':heavy_check_mark:'
+    title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
