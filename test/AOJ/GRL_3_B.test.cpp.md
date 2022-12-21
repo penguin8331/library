@@ -53,23 +53,23 @@ data:
     \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
     \     cin >> s >> t;\n        G[s].push_back(t);\n        G[t].push_back(s);\n\
     \    }\n    LowLink A;\n    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n\
-    \    debug(ans);\n    for (int i = 0; i < ans.size(); i++) {\n        cout <<\
-    \ ans[i].first << \" \" << ans[i].second << endl;\n    }\n}\n"
+    \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
+    \ \" << ans[i].second << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
     \n#include \"template/template.hpp\"\n#include \"graph/low-link.hpp\"\n\nint main()\
     \ {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
     \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
     \        G[s].push_back(t);\n        G[t].push_back(s);\n    }\n    LowLink A;\n\
-    \    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n    debug(ans);\n\
-    \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
-    \ \" << ans[i].second << endl;\n    }\n}"
+    \    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n    for (int i =\
+    \ 0; i < ans.size(); i++) {\n        cout << ans[i].first << \" \" << ans[i].second\
+    \ << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
   - graph/low-link.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 18:41:55+09:00'
+  timestamp: '2022-12-21 18:54:53+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_B.test.cpp

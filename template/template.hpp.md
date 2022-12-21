@@ -54,7 +54,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
   - icon: ':heavy_check_mark:'

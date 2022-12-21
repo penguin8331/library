@@ -81,7 +81,7 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
         \u308A)"
@@ -205,7 +205,7 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp
     - icon: ':heavy_check_mark:'

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra-route.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
       \u308A)"
@@ -10,9 +10,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -56,7 +56,8 @@ data:
     \ G(N, vector<Edge>(0));\n    for (int i = 0; i < M; i++) {\n        int a, b,\
     \ c;\n        cin >> a >> b >> c;\n        G[a].push_back(make_edge(b, c));\n\
     \    }\n    vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto\
-    \ ans = get_path(prev, t);\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
+    \ ans = get_path(prev, t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n\
+    \        return 0;\n    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
     \    for (int i = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \"\
     \ \" << ans[i + 1] << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
@@ -65,7 +66,8 @@ data:
     \ G(N, vector<Edge>(0));\n    for (int i = 0; i < M; i++) {\n        int a, b,\
     \ c;\n        cin >> a >> b >> c;\n        G[a].push_back(make_edge(b, c));\n\
     \    }\n    vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto\
-    \ ans = get_path(prev, t);\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
+    \ ans = get_path(prev, t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n\
+    \        return 0;\n    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
     \    for (int i = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \"\
     \ \" << ans[i + 1] << endl;\n    }\n}"
   dependsOn:
@@ -74,8 +76,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/shortes-path.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 18:41:55+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-21 18:54:53+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/shortes-path.test.cpp
 layout: document
