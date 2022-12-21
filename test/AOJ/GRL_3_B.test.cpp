@@ -15,6 +15,11 @@ int main() {
     LowLink A;
     A.solve(G);
     auto ans = A.brs;
+    for (int i = 0; i < ans.size(); i++) {
+        if (ans[i].first > ans[i].second) {
+            swap(ans[i].first, ans[i].second);
+        }
+    }
     sort(all(ans));
     for (int i = 0; i < ans.size(); i++) {
         cout << ans[i].first << " " << ans[i].second << endl;
