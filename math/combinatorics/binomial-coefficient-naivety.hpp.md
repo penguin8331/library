@@ -24,5 +24,5 @@ data:
   verifiedWith: []
 documentation_of: math/combinatorics/binomial-coefficient-naivety.hpp
 layout: document
-title: "\u4E8C\u9805\u4FC2\u6570(\u611A\u76F4)"
+title: "\u4E8C\u9805\u4FC2\u6570"
 ---

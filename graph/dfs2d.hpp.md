@@ -34,8 +34,5 @@ data:
   verifiedWith: []
 documentation_of: graph/dfs2d.hpp
 layout: document
-redirect_from:
-- /library/graph/dfs2d.hpp
-- /library/graph/dfs2d.hpp.html
-title: graph/dfs2d.hpp
+title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
 ---

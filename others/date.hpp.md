@@ -42,8 +42,5 @@ data:
   verifiedWith: []
 documentation_of: others/date.hpp
 layout: document
-redirect_from:
-- /library/others/date.hpp
-- /library/others/date.hpp.html
-title: others/date.hpp
+title: "\u65E5\u4ED8"
 ---

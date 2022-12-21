@@ -80,10 +80,10 @@ data:
       title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
     - icon: ':warning:'
       path: graph/dfs.hpp
-      title: graph/dfs.hpp
+      title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22"
     - icon: ':warning:'
       path: graph/dfs2d.hpp
-      title: graph/dfs2d.hpp
+      title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
     - icon: ':warning:'
       path: graph/dijkstra-route.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
@@ -96,12 +96,12 @@ data:
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':warning:'
       path: graph/warshall-floyd.hpp
-      title: graph/warshall-floyd.hpp
+      title: "Warshall-Floyd\u6CD5"
   - name: math/combinatorics
     pages:
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient-naivety.hpp
-      title: "\u4E8C\u9805\u4FC2\u6570(\u611A\u76F4)"
+      title: "\u4E8C\u9805\u4FC2\u6570"
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
@@ -138,7 +138,7 @@ data:
     pages:
     - icon: ':warning:'
       path: others/date.hpp
-      title: others/date.hpp
+      title: "\u65E5\u4ED8"
   - name: string
     pages:
     - icon: ':warning:'

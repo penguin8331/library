@@ -33,8 +33,15 @@ data:
   verifiedWith: []
 documentation_of: graph/warshall-floyd.hpp
 layout: document
-redirect_from:
-- /library/graph/warshall-floyd.hpp
-- /library/graph/warshall-floyd.hpp.html
-title: graph/warshall-floyd.hpp
+title: "Warshall-Floyd\u6CD5"
 ---
+
+## 概要
+
+$dp[a][b]$ := $a$ から $b$ への距離として初期化しておいて、アルゴリズム終了後には<br>
+$dp[a][b]$ := $a$ から $b$ への最短距離が格納される。注意点として、初期化時に $dp[a][a]$ = 0 となるようにする必要がある。なお負閉路判定に用いることもできて、
+* 負閉路がなければ、任意の頂点 $a$ に対して $dp[a][a]$ = 0<br>
+* 負閉路があったら、ある頂点 $a$ に対して $dp[a][a]$ < 0<br>
+  
+辺の追加クエリについては$a$,$b$間に辺が追加されたとき、すべての$i$->$j$について$i$->$a$->$b$->$j$を検討するだけで良いためO(V^2)
+*/
