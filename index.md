@@ -46,16 +46,16 @@ data:
     - icon: ':warning:'
       path: dynamic-programming/longest-common-subsequence-restoration.hpp
       title: dynamic-programming/longest-common-subsequence-restoration.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
       title: dynamic-programming/longest-common-subsequence.hpp
     - icon: ':warning:'
       path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
       title: dynamic-programming/longest-increasing-subsequence-restoration.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-increasing-subsequence.hpp
       title: dynamic-programming/longest-increasing-subsequence.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
       title: dynamic-programming/traveling-salesman-problem.hpp
   - name: geomeny
@@ -139,6 +139,9 @@ data:
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/ALDS1_10_C.test.cpp
+      title: test/AOJ/ALDS1_10_C.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -147,6 +150,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DPL_1_d.test.cpp
+      title: test/AOJ/DPL_1_d.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DPL_2_A.test.cpp
+      title: test/AOJ/DPL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
