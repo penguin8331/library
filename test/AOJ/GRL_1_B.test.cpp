@@ -16,7 +16,11 @@ int main() {
         cout << "NEGATIVE CYCLE" << endl;
     } else {
         for (int i = 0; i < V; i++) {
-            cout << dis[i] << endl;
+            if (dis[i] == INF) {
+                cout << "INF" << endl;
+            } else {
+                cout << dis[i] << endl;
+            }
         }
     }
 }
