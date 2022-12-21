@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: algorithm/section-sum.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/section-sum2d.hpp
       title: algorithm/section-sum2d.hpp
   - name: data-structure
@@ -88,7 +88,7 @@ data:
     - icon: ':warning:'
       path: math/number/pow.hpp
       title: math/number/pow.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/prime-factorization.hpp
       title: math/number/prime-factorization.hpp
     - icon: ':warning:'
@@ -113,6 +113,9 @@ data:
   - name: test/AOJ
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/0560.test.cpp
+      title: test/AOJ/0560.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp
     - icon: ':heavy_check_mark:'
@@ -130,6 +133,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/NTL_1_A.test.cpp
+      title: test/AOJ/NTL_1_A.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'
