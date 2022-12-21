@@ -1,5 +1,5 @@
 ---
-title: Warshall-Floyd法
+title: ワーシャルフロイド法
 documentation_of: //graph/warshall-floyd.hpp
 ---
 
