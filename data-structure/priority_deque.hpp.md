@@ -82,8 +82,5 @@ data:
   verifiedWith: []
 documentation_of: data-structure/priority_deque.hpp
 layout: document
-redirect_from:
-- /library/data-structure/priority_deque.hpp
-- /library/data-structure/priority_deque.hpp.html
-title: data-structure/priority_deque.hpp
+title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
 ---

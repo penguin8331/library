@@ -32,8 +32,5 @@ data:
   - test/AOJ/NTL_1_A.test.cpp
 documentation_of: math/number/prime-factorization.hpp
 layout: document
-redirect_from:
-- /library/math/number/prime-factorization.hpp
-- /library/math/number/prime-factorization.hpp.html
-title: math/number/prime-factorization.hpp
+title: "\u7D20\u56E0\u6570\u5206\u89E3"
 ---

@@ -29,8 +29,5 @@ data:
   - test/AOJ/NTL_1_B.test.cpp
 documentation_of: math/combinatorics/modpow.hpp
 layout: document
-redirect_from:
-- /library/math/combinatorics/modpow.hpp
-- /library/math/combinatorics/modpow.hpp.html
-title: math/combinatorics/modpow.hpp
+title: modpow
 ---

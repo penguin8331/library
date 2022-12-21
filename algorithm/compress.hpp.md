@@ -35,8 +35,5 @@ data:
   verifiedWith: []
 documentation_of: algorithm/compress.hpp
 layout: document
-redirect_from:
-- /library/algorithm/compress.hpp
-- /library/algorithm/compress.hpp.html
-title: algorithm/compress.hpp
+title: "\u5EA7\u6A19\u5727\u7E2E"
 ---

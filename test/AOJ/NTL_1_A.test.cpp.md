@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/number/prime-factorization.hpp
-    title: math/number/prime-factorization.hpp
+    title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

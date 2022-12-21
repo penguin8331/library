@@ -53,8 +53,5 @@ data:
   - test/AOJ/DSL_1_A.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
-redirect_from:
-- /library/data-structure/union-find.hpp
-- /library/data-structure/union-find.hpp.html
-title: data-structure/union-find.hpp
+title: UnionFind
 ---

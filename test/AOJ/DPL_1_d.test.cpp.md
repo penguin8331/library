@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/longest-increasing-subsequence.hpp
-    title: dynamic-programming/longest-increasing-subsequence.hpp
+    title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

@@ -81,8 +81,5 @@ data:
   verifiedWith: []
 documentation_of: data-structure/static-modular-arithmetic.hpp
 layout: document
-redirect_from:
-- /library/data-structure/static-modular-arithmetic.hpp
-- /library/data-structure/static-modular-arithmetic.hpp.html
-title: data-structure/static-modular-arithmetic.hpp
+title: "\u9759\u7684modint"
 ---

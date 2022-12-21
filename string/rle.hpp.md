@@ -28,8 +28,5 @@ data:
   verifiedWith: []
 documentation_of: string/rle.hpp
 layout: document
-redirect_from:
-- /library/string/rle.hpp
-- /library/string/rle.hpp.html
-title: string/rle.hpp
+title: "\u9023\u9577\u5727\u7E2E"
 ---

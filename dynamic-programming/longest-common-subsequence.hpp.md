@@ -36,8 +36,5 @@ data:
   - test/AOJ/ALDS1_10_C.test.cpp
 documentation_of: dynamic-programming/longest-common-subsequence.hpp
 layout: document
-redirect_from:
-- /library/dynamic-programming/longest-common-subsequence.hpp
-- /library/dynamic-programming/longest-common-subsequence.hpp.html
-title: dynamic-programming/longest-common-subsequence.hpp
+title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
 ---

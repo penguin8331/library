@@ -25,8 +25,5 @@ data:
   verifiedWith: []
 documentation_of: math/number/rand-int.hpp
 layout: document
-redirect_from:
-- /library/math/number/rand-int.hpp
-- /library/math/number/rand-int.hpp.html
-title: math/number/rand-int.hpp
+title: "\u4E71\u6570\u751F\u6210(Xorshift)"
 ---

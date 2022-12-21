@@ -24,8 +24,5 @@ data:
   verifiedWith: []
 documentation_of: math/number/pow.hpp
 layout: document
-redirect_from:
-- /library/math/number/pow.hpp
-- /library/math/number/pow.hpp.html
-title: math/number/pow.hpp
+title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
 ---

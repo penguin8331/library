@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
-    title: math/combinatorics/inversion-number.hpp
+    title: "\u8EE2\u5012\u6570"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
@@ -50,8 +50,5 @@ data:
   - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: data-structure/binary-indexed-tree.hpp
 layout: document
-redirect_from:
-- /library/data-structure/binary-indexed-tree.hpp
-- /library/data-structure/binary-indexed-tree.hpp.html
-title: data-structure/binary-indexed-tree.hpp
+title: Binary Indexed Tree
 ---

@@ -5,16 +5,16 @@ data:
     pages:
     - icon: ':warning:'
       path: algorithm/compress.hpp
-      title: algorithm/compress.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: algorithm/compress2d.hpp
-      title: algorithm/compress2d.hpp
+      title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':warning:'
       path: algorithm/doubling.hpp
       title: algorithm/doubling.hpp
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
-      title: algorithm/section-sum.hpp
+      title: "\u7D2F\u7A4D\u548C"
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum2d.hpp
       title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
@@ -22,42 +22,43 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
-      title: data-structure/binary-indexed-tree.hpp
+      title: Binary Indexed Tree
     - icon: ':warning:'
       path: data-structure/binomial-coefficient.hpp
-      title: data-structure/binomial-coefficient.hpp
+      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
-      title: data-structure/dynamic_modular-arithmetic.hpp
+      title: "\u52D5\u7684modint"
     - icon: ':warning:'
       path: data-structure/eratostenes.hpp
-      title: data-structure/eratostenes.hpp
+      title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':warning:'
       path: data-structure/priority_deque.hpp
-      title: data-structure/priority_deque.hpp
+      title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
     - icon: ':warning:'
       path: data-structure/static-modular-arithmetic.hpp
-      title: data-structure/static-modular-arithmetic.hpp
+      title: "\u9759\u7684modint"
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
-      title: data-structure/union-find.hpp
+      title: UnionFind
   - name: dynamic-programming
     pages:
     - icon: ':warning:'
       path: dynamic-programming/longest-common-subsequence-restoration.hpp
-      title: dynamic-programming/longest-common-subsequence-restoration.hpp
+      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217(\u5FA9\u5143\u3042\
+        \u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
-      title: dynamic-programming/longest-common-subsequence.hpp
+      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
     - icon: ':warning:'
       path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
-      title: dynamic-programming/longest-increasing-subsequence-restoration.hpp
+      title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217(\u5FA9\u5143\u3042\u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-increasing-subsequence.hpp
-      title: dynamic-programming/longest-increasing-subsequence.hpp
+      title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
-      title: dynamic-programming/traveling-salesman-problem.hpp
+      title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C(bitDP)"
   - name: geomeny
     pages:
     - icon: ':warning:'
@@ -81,39 +82,39 @@ data:
     pages:
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient-naivety.hpp
-      title: math/combinatorics/binomial-coefficient-naivety.hpp
+      title: "\u4E8C\u9805\u4FC2\u6570(\u611A\u76F4)"
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
-      title: math/combinatorics/inversion-number.hpp
+      title: "\u8EE2\u5012\u6570"
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/modpow.hpp
-      title: math/combinatorics/modpow.hpp
+      title: modpow
     - icon: ':warning:'
       path: math/combinatorics/next-combination.hpp
-      title: math/combinatorics/next-combination.hpp
+      title: next_combination
   - name: math/number
     pages:
     - icon: ':warning:'
       path: math/number/dec-to-n.hpp
-      title: math/number/dec-to-n.hpp
+      title: "10\u9032\u6CD5\u306E\u3082\u306E\u3092N\u9032\u6CD5\u306B\u5909\u63DB"
     - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
-      title: math/number/divisors.hpp
+      title: "\u7D04\u6570\u5217\u6319"
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
-      title: math/number/isprime.hpp
+      title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
     - icon: ':warning:'
       path: math/number/n-to-dec.hpp
-      title: math/number/n-to-dec.hpp
+      title: "N\u9032\u6CD5\u306E\u3082\u306E\u309210\u9032\u6CD5\u306B\u5909\u63DB"
     - icon: ':warning:'
       path: math/number/pow.hpp
-      title: math/number/pow.hpp
+      title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: math/number/prime-factorization.hpp
-      title: math/number/prime-factorization.hpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3"
     - icon: ':warning:'
       path: math/number/rand-int.hpp
-      title: math/number/rand-int.hpp
+      title: "\u4E71\u6570\u751F\u6210(Xorshift)"
   - name: others
     pages:
     - icon: ':warning:'
@@ -123,7 +124,7 @@ data:
     pages:
     - icon: ':warning:'
       path: string/rle.hpp
-      title: string/rle.hpp
+      title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
     - icon: ':heavy_check_mark:'

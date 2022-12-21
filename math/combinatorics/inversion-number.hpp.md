@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree.hpp
-    title: data-structure/binary-indexed-tree.hpp
+    title: Binary Indexed Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -53,8 +53,5 @@ data:
   - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: math/combinatorics/inversion-number.hpp
 layout: document
-redirect_from:
-- /library/math/combinatorics/inversion-number.hpp
-- /library/math/combinatorics/inversion-number.hpp.html
-title: math/combinatorics/inversion-number.hpp
+title: "\u8EE2\u5012\u6570"
 ---

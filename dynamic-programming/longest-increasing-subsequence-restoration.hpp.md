@@ -38,8 +38,5 @@ data:
   verifiedWith: []
 documentation_of: dynamic-programming/longest-increasing-subsequence-restoration.hpp
 layout: document
-redirect_from:
-- /library/dynamic-programming/longest-increasing-subsequence-restoration.hpp
-- /library/dynamic-programming/longest-increasing-subsequence-restoration.hpp.html
-title: dynamic-programming/longest-increasing-subsequence-restoration.hpp
+title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217(\u5FA9\u5143\u3042\u308A)"
 ---

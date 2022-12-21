@@ -22,8 +22,5 @@ data:
   verifiedWith: []
 documentation_of: math/combinatorics/next-combination.hpp
 layout: document
-redirect_from:
-- /library/math/combinatorics/next-combination.hpp
-- /library/math/combinatorics/next-combination.hpp.html
-title: math/combinatorics/next-combination.hpp
+title: next_combination
 ---

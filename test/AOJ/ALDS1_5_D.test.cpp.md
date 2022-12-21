@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree.hpp
-    title: data-structure/binary-indexed-tree.hpp
+    title: Binary Indexed Tree
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
-    title: math/combinatorics/inversion-number.hpp
+    title: "\u8EE2\u5012\u6570"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

@@ -28,8 +28,5 @@ data:
   - test/AOJ/ALDS1_1_C.test.cpp
 documentation_of: math/number/isprime.hpp
 layout: document
-redirect_from:
-- /library/math/number/isprime.hpp
-- /library/math/number/isprime.hpp.html
-title: math/number/isprime.hpp
+title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
 ---

@@ -49,8 +49,5 @@ data:
   verifiedWith: []
 documentation_of: data-structure/binomial-coefficient.hpp
 layout: document
-redirect_from:
-- /library/data-structure/binomial-coefficient.hpp
-- /library/data-structure/binomial-coefficient.hpp.html
-title: data-structure/binomial-coefficient.hpp
+title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
 ---

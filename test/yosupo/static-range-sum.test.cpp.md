@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: algorithm/section-sum.hpp
-    title: algorithm/section-sum.hpp
+    title: "\u7D2F\u7A4D\u548C"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

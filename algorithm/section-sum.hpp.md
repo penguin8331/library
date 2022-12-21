@@ -37,8 +37,5 @@ data:
   - test/yosupo/static-range-sum.test.cpp
 documentation_of: algorithm/section-sum.hpp
 layout: document
-redirect_from:
-- /library/algorithm/section-sum.hpp
-- /library/algorithm/section-sum.hpp.html
-title: algorithm/section-sum.hpp
+title: "\u7D2F\u7A4D\u548C"
 ---

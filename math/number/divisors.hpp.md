@@ -32,8 +32,5 @@ data:
   - test/AOJ/ITP1_3_D.test.cpp
 documentation_of: math/number/divisors.hpp
 layout: document
-redirect_from:
-- /library/math/number/divisors.hpp
-- /library/math/number/divisors.hpp.html
-title: math/number/divisors.hpp
+title: "\u7D04\u6570\u5217\u6319"
 ---

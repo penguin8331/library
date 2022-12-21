@@ -50,8 +50,5 @@ data:
   - test/AOJ/DSL_4_A.test.cpp
 documentation_of: algorithm/compress2d.hpp
 layout: document
-redirect_from:
-- /library/algorithm/compress2d.hpp
-- /library/algorithm/compress2d.hpp.html
-title: algorithm/compress2d.hpp
+title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
 ---
