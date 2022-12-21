@@ -1,4 +1,4 @@
 ---
 title: エラトステネスの篩
-documentation_of: //data-structure/eratostenes.hpp
+documentation_of: //math/number/eratostenes.hpp
 ---
