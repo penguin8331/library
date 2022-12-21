@@ -65,7 +65,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: math/combinatorics/inversion-number.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/modpow.hpp
       title: math/combinatorics/modpow.hpp
     - icon: ':warning:'
@@ -76,10 +76,10 @@ data:
     - icon: ':warning:'
       path: math/number/dec-to-n.hpp
       title: math/number/dec-to-n.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: math/number/divisors.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: math/number/isprime.hpp
     - icon: ':warning:'
@@ -122,6 +122,9 @@ data:
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/ALDS1_1_C.test.cpp
+      title: test/AOJ/ALDS1_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
@@ -134,8 +137,14 @@ data:
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/ITP1_3_D.test.cpp
+      title: test/AOJ/ITP1_3_D.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_A.test.cpp
       title: test/AOJ/NTL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/NTL_1_B.test.cpp
+      title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'
