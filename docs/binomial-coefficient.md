@@ -1,4 +1,4 @@
 ---
 title: 二項係数テーブル
-documentation_of: //data-structure/binomial-coefficient.hpp
+documentation_of: //math/number/binomial-coefficient.hpp
 ---
