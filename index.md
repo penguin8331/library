@@ -118,7 +118,7 @@ data:
       title: "\u7D04\u6570\u5217\u6319"
     - icon: ':warning:'
       path: math/number/eratostenes.hpp
-      title: math/number/eratostenes.hpp
+      title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"

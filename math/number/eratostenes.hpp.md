@@ -70,8 +70,5 @@ data:
   verifiedWith: []
 documentation_of: math/number/eratostenes.hpp
 layout: document
-redirect_from:
-- /library/math/number/eratostenes.hpp
-- /library/math/number/eratostenes.hpp.html
-title: math/number/eratostenes.hpp
+title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
 ---
