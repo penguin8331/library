@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/modpow.hpp
-    title: modpow
+  - icon: ':question:'
+    path: graph/low-link.hpp
+    title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -29,23 +29,27 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ template/template.hpp: line 19: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \r\n#include \"template/template.hpp\"\r\n#include \"math/combinatorics/modpow.hpp\"\
-    \r\n\r\nint main() {\r\n    int m, n;\r\n    cin >> m >> n;\r\n    cout << modpow(m,\
-    \ n, MOD)<<endl;\r\n}"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
+    \n#include \"template/template.hpp\"\n#include \"graph/low-link.hpp\"\n\nint main()\
+    \ {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
+    \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
+    \        G[s].push_back(t);\n        G[t].push_back(s);\n    }\n    LowLink A;\n\
+    \    A.solve(G);\n    auto ans = A.brs;\n    sort(all(ans));\n    debug(ans);\n\
+    \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
+    \ \" << ans[i].second << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
-  - math/combinatorics/modpow.hpp
+  - graph/low-link.hpp
   isVerificationFile: true
-  path: test/AOJ/NTL_1_B.test.cpp
+  path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
   timestamp: '2022-12-21 18:31:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/AOJ/NTL_1_B.test.cpp
+documentation_of: test/AOJ/GRL_3_B.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/NTL_1_B.test.cpp
-- /verify/test/AOJ/NTL_1_B.test.cpp.html
-title: test/AOJ/NTL_1_B.test.cpp
+- /verify/test/AOJ/GRL_3_B.test.cpp
+- /verify/test/AOJ/GRL_3_B.test.cpp.html
+title: test/AOJ/GRL_3_B.test.cpp
 ---

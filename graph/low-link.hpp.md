@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_3_A.test.cpp
+    title: test/AOJ/GRL_3_A.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/GRL_3_B.test.cpp
+    title: test/AOJ/GRL_3_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/low-link.hpp\"\nstruct LowLink {\n    // main results\n\
@@ -46,8 +52,10 @@ data:
   path: graph/low-link.hpp
   requiredBy: []
   timestamp: '2022-12-21 16:26:56+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/AOJ/GRL_3_B.test.cpp
+  - test/AOJ/GRL_3_A.test.cpp
 documentation_of: graph/low-link.hpp
 layout: document
 title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"

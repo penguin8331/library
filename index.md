@@ -81,17 +81,17 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/dijkstra-route.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
         \u308A)"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
-    - icon: ':warning:'
+    - icon: ':question:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
   - name: math/combinatorics
@@ -146,7 +146,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -186,6 +186,15 @@ data:
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/GRL_1_C.test.cpp
+      title: test/AOJ/GRL_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/GRL_3_A.test.cpp
+      title: test/AOJ/GRL_3_A.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/GRL_3_B.test.cpp
+      title: test/AOJ/GRL_3_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ITP1_3_D.test.cpp
       title: test/AOJ/ITP1_3_D.test.cpp
     - icon: ':heavy_check_mark:'
@@ -196,6 +205,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':x:'
+      path: test/yosupo/shortes-path.test.cpp
+      title: test/yosupo/shortes-path.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
