@@ -33,7 +33,7 @@ data:
   verifiedWith: []
 documentation_of: graph/warshall-floyd.hpp
 layout: document
-title: "Warshall-Floyd\u6CD5"
+title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
 ---
 
 ## 概要

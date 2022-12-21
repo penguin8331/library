@@ -30,9 +30,6 @@ data:
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
     - icon: ':warning:'
-      path: data-structure/eratostenes.hpp
-      title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-    - icon: ':warning:'
       path: data-structure/priority_deque.hpp
       title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
     - icon: ':warning:'
@@ -96,7 +93,7 @@ data:
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':warning:'
       path: graph/warshall-floyd.hpp
-      title: "Warshall-Floyd\u6CD5"
+      title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
   - name: math/combinatorics
     pages:
     - icon: ':warning:'
@@ -119,6 +116,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: "\u7D04\u6570\u5217\u6319"
+    - icon: ':warning:'
+      path: math/number/eratostenes.hpp
+      title: math/number/eratostenes.hpp
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"

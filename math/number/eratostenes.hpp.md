@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
+  bundledCode: "#line 1 \"math/number/eratostenes.hpp\"\nstruct Eratos {\n    vector<int>\
     \ primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n    vector<int>\
     \ min_factor;\n\n    Eratos(int MAX) : primes(),\n                      isprime(MAX\
     \ + 1, true),\n                      mebius(MAX + 1, 1),\n                   \
@@ -63,12 +63,15 @@ data:
     \      return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/eratostenes.hpp
+  path: math/number/eratostenes.hpp
   requiredBy: []
-  timestamp: '2022-12-21 16:26:56+09:00'
+  timestamp: '2022-12-21 17:41:27+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: data-structure/eratostenes.hpp
+documentation_of: math/number/eratostenes.hpp
 layout: document
-title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
+redirect_from:
+- /library/math/number/eratostenes.hpp
+- /library/math/number/eratostenes.hpp.html
+title: math/number/eratostenes.hpp
 ---
