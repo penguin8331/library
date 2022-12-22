@@ -1,8 +1,8 @@
 #include "data-structure/union-find.hpp"
 
 struct Edge {
-    long long u;
-    long long v;
+    long long from;
+    long long to;
     long long cost;
 };
 bool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }  // 辺を直接比較するための関数
@@ -17,8 +17,8 @@ struct Kruskal {
         uft = UnionFind(V);
         sum = 0;
         for (auto e : edges) {
-            if (!uft.issame(e.u, e.v)) {  // 閉路にならなければ加える
-                uft.unite(e.u, e.v);
+            if (!uft.issame(e.from, e.to)) {  // 閉路にならなければ加える
+                uft.unite(e.from, e.to);
                 sum += e.cost;
             }
         }

@@ -7,7 +7,7 @@ int main() {
     cin >> V >> E;
     vector<Edge> es(E);
     for (int i = 0; i < E; i++) {
-        cin >> es[i].u >> es[i].v >> es[i].cost;
+        cin >> es[i].from >> es[i].to >> es[i].cost;
     }
     Kruskal A(es, V);
     cout << A.sum << endl;
