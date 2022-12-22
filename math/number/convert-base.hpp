@@ -1,3 +1,4 @@
+template <class T>
 vector<T> convert_base(T x, T b) {
     vector<T> ret;
     T t = 1, k = abs(b);
