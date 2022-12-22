@@ -117,9 +117,9 @@ data:
       title: next_combination
   - name: math/number
     pages:
-    - icon: ':warning:'
-      path: math/number/dec-to-n.hpp
-      title: "10\u9032\u6570\u3092N\u9032\u6570\u306B\u5909\u63DB"
+    - icon: ':x:'
+      path: math/number/convert-base.hpp
+      title: "\u9032\u6570\u5909\u63DB"
     - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: "\u7D04\u6570\u5217\u6319"
@@ -129,9 +129,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
-    - icon: ':warning:'
-      path: math/number/n-to-dec.hpp
-      title: "N\u9032\u6570\u309210\u9032\u6570\u306B\u5909\u63DB"
     - icon: ':warning:'
       path: math/number/pow.hpp
       title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
@@ -153,12 +150,15 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
+    - icon: ':x:'
+      path: test/AOJ/0233.test.cpp
+      title: test/AOJ/0233.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/0560.test.cpp
       title: test/AOJ/0560.test.cpp
