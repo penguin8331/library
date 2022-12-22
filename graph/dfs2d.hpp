@@ -1,6 +1,4 @@
 vector<vector<bool>> seen;  //訪問済みかどうか v->始点
-const int dx[] = {0, 1, 0, -1};
-const int dy[] = {1, 0, -1, 0};
 void dfs(int H, int W, const vector<string> &G, pair<int, int> v) {
     seen[v.first][v.second] = true;
 
