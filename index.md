@@ -91,6 +91,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
+    - icon: ':warning:'
+      path: graph/prim.hpp
+      title: graph/prim.hpp
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
