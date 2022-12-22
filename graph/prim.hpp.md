@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_12_A.test.cpp
+    title: test/AOJ/ALDS1_12_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/prim.hpp\"\nstruct Edge {\n    int to;\n    long long\
@@ -32,12 +35,10 @@ data:
   path: graph/prim.hpp
   requiredBy: []
   timestamp: '2022-12-22 10:38:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/ALDS1_12_A.test.cpp
 documentation_of: graph/prim.hpp
 layout: document
-redirect_from:
-- /library/graph/prim.hpp
-- /library/graph/prim.hpp.html
-title: graph/prim.hpp
+title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30D7\u30EA\u30E0) $O(V log E)$"
 ---

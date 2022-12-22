@@ -87,13 +87,14 @@ data:
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(|E|log|V|)$"
+      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
+        \ log V)$"
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
-      title: graph/prim.hpp
+      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30D7\u30EA\u30E0) $O(V log E)$"
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
@@ -170,6 +171,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/ALDS1_12_A.test.cpp
+      title: test/AOJ/ALDS1_12_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
