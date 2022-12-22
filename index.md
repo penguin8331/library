@@ -117,7 +117,7 @@ data:
       title: next_combination
   - name: math/number
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number/convert-base.hpp
       title: "\u9032\u6570\u5909\u63DB"
     - icon: ':heavy_check_mark:'
@@ -150,13 +150,13 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/0233.test.cpp
       title: test/AOJ/0233.test.cpp
     - icon: ':heavy_check_mark:'
