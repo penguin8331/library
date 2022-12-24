@@ -20,6 +20,10 @@ data:
       title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - name: data-structure
     pages:
+    - icon: ':warning:'
+      path: data-structure/binary-indexed-tree-raq.hpp
+      title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
+        \u5F97\u306B\u5BFE\u5FDC)"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
       title: Binary Indexed Tree
