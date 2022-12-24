@@ -20,11 +20,11 @@ SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は�
 
 ### 初期化
 
-init(n): サイズ n に初期化
-set(a, v): a 番目の値を v にセットする
-build(): set した値を元にセグメントツリー全体を構築する、O(n)
+init(n): サイズ n に初期化<br>
+set(a, v): a 番目の値を v にセットする<br>
+build(): set した値を元にセグメントツリー全体を構築する、O(n)<br>
 
 ### クエリ
 
 update(a, v): a 番目の値を v に更新する, O(log n)<br>
-get(a, b): 区間 [a, b) についての演算結果を返す, O(log n)
+get(a, b): 区間 [a, b) についての演算結果を返す, O(log n)<br>
