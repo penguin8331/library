@@ -88,7 +88,7 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':heavy_check_mark:'
@@ -166,7 +166,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -232,7 +232,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_B.test.cpp
       title: test/AOJ/GRL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
     - icon: ':heavy_check_mark:'
