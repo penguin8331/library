@@ -36,9 +36,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_A.test.cpp
     title: test/AOJ/DSL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_G.test.cpp
+    title: test/AOJ/DSL_2_G.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_4_A.test.cpp
     title: test/AOJ/DSL_4_A.test.cpp
@@ -78,9 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\"\
@@ -118,12 +121,13 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2022-12-21 18:41:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/1160.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/GRL_2_A.test.cpp
   - test/AOJ/DSL_4_A.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
   - test/AOJ/ALDS1_1_C.test.cpp

@@ -20,7 +20,7 @@ data:
       title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - name: data-structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-raq.hpp
       title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
         \u5F97\u306B\u5BFE\u5FDC)"
@@ -30,7 +30,7 @@ data:
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':warning:'
@@ -166,7 +166,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -205,9 +205,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_A.test.cpp
       title: test/AOJ/DSL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_2_F.test.cpp
       title: test/AOJ/DSL_2_F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DSL_2_G.test.cpp
+      title: test/AOJ/DSL_2_G.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_4_A.test.cpp
       title: test/AOJ/DSL_4_A.test.cpp
