@@ -27,8 +27,14 @@ data:
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
     - icon: ':warning:'
+      path: data-structure/lazy-segment-tree.hpp
+      title: data-structure/lazy-segment-tree.hpp
+    - icon: ':warning:'
       path: data-structure/priority_deque.hpp
       title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
+    - icon: ':warning:'
+      path: data-structure/segment-tree.hpp
+      title: data-structure/segment-tree.hpp
     - icon: ':warning:'
       path: data-structure/static-modular-arithmetic.hpp
       title: "\u9759\u7684modint"
@@ -78,6 +84,9 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
+    - icon: ':warning:'
+      path: graph/diamer-weighted.hpp
+      title: graph/diamer-weighted.hpp
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
@@ -85,6 +94,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+    - icon: ':warning:'
+      path: graph/dijkstra2d.hpp
+      title: graph/dijkstra2d.hpp
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
