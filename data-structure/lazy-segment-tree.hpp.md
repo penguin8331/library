@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/DSL_2_F.test.cpp
+    title: test/AOJ/DSL_2_F.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lazy-segment-tree.hpp\"\ntemplate <class\
@@ -94,8 +97,9 @@ data:
   path: data-structure/lazy-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-12-24 10:49:41+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/DSL_2_F.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document
 title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -120,7 +124,7 @@ SegTree(N, fm, fa, fc, identity_monoid, identity_lazy)
   - auto fm = [](long long a, long long b) { return min(a, b); };
   - auto fa = [](long long &a, long long d) { a += d; };
   - auto fc = [](long long &d, long long e) { d += e; };
-  - SegTree<long long, long long> seg(N, fm, fa, fc, (1LL<<60), 0);
+  - Lazy_SegTree<long long, long long> seg(N, fm, fa, fc, (1LL<<60), 0);
 
 ### 初期化
 

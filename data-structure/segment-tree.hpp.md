@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq.test.cpp
+    title: test/yosupo/static-rmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/segment-tree.hpp\"\ntemplate <class Monoid>\n\
@@ -102,8 +105,9 @@ data:
   path: data-structure/segment-tree.hpp
   requiredBy: []
   timestamp: '2022-12-24 10:49:41+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp
 layout: document
 title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -121,7 +125,7 @@ SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は�
 
 ### ex
 - 区間和: SegTree<int> seg(n, [](int a, int b){ return a + b; }, 0);
-- 区間min: SegTree<int> seg(n, [](int a, int b}{ return min(a, b); }, INF);
+- 区間min: SegTree<int> seg(n, [](int a, int b){ return min(a, b); }, INF);
 
 
 ### 初期化
