@@ -5,7 +5,7 @@ data:
     path: data-structure/binary-indexed-tree-raq.hpp
     title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
       \u5F97\u306B\u5BFE\u5FDC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
