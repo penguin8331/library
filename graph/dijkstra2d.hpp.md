@@ -50,8 +50,5 @@ data:
   verifiedWith: []
 documentation_of: graph/dijkstra2d.hpp
 layout: document
-redirect_from:
-- /library/graph/dijkstra2d.hpp
-- /library/graph/dijkstra2d.hpp.html
-title: graph/dijkstra2d.hpp
+title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u30B0\u30EA\u30C3\u30C9)"
 ---

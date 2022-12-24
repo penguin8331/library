@@ -35,8 +35,5 @@ data:
   verifiedWith: []
 documentation_of: graph/diamer-weighted.hpp
 layout: document
-redirect_from:
-- /library/graph/diamer-weighted.hpp
-- /library/graph/diamer-weighted.hpp.html
-title: graph/diamer-weighted.hpp
+title: "\u6728\u306E\u76F4\u5F84"
 ---
