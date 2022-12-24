@@ -15,7 +15,7 @@ SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は�
 
 ### ex
 - 区間和: SegTree<int> seg(n, [](int a, int b){ return a + b; }, 0);
-- 区間min: SegTree<int> seg(n, [](int a, int b}{ return min(a, b); }, INF);
+- 区間min: SegTree<int> seg(n, [](int a, int b){ return min(a, b); }, INF);
 
 
 ### 初期化

@@ -22,7 +22,7 @@ SegTree(N, fm, fa, fc, identity_monoid, identity_lazy)
   - auto fm = [](long long a, long long b) { return min(a, b); };
   - auto fa = [](long long &a, long long d) { a += d; };
   - auto fc = [](long long &d, long long e) { d += e; };
-  - SegTree<long long, long long> seg(N, fm, fa, fc, (1LL<<60), 0);
+  - Lazy_SegTree<long long, long long> seg(N, fm, fa, fc, (1LL<<60), 0);
 
 ### 初期化
 
