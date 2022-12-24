@@ -21,5 +21,6 @@
 "test/AOJ/NTL_1_A.test.cpp": "2022-12-21 18:41:55 +0900",
 "test/AOJ/NTL_1_B.test.cpp": "2022-12-21 18:41:55 +0900",
 "test/yosupo/shortes-path.test.cpp": "2022-12-21 18:54:53 +0900",
-"test/yosupo/static-range-sum.test.cpp": "2022-12-21 18:41:55 +0900"
+"test/yosupo/static-range-sum.test.cpp": "2022-12-21 18:41:55 +0900",
+"test/yosupo/static-rmq.test.cpp": "2022-12-24 11:41:33 +0900"
 }
