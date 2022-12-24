@@ -14,7 +14,7 @@ pair<T, int> dfs(const vector<vector<Edge>> &G, int u, int par) {  // 最遠点�
     return ret;
 }
 template <typename T>
-T tree_diamiter(const vector<vector<Edge>> &G) {
+T tree_diameter(const vector<vector<Edge>> &G) {
     pair<T, int> p = dfs<T>(G, 0, -1);
     pair<T, int> q = dfs<T>(G, p.second, -1);
     return q.first;
