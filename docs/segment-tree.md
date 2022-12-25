@@ -5,13 +5,12 @@ documentation_of: //data-structure/segment-tree.hpp
 
 ## 概要
 
-
 セグメントツリーは二項演算の定義されたモノイド上で定義される<br>
 二項演算関数 f(x, y) を構造体に渡す<br>
 
 ### 宣言
 
-SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は単位元 (min なら INF, + なら 0)<br>
+SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は単位元 (min なら INF, + なら 0)
 
 ### ex
 - 区間和: SegTree<int> seg(n, [](int a, int b){ return a + b; }, 0);

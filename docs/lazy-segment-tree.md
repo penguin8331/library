@@ -14,21 +14,21 @@ documentation_of: //data-structure/lazy-segment-tree.hpp
 
 ### 宣言
 
-SegTree(N, fm, fa, fc, identity_monoid, identity_lazy)
+Lazy_SegTree<int, int> seg(N, fm, fa, fc, identity_monoid, identity_lazy)
 
 ### ex
 
 - starry sky tree (区間加算、区間min取得)
-  - auto fm = [](long long a, long long b) { return min(a, b); };
-  - auto fa = [](long long &a, long long d) { a += d; };
-  - auto fc = [](long long &d, long long e) { d += e; };
-  - Lazy_SegTree<long long, long long> seg(N, fm, fa, fc, (1LL<<60), 0);
+  - auto fm = [](int a, int b) { return min(a, b); };
+  - auto fa = [](int& a, int d) { a += d; };
+  - auto fc = [](int& d, int e) { d += e; };
+  - Lazy_SegTree<int, int> seg(N, fm, fa, fc, (1LL << 60), 0);
 
 ### 初期化
 
 init(n): サイズ n に初期化<br>
 set(a, v): a 番目の値を v にセットする<br>
-build(): set した値を元にセグメントツリー全体を構築する、O(n)<br>
+build(): set した値を元にセグメントツリー全体を構築する、O(n)
 
 ### クエリ
 
