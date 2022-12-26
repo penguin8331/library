@@ -67,16 +67,13 @@ data:
     pages:
     - icon: ':warning:'
       path: geomeny/ccw.hpp
-      title: geomeny/ccw.hpp
+      title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
     - icon: ':warning:'
       path: geomeny/geomeny-others.hpp
       title: geomeny/geomeny-others.hpp
     - icon: ':warning:'
       path: geomeny/geomeny-template.hpp
       title: geomeny/geomeny-template.hpp
-    - icon: ':warning:'
-      path: geomeny/geomeny.hpp
-      title: geomeny/geomeny.hpp
     - icon: ':warning:'
       path: geomeny/is-contain-in-the-triangle.hpp
       title: geomeny/is-contain-in-the-triangle.hpp

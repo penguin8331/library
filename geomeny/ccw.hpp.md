@@ -48,48 +48,44 @@ data:
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
     \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/ccw.hpp\"\n\n\
-    // \u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2\n// \u7C97\n// 1\uFF1A\
-    a-b\u304B\u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\u308A\
-    )\u3001-1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074(\u6642\u8A08\u56DE\
-    \u308A)\u30010\uFF1A\u4E00\u76F4\u7DDA\u4E0A\nint simple_ccw(const Point &a, const\
+    // \u7C97\n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\
+    \u8A08\u56DE\u308A)\u3001-1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074\
+    (\u6642\u8A08\u56DE\u308A)\u30010\uFF1A\u4E00\u76F4\u7DDA\u4E0A\nint simple_ccw(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
+    \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\
+    \n// \u7CBE\n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\
+    \u8A08\u56DE\u308A)\u3001-1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074\
+    (\u6642\u8A08\u56DE\u308A)\n// 2\uFF1Ac-a-b\u306E\u9806\u306B\u4E00\u76F4\u7DDA\
+    \u4E0A\u3001-2\uFF1Aa-b-c\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\u30010\uFF1A\
+    a-c-b\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\nint ccw(const Point &a, const\
     \ Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n\
-    \    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\n// \u7CBE\
-    \n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\
-    \u308A)\u3001-1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074(\u6642\u8A08\
-    \u56DE\u308A)\n// 2\uFF1Ac-a-b\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\u3001\
-    -2\uFF1Aa-b-c\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\u30010\uFF1Aa-c-b\u306E\
-    \u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\nint ccw(const Point &a, const Point &b,\
+    \    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS)\
+    \ return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n\
+    }\n"
+  code: "#include \"geomeny/geomeny-template.hpp\"\n\n// \u7C97\n// 1\uFF1Aa-b\u304B\
+    \u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\u308A)\u3001-1\uFF1A\
+    a-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074(\u6642\u8A08\u56DE\u308A)\u3001\
+    0\uFF1A\u4E00\u76F4\u7DDA\u4E0A\nint simple_ccw(const Point &a, const Point &b,\
     \ const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b\
-    \ - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS) return 2;\n\
-    \    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n}\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\n// \u70B9\u3068\u7DDA\u5206\u306E\
-    \u4F4D\u7F6E\u95A2\u4FC2\n// \u7C97\n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\
-    \u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\u308A)\u3001-1\uFF1Aa-b\u304B\u3089\u898B\
-    \u3066c\u306F\u53F3\u5074(\u6642\u8A08\u56DE\u308A)\u30010\uFF1A\u4E00\u76F4\u7DDA\
-    \u4E0A\nint simple_ccw(const Point &a, const Point &b, const Point &c) {\n   \
-    \ if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS)\
-    \ return -1;\n    return 0;\n}\n\n// \u7CBE\n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066\
-    c\u306F\u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\u308A)\u3001-1\uFF1Aa-b\u304B\u3089\
-    \u898B\u3066c\u306F\u53F3\u5074(\u6642\u8A08\u56DE\u308A)\n// 2\uFF1Ac-a-b\u306E\
-    \u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\u3001-2\uFF1Aa-b-c\u306E\u9806\u306B\u4E00\
-    \u76F4\u7DDA\u4E0A\u30010\uFF1Aa-c-b\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\
-    \nint ccw(const Point &a, const Point &b, const Point &c) {\n    if (cross(b -\
-    \ a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n\
-    \    if (dot(b - a, c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a)\
-    \ - EPS) return -2;\n    return 0;\n}"
+    \ - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\n// \u7CBE\n// 1\uFF1Aa-b\u304B\
+    \u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\u8A08\u56DE\u308A)\u3001-1\uFF1A\
+    a-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074(\u6642\u8A08\u56DE\u308A)\n// 2\uFF1A\
+    c-a-b\u306E\u9806\u306B\u4E00\u76F4\u7DDA\u4E0A\u3001-2\uFF1Aa-b-c\u306E\u9806\
+    \u306B\u4E00\u76F4\u7DDA\u4E0A\u30010\uFF1Aa-c-b\u306E\u9806\u306B\u4E00\u76F4\
+    \u7DDA\u4E0A\nint ccw(const Point &a, const Point &b, const Point &c) {\n    if\
+    \ (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS) return\
+    \ -1;\n    if (dot(b - a, c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c\
+    \ - a) - EPS) return -2;\n    return 0;\n}"
   dependsOn:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
   path: geomeny/ccw.hpp
   requiredBy:
   - geomeny/is-contain-in-the-triangle.hpp
-  timestamp: '2022-12-26 17:52:10+09:00'
+  timestamp: '2022-12-26 18:00:05+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geomeny/ccw.hpp
 layout: document
-redirect_from:
-- /library/geomeny/ccw.hpp
-- /library/geomeny/ccw.hpp.html
-title: geomeny/ccw.hpp
+title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
 ---
