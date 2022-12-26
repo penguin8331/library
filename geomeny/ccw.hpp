@@ -1,6 +1,5 @@
 #include "geomeny/geomeny-template.hpp"
 
-// 点と線分の位置関係
 // 粗
 // 1：a-bから見てcは左側(反時計回り)、-1：a-bから見てcは右側(時計回り)、0：一直線上
 int simple_ccw(const Point &a, const Point &b, const Point &c) {
