@@ -44,26 +44,28 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/area_polygon.hpp\"\
-    \n\nDD CalcArea(const vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i\
-    \ = 0; i < pol.size(); ++i) {\n        res += cross(pol[i], pol[(i + 1) % pol.size()]);\n\
-    \    }\n    return res / 2.0L;\n}\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nDD CalcArea(const vector<Point>\
-    \ &pol) {\n    DD res = 0.0;\n    for (int i = 0; i < pol.size(); ++i) {\n   \
-    \     res += cross(pol[i], pol[(i + 1) % pol.size()]);\n    }\n    return res\
-    \ / 2.0L;\n}"
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/is-convex.hpp\"\
+    \n\nint ccw_for_isconvex(const Point &a, const Point &b, const Point &c) {\n \
+    \   if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS)\
+    \ return -1;\n    return 0;\n}\n\nbool isConvex(vector<Point> &ps) {\n    int\
+    \ n = (int)ps.size();\n    for (int i = 0; i < n; ++i) {\n        if (ccw_for_isconvex(ps[i],\
+    \ ps[(i + 1) % n], ps[(i + 2) % n]) == -1) return false;\n    }\n    return true;\n\
+    }\n"
+  code: "#include \"geomeny/geomeny-template.hpp\"\n\nint ccw_for_isconvex(const Point\
+    \ &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return\
+    \ 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\nbool\
+    \ isConvex(vector<Point> &ps) {\n    int n = (int)ps.size();\n    for (int i =\
+    \ 0; i < n; ++i) {\n        if (ccw_for_isconvex(ps[i], ps[(i + 1) % n], ps[(i\
+    \ + 2) % n]) == -1) return false;\n    }\n    return true;\n}"
   dependsOn:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
-  path: geomeny/area_polygon.hpp
+  path: geomeny/is-convex.hpp
   requiredBy: []
-  timestamp: '2022-12-26 21:52:32+09:00'
+  timestamp: '2022-12-26 22:03:16+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: geomeny/area_polygon.hpp
+documentation_of: geomeny/is-convex.hpp
 layout: document
-redirect_from:
-- /library/geomeny/area_polygon.hpp
-- /library/geomeny/area_polygon.hpp.html
-title: geomeny/area_polygon.hpp
+title: "\u51F8\u6027\u5224\u5B9A"
 ---

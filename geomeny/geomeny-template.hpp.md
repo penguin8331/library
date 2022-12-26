@@ -3,11 +3,17 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: geomeny/area_polygon.hpp
-    title: geomeny/area_polygon.hpp
+    path: geomeny/area-polygon.hpp
+    title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
   - icon: ':warning:'
     path: geomeny/ccw.hpp
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
+  - icon: ':warning:'
+    path: geomeny/convex-cut.hpp
+    title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
+  - icon: ':warning:'
+    path: geomeny/convex-hull.hpp
+    title: "\u51F8\u5305"
   - icon: ':warning:'
     path: geomeny/crosspoint.hpp
     title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u70B9"
@@ -20,6 +26,9 @@ data:
   - icon: ':warning:'
     path: geomeny/is-contain-in-the-triangle.hpp
     title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+  - icon: ':warning:'
+    path: geomeny/is-convex.hpp
+    title: "\u51F8\u6027\u5224\u5B9A"
   - icon: ':warning:'
     path: geomeny/is-inter.hpp
     title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
@@ -103,13 +112,16 @@ data:
   isVerificationFile: false
   path: geomeny/geomeny-template.hpp
   requiredBy:
+  - geomeny/convex-hull.hpp
   - geomeny/is-inter.hpp
+  - geomeny/area-polygon.hpp
   - geomeny/distance.hpp
   - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/crosspoint.hpp
   - geomeny/ccw.hpp
-  - geomeny/area_polygon.hpp
   - geomeny/projection.hpp
+  - geomeny/convex-cut.hpp
+  - geomeny/is-convex.hpp
   - geomeny/is-contain-in-the-triangle.hpp
   timestamp: '2022-12-26 17:52:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
