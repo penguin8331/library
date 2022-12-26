@@ -4,13 +4,13 @@ data:
   - icon: ':warning:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+  - icon: ':warning:'
+    path: geomeny/projection.hpp
+    title: "\u5C04\u5F71"
   _extendedRequiredBy:
   - icon: ':warning:'
     path: geomeny/distance.hpp
     title: "\u5186\u3084\u76F4\u7DDA\u306E\u8DDD\u96E2"
-  - icon: ':warning:'
-    path: geomeny/is-inter.hpp
-    title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -54,22 +54,43 @@ data:
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
-    }\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj(const Point &p, const\
-    \ Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n   \
-    \ return l[0] + (l[1] - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l)\
-    \ {\n    return p + (proj(p, l) - p) * 2;\n}"
+    }\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
+    \ &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n    if\
+    \ (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS) return\
+    \ 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n}\n\
+    bool isinterPL(const Point &p, const Line &l) {\n    return (abs(p - proj(p, l))\
+    \ < EPS);\n}\nbool isinterPS(const Point &p, const Line &s) {\n    return (ccw_for_dis(s[0],\
+    \ s[1], p) == 0);\n}\nbool isinterLL(const Line &l, const Line &m) {\n    return\
+    \ (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS ||\n            abs(cross(l[1] -\
+    \ l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const Line &s, const Line &t)\
+    \ {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n    if (eq(t[0], t[1]))\
+    \ return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0], s[1], t[0]) * ccw_for_dis(s[0],\
+    \ s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0], t[1], s[0]) * ccw_for_dis(t[0],\
+    \ t[1], s[1]) <= 0);\n}\n"
+  code: "#include \"geomeny/projection.hpp\"\n\nint ccw_for_dis(const Point &a, const\
+    \ Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n\
+    \    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS)\
+    \ return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n\
+    }\nbool isinterPL(const Point &p, const Line &l) {\n    return (abs(p - proj(p,\
+    \ l)) < EPS);\n}\nbool isinterPS(const Point &p, const Line &s) {\n    return\
+    \ (ccw_for_dis(s[0], s[1], p) == 0);\n}\nbool isinterLL(const Line &l, const Line\
+    \ &m) {\n    return (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS ||\n         \
+    \   abs(cross(l[1] - l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const Line\
+    \ &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n \
+    \   if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
+    \ s[1], t[0]) * ccw_for_dis(s[0], s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0],\
+    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}"
   dependsOn:
+  - geomeny/projection.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
-  path: geomeny/projection.hpp
+  path: geomeny/is-inter.hpp
   requiredBy:
-  - geomeny/is-inter.hpp
   - geomeny/distance.hpp
   timestamp: '2022-12-26 21:52:32+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: geomeny/projection.hpp
+documentation_of: geomeny/is-inter.hpp
 layout: document
-title: "\u5C04\u5F71"
+title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
 ---

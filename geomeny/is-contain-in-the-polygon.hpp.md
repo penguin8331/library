@@ -4,13 +4,7 @@ data:
   - icon: ':warning:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geomeny/distance.hpp
-    title: "\u5186\u3084\u76F4\u7DDA\u306E\u8DDD\u96E2"
-  - icon: ':warning:'
-    path: geomeny/is-inter.hpp
-    title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -50,26 +44,30 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/projection.hpp\"\
-    \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
-    \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
-    \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
-    }\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj(const Point &p, const\
-    \ Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n   \
-    \ return l[0] + (l[1] - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l)\
-    \ {\n    return p + (proj(p, l) - p) * 2;\n}"
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/is-contain-in-the-polygon.hpp\"\
+    \n\n// 2: in, 1: on, 0: out\nint is_contain(const vector<Point> &pol, const Point\
+    \ &p) {\n    int n = (int)pol.size();\n    int isin = 0;\n    for (int i = 0;\
+    \ i < n; ++i) {\n        Point a = pol[i] - p, b = pol[(i + 1) % n] - p;\n   \
+    \     if (a.y > b.y) swap(a, b);\n        if (a.y <= 0 && b.y > 0)\n         \
+    \   if (cross(a, b) < 0) isin = 1 - isin;\n        if (cross(a, b) == 0 && dot(a,\
+    \ b) <= 0) return 1;\n    }\n    if (isin)\n        return 2;\n    else\n    \
+    \    return 0;\n}\n"
+  code: "#include \"geomeny/geomeny-template.hpp\"\n\n// 2: in, 1: on, 0: out\nint\
+    \ is_contain(const vector<Point> &pol, const Point &p) {\n    int n = (int)pol.size();\n\
+    \    int isin = 0;\n    for (int i = 0; i < n; ++i) {\n        Point a = pol[i]\
+    \ - p, b = pol[(i + 1) % n] - p;\n        if (a.y > b.y) swap(a, b);\n       \
+    \ if (a.y <= 0 && b.y > 0)\n            if (cross(a, b) < 0) isin = 1 - isin;\n\
+    \        if (cross(a, b) == 0 && dot(a, b) <= 0) return 1;\n    }\n    if (isin)\n\
+    \        return 2;\n    else\n        return 0;\n}"
   dependsOn:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
-  path: geomeny/projection.hpp
-  requiredBy:
-  - geomeny/is-inter.hpp
-  - geomeny/distance.hpp
+  path: geomeny/is-contain-in-the-polygon.hpp
+  requiredBy: []
   timestamp: '2022-12-26 21:52:32+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: geomeny/projection.hpp
+documentation_of: geomeny/is-contain-in-the-polygon.hpp
 layout: document
-title: "\u5C04\u5F71"
+title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
 ---

@@ -66,17 +66,32 @@ data:
   - name: geomeny
     pages:
     - icon: ':warning:'
+      path: geomeny/area_polygon.hpp
+      title: geomeny/area_polygon.hpp
+    - icon: ':warning:'
       path: geomeny/ccw.hpp
       title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
+    - icon: ':warning:'
+      path: geomeny/crosspoint.hpp
+      title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u70B9"
+    - icon: ':warning:'
+      path: geomeny/distance.hpp
+      title: "\u5186\u3084\u76F4\u7DDA\u306E\u8DDD\u96E2"
     - icon: ':warning:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
+      path: geomeny/is-contain-in-the-polygon.hpp
+      title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+    - icon: ':warning:'
       path: geomeny/is-contain-in-the-triangle.hpp
       title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
     - icon: ':warning:'
+      path: geomeny/is-inter.hpp
+      title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
+    - icon: ':warning:'
       path: geomeny/projection.hpp
-      title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A, \u8DDD\u96E2"
+      title: "\u5C04\u5F71"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
