@@ -66,11 +66,20 @@ data:
   - name: geomeny
     pages:
     - icon: ':warning:'
+      path: geomeny/ccw.hpp
+      title: geomeny/ccw.hpp
+    - icon: ':warning:'
       path: geomeny/geomeny-others.hpp
       title: geomeny/geomeny-others.hpp
     - icon: ':warning:'
+      path: geomeny/geomeny-template.hpp
+      title: geomeny/geomeny-template.hpp
+    - icon: ':warning:'
       path: geomeny/geomeny.hpp
       title: geomeny/geomeny.hpp
+    - icon: ':warning:'
+      path: geomeny/is-contain-in-the-triangle.hpp
+      title: geomeny/is-contain-in-the-triangle.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
