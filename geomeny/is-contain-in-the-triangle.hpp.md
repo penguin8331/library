@@ -6,7 +6,7 @@ data:
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
   - icon: ':warning:'
     path: geomeny/geomeny-template.hpp
-    title: geomeny/geomeny-template.hpp
+    title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -84,8 +84,5 @@ data:
   verifiedWith: []
 documentation_of: geomeny/is-contain-in-the-triangle.hpp
 layout: document
-redirect_from:
-- /library/geomeny/is-contain-in-the-triangle.hpp
-- /library/geomeny/is-contain-in-the-triangle.hpp.html
-title: geomeny/is-contain-in-the-triangle.hpp
+title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
 ---

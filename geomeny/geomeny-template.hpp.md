@@ -7,7 +7,10 @@ data:
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
   - icon: ':warning:'
     path: geomeny/is-contain-in-the-triangle.hpp
-    title: geomeny/is-contain-in-the-triangle.hpp
+    title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+  - icon: ':warning:'
+    path: geomeny/projection.hpp
+    title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A, \u8DDD\u96E2"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -86,14 +89,12 @@ data:
   path: geomeny/geomeny-template.hpp
   requiredBy:
   - geomeny/ccw.hpp
+  - geomeny/projection.hpp
   - geomeny/is-contain-in-the-triangle.hpp
   timestamp: '2022-12-26 17:52:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geomeny/geomeny-template.hpp
 layout: document
-redirect_from:
-- /library/geomeny/geomeny-template.hpp
-- /library/geomeny/geomeny-template.hpp.html
-title: geomeny/geomeny-template.hpp
+title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
 ---

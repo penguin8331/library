@@ -3,11 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: geomeny/geomeny-template.hpp
-    title: geomeny/geomeny-template.hpp
+    title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
   - icon: ':warning:'
     path: geomeny/is-contain-in-the-triangle.hpp
-    title: geomeny/is-contain-in-the-triangle.hpp
+    title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
