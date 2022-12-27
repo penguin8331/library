@@ -1,4 +1,5 @@
-using DD = double;     // to be set appropriately
+cout << fixed << setprecision(8);
+using DD = long double;     // to be set appropriately
 const DD EPS = 1e-10;  // to be set appropriately
 const DD PI = acosl(-1.0);
 DD torad(int deg) { return (DD)(deg)*PI / 180; }
