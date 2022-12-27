@@ -6,12 +6,12 @@ data:
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_3_C.test.cpp
     title: test/AOJ/CGL_3_C.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -68,7 +68,7 @@ data:
   path: geomeny/is-contain-in-the-polygon.hpp
   requiredBy: []
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_3_C.test.cpp
 documentation_of: geomeny/is-contain-in-the-polygon.hpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/area-polygon.hpp
     title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
   - icon: ':heavy_check_mark:'
@@ -11,7 +11,7 @@ data:
   - icon: ':x:'
     path: geomeny/convex-cut.hpp
     title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
   - icon: ':heavy_check_mark:'
@@ -20,7 +20,7 @@ data:
   - icon: ':warning:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   - icon: ':warning:'
@@ -51,10 +51,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_3_B.test.cpp
     title: test/AOJ/CGL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_3_C.test.cpp
     title: test/AOJ/CGL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_4_A.test.cpp
     title: test/AOJ/CGL_4_A.test.cpp
   - icon: ':x:'

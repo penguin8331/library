@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_3_A.test.cpp
     title: test/AOJ/CGL_3_A.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/AOJ/CGL_4_C.test.cpp
+    title: test/AOJ/CGL_4_C.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -61,9 +64,10 @@ data:
   path: geomeny/area-polygon.hpp
   requiredBy: []
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_4_C.test.cpp
 documentation_of: geomeny/area-polygon.hpp
 layout: document
 title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"

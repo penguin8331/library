@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/area-polygon.hpp
     title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
   - icon: ':question:'

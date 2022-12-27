@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
@@ -79,13 +79,13 @@ data:
     \ int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int i = 0; i < N; i++)\
     \ {\n        cin >> G[i].x >> G[i].y;\n    }\n    int Q;\n    cin >> Q;\n    for\
     \ (int i = 0; i < Q; i++) {\n        Point a;\n        cin >> a.x >> a.y;\n  \
-    \      cout << is_contain(G, a);\n    }\n}\n"
+    \      cout << is_contain(G, a) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/is-contain-in-the-polygon.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for\
     \ (int i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int\
     \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point a;\n   \
-    \     cin >> a.x >> a.y;\n        cout << is_contain(G, a);\n    }\n}"
+    \     cin >> a.x >> a.y;\n        cout << is_contain(G, a) << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
   - geomeny/is-contain-in-the-polygon.hpp
@@ -93,8 +93,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 14:55:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 15:09:24+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_C.test.cpp
 layout: document

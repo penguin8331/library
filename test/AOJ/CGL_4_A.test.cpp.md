@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
@@ -91,16 +91,25 @@ data:
     \                --k;\n                if (k < t) break;\n            }\n    \
     \    }\n        res[k] = ps[i];\n        ++k;\n    }\n    res.resize(k - 1);\n\
     \    return res;\n}\n#line 4 \"test/AOJ/CGL_4_A.test.cpp\"\n\nint main() {\n \
-    \   int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int i = 0; i < N;\
-    \ i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    auto res = ConvexHull(G);\n\
-    \    cout << res.size() << endl;\n    for (const auto &i : res) {\n        cout\
-    \ << i.x << \" \" << i.y << endl;\n    }\n}\n"
+    \   int N;\n    cin >> N;\n    vector<Point> A(N);\n    for (int i = 0; i < N;\
+    \ ++i) {\n        cin >> A[i].x >> A[i].y;\n    }\n    auto pol = ConvexHullCollinearOK(A);\n\
+    \    pair<ld, ld> minv = {11000, 11000};\n    int minp = -1;\n    for (int i =\
+    \ 0; i < (int)pol.size(); ++i) {\n        if (minv > make_pair(pol[i].y, pol[i].x))\
+    \ {\n            minv = make_pair(pol[i].y, pol[i].x);\n            minp = i;\n\
+    \        }\n    }\n    cout << pol.size() << endl;\n    for (int i = 0; i < (int)pol.size();\
+    \ ++i) {\n        int j = (i + minp) % pol.size();\n        cout << fixed << setprecision(0)\
+    \ << pol[j].x << \" \" << pol[j].y << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/convex-hull.hpp\"\n\n\
-    int main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int\
-    \ i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    auto res\
-    \ = ConvexHull(G);\n    cout << res.size() << endl;\n    for (const auto &i :\
-    \ res) {\n        cout << i.x << \" \" << i.y << endl;\n    }\n}"
+    int main() {\n    int N;\n    cin >> N;\n    vector<Point> A(N);\n    for (int\
+    \ i = 0; i < N; ++i) {\n        cin >> A[i].x >> A[i].y;\n    }\n    auto pol\
+    \ = ConvexHullCollinearOK(A);\n    pair<ld, ld> minv = {11000, 11000};\n    int\
+    \ minp = -1;\n    for (int i = 0; i < (int)pol.size(); ++i) {\n        if (minv\
+    \ > make_pair(pol[i].y, pol[i].x)) {\n            minv = make_pair(pol[i].y, pol[i].x);\n\
+    \            minp = i;\n        }\n    }\n    cout << pol.size() << endl;\n  \
+    \  for (int i = 0; i < (int)pol.size(); ++i) {\n        int j = (i + minp) % pol.size();\n\
+    \        cout << fixed << setprecision(0) << pol[j].x << \" \" << pol[j].y <<\
+    \ endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
   - geomeny/convex-hull.hpp
@@ -108,8 +117,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 14:55:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 15:09:24+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp
 layout: document
