@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/compress2d.hpp
     title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
