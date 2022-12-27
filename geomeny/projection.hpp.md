@@ -1,20 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: geomeny/distance.hpp
-    title: "\u5186\u3084\u76F4\u7DDA\u306E\u8DDD\u96E2"
-  - icon: ':warning:'
+    title: "\u8DDD\u96E2"
+  - icon: ':x:'
     path: geomeny/is-inter.hpp
-    title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+    title: "\u4EA4\u5DEE\u5224\u5B9A"
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/CGL_1_A.test.cpp
+    title: test/AOJ/CGL_1_A.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/CGL_2_B.test.cpp
+    title: test/AOJ/CGL_2_B.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/CGL_2_D.test.cpp
+    title: test/AOJ/CGL_2_D.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = double;     //\
@@ -67,8 +76,11 @@ data:
   - geomeny/is-inter.hpp
   - geomeny/distance.hpp
   timestamp: '2022-12-26 21:52:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
 documentation_of: geomeny/projection.hpp
 layout: document
 title: "\u5C04\u5F71"

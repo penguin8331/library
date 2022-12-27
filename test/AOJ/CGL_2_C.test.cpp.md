@@ -1,24 +1,42 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':x:'
+    path: geomeny/crosspoint.hpp
+    title: "\u4EA4\u70B9"
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/CGL_2_C.test.cpp
-    title: test/AOJ/CGL_2_C.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_7_D.test.cpp
-    title: test/AOJ/CGL_7_D.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: true
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
-    links: []
-  bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = double;     //\
-    \ to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C
+  bundledCode: "#line 1 \"test/AOJ/CGL_2_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C\"\
+    \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
+    \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
+    using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
+    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
+    \ mp make_pair\n#define mt make_tuple\n#define all(x) (x).begin(), (x).end()\n\
+    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
+    \ X) ((N + X - 1) / X)\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct\
+    \ fast_ios {\n    fast_ios() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = double;\
+    \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
     const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
     DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
     \   DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream\
@@ -71,39 +89,31 @@ data:
     \        rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (l[1] - l[0])\
     \ / abs(l[1] - l[0]);\n    Point p1 = p + dir * rsin;\n    Point p2 = p - dir\
     \ * rsin;\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
-    \   return res;\n}\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj_for_crosspoint(const\
-    \ Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1]\
-    \ - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nvector<Point> crosspoint(const\
-    \ Line &l, const Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0],\
-    \ l[1] - l[0]);\n    if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0]\
-    \ + (l[1] - l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\n\
-    vector<Point> crosspoint(const Circle &e, const Circle &f) {\n    vector<Point>\
-    \ res;\n    DD d = abs(e - f);\n    if (d < EPS) return vector<Point>();\n   \
-    \ if (d > e.r + f.r + EPS) return vector<Point>();\n    if (d < abs(e.r - f.r)\
-    \ - EPS) return vector<Point>();\n    DD rcos = (d * d + e.r * e.r - f.r * f.r)\
-    \ / (2.0 * d), rsin;\n    if (e.r - abs(rcos) < EPS)\n        rsin = 0;\n    else\n\
-    \        rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (f - e) / d;\n\
-    \    Point p1 = e + dir * Point(rcos, rsin);\n    Point p2 = e + dir * Point(rcos,\
-    \ -rsin);\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
-    \   return res;\n}\nvector<Point> crosspoint(const Circle &e, const Line &l) {\n\
-    \    vector<Point> res;\n    Point p = proj_for_crosspoint(e, l);\n    DD rcos\
-    \ = abs(e - p), rsin;\n    if (rcos > e.r + EPS)\n        return vector<Point>();\n\
-    \    else if (e.r - rcos < EPS)\n        rsin = 0;\n    else\n        rsin = sqrt(e.r\
-    \ * e.r - rcos * rcos);\n    Point dir = (l[1] - l[0]) / abs(l[1] - l[0]);\n \
-    \   Point p1 = p + dir * rsin;\n    Point p2 = p - dir * rsin;\n    res.push_back(p1);\n\
-    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}"
+    \   return res;\n}\n#line 4 \"test/AOJ/CGL_2_C.test.cpp\"\n\nint main() {\n  \
+    \  int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n        Line a(2),\
+    \ b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y\
+    \ >> b[1].x >> b[1].y;\n        auto res = crosspoint(a, b);\n        cout <<\
+    \ res[0].x << \" \" << res[0].y << endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C\"\
+    \n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\n\n\
+    int main() {\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n \
+    \       Line a(2), b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y\
+    \ >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res = crosspoint(a, b);\n\
+    \        cout << res[0].x << \" \" << res[0].y << endl;\n    }\n}"
   dependsOn:
+  - template/template.hpp
+  - geomeny/crosspoint.hpp
   - geomeny/geomeny-template.hpp
-  isVerificationFile: false
-  path: geomeny/crosspoint.hpp
+  isVerificationFile: true
+  path: test/AOJ/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-26 21:52:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/AOJ/CGL_2_C.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
-documentation_of: geomeny/crosspoint.hpp
+  timestamp: '2022-12-27 11:32:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: test/AOJ/CGL_2_C.test.cpp
 layout: document
-title: "\u4EA4\u70B9"
+redirect_from:
+- /verify/test/AOJ/CGL_2_C.test.cpp
+- /verify/test/AOJ/CGL_2_C.test.cpp.html
+title: test/AOJ/CGL_2_C.test.cpp
 ---

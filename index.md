@@ -68,7 +68,7 @@ data:
     - icon: ':warning:'
       path: geomeny/area-polygon.hpp
       title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
-    - icon: ':warning:'
+    - icon: ':question:'
       path: geomeny/ccw.hpp
       title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
     - icon: ':warning:'
@@ -77,28 +77,28 @@ data:
     - icon: ':warning:'
       path: geomeny/convex-hull.hpp
       title: "\u51F8\u5305"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/crosspoint.hpp
-      title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u70B9"
-    - icon: ':warning:'
+      title: "\u4EA4\u70B9"
+    - icon: ':x:'
       path: geomeny/distance.hpp
-      title: "\u5186\u3084\u76F4\u7DDA\u306E\u8DDD\u96E2"
-    - icon: ':warning:'
+      title: "\u8DDD\u96E2"
+    - icon: ':question:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
       path: geomeny/is-contain-in-the-polygon.hpp
       title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/is-contain-in-the-triangle.hpp
       title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
     - icon: ':warning:'
       path: geomeny/is-convex.hpp
       title: "\u51F8\u6027\u5224\u5B9A"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/is-inter.hpp
-      title: "\u5186\u3084\u76F4\u7DDA\u306E\u4EA4\u5DEE\u5224\u5B9A"
-    - icon: ':warning:'
+      title: "\u4EA4\u5DEE\u5224\u5B9A"
+    - icon: ':x:'
       path: geomeny/projection.hpp
       title: "\u5C04\u5F71"
   - name: graph
@@ -196,12 +196,15 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
+    - icon: ':x:'
+      path: test/AOJ/0143.test.cpp
+      title: test/AOJ/0143.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/0233.test.cpp
       title: test/AOJ/0233.test.cpp
@@ -226,6 +229,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_1_A.test.cpp
+      title: test/AOJ/CGL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/CGL_1_C.test.cpp
+      title: test/AOJ/CGL_1_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_2_B.test.cpp
+      title: test/AOJ/CGL_2_B.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_2_C.test.cpp
+      title: test/AOJ/CGL_2_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_2_D.test.cpp
+      title: test/AOJ/CGL_2_D.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_7_D.test.cpp
+      title: test/AOJ/CGL_7_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DPL_1_d.test.cpp
       title: test/AOJ/DPL_1_d.test.cpp

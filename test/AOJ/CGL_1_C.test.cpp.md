@@ -7,18 +7,36 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0143.test.cpp
-    title: test/AOJ/0143.test.cpp
-  _isVerificationFailed: true
-  _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = double;     //\
-    \ to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
+  bundledCode: "#line 1 \"test/AOJ/CGL_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
+    \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
+    \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
+    using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
+    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
+    \ mp make_pair\n#define mt make_tuple\n#define all(x) (x).begin(), (x).end()\n\
+    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
+    \ X) ((N + X - 1) / X)\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct\
+    \ fast_ios {\n    fast_ios() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = double;\
+    \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
     const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
     DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
     \   DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream\
@@ -64,29 +82,40 @@ data:
     \ Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n\
     \    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS)\
     \ return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n\
-    }\n#line 2 \"geomeny/is-contain-in-the-triangle.hpp\"\n\n// \u8FBA\u4E0A\u306B\
-    \u3064\u3044\u3066\u306F\u5224\u5B9A\u3057\u3066\u3044\u306A\u3044\nbool is_contain(const\
-    \ Point &p, const Point &a, const Point &b, const Point &c) {\n    int r1 = simple_ccw(p,\
-    \ b, c), r2 = simple_ccw(p, c, a), r3 = simple_ccw(p, a, b);\n    if (r1 == 1\
-    \ && r2 == 1 && r3 == 1) return true;\n    if (r1 == -1 && r2 == -1 && r3 == -1)\
-    \ return true;\n    return false;\n}\n"
-  code: "#include\"geomeny/ccw.hpp\"\n\n// \u8FBA\u4E0A\u306B\u3064\u3044\u3066\u306F\
-    \u5224\u5B9A\u3057\u3066\u3044\u306A\u3044\nbool is_contain(const Point &p, const\
-    \ Point &a, const Point &b, const Point &c) {\n    int r1 = simple_ccw(p, b, c),\
-    \ r2 = simple_ccw(p, c, a), r3 = simple_ccw(p, a, b);\n    if (r1 == 1 && r2 ==\
-    \ 1 && r3 == 1) return true;\n    if (r1 == -1 && r2 == -1 && r3 == -1) return\
-    \ true;\n    return false;\n}"
+    }\n#line 4 \"test/AOJ/CGL_1_C.test.cpp\"\n\nint main() {\n    Point a, b;\n  \
+    \  cin >> a.x >> a.y >> b.x >> b.y;\n    int Q;\n    cin >> Q;\n    for (int i\
+    \ = 0; i < Q; i++) {\n        Point c;\n        cin >> c.x >> c.y;\n        int\
+    \ res = ccw(a, b, c);\n        if (res == -1) {\n            cout << \"CLOCKWISE\"\
+    \ << endl;\n        }\n        elif (res == 1) {\n            cout << \"COUNTER_CLOCKWISE\"\
+    \ << endl;\n        }\n        elif (res == 2) {\n            cout << \"ONLINE_BACK\"\
+    \ << endl;\n        }\n        elif (res == -2) {\n            cout << \"ONLINE_FRONT\"\
+    \ << endl;\n        }\n        else {\n            cout << \"ON_SEGMENT\" << endl;\n\
+    \        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
+    \n#include \"template/template.hpp\"\n#include \"geomeny/ccw.hpp\"\n\nint main()\
+    \ {\n    Point a, b;\n    cin >> a.x >> a.y >> b.x >> b.y;\n    int Q;\n    cin\
+    \ >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point c;\n        cin >> c.x\
+    \ >> c.y;\n        int res = ccw(a, b, c);\n        if (res == -1) {\n       \
+    \     cout << \"CLOCKWISE\" << endl;\n        }\n        elif (res == 1) {\n \
+    \           cout << \"COUNTER_CLOCKWISE\" << endl;\n        }\n        elif (res\
+    \ == 2) {\n            cout << \"ONLINE_BACK\" << endl;\n        }\n        elif\
+    \ (res == -2) {\n            cout << \"ONLINE_FRONT\" << endl;\n        }\n  \
+    \      else {\n            cout << \"ON_SEGMENT\" << endl;\n        }\n    }\n\
+    }"
   dependsOn:
+  - template/template.hpp
   - geomeny/ccw.hpp
   - geomeny/geomeny-template.hpp
-  isVerificationFile: false
-  path: geomeny/is-contain-in-the-triangle.hpp
+  isVerificationFile: true
+  path: test/AOJ/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-26 18:00:05+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/AOJ/0143.test.cpp
-documentation_of: geomeny/is-contain-in-the-triangle.hpp
+  timestamp: '2022-12-27 11:32:31+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/AOJ/CGL_1_C.test.cpp
 layout: document
-title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+redirect_from:
+- /verify/test/AOJ/CGL_1_C.test.cpp
+- /verify/test/AOJ/CGL_1_C.test.cpp.html
+title: test/AOJ/CGL_1_C.test.cpp
 ---
