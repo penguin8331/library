@@ -68,7 +68,7 @@ data:
     - icon: ':warning:'
       path: geomeny/area-polygon.hpp
       title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geomeny/ccw.hpp
       title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
     - icon: ':warning:'
@@ -89,7 +89,7 @@ data:
     - icon: ':warning:'
       path: geomeny/is-contain-in-the-polygon.hpp
       title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/is-contain-in-the-triangle.hpp
       title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
     - icon: ':warning:'
