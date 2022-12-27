@@ -3,7 +3,7 @@
 #include "geomeny/distance.hpp"
 
 int main() {
-    cout << fixed << setprecision(8);
+    cout << fixed << setprecision(10);
     int N;
     cin >> N;
     for (int i = 0; i < N; i++) {

@@ -1,9 +1,8 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B"
 #include "template/template.hpp"
-#include "geomeny/projection.hpp"
+#include "geomeny/is-inter.hpp"
 
 int main() {
-    cout << fixed << setprecision(8);
     int N;
     cin >> N;
     for (int i = 0; i < N; i++) {

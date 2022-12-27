@@ -3,7 +3,6 @@
 #include "geomeny/ccw.hpp"
 
 int main() {
-    cout << fixed << setprecision(8);
     Point a, b;
     cin >> a.x >> a.y >> b.x >> b.y;
     int Q;
