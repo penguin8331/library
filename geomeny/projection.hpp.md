@@ -20,7 +20,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
+  bundledCode: "#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
     \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
     const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
     DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
@@ -69,7 +69,7 @@ data:
   requiredBy:
   - geomeny/is-inter.hpp
   - geomeny/distance.hpp
-  timestamp: '2022-12-27 11:52:12+09:00'
+  timestamp: '2022-12-27 15:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp

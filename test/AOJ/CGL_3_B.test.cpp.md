@@ -35,7 +35,7 @@ data:
     \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
     \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
     \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
+    \ MOD = 1e9 + 7;\n#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
     \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
     const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
     DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 14:55:42+09:00'
+  timestamp: '2022-12-27 15:24:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_B.test.cpp
