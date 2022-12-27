@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
   - icon: ':heavy_check_mark:'
@@ -33,6 +33,9 @@ data:
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_1_A.test.cpp
+    title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
@@ -63,9 +66,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_7_D.test.cpp
     title: test/AOJ/CGL_7_D.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/AOJ/CGL_7_E.test.cpp
+    title: test/AOJ/CGL_7_E.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -151,8 +157,9 @@ data:
   - geomeny/convex-cut.hpp
   - geomeny/is-convex.hpp
   timestamp: '2022-12-27 15:24:29+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/AOJ/CGL_7_E.test.cpp
   - test/AOJ/CGL_2_C.test.cpp
   - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_3_C.test.cpp
@@ -162,6 +169,7 @@ data:
   - test/AOJ/CGL_3_B.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
 documentation_of: geomeny/geomeny-template.hpp
 layout: document

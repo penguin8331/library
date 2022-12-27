@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -12,6 +12,9 @@ data:
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_1_A.test.cpp
+    title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
@@ -77,6 +80,7 @@ data:
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
 documentation_of: geomeny/projection.hpp
 layout: document
 title: "\u5C04\u5F71"

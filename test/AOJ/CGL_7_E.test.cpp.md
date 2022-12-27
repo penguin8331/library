@@ -12,16 +12,16 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.000001'
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D
-  bundledCode: "#line 1 \"test/AOJ/CGL_7_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E
+  bundledCode: "#line 1 \"test/AOJ/CGL_7_E.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
     \n#define ERROR 0.000001\n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"\
     avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\"\
     )\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
@@ -90,41 +90,37 @@ data:
     \ - rcos < EPS)\n        rsin = 0;\n    else\n        rsin = sqrt(e.r * e.r -\
     \ rcos * rcos);\n    Point dir = (l[1] - l[0]) / abs(l[1] - l[0]);\n    Point\
     \ p1 = p + dir * rsin;\n    Point p2 = p - dir * rsin;\n    res.push_back(p1);\n\
-    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 5 \"test/AOJ/CGL_7_D.test.cpp\"\
-    \n\nint main() {\n    Circle a;\n    cin >> a.x >> a.y >> a.r;\n    int N;\n \
-    \   cin >> N;\n    for (int i = 0; i < N; i++) {\n        Line b(2);\n       \
-    \ cin >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res = crosspoint(a,\
-    \ b);\n        sort(all(res), [](Point a, Point b) {\n            if (a.x != b.x)\
-    \ {\n                return a.x < b.x;\n            }\n            return a.y\
-    \ < b.y;\n        });\n        if (res.size() == 1) {\n            cout << res[0].x\
-    \ << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y << endl;\n  \
-    \      } else {\n            cout << res[0].x << \" \" << res[0].y << \" \" <<\
-    \ res[1].x << \" \" << res[1].y << endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\"\
+    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 5 \"test/AOJ/CGL_7_E.test.cpp\"\
+    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> a.x >> a.y\
+    \ >> a.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
+    \ b) {\n        if (a.x != b.x) {\n            return a.x < b.x;\n        }\n\
+    \        return a.y < b.y;\n    });\n    if (res.size() == 1) {\n        cout\
+    \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y <<\
+    \ endl;\n    } else {\n        cout << res[0].x << \" \" << res[0].y << \" \"\
+    \ << res[1].x << \" \" << res[1].y << endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
     \n#define ERROR 0.000001\n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\
-    \n\nint main() {\n    Circle a;\n    cin >> a.x >> a.y >> a.r;\n    int N;\n \
-    \   cin >> N;\n    for (int i = 0; i < N; i++) {\n        Line b(2);\n       \
-    \ cin >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res = crosspoint(a,\
-    \ b);\n        sort(all(res), [](Point a, Point b) {\n            if (a.x != b.x)\
-    \ {\n                return a.x < b.x;\n            }\n            return a.y\
-    \ < b.y;\n        });\n        if (res.size() == 1) {\n            cout << res[0].x\
-    \ << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y << endl;\n  \
-    \      } else {\n            cout << res[0].x << \" \" << res[0].y << \" \" <<\
-    \ res[1].x << \" \" << res[1].y << endl;\n        }\n    }\n}"
+    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> a.x >> a.y\
+    \ >> a.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
+    \ b) {\n        if (a.x != b.x) {\n            return a.x < b.x;\n        }\n\
+    \        return a.y < b.y;\n    });\n    if (res.size() == 1) {\n        cout\
+    \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y <<\
+    \ endl;\n    } else {\n        cout << res[0].x << \" \" << res[0].y << \" \"\
+    \ << res[1].x << \" \" << res[1].y << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
   - geomeny/crosspoint.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
-  path: test/AOJ/CGL_7_D.test.cpp
+  path: test/AOJ/CGL_7_E.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 21:45:59+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-12-27 21:57:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/AOJ/CGL_7_D.test.cpp
+documentation_of: test/AOJ/CGL_7_E.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/CGL_7_D.test.cpp
-- /verify/test/AOJ/CGL_7_D.test.cpp.html
-title: test/AOJ/CGL_7_D.test.cpp
+- /verify/test/AOJ/CGL_7_E.test.cpp
+- /verify/test/AOJ/CGL_7_E.test.cpp.html
+title: test/AOJ/CGL_7_E.test.cpp
 ---

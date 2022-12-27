@@ -77,13 +77,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: geomeny/convex-hull.hpp
       title: "\u51F8\u5305"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geomeny/crosspoint.hpp
       title: "\u4EA4\u70B9"
     - icon: ':heavy_check_mark:'
       path: geomeny/distance.hpp
       title: "\u8DDD\u96E2"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -193,7 +193,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -224,6 +224,9 @@ data:
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/AOJ/CGL_1_A.test.cpp
+      title: test/AOJ/CGL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_1_C.test.cpp
       title: test/AOJ/CGL_1_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -253,6 +256,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_7_D.test.cpp
       title: test/AOJ/CGL_7_D.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_7_E.test.cpp
+      title: test/AOJ/CGL_7_E.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DPL_1_d.test.cpp
       title: test/AOJ/DPL_1_d.test.cpp

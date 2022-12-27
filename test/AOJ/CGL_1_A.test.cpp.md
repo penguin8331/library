@@ -1,15 +1,9 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geomeny/distance.hpp
-    title: "\u8DDD\u96E2"
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
-    path: geomeny/is-inter.hpp
-    title: "\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
@@ -24,10 +18,10 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00000001'
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D
-  bundledCode: "#line 1 \"test/AOJ/CGL_2_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A
+  bundledCode: "#line 1 \"test/AOJ/CGL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
     \n#define ERROR 0.00000001\n#line 1 \"template/template.hpp\"\n// #pragma GCC\
     \ target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"\
     unroll-loops\")\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long\
@@ -79,53 +73,31 @@ data:
     geomeny/projection.hpp\"\n\nPoint proj(const Point &p, const Line &l) {\n    DD\
     \ t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1]\
     \ - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l) {\n    return p +\
-    \ (proj(p, l) - p) * 2;\n}\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const\
-    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
-    \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a,\
-    \ c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n\
-    \    return 0;\n}\nbool isinterPL(const Point &p, const Line &l) {\n    return\
-    \ (abs(p - proj(p, l)) < EPS);\n}\nbool isinterPS(const Point &p, const Line &s)\
-    \ {\n    return (ccw_for_dis(s[0], s[1], p) == 0);\n}\nbool isinterLL(const Line\
-    \ &l, const Line &m) {\n    return (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS\
-    \ ||\n            abs(cross(l[1] - l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const\
-    \ Line &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n\
-    \    if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
-    \ s[1], t[0]) * ccw_for_dis(s[0], s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0],\
-    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}\n#line 2 \"geomeny/distance.hpp\"\
-    \n\nDD distancePL(const Point &p, const Line &l) {\n    return abs(p - proj(p,\
-    \ l));\n}\nDD distancePS(const Point &p, const Line &s) {\n    Point h = proj(p,\
-    \ s);\n    if (isinterPS(h, s)) return abs(p - h);\n    return min(abs(p - s[0]),\
-    \ abs(p - s[1]));\n}\nDD distanceLL(const Line &l, const Line &m) {\n    if (isinterLL(l,\
-    \ m))\n        return 0;\n    else\n        return distancePL(m[0], l);\n}\nDD\
-    \ distanceSS(const Line &s, const Line &t) {\n    if (isinterSS(s, t))\n     \
-    \   return 0;\n    else\n        return min(min(distancePS(s[0], t), distancePS(s[1],\
-    \ t)), min(distancePS(t[0], s), distancePS(t[1], s)));\n}\n#line 5 \"test/AOJ/CGL_2_D.test.cpp\"\
-    \n\nint main() {\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n\
-    \        Line a(2), b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y\
-    \ >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        cout << distanceSS(a, b) <<\
-    \ endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\
-    \n#define ERROR 0.00000001\n#include \"template/template.hpp\"\n#include \"geomeny/distance.hpp\"\
-    \n\nint main() {\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n\
-    \        Line a(2), b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y\
-    \ >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        cout << distanceSS(a, b) <<\
-    \ endl;\n    }\n}"
+    \ (proj(p, l) - p) * 2;\n}\n#line 5 \"test/AOJ/CGL_1_A.test.cpp\"\n\nint main()\
+    \ {\n    Line a(2);\n    cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n    int\
+    \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point b;\n   \
+    \     cin >> b.x >> b.y;\n        auto res = proj(b, a);\n        cout << res.x\
+    \ << \" \" << res.y << endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
+    \n#define ERROR 0.00000001\n#include \"template/template.hpp\"\n#include \"geomeny/projection.hpp\"\
+    \n\nint main() {\n    Line a(2);\n    cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n\
+    \    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point b;\n\
+    \        cin >> b.x >> b.y;\n        auto res = proj(b, a);\n        cout << res.x\
+    \ << \" \" << res.y << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
-  - geomeny/distance.hpp
-  - geomeny/is-inter.hpp
   - geomeny/projection.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
-  path: test/AOJ/CGL_2_D.test.cpp
+  path: test/AOJ/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 21:45:59+09:00'
+  timestamp: '2022-12-27 21:57:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/CGL_2_D.test.cpp
+documentation_of: test/AOJ/CGL_1_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/CGL_2_D.test.cpp
-- /verify/test/AOJ/CGL_2_D.test.cpp.html
-title: test/AOJ/CGL_2_D.test.cpp
+- /verify/test/AOJ/CGL_1_A.test.cpp
+- /verify/test/AOJ/CGL_1_A.test.cpp.html
+title: test/AOJ/CGL_1_A.test.cpp
 ---

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/bfs.hpp
     title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
