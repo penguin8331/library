@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: geomeny/crosspoint.hpp
-    title: "\u4EA4\u70B9"
+    path: geomeny/area-polygon.hpp
+    title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -17,10 +17,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C
-  bundledCode: "#line 1 \"test/AOJ/CGL_2_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A
+  bundledCode: "#line 1 \"test/AOJ/CGL_3_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -68,54 +68,32 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/crosspoint.hpp\"\
-    \n\nPoint proj_for_crosspoint(const Point &p, const Line &l) {\n    DD t = dot(p\
-    \ - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) *\
-    \ t;\n}\nvector<Point> crosspoint(const Line &l, const Line &m) {\n    vector<Point>\
-    \ res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n    if (abs(d) < EPS) return\
-    \ vector<Point>();\n    res.push_back(l[0] + (l[1] - l[0]) * cross(m[1] - m[0],\
-    \ m[1] - l[0]) / d);\n    return res;\n}\nvector<Point> crosspoint(const Circle\
-    \ &e, const Circle &f) {\n    vector<Point> res;\n    DD d = abs(e - f);\n   \
-    \ if (d < EPS) return vector<Point>();\n    if (d > e.r + f.r + EPS) return vector<Point>();\n\
-    \    if (d < abs(e.r - f.r) - EPS) return vector<Point>();\n    DD rcos = (d *\
-    \ d + e.r * e.r - f.r * f.r) / (2.0 * d), rsin;\n    if (e.r - abs(rcos) < EPS)\n\
-    \        rsin = 0;\n    else\n        rsin = sqrt(e.r * e.r - rcos * rcos);\n\
-    \    Point dir = (f - e) / d;\n    Point p1 = e + dir * Point(rcos, rsin);\n \
-    \   Point p2 = e + dir * Point(rcos, -rsin);\n    res.push_back(p1);\n    if (!eq(p1,\
-    \ p2)) res.push_back(p2);\n    return res;\n}\nvector<Point> crosspoint(const\
-    \ Circle &e, const Line &l) {\n    vector<Point> res;\n    Point p = proj_for_crosspoint(e,\
-    \ l);\n    DD rcos = abs(e - p), rsin;\n    if (rcos > e.r + EPS)\n        return\
-    \ vector<Point>();\n    else if (e.r - rcos < EPS)\n        rsin = 0;\n    else\n\
-    \        rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (l[1] - l[0])\
-    \ / abs(l[1] - l[0]);\n    Point p1 = p + dir * rsin;\n    Point p2 = p - dir\
-    \ * rsin;\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
-    \   return res;\n}\n#line 4 \"test/AOJ/CGL_2_C.test.cpp\"\n\nint main() {\n  \
-    \  cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n    for (int\
-    \ i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x >> a[0].y\
-    \ >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res\
-    \ = crosspoint(a, b);\n        cout << res[0].x << \" \" << res[0].y << endl;\n\
-    \    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C\"\
-    \n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\n\n\
-    int main() {\n    cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n\
-    \    for (int i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x\
-    \ >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n   \
-    \     auto res = crosspoint(a, b);\n        cout << res[0].x << \" \" << res[0].y\
-    \ << endl;\n    }\n}"
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/area-polygon.hpp\"\
+    \n\nDD CalcArea(const vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i\
+    \ = 0; i < pol.size(); ++i) {\n        res += cross(pol[i], pol[(i + 1) % pol.size()]);\n\
+    \    }\n    return res / 2.0L;\n}\n#line 4 \"test/AOJ/CGL_3_A.test.cpp\"\n\nint\
+    \ main() {\n    cout << fixed << setprecision(1);\n    int N;\n    cin >> N;\n\
+    \    vector<Point> A(N);\n    for (int i = 0; i < N; i++) {\n        cin >> A[i].x\
+    \ >> A[i].y;\n    }\n    cout << CalcArea(A) << endl;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A\"\
+    \n#include \"template/template.hpp\"\n#include \"geomeny/area-polygon.hpp\"\n\n\
+    int main() {\n    cout << fixed << setprecision(1);\n    int N;\n    cin >> N;\n\
+    \    vector<Point> A(N);\n    for (int i = 0; i < N; i++) {\n        cin >> A[i].x\
+    \ >> A[i].y;\n    }\n    cout << CalcArea(A) << endl;\n}"
   dependsOn:
   - template/template.hpp
-  - geomeny/crosspoint.hpp
+  - geomeny/area-polygon.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
-  path: test/AOJ/CGL_2_C.test.cpp
+  path: test/AOJ/CGL_3_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 12:02:36+09:00'
+  timestamp: '2022-12-27 14:55:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/CGL_2_C.test.cpp
+documentation_of: test/AOJ/CGL_3_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/CGL_2_C.test.cpp
-- /verify/test/AOJ/CGL_2_C.test.cpp.html
-title: test/AOJ/CGL_2_C.test.cpp
+- /verify/test/AOJ/CGL_3_A.test.cpp
+- /verify/test/AOJ/CGL_3_A.test.cpp.html
+title: test/AOJ/CGL_3_A.test.cpp
 ---

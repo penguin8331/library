@@ -65,16 +65,16 @@ data:
       title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C(bitDP)"
   - name: geomeny
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/area-polygon.hpp
       title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
     - icon: ':heavy_check_mark:'
       path: geomeny/ccw.hpp
       title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/convex-cut.hpp
       title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/convex-hull.hpp
       title: "\u51F8\u5305"
     - icon: ':heavy_check_mark:'
@@ -83,16 +83,16 @@ data:
     - icon: ':warning:'
       path: geomeny/distance.hpp
       title: "\u8DDD\u96E2"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geomeny/is-contain-in-the-polygon.hpp
       title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
     - icon: ':warning:'
       path: geomeny/is-contain-in-the-triangle.hpp
       title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/is-convex.hpp
       title: "\u51F8\u6027\u5224\u5B9A"
     - icon: ':heavy_check_mark:'
@@ -196,7 +196,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -235,6 +235,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_2_C.test.cpp
       title: test/AOJ/CGL_2_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/CGL_3_A.test.cpp
+      title: test/AOJ/CGL_3_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/CGL_3_B.test.cpp
+      title: test/AOJ/CGL_3_B.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_3_C.test.cpp
+      title: test/AOJ/CGL_3_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_4_A.test.cpp
+      title: test/AOJ/CGL_4_A.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/CGL_4_C.test.cpp
+      title: test/AOJ/CGL_4_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_7_D.test.cpp
       title: test/AOJ/CGL_7_D.test.cpp

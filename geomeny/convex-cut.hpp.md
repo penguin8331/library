@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/CGL_4_C.test.cpp
+    title: test/AOJ/CGL_4_C.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -85,8 +88,9 @@ data:
   path: geomeny/convex-cut.hpp
   requiredBy: []
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/CGL_4_C.test.cpp
 documentation_of: geomeny/convex-cut.hpp
 layout: document
 title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
