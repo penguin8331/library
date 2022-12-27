@@ -4,7 +4,6 @@
 #include "geomeny/convex-cut.hpp"
 
 int main() {
-    cout << fixed << setprecision(8);
     int N;
     cin >> N;
     vector<Point> G(N);
@@ -16,6 +15,6 @@ int main() {
     for (int i = 0; i < Q; i++) {
         Line a(2);
         cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;
-        cout << CalcArea(ConvexCut(G, a)) << endl;
+        cout << fixed << setprecision(8) << CalcArea(ConvexCut(G, a)) << endl;
     }
 }
