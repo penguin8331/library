@@ -14,6 +14,6 @@ int main() {
     for (int i = 0; i < Q; i++) {
         Point a;
         cin >> a.x >> a.y;
-        cout << is_contain(G, a);
+        cout << is_contain(G, a) << endl;
     }
 }

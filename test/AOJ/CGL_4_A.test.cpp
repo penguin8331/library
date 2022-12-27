@@ -5,13 +5,22 @@
 int main() {
     int N;
     cin >> N;
-    vector<Point> G(N);
-    for (int i = 0; i < N; i++) {
-        cin >> G[i].x >> G[i].y;
+    vector<Point> A(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> A[i].x >> A[i].y;
     }
-    auto res = ConvexHull(G);
-    cout << res.size() << endl;
-    for (const auto &i : res) {
-        cout << i.x << " " << i.y << endl;
+    auto pol = ConvexHullCollinearOK(A);
+    pair<ld, ld> minv = {11000, 11000};
+    int minp = -1;
+    for (int i = 0; i < (int)pol.size(); ++i) {
+        if (minv > make_pair(pol[i].y, pol[i].x)) {
+            minv = make_pair(pol[i].y, pol[i].x);
+            minp = i;
+        }
+    }
+    cout << pol.size() << endl;
+    for (int i = 0; i < (int)pol.size(); ++i) {
+        int j = (i + minp) % pol.size();
+        cout << fixed << setprecision(0) << pol[j].x << " " << pol[j].y << endl;
     }
 }
