@@ -3,6 +3,7 @@
 #include "geomeny/projection.hpp"
 
 int main() {
+    cout << fixed << setprecision(8);
     int N;
     cin >> N;
     for (int i = 0; i < N; i++) {

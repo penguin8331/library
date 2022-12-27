@@ -3,6 +3,7 @@
 #include "geomeny/crosspoint.hpp"
 
 int main() {
+    cout << fixed << setprecision(8);
     Circle a;
     cin >> a.x >> a.y >> a.r;
     int N;
