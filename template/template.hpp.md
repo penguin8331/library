@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0143.test.cpp
-    title: test/AOJ/0143.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
     title: test/AOJ/0233.test.cpp
@@ -30,9 +27,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_1_A.test.cpp
-    title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
@@ -42,9 +36,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_2_D.test.cpp
-    title: test/AOJ/CGL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_7_D.test.cpp
     title: test/AOJ/CGL_7_D.test.cpp
@@ -105,9 +96,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\"\
@@ -145,7 +136,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2022-12-21 18:41:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/1160.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
@@ -162,14 +153,11 @@ data:
   - test/AOJ/GRL_1_B.test.cpp
   - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
-  - test/AOJ/0143.test.cpp
   - test/AOJ/0233.test.cpp
   - test/AOJ/GRL_3_A.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/DPL_2_A.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/ALDS1_12_A.test.cpp
-  - test/AOJ/CGL_1_A.test.cpp
   - test/AOJ/0560.test.cpp
   - test/AOJ/GRL_1_C.test.cpp
   - test/AOJ/GRL_1_A.test.cpp

@@ -1,29 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/CGL_1_A.test.cpp
-    title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_2_D.test.cpp
-    title: test/AOJ/CGL_2_D.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -76,11 +70,9 @@ data:
   - geomeny/is-inter.hpp
   - geomeny/distance.hpp
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
-  - test/AOJ/CGL_1_A.test.cpp
 documentation_of: geomeny/projection.hpp
 layout: document
 title: "\u5C04\u5F71"
