@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.000001'
@@ -91,8 +91,8 @@ data:
     \ rcos * rcos);\n    Point dir = (l[1] - l[0]) / abs(l[1] - l[0]);\n    Point\
     \ p1 = p + dir * rsin;\n    Point p2 = p - dir * rsin;\n    res.push_back(p1);\n\
     \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 5 \"test/AOJ/CGL_7_E.test.cpp\"\
-    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> a.x >> a.y\
-    \ >> a.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
+    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> b.x >> b.y\
+    \ >> b.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
     \ b) {\n        if (a.x != b.x) {\n            return a.x < b.x;\n        }\n\
     \        return a.y < b.y;\n    });\n    if (res.size() == 1) {\n        cout\
     \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y <<\
@@ -100,8 +100,8 @@ data:
     \ << res[1].x << \" \" << res[1].y << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
     \n#define ERROR 0.000001\n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\
-    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> a.x >> a.y\
-    \ >> a.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
+    \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> b.x >> b.y\
+    \ >> b.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
     \ b) {\n        if (a.x != b.x) {\n            return a.x < b.x;\n        }\n\
     \        return a.y < b.y;\n    });\n    if (res.size() == 1) {\n        cout\
     \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y <<\
@@ -114,8 +114,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_7_E.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 21:57:33+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 22:01:54+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_7_E.test.cpp
 layout: document

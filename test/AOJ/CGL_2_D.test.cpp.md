@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
