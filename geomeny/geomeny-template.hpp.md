@@ -17,22 +17,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
-  - icon: ':warning:'
+  - icon: ':x:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
   - icon: ':heavy_check_mark:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-  - icon: ':warning:'
-    path: geomeny/is-contain-in-the-triangle.hpp
-    title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   - icon: ':heavy_check_mark:'
     path: geomeny/is-convex.hpp
     title: "\u51F8\u6027\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedVerifiedWith:
@@ -45,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/CGL_2_D.test.cpp
+    title: test/AOJ/CGL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_3_A.test.cpp
     title: test/AOJ/CGL_3_A.test.cpp
@@ -150,7 +150,6 @@ data:
   - geomeny/projection.hpp
   - geomeny/convex-cut.hpp
   - geomeny/is-convex.hpp
-  - geomeny/is-contain-in-the-triangle.hpp
   timestamp: '2022-12-27 15:24:29+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
@@ -161,6 +160,7 @@ data:
   - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/CGL_4_C.test.cpp
   - test/AOJ/CGL_3_B.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
 documentation_of: geomeny/geomeny-template.hpp

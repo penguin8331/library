@@ -4,10 +4,7 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geomeny/is-contain-in-the-triangle.hpp
-    title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
@@ -83,8 +80,7 @@ data:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
   path: geomeny/ccw.hpp
-  requiredBy:
-  - geomeny/is-contain-in-the-triangle.hpp
+  requiredBy: []
   timestamp: '2022-12-27 15:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
