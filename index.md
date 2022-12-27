@@ -68,7 +68,7 @@ data:
     - icon: ':warning:'
       path: geomeny/area-polygon.hpp
       title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
-    - icon: ':question:'
+    - icon: ':x:'
       path: geomeny/ccw.hpp
       title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
     - icon: ':warning:'
@@ -83,7 +83,7 @@ data:
     - icon: ':x:'
       path: geomeny/distance.hpp
       title: "\u8DDD\u96E2"
-    - icon: ':question:'
+    - icon: ':x:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -232,7 +232,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/CGL_1_A.test.cpp
       title: test/AOJ/CGL_1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/CGL_1_C.test.cpp
       title: test/AOJ/CGL_1_C.test.cpp
     - icon: ':x:'
