@@ -5,7 +5,7 @@
 
 int main() {
     Circle a, b;
-    cin >> a.x >> a.y >> a.r >> a.x >> a.y >> a.r;
+    cin >> a.x >> a.y >> a.r >> b.x >> b.y >> b.r;
     auto res = crosspoint(a, b);
     sort(all(res), [](Point a, Point b) {
         if (a.x != b.x) {
