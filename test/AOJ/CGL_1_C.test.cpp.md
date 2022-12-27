@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/ccw.hpp
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
   - icon: ':question:'
@@ -82,27 +82,26 @@ data:
     \ Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n\
     \    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS)\
     \ return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n\
-    }\n#line 4 \"test/AOJ/CGL_1_C.test.cpp\"\n\nint main() {\n    cout << fixed <<\
-    \ setprecision(8);\n    Point a, b;\n    cin >> a.x >> a.y >> b.x >> b.y;\n  \
-    \  int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point c;\n\
-    \        cin >> c.x >> c.y;\n        int res = ccw(a, b, c);\n        if (res\
-    \ == -1) {\n            cout << \"CLOCKWISE\" << endl;\n        }\n        elif\
-    \ (res == 1) {\n            cout << \"COUNTER_CLOCKWISE\" << endl;\n        }\n\
-    \        elif (res == 2) {\n            cout << \"ONLINE_BACK\" << endl;\n   \
-    \     }\n        elif (res == -2) {\n            cout << \"ONLINE_FRONT\" << endl;\n\
-    \        }\n        else {\n            cout << \"ON_SEGMENT\" << endl;\n    \
-    \    }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n#include \"template/template.hpp\"\n#include \"geomeny/ccw.hpp\"\n\nint main()\
-    \ {\n    cout << fixed << setprecision(8);\n    Point a, b;\n    cin >> a.x >>\
-    \ a.y >> b.x >> b.y;\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++)\
-    \ {\n        Point c;\n        cin >> c.x >> c.y;\n        int res = ccw(a, b,\
-    \ c);\n        if (res == -1) {\n            cout << \"CLOCKWISE\" << endl;\n\
-    \        }\n        elif (res == 1) {\n            cout << \"COUNTER_CLOCKWISE\"\
+    }\n#line 4 \"test/AOJ/CGL_1_C.test.cpp\"\n\nint main() {\n    Point a, b;\n  \
+    \  cin >> a.x >> a.y >> b.x >> b.y;\n    int Q;\n    cin >> Q;\n    for (int i\
+    \ = 0; i < Q; i++) {\n        Point c;\n        cin >> c.x >> c.y;\n        int\
+    \ res = ccw(a, b, c);\n        if (res == -1) {\n            cout << \"CLOCKWISE\"\
+    \ << endl;\n        }\n        elif (res == 1) {\n            cout << \"COUNTER_CLOCKWISE\"\
     \ << endl;\n        }\n        elif (res == 2) {\n            cout << \"ONLINE_BACK\"\
     \ << endl;\n        }\n        elif (res == -2) {\n            cout << \"ONLINE_FRONT\"\
     \ << endl;\n        }\n        else {\n            cout << \"ON_SEGMENT\" << endl;\n\
-    \        }\n    }\n}"
+    \        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
+    \n#include \"template/template.hpp\"\n#include \"geomeny/ccw.hpp\"\n\nint main()\
+    \ {\n    Point a, b;\n    cin >> a.x >> a.y >> b.x >> b.y;\n    int Q;\n    cin\
+    \ >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point c;\n        cin >> c.x\
+    \ >> c.y;\n        int res = ccw(a, b, c);\n        if (res == -1) {\n       \
+    \     cout << \"CLOCKWISE\" << endl;\n        }\n        elif (res == 1) {\n \
+    \           cout << \"COUNTER_CLOCKWISE\" << endl;\n        }\n        elif (res\
+    \ == 2) {\n            cout << \"ONLINE_BACK\" << endl;\n        }\n        elif\
+    \ (res == -2) {\n            cout << \"ONLINE_FRONT\" << endl;\n        }\n  \
+    \      else {\n            cout << \"ON_SEGMENT\" << endl;\n        }\n    }\n\
+    }"
   dependsOn:
   - template/template.hpp
   - geomeny/ccw.hpp
@@ -110,7 +109,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:52:12+09:00'
+  timestamp: '2022-12-27 12:02:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_C.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   - icon: ':question:'
@@ -73,16 +73,16 @@ data:
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
     }\n#line 4 \"test/AOJ/CGL_1_A.test.cpp\"\n\nint main() {\n    cout << fixed <<\
-    \ setprecision(8);\n    Line a(2);\n    cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n\
-    \    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point b;\n\
-    \        cin >> b.x >> b.y;\n        Point res = proj(b, a);\n        cout <<\
-    \ res.x << \" \" << res.y << endl;\n    }\n}\n"
+    \ setprecision(10);\n    Line a(2);\n    cin >> a[0].x >> a[0].y >> a[1].x >>\
+    \ a[1].y;\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n    \
+    \    Point b;\n        cin >> b.x >> b.y;\n        Point res = proj(b, a);\n \
+    \       cout << res.x << \" \" << res.y << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/projection.hpp\"\n\n\
-    int main() {\n    cout << fixed << setprecision(8);\n    Line a(2);\n    cin >>\
-    \ a[0].x >> a[0].y >> a[1].x >> a[1].y;\n    int Q;\n    cin >> Q;\n    for (int\
-    \ i = 0; i < Q; i++) {\n        Point b;\n        cin >> b.x >> b.y;\n       \
-    \ Point res = proj(b, a);\n        cout << res.x << \" \" << res.y << endl;\n\
+    int main() {\n    cout << fixed << setprecision(10);\n    Line a(2);\n    cin\
+    \ >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n    int Q;\n    cin >> Q;\n    for\
+    \ (int i = 0; i < Q; i++) {\n        Point b;\n        cin >> b.x >> b.y;\n  \
+    \      Point res = proj(b, a);\n        cout << res.x << \" \" << res.y << endl;\n\
     \    }\n}"
   dependsOn:
   - template/template.hpp
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:52:12+09:00'
+  timestamp: '2022-12-27 12:02:36+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_A.test.cpp

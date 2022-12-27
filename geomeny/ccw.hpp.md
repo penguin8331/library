@@ -5,19 +5,16 @@ data:
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geomeny/is-contain-in-the-triangle.hpp
     title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0143.test.cpp
-    title: test/AOJ/0143.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -89,9 +86,8 @@ data:
   requiredBy:
   - geomeny/is-contain-in-the-triangle.hpp
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/0143.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
 documentation_of: geomeny/ccw.hpp
 layout: document

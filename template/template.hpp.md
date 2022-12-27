@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0143.test.cpp
-    title: test/AOJ/0143.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
     title: test/AOJ/0233.test.cpp
@@ -36,10 +33,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
   - icon: ':x:'
@@ -162,7 +159,6 @@ data:
   - test/AOJ/GRL_1_B.test.cpp
   - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
-  - test/AOJ/0143.test.cpp
   - test/AOJ/0233.test.cpp
   - test/AOJ/GRL_3_A.test.cpp
   - test/AOJ/CGL_2_D.test.cpp

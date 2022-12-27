@@ -8,14 +8,14 @@ data:
   - icon: ':x:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/CGL_1_A.test.cpp
     title: test/AOJ/CGL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
   - icon: ':x:'
@@ -23,7 +23,7 @@ data:
     title: test/AOJ/CGL_2_D.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -76,7 +76,7 @@ data:
   - geomeny/is-inter.hpp
   - geomeny/distance.hpp
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_2_D.test.cpp

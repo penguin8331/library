@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C
@@ -90,14 +90,14 @@ data:
     \ / abs(l[1] - l[0]);\n    Point p1 = p + dir * rsin;\n    Point p2 = p - dir\
     \ * rsin;\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
     \   return res;\n}\n#line 4 \"test/AOJ/CGL_2_C.test.cpp\"\n\nint main() {\n  \
-    \  cout << fixed << setprecision(8);\n    int N;\n    cin >> N;\n    for (int\
+    \  cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n    for (int\
     \ i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x >> a[0].y\
     \ >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res\
     \ = crosspoint(a, b);\n        cout << res[0].x << \" \" << res[0].y << endl;\n\
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\n\n\
-    int main() {\n    cout << fixed << setprecision(8);\n    int N;\n    cin >> N;\n\
+    int main() {\n    cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n\
     \    for (int i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x\
     \ >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n   \
     \     auto res = crosspoint(a, b);\n        cout << res[0].x << \" \" << res[0].y\
@@ -109,8 +109,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 12:02:36+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_C.test.cpp
 layout: document

@@ -4,7 +4,10 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':question:'
+    path: geomeny/is-inter.hpp
+    title: "\u4EA4\u5DEE\u5224\u5B9A"
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   - icon: ':question:'
@@ -12,9 +15,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B
@@ -72,26 +75,38 @@ data:
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
-    }\n#line 4 \"test/AOJ/CGL_2_B.test.cpp\"\n\nint main() {\n    cout << fixed <<\
-    \ setprecision(8);\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++)\
-    \ {\n        Line a(2), b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y\
-    \ >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        cout << isinterSS(a, b) <<\
-    \ endl;\n    }\n}\n"
+    }\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
+    \ &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n    if\
+    \ (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS) return\
+    \ 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n}\n\
+    bool isinterPL(const Point &p, const Line &l) {\n    return (abs(p - proj(p, l))\
+    \ < EPS);\n}\nbool isinterPS(const Point &p, const Line &s) {\n    return (ccw_for_dis(s[0],\
+    \ s[1], p) == 0);\n}\nbool isinterLL(const Line &l, const Line &m) {\n    return\
+    \ (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS ||\n            abs(cross(l[1] -\
+    \ l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const Line &s, const Line &t)\
+    \ {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n    if (eq(t[0], t[1]))\
+    \ return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0], s[1], t[0]) * ccw_for_dis(s[0],\
+    \ s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0], t[1], s[0]) * ccw_for_dis(t[0],\
+    \ t[1], s[1]) <= 0);\n}\n#line 4 \"test/AOJ/CGL_2_B.test.cpp\"\n\nint main() {\n\
+    \    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n        Line a(2),\
+    \ b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y\
+    \ >> b[1].x >> b[1].y;\n        cout << isinterSS(a, b) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B\"\
-    \n#include \"template/template.hpp\"\n#include \"geomeny/projection.hpp\"\n\n\
-    int main() {\n    cout << fixed << setprecision(8);\n    int N;\n    cin >> N;\n\
-    \    for (int i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x\
-    \ >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n   \
-    \     cout << isinterSS(a, b) << endl;\n    }\n}"
+    \n#include \"template/template.hpp\"\n#include \"geomeny/is-inter.hpp\"\n\nint\
+    \ main() {\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n   \
+    \     Line a(2), b(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y >>\
+    \ b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        cout << isinterSS(a, b) << endl;\n\
+    \    }\n}"
   dependsOn:
   - template/template.hpp
+  - geomeny/is-inter.hpp
   - geomeny/projection.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 12:02:36+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_B.test.cpp
 layout: document

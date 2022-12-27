@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
   - icon: ':question:'

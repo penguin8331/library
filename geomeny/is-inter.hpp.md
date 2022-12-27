@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedRequiredBy:
@@ -12,12 +12,15 @@ data:
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_2_B.test.cpp
+    title: test/AOJ/CGL_2_B.test.cpp
   - icon: ':x:'
     path: test/AOJ/CGL_2_D.test.cpp
     title: test/AOJ/CGL_2_D.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -91,8 +94,9 @@ data:
   requiredBy:
   - geomeny/distance.hpp
   timestamp: '2022-12-27 11:52:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
 documentation_of: geomeny/is-inter.hpp
 layout: document

@@ -7,10 +7,10 @@ data:
   - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   - icon: ':question:'
@@ -99,13 +99,13 @@ data:
     \ Line &s, const Line &t) {\n    if (isinterSS(s, t))\n        return 0;\n   \
     \ else\n        return min(min(distancePS(s[0], t), distancePS(s[1], t)), min(distancePS(t[0],\
     \ s), distancePS(t[1], s)));\n}\n#line 4 \"test/AOJ/CGL_2_D.test.cpp\"\n\nint\
-    \ main() {\n    cout << fixed << setprecision(8);\n    int N;\n    cin >> N;\n\
+    \ main() {\n    cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n\
     \    for (int i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x\
     \ >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n   \
     \     cout << distanceSS(a, b) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/distance.hpp\"\n\nint\
-    \ main() {\n    cout << fixed << setprecision(8);\n    int N;\n    cin >> N;\n\
+    \ main() {\n    cout << fixed << setprecision(10);\n    int N;\n    cin >> N;\n\
     \    for (int i = 0; i < N; i++) {\n        Line a(2), b(2);\n        cin >> a[0].x\
     \ >> a[0].y >> a[1].x >> a[1].y >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n   \
     \     cout << distanceSS(a, b) << endl;\n    }\n}"
@@ -118,7 +118,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:52:12+09:00'
+  timestamp: '2022-12-27 12:02:36+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_D.test.cpp

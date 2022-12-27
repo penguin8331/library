@@ -5,7 +5,7 @@ data:
   - icon: ':warning:'
     path: geomeny/area-polygon.hpp
     title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/ccw.hpp
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
   - icon: ':warning:'
@@ -14,7 +14,7 @@ data:
   - icon: ':warning:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
   - icon: ':x:'
@@ -23,32 +23,29 @@ data:
   - icon: ':warning:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geomeny/is-contain-in-the-triangle.hpp
     title: "\u70B9\u3068\u4E09\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
   - icon: ':warning:'
     path: geomeny/is-convex.hpp
     title: "\u51F8\u6027\u5224\u5B9A"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/AOJ/0143.test.cpp
-    title: test/AOJ/0143.test.cpp
   - icon: ':x:'
     path: test/AOJ/CGL_1_A.test.cpp
     title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
   - icon: ':x:'
@@ -150,7 +147,6 @@ data:
   - test/AOJ/CGL_2_C.test.cpp
   - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_7_D.test.cpp
-  - test/AOJ/0143.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/CGL_1_A.test.cpp
