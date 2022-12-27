@@ -92,19 +92,19 @@ data:
     \ == 0) continue;\n            else if (res.size() == 0) res.push_back(temp[0]);\n\
     \            else if (!eq(temp[0], res[res.size()-1])) res.push_back(temp[0]);\n\
     \        }\n    }\n    return res;\n}\n#line 5 \"test/AOJ/CGL_4_C.test.cpp\"\n\
-    \nint main() {\n    cout << fixed << setprecision(8);\n    int N;\n    cin >>\
-    \ N;\n    vector<Point> G(N);\n    for (int i = 0; i < N; i++) {\n        cin\
-    \ >> G[i].x >> G[i].y;\n    }\n    int Q;\n    cin >> Q;\n    for (int i = 0;\
-    \ i < Q; i++) {\n        Line a(2);\n        cin >> a[0].x >> a[0].y >> a[1].x\
-    \ >> a[1].y;\n        cout << CalcArea(ConvexCut(G, a)) << endl;\n    }\n}\n"
+    \nint main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int\
+    \ i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int Q;\n\
+    \    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Line a(2);\n      \
+    \  cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n        cout << fixed << setprecision(8)\
+    \ << CalcArea(ConvexCut(G, a)) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/area-polygon.hpp\"\n\
-    #include \"geomeny/convex-cut.hpp\"\n\nint main() {\n    cout << fixed << setprecision(8);\n\
-    \    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int i = 0; i < N;\
-    \ i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int Q;\n    cin >> Q;\n\
-    \    for (int i = 0; i < Q; i++) {\n        Line a(2);\n        cin >> a[0].x\
-    \ >> a[0].y >> a[1].x >> a[1].y;\n        cout << CalcArea(ConvexCut(G, a)) <<\
-    \ endl;\n    }\n}"
+    #include \"geomeny/convex-cut.hpp\"\n\nint main() {\n    int N;\n    cin >> N;\n\
+    \    vector<Point> G(N);\n    for (int i = 0; i < N; i++) {\n        cin >> G[i].x\
+    \ >> G[i].y;\n    }\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++)\
+    \ {\n        Line a(2);\n        cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n\
+    \        cout << fixed << setprecision(8) << CalcArea(ConvexCut(G, a)) << endl;\n\
+    \    }\n}"
   dependsOn:
   - template/template.hpp
   - geomeny/area-polygon.hpp
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 15:24:29+09:00'
+  timestamp: '2022-12-27 20:47:20+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_C.test.cpp
