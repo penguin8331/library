@@ -33,7 +33,7 @@ data:
   - icon: ':x:'
     path: test/AOJ/CGL_1_A.test.cpp
     title: test/AOJ/CGL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_C.test.cpp
     title: test/AOJ/CGL_1_C.test.cpp
   - icon: ':x:'
@@ -45,7 +45,7 @@ data:
   - icon: ':x:'
     path: test/AOJ/CGL_2_D.test.cpp
     title: test/AOJ/CGL_2_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_7_D.test.cpp
     title: test/AOJ/CGL_7_D.test.cpp
   - icon: ':heavy_check_mark:'

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
-  - icon: ':x:'
+  - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D
@@ -35,81 +35,83 @@ data:
     \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
     \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
     \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"geomeny/geomeny-template.hpp\"\ncout << fixed << setprecision(8);\n\
-    using DD = long double;     // to be set appropriately\nconst DD EPS = 1e-10;\
-    \  // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg) {\
-    \ return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\n\
-    /* Point */\nstruct Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) :\
-    \ x(x), y(y) {}\n    friend ostream &operator<<(ostream &s, const Point &p) {\
-    \ return s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const\
-    \ Point &p, const Point &q) { return Point(p.x + q.x, p.y + q.y); }\ninline Point\
-    \ operator-(const Point &p, const Point &q) { return Point(p.x - q.x, p.y - q.y);\
-    \ }\ninline Point operator*(const Point &p, DD a) { return Point(p.x * a, p.y\
-    \ * a); }\ninline Point operator*(DD a, const Point &p) { return Point(a * p.x,\
-    \ a * p.y); }\ninline Point operator*(const Point &p, const Point &q) { return\
-    \ Point(p.x * q.x - p.y * q.y, p.x * q.y + p.y * q.x); }\ninline Point operator/(const\
-    \ Point &p, DD a) { return Point(p.x / a, p.y / a); }\ninline Point conj(const\
-    \ Point &p) { return Point(p.x, -p.y); }\ninline Point rot(const Point &p, DD\
-    \ ang) { return Point(cos(ang) * p.x - sin(ang) * p.y, sin(ang) * p.x + cos(ang)\
-    \ * p.y); }\ninline Point rot90(const Point &p) { return Point(-p.y, p.x); }\n\
-    inline DD cross(const Point &p, const Point &q) { return p.x * q.y - p.y * q.x;\
-    \ }\ninline DD dot(const Point &p, const Point &q) { return p.x * q.x + p.y *\
-    \ q.y; }\ninline DD norm(const Point &p) { return dot(p, p); }\ninline DD abs(const\
-    \ Point &p) { return sqrt(dot(p, p)); }\ninline DD amp(const Point &p) {\n   \
-    \ DD res = atan2(p.y, p.x);\n    if (res < 0) res += PI * 2;\n    return res;\n\
-    }\ninline bool eq(const Point &p, const Point &q) { return abs(p - q) < EPS; }\n\
-    inline bool operator<(const Point &p, const Point &q) { return (abs(p.x - q.x)\
-    \ > EPS ? p.x < q.x : p.y < q.y); }\ninline bool operator>(const Point &p, const\
-    \ Point &q) { return (abs(p.x - q.x) > EPS ? p.x > q.x : p.y > q.y); }\ninline\
-    \ Point operator/(const Point &p, const Point &q) { return p * conj(q) / norm(q);\
-    \ }\n\n/* Line */\nstruct Line : vector<Point> {\n    Line(Point a = Point(0.0,\
-    \ 0.0), Point b = Point(0.0, 0.0)) {\n        this->push_back(a);\n        this->push_back(b);\n\
-    \    }\n    friend ostream &operator<<(ostream &s, const Line &l) { return s <<\
-    \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
-    \ Point {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
-    \ r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle &c) { return\
-    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"\
-    geomeny/crosspoint.hpp\"\n\nPoint proj_for_crosspoint(const Point &p, const Line\
-    \ &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return\
-    \ l[0] + (l[1] - l[0]) * t;\n}\nvector<Point> crosspoint(const Line &l, const\
-    \ Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n\
-    \    if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0] + (l[1]\
-    \ - l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\nvector<Point>\
-    \ crosspoint(const Circle &e, const Circle &f) {\n    vector<Point> res;\n   \
-    \ DD d = abs(e - f);\n    if (d < EPS) return vector<Point>();\n    if (d > e.r\
-    \ + f.r + EPS) return vector<Point>();\n    if (d < abs(e.r - f.r) - EPS) return\
-    \ vector<Point>();\n    DD rcos = (d * d + e.r * e.r - f.r * f.r) / (2.0 * d),\
-    \ rsin;\n    if (e.r - abs(rcos) < EPS)\n        rsin = 0;\n    else\n       \
-    \ rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (f - e) / d;\n    Point\
-    \ p1 = e + dir * Point(rcos, rsin);\n    Point p2 = e + dir * Point(rcos, -rsin);\n\
-    \    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n\
-    }\nvector<Point> crosspoint(const Circle &e, const Line &l) {\n    vector<Point>\
-    \ res;\n    Point p = proj_for_crosspoint(e, l);\n    DD rcos = abs(e - p), rsin;\n\
-    \    if (rcos > e.r + EPS)\n        return vector<Point>();\n    else if (e.r\
-    \ - rcos < EPS)\n        rsin = 0;\n    else\n        rsin = sqrt(e.r * e.r -\
-    \ rcos * rcos);\n    Point dir = (l[1] - l[0]) / abs(l[1] - l[0]);\n    Point\
-    \ p1 = p + dir * rsin;\n    Point p2 = p - dir * rsin;\n    res.push_back(p1);\n\
-    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 4 \"test/AOJ/CGL_7_D.test.cpp\"\
-    \n\nint main() {\n    Circle a;\n    cin >> a.x >> a.y >> a.r;\n    int N;\n \
-    \   cin >> N;\n    for (int i = 0; i < N; i++) {\n        Line b(2);\n       \
-    \ cin >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res = crosspoint(a,\
-    \ b);\n        sort(all(res), [](Point a, Point b) {\n            if (a.x != b.x)\
-    \ {\n                return a.x < b.x;\n            }\n            return a.y\
-    \ < b.y;\n        });\n        if (res.size() == 1) {\n            cout << res[0].x\
-    \ << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y << endl;\n  \
-    \      } else {\n            cout << res[0].x << \" \" << res[0].y << \" \" <<\
-    \ res[1].x << \" \" << res[1].y << endl;\n        }\n    }\n}\n"
+    \ MOD = 1e9 + 7;\n#line 1 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
+    \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
+    const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
+    DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
+    \   DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream\
+    \ &operator<<(ostream &s, const Point &p) { return s << '(' << p.x << \", \" <<\
+    \ p.y << ')'; }\n};\ninline Point operator+(const Point &p, const Point &q) {\
+    \ return Point(p.x + q.x, p.y + q.y); }\ninline Point operator-(const Point &p,\
+    \ const Point &q) { return Point(p.x - q.x, p.y - q.y); }\ninline Point operator*(const\
+    \ Point &p, DD a) { return Point(p.x * a, p.y * a); }\ninline Point operator*(DD\
+    \ a, const Point &p) { return Point(a * p.x, a * p.y); }\ninline Point operator*(const\
+    \ Point &p, const Point &q) { return Point(p.x * q.x - p.y * q.y, p.x * q.y +\
+    \ p.y * q.x); }\ninline Point operator/(const Point &p, DD a) { return Point(p.x\
+    \ / a, p.y / a); }\ninline Point conj(const Point &p) { return Point(p.x, -p.y);\
+    \ }\ninline Point rot(const Point &p, DD ang) { return Point(cos(ang) * p.x -\
+    \ sin(ang) * p.y, sin(ang) * p.x + cos(ang) * p.y); }\ninline Point rot90(const\
+    \ Point &p) { return Point(-p.y, p.x); }\ninline DD cross(const Point &p, const\
+    \ Point &q) { return p.x * q.y - p.y * q.x; }\ninline DD dot(const Point &p, const\
+    \ Point &q) { return p.x * q.x + p.y * q.y; }\ninline DD norm(const Point &p)\
+    \ { return dot(p, p); }\ninline DD abs(const Point &p) { return sqrt(dot(p, p));\
+    \ }\ninline DD amp(const Point &p) {\n    DD res = atan2(p.y, p.x);\n    if (res\
+    \ < 0) res += PI * 2;\n    return res;\n}\ninline bool eq(const Point &p, const\
+    \ Point &q) { return abs(p - q) < EPS; }\ninline bool operator<(const Point &p,\
+    \ const Point &q) { return (abs(p.x - q.x) > EPS ? p.x < q.x : p.y < q.y); }\n\
+    inline bool operator>(const Point &p, const Point &q) { return (abs(p.x - q.x)\
+    \ > EPS ? p.x > q.x : p.y > q.y); }\ninline Point operator/(const Point &p, const\
+    \ Point &q) { return p * conj(q) / norm(q); }\n\n/* Line */\nstruct Line : vector<Point>\
+    \ {\n    Line(Point a = Point(0.0, 0.0), Point b = Point(0.0, 0.0)) {\n      \
+    \  this->push_back(a);\n        this->push_back(b);\n    }\n    friend ostream\
+    \ &operator<<(ostream &s, const Line &l) { return s << '{' << l[0] << \", \" <<\
+    \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
+    \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
+    \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/crosspoint.hpp\"\
+    \n\nPoint proj_for_crosspoint(const Point &p, const Line &l) {\n    DD t = dot(p\
+    \ - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) *\
+    \ t;\n}\nvector<Point> crosspoint(const Line &l, const Line &m) {\n    vector<Point>\
+    \ res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n    if (abs(d) < EPS) return\
+    \ vector<Point>();\n    res.push_back(l[0] + (l[1] - l[0]) * cross(m[1] - m[0],\
+    \ m[1] - l[0]) / d);\n    return res;\n}\nvector<Point> crosspoint(const Circle\
+    \ &e, const Circle &f) {\n    vector<Point> res;\n    DD d = abs(e - f);\n   \
+    \ if (d < EPS) return vector<Point>();\n    if (d > e.r + f.r + EPS) return vector<Point>();\n\
+    \    if (d < abs(e.r - f.r) - EPS) return vector<Point>();\n    DD rcos = (d *\
+    \ d + e.r * e.r - f.r * f.r) / (2.0 * d), rsin;\n    if (e.r - abs(rcos) < EPS)\n\
+    \        rsin = 0;\n    else\n        rsin = sqrt(e.r * e.r - rcos * rcos);\n\
+    \    Point dir = (f - e) / d;\n    Point p1 = e + dir * Point(rcos, rsin);\n \
+    \   Point p2 = e + dir * Point(rcos, -rsin);\n    res.push_back(p1);\n    if (!eq(p1,\
+    \ p2)) res.push_back(p2);\n    return res;\n}\nvector<Point> crosspoint(const\
+    \ Circle &e, const Line &l) {\n    vector<Point> res;\n    Point p = proj_for_crosspoint(e,\
+    \ l);\n    DD rcos = abs(e - p), rsin;\n    if (rcos > e.r + EPS)\n        return\
+    \ vector<Point>();\n    else if (e.r - rcos < EPS)\n        rsin = 0;\n    else\n\
+    \        rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (l[1] - l[0])\
+    \ / abs(l[1] - l[0]);\n    Point p1 = p + dir * rsin;\n    Point p2 = p - dir\
+    \ * rsin;\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
+    \   return res;\n}\n#line 4 \"test/AOJ/CGL_7_D.test.cpp\"\n\nint main() {\n  \
+    \  cout << fixed << setprecision(8);\n    Circle a;\n    cin >> a.x >> a.y >>\
+    \ a.r;\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n       \
+    \ Line b(2);\n        cin >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto\
+    \ res = crosspoint(a, b);\n        sort(all(res), [](Point a, Point b) {\n   \
+    \         if (a.x != b.x) {\n                return a.x < b.x;\n            }\n\
+    \            return a.y < b.y;\n        });\n        if (res.size() == 1) {\n\
+    \            cout << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \"\
+    \ \" << res[0].y << endl;\n        } else {\n            cout << res[0].x << \"\
+    \ \" << res[0].y << \" \" << res[1].x << \" \" << res[1].y << endl;\n        }\n\
+    \    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\"\
     \n#include \"template/template.hpp\"\n#include \"geomeny/crosspoint.hpp\"\n\n\
-    int main() {\n    Circle a;\n    cin >> a.x >> a.y >> a.r;\n    int N;\n    cin\
-    \ >> N;\n    for (int i = 0; i < N; i++) {\n        Line b(2);\n        cin >>\
-    \ b[0].x >> b[0].y >> b[1].x >> b[1].y;\n        auto res = crosspoint(a, b);\n\
-    \        sort(all(res), [](Point a, Point b) {\n            if (a.x != b.x) {\n\
-    \                return a.x < b.x;\n            }\n            return a.y < b.y;\n\
-    \        });\n        if (res.size() == 1) {\n            cout << res[0].x <<\
-    \ \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y << endl;\n     \
-    \   } else {\n            cout << res[0].x << \" \" << res[0].y << \" \" << res[1].x\
-    \ << \" \" << res[1].y << endl;\n        }\n    }\n}"
+    int main() {\n    cout << fixed << setprecision(8);\n    Circle a;\n    cin >>\
+    \ a.x >> a.y >> a.r;\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++)\
+    \ {\n        Line b(2);\n        cin >> b[0].x >> b[0].y >> b[1].x >> b[1].y;\n\
+    \        auto res = crosspoint(a, b);\n        sort(all(res), [](Point a, Point\
+    \ b) {\n            if (a.x != b.x) {\n                return a.x < b.x;\n   \
+    \         }\n            return a.y < b.y;\n        });\n        if (res.size()\
+    \ == 1) {\n            cout << res[0].x << \" \" << res[0].y << \" \" << res[0].x\
+    \ << \" \" << res[0].y << endl;\n        } else {\n            cout << res[0].x\
+    \ << \" \" << res[0].y << \" \" << res[1].x << \" \" << res[1].y << endl;\n  \
+    \      }\n    }\n}"
   dependsOn:
   - template/template.hpp
   - geomeny/crosspoint.hpp
@@ -117,8 +119,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_7_D.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 11:46:19+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-12-27 11:52:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_7_D.test.cpp
 layout: document
