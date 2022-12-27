@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D"
+#define ERROR 0.00000001
 #include "template/template.hpp"
 #include "geomeny/distance.hpp"
 
 int main() {
-    cout << fixed << setprecision(10);
     int Q;
     cin >> Q;
     for (int i = 0; i < Q; i++) {
