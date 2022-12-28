@@ -1,4 +1,3 @@
-#pragma once
 #include "geomeny/geomeny-template.hpp"
 
 int ccw_for_isconvex(const Point &a, const Point &b, const Point &c) {

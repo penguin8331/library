@@ -1,4 +1,3 @@
-#pragma once
 #include "geomeny/geomeny-template.hpp"
 
 // 粗

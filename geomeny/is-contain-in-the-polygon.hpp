@@ -1,4 +1,3 @@
-#pragma once
 #include "geomeny/geomeny-template.hpp"
 
 // 2: in, 1: on, 0: out
