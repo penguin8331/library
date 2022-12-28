@@ -80,13 +80,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: geomeny/convex-hull.hpp
       title: "\u51F8\u5305"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/crosspoint.hpp
       title: "\u4EA4\u70B9"
     - icon: ':heavy_check_mark:'
       path: geomeny/distance.hpp
       title: "\u8DDD\u96E2"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/geomeny-template.hpp
       title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -95,10 +95,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: geomeny/is-convex.hpp
       title: "\u51F8\u6027\u5224\u5B9A"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/is-inter.hpp
       title: "\u4EA4\u5DEE\u5224\u5B9A"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geomeny/projection.hpp
       title: "\u5C04\u5F71"
   - name: graph
@@ -196,7 +196,7 @@ data:
       title: "\u9023\u9577\u5727\u7E2E"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -235,7 +235,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_2_B.test.cpp
       title: test/AOJ/CGL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_2_C.test.cpp
       title: test/AOJ/CGL_2_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -256,10 +256,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_4_C.test.cpp
       title: test/AOJ/CGL_4_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_7_D.test.cpp
       title: test/AOJ/CGL_7_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_7_E.test.cpp
       title: test/AOJ/CGL_7_E.test.cpp
     - icon: ':heavy_check_mark:'

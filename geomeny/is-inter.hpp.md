@@ -1,19 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geomeny/common-area.hpp
-    title: geomeny/common-area.hpp
-  - icon: ':x:'
-    path: geomeny/crosspoint.hpp
-    title: "\u4EA4\u70B9"
   - icon: ':heavy_check_mark:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
@@ -21,21 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_2_C.test.cpp
-    title: test/AOJ/CGL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_D.test.cpp
     title: test/AOJ/CGL_2_D.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_7_D.test.cpp
-    title: test/AOJ/CGL_7_D.test.cpp
-  - icon: ':x:'
-    path: test/AOJ/CGL_7_E.test.cpp
-    title: test/AOJ/CGL_7_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -108,15 +93,10 @@ data:
   path: geomeny/is-inter.hpp
   requiredBy:
   - geomeny/distance.hpp
-  - geomeny/crosspoint.hpp
-  - geomeny/common-area.hpp
   timestamp: '2022-12-28 10:43:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/CGL_7_E.test.cpp
-  - test/AOJ/CGL_2_C.test.cpp
   - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
 documentation_of: geomeny/is-inter.hpp
 layout: document
