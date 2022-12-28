@@ -8,13 +8,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/ccw.hpp
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
+  - icon: ':warning:'
+    path: geomeny/common-area.hpp
+    title: geomeny/common-area.hpp
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-cut.hpp
     title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
   - icon: ':heavy_check_mark:'
@@ -26,10 +29,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/is-convex.hpp
     title: "\u51F8\u6027\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedVerifiedWith:
@@ -42,7 +45,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,15 +66,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_4_C.test.cpp
     title: test/AOJ/CGL_4_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_7_D.test.cpp
     title: test/AOJ/CGL_7_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_7_E.test.cpp
     title: test/AOJ/CGL_7_E.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
@@ -152,12 +155,13 @@ data:
   - geomeny/distance.hpp
   - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/crosspoint.hpp
+  - geomeny/common-area.hpp
   - geomeny/ccw.hpp
   - geomeny/projection.hpp
   - geomeny/convex-cut.hpp
   - geomeny/is-convex.hpp
   timestamp: '2022-12-27 15:24:29+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_7_E.test.cpp
   - test/AOJ/CGL_2_C.test.cpp

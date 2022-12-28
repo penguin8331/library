@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-cut.hpp
     title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -76,10 +76,10 @@ data:
     geomeny/area-polygon.hpp\"\n\nDD CalcArea(const vector<Point> &pol) {\n    DD\
     \ res = 0.0;\n    for (int i = 0; i < pol.size(); ++i) {\n        res += cross(pol[i],\
     \ pol[(i + 1) % pol.size()]);\n    }\n    return res / 2.0L;\n}\n#line 2 \"geomeny/convex-cut.hpp\"\
-    \n\n// convex cut\nint ccw_for_convexcut(const Point &a, const Point &b, const\
-    \ Point &c) {\n    if (cross(b-a, c-a) > EPS) return 1;\n    if (cross(b-a, c-a)\
-    \ < -EPS) return -1;\n    if (dot(b-a, c-a) < -EPS) return 2;\n    if (norm(b-a)\
-    \ < norm(c-a) - EPS) return -2;\n    return 0;\n}\nvector<Point> crosspoint_for_convexcut(const\
+    \n\nint ccw_for_convexcut(const Point &a, const Point &b, const Point &c) {\n\
+    \    if (cross(b-a, c-a) > EPS) return 1;\n    if (cross(b-a, c-a) < -EPS) return\
+    \ -1;\n    if (dot(b-a, c-a) < -EPS) return 2;\n    if (norm(b-a) < norm(c-a)\
+    \ - EPS) return -2;\n    return 0;\n}\nvector<Point> crosspoint_for_convexcut(const\
     \ Line &l, const Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0],\
     \ l[1] - l[0]);\n    if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0]\
     \ + (l[1] - l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\n\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 21:45:59+09:00'
+  timestamp: '2022-12-28 10:35:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_C.test.cpp
