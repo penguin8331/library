@@ -1,3 +1,4 @@
+#pragma once
 #include "geomeny/is-inter.hpp"
 
 DD distancePL(const Point &p, const Line &l) {

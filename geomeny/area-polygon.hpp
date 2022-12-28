@@ -1,3 +1,4 @@
+#pragma once
 #include "geomeny/geomeny-template.hpp"
 
 DD CalcArea(const vector<Point> &pol) {

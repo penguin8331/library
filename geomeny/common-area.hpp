@@ -1,3 +1,4 @@
+#pragma once
 #include "geomeny/crosspoint.hpp"
 
 DD calc(const Circle &p, const Circle &q) {

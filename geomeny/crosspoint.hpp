@@ -1,3 +1,4 @@
+#pragma once
 #include "geomeny/is-inter.hpp"
 
 Point proj_for_crosspoint(const Point &p, const Line &l) {

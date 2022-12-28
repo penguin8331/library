@@ -1,3 +1,4 @@
+#pragma once
 #include "geomeny/geomeny-template.hpp"
 
 Point proj(const Point &p, const Line &l) {
