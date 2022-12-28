@@ -1,6 +1,5 @@
 #include"geomeny/geomeny-template.hpp"
 
-// convex cut
 int ccw_for_convexcut(const Point &a, const Point &b, const Point &c) {
     if (cross(b-a, c-a) > EPS) return 1;
     if (cross(b-a, c-a) < -EPS) return -1;
