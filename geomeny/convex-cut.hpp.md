@@ -47,7 +47,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/convex-cut.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/convex-cut.hpp\"\
     \n\nint ccw_for_convexcut(const Point &a, const Point &b, const Point &c) {\n\
     \    if (cross(b-a, c-a) > EPS) return 1;\n    if (cross(b-a, c-a) < -EPS) return\
     \ -1;\n    if (dot(b-a, c-a) < -EPS) return 2;\n    if (norm(b-a) < norm(c-a)\
@@ -65,16 +65,16 @@ data:
     \ == 0) continue;\n            else if (res.size() == 0) res.push_back(temp[0]);\n\
     \            else if (!eq(temp[0], res[res.size()-1])) res.push_back(temp[0]);\n\
     \        }\n    }\n    return res;\n}\n"
-  code: "#include\"geomeny/geomeny-template.hpp\"\n\nint ccw_for_convexcut(const Point\
-    \ &a, const Point &b, const Point &c) {\n    if (cross(b-a, c-a) > EPS) return\
-    \ 1;\n    if (cross(b-a, c-a) < -EPS) return -1;\n    if (dot(b-a, c-a) < -EPS)\
-    \ return 2;\n    if (norm(b-a) < norm(c-a) - EPS) return -2;\n    return 0;\n\
-    }\nvector<Point> crosspoint_for_convexcut(const Line &l, const Line &m) {\n  \
-    \  vector<Point> res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n    if (abs(d)\
-    \ < EPS) return vector<Point>();\n    res.push_back(l[0] + (l[1] - l[0]) * cross(m[1]\
-    \ - m[0], m[1] - l[0]) / d);\n    return res;\n}\nvector<Point> ConvexCut(const\
-    \ vector<Point> &pol, const Line &l) {\n    vector<Point> res;\n    for (int i\
-    \ = 0; i < pol.size(); ++i) {\n        Point p = pol[i], q = pol[(i+1)%pol.size()];\n\
+  code: "#pragma once\n#include\"geomeny/geomeny-template.hpp\"\n\nint ccw_for_convexcut(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b-a, c-a) > EPS)\
+    \ return 1;\n    if (cross(b-a, c-a) < -EPS) return -1;\n    if (dot(b-a, c-a)\
+    \ < -EPS) return 2;\n    if (norm(b-a) < norm(c-a) - EPS) return -2;\n    return\
+    \ 0;\n}\nvector<Point> crosspoint_for_convexcut(const Line &l, const Line &m)\
+    \ {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n   \
+    \ if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0] + (l[1] -\
+    \ l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\nvector<Point>\
+    \ ConvexCut(const vector<Point> &pol, const Line &l) {\n    vector<Point> res;\n\
+    \    for (int i = 0; i < pol.size(); ++i) {\n        Point p = pol[i], q = pol[(i+1)%pol.size()];\n\
     \        if (ccw_for_convexcut(l[0], l[1], p) != -1) {\n            if (res.size()\
     \ == 0) res.push_back(p);\n            else if (!eq(p, res[res.size()-1])) res.push_back(p);\n\
     \        }\n        if (ccw_for_convexcut(l[0], l[1], p) * ccw_for_convexcut(l[0],\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: geomeny/convex-cut.hpp
   requiredBy: []
-  timestamp: '2022-12-28 10:35:09+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_C.test.cpp

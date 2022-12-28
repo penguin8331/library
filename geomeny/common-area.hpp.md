@@ -53,11 +53,11 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/projection.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/projection.hpp\"\
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
-    }\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
+    }\n#line 3 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
     \ &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n    if\
     \ (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS) return\
     \ 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n}\n\
@@ -69,7 +69,7 @@ data:
     \ {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n    if (eq(t[0], t[1]))\
     \ return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0], s[1], t[0]) * ccw_for_dis(s[0],\
     \ s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0], t[1], s[0]) * ccw_for_dis(t[0],\
-    \ t[1], s[1]) <= 0);\n}\n#line 2 \"geomeny/crosspoint.hpp\"\n\nPoint proj_for_crosspoint(const\
+    \ t[1], s[1]) <= 0);\n}\n#line 3 \"geomeny/crosspoint.hpp\"\n\nPoint proj_for_crosspoint(const\
     \ Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1]\
     \ - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nvector<Point> crosspoint(const\
     \ Line &l, const Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0],\
@@ -96,7 +96,7 @@ data:
     \        rsin = sqrt(e.r * e.r - rcos * rcos);\n    Point dir = (s[1] - s[0])\
     \ / abs(s[1] - s[0]);\n    Point p1 = p - dir * rsin;\n    Point p2 = p + dir\
     \ * rsin;\n    if (isinterPS(p1, s)) res.push_back(p1);\n    if (isinterPS(p2,\
-    \ s) && !eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 2 \"geomeny/common-area.hpp\"\
+    \ s) && !eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 3 \"geomeny/common-area.hpp\"\
     \n\nDD calc(const Circle &p, const Circle &q) {\n    DD d = abs(p - q);\n    if\
     \ (d >= p.r + q.r - EPS) return 0;\n    else if (d <= abs(p.r - q.r) + EPS) return\
     \ min(p.r, q.r) * min(p.r, q.r) * PI;\n    DD pcos = (p.r*p.r + d*d - q.r*q.r)\
@@ -122,18 +122,18 @@ data:
     \    DD res = 0;\n    int N = pol.size();\n    for (int i = 0; i < N; ++i) {\n\
     \        res += calc_common_area(c, pol[i], pol[(i + 1) % N]);\n    }\n    return\
     \ res;\n}\n"
-  code: "#include \"geomeny/crosspoint.hpp\"\n\nDD calc(const Circle &p, const Circle\
-    \ &q) {\n    DD d = abs(p - q);\n    if (d >= p.r + q.r - EPS) return 0;\n   \
-    \ else if (d <= abs(p.r - q.r) + EPS) return min(p.r, q.r) * min(p.r, q.r) * PI;\n\
-    \    DD pcos = (p.r*p.r + d*d - q.r*q.r) / (p.r*d*2);\n    DD pang = acosl(pcos);\n\
-    \    DD parea = p.r*p.r*pang - p.r*p.r*sin(pang*2)/2;\n    DD qcos = (q.r*q.r\
-    \ + d*d - p.r*p.r) / (q.r*d*2);\n    DD qang = acosl(qcos);\n    DD qarea = q.r*q.r*qang\
-    \ - q.r*q.r*sin(qang*2)/2;\n    return parea + qarea;\n}\n\n// \u539F\u70B9, \u70B9\
-    \ x, \u70B9 y \u3068\u3067\u56F2\u307E\u308C\u308B\u9818\u57DF\u306E\u9762\u7A4D\
-    \ (\u4E09\u89D2\u5F62 ver \u3068\u6247\u578B ver)\nDD calc_element(const Point\
-    \ &x, const Point &y, DD r, bool triangle) {\n    if (triangle)\n        return\
-    \ cross(x, y) / 2;\n    else {\n        Point tmp = y * Point(x.x, -x.y);\n  \
-    \      DD ang = atan2(tmp.y, tmp.x);\n        return r * r * ang / 2;\n    }\n\
+  code: "#pragma once\n#include \"geomeny/crosspoint.hpp\"\n\nDD calc(const Circle\
+    \ &p, const Circle &q) {\n    DD d = abs(p - q);\n    if (d >= p.r + q.r - EPS)\
+    \ return 0;\n    else if (d <= abs(p.r - q.r) + EPS) return min(p.r, q.r) * min(p.r,\
+    \ q.r) * PI;\n    DD pcos = (p.r*p.r + d*d - q.r*q.r) / (p.r*d*2);\n    DD pang\
+    \ = acosl(pcos);\n    DD parea = p.r*p.r*pang - p.r*p.r*sin(pang*2)/2;\n    DD\
+    \ qcos = (q.r*q.r + d*d - p.r*p.r) / (q.r*d*2);\n    DD qang = acosl(qcos);\n\
+    \    DD qarea = q.r*q.r*qang - q.r*q.r*sin(qang*2)/2;\n    return parea + qarea;\n\
+    }\n\n// \u539F\u70B9, \u70B9 x, \u70B9 y \u3068\u3067\u56F2\u307E\u308C\u308B\u9818\
+    \u57DF\u306E\u9762\u7A4D (\u4E09\u89D2\u5F62 ver \u3068\u6247\u578B ver)\nDD calc_element(const\
+    \ Point &x, const Point &y, DD r, bool triangle) {\n    if (triangle)\n      \
+    \  return cross(x, y) / 2;\n    else {\n        Point tmp = y * Point(x.x, -x.y);\n\
+    \        DD ang = atan2(tmp.y, tmp.x);\n        return r * r * ang / 2;\n    }\n\
     }\n\n// \u5186 C \u3068\u3001\u4E09\u89D2\u5F62 ((0, 0), ia, ib) \u3068\u306E\u5171\
     \u901A\u90E8\u5206\u306E\u9762\u7A4D\nDD calc_common_area(const Circle &c, const\
     \ Point &ia, const Point &ib) {\n    Point a = ia - c, b = ib - c;\n    if (abs(a\
@@ -156,7 +156,7 @@ data:
   isVerificationFile: false
   path: geomeny/common-area.hpp
   requiredBy: []
-  timestamp: '2022-12-28 10:35:09+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geomeny/common-area.hpp

@@ -69,7 +69,7 @@ data:
     \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
     \ Point {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
     \ r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle &c) { return\
-    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"\
+    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"\
     geomeny/projection.hpp\"\n\nPoint proj(const Point &p, const Line &l) {\n    DD\
     \ t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1]\
     \ - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l) {\n    return p +\
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-27 21:57:33+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_A.test.cpp

@@ -47,25 +47,25 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/is-convex.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/is-convex.hpp\"\
     \n\nint ccw_for_isconvex(const Point &a, const Point &b, const Point &c) {\n \
     \   if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS)\
     \ return -1;\n    return 0;\n}\n\nbool isConvex(vector<Point> &ps) {\n    int\
     \ n = (int)ps.size();\n    for (int i = 0; i < n; ++i) {\n        if (ccw_for_isconvex(ps[i],\
     \ ps[(i + 1) % n], ps[(i + 2) % n]) == -1) return false;\n    }\n    return true;\n\
     }\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nint ccw_for_isconvex(const Point\
-    \ &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return\
-    \ 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\nbool\
-    \ isConvex(vector<Point> &ps) {\n    int n = (int)ps.size();\n    for (int i =\
-    \ 0; i < n; ++i) {\n        if (ccw_for_isconvex(ps[i], ps[(i + 1) % n], ps[(i\
+  code: "#pragma once\n#include \"geomeny/geomeny-template.hpp\"\n\nint ccw_for_isconvex(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
+    \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\
+    \nbool isConvex(vector<Point> &ps) {\n    int n = (int)ps.size();\n    for (int\
+    \ i = 0; i < n; ++i) {\n        if (ccw_for_isconvex(ps[i], ps[(i + 1) % n], ps[(i\
     \ + 2) % n]) == -1) return false;\n    }\n    return true;\n}"
   dependsOn:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
   path: geomeny/is-convex.hpp
   requiredBy: []
-  timestamp: '2022-12-27 15:24:29+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_3_B.test.cpp

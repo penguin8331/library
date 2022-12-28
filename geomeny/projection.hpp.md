@@ -74,15 +74,15 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/projection.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/projection.hpp\"\
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
     }\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj(const Point &p, const\
-    \ Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n   \
-    \ return l[0] + (l[1] - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l)\
-    \ {\n    return p + (proj(p, l) - p) * 2;\n}"
+  code: "#pragma once\n#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj(const\
+    \ Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1]\
+    \ - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint refl(const Point &p,\
+    \ const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n}"
   dependsOn:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
@@ -92,7 +92,7 @@ data:
   - geomeny/distance.hpp
   - geomeny/crosspoint.hpp
   - geomeny/common-area.hpp
-  timestamp: '2022-12-27 15:24:29+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_7_E.test.cpp

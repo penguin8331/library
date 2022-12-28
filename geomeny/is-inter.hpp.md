@@ -71,11 +71,11 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/projection.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/projection.hpp\"\
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
-    }\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
+    }\n#line 3 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const Point &a, const Point\
     \ &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n    if\
     \ (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS) return\
     \ 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n}\n\
@@ -88,17 +88,17 @@ data:
     \ return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0], s[1], t[0]) * ccw_for_dis(s[0],\
     \ s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0], t[1], s[0]) * ccw_for_dis(t[0],\
     \ t[1], s[1]) <= 0);\n}\n"
-  code: "#include \"geomeny/projection.hpp\"\n\nint ccw_for_dis(const Point &a, const\
-    \ Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return 1;\n\
-    \    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a) < -EPS)\
-    \ return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n    return 0;\n\
-    }\nbool isinterPL(const Point &p, const Line &l) {\n    return (abs(p - proj(p,\
-    \ l)) < EPS);\n}\nbool isinterPS(const Point &p, const Line &s) {\n    return\
-    \ (ccw_for_dis(s[0], s[1], p) == 0);\n}\nbool isinterLL(const Line &l, const Line\
-    \ &m) {\n    return (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS ||\n         \
-    \   abs(cross(l[1] - l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const Line\
-    \ &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n \
-    \   if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
+  code: "#pragma once\n#include \"geomeny/projection.hpp\"\n\nint ccw_for_dis(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
+    \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a,\
+    \ c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n\
+    \    return 0;\n}\nbool isinterPL(const Point &p, const Line &l) {\n    return\
+    \ (abs(p - proj(p, l)) < EPS);\n}\nbool isinterPS(const Point &p, const Line &s)\
+    \ {\n    return (ccw_for_dis(s[0], s[1], p) == 0);\n}\nbool isinterLL(const Line\
+    \ &l, const Line &m) {\n    return (abs(cross(l[1] - l[0], m[1] - m[0])) > EPS\
+    \ ||\n            abs(cross(l[1] - l[0], m[0] - l[0])) < EPS);\n}\nbool isinterSS(const\
+    \ Line &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n\
+    \    if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
     \ s[1], t[0]) * ccw_for_dis(s[0], s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0],\
     \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}"
   dependsOn:
@@ -110,7 +110,7 @@ data:
   - geomeny/distance.hpp
   - geomeny/crosspoint.hpp
   - geomeny/common-area.hpp
-  timestamp: '2022-12-27 15:24:29+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_7_E.test.cpp

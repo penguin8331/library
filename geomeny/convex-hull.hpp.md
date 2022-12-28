@@ -47,7 +47,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/convex-hull.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/convex-hull.hpp\"\
     \n\n// \u4E00\u76F4\u7DDA\u4E0A\u306E3\u70B9\u3092\u542B\u3081\u306A\u3044\nvector<Point>\
     \ ConvexHull(vector<Point> &ps) {\n    int n = (int)ps.size();\n    vector<Point>\
     \ res(2 * n);\n    sort(ps.begin(), ps.end());\n    int k = 0;\n    for (int i\
@@ -70,8 +70,8 @@ data:
     \                --k;\n                if (k < t) break;\n            }\n    \
     \    }\n        res[k] = ps[i];\n        ++k;\n    }\n    res.resize(k - 1);\n\
     \    return res;\n}\n"
-  code: "#include \"geomeny/geomeny-template.hpp\"\n\n// \u4E00\u76F4\u7DDA\u4E0A\u306E\
-    3\u70B9\u3092\u542B\u3081\u306A\u3044\nvector<Point> ConvexHull(vector<Point>\
+  code: "#pragma once\n#include \"geomeny/geomeny-template.hpp\"\n\n// \u4E00\u76F4\
+    \u7DDA\u4E0A\u306E3\u70B9\u3092\u542B\u3081\u306A\u3044\nvector<Point> ConvexHull(vector<Point>\
     \ &ps) {\n    int n = (int)ps.size();\n    vector<Point> res(2 * n);\n    sort(ps.begin(),\
     \ ps.end());\n    int k = 0;\n    for (int i = 0; i < n; ++i) {\n        if (k\
     \ >= 2) {\n            while (cross(res[k - 1] - res[k - 2], ps[i] - res[k - 2])\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: geomeny/convex-hull.hpp
   requiredBy: []
-  timestamp: '2022-12-27 15:24:29+09:00'
+  timestamp: '2022-12-28 10:43:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp
