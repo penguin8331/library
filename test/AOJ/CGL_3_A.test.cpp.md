@@ -68,7 +68,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/area-polygon.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/area-polygon.hpp\"\
     \n\nDD CalcArea(const vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i\
     \ = 0; i < pol.size(); ++i) {\n        res += cross(pol[i], pol[(i + 1) % pol.size()]);\n\
     \    }\n    return res / 2.0L;\n}\n#line 4 \"test/AOJ/CGL_3_A.test.cpp\"\n\nint\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_3_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-28 10:43:52+09:00'
+  timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_A.test.cpp

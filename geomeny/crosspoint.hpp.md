@@ -4,10 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geomeny/common-area.hpp
-    title: geomeny/common-area.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
@@ -56,7 +53,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/crosspoint.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/crosspoint.hpp\"\
     \n\nPoint proj_for_crosspoint(const Point &p, const Line &l) {\n    DD t = dot(p\
     \ - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) *\
     \ t;\n}\nvector<Point> crosspoint(const Line &l, const Line &m) {\n    vector<Point>\
@@ -78,7 +75,7 @@ data:
     \ / abs(l[1] - l[0]);\n    Point p1 = p + dir * rsin;\n    Point p2 = p - dir\
     \ * rsin;\n    res.push_back(p1);\n    if (!eq(p1, p2)) res.push_back(p2);\n \
     \   return res;\n}\n"
-  code: "#pragma once\n#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj_for_crosspoint(const\
+  code: "#include \"geomeny/geomeny-template.hpp\"\n\nPoint proj_for_crosspoint(const\
     \ Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1]\
     \ - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nvector<Point> crosspoint(const\
     \ Line &l, const Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0],\
@@ -103,9 +100,8 @@ data:
   - geomeny/geomeny-template.hpp
   isVerificationFile: false
   path: geomeny/crosspoint.hpp
-  requiredBy:
-  - geomeny/common-area.hpp
-  timestamp: '2022-12-28 12:42:24+09:00'
+  requiredBy: []
+  timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_7_E.test.cpp

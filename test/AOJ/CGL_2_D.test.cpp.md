@@ -75,11 +75,11 @@ data:
     \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
     \ Point {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
     \ r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle &c) { return\
-    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"\
+    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"\
     geomeny/projection.hpp\"\n\nPoint proj(const Point &p, const Line &l) {\n    DD\
     \ t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1]\
     \ - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l) {\n    return p +\
-    \ (proj(p, l) - p) * 2;\n}\n#line 3 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const\
+    \ (proj(p, l) - p) * 2;\n}\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const\
     \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
     \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a,\
     \ c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n\
@@ -91,7 +91,7 @@ data:
     \ Line &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n\
     \    if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
     \ s[1], t[0]) * ccw_for_dis(s[0], s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0],\
-    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}\n#line 3 \"geomeny/distance.hpp\"\
+    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}\n#line 2 \"geomeny/distance.hpp\"\
     \n\nDD distancePL(const Point &p, const Line &l) {\n    return abs(p - proj(p,\
     \ l));\n}\nDD distancePS(const Point &p, const Line &s) {\n    Point h = proj(p,\
     \ s);\n    if (isinterPS(h, s)) return abs(p - h);\n    return min(abs(p - s[0]),\
@@ -119,7 +119,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2022-12-28 10:43:52+09:00'
+  timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_D.test.cpp

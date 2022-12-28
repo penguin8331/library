@@ -8,9 +8,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/ccw.hpp
     title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
-  - icon: ':warning:'
-    path: geomeny/common-area.hpp
-    title: geomeny/common-area.hpp
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-cut.hpp
     title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
@@ -155,7 +152,6 @@ data:
   - geomeny/distance.hpp
   - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/crosspoint.hpp
-  - geomeny/common-area.hpp
   - geomeny/ccw.hpp
   - geomeny/projection.hpp
   - geomeny/convex-cut.hpp

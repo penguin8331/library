@@ -68,7 +68,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/convex-hull.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/convex-hull.hpp\"\
     \n\n// \u4E00\u76F4\u7DDA\u4E0A\u306E3\u70B9\u3092\u542B\u3081\u306A\u3044\nvector<Point>\
     \ ConvexHull(vector<Point> &ps) {\n    int n = (int)ps.size();\n    vector<Point>\
     \ res(2 * n);\n    sort(ps.begin(), ps.end());\n    int k = 0;\n    for (int i\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2022-12-28 10:43:52+09:00'
+  timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp

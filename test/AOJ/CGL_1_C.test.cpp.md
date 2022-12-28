@@ -68,7 +68,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 3 \"geomeny/ccw.hpp\"\n\n\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/ccw.hpp\"\n\n\
     // \u7C97\n// 1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u5DE6\u5074(\u53CD\u6642\
     \u8A08\u56DE\u308A)\u3001-1\uFF1Aa-b\u304B\u3089\u898B\u3066c\u306F\u53F3\u5074\
     (\u6642\u8A08\u56DE\u308A)\u30010\uFF1A\u4E00\u76F4\u7DDA\u4E0A\nint simple_ccw(const\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-28 10:43:52+09:00'
+  timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_C.test.cpp
