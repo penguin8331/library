@@ -1,5 +1,5 @@
 #pragma once
-#include "geomeny/is-inter.hpp"
+#include "geomeny/geomeny-template.hpp"
 
 Point proj_for_crosspoint(const Point &p, const Line &l) {
     DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);
@@ -45,22 +45,5 @@ vector<Point> crosspoint(const Circle &e, const Line &l) {
     Point p2 = p - dir * rsin;
     res.push_back(p1);
     if (!eq(p1, p2)) res.push_back(p2);
-    return res;
-}
-vector<Point> crosspoint(const Circle &e, const Line &s) {
-    vector<Point> res;
-    Point p = proj_for_crosspoint(e, s);
-    DD rcos = abs(e - p), rsin;
-    if (rcos > e.r + EPS)
-        return vector<Point>();
-    else if (e.r - rcos < EPS)
-        rsin = 0;
-    else
-        rsin = sqrt(e.r * e.r - rcos * rcos);
-    Point dir = (s[1] - s[0]) / abs(s[1] - s[0]);
-    Point p1 = p - dir * rsin;
-    Point p2 = p + dir * rsin;
-    if (isinterPS(p1, s)) res.push_back(p1);
-    if (isinterPS(p2, s) && !eq(p1, p2)) res.push_back(p2);
     return res;
 }
