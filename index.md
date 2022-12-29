@@ -139,6 +139,9 @@ data:
       path: graph/prim.hpp
       title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30D7\u30EA\u30E0) $O(V log E)$"
     - icon: ':heavy_check_mark:'
+      path: graph/scc.hpp
+      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(SCC)"
+    - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
   - name: math/combinatorics
@@ -295,6 +298,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_B.test.cpp
       title: test/AOJ/GRL_3_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/GRL_3_C.test.cpp
+      title: test/AOJ/GRL_3_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
