@@ -11,11 +11,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
-  bundledCode: "#line 1 \"test/yosupo/scc.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
+  bundledCode: "#line 1 \"test/yosupo/scc.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
     \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
     \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
@@ -55,12 +57,12 @@ data:
     \ {\n            if (!seen[vs[i]]) {\n                rvs.clear();\n         \
     \       rdfs(vs[i], k++);\n                scc.push_back(rvs);\n            }\n\
     \        }\n\n        // reconstruct\n        reconstruct();\n    }\n};\n#line\
-    \ 4 \"test/yosupo/scc.cpp\"\n\nint main() {\n    int N, M;\n    cin >> N >> M;\n\
-    \    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        int a, b;\n     \
-    \   cin >> a >> b;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n    auto\
-    \ ans = scc.scc;\n    cout << ans.size() << endl;\n    for (const auto& i : ans)\
-    \ {\n        cout << i.size();\n        for (const auto& j : i) {\n          \
-    \  cout << \" \" << j;\n        }\n        cout << endl;\n    }\n}\n"
+    \ 4 \"test/yosupo/scc.test.cpp\"\n\nint main() {\n    int N, M;\n    cin >> N\
+    \ >> M;\n    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        int a, b;\n\
+    \        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n\
+    \    auto ans = scc.scc;\n    cout << ans.size() << endl;\n    for (const auto&\
+    \ i : ans) {\n        cout << i.size();\n        for (const auto& j : i) {\n \
+    \           cout << \" \" << j;\n        }\n        cout << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#include \"template/template.hpp\"\
     \n#include \"graph/scc.hpp\"\n\nint main() {\n    int N, M;\n    cin >> N >> M;\n\
     \    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        int a, b;\n     \
@@ -71,16 +73,16 @@ data:
   dependsOn:
   - template/template.hpp
   - graph/scc.hpp
-  isVerificationFile: false
-  path: test/yosupo/scc.cpp
+  isVerificationFile: true
+  path: test/yosupo/scc.test.cpp
   requiredBy: []
-  timestamp: '2023-01-01 18:07:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2023-01-01 18:09:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/yosupo/scc.cpp
+documentation_of: test/yosupo/scc.test.cpp
 layout: document
 redirect_from:
-- /library/test/yosupo/scc.cpp
-- /library/test/yosupo/scc.cpp.html
-title: test/yosupo/scc.cpp
+- /verify/test/yosupo/scc.test.cpp
+- /verify/test/yosupo/scc.test.cpp.html
+title: test/yosupo/scc.test.cpp
 ---

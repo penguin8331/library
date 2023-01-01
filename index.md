@@ -199,11 +199,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-  - name: test/yosupo
-    pages:
-    - icon: ':warning:'
-      path: test/yosupo/scc.cpp
-      title: test/yosupo/scc.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -320,6 +315,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/scc.test.cpp
+      title: test/yosupo/scc.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp

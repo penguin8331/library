@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/yosupo/scc.cpp
-    title: test/yosupo/scc.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
@@ -118,6 +115,9 @@ data:
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/scc.test.cpp
+    title: test/yosupo/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
   - icon: ':heavy_check_mark:'
@@ -164,8 +164,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy:
-  - test/yosupo/scc.cpp
+  requiredBy: []
   timestamp: '2022-12-21 18:41:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -209,6 +208,7 @@ data:
   - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/static-rmq.test.cpp
   - test/yosupo/shortes-path.test.cpp
+  - test/yosupo/scc.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

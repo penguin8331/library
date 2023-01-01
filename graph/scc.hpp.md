@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/yosupo/scc.cpp
-    title: test/yosupo/scc.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/scc.test.cpp
+    title: test/yosupo/scc.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -67,12 +67,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/scc.hpp
-  requiredBy:
-  - test/yosupo/scc.cpp
+  requiredBy: []
   timestamp: '2022-12-29 16:08:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_3_C.test.cpp
+  - test/yosupo/scc.test.cpp
 documentation_of: graph/scc.hpp
 layout: document
 title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(SCC)"
