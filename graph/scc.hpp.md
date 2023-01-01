@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/yosupo/scc.cpp
+    title: test/yosupo/scc.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
@@ -64,7 +67,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/scc.hpp
-  requiredBy: []
+  requiredBy:
+  - test/yosupo/scc.cpp
   timestamp: '2022-12-29 16:08:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
