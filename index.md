@@ -24,7 +24,7 @@ data:
       path: data-structure/binary-indexed-tree-2d-raq.hpp
       title: "\u4E8C\u6B21\u5143Binary Indexed Tree(\u9818\u57DF\u52A0\u7B97 \u9818\
         \u57DF\u548C\u53D6\u5F97\u306B\u5BFE\u5FDC)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-2d.hpp
       title: "\u4E8C\u6B21\u5143Binary Indexed Tree"
     - icon: ':heavy_check_mark:'
@@ -222,6 +222,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/2842.test.cpp
+      title: test/AOJ/2842.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_10_C.test.cpp
       title: test/AOJ/ALDS1_10_C.test.cpp

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2842.test.cpp
+    title: test/AOJ/2842.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree-2d.hpp\"\ntemplate <class\
@@ -49,8 +52,9 @@ data:
   path: data-structure/binary-indexed-tree-2d.hpp
   requiredBy: []
   timestamp: '2023-01-02 09:44:41+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/2842.test.cpp
 documentation_of: data-structure/binary-indexed-tree-2d.hpp
 layout: document
 title: "\u4E8C\u6B21\u5143Binary Indexed Tree"
