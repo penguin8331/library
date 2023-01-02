@@ -28,6 +28,10 @@ data:
       path: data-structure/binary-indexed-tree.hpp
       title: Binary Indexed Tree
     - icon: ':warning:'
+      path: data-structure/binary-search-on-bit.hpp
+      title: "BIT\u4E0A\u306E\u4E8C\u5206\u63A2\u7D22(k\u756A\u76EE\u306E\u8981\u7D20\
+        \u3092\u6C42\u3081\u308B)"
+    - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
     - icon: ':heavy_check_mark:'
