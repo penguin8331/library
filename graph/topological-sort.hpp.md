@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_4_B.test.cpp
+    title: test/AOJ/GRL_4_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/topological-sort.hpp\"\nvoid dfs(const vector<vector<int>>\
@@ -33,8 +36,9 @@ data:
   path: graph/topological-sort.hpp
   requiredBy: []
   timestamp: '2023-01-04 13:19:14+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/GRL_4_B.test.cpp
 documentation_of: graph/topological-sort.hpp
 layout: document
 title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"

@@ -106,6 +106,9 @@ data:
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_4_B.test.cpp
+    title: test/AOJ/GRL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -207,6 +210,7 @@ data:
   - test/AOJ/ALDS1_10_C.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
   - test/AOJ/DPL_1_d.test.cpp
+  - test/AOJ/GRL_4_B.test.cpp
   - test/AOJ/NTL_1_B.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
   - test/yosupo/static-range-sum.test.cpp
