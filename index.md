@@ -152,6 +152,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(SCC)"
+    - icon: ':warning:'
+      path: graph/topological-sort.hpp
+      title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
@@ -315,6 +318,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_C.test.cpp
       title: test/AOJ/GRL_3_C.test.cpp
+    - icon: ':x:'
+      path: test/AOJ/GRL_4_B.test.cpp
+      title: test/AOJ/GRL_4_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
