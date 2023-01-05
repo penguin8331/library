@@ -144,6 +144,9 @@ data:
       title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
         \ log V)$"
     - icon: ':heavy_check_mark:'
+      path: graph/lca.hpp
+      title: "\u6700\u8FD1\u5171\u901A\u7956\u5148(LCA)"
+    - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
@@ -324,6 +327,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/GRL_5_C.test.cpp
+      title: test/AOJ/GRL_5_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ITP1_3_D.test.cpp
       title: test/AOJ/ITP1_3_D.test.cpp
