@@ -13,9 +13,9 @@ documentation_of: //data-structure/segment-tree.hpp
 SegTree(n, f, unity): サイズ n に初期化、f は二項演算、unity は単位元 (min なら INF, + なら 0)
 
 ### ex
+
 - 区間和: SegTree<int> seg(n, [](int a, int b){ return a + b; }, 0);
 - 区間min: SegTree<int> seg(n, [](int a, int b){ return min(a, b); }, INF);
-
 
 ### 初期化
 
