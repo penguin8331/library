@@ -20,6 +20,7 @@ struct BiCoef {
     }
     constexpr T hom(int n, int k) const noexcept {
         n += k - 1;
+        if (n < k || n < 0 || k < 0) return 0;
         return fact_[n] * finv_[k] * finv_[n - k];
     }
     constexpr T fact(int n) const noexcept {
