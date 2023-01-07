@@ -7,10 +7,10 @@ struct BiCoef {
     }
     constexpr void init(int n) noexcept {
         fact_.assign(n, 1), inv_.assign(n, 1), finv_.assign(n, 1);
-        int MOD = fact_[0].getmod();
+        int modular = fact_[0].getmod();
         for (int i = 2; i < n; i++) {
             fact_[i] = fact_[i - 1] * i;
-            inv_[i] = -inv_[MOD % i] * (MOD / i);
+            inv_[i] = -inv_[modular % i] * (modular / i);
             finv_[i] = finv_[i - 1] * inv_[i];
         }
     }
