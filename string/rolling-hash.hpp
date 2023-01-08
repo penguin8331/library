@@ -2,49 +2,66 @@ struct RollingHash {
     static const uint64_t mod = (1ull << 61ull) - 1;
     vector<uint64_t> power, hash;
     const uint64_t base;
- 
+
     static inline uint64_t generate_base() {
         mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());
         uniform_int_distribution<uint64_t> rand((uint64_t)1, (uint64_t)mod - 1);
         return rand(engine);
     }
- 
+
     static inline uint64_t add(uint64_t a, uint64_t b) {
         if ((a += b) >= mod) a -= mod;
         return a;
     }
- 
+
     static inline uint64_t mul(uint64_t a, uint64_t b) {
         __uint128_t c = (__uint128_t)a * b;
         return add(c >> 61, c & mod);
     }
- 
-    RollingHash(const string& S, uint64_t base_ = generate_base()) : base(base_) {
-        int n = (int)S.size();
-        hash.assign(n + 1, 0);
-        power.assign(n + 1, 1);
-        for (int i = 0; i < n; ++i) {
-            hash[i + 1] = add(mul(hash[i], base), S[i]);
-            power[i + 1] = mul(power[i], base);
+
+    inline void expand(size_t sz) {
+        if (power.size() < sz + 1) {
+            int pre_sz = (int)power.size();
+            power.resize(sz + 1);
+            for (int i = pre_sz - 1; i < sz; i++) {
+                power[i + 1] = mul(power[i], base);
+            }
         }
     }
- 
+
+    explicit RollingHash(uint64_t base = generate_base()) : base(base), power{1} {}
+
+    vector<uint64_t> build(string S) {
+        vector<uint64_t> hash(S.size() + 1);
+        for (int i = 0; i < S.size(); i++) {
+            hash[i + 1] = add(mul(hash[i], base), S[i]);
+        }
+        return hash;
+    }
+
     // hashの[l,r)のハッシュ値を返す
-    inline uint64_t get(int l, int r) const {
+    uint64_t get(vector<uint64_t>& hash, int l, int r) {
+        expand(r - l);
         return add(hash[r], mod - mul(hash[l], power[r - l]));
     }
- 
-    // get lcp of S[a:] and S[b:]
-    inline int getLCP(int a, int b) const {
-        int len = min((int)hash.size() - a, (int)hash.size() - b);
-        int low = 0, high = len;
-        while (high - low > 1) {
-            int mid = (low + high) >> 1;
-            if (get(a, a + mid) != get(b, b + mid))
-                high = mid;
+
+    uint64_t combine(uint64_t h1, uint64_t h2, size_t h2len) {
+        expand(h2len);
+        return add(mul(h1, power[h2len]), h2);
+    }
+
+    int getLCP(vector<uint64_t>& hash1, int l1, int r1, vector<uint64_t>& hash2, int l2, int r2) {
+        int len = min(r1 - l1, r2 - l2);
+        int ok = 0;
+        int ng = len + 1;
+        int mid;
+        while (ng - ok > 1) {
+            mid = (ok + ng) / 2;
+            if (get(hash1, l1, l1 + mid) == get(hash2, l2, l2 + mid))
+                ok = mid;
             else
-                low = mid;
+                ng = mid;
         }
-        return low;
+        return ok;
     }
 };
