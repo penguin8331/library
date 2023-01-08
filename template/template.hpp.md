@@ -141,6 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/zalgorithm.test.cpp
+    title: test/yosupo/zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -224,6 +227,7 @@ data:
   - test/AOJ/GRL_4_B.test.cpp
   - test/AOJ/NTL_1_B.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
+  - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/factorize.test.cpp
   - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/static-rmq.test.cpp
