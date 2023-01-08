@@ -31,6 +31,7 @@ struct RollingHash {
 
     explicit RollingHash(uint64_t base = generate_base()) : base(base), power{1} {}
 
+    // 文字列Sのハッシュを返す
     vector<uint64_t> build(string S) {
         vector<uint64_t> hash(S.size() + 1);
         for (int i = 0; i < S.size(); i++) {
@@ -40,24 +41,26 @@ struct RollingHash {
     }
 
     // hashの[l,r)のハッシュ値を返す
-    uint64_t get(vector<uint64_t>& hash, int l, int r) {
+    uint64_t query(vector<uint64_t>& hash, int l, int r) {
         expand(r - l);
         return add(hash[r], mod - mul(hash[l], power[r - l]));
     }
 
+    // ハッシュ値h1と長さh2lenのハッシュ値h2を結合
     uint64_t combine(uint64_t h1, uint64_t h2, size_t h2len) {
         expand(h2len);
         return add(mul(h1, power[h2len]), h2);
     }
 
-    int getLCP(vector<uint64_t>& hash1, int l1, int r1, vector<uint64_t>& hash2, int l2, int r2) {
+    // hash1の区間[l1,r1)とhash2の区間[l2,r2)のlcp(最長共通接頭辞)の長さを返す (二部探索を用いる)
+    int lcp(vector<uint64_t>& hash1, int l1, int r1, vector<uint64_t>& hash2, int l2, int r2) {
         int len = min(r1 - l1, r2 - l2);
         int ok = 0;
         int ng = len + 1;
         int mid;
         while (ng - ok > 1) {
             mid = (ok + ng) / 2;
-            if (get(hash1, l1, l1 + mid) == get(hash2, l2, l2 + mid))
+            if (query(hash1, l1, l1 + mid) == query(hash2, l2, l2 + mid))
                 ok = mid;
             else
                 ng = mid;
