@@ -192,12 +192,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/miller-rabin.hpp
       title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A(Miller-Rabin\u6CD5)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/pollard-rho.hpp
-      title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard \u306E\u30ED\
+      title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard\u306E\u30ED\
         \u30FC\u6CD5)"
     - icon: ':warning:'
       path: math/number/pow.hpp
@@ -247,6 +247,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_12_A.test.cpp
       title: test/AOJ/ALDS1_12_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/ALDS1_1_C-2.test.cpp
+      title: test/AOJ/ALDS1_1_C-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
@@ -348,6 +351,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/factorize.test.cpp
+      title: test/yosupo/factorize.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp

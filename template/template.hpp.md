@@ -25,6 +25,9 @@ data:
     path: test/AOJ/ALDS1_12_A.test.cpp
     title: test/AOJ/ALDS1_12_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_1_C-2.test.cpp
+    title: test/AOJ/ALDS1_1_C-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_1_C.test.cpp
     title: test/AOJ/ALDS1_1_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -124,6 +127,9 @@ data:
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/factorize.test.cpp
+    title: test/yosupo/factorize.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -203,6 +209,7 @@ data:
   - test/AOJ/0233.test.cpp
   - test/AOJ/GRL_3_A.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/ALDS1_1_C-2.test.cpp
   - test/AOJ/DPL_2_A.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/ALDS1_12_A.test.cpp
@@ -217,6 +224,7 @@ data:
   - test/AOJ/GRL_4_B.test.cpp
   - test/AOJ/NTL_1_B.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
+  - test/yosupo/factorize.test.cpp
   - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/static-rmq.test.cpp
   - test/yosupo/shortes-path.test.cpp
