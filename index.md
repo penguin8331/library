@@ -193,6 +193,13 @@ data:
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
     - icon: ':warning:'
+      path: math/number/miller-rabin.hpp
+      title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A(Miller-Rabin\u6CD5)"
+    - icon: ':warning:'
+      path: math/number/pollard-rho.hpp
+      title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard \u306E\u30ED\
+        \u30FC\u6CD5)"
+    - icon: ':warning:'
       path: math/number/pow.hpp
       title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
