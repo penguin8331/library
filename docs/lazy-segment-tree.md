@@ -7,13 +7,15 @@ documentation_of: //data-structure/lazy-segment-tree.hpp
 
 セグメントツリーは「作用つきモノイド」上で定義される
 
+## 使い方
+
+### 宣言
+
 - FM(a, b): 2 つのモノイド間に定義される演算
 - FA(a, d): モノイド元 a への作用素 d による作用
 - FC(d, e): 作用素 d への作用素 e の合成
 - IDENTITY_MONOID: モノイドの単位元
 - IDENTITY_LAZY: 作用素の単位元
-
-### 宣言
 
 ```cpp
 Lazy_SegTree<int, int> seg(N, fm, fa, fc, identity_monoid, identity_lazy)

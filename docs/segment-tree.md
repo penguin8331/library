@@ -7,7 +7,7 @@ documentation_of: //data-structure/segment-tree.hpp
 
 セグメントツリーは二項演算の定義されたモノイド上で定義される
 
-二項演算関数 f(x, y) を構造体に渡す
+## 使い方
 
 ### 宣言
 

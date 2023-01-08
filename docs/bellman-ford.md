@@ -3,7 +3,7 @@ title: ベルマンフォード法
 documentation_of: //graph/bellman-ford.hpp
 ---
 
-## 概要
+## 使い方
 
 `bellmanford(Es,s,t,dis)`
 
