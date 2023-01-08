@@ -9,9 +9,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"string/rolling-hash.hpp\"\nstruct RollingHash {\n    static\
-    \ const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t> power, hash;\n\
-    \    const uint64_t base;\n\n    static inline uint64_t generate_base() {\n  \
-    \      mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t> power;\n   \
+    \ const uint64_t base;\n\n    static inline uint64_t generate_base() {\n     \
+    \   mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \        uniform_int_distribution<uint64_t> rand((uint64_t)1, (uint64_t)mod -\
     \ 1);\n        return rand(engine);\n    }\n\n    static inline uint64_t add(uint64_t\
     \ a, uint64_t b) {\n        if ((a += b) >= mod) a -= mod;\n        return a;\n\
@@ -42,8 +42,8 @@ data:
     \ query(hash2, l2, l2 + mid))\n                ok = mid;\n            else\n \
     \               ng = mid;\n        }\n        return ok;\n    }\n};\n"
   code: "struct RollingHash {\n    static const uint64_t mod = (1ull << 61ull) - 1;\n\
-    \    vector<uint64_t> power, hash;\n    const uint64_t base;\n\n    static inline\
-    \ uint64_t generate_base() {\n        mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \    vector<uint64_t> power;\n    const uint64_t base;\n\n    static inline uint64_t\
+    \ generate_base() {\n        mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \        uniform_int_distribution<uint64_t> rand((uint64_t)1, (uint64_t)mod -\
     \ 1);\n        return rand(engine);\n    }\n\n    static inline uint64_t add(uint64_t\
     \ a, uint64_t b) {\n        if ((a += b) >= mod) a -= mod;\n        return a;\n\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2023-01-08 17:00:37+09:00'
+  timestamp: '2023-01-08 17:07:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: string/rolling-hash.hpp
