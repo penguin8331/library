@@ -41,7 +41,7 @@ layout: document
 title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C(bitDP)"
 ---
 
-## 概要
+## 使い方
 
 `dp[S][i]` = `S` を周って `i` に着くような経路の最短の長さ
 

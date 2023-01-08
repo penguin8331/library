@@ -60,14 +60,14 @@ title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u304
   )"
 ---
 
-## 概要
+## 使い方
 
 - `dijkstra(G,s,dis,prev)`
 
     入力：グラフ `G`, 開始点 `s`, 距離を格納する `dis`, 最短経路の前の点を記録する `prev`
 
     計算量：$O(E log V)$
-    
+
     副作用：`dis`, `prev` が書き換えられる
 
 - `getpath(prev, t)`
