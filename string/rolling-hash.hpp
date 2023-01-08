@@ -1,6 +1,6 @@
 struct RollingHash {
     static const uint64_t mod = (1ull << 61ull) - 1;
-    vector<uint64_t> power, hash;
+    vector<uint64_t> power;
     const uint64_t base;
 
     static inline uint64_t generate_base() {
