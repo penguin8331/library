@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
 #include "template/template.hpp"
 #include "data-structure/disjoint-sparse-table.hpp"
 
