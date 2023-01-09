@@ -15,8 +15,8 @@ struct sectionsum {
     }
 
     T get(int r) const {
-        if (r < 0) return 0;
-        return data[min(r, (int)data.size() - 1)];
+        assert(r >= 0 && r < (int)data.size());
+        return data[r];
     }
     T get(int l, int r) const {
         return get(r) - get(l);

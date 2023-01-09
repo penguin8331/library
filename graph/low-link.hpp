@@ -1,9 +1,7 @@
-struct LowLink {
-    // main results
-    vector<int> aps;             // articulation points
-    vector<pair<int, int>> brs;  // brideges
+struct LowLink {\
+    vector<int> aps;             // 関節点
+    vector<pair<int, int>> brs;  // 橋
 
-    // intermediate results
     vector<int> seen, ord, low;
     void dfs_lowlink(const vector<vector<int>> &G, int v, int p = -1) {
         static int time = 0;

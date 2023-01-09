@@ -15,24 +15,24 @@ struct BiCoef {
         }
     }
     constexpr T com(int n, int k) const noexcept {
-        if (n < k || n < 0 || k < 0) return 0;
+        assert(n < (int)fact_.size() && n >= k && k >= 0);
         return fact_[n] * finv_[k] * finv_[n - k];
     }
     constexpr T hom(int n, int k) const noexcept {
         n += k - 1;
-        if (n < k || n < 0 || k < 0) return 0;
+        assert(n < (int)fact_.size() && n >= k && k >= 0);
         return fact_[n] * finv_[k] * finv_[n - k];
     }
     constexpr T fact(int n) const noexcept {
-        if (n < 0) return 0;
+        assert(n >= 0);
         return fact_[n];
     }
     constexpr T inv(int n) const noexcept {
-        if (n < 0) return 0;
+        assert(n >= 0);
         return inv_[n];
     }
     constexpr T finv(int n) const noexcept {
-        if (n < 0) return 0;
+        assert(n >= 0);
         return finv_[n];
     }
 };
