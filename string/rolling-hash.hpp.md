@@ -88,3 +88,10 @@ documentation_of: string/rolling-hash.hpp
 layout: document
 title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
 ---
+
+## 使い方
+
+- `build(S)` : 文字列Sのハッシュを返す
+- `query(hash,l,r)` : hashを用いて[l,r)のハッシュ値を求める
+- `combine(h1,h2,h2len)` : ハッシュ値h1とハッシュ値h2のものを連結する
+- `lcp(hash1,l,r,hash2,l,r)` : hash1の[l,r)とhash2の[l,r)の最長共通接頭辞の長さを返す (二分探索を用いる)

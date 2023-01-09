@@ -16,22 +16,22 @@ data:
     \ 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k + 1]\
     \ = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < (int)data.size();\
     \ i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n\
-    \    T get(int r) const {\r\n        if (r < 0) return 0;\r\n        return data[min(r,\
-    \ (int)data.size() - 1)];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
+    \    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
+    \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
     \    return get(r) - get(l);\r\n    }\r\n};\n"
   code: "template <class T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n\
     \    sectionsum(int n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const\
     \ T& x) {\r\n        data[k + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n \
     \       for (int i = 1; i < (int)data.size(); i++) {\r\n            data[i] +=\
     \ data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int r) const {\r\n     \
-    \   if (r < 0) return 0;\r\n        return data[min(r, (int)data.size() - 1)];\r\
-    \n    }\r\n    T get(int l, int r) const {\r\n        return get(r) - get(l);\r\
-    \n    }\r\n};"
+    \   assert(r >= 0 && r < (int)data.size());\r\n        return data[r];\r\n   \
+    \ }\r\n    T get(int l, int r) const {\r\n        return get(r) - get(l);\r\n\
+    \    }\r\n};"
   dependsOn: []
   isVerificationFile: false
   path: algorithm/section-sum.hpp
   requiredBy: []
-  timestamp: '2022-12-20 22:01:32+09:00'
+  timestamp: '2023-01-09 19:53:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-range-sum.test.cpp
