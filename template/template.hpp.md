@@ -136,8 +136,14 @@ data:
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-range-sum-2.test.cpp
+    title: test/yosupo/static-range-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq-2.test.cpp
+    title: test/yosupo/static-rmq-2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
@@ -229,10 +235,12 @@ data:
   - test/AOJ/CGL_4_A.test.cpp
   - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/factorize.test.cpp
+  - test/yosupo/static-range-sum-2.test.cpp
   - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/static-rmq.test.cpp
   - test/yosupo/shortes-path.test.cpp
   - test/yosupo/scc.test.cpp
+  - test/yosupo/static-rmq-2.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

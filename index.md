@@ -38,9 +38,9 @@ data:
       path: data-structure/binary-search-on-bit.hpp
       title: "BIT\u4E0A\u306E\u4E8C\u5206\u63A2\u7D22(k\u756A\u76EE\u306E\u8981\u7D20\
         \u3092\u6C42\u3081\u308B)"
-    - icon: ':warning:'
-      path: data-structure/disjointsparsetable.hpp
-      title: data-structure/disjointsparsetable.hpp
+    - icon: ':heavy_check_mark:'
+      path: data-structure/disjoint-sparse-table.hpp
+      title: data-structure/disjoint-sparse-table.hpp
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684modint"
@@ -366,13 +366,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum-2.test.cpp
       title: test/yosupo/static-range-sum-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq-2.test.cpp
       title: test/yosupo/static-rmq-2.test.cpp
     - icon: ':heavy_check_mark:'

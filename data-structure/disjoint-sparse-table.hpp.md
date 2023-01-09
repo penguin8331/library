@@ -2,13 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-range-sum-2.test.cpp
+    title: test/yosupo/static-range-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq-2.test.cpp
+    title: test/yosupo/static-rmq-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/disjointsparsetable.hpp\"\ntemplate <class\
+  bundledCode: "#line 1 \"data-structure/disjoint-sparse-table.hpp\"\ntemplate <class\
     \ SemiGroup>\nstruct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup,\
     \ SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int>\
     \ height;\n\n    DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
@@ -45,15 +51,17 @@ data:
     \        return F(dat[height[a ^ b]][a], dat[height[a ^ b]][b]);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/disjointsparsetable.hpp
+  path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
-  timestamp: '2023-01-09 20:19:34+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: data-structure/disjointsparsetable.hpp
+  timestamp: '2023-01-09 20:23:46+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/static-range-sum-2.test.cpp
+  - test/yosupo/static-rmq-2.test.cpp
+documentation_of: data-structure/disjoint-sparse-table.hpp
 layout: document
 redirect_from:
-- /library/data-structure/disjointsparsetable.hpp
-- /library/data-structure/disjointsparsetable.hpp.html
-title: data-structure/disjointsparsetable.hpp
+- /library/data-structure/disjoint-sparse-table.hpp
+- /library/data-structure/disjoint-sparse-table.hpp.html
+title: data-structure/disjoint-sparse-table.hpp
 ---
