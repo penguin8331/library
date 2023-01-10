@@ -22,11 +22,11 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/binary-indexed-tree-2d-raq.hpp
-      title: "\u4E8C\u6B21\u5143Binary Indexed Tree(\u9818\u57DF\u52A0\u7B97 \u9818\
+      title: "\u4E8C\u6B21\u5143 Binary Indexed Tree (\u9818\u57DF\u52A0\u7B97 \u9818\
         \u57DF\u548C\u53D6\u5F97\u306B\u5BFE\u5FDC)"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-2d.hpp
-      title: "\u4E8C\u6B21\u5143Binary Indexed Tree"
+      title: "\u4E8C\u6B21\u5143 Binary Indexed Tree"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-raq.hpp
       title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
@@ -36,14 +36,14 @@ data:
       title: Binary Indexed Tree
     - icon: ':warning:'
       path: data-structure/binary-search-on-bit.hpp
-      title: "BIT\u4E0A\u306E\u4E8C\u5206\u63A2\u7D22(k\u756A\u76EE\u306E\u8981\u7D20\
+      title: "BIT \u4E0A\u306E\u4E8C\u5206\u63A2\u7D22 (k\u756A\u76EE\u306E\u8981\u7D20\
         \u3092\u6C42\u3081\u308B)"
     - icon: ':heavy_check_mark:'
       path: data-structure/disjoint-sparse-table.hpp
-      title: data-structure/disjoint-sparse-table.hpp
+      title: DisjointSparseTable
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
-      title: "\u52D5\u7684modint"
+      title: "\u52D5\u7684 modint"
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -63,8 +63,8 @@ data:
     pages:
     - icon: ':warning:'
       path: dynamic-programming/longest-common-subsequence-restoration.hpp
-      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217(\u5FA9\u5143\u3042\
-        \u308A)"
+      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217 (\u5FA9\u5143\
+        \u3042\u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
       title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
@@ -76,7 +76,7 @@ data:
       title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
-      title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C(bitDP)"
+      title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (bitDP)"
   - name: geomeny
     pages:
     - icon: ':heavy_check_mark:'
@@ -122,42 +122,44 @@ data:
       title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
     - icon: ':warning:'
       path: graph/bfs2d.hpp
-      title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
+      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
     - icon: ':warning:'
       path: graph/dfs.hpp
       title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22"
     - icon: ':warning:'
       path: graph/dfs2d.hpp
-      title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22(\u30B0\u30EA\u30C3\u30C9)"
+      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\
+        \u7D22"
     - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\
-        \u308A)"
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 (\u7D4C\u8DEF\u5FA9\u5143\
+        \u3042\u308A)"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
     - icon: ':warning:'
       path: graph/dijkstra2d.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u30B0\u30EA\u30C3\u30C9)"
+      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\
+        \u6CD5"
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
+      title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
         \ log V)$"
     - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
-      title: "\u6700\u8FD1\u5171\u901A\u7956\u5148(LCA)"
+      title: "\u6700\u8FD1\u5171\u901A\u7956\u5148 (Lowest Common Ancestor)"
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
-      title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
+      title: "Low-Link (\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30D7\u30EA\u30E0) $O(V log E)$"
+      title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30D7\u30EA\u30E0) $O(V log E)$"
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
-      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(SCC)"
+      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3 (Strongly Connected Component)"
     - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
@@ -197,20 +199,20 @@ data:
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
     - icon: ':heavy_check_mark:'
       path: math/number/miller-rabin.hpp
-      title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A(Miller-Rabin\u6CD5)"
+      title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
     - icon: ':heavy_check_mark:'
       path: math/number/pollard-rho.hpp
-      title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard\u306E\u30ED\
+      title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\
         \u30FC\u6CD5)"
     - icon: ':warning:'
       path: math/number/pow.hpp
-      title: "\u7D2F\u4E57(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
+      title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: math/number/prime-factorization.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
     - icon: ':warning:'
       path: math/number/rand-int.hpp
-      title: "\u4E71\u6570\u751F\u6210(Xorshift)"
+      title: "\u4E71\u6570\u751F\u6210 (XorShift)"
   - name: others
     pages:
     - icon: ':warning:'

@@ -6,7 +6,7 @@ data:
     title: UnionFind
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
-    title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E log\
+    title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E log\
       \ V)$"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp

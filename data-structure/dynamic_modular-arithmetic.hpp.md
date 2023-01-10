@@ -84,5 +84,5 @@ data:
   verifiedWith: []
 documentation_of: data-structure/dynamic_modular-arithmetic.hpp
 layout: document
-title: "\u52D5\u7684modint"
+title: "\u52D5\u7684 modint"
 ---

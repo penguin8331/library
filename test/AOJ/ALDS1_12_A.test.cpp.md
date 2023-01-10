@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
-    title: "\u6700\u5C0F\u5168\u57DF\u6728(\u30D7\u30EA\u30E0) $O(V log E)$"
+    title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30D7\u30EA\u30E0) $O(V log E)$"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: math/number/pollard-rho.hpp
-    title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard\u306E\u30ED\u30FC\
-      \u6CD5)"
+    title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\
+      \u30FC\u6CD5)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_1_C-2.test.cpp
@@ -55,5 +55,5 @@ data:
   - test/yosupo/factorize.test.cpp
 documentation_of: math/number/miller-rabin.hpp
 layout: document
-title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A(Miller-Rabin\u6CD5)"
+title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
 ---

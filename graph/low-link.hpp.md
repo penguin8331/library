@@ -57,5 +57,5 @@ data:
   - test/AOJ/GRL_3_A.test.cpp
 documentation_of: graph/low-link.hpp
 layout: document
-title: "Low-Link(\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
+title: "Low-Link (\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
 ---

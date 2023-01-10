@@ -56,8 +56,8 @@ data:
   - test/yosupo/shortes-path.test.cpp
 documentation_of: graph/dijkstra-route.hpp
 layout: document
-title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5(\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A\
-  )"
+title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 (\u7D4C\u8DEF\u5FA9\u5143\u3042\
+  \u308A)"
 ---
 
 ## 使い方

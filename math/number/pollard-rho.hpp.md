@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/number/miller-rabin.hpp
-    title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A(Miller-Rabin\u6CD5)"
+    title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -69,6 +69,6 @@ data:
   - test/yosupo/factorize.test.cpp
 documentation_of: math/number/pollard-rho.hpp
 layout: document
-title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3(Pollard\u306E\u30ED\u30FC\
+title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\u30FC\
   \u6CD5)"
 ---

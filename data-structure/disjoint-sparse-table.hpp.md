@@ -60,8 +60,5 @@ data:
   - test/yosupo/static-rmq-2.test.cpp
 documentation_of: data-structure/disjoint-sparse-table.hpp
 layout: document
-redirect_from:
-- /library/data-structure/disjoint-sparse-table.hpp
-- /library/data-structure/disjoint-sparse-table.hpp.html
-title: data-structure/disjoint-sparse-table.hpp
+title: DisjointSparseTable
 ---

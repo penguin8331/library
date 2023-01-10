@@ -52,7 +52,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/binary-search-on-bit.hpp
 layout: document
-title: "BIT\u4E0A\u306E\u4E8C\u5206\u63A2\u7D22(k\u756A\u76EE\u306E\u8981\u7D20\u3092\
+title: "BIT \u4E0A\u306E\u4E8C\u5206\u63A2\u7D22 (k\u756A\u76EE\u306E\u8981\u7D20\u3092\
   \u6C42\u3081\u308B)"
 ---
 
