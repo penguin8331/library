@@ -1,5 +1,5 @@
 ---
-title: ダイクストラ法(経路復元あり)
+title: ダイクストラ法 (経路復元あり)
 documentation_of: //graph/dijkstra-route.hpp
 ---
 

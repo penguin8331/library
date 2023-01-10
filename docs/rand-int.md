@@ -1,4 +1,4 @@
 ---
-title: 乱数生成(Xorshift)
+title: 乱数生成 (XorShift)
 documentation_of: //math/number/rand-int.hpp
 ---
