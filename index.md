@@ -44,9 +44,18 @@ data:
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684 modint"
+    - icon: ':warning:'
+      path: data-structure/implicit-treap.hpp
+      title: data-structure/implicit-treap.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: data-structure/pair-query-by-implicit-treap.hpp
+      title: data-structure/pair-query-by-implicit-treap.hpp
+    - icon: ':warning:'
+      path: data-structure/priority-sum-by-implicit-treap.hpp
+      title: data-structure/priority-sum-by-implicit-treap.hpp
     - icon: ':warning:'
       path: data-structure/priority_deque.hpp
       title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
