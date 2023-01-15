@@ -41,3 +41,5 @@ MinmaxAffineQuery
 `T0 operator[](int k)` : インデックスアクセスができます。 $O(log n)$
 
 `void dump()` : デバッグ用です。配列の中身をprintします。
+
+### [記事](https://xuzijian629.hatenablog.com/entry/2019/10/25/234938)
