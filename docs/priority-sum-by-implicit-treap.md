@@ -17,12 +17,12 @@ PrioritySum<T, bool ascending = true> hoge;
 
 `void erase_at(int k)` : 位置を指定して要素を削除。先頭の削除なら `k = 0` を指定。 $O(log n)$
 
-`void erase_value(T a)` : 要素を指定して削除。 `a` がすでに `add` されていることが仮定されている。 $O(logn)$
+`void erase_value(T a)` : 要素を指定して削除。 `a` がすでに `add` されていることが仮定されている。 $O(log n)$
 
 `int size()` : 現時点でのサイズを返す $O(1)$
 
-`T query(T0 x)` : 第一要素が `x` の要素と `x` より左側にある要素に対し第二要素の累積を返します。
+`T query(T x)` : 第一要素が `x` の要素と `x` より左側にある要素に対し第二要素の累積を返します。
 
-`T0 operator[](int k)` : インデックスアクセスができます。 $O(log n)$
+`T operator[](int k)` : インデックスアクセスができます。 $O(log n)$
 
 `void dump()` : デバッグ用です。配列の中身をprintします。
