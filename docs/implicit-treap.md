@@ -30,6 +30,8 @@ MinmaxAffineQuery
 
 `void update(int l, int r, T1 x)` : `[l,r)` の半開区間に `x` を作用させる
 
+`T0 query(int l, int r)` : `[l,r)` の半開区間について累積を求める $O(log n)$
+
 `int binary_search(int l, int r, T0 x, bool left = true)` : 累積用の演算が `min` の場合、 `[l, r)` の範囲にある `x` 未満の最左/最右の要素の位置を返す
 
 `void erase(int pos)` : 位置 `pos` の要素を削除します $O(log n)$
