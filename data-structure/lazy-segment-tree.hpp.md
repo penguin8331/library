@@ -135,10 +135,10 @@ Lazy_SegTree<int, int> seg(N, fm, fa, fc, (1LL << 60), 0);
 ```
 
 - いろいろできるやつ
-  - `update(i, j, {a, b});` : `[i, j)` に `ax + b` を作用
-  - `update(i, j, {0, a});` : 更新
-  - `update(i, j, {1, a});` : 加算
-  - `update(i, j, {a, 0});`   : 倍
+  - `update(i, j, {a, b})` : `[i, j)` に `ax + b` を作用
+  - `update(i, j, {0, a})` : 更新
+  - `update(i, j, {1, a})` : 加算
+  - `update(i, j, {a, 0})` : 倍
 
 ```cpp
 auto fm = [](ll a, ll b) { return max(a, b); };
