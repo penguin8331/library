@@ -21,6 +21,5 @@ int main() {
             cin >> l >> r;
             cout << seg.get(l, r + 1) << endl;
         }
-        seg.print();
     }
 }
