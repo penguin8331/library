@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lazy-segment-tree.hpp\"\ntemplate <class\
@@ -48,10 +48,10 @@ data:
     \                    get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n \
     \           return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b)\
     \ {\n        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
-    \ a) {\n        return get(a, a + 1);\n    }\n    \n    // debug\n    void print()\
-    \ {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i) {\n            if (i) cout\
-    \ << \",\";\n            cout << get(i, i + 1);\n        }\n        cout << endl;\n\
-    #endif\n    }\n};\n"
+    \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
+    \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
+    \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
+    \      os << ']';\n        return os;\n    }\n};\n"
   code: "template <class Monoid, class Action>\nstruct Lazy_SegTree {\n    using FuncMonoid\
     \ = function<Monoid(Monoid, Monoid)>;\n    using FuncAction = function<void(Monoid&,\
     \ Action)>;\n    using FuncComposition = function<void(Action&, Action)>;\n  \
@@ -88,16 +88,16 @@ data:
     \                    get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n \
     \           return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b)\
     \ {\n        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
-    \ a) {\n        return get(a, a + 1);\n    }\n    \n    // debug\n    void print()\
-    \ {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i) {\n            if (i) cout\
-    \ << \",\";\n            cout << get(i, i + 1);\n        }\n        cout << endl;\n\
-    #endif\n    }\n};"
+    \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
+    \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
+    \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
+    \      os << ']';\n        return os;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/lazy-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-12-24 10:49:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-01-16 22:52:39+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/DSL_2_F.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp

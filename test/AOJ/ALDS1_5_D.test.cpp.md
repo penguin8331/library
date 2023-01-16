@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
     title: "\u8EE2\u5012\u6570"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,9 +45,10 @@ data:
     \ res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n\
     \            res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
     \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
-    \ - sum(a);\n    }\n\n    // debug\n    void print() {\n#ifdef LOCAL\n       \
-    \ for (int i = 0; i < (int)dat.size(); ++i)\n            cout << sum(i, i + 1)\
-    \ << \",\";\n        cout << endl;\n#endif\n    }\n};\n#line 2 \"math/combinatorics/inversion-number.hpp\"\
+    \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
+    \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
+    \ {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n\
+    \        return os;\n    }\n};\n#line 2 \"math/combinatorics/inversion-number.hpp\"\
     \n\r\ntemplate <class T>\r\nlong long inversion_number(const vector<T> &a) {\r\
     \n    int n = (int)a.size();\r\n    vector<T> b = a;\r\n    sort(b.begin(), b.end());\r\
     \n    b.erase(unique(b.begin(), b.end()), b.end());\r\n\r\n    long long res =\
@@ -70,7 +71,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 18:41:55+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/lazy-segment-tree.hpp
     title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
@@ -69,18 +69,19 @@ data:
     \                    get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n \
     \           return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b)\
     \ {\n        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
-    \ a) {\n        return get(a, a + 1);\n    }\n    \n    // debug\n    void print()\
-    \ {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i) {\n            if (i) cout\
-    \ << \",\";\n            cout << get(i, i + 1);\n        }\n        cout << endl;\n\
-    #endif\n    }\n};\n#line 4 \"test/AOJ/DSL_2_F.test.cpp\"\n\nint main() {\n   \
-    \ int N, Q;\n    cin >> N >> Q;\n    auto fm = [](ll a, ll b) { return min(a,\
-    \ b); };\n    auto fa = [](ll& a, ll d) { a = d; };\n    auto fc = [](ll& d, ll\
-    \ e) { d = e; };\n    Lazy_SegTree<long long, long long> seg(N, fm, fa, fc, (1LL\
-    \ << 31) - 1, (1LL << 31) - 1);\n    for (int i = 0; i < Q; i++) {\n        int\
-    \ t;\n        cin >> t;\n        if (t == 0) {\n            int l, r, s;\n   \
-    \         cin >> l >> r >> s;\n            seg.update(l, r + 1, s);\n        }\
-    \ else {\n            int l, r;\n            cin >> l >> r;\n            cout\
-    \ << seg.get(l, r + 1) << endl;\n        }\n        seg.print();\n    }\n}\n"
+    \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
+    \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
+    \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
+    \      os << ']';\n        return os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_F.test.cpp\"\
+    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    auto fm = [](ll a, ll\
+    \ b) { return min(a, b); };\n    auto fa = [](ll& a, ll d) { a = d; };\n    auto\
+    \ fc = [](ll& d, ll e) { d = e; };\n    Lazy_SegTree<long long, long long> seg(N,\
+    \ fm, fa, fc, (1LL << 31) - 1, (1LL << 31) - 1);\n    for (int i = 0; i < Q; i++)\
+    \ {\n        int t;\n        cin >> t;\n        if (t == 0) {\n            int\
+    \ l, r, s;\n            cin >> l >> r >> s;\n            seg.update(l, r + 1,\
+    \ s);\n        } else {\n            int l, r;\n            cin >> l >> r;\n \
+    \           cout << seg.get(l, r + 1) << endl;\n        }\n        seg.print();\n\
+    \    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
     \n#include \"template/template.hpp\"\n#include \"data-structure/lazy-segment-tree.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    auto fm = [](ll a, ll\
@@ -98,8 +99,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2022-12-24 11:55:54+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-01-16 22:52:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp
 layout: document

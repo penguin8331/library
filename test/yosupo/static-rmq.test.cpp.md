@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -73,15 +73,16 @@ data:
     \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
     \                        --r;\n                    }\n                }\n    \
     \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    /*\
-    \ debug */\n    void print() {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i)\
-    \ {\n            cout << (*this)[i];\n            if (i != N - 1) cout << \",\"\
-    ;\n        }\n        cout << endl;\n#endif\n    }\n};\n#line 4 \"test/yosupo/static-rmq.test.cpp\"\
-    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n  \
-    \      N, [](ll a, ll b) { return min(a, b); }, INF);\n    for (int i = 0; i <\
-    \ N; i++) {\n        ll a;\n        cin >> a;\n        seg.set(i, a);\n    }\n\
-    \    seg.build();\n    for (int i = 0; i < Q; i++) {\n        int l, r;\n    \
-    \    cin >> l >> r;\n        cout << seg.get(l, r) << endl;\n    }\n}\n"
+    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
+    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
+    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
+    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};\n#line\
+    \ 4 \"test/yosupo/static-rmq.test.cpp\"\n\nint main() {\n    int N, Q;\n    cin\
+    \ >> N >> Q;\n    SegTree<ll> seg(\n        N, [](ll a, ll b) { return min(a,\
+    \ b); }, INF);\n    for (int i = 0; i < N; i++) {\n        ll a;\n        cin\
+    \ >> a;\n        seg.set(i, a);\n    }\n    seg.build();\n    for (int i = 0;\
+    \ i < Q; i++) {\n        int l, r;\n        cin >> l >> r;\n        cout << seg.get(l,\
+    \ r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
     template/template.hpp\"\n#include \"data-structure/segment-tree.hpp\"\n\nint main()\
     \ {\n    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n        N, [](ll\
@@ -95,7 +96,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2022-12-24 11:41:33+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq.test.cpp

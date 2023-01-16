@@ -25,10 +25,11 @@ data:
     \ = (j & (j + 1)) - 1)\n                res = res + dat[i][j];\n        return\
     \ res;\n    }\n\n    // x1 <= x < x2, y1 <= y < y2, 0-indexed\n    inline Abel\
     \ sum(int x1, int x2, int y1, int y2) {\n        return sum(x2, y2) - sum(x1,\
-    \ y2) - sum(x2, y1) + sum(x1, y1);\n    }\n\n    // debug\n    void print() {\n\
-    \        for (int i = 1; i < (int)dat.size(); ++i) {\n            for (int j =\
-    \ 1; j < (int)dat[0].size(); ++j)\n                cout << sum(i, j, i + 1, j\
-    \ + 1) << \",\";\n            cout << endl;\n        }\n    }\n};\n"
+    \ y2) - sum(x2, y1) + sum(x1, y1);\n    }\n\n    friend ostream& operator<<(ostream&\
+    \ os, BIT2D bit) {\n        for (int i = 0; i < (int)bit.dat.size(); i++) {\n\
+    \            os << \"[ \";\n            for (int j = 0; j < (int)bit.dat[0].size();\
+    \ j++) {\n                os << bit.sum(i, i + 1, j, j + 1) << \" \";\n      \
+    \      }\n            os << ']';\n        }\n        return os;\n    }\n};\n"
   code: "template <class Abel>\nstruct BIT2D {\n    const Abel UNITY_SUM = 0;\n  \
     \  vector<vector<Abel>> dat;\n\n    // [0, n) x [0, m)\n    BIT2D(int n, int m,\
     \ Abel unity = 0) : UNITY_SUM(unity),\n                                      \
@@ -43,15 +44,16 @@ data:
     \   res = res + dat[i][j];\n        return res;\n    }\n\n    // x1 <= x < x2,\
     \ y1 <= y < y2, 0-indexed\n    inline Abel sum(int x1, int x2, int y1, int y2)\
     \ {\n        return sum(x2, y2) - sum(x1, y2) - sum(x2, y1) + sum(x1, y1);\n \
-    \   }\n\n    // debug\n    void print() {\n        for (int i = 1; i < (int)dat.size();\
-    \ ++i) {\n            for (int j = 1; j < (int)dat[0].size(); ++j)\n         \
-    \       cout << sum(i, j, i + 1, j + 1) << \",\";\n            cout << endl;\n\
-    \        }\n    }\n};"
+    \   }\n\n    friend ostream& operator<<(ostream& os, BIT2D bit) {\n        for\
+    \ (int i = 0; i < (int)bit.dat.size(); i++) {\n            os << \"[ \";\n   \
+    \         for (int j = 0; j < (int)bit.dat[0].size(); j++) {\n               \
+    \ os << bit.sum(i, i + 1, j, j + 1) << \" \";\n            }\n            os <<\
+    \ ']';\n        }\n        return os;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-indexed-tree-2d.hpp
   requiredBy: []
-  timestamp: '2023-01-02 09:44:41+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2842.test.cpp

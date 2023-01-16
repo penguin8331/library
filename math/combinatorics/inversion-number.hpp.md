@@ -24,9 +24,10 @@ data:
     \ = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n \
     \           res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
     \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
-    \ - sum(a);\n    }\n\n    // debug\n    void print() {\n#ifdef LOCAL\n       \
-    \ for (int i = 0; i < (int)dat.size(); ++i)\n            cout << sum(i, i + 1)\
-    \ << \",\";\n        cout << endl;\n#endif\n    }\n};\n#line 2 \"math/combinatorics/inversion-number.hpp\"\
+    \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
+    \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
+    \ {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n\
+    \        return os;\n    }\n};\n#line 2 \"math/combinatorics/inversion-number.hpp\"\
     \n\r\ntemplate <class T>\r\nlong long inversion_number(const vector<T> &a) {\r\
     \n    int n = (int)a.size();\r\n    vector<T> b = a;\r\n    sort(b.begin(), b.end());\r\
     \n    b.erase(unique(b.begin(), b.end()), b.end());\r\n\r\n    long long res =\
@@ -47,7 +48,7 @@ data:
   isVerificationFile: false
   path: math/combinatorics/inversion-number.hpp
   requiredBy: []
-  timestamp: '2022-12-20 22:08:49+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

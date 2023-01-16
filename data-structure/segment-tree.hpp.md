@@ -52,10 +52,10 @@ data:
     \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
     \                        --r;\n                    }\n                }\n    \
     \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    /*\
-    \ debug */\n    void print() {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i)\
-    \ {\n            cout << (*this)[i];\n            if (i != N - 1) cout << \",\"\
-    ;\n        }\n        cout << endl;\n#endif\n    }\n};\n"
+    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
+    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
+    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
+    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};\n"
   code: "template <class Monoid>\nstruct SegTree {\n    using Func = function<Monoid(Monoid,\
     \ Monoid)>;\n    int N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n\
     \    vector<Monoid> dat;\n\n    /* initialization */\n    SegTree() {}\n    SegTree(int\
@@ -96,15 +96,15 @@ data:
     \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
     \                        --r;\n                    }\n                }\n    \
     \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    /*\
-    \ debug */\n    void print() {\n#ifdef LOCAL\n        for (int i = 0; i < N; ++i)\
-    \ {\n            cout << (*this)[i];\n            if (i != N - 1) cout << \",\"\
-    ;\n        }\n        cout << endl;\n#endif\n    }\n};"
+    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
+    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
+    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
+    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-12-24 10:49:41+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp

@@ -23,9 +23,10 @@ data:
     \ (N < (int)dat.size()) N *= 2;\n        for (int i = N / 2; i > 0; i /= 2) {\n\
     \            if (res + i - 1 < (int)dat.size() && dat[res + i - 1] < k) {\n  \
     \              k = k - dat[res + i - 1];\n                res = res + i;\n   \
-    \         }\n        }\n        return res;\n    }\n\n    // debug\n    void print()\
-    \ {\n        for (int i = 0; i < (int)dat.size(); ++i)\n            cout << sum(i,\
-    \ i + 1) << \",\";\n        cout << endl;\n    }\n};\n"
+    \         }\n        }\n        return res;\n    }\n\n    friend ostream& operator<<(ostream&\
+    \ os, BIT bit) {\n        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size();\
+    \ i++) {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os\
+    \ << ']';\n        return os;\n    }\n};\n"
   code: "template <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel>\
     \ dat;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n,\
     \ unity) {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\
@@ -40,14 +41,16 @@ data:
     \        while (N < (int)dat.size()) N *= 2;\n        for (int i = N / 2; i >\
     \ 0; i /= 2) {\n            if (res + i - 1 < (int)dat.size() && dat[res + i -\
     \ 1] < k) {\n                k = k - dat[res + i - 1];\n                res =\
-    \ res + i;\n            }\n        }\n        return res;\n    }\n\n    // debug\n\
-    \    void print() {\n        for (int i = 0; i < (int)dat.size(); ++i)\n     \
-    \       cout << sum(i, i + 1) << \",\";\n        cout << endl;\n    }\n};"
+    \ res + i;\n            }\n        }\n        return res;\n    }\n\n    friend\
+    \ ostream& operator<<(ostream& os, BIT bit) {\n        os << \"[ \";\n       \
+    \ for (int i = 0; i < (int)bit.dat.size(); i++) {\n            os << bit.sum(i,\
+    \ i + 1) << \" \";\n        }\n        os << ']';\n        return os;\n    }\n\
+    };"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-search-on-bit.hpp
   requiredBy: []
-  timestamp: '2023-01-02 09:22:07+09:00'
+  timestamp: '2023-01-16 22:52:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/binary-search-on-bit.hpp
