@@ -101,14 +101,12 @@ struct SegTree {
         return 0;
     }
 
-    /* debug */
-    void print() {
-#ifdef LOCAL
-        for (int i = 0; i < N; ++i) {
-            cout << (*this)[i];
-            if (i != N - 1) cout << ",";
+    friend ostream& operator<<(ostream& os, SegTree seg) {
+        os << "[ ";
+        for (int i = 0; i < seg.N; i++) {
+            os << seg.get(i, i + 1) << " ";
         }
-        cout << endl;
-#endif
+        os << ']';
+        return os;
     }
 };

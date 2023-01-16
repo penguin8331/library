@@ -2,9 +2,10 @@ template <class Abel>
 struct BIT {
     Abel UNITY_SUM = 0;
     vector<Abel> dat[2];
+    int N;
 
     // [0, n)
-    BIT(int n, Abel unity = 0) : UNITY_SUM(unity) {
+    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {
         init(n);
     }
     void init(int n) {
@@ -34,11 +35,13 @@ struct BIT {
     inline Abel sum(int a, int b) {
         return sub_sum(0, b) + sub_sum(1, b) * b - sub_sum(0, a) - sub_sum(1, a) * a;
     }
-
-    // debug
-    void print() {
-        for (int i = 0; i < (int)dat[0].size(); ++i)
-            cout << sum(i, i + 1) << ",";
-        cout << endl;
+    
+    friend ostream& operator<<(ostream& os, BIT bit) {
+        os << "[ ";
+        for (int i = 0; i < bit.N; i++) {
+            os << bit.sum(i, i + 1) << " ";
+        }
+        os << ']';
+        return os;
     }
 };

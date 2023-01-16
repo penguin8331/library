@@ -28,12 +28,12 @@ struct BIT {
         return sum(b) - sum(a);
     }
 
-    // debug
-    void print() {
-#ifdef LOCAL
-        for (int i = 0; i < (int)dat.size(); ++i)
-            cout << sum(i, i + 1) << ",";
-        cout << endl;
-#endif
+    friend ostream& operator<<(ostream& os, BIT bit) {
+        os << "[ ";
+        for (int i = 0; i < (int)bit.dat.size(); i++) {
+            os << bit.sum(i, i + 1) << " ";
+        }
+        os << ']';
+        return os;
     }
 };

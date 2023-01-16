@@ -2,8 +2,9 @@ template <class Abel>
 struct BIT2D {
     const Abel UNITY_SUM = 0;
     vector<vector<Abel> > dat[2][2];
+    int N, M;
 
-    BIT2D(int n, int m, Abel unity = 0) : UNITY_SUM(unity) {
+    BIT2D(int n, int m, Abel unity = 0) : UNITY_SUM(unity), N(n), M(m) {
         init(n, m);
     }
     void init(int n, int m) {
@@ -51,12 +52,14 @@ struct BIT2D {
         return sub_sum(x2, y2) - sub_sum(x1, y2) - sub_sum(x2, y1) + sub_sum(x1, y1);
     }
 
-    // debug
-    void print() {
-        for (int i = 1; i < (int)dat.size(); ++i) {
-            for (int j = 1; j < (int)dat[0].size(); ++j)
-                cout << sum(i, j, i + 1, j + 1) << ",";
-            cout << endl;
+    friend ostream& operator<<(ostream& os, BIT2D bit) {
+        for (int i = 0; i < bit.N; i++) {
+            os << "[ ";
+            for (int j = 0; j < bit.M; j++) {
+                os << bit.sum(i, i + 1, j, j + 1) << " ";
+            }
+            os << ']';
         }
+        return os;
     }
 };

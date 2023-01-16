@@ -78,15 +78,13 @@ struct Lazy_SegTree {
     inline Monoid operator[](int a) {
         return get(a, a + 1);
     }
-    
-    // debug
-    void print() {
-#ifdef LOCAL
-        for (int i = 0; i < N; ++i) {
-            if (i) cout << ",";
-            cout << get(i, i + 1);
+
+    friend ostream& operator<<(ostream& os, Lazy_SegTree seg) {
+        os << "[ ";
+        for (int i = 0; i < seg.N; i++) {
+            os << seg.get(i, i + 1) << " ";
         }
-        cout << endl;
-#endif
+        os << ']';
+        return os;
     }
 };

@@ -31,12 +31,14 @@ struct BIT2D {
         return sum(x2, y2) - sum(x1, y2) - sum(x2, y1) + sum(x1, y1);
     }
 
-    // debug
-    void print() {
-        for (int i = 1; i < (int)dat.size(); ++i) {
-            for (int j = 1; j < (int)dat[0].size(); ++j)
-                cout << sum(i, j, i + 1, j + 1) << ",";
-            cout << endl;
+    friend ostream& operator<<(ostream& os, BIT2D bit) {
+        for (int i = 0; i < (int)bit.dat.size(); i++) {
+            os << "[ ";
+            for (int j = 0; j < (int)bit.dat[0].size(); j++) {
+                os << bit.sum(i, i + 1, j, j + 1) << " ";
+            }
+            os << ']';
         }
+        return os;
     }
 };

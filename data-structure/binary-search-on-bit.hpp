@@ -43,10 +43,12 @@ struct BIT {
         return res;
     }
 
-    // debug
-    void print() {
-        for (int i = 0; i < (int)dat.size(); ++i)
-            cout << sum(i, i + 1) << ",";
-        cout << endl;
+    friend ostream& operator<<(ostream& os, BIT bit) {
+        os << "[ ";
+        for (int i = 0; i < (int)bit.dat.size(); i++) {
+            os << bit.sum(i, i + 1) << " ";
+        }
+        os << ']';
+        return os;
     }
 };
