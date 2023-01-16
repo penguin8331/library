@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

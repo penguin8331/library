@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
     title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

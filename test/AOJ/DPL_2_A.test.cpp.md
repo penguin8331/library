@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/traveling-salesman-problem.hpp
     title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (bitDP)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

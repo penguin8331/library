@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
@@ -80,8 +80,7 @@ data:
     \ {\n        int t;\n        cin >> t;\n        if (t == 0) {\n            int\
     \ l, r, s;\n            cin >> l >> r >> s;\n            seg.update(l, r + 1,\
     \ s);\n        } else {\n            int l, r;\n            cin >> l >> r;\n \
-    \           cout << seg.get(l, r + 1) << endl;\n        }\n        seg.print();\n\
-    \    }\n}\n"
+    \           cout << seg.get(l, r + 1) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
     \n#include \"template/template.hpp\"\n#include \"data-structure/lazy-segment-tree.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    auto fm = [](ll a, ll\
@@ -91,16 +90,15 @@ data:
     \ {\n        int t;\n        cin >> t;\n        if (t == 0) {\n            int\
     \ l, r, s;\n            cin >> l >> r >> s;\n            seg.update(l, r + 1,\
     \ s);\n        } else {\n            int l, r;\n            cin >> l >> r;\n \
-    \           cout << seg.get(l, r + 1) << endl;\n        }\n        seg.print();\n\
-    \    }\n}"
+    \           cout << seg.get(l, r + 1) << endl;\n        }\n    }\n}"
   dependsOn:
   - template/template.hpp
   - data-structure/lazy-segment-tree.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2023-01-16 22:52:39+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-01-16 22:59:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp
 layout: document
