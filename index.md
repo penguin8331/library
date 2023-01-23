@@ -194,7 +194,7 @@ data:
       title: next_combination
   - name: math/number
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/chinese-remainder-theorem.hpp
       title: math/number/chinese-remainder-theorem.hpp
     - icon: ':heavy_check_mark:'
@@ -206,7 +206,7 @@ data:
     - icon: ':warning:'
       path: math/number/eratostenes.hpp
       title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number/ext-gcd.hpp
       title: math/number/ext-gcd.hpp
     - icon: ':heavy_check_mark:'
@@ -258,6 +258,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/1160.test.cpp
       title: test/AOJ/1160.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/2659.test.cpp
+      title: test/AOJ/2659.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/2842.test.cpp
       title: test/AOJ/2842.test.cpp

@@ -13,6 +13,9 @@ data:
     path: test/AOJ/1160.test.cpp
     title: test/AOJ/1160.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/AOJ/2659.test.cpp
+    title: test/AOJ/2659.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2842.test.cpp
     title: test/AOJ/2842.test.cpp
   - icon: ':heavy_check_mark:'
@@ -194,6 +197,7 @@ data:
   verifiedWith:
   - test/AOJ/GRL_3_A.test.cpp
   - test/AOJ/GRL_4_B.test.cpp
+  - test/AOJ/2659.test.cpp
   - test/AOJ/ALDS1_1_C-2.test.cpp
   - test/AOJ/NTL_1_A.test.cpp
   - test/AOJ/CGL_7_D.test.cpp

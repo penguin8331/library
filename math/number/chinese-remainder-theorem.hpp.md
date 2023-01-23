@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/number/ext-gcd.hpp
     title: math/number/ext-gcd.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2659.test.cpp
+    title: test/AOJ/2659.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number/ext-gcd.hpp\"\nlong long extGcd(long long a,\
@@ -40,8 +43,9 @@ data:
   path: math/number/chinese-remainder-theorem.hpp
   requiredBy: []
   timestamp: '2023-01-23 15:58:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/2659.test.cpp
 documentation_of: math/number/chinese-remainder-theorem.hpp
 layout: document
 redirect_from:
