@@ -53,8 +53,8 @@ data:
   timestamp: '2023-01-09 19:53:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/GRL_3_A.test.cpp
+  - test/AOJ/GRL_3_B.test.cpp
 documentation_of: graph/low-link.hpp
 layout: document
 title: "Low-Link (\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"

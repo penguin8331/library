@@ -194,6 +194,9 @@ data:
       title: next_combination
   - name: math/number
     pages:
+    - icon: ':warning:'
+      path: math/number/chinese-remainder-theorem.hpp
+      title: math/number/chinese-remainder-theorem.hpp
     - icon: ':heavy_check_mark:'
       path: math/number/convert-base.hpp
       title: "\u9032\u6570\u5909\u63DB"
@@ -203,6 +206,9 @@ data:
     - icon: ':warning:'
       path: math/number/eratostenes.hpp
       title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
+    - icon: ':warning:'
+      path: math/number/ext-gcd.hpp
+      title: math/number/ext-gcd.hpp
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
