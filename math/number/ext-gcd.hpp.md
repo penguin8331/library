@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: math/number/chinese-remainder-theorem.hpp
-    title: math/number/chinese-remainder-theorem.hpp
+    title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2659.test.cpp
@@ -32,8 +32,5 @@ data:
   - test/AOJ/2659.test.cpp
 documentation_of: math/number/ext-gcd.hpp
 layout: document
-redirect_from:
-- /library/math/number/ext-gcd.hpp
-- /library/math/number/ext-gcd.hpp.html
-title: math/number/ext-gcd.hpp
+title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
 ---

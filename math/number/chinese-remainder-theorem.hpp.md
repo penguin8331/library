@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/number/ext-gcd.hpp
-    title: math/number/ext-gcd.hpp
+    title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -48,8 +48,5 @@ data:
   - test/AOJ/2659.test.cpp
 documentation_of: math/number/chinese-remainder-theorem.hpp
 layout: document
-redirect_from:
-- /library/math/number/chinese-remainder-theorem.hpp
-- /library/math/number/chinese-remainder-theorem.hpp.html
-title: math/number/chinese-remainder-theorem.hpp
+title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
 ---

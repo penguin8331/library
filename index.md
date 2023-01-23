@@ -196,7 +196,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: math/number/chinese-remainder-theorem.hpp
-      title: math/number/chinese-remainder-theorem.hpp
+      title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
     - icon: ':heavy_check_mark:'
       path: math/number/convert-base.hpp
       title: "\u9032\u6570\u5909\u63DB"
@@ -208,7 +208,7 @@ data:
       title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':heavy_check_mark:'
       path: math/number/ext-gcd.hpp
-      title: math/number/ext-gcd.hpp
+      title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
     - icon: ':heavy_check_mark:'
       path: math/number/isprime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
