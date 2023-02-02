@@ -60,5 +60,5 @@ data:
   - test/yosupo/static-rmq-2.test.cpp
 documentation_of: data-structure/disjoint-sparse-table.hpp
 layout: document
-title: DisjointSparseTable
+title: Disjoint Sparse Table
 ---

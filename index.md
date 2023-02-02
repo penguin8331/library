@@ -40,7 +40,7 @@ data:
         \u3092\u6C42\u3081\u308B)"
     - icon: ':heavy_check_mark:'
       path: data-structure/disjoint-sparse-table.hpp
-      title: DisjointSparseTable
+      title: Disjoint Sparse Table
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684 modint"
@@ -154,7 +154,7 @@ data:
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
     - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
-      title: LCA
+      title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
@@ -163,7 +163,7 @@ data:
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
-      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3 (Strongly Connected Component)"
+      title: Strongly Connected Component
     - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
