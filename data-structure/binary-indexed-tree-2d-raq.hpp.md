@@ -75,6 +75,6 @@ data:
   verifiedWith: []
 documentation_of: data-structure/binary-indexed-tree-2d-raq.hpp
 layout: document
-title: "\u4E8C\u6B21\u5143 Binary Indexed Tree (\u9818\u57DF\u52A0\u7B97 \u9818\u57DF\
-  \u548C\u53D6\u5F97\u306B\u5BFE\u5FDC)"
+title: "\u4E8C\u6B21\u5143 BIT (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\u53D6\
+  \u5F97\u306B\u4E21\u5BFE\u5FDC)"
 ---

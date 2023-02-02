@@ -37,7 +37,7 @@ data:
   - test/AOJ/GRL_1_C.test.cpp
 documentation_of: graph/warshall-floyd.hpp
 layout: document
-title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
+title: Warshall Floyd
 ---
 
 ## 概要

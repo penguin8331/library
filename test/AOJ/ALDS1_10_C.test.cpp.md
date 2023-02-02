@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/longest-common-subsequence.hpp
-    title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
+    title: LCS
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

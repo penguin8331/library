@@ -27,5 +27,5 @@ data:
   verifiedWith: []
 documentation_of: graph/dfs.hpp
 layout: document
-title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22"
+title: DFS
 ---

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/lca.hpp
-    title: "\u6700\u8FD1\u5171\u901A\u7956\u5148 (Lowest Common Ancestor)"
+    title: LCA
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

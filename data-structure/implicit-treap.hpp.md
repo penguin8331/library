@@ -4,10 +4,10 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/pair-query-by-implicit-treap.hpp
-    title: PairQuery
+    title: PairQuery (by Implicit Treap)
   - icon: ':warning:'
     path: data-structure/priority-sum-by-implicit-treap.hpp
-    title: PrioritySum
+    title: PrioritySum (by Implicit Treap)
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -341,5 +341,3 @@ MinmaxAffineQuery
 `T0 operator[](int k)` : インデックスアクセスができます。 $O(log n)$
 
 `void dump()` : デバッグ用です。配列の中身をprintします。
-
-### [記事](https://xuzijian629.hatenablog.com/entry/2019/10/25/234938)

@@ -50,5 +50,5 @@ data:
   verifiedWith: []
 documentation_of: graph/dijkstra2d.hpp
 layout: document
-title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+title: Dijkstra-2D
 ---

@@ -65,5 +65,5 @@ data:
   - test/AOJ/GRL_5_C.test.cpp
 documentation_of: graph/lca.hpp
 layout: document
-title: "\u6700\u8FD1\u5171\u901A\u7956\u5148 (Lowest Common Ancestor)"
+title: LCA
 ---

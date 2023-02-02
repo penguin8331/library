@@ -38,7 +38,7 @@ data:
   - test/AOJ/DPL_2_A.test.cpp
 documentation_of: dynamic-programming/traveling-salesman-problem.hpp
 layout: document
-title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (bitDP)"
+title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
 ---
 
 ## 使い方

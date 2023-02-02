@@ -37,12 +37,12 @@ data:
   - test/AOJ/GRL_1_B.test.cpp
 documentation_of: graph/bellman-ford.hpp
 layout: document
-title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
+title: "Bellman\u2013Ford"
 ---
 
 ## 使い方
 
-`bellmanford(Es,s,t,dis)`
+`bellman_ford(vector<Edge> Es,int V,int s,vector<long long> dis)`
 
 入力: 全ての辺 `Es`, 頂点数 `V`, 開始点 `s`, 最短経路を記録する `dis`
 

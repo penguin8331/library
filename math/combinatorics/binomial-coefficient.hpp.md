@@ -50,5 +50,5 @@ data:
   verifiedWith: []
 documentation_of: math/combinatorics/binomial-coefficient.hpp
 layout: document
-title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
+title: "\u4E8C\u9805\u4FC2\u6570 (\u30AA\u30FC\u30BD\u30C9\u30C3\u30AF\u30B9)"
 ---

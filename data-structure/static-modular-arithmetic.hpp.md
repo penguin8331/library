@@ -81,5 +81,5 @@ data:
   verifiedWith: []
 documentation_of: data-structure/static-modular-arithmetic.hpp
 layout: document
-title: "\u9759\u7684modint"
+title: "\u9759\u7684 modint"
 ---

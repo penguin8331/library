@@ -56,6 +56,6 @@ data:
   - test/AOJ/DSL_2_G.test.cpp
 documentation_of: data-structure/binary-indexed-tree-raq.hpp
 layout: document
-title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\u5F97\
-  \u306B\u5BFE\u5FDC)"
+title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\u5BFE\
+  \u5FDC)"
 ---

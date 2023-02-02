@@ -52,5 +52,5 @@ data:
   - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: data-structure/binary-indexed-tree.hpp
 layout: document
-title: Binary Indexed Tree
+title: BIT
 ---

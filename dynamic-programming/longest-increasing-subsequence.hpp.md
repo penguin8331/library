@@ -32,5 +32,5 @@ data:
   - test/AOJ/DPL_1_d.test.cpp
 documentation_of: dynamic-programming/longest-increasing-subsequence.hpp
 layout: document
-title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217"
+title: LIS
 ---

@@ -51,5 +51,5 @@ data:
   - test/AOJ/ALDS1_11_C.test.cpp
 documentation_of: graph/bfs.hpp
 layout: document
-title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
+title: BFS
 ---

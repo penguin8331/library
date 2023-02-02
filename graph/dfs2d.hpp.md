@@ -32,5 +32,5 @@ data:
   verifiedWith: []
 documentation_of: graph/dfs2d.hpp
 layout: document
-title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22"
+title: DFS-2D
 ---

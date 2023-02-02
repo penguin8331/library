@@ -3,8 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree-raq.hpp
-    title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
-      \u5F97\u306B\u5BFE\u5FDC)"
+    title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
+      \u5BFE\u5FDC)"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

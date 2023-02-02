@@ -53,5 +53,5 @@ data:
   verifiedWith: []
 documentation_of: graph/bfs2d.hpp
 layout: document
-title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
+title: BFS-2D
 ---

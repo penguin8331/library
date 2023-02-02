@@ -22,21 +22,21 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/binary-indexed-tree-2d-raq.hpp
-      title: "\u4E8C\u6B21\u5143 Binary Indexed Tree (\u9818\u57DF\u52A0\u7B97 \u9818\
-        \u57DF\u548C\u53D6\u5F97\u306B\u5BFE\u5FDC)"
+      title: "\u4E8C\u6B21\u5143 BIT (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\
+        \u53D6\u5F97\u306B\u4E21\u5BFE\u5FDC)"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-2d.hpp
-      title: "\u4E8C\u6B21\u5143 Binary Indexed Tree"
+      title: "\u4E8C\u6B21\u5143 BIT"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree-raq.hpp
-      title: "Binary Indexed Tree (\u533A\u9593\u52A0\u7B97 \u533A\u9593\u548C\u53D6\
-        \u5F97\u306B\u5BFE\u5FDC)"
+      title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
+        \u5BFE\u5FDC)"
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
-      title: Binary Indexed Tree
+      title: BIT
     - icon: ':warning:'
       path: data-structure/binary-search-on-bit.hpp
-      title: "BIT \u4E0A\u306E\u4E8C\u5206\u63A2\u7D22 (k\u756A\u76EE\u306E\u8981\u7D20\
+      title: "BIT \u4E0A\u4E8C\u5206\u63A2\u7D22 (k \u756A\u76EE\u306E\u8981\u7D20\
         \u3092\u6C42\u3081\u308B)"
     - icon: ':heavy_check_mark:'
       path: data-structure/disjoint-sparse-table.hpp
@@ -49,22 +49,22 @@ data:
       title: ImplicitTreap
     - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
-      title: "\u9045\u5EF6\u8A55\u4FA1\u4ED8\u304D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+      title: Lazy Segment Tree
     - icon: ':warning:'
       path: data-structure/pair-query-by-implicit-treap.hpp
-      title: PairQuery
+      title: PairQuery (by Implicit Treap)
     - icon: ':warning:'
       path: data-structure/priority-sum-by-implicit-treap.hpp
-      title: PrioritySum
+      title: PrioritySum (by Implicit Treap)
     - icon: ':warning:'
       path: data-structure/priority_deque.hpp
       title: "\u512A\u5148\u5EA6\u4ED8\u304D\u4E21\u7AEF\u30AD\u30E5\u30FC"
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
-      title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+      title: Segment Tree
     - icon: ':warning:'
       path: data-structure/static-modular-arithmetic.hpp
-      title: "\u9759\u7684modint"
+      title: "\u9759\u7684 modint"
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: UnionFind
@@ -72,20 +72,19 @@ data:
     pages:
     - icon: ':warning:'
       path: dynamic-programming/longest-common-subsequence-restoration.hpp
-      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217 (\u5FA9\u5143\
-        \u3042\u308A)"
+      title: "LCS (\u5FA9\u5143\u3042\u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-common-subsequence.hpp
-      title: "\u6700\u9577\u5171\u901A\u90E8\u5206\u6587\u5B57\u5217"
+      title: LCS
     - icon: ':warning:'
       path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
-      title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217(\u5FA9\u5143\u3042\u308A)"
+      title: "LIS (\u5FA9\u5143\u3042\u308A)"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-increasing-subsequence.hpp
-      title: "\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217"
+      title: LIS
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
-      title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (bitDP)"
+      title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
   - name: geomeny
     pages:
     - icon: ':heavy_check_mark:'
@@ -125,47 +124,43 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
-      title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5"
+      title: "Bellman\u2013Ford"
     - icon: ':heavy_check_mark:'
       path: graph/bfs.hpp
-      title: "\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
+      title: BFS
     - icon: ':warning:'
       path: graph/bfs2d.hpp
-      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u5E45\u512A\u5148\u5EA6\u63A2\u7D22"
+      title: BFS-2D
     - icon: ':warning:'
       path: graph/dfs.hpp
-      title: "\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\u7D22"
+      title: DFS
     - icon: ':warning:'
       path: graph/dfs2d.hpp
-      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u6DF1\u3055\u512A\u5148\u5EA6\u63A2\
-        \u7D22"
+      title: DFS-2D
     - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 (\u7D4C\u8DEF\u5FA9\u5143\
-        \u3042\u308A)"
+      title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+      title: Dijkstra
     - icon: ':warning:'
       path: graph/dijkstra2d.hpp
-      title: "\u30B0\u30EA\u30C3\u30C9\u4E0A\u306E\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\
-        \u6CD5"
+      title: Dijkstra-2D
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30AF\u30E9\u30B9\u30AB\u30EB) $O(E\
-        \ log V)$"
+      title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
     - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
-      title: "\u6700\u8FD1\u5171\u901A\u7956\u5148 (Lowest Common Ancestor)"
+      title: LCA
     - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
-      title: "Low-Link (\u6A4B,\u95A2\u7BC0\u70B9\u5217\u6319)"
+      title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
-      title: "\u6700\u5C0F\u5168\u57DF\u6728 (\u30D7\u30EA\u30E0) $O(V log E)$"
+      title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3 (Strongly Connected Component)"
@@ -174,15 +169,16 @@ data:
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
-      title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
+      title: Warshall Floyd
   - name: math/combinatorics
     pages:
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient-naivety.hpp
-      title: "\u4E8C\u9805\u4FC2\u6570"
+      title: "\u4E8C\u9805\u4FC2\u6570 (\u611A\u76F4\u8A08\u7B97)"
     - icon: ':warning:'
       path: math/combinatorics/binomial-coefficient.hpp
-      title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
+      title: "\u4E8C\u9805\u4FC2\u6570 (\u30AA\u30FC\u30BD\u30C9\u30C3\u30AF\u30B9\
+        )"
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
@@ -227,7 +223,7 @@ data:
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
     - icon: ':warning:'
       path: math/number/rand-int.hpp
-      title: "\u4E71\u6570\u751F\u6210 (XorShift)"
+      title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
   - name: others
     pages:
     - icon: ':warning:'

@@ -51,5 +51,5 @@ data:
   - test/AOJ/GRL_1_A.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
-title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5"
+title: Dijkstra
 ---
