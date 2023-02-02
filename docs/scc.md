@@ -1,5 +1,5 @@
 ---
-title: 強連結成分分解 (Strongly Connected Component)
+title: Strongly Connected Component
 documentation_of: //graph/scc.hpp
 ---
 
