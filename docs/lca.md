@@ -1,4 +1,4 @@
 ---
-title: 最近共通祖先 (Lowest Common Ancestor)
+title: LCA
 documentation_of: //graph/lca.hpp
 ---

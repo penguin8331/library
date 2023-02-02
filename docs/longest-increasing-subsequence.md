@@ -1,4 +1,4 @@
 ---
-title: 最長増加部分列
+title: LIS
 documentation_of: //dynamic-programming/longest-increasing-subsequence.hpp
 ---

@@ -1,4 +1,4 @@
 ---
-title: グリッド上のダイクストラ法
+title: Dijkstra-2D
 documentation_of: //graph/dijkstra2d.hpp
 ---

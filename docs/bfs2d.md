@@ -1,4 +1,4 @@
 ---
-title: グリッド上の幅優先度探索
+title: BFS-2D
 documentation_of: //graph/bfs2d.hpp
 ---

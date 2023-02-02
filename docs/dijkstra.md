@@ -1,4 +1,4 @@
 ---
-title: ダイクストラ法
+title: Dijkstra
 documentation_of: //graph/dijkstra.hpp
 ---

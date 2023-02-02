@@ -1,7 +1,11 @@
 ---
-title: PrioritySum
+title: PrioritySum (by Implicit Treap)
 documentation_of: //data-structure/priority-sum-by-implicit-treap.hpp
 ---
+
+## 概要
+
+集合を sort したときの上位 k 個の累積が求められる
 
 ## 宣言
 
@@ -21,7 +25,7 @@ PrioritySum<T, bool ascending = true> hoge;
 
 `int size()` : 現時点でのサイズを返す $O(1)$
 
-`T query(T x)` : 第一要素が `x` の要素と `x` より左側にある要素に対し第二要素の累積を返します。
+`T query(int k)` : 上位 k 個の累積
 
 `T operator[](int k)` : インデックスアクセスができます。 $O(log n)$
 

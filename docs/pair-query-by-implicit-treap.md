@@ -1,7 +1,11 @@
 ---
-title: PairQuery
+title: PairQuery (by Implicit Treap)
 documentation_of: //data-structure/pair-query-by-implicit-treap.hpp
 ---
+
+## 概要
+
+pair 型の要素を第一要素の要素で sort したときの第二要素の累積を求める
 
 ## 宣言
 

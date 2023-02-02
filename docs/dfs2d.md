@@ -1,4 +1,4 @@
 ---
-title: グリッド上の深さ優先度探索
+title: DFS-2D
 documentation_of: //graph/dfs2d.hpp
 ---

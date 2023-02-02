@@ -1,4 +1,4 @@
 ---
-title: 深さ優先度探索
+title: DFS
 documentation_of: //graph/dfs.hpp
 ---

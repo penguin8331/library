@@ -1,4 +1,4 @@
 ---
-title: 幅優先度探索
+title: BFS
 documentation_of: //graph/bfs.hpp
 ---
