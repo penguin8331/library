@@ -73,14 +73,14 @@ data:
   isVerificationFile: false
   path: geomeny/projection.hpp
   requiredBy:
-  - geomeny/is-inter.hpp
   - geomeny/distance.hpp
+  - geomeny/is-inter.hpp
   timestamp: '2022-12-28 12:48:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_1_A.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
 documentation_of: geomeny/projection.hpp
 layout: document
 title: "\u5C04\u5F71"

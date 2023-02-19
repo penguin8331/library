@@ -51,8 +51,8 @@ data:
   timestamp: '2023-01-08 12:37:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/ALDS1_1_C-2.test.cpp
   - test/yosupo/factorize.test.cpp
+  - test/AOJ/ALDS1_1_C-2.test.cpp
 documentation_of: math/number/miller-rabin.hpp
 layout: document
 title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"

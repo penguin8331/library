@@ -149,6 +149,9 @@ data:
     - icon: ':warning:'
       path: graph/dijkstra2d.hpp
       title: Dijkstra-2D
+    - icon: ':warning:'
+      path: graph/is_biparite.hpp
+      title: graph/is_biparite.hpp
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"

@@ -291,8 +291,8 @@ data:
   isVerificationFile: false
   path: data-structure/implicit-treap.hpp
   requiredBy:
-  - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
   timestamp: '2023-01-15 10:26:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

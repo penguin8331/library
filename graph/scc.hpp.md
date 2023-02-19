@@ -71,8 +71,8 @@ data:
   timestamp: '2022-12-29 16:08:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_3_C.test.cpp
   - test/yosupo/scc.test.cpp
+  - test/AOJ/GRL_3_C.test.cpp
 documentation_of: graph/scc.hpp
 layout: document
 title: Strongly Connected Component
