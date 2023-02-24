@@ -14,11 +14,6 @@ using pll = pair<ll, ll>;
 #define elif else if
 #define updiv(N, X) (((N) + (X)-1) / (X))
 #define sigma(a, b) ((a + b) * (b - a + 1) / 2)
-#ifdef LOCAL
-#include "debug.hpp"
-#else
-#define debug(...)
-#endif
 struct fast_ios {
     fast_ios() {
         ios::sync_with_stdio(false);
