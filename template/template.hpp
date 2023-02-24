@@ -1,4 +1,3 @@
-#pragma region KCLC
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
 // #pragma GCC optimize("unroll-loops")
@@ -32,7 +31,6 @@ template <typename T>
 inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }
 template <typename T>
 inline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false)); }
-#pragma endregion KCLC
 //----------------------------------------------------------------------------
 constexpr int inf = 1 << 30;
 constexpr ll INF = 1LL << 60;
