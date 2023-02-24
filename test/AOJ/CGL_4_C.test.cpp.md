@@ -24,18 +24,81 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ template/template.hpp: line 18: unable to process #include in #if / #ifdef /\
-    \ #ifndef other than include guards\n"
+  bundledCode: "#line 1 \"test/AOJ/CGL_4_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C\"\
+    \n#define ERROR 0.00001\n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"\
+    avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\"\
+    )\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
+    \ ld = long double;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
+    #define pb push_back\n#define mp make_pair\n#define all(x) (x).begin(), (x).end()\n\
+    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
+    \ X) (((N) + (X)-1) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
+    struct fast_ios {\n    fast_ios() {\n        ios::sync_with_stdio(false);\n  \
+    \      cin.tie(nullptr);\n        cout.tie(nullptr);\n        cout << fixed <<\
+    \ setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename T>\ninline bool\
+    \ chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
+    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
+    \ }\n//----------------------------------------------------------------------------\n\
+    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
+    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
+    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 2\
+    \ \"geomeny/geomeny-template.hpp\"\nusing DD = long double;     // to be set appropriately\n\
+    const DD EPS = 1e-10;  // to be set appropriately\nconst DD PI = acosl(-1.0);\n\
+    DD torad(int deg) { return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang\
+    \ * 180 / PI; }\n\n/* Point */\nstruct Point {\n    DD x, y;\n    Point(DD x =\
+    \ 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream &operator<<(ostream &s,\
+    \ const Point &p) { return s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline\
+    \ Point operator+(const Point &p, const Point &q) { return Point(p.x + q.x, p.y\
+    \ + q.y); }\ninline Point operator-(const Point &p, const Point &q) { return Point(p.x\
+    \ - q.x, p.y - q.y); }\ninline Point operator*(const Point &p, DD a) { return\
+    \ Point(p.x * a, p.y * a); }\ninline Point operator*(DD a, const Point &p) { return\
+    \ Point(a * p.x, a * p.y); }\ninline Point operator*(const Point &p, const Point\
+    \ &q) { return Point(p.x * q.x - p.y * q.y, p.x * q.y + p.y * q.x); }\ninline\
+    \ Point operator/(const Point &p, DD a) { return Point(p.x / a, p.y / a); }\n\
+    inline Point conj(const Point &p) { return Point(p.x, -p.y); }\ninline Point rot(const\
+    \ Point &p, DD ang) { return Point(cos(ang) * p.x - sin(ang) * p.y, sin(ang) *\
+    \ p.x + cos(ang) * p.y); }\ninline Point rot90(const Point &p) { return Point(-p.y,\
+    \ p.x); }\ninline DD cross(const Point &p, const Point &q) { return p.x * q.y\
+    \ - p.y * q.x; }\ninline DD dot(const Point &p, const Point &q) { return p.x *\
+    \ q.x + p.y * q.y; }\ninline DD norm(const Point &p) { return dot(p, p); }\ninline\
+    \ DD abs(const Point &p) { return sqrt(dot(p, p)); }\ninline DD amp(const Point\
+    \ &p) {\n    DD res = atan2(p.y, p.x);\n    if (res < 0) res += PI * 2;\n    return\
+    \ res;\n}\ninline bool eq(const Point &p, const Point &q) { return abs(p - q)\
+    \ < EPS; }\ninline bool operator<(const Point &p, const Point &q) { return (abs(p.x\
+    \ - q.x) > EPS ? p.x < q.x : p.y < q.y); }\ninline bool operator>(const Point\
+    \ &p, const Point &q) { return (abs(p.x - q.x) > EPS ? p.x > q.x : p.y > q.y);\
+    \ }\ninline Point operator/(const Point &p, const Point &q) { return p * conj(q)\
+    \ / norm(q); }\n\n/* Line */\nstruct Line : vector<Point> {\n    Line(Point a\
+    \ = Point(0.0, 0.0), Point b = Point(0.0, 0.0)) {\n        this->push_back(a);\n\
+    \        this->push_back(b);\n    }\n    friend ostream &operator<<(ostream &s,\
+    \ const Line &l) { return s << '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n\
+    /* Circle */\nstruct Circle : Point {\n    DD r;\n    Circle(Point p = Point(0.0,\
+    \ 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend ostream &operator<<(ostream\
+    \ &s, const Circle &c) { return s << '(' << c.x << \", \" << c.y << \", \" <<\
+    \ c.r << ')'; }\n};\n#line 2 \"geomeny/area-polygon.hpp\"\n\nDD CalcArea(const\
+    \ vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i = 0; i < pol.size();\
+    \ ++i) {\n        res += cross(pol[i], pol[(i + 1) % pol.size()]);\n    }\n  \
+    \  return res / 2.0L;\n}\n#line 2 \"geomeny/convex-cut.hpp\"\n\nint ccw_for_convexcut(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b-a, c-a) > EPS)\
+    \ return 1;\n    if (cross(b-a, c-a) < -EPS) return -1;\n    if (dot(b-a, c-a)\
+    \ < -EPS) return 2;\n    if (norm(b-a) < norm(c-a) - EPS) return -2;\n    return\
+    \ 0;\n}\nvector<Point> crosspoint_for_convexcut(const Line &l, const Line &m)\
+    \ {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n   \
+    \ if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0] + (l[1] -\
+    \ l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\nvector<Point>\
+    \ ConvexCut(const vector<Point> &pol, const Line &l) {\n    vector<Point> res;\n\
+    \    for (int i = 0; i < pol.size(); ++i) {\n        Point p = pol[i], q = pol[(i+1)%pol.size()];\n\
+    \        if (ccw_for_convexcut(l[0], l[1], p) != -1) {\n            if (res.size()\
+    \ == 0) res.push_back(p);\n            else if (!eq(p, res[res.size()-1])) res.push_back(p);\n\
+    \        }\n        if (ccw_for_convexcut(l[0], l[1], p) * ccw_for_convexcut(l[0],\
+    \ l[1], q) < 0) {\n            vector<Point> temp = crosspoint_for_convexcut(Line(p,\
+    \ q), l);\n            if (temp.size() == 0) continue;\n            else if (res.size()\
+    \ == 0) res.push_back(temp[0]);\n            else if (!eq(temp[0], res[res.size()-1]))\
+    \ res.push_back(temp[0]);\n        }\n    }\n    return res;\n}\n#line 6 \"test/AOJ/CGL_4_C.test.cpp\"\
+    \n\nint main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for\
+    \ (int i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int\
+    \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Line a(2);\n \
+    \       cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n        cout << CalcArea(ConvexCut(G,\
+    \ a)) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C\"\
     \n#define ERROR 0.00001\n#include \"template/template.hpp\"\n#include \"geomeny/area-polygon.hpp\"\
     \n#include \"geomeny/convex-cut.hpp\"\n\nint main() {\n    int N;\n    cin >>\
@@ -51,7 +114,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 16:23:20+09:00'
+  timestamp: '2023-02-24 21:00:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_C.test.cpp

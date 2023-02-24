@@ -65,7 +65,7 @@ data:
     - icon: ':warning:'
       path: data-structure/static-modular-arithmetic.hpp
       title: "\u9759\u7684 modint"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: UnionFind
   - name: dynamic-programming
@@ -122,7 +122,7 @@ data:
       title: "\u5C04\u5F71"
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
       title: "Bellman\u2013Ford"
     - icon: ':heavy_check_mark:'
@@ -152,7 +152,7 @@ data:
     - icon: ':warning:'
       path: graph/is_biparite.hpp
       title: graph/is_biparite.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
     - icon: ':x:'
@@ -170,7 +170,7 @@ data:
     - icon: ':x:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: Warshall Floyd
   - name: math/combinatorics
@@ -341,13 +341,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_A.test.cpp
       title: test/AOJ/GRL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_B.test.cpp
       title: test/AOJ/GRL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_C.test.cpp
       title: test/AOJ/GRL_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_A.test.cpp
       title: test/AOJ/GRL_2_A.test.cpp
     - icon: ':x:'
