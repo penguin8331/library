@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':question:'
@@ -27,7 +27,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ template/template.hpp: line 19: unable to process #include in #if / #ifdef /\
+    \ template/template.hpp: line 18: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#include \"template/template.hpp\"\
     \n#include \"graph/scc.hpp\"\n\nint main() {\n    int N, M;\n    cin >> N >> M;\n\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/scc.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 16:02:12+09:00'
+  timestamp: '2023-02-24 16:23:20+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/scc.test.cpp

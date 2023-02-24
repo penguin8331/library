@@ -93,22 +93,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_1_A.test.cpp
     title: test/AOJ/GRL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_1_B.test.cpp
     title: test/AOJ/GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_1_C.test.cpp
     title: test/AOJ/GRL_1_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_3_A.test.cpp
     title: test/AOJ/GRL_3_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_3_B.test.cpp
     title: test/AOJ/GRL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
   - icon: ':x:'
@@ -166,21 +166,21 @@ data:
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ template/template.hpp: line 19: unable to process #include in #if / #ifdef /\
+    \ template/template.hpp: line 18: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#pragma region KCLC\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"\
-    O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii =\
-    \ pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define mp\
-    \ make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n\
-    #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#ifdef LOCAL\n#include \"debug.hpp\"\
-    \n#else\n#define debug(...)\n#endif\nstruct fast_ios {\n    fast_ios() {\n   \
-    \     ios::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout.tie(nullptr);\n\
-    \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
-    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
-    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
-    \ = b, true) : (false)); }\n#pragma endregion KCLC\n//----------------------------------------------------------------------------\n\
+  code: "// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
+    \ GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    using ll = long long;\nusing ld = long double;\nusing pii = pair<int, int>;\n\
+    using pll = pair<ll, ll>;\n#define pb push_back\n#define mp make_pair\n#define\
+    \ all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n#define\
+    \ elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n#define sigma(a, b)\
+    \ ((a + b) * (b - a + 1) / 2)\n#ifdef LOCAL\n#include \"debug.hpp\"\n#else\n#define\
+    \ debug(...)\n#endif\nstruct fast_ios {\n    fast_ios() {\n        ios::sync_with_stdio(false);\n\
+    \        cin.tie(nullptr);\n        cout.tie(nullptr);\n        cout << fixed\
+    \ << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename T>\ninline bool\
+    \ chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
+    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
+    \ }\n//----------------------------------------------------------------------------\n\
     constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
     \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
     \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n"
@@ -188,7 +188,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2023-02-24 16:02:12+09:00'
+  timestamp: '2023-02-24 16:23:20+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/static-range-sum-2.test.cpp

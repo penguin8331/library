@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
@@ -27,7 +27,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ template/template.hpp: line 19: unable to process #include in #if / #ifdef /\
+    \ template/template.hpp: line 18: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
     \n#include \"template/template.hpp\"\n#include \"graph/low-link.hpp\"\n\nint main()\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 16:02:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-02-24 16:23:20+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_B.test.cpp
 layout: document
