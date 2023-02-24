@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/scc.hpp\"\nstruct SCC {\n    using Edge = int;\n \
@@ -69,7 +69,7 @@ data:
   path: graph/scc.hpp
   requiredBy: []
   timestamp: '2022-12-29 16:08:05+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/scc.test.cpp
   - test/AOJ/GRL_3_C.test.cpp

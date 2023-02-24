@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/topological-sort.hpp\"\nvoid dfs(const vector<vector<int>>\
@@ -36,7 +36,7 @@ data:
   path: graph/topological-sort.hpp
   requiredBy: []
   timestamp: '2023-01-04 13:19:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/GRL_4_B.test.cpp
 documentation_of: graph/topological-sort.hpp

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/rolling-hash.hpp\"\nstruct RollingHash {\n    static\
@@ -81,7 +81,7 @@ data:
   path: string/rolling-hash.hpp
   requiredBy: []
   timestamp: '2023-01-08 17:07:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/zalgorithm.test.cpp
 documentation_of: string/rolling-hash.hpp

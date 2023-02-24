@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/longest-common-subsequence.hpp
     title: LCS
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -17,32 +17,18 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
-  bundledCode: "#line 1 \"test/AOJ/ALDS1_10_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\"\
-    \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
-    \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
-    using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
-    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
-    \ mp make_pair\n#define mt make_tuple\n#define all(x) (x).begin(), (x).end()\n\
-    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
-    \ X) ((N + X - 1) / X)\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct\
-    \ fast_ios {\n    fast_ios() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
-    \        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
-    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
-    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
-    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
-    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
-    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 1 \"dynamic-programming/longest-common-subsequence.hpp\"\
-    \nint LCS(const string& a, const string& b) {\n    const int n = a.size(), m =\
-    \ b.size();\n    vector<vector<int> > X(n + 1, vector<int>(m + 1));\n    for (int\
-    \ i = 0; i < n; ++i) {\n        for (int j = 0; j < m; ++j) {\n            if\
-    \ (a[i] == b[j]) {\n                X[i + 1][j + 1] = X[i][j] + 1;\n         \
-    \   } else if (X[i + 1][j] < X[i][j + 1]) {\n                X[i + 1][j + 1] =\
-    \ X[i][j + 1];\n            } else {\n                X[i + 1][j + 1] = X[i +\
-    \ 1][j];\n            }\n        }\n    }\n    return X[n][m];\n}\n#line 4 \"\
-    test/AOJ/ALDS1_10_C.test.cpp\"\n\nint main() {\n    int N;\n    cin >> N;\n  \
-    \  for (int i = 0; i < N; i++) {\n        string s, t;\n        cin >> s >> t;\n\
-    \        cout << LCS(s, t) << endl;\n    }\n}\n"
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ template/template.hpp: line 19: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\"\
     \n#include \"template/template.hpp\"\n#include \"dynamic-programming/longest-common-subsequence.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n\
@@ -54,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_10_C.test.cpp
   requiredBy: []
-  timestamp: '2022-12-21 18:41:55+09:00'
+  timestamp: '2023-02-24 16:02:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_10_C.test.cpp

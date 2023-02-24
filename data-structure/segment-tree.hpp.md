@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/segment-tree.hpp\"\ntemplate <class Monoid>\n\
@@ -105,7 +105,7 @@ data:
   path: data-structure/segment-tree.hpp
   requiredBy: []
   timestamp: '2023-01-16 22:52:39+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp

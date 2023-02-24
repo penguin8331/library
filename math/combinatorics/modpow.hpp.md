@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/combinatorics/modpow.hpp\"\nlong long modpow(long long\
@@ -24,7 +24,7 @@ data:
   path: math/combinatorics/modpow.hpp
   requiredBy: []
   timestamp: '2022-12-20 22:03:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/NTL_1_B.test.cpp
 documentation_of: math/combinatorics/modpow.hpp

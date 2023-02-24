@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/diameter-weighted.hpp\"\nstruct Edge {\n    int to;\n\
@@ -34,7 +34,7 @@ data:
   path: graph/diameter-weighted.hpp
   requiredBy: []
   timestamp: '2022-12-24 12:34:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/GRL_5_A.test.cpp
 documentation_of: graph/diameter-weighted.hpp

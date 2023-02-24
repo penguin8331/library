@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/number/pollard-rho.hpp
     title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\
       \u30FC\u6CD5)"
@@ -10,12 +10,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_1_C-2.test.cpp
     title: test/AOJ/ALDS1_1_C-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/factorize.test.cpp
     title: test/yosupo/factorize.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number/miller-rabin.hpp\"\ntemplate <class T>\nT pow_mod(T\
@@ -49,7 +49,7 @@ data:
   requiredBy:
   - math/number/pollard-rho.hpp
   timestamp: '2023-01-08 12:37:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/factorize.test.cpp
   - test/AOJ/ALDS1_1_C-2.test.cpp

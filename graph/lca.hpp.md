@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_C.test.cpp
     title: test/AOJ/GRL_5_C.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/lca.hpp\"\nstruct LCA {\n    vector<vector<int>> parent;\
@@ -60,7 +60,7 @@ data:
   path: graph/lca.hpp
   requiredBy: []
   timestamp: '2023-01-30 18:54:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/GRL_5_C.test.cpp
 documentation_of: graph/lca.hpp

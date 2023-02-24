@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/number/miller-rabin.hpp
     title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/factorize.test.cpp
     title: test/yosupo/factorize.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number/miller-rabin.hpp\"\ntemplate <class T>\nT pow_mod(T\
@@ -64,7 +64,7 @@ data:
   path: math/number/pollard-rho.hpp
   requiredBy: []
   timestamp: '2023-01-08 12:37:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/factorize.test.cpp
 documentation_of: math/number/pollard-rho.hpp
