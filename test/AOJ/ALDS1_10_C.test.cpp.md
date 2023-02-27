@@ -23,27 +23,26 @@ data:
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
     \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
     \ mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n\
+    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
     #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios()\
-    \ {\n        ios::sync_with_stdio(false);\n        cin.tie(nullptr);\n       \
-    \ cout.tie(nullptr);\n        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\n\
-    template <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return\
-    \ ((a > b) ? (a = b, true) : (false)); }\n//----------------------------------------------------------------------------\n\
-    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
-    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 1\
-    \ \"dynamic-programming/longest-common-subsequence.hpp\"\nint LCS(const string&\
-    \ a, const string& b) {\n    const int n = a.size(), m = b.size();\n    vector<vector<int>\
-    \ > X(n + 1, vector<int>(m + 1));\n    for (int i = 0; i < n; ++i) {\n       \
-    \ for (int j = 0; j < m; ++j) {\n            if (a[i] == b[j]) {\n           \
-    \     X[i + 1][j + 1] = X[i][j] + 1;\n            } else if (X[i + 1][j] < X[i][j\
-    \ + 1]) {\n                X[i + 1][j + 1] = X[i][j + 1];\n            } else\
-    \ {\n                X[i + 1][j + 1] = X[i + 1][j];\n            }\n        }\n\
-    \    }\n    return X[n][m];\n}\n#line 4 \"test/AOJ/ALDS1_10_C.test.cpp\"\n\nint\
-    \ main() {\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n   \
-    \     string s, t;\n        cin >> s >> t;\n        cout << LCS(s, t) << endl;\n\
-    \    }\n}\n"
+    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
+    \ cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"dynamic-programming/longest-common-subsequence.hpp\"\
+    \nint LCS(const string& a, const string& b) {\n    const int n = a.size(), m =\
+    \ b.size();\n    vector<vector<int> > X(n + 1, vector<int>(m + 1));\n    for (int\
+    \ i = 0; i < n; ++i) {\n        for (int j = 0; j < m; ++j) {\n            if\
+    \ (a[i] == b[j]) {\n                X[i + 1][j + 1] = X[i][j] + 1;\n         \
+    \   } else if (X[i + 1][j] < X[i][j + 1]) {\n                X[i + 1][j + 1] =\
+    \ X[i][j + 1];\n            } else {\n                X[i + 1][j + 1] = X[i +\
+    \ 1][j];\n            }\n        }\n    }\n    return X[n][m];\n}\n#line 4 \"\
+    test/AOJ/ALDS1_10_C.test.cpp\"\n\nint main() {\n    int N;\n    cin >> N;\n  \
+    \  for (int i = 0; i < N; i++) {\n        string s, t;\n        cin >> s >> t;\n\
+    \        cout << LCS(s, t) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\"\
     \n#include \"template/template.hpp\"\n#include \"dynamic-programming/longest-common-subsequence.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    for (int i = 0; i < N; i++) {\n\
@@ -55,7 +54,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_10_C.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 21:00:03+09:00'
+  timestamp: '2023-02-27 22:06:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_10_C.test.cpp

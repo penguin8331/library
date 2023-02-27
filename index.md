@@ -137,7 +137,7 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: DFS-2D
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':x:'
@@ -155,19 +155,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
       title: Lowest Common Ancestor
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/scc.hpp
       title: Strongly Connected Component
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -185,7 +185,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/modpow.hpp
       title: modpow
     - icon: ':warning:'
@@ -199,7 +199,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number/convert-base.hpp
       title: "\u9032\u6570\u5909\u63DB"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: "\u7D04\u6570\u5217\u6319"
     - icon: ':warning:'
@@ -221,7 +221,7 @@ data:
     - icon: ':warning:'
       path: math/number/pow.hpp
       title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number/prime-factorization.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
     - icon: ':warning:'
@@ -350,31 +350,31 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_A.test.cpp
       title: test/AOJ/GRL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_A.test.cpp
       title: test/AOJ/GRL_3_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_B.test.cpp
       title: test/AOJ/GRL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_C.test.cpp
       title: test/AOJ/GRL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_4_B.test.cpp
       title: test/AOJ/GRL_4_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_C.test.cpp
       title: test/AOJ/GRL_5_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ITP1_3_D.test.cpp
       title: test/AOJ/ITP1_3_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_A.test.cpp
       title: test/AOJ/NTL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_B.test.cpp
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo

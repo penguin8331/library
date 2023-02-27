@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A
@@ -23,28 +23,27 @@ data:
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
     \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
     \ mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n\
+    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
     #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios()\
-    \ {\n        ios::sync_with_stdio(false);\n        cin.tie(nullptr);\n       \
-    \ cout.tie(nullptr);\n        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\n\
-    template <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return\
-    \ ((a > b) ? (a = b, true) : (false)); }\n//----------------------------------------------------------------------------\n\
-    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
-    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 1\
-    \ \"graph/low-link.hpp\"\nstruct LowLink {\\\n    vector<int> aps;           \
-    \  // \u95A2\u7BC0\u70B9\n    vector<pair<int, int>> brs;  // \u6A4B\n\n    vector<int>\
-    \ seen, ord, low;\n    void dfs_lowlink(const vector<vector<int>> &G, int v, int\
-    \ p = -1) {\n        static int time = 0;\n        seen[v] = true;\n        ord[v]\
-    \ = low[v] = time++;\n        int num_of_child = 0;\n        bool exist = false;\
-    \  // for articulation point\n        for (auto ch : G[v]) {\n            if (seen[ch])\
-    \ {\n                if (ch != p) low[v] = min(low[v], ord[ch]);  // back edge\n\
-    \                continue;\n            }\n            dfs_lowlink(G, ch, v);\n\
-    \            low[v] = min(low[v], low[ch]);  // forward edge of DFS-tree\n   \
-    \         if (ord[v] < low[ch]) brs.emplace_back(v, ch);\n            if (ord[v]\
-    \ <= low[ch]) exist = true;\n            ++num_of_child;\n        }\n        if\
-    \ ((p == -1 && num_of_child > 1) || (p != -1 && exist)) aps.emplace_back(v);\n\
+    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
+    \ cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"graph/low-link.hpp\"\nstruct LowLink {\\\n    vector<int>\
+    \ aps;             // \u95A2\u7BC0\u70B9\n    vector<pair<int, int>> brs;  //\
+    \ \u6A4B\n\n    vector<int> seen, ord, low;\n    void dfs_lowlink(const vector<vector<int>>\
+    \ &G, int v, int p = -1) {\n        static int time = 0;\n        seen[v] = true;\n\
+    \        ord[v] = low[v] = time++;\n        int num_of_child = 0;\n        bool\
+    \ exist = false;  // for articulation point\n        for (auto ch : G[v]) {\n\
+    \            if (seen[ch]) {\n                if (ch != p) low[v] = min(low[v],\
+    \ ord[ch]);  // back edge\n                continue;\n            }\n        \
+    \    dfs_lowlink(G, ch, v);\n            low[v] = min(low[v], low[ch]);  // forward\
+    \ edge of DFS-tree\n            if (ord[v] < low[ch]) brs.emplace_back(v, ch);\n\
+    \            if (ord[v] <= low[ch]) exist = true;\n            ++num_of_child;\n\
+    \        }\n        if ((p == -1 && num_of_child > 1) || (p != -1 && exist)) aps.emplace_back(v);\n\
     \    }\n    void solve(const vector<vector<int>> &G) {\n        int N = (int)G.size();\n\
     \        seen.assign(N, 0);\n        ord.resize(N);\n        low.resize(N);\n\
     \        aps.clear();\n        brs.clear();\n        for (int v = 0; v < N; ++v)\n\
@@ -68,8 +67,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_3_A.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 21:00:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-02-27 22:06:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_A.test.cpp
 layout: document

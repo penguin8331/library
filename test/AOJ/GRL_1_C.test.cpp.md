@@ -23,23 +23,22 @@ data:
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
     \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
     \ mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n\
+    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
     #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios()\
-    \ {\n        ios::sync_with_stdio(false);\n        cin.tie(nullptr);\n       \
-    \ cout.tie(nullptr);\n        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\n\
-    template <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return\
-    \ ((a > b) ? (a = b, true) : (false)); }\n//----------------------------------------------------------------------------\n\
-    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
-    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 1\
-    \ \"graph/warshall-floyd.hpp\"\nvoid warshallfloyd(vector<vector<long long>> &dp,\
-    \ int V) {\n    // i->j\u306E\u7D4C\u8DEF\u306B\u3064\u3044\u3066i->k->j\u3092\
-    \u691C\u8A0E\u3059\u308B\n    for (int k = 0; k < V; ++k) {\n        for (int\
-    \ i = 0; i < V; ++i) {\n            for (int j = 0; j < V; ++j) {\n          \
-    \      dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);\n            }\n       \
-    \ }\n    }\n}\nbool isnegative(vector<vector<long long>> dp, int V) {\n    bool\
-    \ isnegative = false;\n    for (int v = 0; v < V; ++v) {\n        if (dp[v][v]\
+    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
+    \ cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"graph/warshall-floyd.hpp\"\nvoid warshallfloyd(vector<vector<long\
+    \ long>> &dp, int V) {\n    // i->j\u306E\u7D4C\u8DEF\u306B\u3064\u3044\u3066\
+    i->k->j\u3092\u691C\u8A0E\u3059\u308B\n    for (int k = 0; k < V; ++k) {\n   \
+    \     for (int i = 0; i < V; ++i) {\n            for (int j = 0; j < V; ++j) {\n\
+    \                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);\n            }\n\
+    \        }\n    }\n}\nbool isnegative(vector<vector<long long>> dp, int V) {\n\
+    \    bool isnegative = false;\n    for (int v = 0; v < V; ++v) {\n        if (dp[v][v]\
     \ < 0) isnegative = true;\n    }\n    return isnegative;\n}\n#line 4 \"test/AOJ/GRL_1_C.test.cpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    ll maxi = INF / 12;\n\
     \    vector<vector<ll>> dp(V, vector<ll>(V, maxi));\n    for (int i = 0; i < V;\
@@ -73,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 21:00:03+09:00'
+  timestamp: '2023-02-27 22:06:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_C.test.cpp

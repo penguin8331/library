@@ -23,23 +23,22 @@ data:
     using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
     \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
     \ mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X)-1) / (X))\n\
+    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
     #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios()\
-    \ {\n        ios::sync_with_stdio(false);\n        cin.tie(nullptr);\n       \
-    \ cout.tie(nullptr);\n        cout << fixed << setprecision(15);\n    };\n} fast_ios_;\n\
-    template <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return\
-    \ ((a > b) ? (a = b, true) : (false)); }\n//----------------------------------------------------------------------------\n\
-    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1,\
-    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 1\
-    \ \"data-structure/segment-tree.hpp\"\ntemplate <class Monoid>\nstruct SegTree\
-    \ {\n    using Func = function<Monoid(Monoid, Monoid)>;\n    int N;\n    Func\
-    \ F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid> dat;\n\n    /*\
-    \ initialization */\n    SegTree() {}\n    SegTree(int n, const Func f, const\
-    \ Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n        SIZE_R\
-    \ = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R * 2,\
-    \ IDENTITY);\n    }\n    void init(int n, const Func f, const Monoid& identity)\
+    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
+    \ cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
+    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
+    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
+    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 1 \"data-structure/segment-tree.hpp\"\ntemplate <class\
+    \ Monoid>\nstruct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n\
+    \    int N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid>\
+    \ dat;\n\n    /* initialization */\n    SegTree() {}\n    SegTree(int n, const\
+    \ Func f, const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n\
+    \        SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
+    \ * 2, IDENTITY);\n    }\n    void init(int n, const Func f, const Monoid& identity)\
     \ {\n        N = n;\n        F = f;\n        IDENTITY = identity;\n        SIZE_R\
     \ = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R * 2,\
     \ IDENTITY);\n    }\n\n    /* set, a is 0-indexed */\n    /* build(): O(N) */\n\
@@ -97,7 +96,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-02-24 21:00:03+09:00'
+  timestamp: '2023-02-27 22:06:25+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq.test.cpp
