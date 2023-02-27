@@ -12,13 +12,12 @@ using pll = pair<ll, ll>;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define elif else if
-#define updiv(N, X) (((N) + (X)-1) / (X))
+#define updiv(N, X) (((N) + (X) - (1)) / (X))
 #define sigma(a, b) ((a + b) * (b - a + 1) / 2)
 struct fast_ios {
     fast_ios() {
-        ios::sync_with_stdio(false);
         cin.tie(nullptr);
-        cout.tie(nullptr);
+        ios::sync_with_stdio(false);
         cout << fixed << setprecision(15);
     };
 } fast_ios_;
@@ -26,7 +25,6 @@ template <typename T>
 inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }
 template <typename T>
 inline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false)); }
-//----------------------------------------------------------------------------
 constexpr int inf = 1 << 30;
 constexpr ll INF = 1LL << 60;
 constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};
