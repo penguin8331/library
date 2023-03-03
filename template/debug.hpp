@@ -1,4 +1,3 @@
-/* last update: 2022-08-03 */
 #include <bits/stdc++.h>
 
 #ifndef DEBUG_PRINT_HPP
