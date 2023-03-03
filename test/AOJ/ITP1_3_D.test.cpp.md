@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
   - icon: ':question:'
@@ -21,9 +21,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D
@@ -53,13 +53,13 @@ data:
     \ != i) res.push_back(j);\r\n        }\r\n    }\r\n    sort(res.begin(), res.end());\r\
     \n    return res;\r\n}\n#line 4 \"test/AOJ/ITP1_3_D.test.cpp\"\n\r\nint main()\
     \ {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto res = divisors(c);\r\
-    \n    int ans = 0;\r\n    for (int i = 0; i < res.size(); i++) {\r\n        if\
-    \ (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n        }\r\n    }\r\
-    \n    cout << ans << endl;\r\n}\n"
+    \n    int ans = 0;\r\n    for (int i = 0; i < (int)res.size(); i++) {\r\n    \
+    \    if (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n        }\r\n\
+    \    }\r\n    cout << ans << endl;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\
     \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/number/divisors.hpp\"\
     \r\n\r\nint main() {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto\
-    \ res = divisors(c);\r\n    int ans = 0;\r\n    for (int i = 0; i < res.size();\
+    \ res = divisors(c);\r\n    int ans = 0;\r\n    for (int i = 0; i < (int)res.size();\
     \ i++) {\r\n        if (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n\
     \        }\r\n    }\r\n    cout << ans << endl;\r\n}"
   dependsOn:
@@ -72,8 +72,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ITP1_3_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-03 21:04:05+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ITP1_3_D.test.cpp
 layout: document
