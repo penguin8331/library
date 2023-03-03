@@ -9,4 +9,4 @@ struct IOSetup {
         std::cout << std::fixed << std::setprecision(12);
         std::cerr << std::fixed << std::setprecision(12);
     }
-};
+} IOSetup;
