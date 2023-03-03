@@ -1,26 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
-  - icon: ':question:'
+  - icon: ':x:'
+    path: template/alias.hpp
+    title: template/alias.hpp
+  - icon: ':x:'
+    path: template/func.hpp
+    title: template/func.hpp
+  - icon: ':x:'
+    path: template/macro.hpp
+    title: template/macro.hpp
+  - icon: ':x:'
     path: template/template.hpp
     title: template/template.hpp
+  - icon: ':x:'
+    path: template/util.hpp
+    title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00000001'
@@ -28,27 +40,29 @@ data:
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D
   bundledCode: "#line 1 \"test/AOJ/CGL_2_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\
-    \n#define ERROR 0.00000001\n#line 1 \"template/template.hpp\"\n// #pragma GCC\
-    \ target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"\
-    unroll-loops\")\n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long\
-    \ long;\nusing ld = long double;\nusing pii = pair<int, int>;\nusing pll = pair<ll,\
-    \ ll>;\n#define pb push_back\n#define mp make_pair\n#define all(x) (x).begin(),\
-    \ (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n\
-    #define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) *\
-    \ (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios() {\n        cin.tie(nullptr);\n\
-    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(15);\n\
-    \    };\n} fast_ios_;\ntemplate <typename T>\ninline bool chmax(T& a, T b) { return\
-    \ ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T&\
-    \ a, T b) { return ((a > b) ? (a = b, true) : (false)); }\nconstexpr int inf =\
-    \ 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1, 0,\
-    \ 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr\
-    \ int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 2 \"geomeny/geomeny-template.hpp\"\
-    \nusing DD = long double;     // to be set appropriately\nconst DD EPS = 1e-10;\
-    \  // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg) {\
-    \ return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\n\
-    /* Point */\nstruct Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) :\
-    \ x(x), y(y) {}\n    friend ostream &operator<<(ostream &s, const Point &p) {\
-    \ return s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const\
+    \n#define ERROR 0.00000001\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n\
+    #line 3 \"template/macro.hpp\"\n\n#define pb push_back\n#define mp make_pair\n\
+    #define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n\
+    #define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
+    \ b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\n\nusing ll =\
+    \ long long;\nusing ld = long double;\nusing pii = pair<int, int>;\nusing pll\
+    \ = pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\n\
+    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1,\
+    \ 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9\
+    \ + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T&\
+    \ a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
+    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
+    \ }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n    \
+    \    std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n     \
+    \   std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
+    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
+    \n\nusing DD = long double;  // to be set appropriately\nconst DD EPS = 1e-10;\
+    \    // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg)\
+    \ { return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\
+    \n/* Point */\nstruct Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0)\
+    \ : x(x), y(y) {}\n    friend ostream &operator<<(ostream &s, const Point &p)\
+    \ { return s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const\
     \ Point &p, const Point &q) { return Point(p.x + q.x, p.y + q.y); }\ninline Point\
     \ operator-(const Point &p, const Point &q) { return Point(p.x - q.x, p.y - q.y);\
     \ }\ninline Point operator*(const Point &p, DD a) { return Point(p.x * a, p.y\
@@ -75,11 +89,11 @@ data:
     \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
     \ Point {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
     \ r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle &c) { return\
-    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"\
+    \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"\
     geomeny/projection.hpp\"\n\nPoint proj(const Point &p, const Line &l) {\n    DD\
     \ t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1]\
     \ - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l) {\n    return p +\
-    \ (proj(p, l) - p) * 2;\n}\n#line 2 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const\
+    \ (proj(p, l) - p) * 2;\n}\n#line 4 \"geomeny/is-inter.hpp\"\n\nint ccw_for_dis(const\
     \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
     \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a,\
     \ c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n\
@@ -91,7 +105,7 @@ data:
     \ Line &s, const Line &t) {\n    if (eq(s[0], s[1])) return isinterPS(s[0], t);\n\
     \    if (eq(t[0], t[1])) return isinterPS(t[0], s);\n    return (ccw_for_dis(s[0],\
     \ s[1], t[0]) * ccw_for_dis(s[0], s[1], t[1]) <= 0 &&\n            ccw_for_dis(t[0],\
-    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}\n#line 2 \"geomeny/distance.hpp\"\
+    \ t[1], s[0]) * ccw_for_dis(t[0], t[1], s[1]) <= 0);\n}\n#line 4 \"geomeny/distance.hpp\"\
     \n\nDD distancePL(const Point &p, const Line &l) {\n    return abs(p - proj(p,\
     \ l));\n}\nDD distancePS(const Point &p, const Line &s) {\n    Point h = proj(p,\
     \ s);\n    if (isinterPS(h, s)) return abs(p - h);\n    return min(abs(p - s[0]),\
@@ -112,6 +126,10 @@ data:
     \ endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
+  - template/macro.hpp
+  - template/alias.hpp
+  - template/func.hpp
+  - template/util.hpp
   - geomeny/distance.hpp
   - geomeny/is-inter.hpp
   - geomeny/projection.hpp
@@ -119,8 +137,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2023-02-27 22:06:25+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-03 14:53:57+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_D.test.cpp
 layout: document

@@ -1,18 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':x:'
-    path: template/alias.hpp
-    title: template/alias.hpp
-  - icon: ':x:'
-    path: template/func.hpp
-    title: template/func.hpp
-  - icon: ':x:'
-    path: template/macro.hpp
-    title: template/macro.hpp
-  - icon: ':x:'
-    path: template/util.hpp
-    title: template/util.hpp
+  _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
     path: algorithm/compress.hpp
@@ -234,6 +222,9 @@ data:
   - icon: ':x:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
+  - icon: ':x:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/0233.test.cpp
@@ -390,43 +381,59 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define pb push_back\n#define mp make_pair\n#define\
-    \ all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n#define\
-    \ elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
-    \ b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\n\nusing ll =\
-    \ long long;\nusing ld = long double;\nusing pii = pair<int, int>;\nusing pll\
-    \ = pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\n\
-    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9\
-    \ + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T&\
-    \ a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
-    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
-    \ }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n    \
-    \    std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n     \
-    \   std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n"
+  bundledCode: '#line 2 "template/alias.hpp"
+
+    #include <bits/stdc++.h>
+
+
+    using ll = long long;
+
+    using ld = long double;
+
+    using pii = pair<int, int>;
+
+    using pll = pair<ll, ll>;
+
+    constexpr int inf = 1 << 30;
+
+    constexpr ll INF = 1LL << 60;
+
+    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};
+
+    constexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};
+
+    constexpr int mod = 998244353;
+
+    constexpr int MOD = 1e9 + 7;
+
+    '
   code: '#pragma once
 
     #include <bits/stdc++.h>
 
-    #include "macro.hpp"
 
-    #include "alias.hpp"
+    using ll = long long;
 
-    #include "func.hpp"
+    using ld = long double;
 
-    #include "util.hpp"
+    using pii = pair<int, int>;
 
-    using namespace std;'
-  dependsOn:
-  - template/macro.hpp
-  - template/alias.hpp
-  - template/func.hpp
-  - template/util.hpp
+    using pll = pair<ll, ll>;
+
+    constexpr int inf = 1 << 30;
+
+    constexpr ll INF = 1LL << 60;
+
+    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};
+
+    constexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};
+
+    constexpr int mod = 998244353;
+
+    constexpr int MOD = 1e9 + 7;'
+  dependsOn: []
   isVerificationFile: false
-  path: template/template.hpp
+  path: template/alias.hpp
   requiredBy:
   - math/number/pow.hpp
   - math/number/ext-gcd.hpp
@@ -481,6 +488,7 @@ data:
   - data-structure/union-find.hpp
   - data-structure/binary-search-on-bit.hpp
   - data-structure/binary-indexed-tree-2d-raq.hpp
+  - template/template.hpp
   - others/date.hpp
   - algorithm/section-sum2d.hpp
   - algorithm/section-sum.hpp
@@ -553,10 +561,10 @@ data:
   - test/AOJ/CGL_3_A.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/DPL_2_A.test.cpp
-documentation_of: template/template.hpp
+documentation_of: template/alias.hpp
 layout: document
 redirect_from:
-- /library/template/template.hpp
-- /library/template/template.hpp.html
-title: template/template.hpp
+- /library/template/alias.hpp
+- /library/template/alias.hpp.html
+title: template/alias.hpp
 ---

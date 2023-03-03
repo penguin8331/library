@@ -4,6 +4,21 @@ data:
   - icon: ':warning:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
+  - icon: ':x:'
+    path: template/alias.hpp
+    title: template/alias.hpp
+  - icon: ':x:'
+    path: template/func.hpp
+    title: template/func.hpp
+  - icon: ':x:'
+    path: template/macro.hpp
+    title: template/macro.hpp
+  - icon: ':x:'
+    path: template/template.hpp
+    title: template/template.hpp
+  - icon: ':x:'
+    path: template/util.hpp
+    title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -11,16 +26,32 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/implicit-treap.hpp\"\n// T0: \u5143\u306E\
-    \u914D\u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\u5BFE\u3059\u308B\u4F5C\
-    \u7528\u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class T0, class T1>\nclass BaseImplicitTreap\
-    \ {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\u5358\u4F4D\u5143\n    virtual T0\
-    \ f0(T0, T0) = 0;\n    const T0 u0;\n    // T1\u4E0A\u306E\u6F14\u7B97\u3001\u5358\
-    \u4F4D\u5143\n    virtual T1 f1(T1, T1) = 0;\n    const T1 u1;\n    // T0\u306B\
-    \u5BFE\u3059\u308BT1\u306E\u4F5C\u7528\n    virtual T0 g(T0, T1) = 0;\n    //\
-    \ \u591A\u6570\u306Et1(T1)\u306B\u5BFE\u3059\u308Bf1\u306E\u5408\u6210\n    virtual\
-    \ T1 p(T1, int) = 0;\n\n    class xorshift {\n        uint64_t x;\n\n       public:\n\
-    \        xorshift() {\n            mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
+    \ 3 \"template/macro.hpp\"\n\n#define pb push_back\n#define mp make_pair\n#define\
+    \ all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n#define\
+    \ elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
+    \ b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\n\nusing ll =\
+    \ long long;\nusing ld = long double;\nusing pii = pair<int, int>;\nusing pll\
+    \ = pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\n\
+    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1,\
+    \ 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9\
+    \ + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T&\
+    \ a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
+    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
+    \ }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n    \
+    \    std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n     \
+    \   std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
+    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/implicit-treap.hpp\"\
+    \n\n// T0: \u5143\u306E\u914D\u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\
+    \u5BFE\u3059\u308B\u4F5C\u7528\u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class\
+    \ T0, class T1>\nclass BaseImplicitTreap {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\
+    \u5358\u4F4D\u5143\n    virtual T0 f0(T0, T0) = 0;\n    const T0 u0;\n    // T1\u4E0A\
+    \u306E\u6F14\u7B97\u3001\u5358\u4F4D\u5143\n    virtual T1 f1(T1, T1) = 0;\n \
+    \   const T1 u1;\n    // T0\u306B\u5BFE\u3059\u308BT1\u306E\u4F5C\u7528\n    virtual\
+    \ T0 g(T0, T1) = 0;\n    // \u591A\u6570\u306Et1(T1)\u306B\u5BFE\u3059\u308Bf1\u306E\
+    \u5408\u6210\n    virtual T1 p(T1, int) = 0;\n\n    class xorshift {\n       \
+    \ uint64_t x;\n\n       public:\n        xorshift() {\n            mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());\n\
     \            x = rnd();\n            for (int i = 0; i < 100; i++) {\n       \
     \         random();\n            }\n        }\n\n        uint64_t random() {\n\
     \            x = x ^ (x << 7);\n            return x = x ^ (x >> 9);\n       \
@@ -147,7 +178,7 @@ data:
     \        return ret;\n    }\n    T1 p(T1 x, int len) override { return x; }\n\
     \    // update(i, j, {a, b}); // [i, j)\u306Bax + b\u3092\u4F5C\u7528\n    //\
     \ update(i, j, {0, a}); // update\n    // update(i, j, {1, a}); // \u52A0\u7B97\
-    \n    // update(i, j, {a, 0}); // \u500D\n};\n#line 2 \"data-structure/priority-sum-by-implicit-treap.hpp\"\
+    \n    // update(i, j, {a, 0}); // \u500D\n};\n#line 4 \"data-structure/priority-sum-by-implicit-treap.hpp\"\
     \n\ntemplate <typename T, bool ascending = true>\nstruct PrioritySum {\n    SumUpdateQuery<T,\
     \ T> tr;\n    MinUpdateQuery<T, T> tr2;\n    int cnt = 0;\n\n    void add(T a)\
     \ {\n        int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n      \
@@ -164,29 +195,34 @@ data:
     \        erase_at(p);\n    }\n\n    int size() const { return cnt; }\n\n    T\
     \ sum(int k) { return tr.query(0, k); }\n\n    T operator[](int k) { return tr[k];\
     \ }\n\n    void dump() { tr.dump(); }\n};\n"
-  code: "#include \"data-structure/implicit-treap.hpp\"\n\ntemplate <typename T, bool\
-    \ ascending = true>\nstruct PrioritySum {\n    SumUpdateQuery<T, T> tr;\n    MinUpdateQuery<T,\
-    \ T> tr2;\n    int cnt = 0;\n\n    void add(T a) {\n        int p = tr2.binary_search(0,\
-    \ tr2.size(), a, !ascending);\n        if (ascending) {\n            tr.insert(p\
-    \ + 1, a);\n            tr2.insert(p + 1, a);\n        } else {\n            if\
-    \ (p == -1) {\n                tr.insert(tr.size(), a);\n                tr2.insert(tr2.size(),\
-    \ a);\n            } else {\n                tr.insert(p, a);\n              \
-    \  tr2.insert(p, a);\n            }\n        }\n        cnt++;\n    }\n\n    void\
-    \ erase_at(int k) {\n        assert(0 <= k && k < cnt);\n        tr.erase(k);\n\
-    \        tr2.erase(k);\n        cnt--;\n    }\n\n    void erase_value(T a) {\n\
-    \        int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n        if\
-    \ (ascending) {\n            if (p == cnt) p = 0;\n            p++;\n        }\
-    \ else {\n            if (p == -1) p = cnt;\n            p--;\n        }\n   \
-    \     assert(0 <= p && p < tr.size() && tr[p] == a);\n        erase_at(p);\n \
-    \   }\n\n    int size() const { return cnt; }\n\n    T sum(int k) { return tr.query(0,\
-    \ k); }\n\n    T operator[](int k) { return tr[k]; }\n\n    void dump() { tr.dump();\
-    \ }\n};"
+  code: "#pragma once\n#include \"template/template.hpp\"\n#include \"data-structure/implicit-treap.hpp\"\
+    \n\ntemplate <typename T, bool ascending = true>\nstruct PrioritySum {\n    SumUpdateQuery<T,\
+    \ T> tr;\n    MinUpdateQuery<T, T> tr2;\n    int cnt = 0;\n\n    void add(T a)\
+    \ {\n        int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n      \
+    \  if (ascending) {\n            tr.insert(p + 1, a);\n            tr2.insert(p\
+    \ + 1, a);\n        } else {\n            if (p == -1) {\n                tr.insert(tr.size(),\
+    \ a);\n                tr2.insert(tr2.size(), a);\n            } else {\n    \
+    \            tr.insert(p, a);\n                tr2.insert(p, a);\n           \
+    \ }\n        }\n        cnt++;\n    }\n\n    void erase_at(int k) {\n        assert(0\
+    \ <= k && k < cnt);\n        tr.erase(k);\n        tr2.erase(k);\n        cnt--;\n\
+    \    }\n\n    void erase_value(T a) {\n        int p = tr2.binary_search(0, tr2.size(),\
+    \ a, !ascending);\n        if (ascending) {\n            if (p == cnt) p = 0;\n\
+    \            p++;\n        } else {\n            if (p == -1) p = cnt;\n     \
+    \       p--;\n        }\n        assert(0 <= p && p < tr.size() && tr[p] == a);\n\
+    \        erase_at(p);\n    }\n\n    int size() const { return cnt; }\n\n    T\
+    \ sum(int k) { return tr.query(0, k); }\n\n    T operator[](int k) { return tr[k];\
+    \ }\n\n    void dump() { tr.dump(); }\n};"
   dependsOn:
+  - template/template.hpp
+  - template/macro.hpp
+  - template/alias.hpp
+  - template/func.hpp
+  - template/util.hpp
   - data-structure/implicit-treap.hpp
   isVerificationFile: false
   path: data-structure/priority-sum-by-implicit-treap.hpp
   requiredBy: []
-  timestamp: '2023-01-15 10:26:45+09:00'
+  timestamp: '2023-03-03 14:53:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/priority-sum-by-implicit-treap.hpp

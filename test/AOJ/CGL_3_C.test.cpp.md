@@ -1,42 +1,56 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-  - icon: ':question:'
+  - icon: ':x:'
+    path: template/alias.hpp
+    title: template/alias.hpp
+  - icon: ':x:'
+    path: template/func.hpp
+    title: template/func.hpp
+  - icon: ':x:'
+    path: template/macro.hpp
+    title: template/macro.hpp
+  - icon: ':x:'
     path: template/template.hpp
     title: template/template.hpp
+  - icon: ':x:'
+    path: template/util.hpp
+    title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
   bundledCode: "#line 1 \"test/AOJ/CGL_3_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\
-    \n#line 1 \"template/template.hpp\"\n// #pragma GCC target(\"avx2\")\n// #pragma\
-    \ GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\n\
-    using namespace std;\nusing ll = long long;\nusing ld = long double;\nusing pii\
-    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n#define pb push_back\n#define\
-    \ mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
-    #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\nstruct fast_ios {\n    fast_ios()\
-    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
-    \ cout << fixed << setprecision(15);\n    };\n} fast_ios_;\ntemplate <typename\
-    \ T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false));\
-    \ }\ntemplate <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a\
-    \ = b, true) : (false)); }\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
-    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
-    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 2 \"geomeny/geomeny-template.hpp\"\nusing DD = long double;\
-    \     // to be set appropriately\nconst DD EPS = 1e-10;  // to be set appropriately\n\
+    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+    \n\n#define pb push_back\n#define mp make_pair\n#define all(x) (x).begin(), (x).end()\n\
+    #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
+    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
+    #line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing ld = long double;\n\
+    using pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nconstexpr int inf = 1\
+    \ << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1,\
+    \ -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int\
+    \ mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
+    \n\ntemplate <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a\
+    \ = b, true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b)\
+    \ { return ((a > b) ? (a = b, true) : (false)); }\n#line 3 \"template/util.hpp\"\
+    \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
+    \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
+    \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
+    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
+    \ namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\n\nusing DD = long\
+    \ double;  // to be set appropriately\nconst DD EPS = 1e-10;    // to be set appropriately\n\
     const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
     DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
     \   DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream\
@@ -68,7 +82,7 @@ data:
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
     \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
     \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 2 \"geomeny/is-contain-in-the-polygon.hpp\"\
+    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/is-contain-in-the-polygon.hpp\"\
     \n\n// 2: in, 1: on, 0: out\nint is_contain(const vector<Point> &pol, const Point\
     \ &p) {\n    int n = (int)pol.size();\n    int isin = 0;\n    for (int i = 0;\
     \ i < n; ++i) {\n        Point a = pol[i] - p, b = pol[(i + 1) % n] - p;\n   \
@@ -88,13 +102,17 @@ data:
     \     cin >> a.x >> a.y;\n        cout << is_contain(G, a) << endl;\n    }\n}"
   dependsOn:
   - template/template.hpp
+  - template/macro.hpp
+  - template/alias.hpp
+  - template/func.hpp
+  - template/util.hpp
   - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2023-02-27 22:06:25+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-03 14:53:57+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_C.test.cpp
 layout: document
