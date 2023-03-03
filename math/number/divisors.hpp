@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<long long> divisors(long long n) {
     vector<long long> res;
     for (long long i = 1LL; i * i <= n; ++i) {

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 struct SCC {
     using Edge = int;
     using SGraph = vector<vector<Edge>>;

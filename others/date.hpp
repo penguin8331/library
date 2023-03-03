@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<string> S = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 // グレゴリオ歴を求める
 // グレゴリオ歴におけるユリウス日（1582年10月15日を基準とした日、但し、-4712年1月1日が0となるようにする）

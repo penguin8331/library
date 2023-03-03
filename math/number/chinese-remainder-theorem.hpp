@@ -1,3 +1,5 @@
+#pragma once
+#include "template/template.hpp"
 #include "math/number/ext-gcd.hpp"
 
 pair<long long, long long> crt(const vector<long long>& vr, const vector<long long>& vm) {

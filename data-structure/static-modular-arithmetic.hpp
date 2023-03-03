@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <int MOD>
 struct Fp {
     long long val;

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class T>
 vector<T> LISRestoration(vector<T> a, bool is_strong = true) {
     int n = (int)a.size();

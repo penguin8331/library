@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 map<long long, int> prime_factorize(long long n) {
     map<long long, int> res;
     for (long long p = 2; p * p <= n; ++p) {

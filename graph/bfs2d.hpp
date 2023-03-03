@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<vector<int>> BFS(int H, int W, const vector<string> &G, pair<int, int> s) {
     vector<vector<int>> dist(H, vector<int>(W, -1));  //すべての頂点を未訪問に初期化
     queue<pair<int, int>> que;

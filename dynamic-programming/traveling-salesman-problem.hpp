@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 int V, E;
 int G[20][20];  // グラフ
 int dp[50000][20];

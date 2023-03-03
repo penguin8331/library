@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <typename T>
 vector<T> compress(vector<T> &X) {
     // ソートした結果を vals に

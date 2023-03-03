@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 long long nCk(int n, int k) {
     assert(n >= k && k >= 0);
     chmin(k, n - k);

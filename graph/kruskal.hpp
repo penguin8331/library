@@ -1,3 +1,5 @@
+#pragma once
+#include "template/template.hpp"
 #include "data-structure/union-find.hpp"
 
 struct Edge {

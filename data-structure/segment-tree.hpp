@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class Monoid>
 struct SegTree {
     using Func = function<Monoid(Monoid, Monoid)>;

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<pair<char, int>> rle(string s) {
     vector<pair<char, int>> ret;
     int cnt = 1;

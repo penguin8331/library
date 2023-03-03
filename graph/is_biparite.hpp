@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 bool isbipartite(const vector<vector<int>>& G) {
     int N = (int)G.size();
     vector<int> color(N, -1);

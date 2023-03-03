@@ -1,3 +1,5 @@
+#pragma once
+#include "template/template.hpp"
 #include "geomeny/projection.hpp"
 
 int ccw_for_dis(const Point &a, const Point &b, const Point &c) {

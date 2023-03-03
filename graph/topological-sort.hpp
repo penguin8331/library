@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 void dfs(const vector<vector<int>> &G, int v, vector<bool> &used, vector<int> &ans) {
     used[v] = true;
     for (auto e : G[v]) {

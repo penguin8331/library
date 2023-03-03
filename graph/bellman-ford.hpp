@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 struct Edge {
     long long from;
     long long to;

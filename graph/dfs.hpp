@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<bool> seen;
 void dfs(const vector<vector<int>>& G, int v) {
     seen[v] = true;

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <typename T>
 vector<T> compress(vector<T> &C1, vector<T> &C2) {
     vector<T> vals;

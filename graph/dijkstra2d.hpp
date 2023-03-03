@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 int H, W;
 vector<vector<char>> G;
 void dijkstra(pair<int, int> s, vector<vector<long long>>& dis) {

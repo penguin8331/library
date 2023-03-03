@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class Abel>
 struct BIT {
     Abel UNITY_SUM = 0;

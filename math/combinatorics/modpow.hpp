@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 long long modpow(long long a, long long n, long long mod) {
     long long res = 1;
     while (n > 0) {

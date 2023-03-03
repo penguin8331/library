@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 void warshallfloyd(vector<vector<long long>> &dp, int V) {
     // i->jの経路についてi->k->jを検討する
     for (int k = 0; k < V; ++k) {

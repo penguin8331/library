@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class T>
 struct sectionsum2d {
     vector<vector<T>> data;

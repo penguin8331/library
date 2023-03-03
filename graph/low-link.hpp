@@ -1,4 +1,7 @@
-struct LowLink {\
+#pragma once
+#include "template/template.hpp"
+
+struct LowLink {
     vector<int> aps;             // 関節点
     vector<pair<int, int>> brs;  // 橋
 

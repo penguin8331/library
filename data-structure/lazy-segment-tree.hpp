@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class Monoid, class Action>
 struct Lazy_SegTree {
     using FuncMonoid = function<Monoid(Monoid, Monoid)>;

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 string LCSRestoration(const string& a, const string& b) {
     const int n = a.size(), m = b.size();
     vector<vector<int> > X(n + 1, vector<int>(m + 1));

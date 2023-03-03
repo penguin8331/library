@@ -1,3 +1,5 @@
+#pragma once
+#include "template/template.hpp"
 #include "data-structure/implicit-treap.hpp"
 
 template <typename T0, typename T1, bool ascending = true>

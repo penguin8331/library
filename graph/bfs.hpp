@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 vector<int> BFS(const vector<vector<int>> &G, int s) {
     int N = (int)G.size();    // 頂点数
     vector<int> dist(N, -1);  // すべての頂点を未訪問に初期化

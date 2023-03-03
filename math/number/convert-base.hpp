@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class T>
 vector<T> convert_base(T x, T b) {
     vector<T> ret;

@@ -1,3 +1,5 @@
+#pragma once
+#include "template/template.hpp"
 #include "geomeny/geomeny-template.hpp"
 
 Point proj_for_crosspoint(const Point &p, const Line &l) {

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <int IND = 0>
 struct Fp {
     long long val;

@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 long long mypow(long long a, long long n) {
     long long res = 1;
     while (n > 0) {

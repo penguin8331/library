@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 struct UnionFind {
     vector<int> par;
 

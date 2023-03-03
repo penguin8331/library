@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 template <class SemiGroup>
 struct DisjointSparseTable {
     using Func = function<SemiGroup(SemiGroup, SemiGroup)>;

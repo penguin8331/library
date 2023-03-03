@@ -1,3 +1,6 @@
+#pragma once
+#include "template/template.hpp"
+
 long long extGcd(long long a, long long b, long long &p, long long &q) {
     if (b == 0) { 
         p = 1, q = 0; 
