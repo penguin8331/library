@@ -19,7 +19,8 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/lazy-segment-tree-arthmetic.hpp
-    title: data-structure/lazy-segment-tree-arthmetic.hpp
+    title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+      \ Tree"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_F.test.cpp

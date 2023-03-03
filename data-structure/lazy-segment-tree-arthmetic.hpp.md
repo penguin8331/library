@@ -143,8 +143,6 @@ data:
   verifiedWith: []
 documentation_of: data-structure/lazy-segment-tree-arthmetic.hpp
 layout: document
-redirect_from:
-- /library/data-structure/lazy-segment-tree-arthmetic.hpp
-- /library/data-structure/lazy-segment-tree-arthmetic.hpp.html
-title: data-structure/lazy-segment-tree-arthmetic.hpp
+title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+  \ Tree"
 ---
