@@ -4,19 +4,19 @@ data:
   - icon: ':x:'
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,10 +35,10 @@ data:
     #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
     \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
     #line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing ld = long double;\n\
-    using pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nconstexpr int inf = 1\
-    \ << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1,\
-    \ -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int\
-    \ mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
+    using pii = std::pair<int, int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int\
+    \ inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1,\
+    \ 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr\
+    \ int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
     \n\ntemplate <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a\
     \ = b, true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b)\
     \ { return ((a > b) ? (a = b, true) : (false)); }\n#line 3 \"template/util.hpp\"\
@@ -57,7 +57,7 @@ data:
     \ = 0; j < i.second; j++) {\n            cout << \" \" << i.first;\n        }\n\
     \    }\n    cout << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
-    \n#include \"template/template.hpp\"\n#include \"math/number/prime-factorization.hpp\"\
+    \n#include \"../../template/template.hpp\"\n#include \"../../math/number/prime-factorization.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    auto res = prime_factorize(N);\n\
     \    cout << N << \":\";\n    for (const auto &i : res) {\n        for (int j\
     \ = 0; j < i.second; j++) {\n            cout << \" \" << i.first;\n        }\n\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 14:53:57+09:00'
+  timestamp: '2023-03-03 15:26:28+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_A.test.cpp

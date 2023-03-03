@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -28,16 +28,16 @@ data:
     \ all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(), (x).rend()\n#define\
     \ elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
     \ b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\n\nusing ll =\
-    \ long long;\nusing ld = long double;\nusing pii = pair<int, int>;\nusing pll\
-    \ = pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\n\
-    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9\
-    \ + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T&\
-    \ a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename\
-    \ T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false));\
-    \ }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n    \
-    \    std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n     \
-    \   std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
+    \ long long;\nusing ld = long double;\nusing pii = std::pair<int, int>;\nusing\
+    \ pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
+    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
+    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
+    \ MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline\
+    \ bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate\
+    \ <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true)\
+    \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
+    \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
+    \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
     \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs2d.hpp\"\
     \n\nvector<vector<bool>> seen;  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B\
@@ -47,7 +47,7 @@ data:
     \     if (X < 0 || X >= H || Y < 0 || Y >= W) continue;\n        if (seen[X][Y]\
     \ || G[X][Y] == '#') continue;  //\u63A2\u7D22\u6E08\u307F\u306A\u3089\u635C\u7D22\
     \u3057\u306A\u3044\n        dfs(H, W, G, make_pair(X, Y));\n    }\n}\n"
-  code: "#pragma once\n#include \"template/template.hpp\"\n\nvector<vector<bool>>\
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nvector<vector<bool>>\
     \ seen;  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B v->\u59CB\u70B9\n\
     void dfs(int H, int W, const vector<string> &G, pair<int, int> v) {\n    seen[v.first][v.second]\
     \ = true;\n\n    for (int i = 0; i < 4; i++) {\n        int X = dx[i] + v.first;\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: graph/dfs2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 14:53:57+09:00'
+  timestamp: '2023-03-03 15:26:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dfs2d.hpp

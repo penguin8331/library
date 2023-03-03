@@ -17,13 +17,10 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/ALDS1_1_C.test.cpp
-    title: test/AOJ/ALDS1_1_C.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -42,14 +39,10 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/isprime.hpp\"\
-    \n\r\nbool is_prime(long long n) {\r\n    if (n <= 1) return false;\r\n    for\
-    \ (long long p = 2; p * p <= n; ++p) {\r\n        if (n % p == 0) return false;\r\
-    \n    }\r\n    return true;\r\n}\n"
-  code: "#pragma once\r\n#include \"../../template/template.hpp\"\r\n\r\nbool is_prime(long\
-    \ long n) {\r\n    if (n <= 1) return false;\r\n    for (long long p = 2; p *\
-    \ p <= n; ++p) {\r\n        if (n % p == 0) return false;\r\n    }\r\n    return\
-    \ true;\r\n}"
+    \ \"template/template.hpp\"\nusing namespace std;\n#line 2 \"test.cpp\"\nint main()\
+    \ {\n    cout << \"Hello\" << endl;\n}\n"
+  code: "#include \"template/template.hpp\"\nint main() {\n    cout << \"Hello\" <<\
+    \ endl;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -57,13 +50,15 @@ data:
   - template/func.hpp
   - template/util.hpp
   isVerificationFile: false
-  path: math/number/isprime.hpp
+  path: test.cpp
   requiredBy: []
   timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/ALDS1_1_C.test.cpp
-documentation_of: math/number/isprime.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: test.cpp
 layout: document
-title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
+redirect_from:
+- /library/test.cpp
+- /library/test.cpp.html
+title: test.cpp
 ---

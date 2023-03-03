@@ -4,19 +4,19 @@ data:
   - icon: ':x:'
     path: graph/dijkstra-route.hpp
     title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,15 +35,15 @@ data:
     #define mp make_pair\n#define all(x) (x).begin(), (x).end()\n#define rall(x) (x).rbegin(),\
     \ (x).rend()\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n\
     #define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\
-    \n\nusing ll = long long;\nusing ld = long double;\nusing pii = pair<int, int>;\n\
-    using pll = pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
-    \ << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[]\
-    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline\
-    \ bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate\
-    \ <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true)\
-    \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
-    \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
+    \n\nusing ll = long long;\nusing ld = long double;\nusing pii = std::pair<int,\
+    \ int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr\
+    \ ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr\
+    \ int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr\
+    \ int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
+    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
+    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
+    \ true) : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n   \
+    \ IOSetup() {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
     \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra-route.hpp\"\
@@ -65,33 +65,33 @@ data:
     \u3059\n    return path;\n}\n#line 4 \"test/yosupo/shortes-path.test.cpp\"\n\n\
     int main() {\n    int N, M, s, t;\n    cin >> N >> M >> s >> t;\n    vector<vector<Edge>>\
     \ G(N, vector<Edge>(0));\n    for (int i = 0; i < M; i++) {\n        int a, b,\
-    \ c;\n        cin >> a >> b >> c;\n        G[a].push_back(make_edge(b, c));\n\
-    \    }\n    vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto\
-    \ ans = get_path(prev, t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n\
-    \        return 0;\n    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
-    \    for (int i = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \"\
-    \ \" << ans[i + 1] << endl;\n    }\n}\n"
+    \ c;\n        cin >> a >> b >> c;\n        G[a].push_back({b, c});\n    }\n  \
+    \  vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto ans = get_path(prev,\
+    \ t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n        return 0;\n\
+    \    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n    for (int i\
+    \ = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \" \" << ans[i +\
+    \ 1] << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
-    \ \"template/template.hpp\"\n#include \"graph/dijkstra-route.hpp\"\n\nint main()\
-    \ {\n    int N, M, s, t;\n    cin >> N >> M >> s >> t;\n    vector<vector<Edge>>\
+    \ \"../../graph/dijkstra-route.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nint main() {\n    int N, M, s, t;\n    cin >> N >> M >> s >> t;\n    vector<vector<Edge>>\
     \ G(N, vector<Edge>(0));\n    for (int i = 0; i < M; i++) {\n        int a, b,\
-    \ c;\n        cin >> a >> b >> c;\n        G[a].push_back(make_edge(b, c));\n\
-    \    }\n    vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto\
-    \ ans = get_path(prev, t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n\
-    \        return 0;\n    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n\
-    \    for (int i = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \"\
-    \ \" << ans[i + 1] << endl;\n    }\n}"
+    \ c;\n        cin >> a >> b >> c;\n        G[a].push_back({b, c});\n    }\n  \
+    \  vector<int> prev;\n    auto res = dijkstra(G, s, prev);\n    auto ans = get_path(prev,\
+    \ t);\n    if (res[t] == INF) {\n        cout << -1 << endl;\n        return 0;\n\
+    \    }\n    cout << res[t] << \" \" << ans.size() - 1 << endl;\n    for (int i\
+    \ = 0; i < ans.size() - 1; i++) {\n        cout << ans[i] << \" \" << ans[i +\
+    \ 1] << endl;\n    }\n}"
   dependsOn:
+  - graph/dijkstra-route.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
-  - graph/dijkstra-route.hpp
   isVerificationFile: true
   path: test/yosupo/shortes-path.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 14:53:57+09:00'
+  timestamp: '2023-03-03 15:27:04+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/shortes-path.test.cpp

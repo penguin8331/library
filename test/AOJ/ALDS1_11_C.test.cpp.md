@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/bfs.hpp
     title: BFS
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
@@ -35,10 +35,10 @@ data:
     #define rall(x) (x).rbegin(), (x).rend()\n#define elif else if\n#define updiv(N,\
     \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
     #line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing ld = long double;\n\
-    using pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nconstexpr int inf = 1\
-    \ << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1, 0, 1,\
-    \ -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int\
-    \ mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
+    using pii = std::pair<int, int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int\
+    \ inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[] = {1, 0, -1,\
+    \ 0, 1, -1, 1, -1};\nconstexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr\
+    \ int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
     \n\ntemplate <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a\
     \ = b, true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b)\
     \ { return ((a > b) ? (a = b, true) : (false)); }\n#line 3 \"template/util.hpp\"\
@@ -68,8 +68,8 @@ data:
     \  }\n    }\n    auto res = BFS(G, 0);\n    for (int i = 0; i < N; i++) {\n  \
     \      cout << i + 1 << \" \" << res[i] << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\
-    \n#include \"template/template.hpp\"\n#include \"graph/bfs.hpp\"\n\nint main()\
-    \ {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
+    \n#include \"../../template/template.hpp\"\n#include \"../../graph/bfs.hpp\"\n\
+    \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
     \    for (int i = 0; i < N; i++) {\n        int u, k;\n        cin >> u >> k;\n\
     \        u--;\n        for (int j = 0; j < k; j++) {\n            int v;\n   \
     \         cin >> v;\n            v--;\n            G[u].push_back(v);\n      \
@@ -85,8 +85,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 14:53:57+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-03 15:26:28+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp
 layout: document
