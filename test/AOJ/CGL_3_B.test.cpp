@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B"
-#include "template/template.hpp"
-#include "geomeny/is-convex.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/is-convex.hpp"
 
 int main() {
     int N;

@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include"geomeny/geomeny-template.hpp"
+#include "../template/template.hpp"
+#include "../geomeny/geomeny-template.hpp"
 
 int ccw_for_convexcut(const Point &a, const Point &b, const Point &c) {
     if (cross(b-a, c-a) > EPS) return 1;

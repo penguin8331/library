@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 struct LCA {
     vector<vector<int>> parent;  // parent[d][v] := 2^d-th parent of v

@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../../template/template.hpp"
 
 template <class T>
 T pow_mod(T A, T N, T M) {

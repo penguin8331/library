@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
-#include "template/template.hpp"
-#include "data-structure/segment-tree.hpp"
+#include "../../template/template.hpp"
+#include "../../data-structure/segment-tree.hpp"
 
 int main() {
     int N, Q;

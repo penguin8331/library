@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D"
 #define ERROR 0.000001
-#include "template/template.hpp"
-#include "geomeny/crosspoint.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/crosspoint.hpp"
 
 int main() {
     Circle a;

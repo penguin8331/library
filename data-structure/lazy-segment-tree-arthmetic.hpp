@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "data-structure/lazy-segment-tree.hpp"
+#include "../template/template.hpp"
+#include "../data-structure/lazy-segment-tree.hpp"
 
 struct Lazy_SegTree_Arthmetic {
     struct S {

@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 template <class T>
 int LIS(vector<T> a, bool is_strong = true) {

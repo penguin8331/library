@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "geomeny/geomeny-template.hpp"
+#include "../template/template.hpp"
+#include "../geomeny/geomeny-template.hpp"
 
 DD CalcArea(const vector<Point> &pol) {
     DD res = 0.0;

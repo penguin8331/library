@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 vector<string> S = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 // グレゴリオ歴を求める

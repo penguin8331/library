@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B"
-#include "template/template.hpp"
-#include "graph/topological-sort.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/topological-sort.hpp"
 
 int main() {
     int V, E;

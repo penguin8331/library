@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
-#include "template/template.hpp"
-#include "graph/dijkstra-route.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/dijkstra-route.hpp"
 
 int main() {
     int N, M, s, t;

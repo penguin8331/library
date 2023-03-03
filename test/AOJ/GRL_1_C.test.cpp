@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C"
-#include "template/template.hpp"
-#include "graph/warshall-floyd.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/warshall-floyd.hpp"
 
 int main() {
     int V, E;

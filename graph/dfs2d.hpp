@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 vector<vector<bool>> seen;  //訪問済みかどうか v->始点
 void dfs(int H, int W, const vector<string> &G, pair<int, int> v) {

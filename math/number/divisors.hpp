@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../../template/template.hpp"
 
 vector<long long> divisors(long long n) {
     vector<long long> res;

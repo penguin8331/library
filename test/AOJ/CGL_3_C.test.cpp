@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C"
-#include "template/template.hpp"
-#include "geomeny/is-contain-in-the-polygon.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/is-contain-in-the-polygon.hpp"
 
 int main() {
     int N;

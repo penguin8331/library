@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "math/number/ext-gcd.hpp"
+#include "../../template/template.hpp"
+#include "../../math/number/ext-gcd.hpp"
 
 pair<long long, long long> crt(const vector<long long>& vr, const vector<long long>& vm) {
     if (vr.empty() || vm.empty()) return make_pair(0, 1);

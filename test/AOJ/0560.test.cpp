@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560"
-#include "template/template.hpp"
-#include "algorithm/section-sum2d.hpp"
+#include "../../template/template.hpp"
+#include "../../algorithm/section-sum2d.hpp"
 
 int main() {
     int H, W, Q;

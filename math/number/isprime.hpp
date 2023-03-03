@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../../template/template.hpp"
 
 bool is_prime(long long n) {
     if (n <= 1) return false;

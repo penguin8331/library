@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "math/number/miller-rabin.hpp"
+#include "../../template/template.hpp"
+#include "../../math/number/miller-rabin.hpp"
 
 long long pollard(long long N) {
     if (N % 2 == 0) return 2;

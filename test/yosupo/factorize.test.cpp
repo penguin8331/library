@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/factorize"
-#include "template/template.hpp"
-#include "math/number/pollard-rho.hpp"
+#include "../../template/template.hpp"
+#include "../../math/number/pollard-rho.hpp"
 
 int main() {
     int Q;

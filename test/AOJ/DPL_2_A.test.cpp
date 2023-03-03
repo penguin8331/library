@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A"
-#include "template/template.hpp"
-#include "dynamic-programming/traveling-salesman-problem.hpp"
+#include "../../template/template.hpp"
+#include "../../dynamic-programming/traveling-salesman-problem.hpp"
 
 int main() {
     cin >> V >> E;

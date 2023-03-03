@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
-#include "template/template.hpp"
-#include "math/number/isprime.hpp"
+#include "../../template/template.hpp"
+#include "../../math/number/isprime.hpp"
 
 int main() {
     int N;

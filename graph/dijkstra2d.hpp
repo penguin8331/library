@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 int H, W;
 vector<vector<char>> G;

@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1160"
-#include "template/template.hpp"
-#include "data-structure/union-find.hpp"
+#include "../../template/template.hpp"
+#include "../../data-structure/union-find.hpp"
 
 int main() {
     while (true) {

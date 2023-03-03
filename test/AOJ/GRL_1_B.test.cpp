@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
-#include "template/template.hpp"
-#include "graph/bellman-ford.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/bellman-ford.hpp"
 
 int main() {
     int V, E, r;

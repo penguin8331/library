@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../../template/template.hpp"
 
 unsigned int randInt() {
     static unsigned int tx = 123456789, ty = 362436069, tz = 521288629, tw = 88675123;

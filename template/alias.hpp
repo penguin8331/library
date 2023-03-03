@@ -3,8 +3,8 @@
 
 using ll = long long;
 using ld = long double;
-using pii = pair<int, int>;
-using pll = pair<ll, ll>;
+using pii = std::pair<int, int>;
+using pll = std::pair<ll, ll>;
 constexpr int inf = 1 << 30;
 constexpr ll INF = 1LL << 60;
 constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};

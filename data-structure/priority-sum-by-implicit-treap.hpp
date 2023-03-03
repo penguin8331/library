@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "data-structure/implicit-treap.hpp"
+#include "../template/template.hpp"
+#include "../data-structure/implicit-treap.hpp"
 
 template <typename T, bool ascending = true>
 struct PrioritySum {

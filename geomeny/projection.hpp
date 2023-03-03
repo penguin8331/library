@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "geomeny/geomeny-template.hpp"
+#include "../template/template.hpp"
+#include "../geomeny/geomeny-template.hpp"
 
 Point proj(const Point &p, const Line &l) {
     DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);

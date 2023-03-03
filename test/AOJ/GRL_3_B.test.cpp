@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B"
-#include "template/template.hpp"
-#include "graph/low-link.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/low-link.hpp"
 
 int main() {
     int V, E;

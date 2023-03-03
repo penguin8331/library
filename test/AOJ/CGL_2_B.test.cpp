@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B"
-#include "template/template.hpp"
-#include "geomeny/is-inter.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/is-inter.hpp"
 
 int main() {
     int N;

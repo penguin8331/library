@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "geomeny/geomeny-template.hpp"
+#include "../template/template.hpp"
+#include "../geomeny/geomeny-template.hpp"
 
 // 粗
 // 1：a-bから見てcは左側(反時計回り)、-1：a-bから見てcは右側(時計回り)、0：一直線上

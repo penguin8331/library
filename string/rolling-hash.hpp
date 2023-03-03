@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 struct RollingHash {
     static const uint64_t mod = (1ull << 61ull) - 1;

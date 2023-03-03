@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A"
-#include "template/template.hpp"
-#include "graph/prim.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/prim.hpp"
 
 int main() {
     int N;

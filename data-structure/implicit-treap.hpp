@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 // T0: 元の配列のモノイド
 // T1: T0に対する作用素モノイド

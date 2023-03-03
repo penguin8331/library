@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../../template/template.hpp"
 
 map<long long, int> prime_factorize(long long n) {
     map<long long, int> res;

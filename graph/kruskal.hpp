@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "data-structure/union-find.hpp"
+#include "../template/template.hpp"
+#include "../data-structure/union-find.hpp"
 
 struct Edge {
     long long from;

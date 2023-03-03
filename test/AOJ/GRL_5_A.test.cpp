@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
-#include "template/template.hpp"
-#include "graph/diameter-weighted.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/diameter-weighted.hpp"
 int main() {
     int N;
     cin >> N;

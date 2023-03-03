@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
-#include "template/template.hpp"
-#include "geomeny/convex-hull.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/convex-hull.hpp"
 
 int main() {
     int N;

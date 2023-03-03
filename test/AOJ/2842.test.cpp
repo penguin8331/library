@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2842"
-#include "template/template.hpp"
-#include "data-structure/binary-indexed-tree-2d.hpp"
+#include "../../template/template.hpp"
+#include "../../data-structure/binary-indexed-tree-2d.hpp"
 
 int main() {
     int H, W, T, Q;

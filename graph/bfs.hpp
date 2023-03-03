@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 vector<int> BFS(const vector<vector<int>> &G, int s) {
     int N = (int)G.size();    // 頂点数

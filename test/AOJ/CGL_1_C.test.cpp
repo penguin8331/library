@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C"
-#include "template/template.hpp"
-#include "geomeny/ccw.hpp"
+#include "../../template/template.hpp"
+#include "../../geomeny/ccw.hpp"
 
 int main() {
     Point a, b;

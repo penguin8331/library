@@ -1,5 +1,5 @@
 #pragma once
-#include "template/template.hpp"
+#include "../template/template.hpp"
 
 int LCS(const string& a, const string& b) {
     const int n = a.size(), m = b.size();

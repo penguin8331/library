@@ -1,6 +1,6 @@
 #pragma once
-#include "template/template.hpp"
-#include "geomeny/is-inter.hpp"
+#include "../template/template.hpp"
+#include "../geomeny/is-inter.hpp"
 
 DD distancePL(const Point &p, const Line &l) {
     return abs(p - proj(p, l));

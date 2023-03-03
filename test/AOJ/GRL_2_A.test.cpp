@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A"
-#include "template/template.hpp"
-#include "graph/kruskal.hpp"
+#include "../../template/template.hpp"
+#include "../../graph/kruskal.hpp"
 
 int main() {
     int V, E;
