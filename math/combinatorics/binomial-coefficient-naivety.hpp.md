@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/combinatorics/binomial-coefficient-naivety.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/combinatorics/binomial-coefficient-naivety.hpp\"\
     \n\r\nlong long nCk(int n, int k) {\r\n    assert(n >= k && k >= 0);\r\n    chmin(k,\
     \ n - k);\r\n    long long res = 1;\r\n    for (int i = 1; i <= k; i++) {\r\n\
     \        res *= (n - k + i);\r\n        res /= i;\r\n    }\r\n    return res;\r\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: math/combinatorics/binomial-coefficient-naivety.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/binomial-coefficient-naivety.hpp

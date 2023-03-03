@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/warshall-floyd.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/warshall-floyd.hpp\"\
     \n\nvoid warshallfloyd(vector<vector<long long>> &dp, int V) {\n    // i->j\u306E\
     \u7D4C\u8DEF\u306B\u3064\u3044\u3066i->k->j\u3092\u691C\u8A0E\u3059\u308B\n  \
     \  for (int k = 0; k < V; ++k) {\n        for (int i = 0; i < V; ++i) {\n    \
@@ -68,7 +68,7 @@ data:
   isVerificationFile: false
   path: graph/warshall-floyd.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_1_C.test.cpp

@@ -41,9 +41,9 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/prim.hpp\"\n\
-    \nstruct Edge {\n    int to;\n    long long cost;\n};\nstruct Prim {\n    vector<vector<Edge>>\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/prim.hpp\"\
+    \n\nstruct Edge {\n    int to;\n    long long cost;\n};\nstruct Prim {\n    vector<vector<Edge>>\
     \ G;\n    int V;\n    long long sum;\n    Prim(vector<vector<Edge>> &G_, int V_)\
     \ : G(G_), V(V_) {\n        sum = 0;\n        vector<bool> seen(V, false);\n \
     \       priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll,\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: false
   path: graph/prim.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_12_A.test.cpp

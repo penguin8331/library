@@ -44,8 +44,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\
     \n\ntemplate <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel>\
     \ dat;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n,\
     \ unity) {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: math/combinatorics/inversion-number.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

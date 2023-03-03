@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/implicit-treap.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/implicit-treap.hpp\"\
     \n\n// T0: \u5143\u306E\u914D\u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\
     \u5BFE\u3059\u308B\u4F5C\u7528\u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class\
     \ T0, class T1>\nclass BaseImplicitTreap {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\
@@ -240,7 +240,7 @@ data:
   isVerificationFile: false
   path: data-structure/pair-query-by-implicit-treap.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/pair-query-by-implicit-treap.hpp

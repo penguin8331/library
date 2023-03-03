@@ -45,8 +45,8 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"graph/lca.hpp\"\n\nstruct LCA {\n    vector<vector<int>>\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"graph/lca.hpp\"\n\nstruct LCA {\n    vector<vector<int>>\
     \ parent;  // parent[d][v] := 2^d-th parent of v\n    vector<int> depth;\n   \
     \ LCA() {}\n    LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }\n\
     \    void init(const vector<vector<int>>& G, int r = 0) {\n        int V = (int)G.size();\n\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_C.test.cpp

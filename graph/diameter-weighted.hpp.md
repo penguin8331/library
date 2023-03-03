@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/diameter-weighted.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/diameter-weighted.hpp\"\
     \n\nstruct Edge {\n    int to;\n    int cost;\n};\ntemplate <typename T>\npair<T,\
     \ int> dfs(const vector<vector<Edge>> &G, int u, int par) {  // \u6700\u9060\u70B9\
     \u9593\u8DDD\u96E2\u3068\u6700\u9060\u70B9\u3092\u6C42\u3081\u308B\n    pair<T,\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: graph/diameter-weighted.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_A.test.cpp

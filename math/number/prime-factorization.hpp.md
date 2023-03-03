@@ -18,12 +18,12 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/NTL_1_A.test.cpp
     title: test/AOJ/NTL_1_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/prime-factorization.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/prime-factorization.hpp\"\
     \n\r\nmap<long long, int> prime_factorize(long long n) {\r\n    map<long long,\
     \ int> res;\r\n    for (long long p = 2; p * p <= n; ++p) {\r\n        if (n %\
     \ p != 0) continue;\r\n        int num = 0;\r\n        while (n % p == 0) {\r\n\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: false
   path: math/number/prime-factorization.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/NTL_1_A.test.cpp
 documentation_of: math/number/prime-factorization.hpp

@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/convert-base.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/convert-base.hpp\"\
     \n\ntemplate <class T>\nvector<T> convert_base(T x, T b) {\n    vector<T> ret;\n\
     \    T t = 1, k = abs(b);\n    while (x) {\n        ret.emplace_back((x * t) %\
     \ k);\n        if (ret.back() < 0) ret.back() += k;\n        x -= ret.back() *\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: math/number/convert-base.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/0233.test.cpp

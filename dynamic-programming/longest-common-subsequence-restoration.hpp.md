@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-common-subsequence-restoration.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-common-subsequence-restoration.hpp\"\
     \n\nstring LCSRestoration(const string& a, const string& b) {\n    const int n\
     \ = a.size(), m = b.size();\n    vector<vector<int> > X(n + 1, vector<int>(m +\
     \ 1));\n    vector<vector<int> > Y(n + 1, vector<int>(m + 1));\n    for (int i\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: false
   path: dynamic-programming/longest-common-subsequence-restoration.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: dynamic-programming/longest-common-subsequence-restoration.hpp

@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/bellman-ford.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/bellman-ford.hpp\"\
     \n\nstruct Edge {\n    long long from;\n    long long to;\n    long long cost;\n\
     };\nbool bellman_ford(const vector<Edge> &Es, int V, int s, vector<long long>\
     \ &dis) {\n    dis.assign(V, INF);\n    dis[s] = 0;\n    int cnt = 0;\n    while\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: false
   path: graph/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_1_B.test.cpp

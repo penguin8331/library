@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/rand-int.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/rand-int.hpp\"\
     \n\nunsigned int randInt() {\n    static unsigned int tx = 123456789, ty = 362436069,\
     \ tz = 521288629, tw = 88675123;\n    unsigned int tt = (tx ^ (tx << 11));\n \
     \   tx = ty;\n    ty = tz;\n    tz = tw;\n    return (tw = (tw ^ (tw >> 19)) ^\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: math/number/rand-int.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number/rand-int.hpp

@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/lazy-segment-tree.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/lazy-segment-tree.hpp\"\
     \n\ntemplate <class Monoid, class Action>\nstruct Lazy_SegTree {\n    using FuncMonoid\
     \ = function<Monoid(Monoid, Monoid)>;\n    using FuncAction = function<void(Monoid&,\
     \ Action)>;\n    using FuncComposition = function<void(Action&, Action)>;\n  \
@@ -138,7 +138,7 @@ data:
   isVerificationFile: false
   path: data-structure/lazy-segment-tree-arthmetic.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/lazy-segment-tree-arthmetic.hpp

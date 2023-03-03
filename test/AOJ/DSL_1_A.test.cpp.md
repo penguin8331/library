@@ -45,8 +45,8 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"data-structure/union-find.hpp\"\n\nstruct UnionFind\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"data-structure/union-find.hpp\"\n\nstruct UnionFind\
     \ {\n    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n,\
     \ -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n\
     \        if (par[x] < 0)\n            return x;\n        else\n            return\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_A.test.cpp

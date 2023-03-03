@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"algorithm/compress2d.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"algorithm/compress2d.hpp\"\
     \n\r\ntemplate <typename T>\r\nvector<T> compress(vector<T> &C1, vector<T> &C2)\
     \ {\r\n    vector<T> vals;\r\n    int N = (int)C1.size();\r\n    for (int i =\
     \ 0; i < N; i++) {\r\n        for (T d = 0; d < 1; d++) {  // \u305D\u306E\u4F4D\
@@ -81,7 +81,7 @@ data:
   isVerificationFile: false
   path: algorithm/compress2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_4_A.test.cpp

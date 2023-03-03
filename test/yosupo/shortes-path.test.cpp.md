@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/dijkstra-route.hpp
     title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
   - icon: ':question:'
@@ -21,9 +21,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -45,8 +45,8 @@ data:
     \ true) : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n   \
     \ IOSetup() {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra-route.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra-route.hpp\"\
     \n\nstruct Edge {\n    long long to;\n    long long cost;\n};\nvector<long long>\
     \ dijkstra(const vector<vector<Edge>> &G, int s, vector<int> &prev) {\n    int\
     \ N = G.size();\n    vector<long long> dis(N, INF);\n    prev.assign(N, -1); \
@@ -91,8 +91,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/shortes-path.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:27:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/shortes-path.test.cpp
 layout: document

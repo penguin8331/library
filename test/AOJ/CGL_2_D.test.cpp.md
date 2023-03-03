@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   - icon: ':question:'
@@ -30,9 +30,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00000001'
@@ -55,8 +55,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
     \n\nusing DD = long double;  // to be set appropriately\nconst DD EPS = 1e-10;\
     \    // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg)\
     \ { return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\
@@ -137,8 +137,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_D.test.cpp
 layout: document

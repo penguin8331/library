@@ -38,9 +38,9 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs.hpp\"\n\
-    \nvector<bool> seen;\nvoid dfs(const vector<vector<int>>& G, int v) {\n    seen[v]\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs.hpp\"\
+    \n\nvector<bool> seen;\nvoid dfs(const vector<vector<int>>& G, int v) {\n    seen[v]\
     \ = true;\n\n    // v\u304B\u3089\u884C\u3051\u308B\u5404\u9802\u70B9 next_v \u306B\
     \u3064\u3044\u3066\n    for (auto next_v : G[v]) {\n        if (seen[next_v])\
     \ continue;  //\u63A2\u7D22\u6E08\u307F\u306A\u3089\u635C\u7D22\u3057\u306A\u3044\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: graph/dfs.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dfs.hpp

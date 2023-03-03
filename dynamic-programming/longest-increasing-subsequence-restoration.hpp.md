@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-increasing-subsequence-restoration.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-increasing-subsequence-restoration.hpp\"\
     \n\ntemplate <class T>\nvector<T> LISRestoration(vector<T> a, bool is_strong =\
     \ true) {\n    int n = (int)a.size();\n    vector<T> dp;\n    vector<int> positions;\n\
     \    for (int i = 0; i < n; ++i) {\n        auto it = (is_strong ? lower_bound(dp.begin(),\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: dynamic-programming/longest-increasing-subsequence-restoration.hpp

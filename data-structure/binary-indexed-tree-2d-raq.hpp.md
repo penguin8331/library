@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree-2d-raq.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree-2d-raq.hpp\"\
     \n\ntemplate <class Abel>\nstruct BIT2D {\n    const Abel UNITY_SUM = 0;\n   \
     \ vector<vector<Abel> > dat[2][2];\n    int N, M;\n\n    BIT2D(int n, int m, Abel\
     \ unity = 0) : UNITY_SUM(unity), N(n), M(m) {\n        init(n, m);\n    }\n  \
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree-2d-raq.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/binary-indexed-tree-2d-raq.hpp

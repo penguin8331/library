@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - icon: ':question:'
@@ -21,9 +21,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -45,11 +45,11 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"string/rolling-hash.hpp\"\n\nstruct RollingHash {\n\
-    \    static const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t> power;\n\
-    \    const uint64_t base;\n\n    static inline uint64_t generate_base() {\n  \
-    \      mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"string/rolling-hash.hpp\"\n\nstruct RollingHash\
+    \ {\n    static const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t>\
+    \ power;\n    const uint64_t base;\n\n    static inline uint64_t generate_base()\
+    \ {\n        mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \        uniform_int_distribution<uint64_t> rand((uint64_t)1, (uint64_t)mod -\
     \ 1);\n        return rand(engine);\n    }\n\n    static inline uint64_t add(uint64_t\
     \ a, uint64_t b) {\n        if ((a += b) >= mod) a -= mod;\n        return a;\n\
@@ -99,8 +99,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/zalgorithm.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/zalgorithm.test.cpp
 layout: document

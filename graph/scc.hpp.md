@@ -21,12 +21,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -44,9 +44,9 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/scc.hpp\"\n\
-    \nstruct SCC {\n    using Edge = int;\n    using SGraph = vector<vector<Edge>>;\n\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/scc.hpp\"\
+    \n\nstruct SCC {\n    using Edge = int;\n    using SGraph = vector<vector<Edge>>;\n\
     \n    // input\n    SGraph G, rG;\n\n    // result\n    vector<vector<int>> scc;\n\
     \    vector<int> cmp;\n    SGraph dag;\n\n    // constructor\n    SCC(int N) :\
     \ G(N), rG(N) {}\n\n    // add edge\n    void addedge(int u, int v) {\n      \
@@ -106,8 +106,8 @@ data:
   isVerificationFile: false
   path: graph/scc.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/scc.test.cpp
   - test/AOJ/GRL_3_C.test.cpp

@@ -29,10 +29,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/convex-hull.hpp
     title: "\u51F8\u5305"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/crosspoint.hpp
     title: "\u4EA4\u70B9"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/distance.hpp
     title: "\u8DDD\u96E2"
   - icon: ':heavy_check_mark:'
@@ -41,14 +41,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/is-convex.hpp
     title: "\u51F8\u6027\u5224\u5B9A"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/is-inter.hpp
     title: "\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_1_A.test.cpp
     title: test/AOJ/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,10 +57,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_B.test.cpp
     title: test/AOJ/CGL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_C.test.cpp
     title: test/AOJ/CGL_2_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_2_D.test.cpp
     title: test/AOJ/CGL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -78,15 +78,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_4_C.test.cpp
     title: test/AOJ/CGL_4_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_7_D.test.cpp
     title: test/AOJ/CGL_7_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_7_E.test.cpp
     title: test/AOJ/CGL_7_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -104,8 +104,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
     \n\nusing DD = long double;  // to be set appropriately\nconst DD EPS = 1e-10;\
     \    // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg)\
     \ { return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\
@@ -192,8 +192,8 @@ data:
   - geomeny/is-convex.hpp
   - geomeny/convex-hull.hpp
   - geomeny/crosspoint.hpp
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_3_C.test.cpp
   - test/AOJ/CGL_2_C.test.cpp

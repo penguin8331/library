@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':question:'
@@ -21,9 +21,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -45,12 +45,12 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"graph/scc.hpp\"\n\nstruct SCC {\n    using Edge =\
-    \ int;\n    using SGraph = vector<vector<Edge>>;\n\n    // input\n    SGraph G,\
-    \ rG;\n\n    // result\n    vector<vector<int>> scc;\n    vector<int> cmp;\n \
-    \   SGraph dag;\n\n    // constructor\n    SCC(int N) : G(N), rG(N) {}\n\n   \
-    \ // add edge\n    void addedge(int u, int v) {\n        G[u].push_back(v);\n\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"graph/scc.hpp\"\n\nstruct SCC {\n    using Edge\
+    \ = int;\n    using SGraph = vector<vector<Edge>>;\n\n    // input\n    SGraph\
+    \ G, rG;\n\n    // result\n    vector<vector<int>> scc;\n    vector<int> cmp;\n\
+    \    SGraph dag;\n\n    // constructor\n    SCC(int N) : G(N), rG(N) {}\n\n  \
+    \  // add edge\n    void addedge(int u, int v) {\n        G[u].push_back(v);\n\
     \        rG[v].push_back(u);\n    }\n\n    // decomp\n    vector<bool> seen;\n\
     \    vector<int> vs, rvs;\n    void dfs(int v) {\n        seen[v] = true;\n  \
     \      for (auto e : G[v])\n            if (!seen[e]) dfs(e);\n        vs.push_back(v);\n\
@@ -95,8 +95,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/scc.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/scc.test.cpp
 layout: document

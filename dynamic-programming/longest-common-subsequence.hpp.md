@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-common-subsequence.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/longest-common-subsequence.hpp\"\
     \n\nint LCS(const string& a, const string& b) {\n    const int n = a.size(), m\
     \ = b.size();\n    vector<vector<int> > X(n + 1, vector<int>(m + 1));\n    for\
     \ (int i = 0; i < n; ++i) {\n        for (int j = 0; j < m; ++j) {\n         \
@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: dynamic-programming/longest-common-subsequence.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_10_C.test.cpp

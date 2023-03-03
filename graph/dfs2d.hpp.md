@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs2d.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs2d.hpp\"\
     \n\nvector<vector<bool>> seen;  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B\
     \ v->\u59CB\u70B9\nvoid dfs(int H, int W, const vector<string> &G, pair<int, int>\
     \ v) {\n    seen[v.first][v.second] = true;\n\n    for (int i = 0; i < 4; i++)\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: graph/dfs2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dfs2d.hpp

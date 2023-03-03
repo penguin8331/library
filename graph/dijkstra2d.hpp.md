@@ -38,8 +38,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra2d.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra2d.hpp\"\
     \n\nint H, W;\nvector<vector<char>> G;\nvoid dijkstra(pair<int, int> s, vector<vector<long\
     \ long>>& dis) {\n    dis.resize(H, vector<long long>(W, INF));\n    priority_queue<pair<long\
     \ long, pair<int, int>>, vector<pair<long long, pair<int, int>>>, greater<pair<long\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: graph/dijkstra2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dijkstra2d.hpp

@@ -45,8 +45,8 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"math/number/miller-rabin.hpp\"\n\ntemplate <class\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"math/number/miller-rabin.hpp\"\n\ntemplate <class\
     \ T>\nT pow_mod(T A, T N, T M) {\n    T res = 1 % M;\n    A %= M;\n    while (N)\
     \ {\n        if (N & 1) res = (res * A) % M;\n        A = (A * A) % M;\n     \
     \   N >>= 1;\n    }\n    return res;\n}\n\nbool is_prime(long long N) {\n    if\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C-2.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C-2.test.cpp

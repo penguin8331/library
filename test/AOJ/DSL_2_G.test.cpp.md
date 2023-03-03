@@ -46,10 +46,10 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"data-structure/binary-indexed-tree-raq.hpp\"\n\ntemplate\
-    \ <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat[2];\n\
-    \    int N;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity),\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree-raq.hpp\"\
+    \n\ntemplate <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel>\
+    \ dat[2];\n    int N;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity),\
     \ N(n) {\n        init(n);\n    }\n    void init(int n) {\n        for (int iter\
     \ = 0; iter < 2; ++iter)\n            dat[iter].assign(n + 1, UNITY_SUM);\n  \
     \  }\n\n    // [a, b), a and b are 0-indexed\n    inline void sub_add(int p, int\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_G.test.cpp

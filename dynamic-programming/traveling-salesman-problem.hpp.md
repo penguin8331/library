@@ -41,8 +41,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/traveling-salesman-problem.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"dynamic-programming/traveling-salesman-problem.hpp\"\
     \n\nint V, E;\nint G[20][20];  // \u30B0\u30E9\u30D5\nint dp[50000][20];\nconst\
     \ int maxi = inf / 3;\n// \u30E1\u30E2\u5316\u518D\u5E30\nint rec(int S, int v)\
     \ {\n    if (S == 0) {\n        if (v == 0) {\n            return 0;\n       \
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: dynamic-programming/traveling-salesman-problem.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DPL_2_A.test.cpp

@@ -45,21 +45,22 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"graph/topological-sort.hpp\"\n\nvoid dfs(const vector<vector<int>>\
-    \ &G, int v, vector<bool> &used, vector<int> &ans) {\n    used[v] = true;\n  \
-    \  for (auto e : G[v]) {\n        if (!used[e]) {\n            dfs(G, e, used,\
-    \ ans);\n        }\n    }\n    ans.push_back(v);  // \u5E30\u308A\u304C\u3051\u306B\
-    push_back\n}\nvector<int> topo_sort(const vector<vector<int>> &G) {  // bfs\n\
-    \    vector<int> ans;\n    int n = (int)G.size();\n    vector<bool> used(n, false);\n\
-    \    for (int v = 0; v < n; v++) {  // \u672A\u63A2\u7D22\u306E\u9802\u70B9\u3054\
-    \u3068\u306BDFS\n        if (!used[v]) dfs(G, v, used, ans);\n    }\n    reverse(ans.begin(),\
-    \ ans.end());  // \u9006\u5411\u304D\u306A\u306E\u3067\u3072\u3063\u304F\u308A\
-    \u8FD4\u3059\n    return ans;\n}\n#line 4 \"test/AOJ/GRL_4_B.test.cpp\"\n\nint\
-    \ main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
-    \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
-    \        G[s].push_back(t);\n    }\n    auto ans = topo_sort(G);\n    for (int\
-    \ i = 0; i < ans.size(); i++) {\n        cout << ans[i] << endl;\n    }\n}\n"
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"graph/topological-sort.hpp\"\n\nvoid dfs(const\
+    \ vector<vector<int>> &G, int v, vector<bool> &used, vector<int> &ans) {\n   \
+    \ used[v] = true;\n    for (auto e : G[v]) {\n        if (!used[e]) {\n      \
+    \      dfs(G, e, used, ans);\n        }\n    }\n    ans.push_back(v);  // \u5E30\
+    \u308A\u304C\u3051\u306Bpush_back\n}\nvector<int> topo_sort(const vector<vector<int>>\
+    \ &G) {  // bfs\n    vector<int> ans;\n    int n = (int)G.size();\n    vector<bool>\
+    \ used(n, false);\n    for (int v = 0; v < n; v++) {  // \u672A\u63A2\u7D22\u306E\
+    \u9802\u70B9\u3054\u3068\u306BDFS\n        if (!used[v]) dfs(G, v, used, ans);\n\
+    \    }\n    reverse(ans.begin(), ans.end());  // \u9006\u5411\u304D\u306A\u306E\
+    \u3067\u3072\u3063\u304F\u308A\u8FD4\u3059\n    return ans;\n}\n#line 4 \"test/AOJ/GRL_4_B.test.cpp\"\
+    \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
+    \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
+    \     cin >> s >> t;\n        G[s].push_back(t);\n    }\n    auto ans = topo_sort(G);\n\
+    \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i] << endl;\n\
+    \    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/topological-sort.hpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
@@ -77,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_4_B.test.cpp

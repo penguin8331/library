@@ -41,9 +41,9 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/bfs.hpp\"\n\
-    \nvector<int> BFS(const vector<vector<int>> &G, int s) {\n    int N = (int)G.size();\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/bfs.hpp\"\
+    \n\nvector<int> BFS(const vector<vector<int>> &G, int s) {\n    int N = (int)G.size();\
     \    // \u9802\u70B9\u6570\n    vector<int> dist(N, -1);  // \u3059\u3079\u3066\
     \u306E\u9802\u70B9\u3092\u672A\u8A2A\u554F\u306B\u521D\u671F\u5316\n    queue<int>\
     \ que;\n\n    // \u521D\u671F\u6761\u4EF6 (\u9802\u70B9s\u3092\u521D\u671F\u9802\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: graph/bfs.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_11_C.test.cpp

@@ -48,21 +48,21 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n};\n#line 7 \"template/template.hpp\"\nusing\
-    \ namespace std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\n\ntemplate\
-    \ <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\
-    \n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity)\
-    \ {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n   \
-    \ // a is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int i\
-    \ = a; i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n  \
-    \  }\n\n    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n        Abel\
-    \ res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n\
-    \            res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
-    \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
-    \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
-    \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
-    \ {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n\
-    \        return os;\n    }\n};\n#line 4 \"math/combinatorics/inversion-number.hpp\"\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
+    \nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\n\n\
+    template <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel>\
+    \ dat;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n,\
+    \ unity) {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\
+    \n    // a is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int\
+    \ i = a; i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n\
+    \    }\n\n    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n      \
+    \  Abel res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1))\
+    \ - 1)\n            res = res + dat[i];\n        return res;\n    }\n\n    //\
+    \ [a, b), a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n       \
+    \ return sum(b) - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os,\
+    \ BIT bit) {\n        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size();\
+    \ i++) {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os\
+    \ << ']';\n        return os;\n    }\n};\n#line 4 \"math/combinatorics/inversion-number.hpp\"\
     \n\r\ntemplate <class T>\r\nlong long inversion_number(const vector<T> &a) {\r\
     \n    int n = (int)a.size();\r\n    vector<T> b = a;\r\n    sort(b.begin(), b.end());\r\
     \n    b.erase(unique(b.begin(), b.end()), b.end());\r\n\r\n    long long res =\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
+  timestamp: '2023-03-03 16:10:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

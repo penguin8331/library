@@ -18,15 +18,15 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -44,8 +44,8 @@ data:
     \ : (false)); }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup()\
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n};\n#line 7\
-    \ \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\
     \n\ntemplate <class SemiGroup>\nstruct DisjointSparseTable {\n    using Func =\
     \ function<SemiGroup(SemiGroup, SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>>\
     \ dat;\n    vector<int> height;\n\n    DisjointSparseTable(const Func& f) : F(f)\
@@ -90,8 +90,8 @@ data:
   isVerificationFile: false
   path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-03 16:10:07+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum-2.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
