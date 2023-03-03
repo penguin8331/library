@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
-#include "../../template/template.hpp"
 #include "../../graph/dijkstra-route.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N, M, s, t;
@@ -9,7 +9,7 @@ int main() {
     for (int i = 0; i < M; i++) {
         int a, b, c;
         cin >> a >> b >> c;
-        G[a].push_back(make_edge(b, c));
+        G[a].push_back({b, c});
     }
     vector<int> prev;
     auto res = dijkstra(G, s, prev);
