@@ -1,5 +1,5 @@
 #pragma once
-#include "template.hpp"
+#include <bits/stdc++.h>
 
 #define pb push_back
 #define mp make_pair

@@ -1,5 +1,5 @@
 #pragma once
-#include "template.hpp"
+#include <bits/stdc++.h>
 
 using ll = long long;
 using ld = long double;
