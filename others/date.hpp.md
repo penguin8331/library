@@ -79,5 +79,5 @@ data:
   verifiedWith: []
 documentation_of: others/date.hpp
 layout: document
-title: "\u65E5\u4ED8"
+title: "\u65E5\u4ED8,\u66DC\u65E5"
 ---

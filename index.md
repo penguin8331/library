@@ -232,7 +232,7 @@ data:
     pages:
     - icon: ':warning:'
       path: others/date.hpp
-      title: "\u65E5\u4ED8"
+      title: "\u65E5\u4ED8,\u66DC\u65E5"
   - name: string
     pages:
     - icon: ':warning:'

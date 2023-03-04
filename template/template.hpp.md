@@ -225,7 +225,7 @@ data:
     title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
   - icon: ':warning:'
     path: others/date.hpp
-    title: "\u65E5\u4ED8"
+    title: "\u65E5\u4ED8,\u66DC\u65E5"
   - icon: ':warning:'
     path: string/rle.hpp
     title: "\u9023\u9577\u5727\u7E2E"
