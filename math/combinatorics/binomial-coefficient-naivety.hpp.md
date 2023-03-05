@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -39,7 +42,9 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/combinatorics/binomial-coefficient-naivety.hpp\"\
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"math/combinatorics/binomial-coefficient-naivety.hpp\"\
     \n\r\nlong long nCk(int n, int k) {\r\n    assert(n >= k && k >= 0);\r\n    chmin(k,\
     \ n - k);\r\n    long long res = 1;\r\n    for (int i = 1; i <= k; i++) {\r\n\
     \        res *= (n - k + i);\r\n        res /= i;\r\n    }\r\n    return res;\r\
@@ -54,10 +59,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: math/combinatorics/binomial-coefficient-naivety.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/binomial-coefficient-naivety.hpp

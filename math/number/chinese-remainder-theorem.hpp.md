@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,20 +48,21 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/ext-gcd.hpp\"\
-    \n\nlong long extGcd(long long a, long long b, long long &p, long long &q) {\n\
-    \    if (b == 0) { \n        p = 1, q = 0; \n        return a; \n    }\n    long\
-    \ long d = extGcd(b, a % b, q, p);\n    q -= a / b * p;\n    return d;\n}\n#line\
-    \ 4 \"math/number/chinese-remainder-theorem.hpp\"\n\npair<long long, long long>\
-    \ crt(const vector<long long>& vr, const vector<long long>& vm) {\n    if (vr.empty()\
-    \ || vm.empty()) return make_pair(0, 1);\n    long long R = vr[0], M = vm[0];\n\
-    \    for (int i = 1; i < (int)vr.size(); ++i) {\n        long long p, q, r = vr[i],\
-    \ m = vm[i];\n        if (M < m) swap(M, m), swap(R, r);  // prevent overflow\n\
-    \        long long d = extGcd(M, m, p, q);   // p is inv of M/d (mod. m/d)\n \
-    \       if ((r - R) % d != 0) return make_pair(0, -1);\n        long long md =\
-    \ m / d;\n        long long tmp = (r - R) / d % md * p % md;\n        R += M *\
-    \ tmp, M *= md;\n    }\n    R %= M;\n    if (R < 0) R += M;\n    return make_pair(R,\
-    \ M);\n}\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"math/number/ext-gcd.hpp\"\n\nlong long extGcd(long\
+    \ long a, long long b, long long &p, long long &q) {\n    if (b == 0) { \n   \
+    \     p = 1, q = 0; \n        return a; \n    }\n    long long d = extGcd(b, a\
+    \ % b, q, p);\n    q -= a / b * p;\n    return d;\n}\n#line 4 \"math/number/chinese-remainder-theorem.hpp\"\
+    \n\npair<long long, long long> crt(const vector<long long>& vr, const vector<long\
+    \ long>& vm) {\n    if (vr.empty() || vm.empty()) return make_pair(0, 1);\n  \
+    \  long long R = vr[0], M = vm[0];\n    for (int i = 1; i < (int)vr.size(); ++i)\
+    \ {\n        long long p, q, r = vr[i], m = vm[i];\n        if (M < m) swap(M,\
+    \ m), swap(R, r);  // prevent overflow\n        long long d = extGcd(M, m, p,\
+    \ q);   // p is inv of M/d (mod. m/d)\n        if ((r - R) % d != 0) return make_pair(0,\
+    \ -1);\n        long long md = m / d;\n        long long tmp = (r - R) / d % md\
+    \ * p % md;\n        R += M * tmp, M *= md;\n    }\n    R %= M;\n    if (R < 0)\
+    \ R += M;\n    return make_pair(R, M);\n}\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n#include \"../../math/number/ext-gcd.hpp\"\
     \n\npair<long long, long long> crt(const vector<long long>& vr, const vector<long\
     \ long>& vm) {\n    if (vr.empty() || vm.empty()) return make_pair(0, 1);\n  \
@@ -75,11 +79,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - math/number/ext-gcd.hpp
   isVerificationFile: false
   path: math/number/chinese-remainder-theorem.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2659.test.cpp

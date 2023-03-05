@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,22 +48,23 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"graph/dijkstra.hpp\"\n\nstruct Edge {\n    long\
-    \ long to;\n    long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
-    \ &G, int s) {\n    int N = G.size();\n    vector<long long> dis(N, INF);\n  \
-    \  priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long\
-    \ long, int>>> pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\
-    \u300D\u304C\u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s] = 0;\n    pq.emplace(dis[s],\
-    \ s);\n    while (!pq.empty()) {\n        pair<long long, int> p = pq.top();\n\
-    \        pq.pop();\n        int v = p.second;\n        if (dis[v] < p.first) {\
-    \  // \u6700\u77ED\u8DDD\u96E2\u3067\u7121\u3051\u308C\u3070\u7121\u8996\n   \
-    \         continue;\n        }\n        for (auto &e : G[v]) {\n            if\
-    \ (dis[e.to] > dis[v] + e.cost) {  // \u6700\u77ED\u8DDD\u96E2\u5019\u88DC\u306A\
-    \u3089 priority_queue \u306B\u8FFD\u52A0\n                dis[e.to] = dis[v] +\
-    \ e.cost;\n                pq.emplace(dis[e.to], e.to);\n            }\n     \
-    \   }\n    }\n    return dis;\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\n\nint\
-    \ main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dijkstra.hpp\"\
+    \n\nstruct Edge {\n    long long to;\n    long long cost;\n};\nvector<long long>\
+    \ dijkstra(const vector<vector<Edge>> &G, int s) {\n    int N = G.size();\n  \
+    \  vector<long long> dis(N, INF);\n    priority_queue<pair<long long, int>, vector<pair<long\
+    \ long, int>>, greater<pair<long long, int>>> pq;  // \u300C\u4EEE\u306E\u6700\
+    \u77ED\u8DDD\u96E2, \u9802\u70B9\u300D\u304C\u5C0F\u3055\u3044\u9806\u306B\u4E26\
+    \u3076\n    dis[s] = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty()) {\n\
+    \        pair<long long, int> p = pq.top();\n        pq.pop();\n        int v\
+    \ = p.second;\n        if (dis[v] < p.first) {  // \u6700\u77ED\u8DDD\u96E2\u3067\
+    \u7121\u3051\u308C\u3070\u7121\u8996\n            continue;\n        }\n     \
+    \   for (auto &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {  //\
+    \ \u6700\u77ED\u8DDD\u96E2\u5019\u88DC\u306A\u3089 priority_queue \u306B\u8FFD\
+    \u52A0\n                dis[e.to] = dis[v] + e.cost;\n                pq.emplace(dis[e.to],\
+    \ e.to);\n            }\n        }\n    }\n    return dis;\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\
+    \n\nint main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
     \ G(N);\n    for (int i = 0; i < E; i++) {\n        int s, t, d;\n        cin\
     \ >> s >> t >> d;\n        G[s].push_back({t, d});\n    }\n    auto res = dijkstra(G,\
     \ r);\n    for (int i = 0; i < N; i++) {\n        if (res[i] == INF) {\n     \
@@ -80,11 +84,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - graph/dijkstra.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_A.test.cpp

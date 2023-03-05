@@ -1,12 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
   - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
+  - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
   - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
@@ -21,9 +24,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -45,13 +48,14 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"data-structure/segment-tree.hpp\"\n\ntemplate\
-    \ <class Monoid>\nstruct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n\
-    \    int N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid>\
-    \ dat;\n\n    /* initialization */\n    SegTree() {}\n    SegTree(int n, const\
-    \ Func f, const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n\
-    \        SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/segment-tree.hpp\"\
+    \n\ntemplate <class Monoid>\nstruct SegTree {\n    using Func = function<Monoid(Monoid,\
+    \ Monoid)>;\n    int N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n\
+    \    vector<Monoid> dat;\n\n    /* initialization */\n    SegTree() {}\n    SegTree(int\
+    \ n, const Func f, const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity)\
+    \ {\n        SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
     \ * 2, IDENTITY);\n    }\n    void init(int n, const Func f, const Monoid& identity)\
     \ {\n        N = n;\n        F = f;\n        IDENTITY = identity;\n        SIZE_R\
     \ = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R * 2,\
@@ -110,12 +114,13 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - data-structure/segment-tree.hpp
   isVerificationFile: true
   path: test/yosupo/static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq.test.cpp
 layout: document

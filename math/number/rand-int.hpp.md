@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -39,11 +42,13 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/rand-int.hpp\"\
-    \n\nunsigned int randInt() {\n    static unsigned int tx = 123456789, ty = 362436069,\
-    \ tz = 521288629, tw = 88675123;\n    unsigned int tt = (tx ^ (tx << 11));\n \
-    \   tx = ty;\n    ty = tz;\n    tz = tw;\n    return (tw = (tw ^ (tw >> 19)) ^\
-    \ (tt ^ (tt >> 8)));\n}\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"math/number/rand-int.hpp\"\n\nunsigned int randInt()\
+    \ {\n    static unsigned int tx = 123456789, ty = 362436069, tz = 521288629, tw\
+    \ = 88675123;\n    unsigned int tt = (tx ^ (tx << 11));\n    tx = ty;\n    ty\
+    \ = tz;\n    tz = tw;\n    return (tw = (tw ^ (tw >> 19)) ^ (tt ^ (tt >> 8)));\n\
+    }\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n\nunsigned int randInt()\
     \ {\n    static unsigned int tx = 123456789, ty = 362436069, tz = 521288629, tw\
     \ = 88675123;\n    unsigned int tt = (tx ^ (tx << 11));\n    tx = ty;\n    ty\
@@ -55,10 +60,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: math/number/rand-int.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number/rand-int.hpp

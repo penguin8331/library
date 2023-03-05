@@ -1,12 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
   - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
+  - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
   - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
@@ -21,9 +24,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D
@@ -45,17 +48,18 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"math/number/divisors.hpp\"\n\r\nvector<long\
-    \ long> divisors(long long n) {\r\n    vector<long long> res;\r\n    for (long\
-    \ long i = 1LL; i * i <= n; ++i) {\r\n        if (n % i == 0) {\r\n          \
-    \  res.push_back(i);\r\n            long long j = n / i;\r\n            if (j\
-    \ != i) res.push_back(j);\r\n        }\r\n    }\r\n    sort(res.begin(), res.end());\r\
-    \n    return res;\r\n}\n#line 4 \"test/AOJ/ITP1_3_D.test.cpp\"\n\r\nint main()\
-    \ {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto res = divisors(c);\r\
-    \n    int ans = 0;\r\n    for (int i = 0; i < (int)res.size(); i++) {\r\n    \
-    \    if (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n        }\r\n\
-    \    }\r\n    cout << ans << endl;\r\n}\n"
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/divisors.hpp\"\
+    \n\r\nvector<long long> divisors(long long n) {\r\n    vector<long long> res;\r\
+    \n    for (long long i = 1LL; i * i <= n; ++i) {\r\n        if (n % i == 0) {\r\
+    \n            res.push_back(i);\r\n            long long j = n / i;\r\n      \
+    \      if (j != i) res.push_back(j);\r\n        }\r\n    }\r\n    sort(res.begin(),\
+    \ res.end());\r\n    return res;\r\n}\n#line 4 \"test/AOJ/ITP1_3_D.test.cpp\"\n\
+    \r\nint main() {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto res\
+    \ = divisors(c);\r\n    int ans = 0;\r\n    for (int i = 0; i < (int)res.size();\
+    \ i++) {\r\n        if (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n\
+    \        }\r\n    }\r\n    cout << ans << endl;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\
     \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/number/divisors.hpp\"\
     \r\n\r\nint main() {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto\
@@ -68,12 +72,13 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - math/number/divisors.hpp
   isVerificationFile: true
   path: test/AOJ/ITP1_3_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 21:04:05+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ITP1_3_D.test.cpp
 layout: document

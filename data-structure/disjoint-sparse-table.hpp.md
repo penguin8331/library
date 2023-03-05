@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -18,15 +21,15 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -45,24 +48,26 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\
-    \n\ntemplate <class SemiGroup>\nstruct DisjointSparseTable {\n    using Func =\
-    \ function<SemiGroup(SemiGroup, SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>>\
-    \ dat;\n    vector<int> height;\n\n    DisjointSparseTable(const Func& f) : F(f)\
-    \ {}\n    DisjointSparseTable(const Func& f, const vector<SemiGroup>& vec) : F(f)\
-    \ { init(vec); }\n    void init(const vector<SemiGroup>& vec) {\n        int n\
-    \ = (int)vec.size(), h = 1;\n        while ((1 << h) <= n) ++h;\n        dat.assign(h,\
-    \ vector<SemiGroup>(n));\n        height.assign((1 << h), 0);\n        for (int\
-    \ i = 2; i < (1 << h); i++) height[i] = height[i >> 1] + 1;\n        for (int\
-    \ i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i < h; ++i)\
-    \ {\n            int s = (1 << i);\n            for (int j = 0; j < n; j += (s\
-    \ << 1)) {\n                int t = min(j + s, n);\n                dat[i][t -\
-    \ 1] = vec[t - 1];\n                for (int k = t - 2; k >= j; --k) dat[i][k]\
-    \ = F(vec[k], dat[i][k + 1]);\n                if (n <= t) break;\n          \
-    \      dat[i][t] = vec[t];\n                for (int k = t + 1; k < min(t + s,\
-    \ n); ++k) dat[i][k] = F(dat[i][k - 1], vec[k]);\n            }\n        }\n \
-    \   }\n    SemiGroup get(int a, int b) {\n        if (a >= --b) return dat[0][a];\n\
-    \        return F(dat[height[a ^ b]][a], dat[height[a ^ b]][b]);\n    }\n};\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\n\n\
+    template <class SemiGroup>\nstruct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup,\
+    \ SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int>\
+    \ height;\n\n    DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
+    \ Func& f, const vector<SemiGroup>& vec) : F(f) { init(vec); }\n    void init(const\
+    \ vector<SemiGroup>& vec) {\n        int n = (int)vec.size(), h = 1;\n       \
+    \ while ((1 << h) <= n) ++h;\n        dat.assign(h, vector<SemiGroup>(n));\n \
+    \       height.assign((1 << h), 0);\n        for (int i = 2; i < (1 << h); i++)\
+    \ height[i] = height[i >> 1] + 1;\n        for (int i = 0; i < n; ++i) dat[0][i]\
+    \ = vec[i];\n        for (int i = 1; i < h; ++i) {\n            int s = (1 <<\
+    \ i);\n            for (int j = 0; j < n; j += (s << 1)) {\n                int\
+    \ t = min(j + s, n);\n                dat[i][t - 1] = vec[t - 1];\n          \
+    \      for (int k = t - 2; k >= j; --k) dat[i][k] = F(vec[k], dat[i][k + 1]);\n\
+    \                if (n <= t) break;\n                dat[i][t] = vec[t];\n   \
+    \             for (int k = t + 1; k < min(t + s, n); ++k) dat[i][k] = F(dat[i][k\
+    \ - 1], vec[k]);\n            }\n        }\n    }\n    SemiGroup get(int a, int\
+    \ b) {\n        if (a >= --b) return dat[0][a];\n        return F(dat[height[a\
+    \ ^ b]][a], dat[height[a ^ b]][b]);\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class SemiGroup>\n\
     struct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup, SemiGroup)>;\n\
     \    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int> height;\n\
@@ -87,11 +92,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum-2.test.cpp
   - test/yosupo/static-rmq-2.test.cpp

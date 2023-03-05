@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,19 +48,21 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/miller-rabin.hpp\"\
-    \n\ntemplate <class T>\nT pow_mod(T A, T N, T M) {\n    T res = 1 % M;\n    A\
-    \ %= M;\n    while (N) {\n        if (N & 1) res = (res * A) % M;\n        A =\
-    \ (A * A) % M;\n        N >>= 1;\n    }\n    return res;\n}\n\nbool is_prime(long\
-    \ long N) {\n    if (N <= 1) return false;\n    if (N == 2 || N == 3) return true;\n\
-    \    if (N % 2 == 0) return false;\n    vector<long long> A = {2, 325, 9375, 28178,\
-    \ 450775,\n                           9780504, 1795265022};\n    long long s =\
-    \ 0, d = N - 1;\n    while (d % 2 == 0) {\n        ++s;\n        d >>= 1;\n  \
-    \  }\n    for (auto a : A) {\n        if (a % N == 0) return true;\n        long\
-    \ long t, x = pow_mod<__int128_t>(a, d, N);\n        if (x != 1) {\n         \
-    \   for (t = 0; t < s; ++t) {\n                if (x == N - 1) break;\n      \
-    \          x = __int128_t(x) * x % N;\n            }\n            if (t == s)\
-    \ return false;\n        }\n    }\n    return true;\n}\n#line 4 \"math/number/pollard-rho.hpp\"\
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"math/number/miller-rabin.hpp\"\n\ntemplate <class\
+    \ T>\nT pow_mod(T A, T N, T M) {\n    T res = 1 % M;\n    A %= M;\n    while (N)\
+    \ {\n        if (N & 1) res = (res * A) % M;\n        A = (A * A) % M;\n     \
+    \   N >>= 1;\n    }\n    return res;\n}\n\nbool is_prime(long long N) {\n    if\
+    \ (N <= 1) return false;\n    if (N == 2 || N == 3) return true;\n    if (N %\
+    \ 2 == 0) return false;\n    vector<long long> A = {2, 325, 9375, 28178, 450775,\n\
+    \                           9780504, 1795265022};\n    long long s = 0, d = N\
+    \ - 1;\n    while (d % 2 == 0) {\n        ++s;\n        d >>= 1;\n    }\n    for\
+    \ (auto a : A) {\n        if (a % N == 0) return true;\n        long long t, x\
+    \ = pow_mod<__int128_t>(a, d, N);\n        if (x != 1) {\n            for (t =\
+    \ 0; t < s; ++t) {\n                if (x == N - 1) break;\n                x\
+    \ = __int128_t(x) * x % N;\n            }\n            if (t == s) return false;\n\
+    \        }\n    }\n    return true;\n}\n#line 4 \"math/number/pollard-rho.hpp\"\
     \n\nlong long pollard(long long N) {\n    if (N % 2 == 0) return 2;\n    if (is_prime(N))\
     \ return N;\n\n    auto f = [&](long long x) -> long long {\n        return (__int128_t(x)\
     \ * x + 1) % N;\n    };\n    long long step = 0;\n    while (true) {\n       \
@@ -95,11 +100,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - math/number/miller-rabin.hpp
   isVerificationFile: false
   path: math/number/pollard-rho.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/factorize.test.cpp

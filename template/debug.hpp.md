@@ -1,266 +1,539 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: algorithm/compress.hpp
+    title: "\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':heavy_check_mark:'
+    path: algorithm/compress2d.hpp
+    title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':warning:'
+    path: algorithm/doubling.hpp
+    title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
+  - icon: ':x:'
+    path: algorithm/section-sum.hpp
+    title: "\u7D2F\u7A4D\u548C"
+  - icon: ':heavy_check_mark:'
+    path: algorithm/section-sum2d.hpp
+    title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
+  - icon: ':warning:'
+    path: data-structure/binary-indexed-tree-2d-raq.hpp
+    title: "\u4E8C\u6B21\u5143 BIT (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\u53D6\
+      \u5F97\u306B\u4E21\u5BFE\u5FDC)"
+  - icon: ':heavy_check_mark:'
+    path: data-structure/binary-indexed-tree-2d.hpp
+    title: "\u4E8C\u6B21\u5143 BIT"
+  - icon: ':heavy_check_mark:'
+    path: data-structure/binary-indexed-tree-raq.hpp
+    title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
+      \u5BFE\u5FDC)"
+  - icon: ':heavy_check_mark:'
+    path: data-structure/binary-indexed-tree.hpp
+    title: BIT
+  - icon: ':warning:'
+    path: data-structure/binary-search-on-bit.hpp
+    title: "BIT \u4E0A\u4E8C\u5206\u63A2\u7D22 (k \u756A\u76EE\u306E\u8981\u7D20\u3092\
+      \u6C42\u3081\u308B)"
+  - icon: ':x:'
+    path: data-structure/disjoint-sparse-table.hpp
+    title: Disjoint Sparse Table
+  - icon: ':warning:'
+    path: data-structure/dynamic_modular-arithmetic.hpp
+    title: "\u52D5\u7684 modint"
+  - icon: ':warning:'
+    path: data-structure/implicit-treap.hpp
+    title: ImplicitTreap
+  - icon: ':warning:'
+    path: data-structure/lazy-segment-tree-arthmetic.hpp
+    title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+      \ Tree"
+  - icon: ':heavy_check_mark:'
+    path: data-structure/lazy-segment-tree.hpp
+    title: Lazy Segment Tree
+  - icon: ':warning:'
+    path: data-structure/pair-query-by-implicit-treap.hpp
+    title: PairQuery (by Implicit Treap)
+  - icon: ':warning:'
+    path: data-structure/priority-sum-by-implicit-treap.hpp
+    title: PrioritySum (by Implicit Treap)
+  - icon: ':x:'
+    path: data-structure/segment-tree.hpp
+    title: Segment Tree
+  - icon: ':warning:'
+    path: data-structure/static-modular-arithmetic.hpp
+    title: "\u9759\u7684 modint"
+  - icon: ':heavy_check_mark:'
+    path: data-structure/union-find.hpp
+    title: UnionFind
+  - icon: ':warning:'
+    path: dynamic-programming/longest-common-subsequence-restoration.hpp
+    title: "LCS (\u5FA9\u5143\u3042\u308A)"
+  - icon: ':heavy_check_mark:'
+    path: dynamic-programming/longest-common-subsequence.hpp
+    title: LCS
+  - icon: ':warning:'
+    path: dynamic-programming/longest-increasing-subsequence-restoration.hpp
+    title: "LIS (\u5FA9\u5143\u3042\u308A)"
+  - icon: ':heavy_check_mark:'
+    path: dynamic-programming/longest-increasing-subsequence.hpp
+    title: LIS
+  - icon: ':heavy_check_mark:'
+    path: dynamic-programming/traveling-salesman-problem.hpp
+    title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/area-polygon.hpp
+    title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/ccw.hpp
+    title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/convex-cut.hpp
+    title: "\u51F8\u591A\u89D2\u5F62\u306E\u5207\u65AD"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/convex-hull.hpp
+    title: "\u51F8\u5305"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/crosspoint.hpp
+    title: "\u4EA4\u70B9"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/distance.hpp
+    title: "\u8DDD\u96E2"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/geomeny-template.hpp
+    title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/is-contain-in-the-polygon.hpp
+    title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/is-convex.hpp
+    title: "\u51F8\u6027\u5224\u5B9A"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/is-inter.hpp
+    title: "\u4EA4\u5DEE\u5224\u5B9A"
+  - icon: ':heavy_check_mark:'
+    path: geomeny/projection.hpp
+    title: "\u5C04\u5F71"
+  - icon: ':heavy_check_mark:'
+    path: graph/bellman-ford.hpp
+    title: "Bellman\u2013Ford"
+  - icon: ':heavy_check_mark:'
+    path: graph/bfs.hpp
+    title: BFS
+  - icon: ':warning:'
+    path: graph/bfs2d.hpp
+    title: BFS-2D
+  - icon: ':warning:'
+    path: graph/dfs.hpp
+    title: DFS
+  - icon: ':warning:'
+    path: graph/dfs2d.hpp
+    title: DFS-2D
+  - icon: ':heavy_check_mark:'
+    path: graph/diameter-weighted.hpp
+    title: "\u6728\u306E\u76F4\u5F84"
+  - icon: ':x:'
+    path: graph/dijkstra-route.hpp
+    title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
+  - icon: ':heavy_check_mark:'
+    path: graph/dijkstra.hpp
+    title: Dijkstra
+  - icon: ':warning:'
+    path: graph/dijkstra2d.hpp
+    title: Dijkstra-2D
+  - icon: ':warning:'
+    path: graph/is_biparite.hpp
+    title: "\u4E8C\u90E8\u30B0\u30E9\u30D5\u5224\u5B9A"
+  - icon: ':heavy_check_mark:'
+    path: graph/kruskal.hpp
+    title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
+  - icon: ':heavy_check_mark:'
+    path: graph/lca.hpp
+    title: Lowest Common Ancestor
+  - icon: ':heavy_check_mark:'
+    path: graph/low-link.hpp
+    title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
+  - icon: ':heavy_check_mark:'
+    path: graph/prim.hpp
+    title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
+  - icon: ':question:'
+    path: graph/scc.hpp
+    title: Strongly Connected Component
+  - icon: ':heavy_check_mark:'
+    path: graph/topological-sort.hpp
+    title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
+  - icon: ':heavy_check_mark:'
+    path: graph/warshall-floyd.hpp
+    title: Warshall Floyd
+  - icon: ':warning:'
+    path: math/combinatorics/binomial-coefficient-naivety.hpp
+    title: "\u4E8C\u9805\u4FC2\u6570 (\u611A\u76F4\u8A08\u7B97)"
+  - icon: ':warning:'
+    path: math/combinatorics/binomial-coefficient.hpp
+    title: "\u4E8C\u9805\u4FC2\u6570 (\u30AA\u30FC\u30BD\u30C9\u30C3\u30AF\u30B9)"
+  - icon: ':heavy_check_mark:'
+    path: math/combinatorics/inversion-number.hpp
+    title: "\u8EE2\u5012\u6570"
+  - icon: ':x:'
+    path: math/combinatorics/modpow.hpp
+    title: modpow
+  - icon: ':heavy_check_mark:'
+    path: math/number/chinese-remainder-theorem.hpp
+    title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
+  - icon: ':heavy_check_mark:'
+    path: math/number/convert-base.hpp
+    title: "\u9032\u6570\u5909\u63DB"
+  - icon: ':x:'
+    path: math/number/divisors.hpp
+    title: "\u7D04\u6570\u5217\u6319"
+  - icon: ':warning:'
+    path: math/number/eratostenes.hpp
+    title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
+  - icon: ':heavy_check_mark:'
+    path: math/number/ext-gcd.hpp
+    title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
+  - icon: ':heavy_check_mark:'
+    path: math/number/isprime.hpp
+    title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
+  - icon: ':question:'
+    path: math/number/miller-rabin.hpp
+    title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
+  - icon: ':x:'
+    path: math/number/pollard-rho.hpp
+    title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\
+      \u30FC\u6CD5)"
+  - icon: ':warning:'
+    path: math/number/pow.hpp
+    title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
+  - icon: ':x:'
+    path: math/number/prime-factorization.hpp
+    title: "\u7D20\u56E0\u6570\u5206\u89E3"
+  - icon: ':warning:'
+    path: math/number/rand-int.hpp
+    title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
+  - icon: ':warning:'
+    path: others/date.hpp
+    title: "\u65E5\u4ED8,\u66DC\u65E5"
+  - icon: ':warning:'
+    path: string/rle.hpp
+    title: "\u9023\u9577\u5727\u7E2E"
+  - icon: ':x:'
+    path: string/rolling-hash.hpp
+    title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/0233.test.cpp
+    title: test/AOJ/0233.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/0560.test.cpp
+    title: test/AOJ/0560.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/1160.test.cpp
+    title: test/AOJ/1160.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2659.test.cpp
+    title: test/AOJ/2659.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2842.test.cpp
+    title: test/AOJ/2842.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_10_C.test.cpp
+    title: test/AOJ/ALDS1_10_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_11_C.test.cpp
+    title: test/AOJ/ALDS1_11_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_12_A.test.cpp
+    title: test/AOJ/ALDS1_12_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_1_C-2.test.cpp
+    title: test/AOJ/ALDS1_1_C-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_1_C.test.cpp
+    title: test/AOJ/ALDS1_1_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_5_D.test.cpp
+    title: test/AOJ/ALDS1_5_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_1_A.test.cpp
+    title: test/AOJ/CGL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_1_C.test.cpp
+    title: test/AOJ/CGL_1_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_2_B.test.cpp
+    title: test/AOJ/CGL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_2_C.test.cpp
+    title: test/AOJ/CGL_2_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_2_D.test.cpp
+    title: test/AOJ/CGL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_3_A.test.cpp
+    title: test/AOJ/CGL_3_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_3_B.test.cpp
+    title: test/AOJ/CGL_3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_3_C.test.cpp
+    title: test/AOJ/CGL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_4_A.test.cpp
+    title: test/AOJ/CGL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_4_C.test.cpp
+    title: test/AOJ/CGL_4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_7_D.test.cpp
+    title: test/AOJ/CGL_7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_7_E.test.cpp
+    title: test/AOJ/CGL_7_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DPL_1_d.test.cpp
+    title: test/AOJ/DPL_1_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DPL_2_A.test.cpp
+    title: test/AOJ/DPL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_1_A.test.cpp
+    title: test/AOJ/DSL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_F.test.cpp
+    title: test/AOJ/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_G.test.cpp
+    title: test/AOJ/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_4_A.test.cpp
+    title: test/AOJ/DSL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_1_A.test.cpp
+    title: test/AOJ/GRL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_1_B.test.cpp
+    title: test/AOJ/GRL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_1_C.test.cpp
+    title: test/AOJ/GRL_1_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_2_A.test.cpp
+    title: test/AOJ/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_3_A.test.cpp
+    title: test/AOJ/GRL_3_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_3_B.test.cpp
+    title: test/AOJ/GRL_3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_3_C.test.cpp
+    title: test/AOJ/GRL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_4_B.test.cpp
+    title: test/AOJ/GRL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_A.test.cpp
+    title: test/AOJ/GRL_5_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_C.test.cpp
+    title: test/AOJ/GRL_5_C.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/ITP1_3_D.test.cpp
+    title: test/AOJ/ITP1_3_D.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/NTL_1_A.test.cpp
+    title: test/AOJ/NTL_1_A.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/NTL_1_B.test.cpp
+    title: test/AOJ/NTL_1_B.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/factorize.test.cpp
+    title: test/yosupo/factorize.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/scc.test.cpp
+    title: test/yosupo/scc.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/shortes-path.test.cpp
+    title: test/yosupo/shortes-path.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/static-range-sum-2.test.cpp
+    title: test/yosupo/static-range-sum-2.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/static-range-sum.test.cpp
+    title: test/yosupo/static-range-sum.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/static-rmq-2.test.cpp
+    title: test/yosupo/static-rmq-2.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/static-rmq.test.cpp
+    title: test/yosupo/static-rmq.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/zalgorithm.test.cpp
+    title: test/yosupo/zalgorithm.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"template/debug.hpp\"\n#include <bits/stdc++.h>\n\n#ifndef\
-    \ DEBUG_PRINT_HPP\n#define DEBUG_PRINT_HPP\n#define debug(...) debug_print::multi_print(#__VA_ARGS__,\
-    \ __VA_ARGS__)\n#define line std::cerr << \"Line: \" << __LINE__ << std::endl;\n\
-    \n#define INCLUDED(n) ((defined _GLIBCXX_##n) || (defined _LIBCPP_##n))\n\n#if\
-    \ __cplusplus < 201703L\n#warning Please use C++17 (or later version).\n#endif\n\
-    #if !INCLUDED(ALGORITHM)\n#warning Please include <algorithm> before including\
-    \ debug_print.hpp.\n#endif\n#if !INCLUDED(CCTYPE)\n#warning Please include <cctype>\
-    \ before including debug_print.hpp.\n#endif\n#if !INCLUDED(IOSTREAM)\n#warning\
-    \ Please include <iostream> before including debug_print.hpp.\n#endif\n#if !INCLUDED(ITERATOR)\n\
-    #warning Please include <iterator> before including debug_print.hpp.\n#endif\n\
-    #if !INCLUDED(STRING_VIEW)\n#warning Please include <string_view> before including\
-    \ debug_print.hpp.\n#endif\n#if !INCLUDED(TYPE_TRAITS)\n#warning Please include\
-    \ <type_traits> before including debug_print.hpp.\n#endif\n\nnamespace debug_print\
-    \ {\nstd::ostream& os = std::cerr;\n\ntemplate <class Tp>\nauto has_cbegin(int)\
-    \ -> decltype(std::cbegin(std::declval<Tp>()), std::true_type{});\ntemplate <class\
-    \ Tp>\nauto has_cbegin(...) -> std::false_type;\ntemplate <class Tp>\nauto has_value_type(int)\
-    \ -> decltype(std::declval<typename Tp::value_type>(), std::true_type{});\ntemplate\
-    \ <class Tp>\nauto has_value_type(...) -> std::false_type;\n\ntemplate <class\
-    \ Tp>\n[[maybe_unused]] constexpr bool is_iterable_container_v = decltype(has_cbegin<Tp>(int{}))::value;\n\
-    template <class Tp>\n[[maybe_unused]] constexpr bool is_container_v = decltype(has_value_type<Tp>(int{}))::value\
-    \ || is_iterable_container_v<Tp>;\n\ntemplate <>\n[[maybe_unused]] constexpr bool\
-    \ is_iterable_container_v<std::string_view> = false;\ntemplate <>\n[[maybe_unused]]\
-    \ constexpr bool is_container_v<std::string_view> = false;\n#if INCLUDED(STRING)\n\
-    template <>\n[[maybe_unused]] constexpr bool is_iterable_container_v<std::string>\
-    \ = false;\ntemplate <>\n[[maybe_unused]] constexpr bool is_container_v<std::string>\
-    \ = false;\n#endif\n\ntemplate <class Tp, class... Ts>\nstruct first_element {\n\
-    \    using type = Tp;\n};\ntemplate <class... Ts>\nusing first_t = typename first_element<Ts...>::type;\n\
-    \ntemplate <class Tp, std::enable_if_t<!decltype(has_value_type<Tp>(int{}))::value,\
-    \ std::nullptr_t> = nullptr>\nauto check_elem(int) -> decltype(*std::cbegin(std::declval<Tp>()));\n\
-    template <class Tp, std::enable_if_t<decltype(has_value_type<Tp>(int{}))::value,\
-    \ std::nullptr_t> = nullptr>\nauto check_elem(int) -> typename Tp::value_type;\n\
-    template <class Tp>\nauto check_elem(...) -> void;\n\ntemplate <class Tp>\nusing\
-    \ elem_t = decltype(check_elem<Tp>(int{}));\n\ntemplate <class Tp>\n[[maybe_unused]]\
-    \ constexpr bool is_multidim_container_v = is_container_v<Tp> && is_container_v<elem_t<Tp>>;\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>> out(const Tp&);\n\
-    void out(const char&);\nvoid out(const char*);\nvoid out(const std::string_view&);\n\
-    \n#if INCLUDED(STRING)\nvoid out(const std::string&);\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128&);\nvoid out(const unsigned __int128&);\n#endif\n\ntemplate\
-    \ <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1, Tp2>&);\n\n#if INCLUDED(TUPLE)\n\
-    template <class... Ts>\nvoid out(const std::tuple<Ts...>&);\n#endif\n\n#if INCLUDED(STACK)\n\
-    template <class... Ts>\nvoid out(std::stack<Ts...>);\n#endif\n\n#if INCLUDED(QUEUE)\n\
-    template <class... Ts>\nvoid out(std::queue<Ts...>);\ntemplate <class... Ts>\n\
-    void out(std::priority_queue<Ts...>);\n#endif\n\ntemplate <class C>\nstd::enable_if_t<is_iterable_container_v<C>>\
-    \ out(const C&);\n\ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>>\
-    \ out(const Tp& arg) {\n    os << arg;\n}\n\nvoid out(const char& arg) {\n   \
-    \ os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n    os << '\\\
-    \"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg) {\n    os <<\
-    \ '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const std::string&\
-    \ arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128& arg) {\n    int sign = (arg < 0) ? (-1) : 1;\n    if\
-    \ (sign == -1)\n        os << '-';\n    __int128 base = sign;\n    while (sign\
-    \ * arg >= sign * base * 10)\n        base *= 10;\n    while (base) {\n      \
-    \  os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n  \
-    \  }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128 base\
-    \ = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base) {\n\
-    \        os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n\
-    \    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
-    \ Tp2>& arg) {\n    os << '(';\n    out(arg.first);\n    os << \", \";\n    out(arg.second);\n\
-    \    os << ')';\n}\n\n#if INCLUDED(TUPLE)\ntemplate <class T, std::size_t... Is>\n\
-    void print_tuple(const T& arg, std::index_sequence<Is...>) {\n    static_cast<void>(((os\
-    \ << (Is == 0 ? \"\" : \", \"), out(std::get<Is>(arg))), ...));\n}\n\ntemplate\
-    \ <class... Ts>\nvoid out(const std::tuple<Ts...>& arg) {\n    os << '(';\n  \
-    \  print_tuple(arg, std::make_index_sequence<sizeof...(Ts)>());\n    os << ')';\n\
-    }\n#endif\n\n#if INCLUDED(STACK)\ntemplate <class... Ts>\nvoid out(std::stack<Ts...>\
-    \ arg) {\n    if (arg.empty()) {\n        os << \"<empty stack>\";\n        return;\n\
-    \    }\n    os << \"[ \";\n    while (!arg.empty()) {\n        out(arg.top());\n\
-    \        os << ' ';\n        arg.pop();\n    }\n    os << ']';\n}\n#endif\n\n\
-    #if INCLUDED(QUEUE)\ntemplate <class... Ts>\nvoid out(std::queue<Ts...> arg) {\n\
-    \    if (arg.empty()) {\n        os << \"<empty queue>\";\n        return;\n \
-    \   }\n    os << \"[ \";\n    while (!arg.empty()) {\n        out(arg.front());\n\
-    \        os << ' ';\n        arg.pop();\n    }\n    os << ']';\n}\ntemplate <class...\
-    \ Ts>\nvoid out(std::priority_queue<Ts...> arg) {\n    if (arg.empty()) {\n  \
-    \      os << \"<empty priority_queue>\";\n        return;\n    }\n    os << \"\
-    [ \";\n    while (!arg.empty()) {\n        out(arg.top());\n        os << ' ';\n\
-    \        arg.pop();\n    }\n    os << ']';\n}\n#endif\n\ntemplate <class Container>\n\
-    std::enable_if_t<is_iterable_container_v<Container>> out(const Container& arg)\
-    \ {\n    if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n       \
-    \ os << \"<empty container>\";\n        return;\n    }\n    os << \"[ \";\n  \
-    \  std::for_each(std::cbegin(arg), std::cend(arg), [](const elem_t<Container>&\
-    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n}\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\nprint(std::string_view\
-    \ name, const Tp& arg) {\n    os << name << \": \";\n    out(arg);\n    if constexpr\
-    \ (is_container_v<Tp>)\n        os << '\\n';\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
-    print(std::string_view name, const Tp& arg) {\n    os << name << \": \";\n   \
-    \ if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n        os << \"\
-    <empty multidimensional container>\\n\";\n        return;\n    }\n    std::for_each(std::cbegin(arg),\
-    \ std::cend(arg),\n                  [&name, is_first_elem = true](const elem_t<Tp>&\
-    \ elem) mutable {\n                      if (is_first_elem)\n                \
-    \          is_first_elem = false;\n                      else\n              \
-    \            for (std::size_t i = 0; i < name.length() + 2; i++)\n           \
-    \                   os << ' ';\n                      out(elem);\n           \
-    \           os << '\\n';\n                  });\n}\n\ntemplate <class Tp, class...\
-    \ Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const Ts&... args)\
-    \ {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n \
-    \           std::distance(\n                names.crbegin(),\n               \
-    \ std::find_if_not(names.crbegin(), names.crend(),\n                         \
-    \        [](const char c) { return std::isspace(c); })));\n        print(names,\
-    \ arg);\n        if constexpr (!is_container_v<Tp>)\n            os << '\\n';\n\
-    \    } else {\n        std::size_t comma_pos = 0;\n\n        for (std::size_t\
-    \ i = 0, paren_depth = 0, inside_quote = false; i < names.length(); i++) {\n \
-    \           if (!inside_quote && paren_depth == 0 && i > 0 && names[i - 1] !=\
-    \ '\\'' && names[i] == ',') {\n                comma_pos = i;\n              \
-    \  break;\n            }\n            if (names[i] == '\\\"' || names[i] == '\\\
-    '') {\n                if (i > 0 && names[i - 1] == '\\\\') continue;\n      \
-    \          inside_quote ^= true;\n            }\n            if (!inside_quote\
-    \ && names[i] == '(' && (i == 0 || names[i - 1] != '\\''))\n                paren_depth++;\n\
-    \            if (!inside_quote && names[i] == ')' && (i == 0 || names[i - 1] !=\
-    \ '\\''))\n                paren_depth--;\n        }\n\n        const std::size_t\
-    \ first_varname_length = comma_pos - std::distance(\n                        \
-    \                                         names.crend() - comma_pos,\n       \
-    \                                                          std::find_if_not(\n\
-    \                                                                     names.crend()\
-    \ - comma_pos, names.crend(),\n                                              \
-    \                       [](const char c) { return std::isspace(c); }));\n    \
-    \    print(names.substr(0, first_varname_length), arg);\n\n        if constexpr\
-    \ (!is_container_v<Tp>) {\n            if constexpr (is_container_v<first_t<Ts...>>)\n\
-    \                os << '\\n';\n            else\n                os << \" | \"\
-    ;\n        }\n\n        const std::size_t next_varname_begins_at = std::distance(\n\
-    \            names.cbegin(),\n            std::find_if_not(\n                names.cbegin()\
-    \ + comma_pos + 1, names.cend(),\n                [](const char c) { return std::isspace(c);\
-    \ }));\n        names.remove_prefix(next_varname_begins_at);\n\n        multi_print(names,\
-    \ args...);\n    }\n}\n}  // namespace debug_print\n\n#undef INCLUDED\n\n#endif\
-    \  // DEBUG_PRINT_HPP\n"
-  code: "#include <bits/stdc++.h>\n\n#ifndef DEBUG_PRINT_HPP\n#define DEBUG_PRINT_HPP\n\
-    #define debug(...) debug_print::multi_print(#__VA_ARGS__, __VA_ARGS__)\n#define\
-    \ line std::cerr << \"Line: \" << __LINE__ << std::endl;\n\n#define INCLUDED(n)\
-    \ ((defined _GLIBCXX_##n) || (defined _LIBCPP_##n))\n\n#if __cplusplus < 201703L\n\
-    #warning Please use C++17 (or later version).\n#endif\n#if !INCLUDED(ALGORITHM)\n\
-    #warning Please include <algorithm> before including debug_print.hpp.\n#endif\n\
-    #if !INCLUDED(CCTYPE)\n#warning Please include <cctype> before including debug_print.hpp.\n\
-    #endif\n#if !INCLUDED(IOSTREAM)\n#warning Please include <iostream> before including\
-    \ debug_print.hpp.\n#endif\n#if !INCLUDED(ITERATOR)\n#warning Please include <iterator>\
-    \ before including debug_print.hpp.\n#endif\n#if !INCLUDED(STRING_VIEW)\n#warning\
-    \ Please include <string_view> before including debug_print.hpp.\n#endif\n#if\
-    \ !INCLUDED(TYPE_TRAITS)\n#warning Please include <type_traits> before including\
-    \ debug_print.hpp.\n#endif\n\nnamespace debug_print {\nstd::ostream& os = std::cerr;\n\
-    \ntemplate <class Tp>\nauto has_cbegin(int) -> decltype(std::cbegin(std::declval<Tp>()),\
-    \ std::true_type{});\ntemplate <class Tp>\nauto has_cbegin(...) -> std::false_type;\n\
-    template <class Tp>\nauto has_value_type(int) -> decltype(std::declval<typename\
-    \ Tp::value_type>(), std::true_type{});\ntemplate <class Tp>\nauto has_value_type(...)\
-    \ -> std::false_type;\n\ntemplate <class Tp>\n[[maybe_unused]] constexpr bool\
-    \ is_iterable_container_v = decltype(has_cbegin<Tp>(int{}))::value;\ntemplate\
-    \ <class Tp>\n[[maybe_unused]] constexpr bool is_container_v = decltype(has_value_type<Tp>(int{}))::value\
-    \ || is_iterable_container_v<Tp>;\n\ntemplate <>\n[[maybe_unused]] constexpr bool\
-    \ is_iterable_container_v<std::string_view> = false;\ntemplate <>\n[[maybe_unused]]\
-    \ constexpr bool is_container_v<std::string_view> = false;\n#if INCLUDED(STRING)\n\
-    template <>\n[[maybe_unused]] constexpr bool is_iterable_container_v<std::string>\
-    \ = false;\ntemplate <>\n[[maybe_unused]] constexpr bool is_container_v<std::string>\
-    \ = false;\n#endif\n\ntemplate <class Tp, class... Ts>\nstruct first_element {\n\
-    \    using type = Tp;\n};\ntemplate <class... Ts>\nusing first_t = typename first_element<Ts...>::type;\n\
-    \ntemplate <class Tp, std::enable_if_t<!decltype(has_value_type<Tp>(int{}))::value,\
-    \ std::nullptr_t> = nullptr>\nauto check_elem(int) -> decltype(*std::cbegin(std::declval<Tp>()));\n\
-    template <class Tp, std::enable_if_t<decltype(has_value_type<Tp>(int{}))::value,\
-    \ std::nullptr_t> = nullptr>\nauto check_elem(int) -> typename Tp::value_type;\n\
-    template <class Tp>\nauto check_elem(...) -> void;\n\ntemplate <class Tp>\nusing\
-    \ elem_t = decltype(check_elem<Tp>(int{}));\n\ntemplate <class Tp>\n[[maybe_unused]]\
-    \ constexpr bool is_multidim_container_v = is_container_v<Tp> && is_container_v<elem_t<Tp>>;\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>> out(const Tp&);\n\
-    void out(const char&);\nvoid out(const char*);\nvoid out(const std::string_view&);\n\
-    \n#if INCLUDED(STRING)\nvoid out(const std::string&);\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128&);\nvoid out(const unsigned __int128&);\n#endif\n\ntemplate\
-    \ <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1, Tp2>&);\n\n#if INCLUDED(TUPLE)\n\
-    template <class... Ts>\nvoid out(const std::tuple<Ts...>&);\n#endif\n\n#if INCLUDED(STACK)\n\
-    template <class... Ts>\nvoid out(std::stack<Ts...>);\n#endif\n\n#if INCLUDED(QUEUE)\n\
-    template <class... Ts>\nvoid out(std::queue<Ts...>);\ntemplate <class... Ts>\n\
-    void out(std::priority_queue<Ts...>);\n#endif\n\ntemplate <class C>\nstd::enable_if_t<is_iterable_container_v<C>>\
-    \ out(const C&);\n\ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>>\
-    \ out(const Tp& arg) {\n    os << arg;\n}\n\nvoid out(const char& arg) {\n   \
-    \ os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n    os << '\\\
-    \"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg) {\n    os <<\
-    \ '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const std::string&\
-    \ arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128& arg) {\n    int sign = (arg < 0) ? (-1) : 1;\n    if\
-    \ (sign == -1)\n        os << '-';\n    __int128 base = sign;\n    while (sign\
-    \ * arg >= sign * base * 10)\n        base *= 10;\n    while (base) {\n      \
-    \  os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n  \
-    \  }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128 base\
-    \ = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base) {\n\
-    \        os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n\
-    \    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
-    \ Tp2>& arg) {\n    os << '(';\n    out(arg.first);\n    os << \", \";\n    out(arg.second);\n\
-    \    os << ')';\n}\n\n#if INCLUDED(TUPLE)\ntemplate <class T, std::size_t... Is>\n\
-    void print_tuple(const T& arg, std::index_sequence<Is...>) {\n    static_cast<void>(((os\
-    \ << (Is == 0 ? \"\" : \", \"), out(std::get<Is>(arg))), ...));\n}\n\ntemplate\
-    \ <class... Ts>\nvoid out(const std::tuple<Ts...>& arg) {\n    os << '(';\n  \
-    \  print_tuple(arg, std::make_index_sequence<sizeof...(Ts)>());\n    os << ')';\n\
-    }\n#endif\n\n#if INCLUDED(STACK)\ntemplate <class... Ts>\nvoid out(std::stack<Ts...>\
-    \ arg) {\n    if (arg.empty()) {\n        os << \"<empty stack>\";\n        return;\n\
-    \    }\n    os << \"[ \";\n    while (!arg.empty()) {\n        out(arg.top());\n\
-    \        os << ' ';\n        arg.pop();\n    }\n    os << ']';\n}\n#endif\n\n\
-    #if INCLUDED(QUEUE)\ntemplate <class... Ts>\nvoid out(std::queue<Ts...> arg) {\n\
-    \    if (arg.empty()) {\n        os << \"<empty queue>\";\n        return;\n \
-    \   }\n    os << \"[ \";\n    while (!arg.empty()) {\n        out(arg.front());\n\
-    \        os << ' ';\n        arg.pop();\n    }\n    os << ']';\n}\ntemplate <class...\
-    \ Ts>\nvoid out(std::priority_queue<Ts...> arg) {\n    if (arg.empty()) {\n  \
-    \      os << \"<empty priority_queue>\";\n        return;\n    }\n    os << \"\
-    [ \";\n    while (!arg.empty()) {\n        out(arg.top());\n        os << ' ';\n\
-    \        arg.pop();\n    }\n    os << ']';\n}\n#endif\n\ntemplate <class Container>\n\
-    std::enable_if_t<is_iterable_container_v<Container>> out(const Container& arg)\
-    \ {\n    if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n       \
-    \ os << \"<empty container>\";\n        return;\n    }\n    os << \"[ \";\n  \
-    \  std::for_each(std::cbegin(arg), std::cend(arg), [](const elem_t<Container>&\
-    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n}\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\nprint(std::string_view\
-    \ name, const Tp& arg) {\n    os << name << \": \";\n    out(arg);\n    if constexpr\
-    \ (is_container_v<Tp>)\n        os << '\\n';\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
-    print(std::string_view name, const Tp& arg) {\n    os << name << \": \";\n   \
-    \ if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n        os << \"\
-    <empty multidimensional container>\\n\";\n        return;\n    }\n    std::for_each(std::cbegin(arg),\
-    \ std::cend(arg),\n                  [&name, is_first_elem = true](const elem_t<Tp>&\
-    \ elem) mutable {\n                      if (is_first_elem)\n                \
-    \          is_first_elem = false;\n                      else\n              \
-    \            for (std::size_t i = 0; i < name.length() + 2; i++)\n           \
-    \                   os << ' ';\n                      out(elem);\n           \
-    \           os << '\\n';\n                  });\n}\n\ntemplate <class Tp, class...\
-    \ Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const Ts&... args)\
-    \ {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n \
-    \           std::distance(\n                names.crbegin(),\n               \
-    \ std::find_if_not(names.crbegin(), names.crend(),\n                         \
-    \        [](const char c) { return std::isspace(c); })));\n        print(names,\
-    \ arg);\n        if constexpr (!is_container_v<Tp>)\n            os << '\\n';\n\
-    \    } else {\n        std::size_t comma_pos = 0;\n\n        for (std::size_t\
-    \ i = 0, paren_depth = 0, inside_quote = false; i < names.length(); i++) {\n \
-    \           if (!inside_quote && paren_depth == 0 && i > 0 && names[i - 1] !=\
-    \ '\\'' && names[i] == ',') {\n                comma_pos = i;\n              \
-    \  break;\n            }\n            if (names[i] == '\\\"' || names[i] == '\\\
-    '') {\n                if (i > 0 && names[i - 1] == '\\\\') continue;\n      \
-    \          inside_quote ^= true;\n            }\n            if (!inside_quote\
-    \ && names[i] == '(' && (i == 0 || names[i - 1] != '\\''))\n                paren_depth++;\n\
-    \            if (!inside_quote && names[i] == ')' && (i == 0 || names[i - 1] !=\
-    \ '\\''))\n                paren_depth--;\n        }\n\n        const std::size_t\
-    \ first_varname_length = comma_pos - std::distance(\n                        \
-    \                                         names.crend() - comma_pos,\n       \
-    \                                                          std::find_if_not(\n\
-    \                                                                     names.crend()\
-    \ - comma_pos, names.crend(),\n                                              \
-    \                       [](const char c) { return std::isspace(c); }));\n    \
-    \    print(names.substr(0, first_varname_length), arg);\n\n        if constexpr\
-    \ (!is_container_v<Tp>) {\n            if constexpr (is_container_v<first_t<Ts...>>)\n\
-    \                os << '\\n';\n            else\n                os << \" | \"\
-    ;\n        }\n\n        const std::size_t next_varname_begins_at = std::distance(\n\
-    \            names.cbegin(),\n            std::find_if_not(\n                names.cbegin()\
-    \ + comma_pos + 1, names.cend(),\n                [](const char c) { return std::isspace(c);\
-    \ }));\n        names.remove_prefix(next_varname_begins_at);\n\n        multi_print(names,\
-    \ args...);\n    }\n}\n}  // namespace debug_print\n\n#undef INCLUDED\n\n#endif\
-    \  // DEBUG_PRINT_HPP"
+  bundledCode: '#line 1 "template/debug.hpp"
+
+    #ifdef LOCAL
+
+    #include <algo/debug.hpp>
+
+    #else
+
+    #define debug(...)
+
+    #define line
+
+    #endif
+
+    '
+  code: '#ifdef LOCAL
+
+    #include <algo/debug.hpp>
+
+    #else
+
+    #define debug(...)
+
+    #define line
+
+    #endif'
   dependsOn: []
   isVerificationFile: false
   path: template/debug.hpp
-  requiredBy: []
-  timestamp: '2023-03-03 10:00:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - math/number/pow.hpp
+  - math/number/ext-gcd.hpp
+  - math/number/prime-factorization.hpp
+  - math/number/eratostenes.hpp
+  - math/number/divisors.hpp
+  - math/number/pollard-rho.hpp
+  - math/number/miller-rabin.hpp
+  - math/number/rand-int.hpp
+  - math/number/chinese-remainder-theorem.hpp
+  - math/number/isprime.hpp
+  - math/number/convert-base.hpp
+  - math/combinatorics/inversion-number.hpp
+  - math/combinatorics/binomial-coefficient.hpp
+  - math/combinatorics/modpow.hpp
+  - math/combinatorics/binomial-coefficient-naivety.hpp
+  - dynamic-programming/traveling-salesman-problem.hpp
+  - dynamic-programming/longest-common-subsequence.hpp
+  - dynamic-programming/longest-increasing-subsequence-restoration.hpp
+  - dynamic-programming/longest-common-subsequence-restoration.hpp
+  - dynamic-programming/longest-increasing-subsequence.hpp
+  - graph/lca.hpp
+  - graph/bfs.hpp
+  - graph/dijkstra.hpp
+  - graph/dijkstra2d.hpp
+  - graph/diameter-weighted.hpp
+  - graph/bellman-ford.hpp
+  - graph/warshall-floyd.hpp
+  - graph/low-link.hpp
+  - graph/dijkstra-route.hpp
+  - graph/dfs2d.hpp
+  - graph/bfs2d.hpp
+  - graph/scc.hpp
+  - graph/prim.hpp
+  - graph/is_biparite.hpp
+  - graph/topological-sort.hpp
+  - graph/dfs.hpp
+  - graph/kruskal.hpp
+  - data-structure/disjoint-sparse-table.hpp
+  - data-structure/implicit-treap.hpp
+  - data-structure/binary-indexed-tree.hpp
+  - data-structure/segment-tree.hpp
+  - data-structure/binary-indexed-tree-raq.hpp
+  - data-structure/binary-indexed-tree-2d.hpp
+  - data-structure/dynamic_modular-arithmetic.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/lazy-segment-tree-arthmetic.hpp
+  - data-structure/static-modular-arithmetic.hpp
+  - data-structure/lazy-segment-tree.hpp
+  - data-structure/union-find.hpp
+  - data-structure/binary-search-on-bit.hpp
+  - data-structure/binary-indexed-tree-2d-raq.hpp
+  - template/template.hpp
+  - others/date.hpp
+  - algorithm/section-sum2d.hpp
+  - algorithm/section-sum.hpp
+  - algorithm/compress2d.hpp
+  - algorithm/doubling.hpp
+  - algorithm/compress.hpp
+  - geomeny/convex-cut.hpp
+  - geomeny/projection.hpp
+  - geomeny/is-contain-in-the-polygon.hpp
+  - geomeny/area-polygon.hpp
+  - geomeny/distance.hpp
+  - geomeny/is-inter.hpp
+  - geomeny/ccw.hpp
+  - geomeny/is-convex.hpp
+  - geomeny/convex-hull.hpp
+  - geomeny/geomeny-template.hpp
+  - geomeny/crosspoint.hpp
+  - string/rle.hpp
+  - string/rolling-hash.hpp
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yosupo/static-range-sum-2.test.cpp
+  - test/yosupo/static-range-sum.test.cpp
+  - test/yosupo/static-rmq-2.test.cpp
+  - test/yosupo/zalgorithm.test.cpp
+  - test/yosupo/static-rmq.test.cpp
+  - test/yosupo/factorize.test.cpp
+  - test/yosupo/scc.test.cpp
+  - test/yosupo/shortes-path.test.cpp
+  - test/AOJ/GRL_3_A.test.cpp
+  - test/AOJ/GRL_4_B.test.cpp
+  - test/AOJ/NTL_1_B.test.cpp
+  - test/AOJ/CGL_3_C.test.cpp
+  - test/AOJ/CGL_2_C.test.cpp
+  - test/AOJ/DPL_1_d.test.cpp
+  - test/AOJ/ALDS1_11_C.test.cpp
+  - test/AOJ/ALDS1_5_D.test.cpp
+  - test/AOJ/GRL_3_C.test.cpp
+  - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/GRL_5_C.test.cpp
+  - test/AOJ/ALDS1_10_C.test.cpp
+  - test/AOJ/DSL_1_A.test.cpp
+  - test/AOJ/ALDS1_1_C-2.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
+  - test/AOJ/2659.test.cpp
+  - test/AOJ/2842.test.cpp
+  - test/AOJ/0233.test.cpp
+  - test/AOJ/0560.test.cpp
+  - test/AOJ/CGL_7_E.test.cpp
+  - test/AOJ/CGL_1_C.test.cpp
+  - test/AOJ/GRL_5_A.test.cpp
+  - test/AOJ/CGL_7_D.test.cpp
+  - test/AOJ/GRL_1_B.test.cpp
+  - test/AOJ/ALDS1_1_C.test.cpp
+  - test/AOJ/GRL_1_A.test.cpp
+  - test/AOJ/NTL_1_A.test.cpp
+  - test/AOJ/ALDS1_12_A.test.cpp
+  - test/AOJ/CGL_3_B.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/GRL_1_C.test.cpp
+  - test/AOJ/ITP1_3_D.test.cpp
+  - test/AOJ/DSL_4_A.test.cpp
+  - test/AOJ/GRL_3_B.test.cpp
+  - test/AOJ/1160.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
+  - test/AOJ/CGL_4_C.test.cpp
+  - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/DPL_2_A.test.cpp
 documentation_of: template/debug.hpp
 layout: document
 redirect_from:

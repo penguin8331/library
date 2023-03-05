@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -51,21 +54,22 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/union-find.hpp\"\
-    \n\nstruct UnionFind {\n    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int\
-    \ n) : par(n, -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int\
-    \ x) {\n        if (par[x] < 0)\n            return x;\n        else\n       \
-    \     return par[x] = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n\
-    \        return root(x) == root(y);\n    }\n\n    bool unite(int x, int y) {\n\
-    \        x = root(x);\n        y = root(y);\n        if (x == y) return false;\n\
-    \        if (par[x] > par[y]) swap(x, y);\n        par[x] += par[y];\n       \
-    \ par[y] = x;\n        return true;\n    }\n\n    int size(int x) {\n        return\
-    \ -par[root(x)];\n    }\n\n    vector<vector<int>> groups() {\n        map<int,\
-    \ vector<int>> root_buf;\n        for (int i = 0; i < (int)par.size(); ++i) {\n\
-    \            int r = root(i);\n            root_buf[r].push_back(i);\n       \
-    \ }\n        vector<vector<int>> res;\n        for (const auto& i : root_buf)\
-    \ {\n            res.push_back(i.second);\n        }\n        return res;\n  \
-    \  }\n};\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"data-structure/union-find.hpp\"\n\nstruct UnionFind\
+    \ {\n    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n,\
+    \ -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n\
+    \        if (par[x] < 0)\n            return x;\n        else\n            return\
+    \ par[x] = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return\
+    \ root(x) == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
+    \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
+    \ par[y]) swap(x, y);\n        par[x] += par[y];\n        par[y] = x;\n      \
+    \  return true;\n    }\n\n    int size(int x) {\n        return -par[root(x)];\n\
+    \    }\n\n    vector<vector<int>> groups() {\n        map<int, vector<int>> root_buf;\n\
+    \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
+    \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
+    \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
+    \        }\n        return res;\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct UnionFind {\n\
     \    vector<int> par;\n\n    UnionFind() {}\n    UnionFind(int n) : par(n, -1)\
     \ {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n \
@@ -86,11 +90,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: data-structure/union-find.hpp
   requiredBy:
   - graph/kruskal.hpp
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_1_A.test.cpp

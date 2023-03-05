@@ -1,12 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/combinatorics/modpow.hpp
     title: modpow
   - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
+  - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
   - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
@@ -21,9 +24,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
@@ -45,13 +48,14 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"math/combinatorics/modpow.hpp\"\n\r\nlong long\
-    \ modpow(long long a, long long n, long long mod) {\r\n    long long res = 1;\r\
-    \n    while (n > 0) {\r\n        if (n & 1) res = res * a % mod;\r\n        a\
-    \ = a * a % mod;\r\n        n >>= 1;\r\n    }\r\n    return res;\r\n}\n#line 4\
-    \ \"test/AOJ/NTL_1_B.test.cpp\"\n\r\nint main() {\r\n    int m, n;\r\n    cin\
-    \ >> m >> n;\r\n    cout << modpow(m, n, MOD)<<endl;\r\n}\n"
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/combinatorics/modpow.hpp\"\
+    \n\r\nlong long modpow(long long a, long long n, long long mod) {\r\n    long\
+    \ long res = 1;\r\n    while (n > 0) {\r\n        if (n & 1) res = res * a % mod;\r\
+    \n        a = a * a % mod;\r\n        n >>= 1;\r\n    }\r\n    return res;\r\n\
+    }\n#line 4 \"test/AOJ/NTL_1_B.test.cpp\"\n\r\nint main() {\r\n    int m, n;\r\n\
+    \    cin >> m >> n;\r\n    cout << modpow(m, n, MOD)<<endl;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
     \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/combinatorics/modpow.hpp\"\
     \r\n\r\nint main() {\r\n    int m, n;\r\n    cin >> m >> n;\r\n    cout << modpow(m,\
@@ -62,12 +66,13 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - math/combinatorics/modpow.hpp
   isVerificationFile: true
   path: test/AOJ/NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_B.test.cpp
 layout: document

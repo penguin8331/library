@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,14 +48,15 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"math/number/isprime.hpp\"\n\r\nbool is_prime(long\
-    \ long n) {\r\n    if (n <= 1) return false;\r\n    for (long long p = 2; p *\
-    \ p <= n; ++p) {\r\n        if (n % p == 0) return false;\r\n    }\r\n    return\
-    \ true;\r\n}\n#line 4 \"test/AOJ/ALDS1_1_C.test.cpp\"\n\r\nint main() {\r\n  \
-    \  int N;\r\n    cin >> N;\r\n    int ans = 0;\r\n    for (int i = 0; i < N; i++)\
-    \ {\r\n        int a;\r\n        cin >> a;\r\n        ans += is_prime(a);\r\n\
-    \    }\r\n    cout << ans << endl;\r\n}\n"
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/isprime.hpp\"\
+    \n\r\nbool is_prime(long long n) {\r\n    if (n <= 1) return false;\r\n    for\
+    \ (long long p = 2; p * p <= n; ++p) {\r\n        if (n % p == 0) return false;\r\
+    \n    }\r\n    return true;\r\n}\n#line 4 \"test/AOJ/ALDS1_1_C.test.cpp\"\n\r\n\
+    int main() {\r\n    int N;\r\n    cin >> N;\r\n    int ans = 0;\r\n    for (int\
+    \ i = 0; i < N; i++) {\r\n        int a;\r\n        cin >> a;\r\n        ans +=\
+    \ is_prime(a);\r\n    }\r\n    cout << ans << endl;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/number/isprime.hpp\"\
     \r\n\r\nint main() {\r\n    int N;\r\n    cin >> N;\r\n    int ans = 0;\r\n  \
@@ -64,11 +68,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - math/number/isprime.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

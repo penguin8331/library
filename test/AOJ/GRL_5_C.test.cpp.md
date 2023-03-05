@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,35 +48,37 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"graph/lca.hpp\"\n\nstruct LCA {\n    vector<vector<int>>\
-    \ parent;  // parent[d][v] := 2^d-th parent of v\n    vector<int> depth;\n   \
-    \ LCA() {}\n    LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }\n\
-    \    void init(const vector<vector<int>>& G, int r = 0) {\n        int V = (int)G.size();\n\
-    \        int h = 1;\n        while ((1 << h) < V) ++h;\n        parent.assign(h,\
-    \ vector<int>(V, -1));\n        depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n\
-    \        for (int i = 0; i + 1 < (int)parent.size(); ++i)\n            for (int\
-    \ v = 0; v < V; ++v)\n                if (parent[i][v] != -1)\n              \
-    \      parent[i + 1][v] = parent[i][parent[i][v]];\n    }\n    void dfs(const\
-    \ vector<vector<int>>& G, int v, int p, int d) {\n        parent[0][v] = p;\n\
-    \        depth[v] = d;\n        for (auto e : G[v])\n            if (e != p) dfs(G,\
-    \ e, v, d + 1);\n    }\n    int after(int u, int k) {\n        for (int i = 0;\
-    \ i < (int)parent.size(); i++) {\n            if (k & (1 << i)) {\n          \
-    \      u = parent[i][u];\n            }\n        }\n        return u;\n    }\n\
-    \    int get(int u, int v) {\n        if (depth[u] > depth[v]) swap(u, v);\n \
-    \       v = after(v, depth[v] - depth[u]);\n        if (u == v) return u;\n  \
-    \      for (int i = (int)parent.size() - 1; i >= 0; --i) {\n            if (parent[i][u]\
-    \ != parent[i][v]) {\n                u = parent[i][u];\n                v = parent[i][v];\n\
-    \            }\n        }\n        return parent[0][u];\n    }\n    int dist(int\
-    \ u, int v) {\n        return depth[u] + depth[v] - 2 * depth[get(u, v)];\n  \
-    \  }\n    bool is_on_path(int u, int v, int a) {\n        return dist(u, a) +\
-    \ dist(a, v) == dist(u, v);\n    }\n};\n#line 4 \"test/AOJ/GRL_5_C.test.cpp\"\n\
-    \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
-    \    for (int i = 0; i < N; i++) {\n        int k;\n        cin >> k;\n      \
-    \  for (int j = 0; j < k; j++) {\n            int a;\n            cin >> a;\n\
-    \            G[i].push_back(a);\n        }\n    }\n    LCA lca(G, 0);\n    int\
-    \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        int u, v;\n  \
-    \      cin >> u >> v;\n        cout << lca.get(u, v) << endl;\n    }\n}\n"
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/lca.hpp\"\
+    \n\nstruct LCA {\n    vector<vector<int>> parent;  // parent[d][v] := 2^d-th parent\
+    \ of v\n    vector<int> depth;\n    LCA() {}\n    LCA(const vector<vector<int>>&\
+    \ G, int r = 0) { init(G, r); }\n    void init(const vector<vector<int>>& G, int\
+    \ r = 0) {\n        int V = (int)G.size();\n        int h = 1;\n        while\
+    \ ((1 << h) < V) ++h;\n        parent.assign(h, vector<int>(V, -1));\n       \
+    \ depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n        for (int i = 0; i +\
+    \ 1 < (int)parent.size(); ++i)\n            for (int v = 0; v < V; ++v)\n    \
+    \            if (parent[i][v] != -1)\n                    parent[i + 1][v] = parent[i][parent[i][v]];\n\
+    \    }\n    void dfs(const vector<vector<int>>& G, int v, int p, int d) {\n  \
+    \      parent[0][v] = p;\n        depth[v] = d;\n        for (auto e : G[v])\n\
+    \            if (e != p) dfs(G, e, v, d + 1);\n    }\n    int after(int u, int\
+    \ k) {\n        for (int i = 0; i < (int)parent.size(); i++) {\n            if\
+    \ (k & (1 << i)) {\n                u = parent[i][u];\n            }\n       \
+    \ }\n        return u;\n    }\n    int get(int u, int v) {\n        if (depth[u]\
+    \ > depth[v]) swap(u, v);\n        v = after(v, depth[v] - depth[u]);\n      \
+    \  if (u == v) return u;\n        for (int i = (int)parent.size() - 1; i >= 0;\
+    \ --i) {\n            if (parent[i][u] != parent[i][v]) {\n                u =\
+    \ parent[i][u];\n                v = parent[i][v];\n            }\n        }\n\
+    \        return parent[0][u];\n    }\n    int dist(int u, int v) {\n        return\
+    \ depth[u] + depth[v] - 2 * depth[get(u, v)];\n    }\n    bool is_on_path(int\
+    \ u, int v, int a) {\n        return dist(u, a) + dist(a, v) == dist(u, v);\n\
+    \    }\n};\n#line 4 \"test/AOJ/GRL_5_C.test.cpp\"\n\nint main() {\n    int N;\n\
+    \    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n    for (int i\
+    \ = 0; i < N; i++) {\n        int k;\n        cin >> k;\n        for (int j =\
+    \ 0; j < k; j++) {\n            int a;\n            cin >> a;\n            G[i].push_back(a);\n\
+    \        }\n    }\n    LCA lca(G, 0);\n    int Q;\n    cin >> Q;\n    for (int\
+    \ i = 0; i < Q; i++) {\n        int u, v;\n        cin >> u >> v;\n        cout\
+    \ << lca.get(u, v) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/lca.hpp\"\n\
     \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
@@ -88,11 +93,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - graph/lca.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_C.test.cpp

@@ -8,6 +8,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -45,19 +48,21 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"graph/low-link.hpp\"\n\nstruct LowLink {\n \
-    \   vector<int> aps;             // \u95A2\u7BC0\u70B9\n    vector<pair<int, int>>\
-    \ brs;  // \u6A4B\n\n    vector<int> seen, ord, low;\n    void dfs_lowlink(const\
-    \ vector<vector<int>> &G, int v, int p = -1) {\n        static int time = 0;\n\
-    \        seen[v] = true;\n        ord[v] = low[v] = time++;\n        int num_of_child\
-    \ = 0;\n        bool exist = false;  // for articulation point\n        for (auto\
-    \ ch : G[v]) {\n            if (seen[ch]) {\n                if (ch != p) low[v]\
-    \ = min(low[v], ord[ch]);  // back edge\n                continue;\n         \
-    \   }\n            dfs_lowlink(G, ch, v);\n            low[v] = min(low[v], low[ch]);\
-    \  // forward edge of DFS-tree\n            if (ord[v] < low[ch]) brs.emplace_back(v,\
-    \ ch);\n            if (ord[v] <= low[ch]) exist = true;\n            ++num_of_child;\n\
-    \        }\n        if ((p == -1 && num_of_child > 1) || (p != -1 && exist)) aps.emplace_back(v);\n\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/low-link.hpp\"\
+    \n\nstruct LowLink {\n    vector<int> aps;             // \u95A2\u7BC0\u70B9\n\
+    \    vector<pair<int, int>> brs;  // \u6A4B\n\n    vector<int> seen, ord, low;\n\
+    \    void dfs_lowlink(const vector<vector<int>> &G, int v, int p = -1) {\n   \
+    \     static int time = 0;\n        seen[v] = true;\n        ord[v] = low[v] =\
+    \ time++;\n        int num_of_child = 0;\n        bool exist = false;  // for\
+    \ articulation point\n        for (auto ch : G[v]) {\n            if (seen[ch])\
+    \ {\n                if (ch != p) low[v] = min(low[v], ord[ch]);  // back edge\n\
+    \                continue;\n            }\n            dfs_lowlink(G, ch, v);\n\
+    \            low[v] = min(low[v], low[ch]);  // forward edge of DFS-tree\n   \
+    \         if (ord[v] < low[ch]) brs.emplace_back(v, ch);\n            if (ord[v]\
+    \ <= low[ch]) exist = true;\n            ++num_of_child;\n        }\n        if\
+    \ ((p == -1 && num_of_child > 1) || (p != -1 && exist)) aps.emplace_back(v);\n\
     \    }\n    void solve(const vector<vector<int>> &G) {\n        int N = (int)G.size();\n\
     \        seen.assign(N, 0);\n        ord.resize(N);\n        low.resize(N);\n\
     \        aps.clear();\n        brs.clear();\n        for (int v = 0; v < N; ++v)\n\
@@ -82,11 +87,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - graph/low-link.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_3_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_A.test.cpp

@@ -11,6 +11,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -48,39 +51,40 @@ data:
     \n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n      \
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
-    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 7 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\n\nusing DD =\
-    \ long double;  // to be set appropriately\nconst DD EPS = 1e-10;    // to be\
-    \ set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI\
-    \ / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct\
-    \ Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n \
-    \   friend ostream &operator<<(ostream &s, const Point &p) { return s << '(' <<\
-    \ p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const Point &p, const\
-    \ Point &q) { return Point(p.x + q.x, p.y + q.y); }\ninline Point operator-(const\
-    \ Point &p, const Point &q) { return Point(p.x - q.x, p.y - q.y); }\ninline Point\
-    \ operator*(const Point &p, DD a) { return Point(p.x * a, p.y * a); }\ninline\
-    \ Point operator*(DD a, const Point &p) { return Point(a * p.x, a * p.y); }\n\
-    inline Point operator*(const Point &p, const Point &q) { return Point(p.x * q.x\
-    \ - p.y * q.y, p.x * q.y + p.y * q.x); }\ninline Point operator/(const Point &p,\
-    \ DD a) { return Point(p.x / a, p.y / a); }\ninline Point conj(const Point &p)\
-    \ { return Point(p.x, -p.y); }\ninline Point rot(const Point &p, DD ang) { return\
-    \ Point(cos(ang) * p.x - sin(ang) * p.y, sin(ang) * p.x + cos(ang) * p.y); }\n\
-    inline Point rot90(const Point &p) { return Point(-p.y, p.x); }\ninline DD cross(const\
-    \ Point &p, const Point &q) { return p.x * q.y - p.y * q.x; }\ninline DD dot(const\
-    \ Point &p, const Point &q) { return p.x * q.x + p.y * q.y; }\ninline DD norm(const\
-    \ Point &p) { return dot(p, p); }\ninline DD abs(const Point &p) { return sqrt(dot(p,\
-    \ p)); }\ninline DD amp(const Point &p) {\n    DD res = atan2(p.y, p.x);\n   \
-    \ if (res < 0) res += PI * 2;\n    return res;\n}\ninline bool eq(const Point\
-    \ &p, const Point &q) { return abs(p - q) < EPS; }\ninline bool operator<(const\
-    \ Point &p, const Point &q) { return (abs(p.x - q.x) > EPS ? p.x < q.x : p.y <\
-    \ q.y); }\ninline bool operator>(const Point &p, const Point &q) { return (abs(p.x\
-    \ - q.x) > EPS ? p.x > q.x : p.y > q.y); }\ninline Point operator/(const Point\
-    \ &p, const Point &q) { return p * conj(q) / norm(q); }\n\n/* Line */\nstruct\
-    \ Line : vector<Point> {\n    Line(Point a = Point(0.0, 0.0), Point b = Point(0.0,\
-    \ 0.0)) {\n        this->push_back(a);\n        this->push_back(b);\n    }\n \
-    \   friend ostream &operator<<(ostream &s, const Line &l) { return s << '{' <<\
-    \ l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point\
-    \ {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
+    \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
+    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"geomeny/geomeny-template.hpp\"\
+    \n\nusing DD = long double;  // to be set appropriately\nconst DD EPS = 1e-10;\
+    \    // to be set appropriately\nconst DD PI = acosl(-1.0);\nDD torad(int deg)\
+    \ { return (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\
+    \n/* Point */\nstruct Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0)\
+    \ : x(x), y(y) {}\n    friend ostream &operator<<(ostream &s, const Point &p)\
+    \ { return s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const\
+    \ Point &p, const Point &q) { return Point(p.x + q.x, p.y + q.y); }\ninline Point\
+    \ operator-(const Point &p, const Point &q) { return Point(p.x - q.x, p.y - q.y);\
+    \ }\ninline Point operator*(const Point &p, DD a) { return Point(p.x * a, p.y\
+    \ * a); }\ninline Point operator*(DD a, const Point &p) { return Point(a * p.x,\
+    \ a * p.y); }\ninline Point operator*(const Point &p, const Point &q) { return\
+    \ Point(p.x * q.x - p.y * q.y, p.x * q.y + p.y * q.x); }\ninline Point operator/(const\
+    \ Point &p, DD a) { return Point(p.x / a, p.y / a); }\ninline Point conj(const\
+    \ Point &p) { return Point(p.x, -p.y); }\ninline Point rot(const Point &p, DD\
+    \ ang) { return Point(cos(ang) * p.x - sin(ang) * p.y, sin(ang) * p.x + cos(ang)\
+    \ * p.y); }\ninline Point rot90(const Point &p) { return Point(-p.y, p.x); }\n\
+    inline DD cross(const Point &p, const Point &q) { return p.x * q.y - p.y * q.x;\
+    \ }\ninline DD dot(const Point &p, const Point &q) { return p.x * q.x + p.y *\
+    \ q.y; }\ninline DD norm(const Point &p) { return dot(p, p); }\ninline DD abs(const\
+    \ Point &p) { return sqrt(dot(p, p)); }\ninline DD amp(const Point &p) {\n   \
+    \ DD res = atan2(p.y, p.x);\n    if (res < 0) res += PI * 2;\n    return res;\n\
+    }\ninline bool eq(const Point &p, const Point &q) { return abs(p - q) < EPS; }\n\
+    inline bool operator<(const Point &p, const Point &q) { return (abs(p.x - q.x)\
+    \ > EPS ? p.x < q.x : p.y < q.y); }\ninline bool operator>(const Point &p, const\
+    \ Point &q) { return (abs(p.x - q.x) > EPS ? p.x > q.x : p.y > q.y); }\ninline\
+    \ Point operator/(const Point &p, const Point &q) { return p * conj(q) / norm(q);\
+    \ }\n\n/* Line */\nstruct Line : vector<Point> {\n    Line(Point a = Point(0.0,\
+    \ 0.0), Point b = Point(0.0, 0.0)) {\n        this->push_back(a);\n        this->push_back(b);\n\
+    \    }\n    friend ostream &operator<<(ostream &s, const Line &l) { return s <<\
+    \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
+    \ Point {\n    DD r;\n    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p),\
     \ r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle &c) { return\
     \ s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"\
     geomeny/convex-hull.hpp\"\n\n// \u4E00\u76F4\u7DDA\u4E0A\u306E3\u70B9\u3092\u542B\
@@ -131,12 +135,13 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   - geomeny/convex-hull.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp

@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -39,14 +42,16 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/dfs2d.hpp\"\
-    \n\nvector<vector<bool>> seen;  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B\
-    \ v->\u59CB\u70B9\nvoid dfs(int H, int W, const vector<string> &G, pair<int, int>\
-    \ v) {\n    seen[v.first][v.second] = true;\n\n    for (int i = 0; i < 4; i++)\
-    \ {\n        int X = dx[i] + v.first;\n        int Y = dy[i] + v.second;\n   \
-    \     if (X < 0 || X >= H || Y < 0 || Y >= W) continue;\n        if (seen[X][Y]\
-    \ || G[X][Y] == '#') continue;  //\u63A2\u7D22\u6E08\u307F\u306A\u3089\u635C\u7D22\
-    \u3057\u306A\u3044\n        dfs(H, W, G, make_pair(X, Y));\n    }\n}\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"graph/dfs2d.hpp\"\n\nvector<vector<bool>> seen;\
+    \  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B v->\u59CB\u70B9\nvoid dfs(int\
+    \ H, int W, const vector<string> &G, pair<int, int> v) {\n    seen[v.first][v.second]\
+    \ = true;\n\n    for (int i = 0; i < 4; i++) {\n        int X = dx[i] + v.first;\n\
+    \        int Y = dy[i] + v.second;\n        if (X < 0 || X >= H || Y < 0 || Y\
+    \ >= W) continue;\n        if (seen[X][Y] || G[X][Y] == '#') continue;  //\u63A2\
+    \u7D22\u6E08\u307F\u306A\u3089\u635C\u7D22\u3057\u306A\u3044\n        dfs(H, W,\
+    \ G, make_pair(X, Y));\n    }\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nvector<vector<bool>>\
     \ seen;  //\u8A2A\u554F\u6E08\u307F\u304B\u3069\u3046\u304B v->\u59CB\u70B9\n\
     void dfs(int H, int W, const vector<string> &G, pair<int, int> v) {\n    seen[v.first][v.second]\
@@ -61,10 +66,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: graph/dfs2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dfs2d.hpp

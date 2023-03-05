@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -42,16 +45,18 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"algorithm/section-sum2d.hpp\"\
-    \n\r\ntemplate <class T>\r\nstruct sectionsum2d {\r\n    vector<vector<T>> data;\r\
-    \n\r\n    sectionsum2d(int H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\
-    \r\n    void update(int x, int y, const T& z) {\r\n        x++;\r\n        y++;\r\
-    \n        data[x][y] = z;\r\n    }\r\n\r\n    void build() {\r\n        for (int\
-    \ i = 1; i < data.size(); i++) {\r\n            for (int j = 1; j < data[i].size();\
-    \ j++) {\r\n                data[i][j] += data[i][j - 1] + data[i - 1][j] - data[i\
-    \ - 1][j - 1];\r\n            }\r\n        }\r\n    }\r\n\r\n    T get(int sx,\
-    \ int sy, int gx, int gy) const {\r\n        return (data[gx][gy] - data[sx][gy]\
-    \ - data[gx][sy] + data[sx][sy]);\r\n    }\r\n};\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"algorithm/section-sum2d.hpp\"\n\r\ntemplate <class\
+    \ T>\r\nstruct sectionsum2d {\r\n    vector<vector<T>> data;\r\n\r\n    sectionsum2d(int\
+    \ H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x,\
+    \ int y, const T& z) {\r\n        x++;\r\n        y++;\r\n        data[x][y] =\
+    \ z;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < data.size();\
+    \ i++) {\r\n            for (int j = 1; j < data[i].size(); j++) {\r\n       \
+    \         data[i][j] += data[i][j - 1] + data[i - 1][j] - data[i - 1][j - 1];\r\
+    \n            }\r\n        }\r\n    }\r\n\r\n    T get(int sx, int sy, int gx,\
+    \ int gy) const {\r\n        return (data[gx][gy] - data[sx][gy] - data[gx][sy]\
+    \ + data[sx][sy]);\r\n    }\r\n};\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
     \ T>\r\nstruct sectionsum2d {\r\n    vector<vector<T>> data;\r\n\r\n    sectionsum2d(int\
     \ H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x,\
@@ -68,10 +73,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: algorithm/section-sum2d.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/0560.test.cpp

@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -42,11 +45,13 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"math/number/convert-base.hpp\"\
-    \n\ntemplate <class T>\nvector<T> convert_base(T x, T b) {\n    vector<T> ret;\n\
-    \    T t = 1, k = abs(b);\n    while (x) {\n        ret.emplace_back((x * t) %\
-    \ k);\n        if (ret.back() < 0) ret.back() += k;\n        x -= ret.back() *\
-    \ t;\n        x /= k;\n        t *= b / k;\n    }\n    if (ret.empty()) ret.emplace_back(0);\n\
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"math/number/convert-base.hpp\"\n\ntemplate <class\
+    \ T>\nvector<T> convert_base(T x, T b) {\n    vector<T> ret;\n    T t = 1, k =\
+    \ abs(b);\n    while (x) {\n        ret.emplace_back((x * t) % k);\n        if\
+    \ (ret.back() < 0) ret.back() += k;\n        x -= ret.back() * t;\n        x /=\
+    \ k;\n        t *= b / k;\n    }\n    if (ret.empty()) ret.emplace_back(0);\n\
     \    reverse(begin(ret), end(ret));\n    return ret;\n}\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n\ntemplate <class\
     \ T>\nvector<T> convert_base(T x, T b) {\n    vector<T> ret;\n    T t = 1, k =\
@@ -60,10 +65,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: math/number/convert-base.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/0233.test.cpp

@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -18,12 +21,12 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -42,15 +45,16 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"algorithm/section-sum.hpp\"\
-    \n\r\ntemplate <class T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n\
-    \    sectionsum(int n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const\
-    \ T& x) {\r\n        data[k + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n \
-    \       for (int i = 1; i < (int)data.size(); i++) {\r\n            data[i] +=\
-    \ data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int r) const {\r\n     \
-    \   assert(r >= 0 && r < (int)data.size());\r\n        return data[r];\r\n   \
-    \ }\r\n    T get(int l, int r) const {\r\n        return get(r) - get(l);\r\n\
-    \    }\r\n};\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"algorithm/section-sum.hpp\"\n\r\ntemplate <class\
+    \ T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n    sectionsum(int n)\
+    \ : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
+    \ + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i <\
+    \ (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\
+    \n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
+    \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
+    \    return get(r) - get(l);\r\n    }\r\n};\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
     \ T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n    sectionsum(int n)\
     \ : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
@@ -65,11 +69,12 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: algorithm/section-sum.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-05 09:55:58+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum.test.cpp
 documentation_of: algorithm/section-sum.hpp

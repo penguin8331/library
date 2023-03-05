@@ -5,6 +5,9 @@ data:
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
   - icon: ':question:'
@@ -42,15 +45,16 @@ data:
     \ {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 7 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/bellman-ford.hpp\"\
-    \n\nstruct Edge {\n    long long from;\n    long long to;\n    long long cost;\n\
-    };\nbool bellman_ford(const vector<Edge> &Es, int V, int s, vector<long long>\
-    \ &dis) {\n    dis.assign(V, INF);\n    dis[s] = 0;\n    int cnt = 0;\n    while\
-    \ (cnt < V) {\n        bool end = true;\n        for (auto e : Es) {\n       \
-    \     if (dis[e.from] != INF && dis[e.from] + e.cost < dis[e.to]) {\n        \
-    \        dis[e.to] = dis[e.from] + e.cost;\n                end = false;\n   \
-    \         }\n        }\n        if (end) break;\n        cnt++;\n    }\n    return\
-    \ (cnt == V);\n}\n"
+    #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
+    using namespace std;\n#line 3 \"graph/bellman-ford.hpp\"\n\nstruct Edge {\n  \
+    \  long long from;\n    long long to;\n    long long cost;\n};\nbool bellman_ford(const\
+    \ vector<Edge> &Es, int V, int s, vector<long long> &dis) {\n    dis.assign(V,\
+    \ INF);\n    dis[s] = 0;\n    int cnt = 0;\n    while (cnt < V) {\n        bool\
+    \ end = true;\n        for (auto e : Es) {\n            if (dis[e.from] != INF\
+    \ && dis[e.from] + e.cost < dis[e.to]) {\n                dis[e.to] = dis[e.from]\
+    \ + e.cost;\n                end = false;\n            }\n        }\n        if\
+    \ (end) break;\n        cnt++;\n    }\n    return (cnt == V);\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Edge {\n  \
     \  long long from;\n    long long to;\n    long long cost;\n};\nbool bellman_ford(const\
     \ vector<Edge> &Es, int V, int s, vector<long long> &dis) {\n    dis.assign(V,\
@@ -65,10 +69,11 @@ data:
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: graph/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2023-03-03 16:10:07+09:00'
+  timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_1_B.test.cpp
