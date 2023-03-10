@@ -37,5 +37,15 @@
 "test/AOJ/GRL_3_C.test.cpp": "2023-03-05 09:55:58 +0900",
 "test/AOJ/GRL_4_B.test.cpp": "2023-03-05 09:55:58 +0900",
 "test/AOJ/GRL_5_A.test.cpp": "2023-03-05 09:55:58 +0900",
-"test/AOJ/GRL_5_C.test.cpp": "2023-03-05 09:55:58 +0900"
+"test/AOJ/GRL_5_C.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/AOJ/ITP1_3_D.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/AOJ/NTL_1_A.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/AOJ/NTL_1_B.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/scc.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/shortes-path.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/static-range-sum-2.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/static-range-sum.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/static-rmq-2.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/static-rmq.test.cpp": "2023-03-05 09:55:58 +0900",
+"test/yosupo/zalgorithm.test.cpp": "2023-03-05 09:55:58 +0900"
 }
