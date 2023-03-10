@@ -78,7 +78,7 @@ data:
     \ = solve_for_prime_factorize(N);\n    map<long long, int> ret;\n    for (int\
     \ i = 0; i < res.size(); i++) {\n        ret[res[i]]++;\n    }\n    return ret;\n\
     }\n"
-  code: "#pragma once\n#include \"../../template/template.hpp\"\n#include \"../../math/number/miller-rabin.hpp\"\
+  code: "#pragma once\n#include \"../../template/template.hpp\"\n#include \"miller-rabin.hpp\"\
     \n\nlong long pollard(long long N) {\n    if (N % 2 == 0) return 2;\n    if (is_prime(N))\
     \ return N;\n\n    auto f = [&](long long x) -> long long {\n        return (__int128_t(x)\
     \ * x + 1) % N;\n    };\n    long long step = 0;\n    while (true) {\n       \
@@ -105,7 +105,7 @@ data:
   isVerificationFile: false
   path: math/number/pollard-rho.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-10 14:30:24+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/factorize.test.cpp

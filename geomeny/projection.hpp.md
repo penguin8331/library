@@ -116,8 +116,8 @@ data:
   isVerificationFile: false
   path: geomeny/projection.hpp
   requiredBy:
-  - geomeny/distance.hpp
   - geomeny/is-inter.hpp
+  - geomeny/distance.hpp
   timestamp: '2023-03-05 09:55:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
