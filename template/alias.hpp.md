@@ -195,10 +195,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/isprime.hpp
     title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/number/miller-rabin.hpp
     title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
-  - icon: ':x:'
+  - icon: ':warning:'
     path: math/number/pollard-rho.hpp
     title: "\u78BA\u7387\u7684\u7D20\u56E0\u6570\u5206\u89E3 (Pollard \u306E\u30ED\
       \u30FC\u6CD5)"
@@ -220,7 +220,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedVerifiedWith:
@@ -350,9 +350,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':x:'
-    path: test/yosupo/factorize.test.cpp
-    title: test/yosupo/factorize.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
@@ -374,9 +371,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "template/alias.hpp"
@@ -506,10 +503,9 @@ data:
   - geomeny/is-convex.hpp
   - geomeny/distance.hpp
   timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp
-  - test/yosupo/factorize.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/static-range-sum.test.cpp
