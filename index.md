@@ -60,6 +60,9 @@ data:
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':warning:'
+      path: data-structure/mo.hpp
+      title: Mo's algorithm
+    - icon: ':warning:'
       path: data-structure/pair-query-by-implicit-treap.hpp
       title: PairQuery (by Implicit Treap)
     - icon: ':warning:'

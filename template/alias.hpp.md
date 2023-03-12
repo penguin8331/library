@@ -52,6 +52,9 @@ data:
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
   - icon: ':warning:'
+    path: data-structure/mo.hpp
+    title: Mo's algorithm
+  - icon: ':warning:'
     path: data-structure/pair-query-by-implicit-treap.hpp
     title: PairQuery (by Implicit Treap)
   - icon: ':warning:'
@@ -449,6 +452,7 @@ data:
   - data-structure/binary-indexed-tree-2d-raq.hpp
   - data-structure/binary-indexed-tree-raq.hpp
   - data-structure/binary-indexed-tree-2d.hpp
+  - data-structure/mo.hpp
   - data-structure/implicit-treap.hpp
   - data-structure/disjoint-sparse-table.hpp
   - data-structure/binary-indexed-tree.hpp
