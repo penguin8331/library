@@ -6,8 +6,16 @@ struct Mo {
     vector<bool> v;
     int window;
     int nl, nr, ptr;
+    function<void(int)> insert, erase;
 
-    Mo(int n) : window((int)sqrt(n)), nl(0), nr(0), ptr(0), v(n, false) {}
+    Mo(int n, const function<void(int)> INSERT, const function<void(int)> ERASE)
+        : window((int)sqrt(n)),
+          nl(0),
+          nr(0),
+          ptr(0),
+          v(n, false),
+          insert(INSERT),
+          erase(ERASE) {}
 
     /* push */
     void push(int l, int r) { left.push_back(l), right.push_back(r); }
@@ -42,8 +50,4 @@ struct Mo {
         while (nr > right[id]) extend_shorten(--nr);
         return index[ptr++];
     }
-
-    /* insert, erase (to be set appropriately) */
-    void insert(int id);
-    void erase(int id);
 };
