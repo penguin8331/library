@@ -31,10 +31,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree.hpp
     title: BIT
-  - icon: ':warning:'
-    path: data-structure/binary-search-on-bit.hpp
-    title: "BIT \u4E0A\u4E8C\u5206\u63A2\u7D22 (k \u756A\u76EE\u306E\u8981\u7D20\u3092\
-      \u6C42\u3081\u308B)"
   - icon: ':heavy_check_mark:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
@@ -169,9 +165,6 @@ data:
     path: graph/warshall-floyd.hpp
     title: Warshall Floyd
   - icon: ':warning:'
-    path: math/combinatorics/binomial-coefficient-naivety.hpp
-    title: "\u4E8C\u9805\u4FC2\u6570 (\u611A\u76F4\u8A08\u7B97)"
-  - icon: ':warning:'
     path: math/combinatorics/binomial-coefficient.hpp
     title: "\u4E8C\u9805\u4FC2\u6570 (\u30AA\u30FC\u30BD\u30C9\u30C3\u30AF\u30B9)"
   - icon: ':heavy_check_mark:'
@@ -211,9 +204,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':warning:'
-    path: math/number/rand-int.hpp
-    title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
   - icon: ':warning:'
     path: others/date.hpp
     title: "\u65E5\u4ED8,\u66DC\u65E5"
@@ -448,7 +438,6 @@ data:
   - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/lazy-segment-tree-arthmetic.hpp
   - data-structure/dynamic_modular-arithmetic.hpp
-  - data-structure/binary-search-on-bit.hpp
   - graph/warshall-floyd.hpp
   - graph/dfs2d.hpp
   - graph/bfs.hpp
@@ -467,7 +456,6 @@ data:
   - graph/bellman-ford.hpp
   - graph/is_biparite.hpp
   - others/date.hpp
-  - math/combinatorics/binomial-coefficient-naivety.hpp
   - math/combinatorics/modpow.hpp
   - math/combinatorics/binomial-coefficient.hpp
   - math/combinatorics/inversion-number.hpp
@@ -481,7 +469,6 @@ data:
   - math/number/isprime.hpp
   - math/number/chinese-remainder-theorem.hpp
   - math/number/divisors.hpp
-  - math/number/rand-int.hpp
   - template/template.hpp
   - geomeny/convex-hull.hpp
   - geomeny/is-contain-in-the-polygon.hpp
