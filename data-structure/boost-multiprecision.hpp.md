@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -76,3 +76,18 @@ documentation_of: data-structure/boost-multiprecision.hpp
 layout: document
 title: boost/multiprecision
 ---
+
+## 概要
+
+`Bint` (`<boost/multiprecision/cpp_int.hpp>` `boost::multiprecision::cpp_int`)  
+任意長整数型
+
+`Real` (`<boost/multiprecision/cpp_dec_float.hpp>` `boost::multiprecision::number<boost::multiprecision::cpp_dec_float<1024>>`)  
+仮数部が10進数で1024桁の浮動小数点数型
+
+## 使い方
+
+`x.str()` := `Bint` もしくは `Real` 型の変数 `x` を `string` 型に変換する  
+
+`x.assign(string str) := `str` から `Bint` もしくは `Real` 型へと変換する
+
