@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -43,18 +43,17 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"graph/is_biparite.hpp\"\n\nbool isbipartite(const\
-    \ vector<vector<int>>& G) {\n    int N = (int)G.size();\n    vector<int> color(N,\
-    \ -1);\n\n    for (int v = 0; v < N; ++v) {\n        if (color[v] != -1) {\n \
-    \           continue;\n        }\n        queue<int> que;\n        color[v] =\
-    \ 0;\n        que.push(v);\n        while (!que.empty()) {\n            int qv\
-    \ = que.front();\n            que.pop();\n            for (auto nv : G[qv]) {\n\
-    \                if (color[nv] != -1) {\n                    if (color[nv] ==\
-    \ color[qv]) {\n                        return false;\n                    }\n\
-    \                    continue;\n                }\n                color[nv] =\
-    \ 1 - color[qv];\n                que.push(nv);\n            }\n        }\n  \
-    \  }\n    return true;\n}\n"
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"graph/is_biparite.hpp\"\n\nbool isbipartite(const vector<vector<int>>&\
+    \ G) {\n    int N = (int)G.size();\n    vector<int> color(N, -1);\n\n    for (int\
+    \ v = 0; v < N; ++v) {\n        if (color[v] != -1) {\n            continue;\n\
+    \        }\n        queue<int> que;\n        color[v] = 0;\n        que.push(v);\n\
+    \        while (!que.empty()) {\n            int qv = que.front();\n         \
+    \   que.pop();\n            for (auto nv : G[qv]) {\n                if (color[nv]\
+    \ != -1) {\n                    if (color[nv] == color[qv]) {\n              \
+    \          return false;\n                    }\n                    continue;\n\
+    \                }\n                color[nv] = 1 - color[qv];\n             \
+    \   que.push(nv);\n            }\n        }\n    }\n    return true;\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nbool isbipartite(const\
     \ vector<vector<int>>& G) {\n    int N = (int)G.size();\n    vector<int> color(N,\
     \ -1);\n\n    for (int v = 0; v < N; ++v) {\n        if (color[v] != -1) {\n \
@@ -76,7 +75,7 @@ data:
   isVerificationFile: false
   path: graph/is_biparite.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/is_biparite.hpp

@@ -34,8 +34,5 @@ data:
   verifiedWith: []
 documentation_of: others/rand-int.hpp
 layout: document
-redirect_from:
-- /library/others/rand-int.hpp
-- /library/others/rand-int.hpp.html
-title: others/rand-int.hpp
+title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
 ---

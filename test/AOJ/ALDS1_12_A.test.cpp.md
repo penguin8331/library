@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -49,8 +49,8 @@ data:
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
     \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
-    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
-    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/prim.hpp\"\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n#line\
+    \ 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/prim.hpp\"\
     \n\nstruct Edge {\n    int to;\n    long long cost;\n};\nstruct Prim {\n    vector<vector<Edge>>\
     \ G;\n    int V;\n    long long sum;\n    Prim(vector<vector<Edge>> &G_, int V_)\
     \ : G(G_), V(V_) {\n        sum = 0;\n        vector<bool> seen(V, false);\n \
@@ -85,7 +85,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_12_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_12_A.test.cpp

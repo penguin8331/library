@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -46,11 +46,11 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"string/rolling-hash.hpp\"\n\nstruct RollingHash\
-    \ {\n    static const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t>\
-    \ power;\n    const uint64_t base;\n\n    static inline uint64_t generate_base()\
-    \ {\n        mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"string/rolling-hash.hpp\"\n\nstruct RollingHash {\n    static\
+    \ const uint64_t mod = (1ull << 61ull) - 1;\n    vector<uint64_t> power;\n   \
+    \ const uint64_t base;\n\n    static inline uint64_t generate_base() {\n     \
+    \   mt19937_64 engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \        uniform_int_distribution<uint64_t> rand((uint64_t)1, (uint64_t)mod -\
     \ 1);\n        return rand(engine);\n    }\n\n    static inline uint64_t add(uint64_t\
     \ a, uint64_t b) {\n        if ((a += b) >= mod) a -= mod;\n        return a;\n\
@@ -123,8 +123,8 @@ data:
   isVerificationFile: false
   path: string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-14 23:16:01+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/zalgorithm.test.cpp
 documentation_of: string/rolling-hash.hpp

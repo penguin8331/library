@@ -1,35 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -49,9 +49,9 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\n\n\
-    template <class SemiGroup>\nstruct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup,\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\n\ntemplate <class\
+    \ SemiGroup>\nstruct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup,\
     \ SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int>\
     \ height;\n\n    DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
     \ Func& f, const vector<SemiGroup>& vec) : F(f) { init(vec); }\n    void init(const\
@@ -96,8 +96,8 @@ data:
   isVerificationFile: false
   path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-14 23:16:01+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-rmq-2.test.cpp
   - test/yosupo/static-range-sum-2.test.cpp

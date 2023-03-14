@@ -5,22 +5,22 @@ data:
     path: data-structure/binary-indexed-tree-raq.hpp
     title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
       \u5BFE\u5FDC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -50,8 +50,8 @@ data:
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
     \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
-    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
-    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree-raq.hpp\"\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n#line\
+    \ 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"data-structure/binary-indexed-tree-raq.hpp\"\
     \n\ntemplate <class Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel>\
     \ dat[2];\n    int N;\n\n    // [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity),\
     \ N(n) {\n        init(n);\n    }\n    void init(int n) {\n        for (int iter\
@@ -94,7 +94,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_G.test.cpp

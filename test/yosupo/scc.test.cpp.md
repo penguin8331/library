@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -49,8 +49,8 @@ data:
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
     \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
-    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
-    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/scc.hpp\"\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n#line\
+    \ 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/scc.hpp\"\
     \n\nstruct SCC {\n    using Edge = int;\n    using SGraph = vector<vector<Edge>>;\n\
     \n    // input\n    SGraph G, rG;\n\n    // result\n    vector<vector<int>> scc;\n\
     \    vector<int> cmp;\n    SGraph dag;\n\n    // constructor\n    SCC(int N) :\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/scc.test.cpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/scc.test.cpp

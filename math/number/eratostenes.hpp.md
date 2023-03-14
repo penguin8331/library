@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -43,14 +43,14 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"math/number/eratostenes.hpp\"\n\nstruct Eratos\
-    \ {\n    vector<int> primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n\
-    \    vector<int> min_factor;\n\n    Eratos(int MAX) : primes(),\n            \
-    \          isprime(MAX + 1, true),\n                      mebius(MAX + 1, 1),\n\
-    \                      min_factor(MAX + 1, -1) {\n        isprime[0] = isprime[1]\
-    \ = false;\n        min_factor[0] = 0, min_factor[1] = 1;\n        for (int i\
-    \ = 2; i <= MAX; ++i) {\n            if (!isprime[i]) continue;\n            primes.push_back(i);\n\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"math/number/eratostenes.hpp\"\n\nstruct Eratos {\n    vector<int>\
+    \ primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n    vector<int>\
+    \ min_factor;\n\n    Eratos(int MAX) : primes(),\n                      isprime(MAX\
+    \ + 1, true),\n                      mebius(MAX + 1, 1),\n                   \
+    \   min_factor(MAX + 1, -1) {\n        isprime[0] = isprime[1] = false;\n    \
+    \    min_factor[0] = 0, min_factor[1] = 1;\n        for (int i = 2; i <= MAX;\
+    \ ++i) {\n            if (!isprime[i]) continue;\n            primes.push_back(i);\n\
     \            mebius[i] = -1;\n            min_factor[i] = i;\n            for\
     \ (int j = i * 2; j <= MAX; j += i) {\n                isprime[j] = false;\n \
     \               if ((j / i) % i == 0)\n                    mebius[j] = 0;\n  \
@@ -108,7 +108,7 @@ data:
   isVerificationFile: false
   path: math/number/eratostenes.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number/eratostenes.hpp

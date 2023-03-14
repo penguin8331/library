@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -46,14 +46,14 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"dynamic-programming/traveling-salesman-problem.hpp\"\
-    \n\nint V, E;\nint G[20][20];  // \u30B0\u30E9\u30D5\nint dp[50000][20];\nconst\
-    \ int maxi = inf / 3;\n// \u30E1\u30E2\u5316\u518D\u5E30\nint rec(int S, int v)\
-    \ {\n    if (S == 0) {\n        if (v == 0) {\n            return 0;\n       \
-    \ } else {\n            return inf / 3;\n        }\n    }\n    if ((S & (1 <<\
-    \ v)) == 0) {  // S\u306B{v}\u304C\u542B\u307E\u308C\u3066\u3044\u306A\u3044\n\
-    \        return inf / 3;\n    }\n    int& ret = dp[S][v];\n    if (ret != 0) return\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"dynamic-programming/traveling-salesman-problem.hpp\"\n\nint\
+    \ V, E;\nint G[20][20];  // \u30B0\u30E9\u30D5\nint dp[50000][20];\nconst int\
+    \ maxi = inf / 3;\n// \u30E1\u30E2\u5316\u518D\u5E30\nint rec(int S, int v) {\n\
+    \    if (S == 0) {\n        if (v == 0) {\n            return 0;\n        } else\
+    \ {\n            return inf / 3;\n        }\n    }\n    if ((S & (1 << v)) ==\
+    \ 0) {  // S\u306B{v}\u304C\u542B\u307E\u308C\u3066\u3044\u306A\u3044\n      \
+    \  return inf / 3;\n    }\n    int& ret = dp[S][v];\n    if (ret != 0) return\
     \ ret;\n    ret = inf / 3;\n    for (int u = 0; u < V; u++) {\n        chmin(ret,\
     \ rec(S ^ (1 << v), u) + G[u][v]);\n    }\n    return ret;\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nint V, E;\nint G[20][20];\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: false
   path: dynamic-programming/traveling-salesman-problem.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DPL_2_A.test.cpp

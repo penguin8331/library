@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -49,8 +49,8 @@ data:
     \  std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n        std::cout\
     \ << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed <<\
     \ std::setprecision(12);\n    }\n} IOSetup;\n#line 1 \"template/debug.hpp\"\n\
-    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#define line\n\
-    #endif\n#line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/low-link.hpp\"\
+    #ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n#line\
+    \ 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"graph/low-link.hpp\"\
     \n\nstruct LowLink {\n    vector<int> aps;             // \u95A2\u7BC0\u70B9\n\
     \    vector<pair<int, int>> brs;  // \u6A4B\n\n    vector<int> seen, ord, low;\n\
     \    void dfs_lowlink(const vector<vector<int>> &G, int v, int p = -1) {\n   \
@@ -96,7 +96,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_B.test.cpp

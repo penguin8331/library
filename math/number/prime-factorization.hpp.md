@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -46,13 +46,13 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"math/number/prime-factorization.hpp\"\n\r\nmap<long\
-    \ long, int> prime_factorize(long long n) {\r\n    map<long long, int> res;\r\n\
-    \    for (long long p = 2; p * p <= n; ++p) {\r\n        if (n % p != 0) continue;\r\
-    \n        int num = 0;\r\n        while (n % p == 0) {\r\n            ++num;\r\
-    \n            n /= p;\r\n        }\r\n        res[p] = num;\r\n    }\r\n    if\
-    \ (n != 1) res[n] = 1;\r\n    return res;\r\n}\n"
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"math/number/prime-factorization.hpp\"\n\r\nmap<long long, int>\
+    \ prime_factorize(long long n) {\r\n    map<long long, int> res;\r\n    for (long\
+    \ long p = 2; p * p <= n; ++p) {\r\n        if (n % p != 0) continue;\r\n    \
+    \    int num = 0;\r\n        while (n % p == 0) {\r\n            ++num;\r\n  \
+    \          n /= p;\r\n        }\r\n        res[p] = num;\r\n    }\r\n    if (n\
+    \ != 1) res[n] = 1;\r\n    return res;\r\n}\n"
   code: "#pragma once\r\n#include \"../../template/template.hpp\"\r\n\r\nmap<long\
     \ long, int> prime_factorize(long long n) {\r\n    map<long long, int> res;\r\n\
     \    for (long long p = 2; p * p <= n; ++p) {\r\n        if (n % p != 0) continue;\r\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: math/number/prime-factorization.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/NTL_1_A.test.cpp

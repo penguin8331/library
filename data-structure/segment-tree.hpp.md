@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -46,13 +46,13 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"data-structure/segment-tree.hpp\"\n\ntemplate\
-    \ <class Monoid>\nstruct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n\
-    \    int N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid>\
-    \ dat;\n\n    /* initialization */\n    SegTree() {}\n    SegTree(int n, const\
-    \ Func f, const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n\
-    \        SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"data-structure/segment-tree.hpp\"\n\ntemplate <class Monoid>\n\
+    struct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n    int\
+    \ N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid> dat;\n\
+    \n    /* initialization */\n    SegTree() {}\n    SegTree(int n, const Func f,\
+    \ const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n      \
+    \  SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
     \ * 2, IDENTITY);\n    }\n    void init(int n, const Func f, const Monoid& identity)\
     \ {\n        N = n;\n        F = f;\n        IDENTITY = identity;\n        SIZE_R\
     \ = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R * 2,\
@@ -147,8 +147,8 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-14 23:16:01+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp

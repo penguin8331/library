@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -46,11 +46,11 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"graph/prim.hpp\"\n\nstruct Edge {\n    int to;\n\
-    \    long long cost;\n};\nstruct Prim {\n    vector<vector<Edge>> G;\n    int\
-    \ V;\n    long long sum;\n    Prim(vector<vector<Edge>> &G_, int V_) : G(G_),\
-    \ V(V_) {\n        sum = 0;\n        vector<bool> seen(V, false);\n        priority_queue<pair<ll,\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"graph/prim.hpp\"\n\nstruct Edge {\n    int to;\n    long long\
+    \ cost;\n};\nstruct Prim {\n    vector<vector<Edge>> G;\n    int V;\n    long\
+    \ long sum;\n    Prim(vector<vector<Edge>> &G_, int V_) : G(G_), V(V_) {\n   \
+    \     sum = 0;\n        vector<bool> seen(V, false);\n        priority_queue<pair<ll,\
     \ int>, vector<pair<ll, int>>, greater<pair<ll, int>>> pq;\n        pq.push(mp(0,\
     \ 0));\n        while (!pq.empty()) {\n            auto p = pq.top();\n      \
     \      pq.pop();\n            if (seen[p.second]) continue;\n            seen[p.second]\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: graph/prim.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_12_A.test.cpp

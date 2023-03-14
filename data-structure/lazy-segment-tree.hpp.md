@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -50,17 +50,17 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"data-structure/lazy-segment-tree.hpp\"\n\ntemplate\
-    \ <class Monoid, class Action>\nstruct Lazy_SegTree {\n    using FuncMonoid =\
-    \ function<Monoid(Monoid, Monoid)>;\n    using FuncAction = function<void(Monoid&,\
-    \ Action)>;\n    using FuncComposition = function<void(Action&, Action)>;\n  \
-    \  FuncMonoid FM;\n    FuncAction FA;\n    FuncComposition FC;\n    Monoid IDENTITY_MONOID;\n\
-    \    Action IDENTITY_LAZY;\n    int N, SIZE, HEIGHT;\n    vector<Monoid> dat;\n\
-    \    vector<Action> lazy;\n\n    Lazy_SegTree() {}\n    Lazy_SegTree(int n, const\
-    \ FuncMonoid fm, const FuncAction fa,\n                 const FuncComposition\
-    \ fc,\n                 const Monoid& identity_monoid, const Action& identity_lazy)\n\
-    \        : FM(fm), FA(fa), FC(fc), IDENTITY_MONOID(identity_monoid), IDENTITY_LAZY(identity_lazy),\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"data-structure/lazy-segment-tree.hpp\"\n\ntemplate <class Monoid,\
+    \ class Action>\nstruct Lazy_SegTree {\n    using FuncMonoid = function<Monoid(Monoid,\
+    \ Monoid)>;\n    using FuncAction = function<void(Monoid&, Action)>;\n    using\
+    \ FuncComposition = function<void(Action&, Action)>;\n    FuncMonoid FM;\n   \
+    \ FuncAction FA;\n    FuncComposition FC;\n    Monoid IDENTITY_MONOID;\n    Action\
+    \ IDENTITY_LAZY;\n    int N, SIZE, HEIGHT;\n    vector<Monoid> dat;\n    vector<Action>\
+    \ lazy;\n\n    Lazy_SegTree() {}\n    Lazy_SegTree(int n, const FuncMonoid fm,\
+    \ const FuncAction fa,\n                 const FuncComposition fc,\n         \
+    \        const Monoid& identity_monoid, const Action& identity_lazy)\n       \
+    \ : FM(fm), FA(fa), FC(fc), IDENTITY_MONOID(identity_monoid), IDENTITY_LAZY(identity_lazy),\
     \ N(n) {\n        SIZE = 1, HEIGHT = 0;\n        while (SIZE < n) SIZE <<= 1,\
     \ ++HEIGHT;\n        dat.assign(SIZE * 2, IDENTITY_MONOID);\n        lazy.assign(SIZE\
     \ * 2, IDENTITY_LAZY);\n    }\n    void init(int n, const FuncMonoid fm, const\
@@ -144,7 +144,7 @@ data:
   path: data-structure/lazy-segment-tree.hpp
   requiredBy:
   - data-structure/lazy-segment-tree-arthmetic.hpp
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_F.test.cpp

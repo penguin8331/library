@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -49,17 +49,17 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"data-structure/implicit-treap.hpp\"\n\n// T0:\
-    \ \u5143\u306E\u914D\u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\u5BFE\
-    \u3059\u308B\u4F5C\u7528\u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class T0, class\
-    \ T1>\nclass BaseImplicitTreap {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\u5358\
-    \u4F4D\u5143\n    virtual T0 f0(T0, T0) = 0;\n    const T0 u0;\n    // T1\u4E0A\
-    \u306E\u6F14\u7B97\u3001\u5358\u4F4D\u5143\n    virtual T1 f1(T1, T1) = 0;\n \
-    \   const T1 u1;\n    // T0\u306B\u5BFE\u3059\u308BT1\u306E\u4F5C\u7528\n    virtual\
-    \ T0 g(T0, T1) = 0;\n    // \u591A\u6570\u306Et1(T1)\u306B\u5BFE\u3059\u308Bf1\u306E\
-    \u5408\u6210\n    virtual T1 p(T1, int) = 0;\n\n    class xorshift {\n       \
-    \ uint64_t x;\n\n       public:\n        xorshift() {\n            mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());\n\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"data-structure/implicit-treap.hpp\"\n\n// T0: \u5143\u306E\u914D\
+    \u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\u5BFE\u3059\u308B\u4F5C\u7528\
+    \u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class T0, class T1>\nclass BaseImplicitTreap\
+    \ {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\u5358\u4F4D\u5143\n    virtual T0\
+    \ f0(T0, T0) = 0;\n    const T0 u0;\n    // T1\u4E0A\u306E\u6F14\u7B97\u3001\u5358\
+    \u4F4D\u5143\n    virtual T1 f1(T1, T1) = 0;\n    const T1 u1;\n    // T0\u306B\
+    \u5BFE\u3059\u308BT1\u306E\u4F5C\u7528\n    virtual T0 g(T0, T1) = 0;\n    //\
+    \ \u591A\u6570\u306Et1(T1)\u306B\u5BFE\u3059\u308Bf1\u306E\u5408\u6210\n    virtual\
+    \ T1 p(T1, int) = 0;\n\n    class xorshift {\n        uint64_t x;\n\n       public:\n\
+    \        xorshift() {\n            mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());\n\
     \            x = rnd();\n            for (int i = 0; i < 100; i++) {\n       \
     \         random();\n            }\n        }\n\n        uint64_t random() {\n\
     \            x = x ^ (x << 7);\n            return x = x ^ (x >> 9);\n       \
@@ -336,7 +336,7 @@ data:
   requiredBy:
   - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/implicit-treap.hpp

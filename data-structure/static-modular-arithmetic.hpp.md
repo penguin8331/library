@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -43,40 +43,39 @@ data:
     \        std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
-    #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
-    using namespace std;\n#line 3 \"data-structure/static-modular-arithmetic.hpp\"\
-    \n\ntemplate <int MOD>\nstruct Fp {\n    long long val;\n    constexpr Fp(long\
-    \ long v = 0) noexcept : val(v % MOD) {\n        if (val < 0) val += MOD;\n  \
-    \  }\n    constexpr int getmod() const { return MOD; }\n    constexpr Fp operator-()\
-    \ const noexcept {\n        return val ? MOD - val : 0;\n    }\n    constexpr\
-    \ Fp operator+(const Fp& r) const noexcept { return Fp(*this) += r; }\n    constexpr\
-    \ Fp operator-(const Fp& r) const noexcept { return Fp(*this) -= r; }\n    constexpr\
-    \ Fp operator*(const Fp& r) const noexcept { return Fp(*this) *= r; }\n    constexpr\
-    \ Fp operator/(const Fp& r) const noexcept { return Fp(*this) /= r; }\n    constexpr\
-    \ Fp& operator+=(const Fp& r) noexcept {\n        val += r.val;\n        if (val\
-    \ >= MOD) val -= MOD;\n        return *this;\n    }\n    constexpr Fp& operator-=(const\
-    \ Fp& r) noexcept {\n        val -= r.val;\n        if (val < 0) val += MOD;\n\
-    \        return *this;\n    }\n    constexpr Fp& operator*=(const Fp& r) noexcept\
-    \ {\n        val = val * r.val % MOD;\n        return *this;\n    }\n    constexpr\
-    \ Fp& operator/=(const Fp& r) noexcept {\n        long long a = r.val, b = MOD,\
-    \ u = 1, v = 0;\n        while (b) {\n            long long t = a / b;\n     \
-    \       a -= t * b, swap(a, b);\n            u -= t * v, swap(u, v);\n       \
-    \ }\n        val = val * u % MOD;\n        if (val < 0) val += MOD;\n        return\
-    \ *this;\n    }\n    constexpr bool operator==(const Fp& r) const noexcept {\n\
-    \        return this->val == r.val;\n    }\n    constexpr bool operator!=(const\
-    \ Fp& r) const noexcept {\n        return this->val != r.val;\n    }\n    friend\
-    \ constexpr istream& operator>>(istream& is, Fp<MOD>& x) noexcept {\n        is\
-    \ >> x.val;\n        x.val %= MOD;\n        if (x.val < 0) x.val += MOD;\n   \
-    \     return is;\n    }\n    friend constexpr ostream& operator<<(ostream& os,\
-    \ const Fp<MOD>& x) noexcept {\n        return os << x.val;\n    }\n    friend\
-    \ constexpr Fp<MOD> modpow(const Fp<MOD>& r, long long n) noexcept {\n       \
-    \ if (n == 0) return 1;\n        if (n < 0) return modpow(modinv(r), -n);\n  \
-    \      auto t = modpow(r, n / 2);\n        t = t * t;\n        if (n & 1) t =\
-    \ t * r;\n        return t;\n    }\n    friend constexpr Fp<MOD> modinv(const\
-    \ Fp<MOD>& r) noexcept {\n        long long a = r.val, b = MOD, u = 1, v = 0;\n\
-    \        while (b) {\n            long long t = a / b;\n            a -= t * b,\
-    \ swap(a, b);\n            u -= t * v, swap(u, v);\n        }\n        return\
-    \ Fp<MOD>(u);\n    }\n};\n"
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"data-structure/static-modular-arithmetic.hpp\"\n\ntemplate <int\
+    \ MOD>\nstruct Fp {\n    long long val;\n    constexpr Fp(long long v = 0) noexcept\
+    \ : val(v % MOD) {\n        if (val < 0) val += MOD;\n    }\n    constexpr int\
+    \ getmod() const { return MOD; }\n    constexpr Fp operator-() const noexcept\
+    \ {\n        return val ? MOD - val : 0;\n    }\n    constexpr Fp operator+(const\
+    \ Fp& r) const noexcept { return Fp(*this) += r; }\n    constexpr Fp operator-(const\
+    \ Fp& r) const noexcept { return Fp(*this) -= r; }\n    constexpr Fp operator*(const\
+    \ Fp& r) const noexcept { return Fp(*this) *= r; }\n    constexpr Fp operator/(const\
+    \ Fp& r) const noexcept { return Fp(*this) /= r; }\n    constexpr Fp& operator+=(const\
+    \ Fp& r) noexcept {\n        val += r.val;\n        if (val >= MOD) val -= MOD;\n\
+    \        return *this;\n    }\n    constexpr Fp& operator-=(const Fp& r) noexcept\
+    \ {\n        val -= r.val;\n        if (val < 0) val += MOD;\n        return *this;\n\
+    \    }\n    constexpr Fp& operator*=(const Fp& r) noexcept {\n        val = val\
+    \ * r.val % MOD;\n        return *this;\n    }\n    constexpr Fp& operator/=(const\
+    \ Fp& r) noexcept {\n        long long a = r.val, b = MOD, u = 1, v = 0;\n   \
+    \     while (b) {\n            long long t = a / b;\n            a -= t * b, swap(a,\
+    \ b);\n            u -= t * v, swap(u, v);\n        }\n        val = val * u %\
+    \ MOD;\n        if (val < 0) val += MOD;\n        return *this;\n    }\n    constexpr\
+    \ bool operator==(const Fp& r) const noexcept {\n        return this->val == r.val;\n\
+    \    }\n    constexpr bool operator!=(const Fp& r) const noexcept {\n        return\
+    \ this->val != r.val;\n    }\n    friend constexpr istream& operator>>(istream&\
+    \ is, Fp<MOD>& x) noexcept {\n        is >> x.val;\n        x.val %= MOD;\n  \
+    \      if (x.val < 0) x.val += MOD;\n        return is;\n    }\n    friend constexpr\
+    \ ostream& operator<<(ostream& os, const Fp<MOD>& x) noexcept {\n        return\
+    \ os << x.val;\n    }\n    friend constexpr Fp<MOD> modpow(const Fp<MOD>& r, long\
+    \ long n) noexcept {\n        if (n == 0) return 1;\n        if (n < 0) return\
+    \ modpow(modinv(r), -n);\n        auto t = modpow(r, n / 2);\n        t = t *\
+    \ t;\n        if (n & 1) t = t * r;\n        return t;\n    }\n    friend constexpr\
+    \ Fp<MOD> modinv(const Fp<MOD>& r) noexcept {\n        long long a = r.val, b\
+    \ = MOD, u = 1, v = 0;\n        while (b) {\n            long long t = a / b;\n\
+    \            a -= t * b, swap(a, b);\n            u -= t * v, swap(u, v);\n  \
+    \      }\n        return Fp<MOD>(u);\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <int MOD>\n\
     struct Fp {\n    long long val;\n    constexpr Fp(long long v = 0) noexcept :\
     \ val(v % MOD) {\n        if (val < 0) val += MOD;\n    }\n    constexpr int getmod()\
@@ -119,7 +118,7 @@ data:
   isVerificationFile: false
   path: data-structure/static-modular-arithmetic.hpp
   requiredBy: []
-  timestamp: '2023-03-05 09:55:58+09:00'
+  timestamp: '2023-03-14 23:16:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/static-modular-arithmetic.hpp
