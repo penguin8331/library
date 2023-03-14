@@ -1,11 +1,13 @@
 #pragma once
-#include "../../template/template.hpp"
+#include "../template/template.hpp"
 
-unsigned int randInt() {
-    static unsigned int tx = 123456789, ty = 362436069, tz = 521288629, tw = 88675123;
-    unsigned int tt = (tx ^ (tx << 11));
-    tx = ty;
-    ty = tz;
-    tz = tw;
-    return (tw = (tw ^ (tw >> 19)) ^ (tt ^ (tt >> 8)));
-}
+struct dsts {
+    mt19937 mt;
+    uniform_int_distribution<ll> dist;
+    dsts(ll A, ll B) : dist(A, B) {
+        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());
+    }
+    ll get() {
+        return dist(mt);
+    }
+};
