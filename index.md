@@ -242,7 +242,7 @@ data:
       title: "\u65E5\u4ED8,\u66DC\u65E5"
     - icon: ':warning:'
       path: others/rand-int.hpp
-      title: "\u4E71\u6570\u751F\u6210 (by XorShift)"
+      title: "\u4E71\u6570\u751F\u6210"
   - name: string
     pages:
     - icon: ':warning:'

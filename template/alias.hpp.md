@@ -217,6 +217,9 @@ data:
     path: others/date.hpp
     title: "\u65E5\u4ED8,\u66DC\u65E5"
   - icon: ':warning:'
+    path: others/rand-int.hpp
+    title: "\u4E71\u6570\u751F\u6210"
+  - icon: ':warning:'
     path: string/rle.hpp
     title: "\u9023\u9577\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
@@ -480,6 +483,7 @@ data:
   - graph/bellman-ford.hpp
   - graph/is_biparite.hpp
   - others/date.hpp
+  - others/rand-int.hpp
   - math/combinatorics/modpow.hpp
   - math/combinatorics/binomial-coefficient.hpp
   - math/combinatorics/inversion-number.hpp
