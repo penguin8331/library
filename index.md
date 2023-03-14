@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: algo
-    pages:
-    - icon: ':warning:'
-      path: algo/debug.hpp
-      title: algo/debug.hpp
   - name: algorithm
     pages:
     - icon: ':warning:'
