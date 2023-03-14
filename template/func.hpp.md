@@ -31,12 +31,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree.hpp
     title: BIT
+  - icon: ':warning:'
+    path: data-structure/boost-multiprecision.hpp
+    title: boost/multiprecision
   - icon: ':heavy_check_mark:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
   - icon: ':warning:'
     path: data-structure/dynamic_modular-arithmetic.hpp
     title: "\u52D5\u7684 modint"
+  - icon: ':warning:'
+    path: data-structure/ext-pbds.hpp
+    title: ext/pbds
+  - icon: ':warning:'
+    path: data-structure/ext-rope.hpp
+    title: ext/rope
   - icon: ':warning:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
@@ -418,7 +427,9 @@ data:
   - data-structure/binary-indexed-tree-2d-raq.hpp
   - data-structure/binary-indexed-tree-raq.hpp
   - data-structure/binary-indexed-tree-2d.hpp
+  - data-structure/ext-rope.hpp
   - data-structure/mo.hpp
+  - data-structure/boost-multiprecision.hpp
   - data-structure/implicit-treap.hpp
   - data-structure/disjoint-sparse-table.hpp
   - data-structure/binary-indexed-tree.hpp
@@ -426,6 +437,7 @@ data:
   - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/lazy-segment-tree-arthmetic.hpp
   - data-structure/dynamic_modular-arithmetic.hpp
+  - data-structure/ext-pbds.hpp
   - graph/warshall-floyd.hpp
   - graph/dfs2d.hpp
   - graph/bfs.hpp

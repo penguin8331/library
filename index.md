@@ -34,12 +34,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
       title: BIT
+    - icon: ':warning:'
+      path: data-structure/boost-multiprecision.hpp
+      title: boost/multiprecision
     - icon: ':heavy_check_mark:'
       path: data-structure/disjoint-sparse-table.hpp
       title: Disjoint Sparse Table
     - icon: ':warning:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: "\u52D5\u7684 modint"
+    - icon: ':warning:'
+      path: data-structure/ext-pbds.hpp
+      title: ext/pbds
+    - icon: ':warning:'
+      path: data-structure/ext-rope.hpp
+      title: ext/rope
     - icon: ':warning:'
       path: data-structure/implicit-treap.hpp
       title: ImplicitTreap
