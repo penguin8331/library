@@ -45,13 +45,15 @@ data:
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
     using namespace std;\n#line 3 \"data-structure/ext-rope.hpp\"\n\n#include <ext/rope>\n\
-    using namespace __gnu_cxx;\n\ntemplate<class T>\nostream& operator<<(ostream&\
-    \ os, rope<T> A) {\n    os << \"[ \";\n    for (const auto& i : A) {\n       \
-    \ os << i << \" \";\n    }\n    os << \"]\";\n    return os;\n}\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\n#include <ext/rope>\n\
-    using namespace __gnu_cxx;\n\ntemplate<class T>\nostream& operator<<(ostream&\
-    \ os, rope<T> A) {\n    os << \"[ \";\n    for (const auto& i : A) {\n       \
-    \ os << i << \" \";\n    }\n    os << \"]\";\n    return os;\n}"
+    using namespace __gnu_cxx;\n"
+  code: '#pragma once
+
+    #include "../template/template.hpp"
+
+
+    #include <ext/rope>
+
+    using namespace __gnu_cxx;'
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -62,7 +64,7 @@ data:
   isVerificationFile: false
   path: data-structure/ext-rope.hpp
   requiredBy: []
-  timestamp: '2023-03-14 22:36:26+09:00'
+  timestamp: '2023-03-14 23:04:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/ext-rope.hpp

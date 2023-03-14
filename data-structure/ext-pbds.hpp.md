@@ -46,22 +46,22 @@ data:
     #define debug(...)\n#define line\n#endif\n#line 8 \"template/template.hpp\"\n\
     using namespace std;\n#line 3 \"data-structure/ext-pbds.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
     #include <ext/pb_ds/tree_policy.hpp>\nusing namespace __gnu_pbds;\n\ntemplate\
-    \ <class T>\nusing ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    \ntemplate <class T>\nostream& operator<<(ostream& os, ordered_set<T> A) {\n \
-    \   os << \"[ \";\n    for (const T& i : A) {\n        os << i << \" \";\n   \
-    \ }\n    os << \"]\";\n    return os;\n}\ntemplate <class T, class U>\nostream&\
-    \ operator<<(ostream& os, gp_hash_table<T, U> m) {\n    os << \"[ \";\n    for\
-    \ (const pair<T, U>& i : m) {\n        os << \"(\" << i.first << \",\" << i.second\
-    \ << \")\"\n           << \"\";\n    }\n    os << \"]\";\n    return os;\n}\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
-    #include <ext/pb_ds/tree_policy.hpp>\nusing namespace __gnu_pbds;\n\ntemplate\
-    \ <class T>\nusing ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    \ntemplate <class T>\nostream& operator<<(ostream& os, ordered_set<T> A) {\n \
-    \   os << \"[ \";\n    for (const T& i : A) {\n        os << i << \" \";\n   \
-    \ }\n    os << \"]\";\n    return os;\n}\ntemplate <class T, class U>\nostream&\
-    \ operator<<(ostream& os, gp_hash_table<T, U> m) {\n    os << \"[ \";\n    for\
-    \ (const pair<T, U>& i : m) {\n        os << \"(\" << i.first << \",\" << i.second\
-    \ << \")\"\n           << \"\";\n    }\n    os << \"]\";\n    return os;\n}"
+    \ <class T>\nusing ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n"
+  code: '#pragma once
+
+    #include "../template/template.hpp"
+
+
+    #include <ext/pb_ds/assoc_container.hpp>
+
+    #include <ext/pb_ds/tree_policy.hpp>
+
+    using namespace __gnu_pbds;
+
+
+    template <class T>
+
+    using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;'
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: data-structure/ext-pbds.hpp
   requiredBy: []
-  timestamp: '2023-03-14 22:44:27+09:00'
+  timestamp: '2023-03-14 23:04:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/ext-pbds.hpp
