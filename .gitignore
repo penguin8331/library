@@ -1,4 +1,3 @@
 .clang-format
 *.out
 .vscode/
-algo/
