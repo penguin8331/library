@@ -189,7 +189,7 @@ data:
       title: Warshall Floyd
   - name: graph/flow
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/ford-fullkerson.hpp
       title: graph/flow/ford-fullkerson.hpp
   - name: math/combinatorics
@@ -276,6 +276,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: test.cpp
+      title: test.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -396,7 +401,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_C.test.cpp
       title: test/AOJ/GRL_5_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_A.test.cpp
       title: test/AOJ/GRL_6_A.test.cpp
     - icon: ':heavy_check_mark:'
