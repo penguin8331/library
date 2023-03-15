@@ -1,5 +1,5 @@
 #pragma once
-#include "../template/template.hpp"
+#include "../../template/template.hpp"
 
 // edge class (for network-flow)
 template <class FLOWTYPE>
