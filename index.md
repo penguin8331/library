@@ -191,7 +191,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/flow/ford-fullkerson.hpp
-      title: graph/flow/ford-fullkerson.hpp
+      title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - name: math/combinatorics
     pages:
     - icon: ':warning:'

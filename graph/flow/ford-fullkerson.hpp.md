@@ -139,8 +139,5 @@ data:
   - test/AOJ/GRL_6_A.test.cpp
 documentation_of: graph/flow/ford-fullkerson.hpp
 layout: document
-redirect_from:
-- /library/graph/flow/ford-fullkerson.hpp
-- /library/graph/flow/ford-fullkerson.hpp.html
-title: graph/flow/ford-fullkerson.hpp
+title: "Ford Fullkerson (\u6700\u5927\u6D41)"
 ---

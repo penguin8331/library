@@ -151,7 +151,7 @@ data:
     title: Dijkstra-2D
   - icon: ':heavy_check_mark:'
     path: graph/flow/ford-fullkerson.hpp
-    title: graph/flow/ford-fullkerson.hpp
+    title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - icon: ':warning:'
     path: graph/is_biparite.hpp
     title: "\u4E8C\u90E8\u30B0\u30E9\u30D5\u5224\u5B9A"
