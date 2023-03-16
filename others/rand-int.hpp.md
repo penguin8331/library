@@ -44,14 +44,14 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 1 \"template/debug.hpp\"\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct dsts {\n    mt19937 mt;\n  \
-    \  uniform_int_distribution<ll> dist;\n    dsts(ll A, ll B) : dist(A, B) {\n \
-    \       mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
-    \    }\n    ll get() {\n        return dist(mt);\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct dsts {\n  \
-    \  mt19937 mt;\n    uniform_int_distribution<ll> dist;\n    dsts(ll A, ll B) :\
-    \ dist(A, B) {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
-    \    }\n    ll get() {\n        return dist(mt);\n    }\n};"
+    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct ran {\n    mt19937 mt;\n   \
+    \ ran() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
+    \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
+    \ B);\n        return dist(mt);\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct ran {\n   \
+    \ mt19937 mt;\n    ran() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
+    \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
+    \ B);\n        return dist(mt);\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -62,7 +62,7 @@ data:
   isVerificationFile: false
   path: others/rand-int.hpp
   requiredBy: []
-  timestamp: '2023-03-15 00:05:55+09:00'
+  timestamp: '2023-03-16 18:16:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: others/rand-int.hpp

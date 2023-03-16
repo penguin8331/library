@@ -101,5 +101,5 @@ data:
   - test/AOJ/2842.test.cpp
 documentation_of: data-structure/binary-indexed-tree-2d.hpp
 layout: document
-title: "\u4E8C\u6B21\u5143 BIT"
+title: BIT-2D
 ---

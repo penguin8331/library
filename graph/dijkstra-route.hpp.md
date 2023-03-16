@@ -97,7 +97,7 @@ data:
   - test/yosupo/shortes-path.test.cpp
 documentation_of: graph/dijkstra-route.hpp
 layout: document
-title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
+title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
 ---
 
 ## 使い方

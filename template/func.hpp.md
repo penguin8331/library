@@ -19,11 +19,11 @@ data:
     title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - icon: ':warning:'
     path: data-structure/binary-indexed-tree-2d-raq.hpp
-    title: "\u4E8C\u6B21\u5143 BIT (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\u53D6\
-      \u5F97\u306B\u4E21\u5BFE\u5FDC)"
+    title: "BIT-2D (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\u53D6\u5F97\u306B\
+      \u4E21\u5BFE\u5FDC)"
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree-2d.hpp
-    title: "\u4E8C\u6B21\u5143 BIT"
+    title: BIT-2D
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree-raq.hpp
     title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
@@ -39,7 +39,7 @@ data:
     title: Disjoint Sparse Table
   - icon: ':warning:'
     path: data-structure/dynamic_modular-arithmetic.hpp
-    title: "\u52D5\u7684 modint"
+    title: Dynamic-ModInt
   - icon: ':warning:'
     path: data-structure/ext-pbds.hpp
     title: ext/pbds
@@ -70,7 +70,7 @@ data:
     title: Segment Tree
   - icon: ':warning:'
     path: data-structure/static-modular-arithmetic.hpp
-    title: "\u9759\u7684 modint"
+    title: Static-ModInt
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
@@ -142,7 +142,7 @@ data:
     title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra-route.hpp
-    title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143)"
+    title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra
@@ -178,7 +178,7 @@ data:
     title: Warshall Floyd
   - icon: ':warning:'
     path: math/combinatorics/binomial-coefficient.hpp
-    title: "\u4E8C\u9805\u4FC2\u6570 (\u30AA\u30FC\u30BD\u30C9\u30C3\u30AF\u30B9)"
+    title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
     title: "\u8EE2\u5012\u6570"
