@@ -276,11 +276,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: test.cpp
-      title: test.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
