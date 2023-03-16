@@ -1,13 +1,13 @@
 #pragma once
 #include "../template/template.hpp"
 
-struct dsts {
+struct ran {
     mt19937 mt;
-    uniform_int_distribution<ll> dist;
-    dsts(ll A, ll B) : dist(A, B) {
+    ran() {
         mt.seed(std::chrono::system_clock::now().time_since_epoch().count());
     }
-    ll get() {
+    ll get(ll A, ll B) {
+        uniform_int_distribution<ll> dist(A, B);
         return dist(mt);
     }
 };

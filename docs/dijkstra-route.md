@@ -1,5 +1,5 @@
 ---
-title: Dijkstra (経路復元)
+title: Dijkstra (経路復元あり)
 documentation_of: //graph/dijkstra-route.hpp
 ---
 
