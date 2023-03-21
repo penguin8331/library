@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
       title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
     - icon: ':heavy_check_mark:'
@@ -169,7 +169,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
       title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
@@ -178,7 +178,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: Strongly Connected Component
     - icon: ':heavy_check_mark:'
@@ -189,7 +189,7 @@ data:
       title: Warshall Floyd
   - name: graph/flow
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/ford-fullkerson.hpp
       title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - name: math/combinatorics
@@ -200,7 +200,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/combinatorics/inversion-number.hpp
       title: "\u8EE2\u5012\u6570"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/modpow.hpp
       title: modpow
     - icon: ':warning:'
@@ -214,7 +214,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number/convert-base.hpp
       title: "\u9032\u6570\u5909\u63DB"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number/divisors.hpp
       title: "\u7D04\u6570\u5217\u6319"
     - icon: ':warning:'
@@ -236,7 +236,7 @@ data:
     - icon: ':warning:'
       path: math/number/pow.hpp
       title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number/prime-factorization.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - name: others
@@ -392,27 +392,27 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_C.test.cpp
       title: test/AOJ/GRL_5_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_A.test.cpp
       title: test/AOJ/GRL_6_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ITP1_3_D.test.cpp
       title: test/AOJ/ITP1_3_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_A.test.cpp
       title: test/AOJ/NTL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_B.test.cpp
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp
     - icon: ':x:'

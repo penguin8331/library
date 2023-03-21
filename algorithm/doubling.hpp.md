@@ -67,23 +67,24 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/doubling.hpp\"\n\ntemplate <class T>\nstruct doubling\
     \ {\n    vector<int> A;\n    vector<vector<int>> table;\n    int SIZE;\n    int\
-    \ logK = 1;\n    doubling(vector<int> a, T max) : A(a) {\n        SIZE = A.size();\n\
-    \        while ((1LL << logK) <= max) logK++;\n        table.assign(logK, vector<int>(SIZE));\n\
-    \        table[0] = A;\n        for (int k = 0; k < logK - 1; k++) {\n       \
-    \     for (int i = 0; i < SIZE; i++) {\n                table[k + 1][i] = table[k][table[k][i]];\n\
-    \            }\n        }\n    }\n    int get(int a, T b) {\n        int now =\
-    \ a;\n        for (int k = 0; b > 0; k++) {\n            if (b & 1) now = table[k][now];\n\
-    \            b = b >> 1;\n        }\n        return now;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
-    struct doubling {\n    vector<int> A;\n    vector<vector<int>> table;\n    int\
-    \ SIZE;\n    int logK = 1;\n    doubling(vector<int> a, T max) : A(a) {\n    \
-    \    SIZE = A.size();\n        while ((1LL << logK) <= max) logK++;\n        table.assign(logK,\
+    \ logK = 1;\n    doubling(const vector<int> &a, T max) : A(a) {\n        SIZE\
+    \ = A.size();\n        while ((1LL << logK) <= max) logK++;\n        table.assign(logK,\
     \ vector<int>(SIZE));\n        table[0] = A;\n        for (int k = 0; k < logK\
     \ - 1; k++) {\n            for (int i = 0; i < SIZE; i++) {\n                table[k\
     \ + 1][i] = table[k][table[k][i]];\n            }\n        }\n    }\n    int get(int\
     \ a, T b) {\n        int now = a;\n        for (int k = 0; b > 0; k++) {\n   \
     \         if (b & 1) now = table[k][now];\n            b = b >> 1;\n        }\n\
-    \        return now;\n    }\n};"
+    \        return now;\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
+    struct doubling {\n    vector<int> A;\n    vector<vector<int>> table;\n    int\
+    \ SIZE;\n    int logK = 1;\n    doubling(const vector<int> &a, T max) : A(a) {\n\
+    \        SIZE = A.size();\n        while ((1LL << logK) <= max) logK++;\n    \
+    \    table.assign(logK, vector<int>(SIZE));\n        table[0] = A;\n        for\
+    \ (int k = 0; k < logK - 1; k++) {\n            for (int i = 0; i < SIZE; i++)\
+    \ {\n                table[k + 1][i] = table[k][table[k][i]];\n            }\n\
+    \        }\n    }\n    int get(int a, T b) {\n        int now = a;\n        for\
+    \ (int k = 0; b > 0; k++) {\n            if (b & 1) now = table[k][now];\n   \
+    \         b = b >> 1;\n        }\n        return now;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -94,7 +95,7 @@ data:
   isVerificationFile: false
   path: algorithm/doubling.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: algorithm/doubling.hpp

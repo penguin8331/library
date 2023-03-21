@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
   - icon: ':question:'
@@ -24,9 +24,9 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
@@ -74,27 +74,27 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"graph/lca.hpp\"\n\nstruct LCA {\n    vector<vector<int>> parent;\
     \  // parent[d][v] := 2^d-th parent of v\n    vector<int> depth;\n    LCA() {}\n\
-    \    LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }\n    void init(const\
-    \ vector<vector<int>>& G, int r = 0) {\n        int V = (int)G.size();\n     \
-    \   int h = 1;\n        while ((1 << h) < V) ++h;\n        parent.assign(h, vector<int>(V,\
-    \ -1));\n        depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n        for\
-    \ (int i = 0; i + 1 < (int)parent.size(); ++i)\n            for (int v = 0; v\
-    \ < V; ++v)\n                if (parent[i][v] != -1)\n                    parent[i\
-    \ + 1][v] = parent[i][parent[i][v]];\n    }\n    void dfs(const vector<vector<int>>&\
-    \ G, int v, int p, int d) {\n        parent[0][v] = p;\n        depth[v] = d;\n\
-    \        for (auto e : G[v])\n            if (e != p) dfs(G, e, v, d + 1);\n \
-    \   }\n    int after(int u, int k) {\n        for (int i = 0; i < (int)parent.size();\
-    \ i++) {\n            if (k & (1 << i)) {\n                u = parent[i][u];\n\
-    \            }\n        }\n        return u;\n    }\n    int get(int u, int v)\
-    \ {\n        if (depth[u] > depth[v]) swap(u, v);\n        v = after(v, depth[v]\
-    \ - depth[u]);\n        if (u == v) return u;\n        for (int i = (int)parent.size()\
-    \ - 1; i >= 0; --i) {\n            if (parent[i][u] != parent[i][v]) {\n     \
-    \           u = parent[i][u];\n                v = parent[i][v];\n           \
-    \ }\n        }\n        return parent[0][u];\n    }\n    int dist(int u, int v)\
-    \ {\n        return depth[u] + depth[v] - 2 * depth[get(u, v)];\n    }\n    bool\
-    \ is_on_path(int u, int v, int a) {\n        return dist(u, a) + dist(a, v) ==\
-    \ dist(u, v);\n    }\n};\n#line 4 \"test/AOJ/GRL_5_C.test.cpp\"\n\nint main()\
-    \ {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
+    \    explicit LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }\n \
+    \   void init(const vector<vector<int>>& G, int r = 0) {\n        int V = (int)G.size();\n\
+    \        int h = 1;\n        while ((1 << h) < V) ++h;\n        parent.assign(h,\
+    \ vector<int>(V, -1));\n        depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n\
+    \        for (int i = 0; i + 1 < (int)parent.size(); ++i)\n            for (int\
+    \ v = 0; v < V; ++v)\n                if (parent[i][v] != -1)\n              \
+    \      parent[i + 1][v] = parent[i][parent[i][v]];\n    }\n    void dfs(const\
+    \ vector<vector<int>>& G, int v, int p, int d) {\n        parent[0][v] = p;\n\
+    \        depth[v] = d;\n        for (auto e : G[v])\n            if (e != p) dfs(G,\
+    \ e, v, d + 1);\n    }\n    int after(int u, int k) {\n        for (int i = 0;\
+    \ i < (int)parent.size(); i++) {\n            if (k & (1 << i)) {\n          \
+    \      u = parent[i][u];\n            }\n        }\n        return u;\n    }\n\
+    \    int get(int u, int v) {\n        if (depth[u] > depth[v]) swap(u, v);\n \
+    \       v = after(v, depth[v] - depth[u]);\n        if (u == v) return u;\n  \
+    \      for (int i = (int)parent.size() - 1; i >= 0; --i) {\n            if (parent[i][u]\
+    \ != parent[i][v]) {\n                u = parent[i][u];\n                v = parent[i][v];\n\
+    \            }\n        }\n        return parent[0][u];\n    }\n    int dist(int\
+    \ u, int v) {\n        return depth[u] + depth[v] - 2 * depth[get(u, v)];\n  \
+    \  }\n    bool is_on_path(int u, int v, int a) {\n        return dist(u, a) +\
+    \ dist(a, v) == dist(u, v);\n    }\n};\n#line 4 \"test/AOJ/GRL_5_C.test.cpp\"\n\
+    \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<int>> G(N, vector<int>(0));\n\
     \    for (int i = 0; i < N; i++) {\n        int k;\n        cin >> k;\n      \
     \  for (int j = 0; j < k; j++) {\n            int a;\n            cin >> a;\n\
     \            G[i].push_back(a);\n        }\n    }\n    LCA lca(G, 0);\n    int\
@@ -119,8 +119,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-21 19:32:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_C.test.cpp
 layout: document

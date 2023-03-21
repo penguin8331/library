@@ -110,9 +110,9 @@ data:
     \  this->push_back(a);\n        this->push_back(b);\n    }\n    friend ostream\
     \ &operator<<(ostream &s, const Line &l) { return s << '{' << l[0] << \", \" <<\
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
-    \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
-    \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/area-polygon.hpp\"\
+    \ Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n \
+    \   friend ostream &operator<<(ostream &s, const Circle &c) { return s << '('\
+    \ << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/area-polygon.hpp\"\
     \n\nDD CalcArea(const vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i\
     \ = 0; i < (int)pol.size(); ++i) {\n        res += cross(pol[i], pol[(i + 1) %\
     \ pol.size()]);\n    }\n    return res / 2.0L;\n}\n#line 4 \"geomeny/convex-cut.hpp\"\
@@ -160,7 +160,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_C.test.cpp

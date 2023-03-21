@@ -74,7 +74,7 @@ data:
     \ std;\n#line 3 \"data-structure/disjoint-sparse-table.hpp\"\n\ntemplate <class\
     \ SemiGroup>\nstruct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup,\
     \ SemiGroup)>;\n    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int>\
-    \ height;\n\n    DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
+    \ height;\n\n    explicit DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
     \ Func& f, const vector<SemiGroup>& vec) : F(f) { init(vec); }\n    void init(const\
     \ vector<SemiGroup>& vec) {\n        int n = (int)vec.size(), h = 1;\n       \
     \ while ((1 << h) <= n) ++h;\n        dat.assign(h, vector<SemiGroup>(n));\n \
@@ -92,7 +92,7 @@ data:
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class SemiGroup>\n\
     struct DisjointSparseTable {\n    using Func = function<SemiGroup(SemiGroup, SemiGroup)>;\n\
     \    const Func F;\n    vector<vector<SemiGroup>> dat;\n    vector<int> height;\n\
-    \n    DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
+    \n    explicit DisjointSparseTable(const Func& f) : F(f) {}\n    DisjointSparseTable(const\
     \ Func& f, const vector<SemiGroup>& vec) : F(f) { init(vec); }\n    void init(const\
     \ vector<SemiGroup>& vec) {\n        int n = (int)vec.size(), h = 1;\n       \
     \ while ((1 << h) <= n) ++h;\n        dat.assign(h, vector<SemiGroup>(n));\n \
@@ -117,7 +117,7 @@ data:
   isVerificationFile: false
   path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum-2.test.cpp

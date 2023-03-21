@@ -77,13 +77,13 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\n\ntemplate <class\
     \ Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\n    //\
-    \ [0, n)\n    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}\n\
-    \    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n    // a\
-    \ is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int i = a;\
-    \ i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n    }\n\n\
-    \    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n        Abel res\
-    \ = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n \
-    \           res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
+    \ [0, n)\n    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity)\
+    \ {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n   \
+    \ // a is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int i\
+    \ = a; i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n  \
+    \  }\n\n    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n        Abel\
+    \ res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n\
+    \            res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
     \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
     \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
     \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
@@ -116,7 +116,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

@@ -80,11 +80,11 @@ data:
     \    vector<long long> A = {2, 325, 9375, 28178, 450775,\n                   \
     \        9780504, 1795265022};\n    long long s = 0, d = N - 1;\n    while (d\
     \ % 2 == 0) {\n        ++s;\n        d >>= 1;\n    }\n    for (auto a : A) {\n\
-    \        if (a % N == 0) return true;\n        long long t, x = pow_mod<__int128_t>(a,\
-    \ d, N);\n        if (x != 1) {\n            for (t = 0; t < s; ++t) {\n     \
-    \           if (x == N - 1) break;\n                x = __int128_t(x) * x % N;\n\
-    \            }\n            if (t == s) return false;\n        }\n    }\n    return\
-    \ true;\n}\n"
+    \        if (a % N == 0) return true;\n        long long x = pow_mod<__int128_t>(a,\
+    \ d, N);\n        if (x != 1) {\n            long long t;\n            for (t\
+    \ = 0; t < s; ++t) {\n                if (x == N - 1) break;\n               \
+    \ x = __int128_t(x) * x % N;\n            }\n            if (t == s) return false;\n\
+    \        }\n    }\n    return true;\n}\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n\ntemplate <class\
     \ T>\nT pow_mod(T A, T N, T M) {\n    T res = 1 % M;\n    A %= M;\n    while (N)\
     \ {\n        if (N & 1) res = (res * A) % M;\n        A = (A * A) % M;\n     \
@@ -93,11 +93,11 @@ data:
     \ 2 == 0) return false;\n    vector<long long> A = {2, 325, 9375, 28178, 450775,\n\
     \                           9780504, 1795265022};\n    long long s = 0, d = N\
     \ - 1;\n    while (d % 2 == 0) {\n        ++s;\n        d >>= 1;\n    }\n    for\
-    \ (auto a : A) {\n        if (a % N == 0) return true;\n        long long t, x\
-    \ = pow_mod<__int128_t>(a, d, N);\n        if (x != 1) {\n            for (t =\
-    \ 0; t < s; ++t) {\n                if (x == N - 1) break;\n                x\
-    \ = __int128_t(x) * x % N;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}"
+    \ (auto a : A) {\n        if (a % N == 0) return true;\n        long long x =\
+    \ pow_mod<__int128_t>(a, d, N);\n        if (x != 1) {\n            long long\
+    \ t;\n            for (t = 0; t < s; ++t) {\n                if (x == N - 1) break;\n\
+    \                x = __int128_t(x) * x % N;\n            }\n            if (t\
+    \ == s) return false;\n        }\n    }\n    return true;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -109,7 +109,7 @@ data:
   path: math/number/miller-rabin.hpp
   requiredBy:
   - math/number/pollard-rho.hpp
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_1_C-2.test.cpp

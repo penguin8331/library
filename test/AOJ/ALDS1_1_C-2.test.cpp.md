@@ -80,14 +80,14 @@ data:
     \    vector<long long> A = {2, 325, 9375, 28178, 450775,\n                   \
     \        9780504, 1795265022};\n    long long s = 0, d = N - 1;\n    while (d\
     \ % 2 == 0) {\n        ++s;\n        d >>= 1;\n    }\n    for (auto a : A) {\n\
-    \        if (a % N == 0) return true;\n        long long t, x = pow_mod<__int128_t>(a,\
-    \ d, N);\n        if (x != 1) {\n            for (t = 0; t < s; ++t) {\n     \
-    \           if (x == N - 1) break;\n                x = __int128_t(x) * x % N;\n\
-    \            }\n            if (t == s) return false;\n        }\n    }\n    return\
-    \ true;\n}\n#line 4 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\n\nint main() {\n    int\
-    \ Q;\n    cin >> Q;\n    int cnt = 0;\n    for (int i = 0; i < Q; i++) {\n   \
-    \     int N;\n        cin >> N;\n        cnt += is_prime(N);\n    }\n    cout\
-    \ << cnt << endl;\n}\n"
+    \        if (a % N == 0) return true;\n        long long x = pow_mod<__int128_t>(a,\
+    \ d, N);\n        if (x != 1) {\n            long long t;\n            for (t\
+    \ = 0; t < s; ++t) {\n                if (x == N - 1) break;\n               \
+    \ x = __int128_t(x) * x % N;\n            }\n            if (t == s) return false;\n\
+    \        }\n    }\n    return true;\n}\n#line 4 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\
+    \n\nint main() {\n    int Q;\n    cin >> Q;\n    int cnt = 0;\n    for (int i\
+    \ = 0; i < Q; i++) {\n        int N;\n        cin >> N;\n        cnt += is_prime(N);\n\
+    \    }\n    cout << cnt << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../math/number/miller-rabin.hpp\"\
     \n\nint main() {\n    int Q;\n    cin >> Q;\n    int cnt = 0;\n    for (int i\
@@ -104,7 +104,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C-2.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C-2.test.cpp

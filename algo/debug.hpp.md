@@ -51,19 +51,19 @@ data:
     template <class... Ts>\nvoid out(std::queue<Ts...>);\ntemplate <class... Ts>\n\
     void out(std::priority_queue<Ts...>);\n#endif\n\ntemplate <class C>\nstd::enable_if_t<is_iterable_container_v<C>>\
     \ out(const C&);\n\ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>>\
-    \ out(const Tp& arg) {\n    os << arg;\n}\n\nvoid out(const char& arg) {\n   \
-    \ os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n    os << '\\\
-    \"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg) {\n    os <<\
-    \ '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const std::string&\
-    \ arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128& arg) {\n    int sign = (arg < 0) ? (-1) : 1;\n    if\
-    \ (sign == -1)\n        os << '-';\n    __int128 base = sign;\n    while (sign\
-    \ * arg >= sign * base * 10)\n        base *= 10;\n    while (base) {\n      \
-    \  os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n  \
-    \  }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128 base\
-    \ = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base) {\n\
-    \        os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n\
-    \    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
+    \ out(const Tp& arg) {\n    os << arg;\n    return;\n}\n\nvoid out(const char&\
+    \ arg) {\n    os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n\
+    \    os << '\\\"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg)\
+    \ {\n    os << '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const\
+    \ std::string& arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef\
+    \ __SIZEOF_INT128__\nvoid out(const __int128& arg) {\n    int sign = (arg < 0)\
+    \ ? (-1) : 1;\n    if (sign == -1)\n        os << '-';\n    __int128 base = sign;\n\
+    \    while (sign * arg >= sign * base * 10)\n        base *= 10;\n    while (base)\
+    \ {\n        os << static_cast<char>('0' + (arg / base % 10));\n        base /=\
+    \ 10;\n    }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128\
+    \ base = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base)\
+    \ {\n        os << static_cast<char>('0' + (arg / base % 10));\n        base /=\
+    \ 10;\n    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
     \ Tp2>& arg) {\n    os << '(';\n    out(arg.first);\n    os << \", \";\n    out(arg.second);\n\
     \    os << ')';\n}\n\n#if INCLUDED(TUPLE)\ntemplate <class T, std::size_t... Is>\n\
     void print_tuple(const T& arg, std::index_sequence<Is...>) {\n    static_cast<void>(((os\
@@ -86,10 +86,11 @@ data:
     \ {\n    if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n       \
     \ os << \"<empty container>\";\n        return;\n    }\n    os << \"[ \";\n  \
     \  std::for_each(std::cbegin(arg), std::cend(arg), [](const elem_t<Container>&\
-    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n}\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\nprint(std::string_view\
-    \ name, const Tp& arg) {\n    os << name << \": \";\n    out(arg);\n    if constexpr\
-    \ (is_container_v<Tp>)\n        os << '\\n';\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
+    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n \
+    \   return;\n}\n\ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\n\
+    print(const std::string_view& name, const Tp& arg) {\n    os << name << \": \"\
+    ;\n    out(arg);\n    if constexpr (is_container_v<Tp>)\n        os << '\\n';\n\
+    \    return;\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
     print(std::string_view name, const Tp& arg) {\n    os << name << \": \";\n   \
     \ if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n        os << \"\
     <empty multidimensional container>\\n\";\n        return;\n    }\n    std::for_each(std::cbegin(arg),\
@@ -98,12 +99,12 @@ data:
     \          is_first_elem = false;\n                      else\n              \
     \            for (std::size_t i = 0; i < name.length() + 2; i++)\n           \
     \                   os << ' ';\n                      out(elem);\n           \
-    \           os << '\\n';\n                  });\n}\n\ntemplate <class Tp, class...\
-    \ Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const Ts&... args)\
-    \ {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n \
-    \           std::distance(\n                names.crbegin(),\n               \
-    \ std::find_if_not(names.crbegin(), names.crend(),\n                         \
-    \        [](const char c) { return std::isspace(c); })));\n        print(names,\
+    \           os << '\\n';\n                  });\n    return;\n}\n\ntemplate <class\
+    \ Tp, class... Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const\
+    \ Ts&... args) {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n\
+    \            std::distance(\n                names.crbegin(),\n              \
+    \  std::find_if_not(names.crbegin(), names.crend(),\n                        \
+    \         [](const char c) { return std::isspace(c); })));\n        print(names,\
     \ arg);\n        if constexpr (!is_container_v<Tp>)\n            os << '\\n';\n\
     \    } else {\n        std::size_t comma_pos = 0;\n\n        for (std::size_t\
     \ i = 0, paren_depth = 0, inside_quote = false; i < names.length(); i++) {\n \
@@ -173,19 +174,19 @@ data:
     template <class... Ts>\nvoid out(std::queue<Ts...>);\ntemplate <class... Ts>\n\
     void out(std::priority_queue<Ts...>);\n#endif\n\ntemplate <class C>\nstd::enable_if_t<is_iterable_container_v<C>>\
     \ out(const C&);\n\ntemplate <class Tp>\nstd::enable_if_t<!is_container_v<Tp>>\
-    \ out(const Tp& arg) {\n    os << arg;\n}\n\nvoid out(const char& arg) {\n   \
-    \ os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n    os << '\\\
-    \"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg) {\n    os <<\
-    \ '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const std::string&\
-    \ arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef __SIZEOF_INT128__\n\
-    void out(const __int128& arg) {\n    int sign = (arg < 0) ? (-1) : 1;\n    if\
-    \ (sign == -1)\n        os << '-';\n    __int128 base = sign;\n    while (sign\
-    \ * arg >= sign * base * 10)\n        base *= 10;\n    while (base) {\n      \
-    \  os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n  \
-    \  }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128 base\
-    \ = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base) {\n\
-    \        os << static_cast<char>('0' + (arg / base % 10));\n        base /= 10;\n\
-    \    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
+    \ out(const Tp& arg) {\n    os << arg;\n    return;\n}\n\nvoid out(const char&\
+    \ arg) {\n    os << '\\'' << arg << '\\'';\n}\n\nvoid out(const char* arg) {\n\
+    \    os << '\\\"' << arg << '\\\"';\n}\n\nvoid out(const std::string_view& arg)\
+    \ {\n    os << '\\\"' << arg << '\\\"';\n}\n\n#if INCLUDED(STRING)\nvoid out(const\
+    \ std::string& arg) {\n    os << '\\\"' << arg << '\\\"';\n}\n#endif\n\n#ifdef\
+    \ __SIZEOF_INT128__\nvoid out(const __int128& arg) {\n    int sign = (arg < 0)\
+    \ ? (-1) : 1;\n    if (sign == -1)\n        os << '-';\n    __int128 base = sign;\n\
+    \    while (sign * arg >= sign * base * 10)\n        base *= 10;\n    while (base)\
+    \ {\n        os << static_cast<char>('0' + (arg / base % 10));\n        base /=\
+    \ 10;\n    }\n}\n\nvoid out(const unsigned __int128& arg) {\n    unsigned __int128\
+    \ base = 1;\n    while (arg >= base * 10)\n        base *= 10;\n    while (base)\
+    \ {\n        os << static_cast<char>('0' + (arg / base % 10));\n        base /=\
+    \ 10;\n    }\n}\n#endif\n\ntemplate <class Tp1, class Tp2>\nvoid out(const std::pair<Tp1,\
     \ Tp2>& arg) {\n    os << '(';\n    out(arg.first);\n    os << \", \";\n    out(arg.second);\n\
     \    os << ')';\n}\n\n#if INCLUDED(TUPLE)\ntemplate <class T, std::size_t... Is>\n\
     void print_tuple(const T& arg, std::index_sequence<Is...>) {\n    static_cast<void>(((os\
@@ -208,10 +209,11 @@ data:
     \ {\n    if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n       \
     \ os << \"<empty container>\";\n        return;\n    }\n    os << \"[ \";\n  \
     \  std::for_each(std::cbegin(arg), std::cend(arg), [](const elem_t<Container>&\
-    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n}\n\
-    \ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\nprint(std::string_view\
-    \ name, const Tp& arg) {\n    os << name << \": \";\n    out(arg);\n    if constexpr\
-    \ (is_container_v<Tp>)\n        os << '\\n';\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
+    \ elem) {\n        out(elem);\n        os << ' ';\n    });\n    os << ']';\n \
+    \   return;\n}\n\ntemplate <class Tp>\nstd::enable_if_t<!is_multidim_container_v<Tp>>\n\
+    print(const std::string_view& name, const Tp& arg) {\n    os << name << \": \"\
+    ;\n    out(arg);\n    if constexpr (is_container_v<Tp>)\n        os << '\\n';\n\
+    \    return;\n}\n\ntemplate <class Tp>\nstd::enable_if_t<is_multidim_container_v<Tp>>\n\
     print(std::string_view name, const Tp& arg) {\n    os << name << \": \";\n   \
     \ if (std::distance(std::cbegin(arg), std::cend(arg)) == 0) {\n        os << \"\
     <empty multidimensional container>\\n\";\n        return;\n    }\n    std::for_each(std::cbegin(arg),\
@@ -220,12 +222,12 @@ data:
     \          is_first_elem = false;\n                      else\n              \
     \            for (std::size_t i = 0; i < name.length() + 2; i++)\n           \
     \                   os << ' ';\n                      out(elem);\n           \
-    \           os << '\\n';\n                  });\n}\n\ntemplate <class Tp, class...\
-    \ Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const Ts&... args)\
-    \ {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n \
-    \           std::distance(\n                names.crbegin(),\n               \
-    \ std::find_if_not(names.crbegin(), names.crend(),\n                         \
-    \        [](const char c) { return std::isspace(c); })));\n        print(names,\
+    \           os << '\\n';\n                  });\n    return;\n}\n\ntemplate <class\
+    \ Tp, class... Ts>\nvoid multi_print(std::string_view names, const Tp& arg, const\
+    \ Ts&... args) {\n    if constexpr (sizeof...(Ts) == 0) {\n        names.remove_suffix(\n\
+    \            std::distance(\n                names.crbegin(),\n              \
+    \  std::find_if_not(names.crbegin(), names.crend(),\n                        \
+    \         [](const char c) { return std::isspace(c); })));\n        print(names,\
     \ arg);\n        if constexpr (!is_container_v<Tp>)\n            os << '\\n';\n\
     \    } else {\n        std::size_t comma_pos = 0;\n\n        for (std::size_t\
     \ i = 0, paren_depth = 0, inside_quote = false; i < names.length(); i++) {\n \
@@ -256,7 +258,7 @@ data:
   isVerificationFile: false
   path: algo/debug.hpp
   requiredBy: []
-  timestamp: '2023-03-14 23:16:01+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: algo/debug.hpp

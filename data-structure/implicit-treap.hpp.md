@@ -84,9 +84,9 @@ data:
     \            x = rnd();\n            for (int i = 0; i < 100; i++) {\n       \
     \         random();\n            }\n        }\n\n        uint64_t random() {\n\
     \            x = x ^ (x << 7);\n            return x = x ^ (x >> 9);\n       \
-    \ }\n    } rnd;\n\n    struct Node {\n        T0 value, acc;\n        T1 lazy;\n\
-    \        int priority, cnt;\n        bool rev;\n        Node *l, *r;\n\n     \
-    \   Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n            : value(value_),\
+    \ }\n    };\n\n    struct Node {\n        T0 value, acc;\n        T1 lazy;\n \
+    \       int priority, cnt;\n        bool rev;\n        Node *l, *r;\n\n      \
+    \  Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n            : value(value_),\
     \ acc(u0_), lazy(u1_), priority(priority_), cnt(1), rev(false), l(nullptr), r(nullptr)\
     \ {}\n    }* root = nullptr;\n\n    using Tree = Node*;\n\n    int cnt(Tree t)\
     \ { return t ? t->cnt : 0; }\n\n    T0 acc(Tree t) { return t ? t->acc : u0; }\n\
@@ -221,9 +221,9 @@ data:
     \            x = rnd();\n            for (int i = 0; i < 100; i++) {\n       \
     \         random();\n            }\n        }\n\n        uint64_t random() {\n\
     \            x = x ^ (x << 7);\n            return x = x ^ (x >> 9);\n       \
-    \ }\n    } rnd;\n\n    struct Node {\n        T0 value, acc;\n        T1 lazy;\n\
-    \        int priority, cnt;\n        bool rev;\n        Node *l, *r;\n\n     \
-    \   Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n            : value(value_),\
+    \ }\n    };\n\n    struct Node {\n        T0 value, acc;\n        T1 lazy;\n \
+    \       int priority, cnt;\n        bool rev;\n        Node *l, *r;\n\n      \
+    \  Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n            : value(value_),\
     \ acc(u0_), lazy(u1_), priority(priority_), cnt(1), rev(false), l(nullptr), r(nullptr)\
     \ {}\n    }* root = nullptr;\n\n    using Tree = Node*;\n\n    int cnt(Tree t)\
     \ { return t ? t->cnt : 0; }\n\n    T0 acc(Tree t) { return t ? t->acc : u0; }\n\
@@ -357,7 +357,7 @@ data:
   requiredBy:
   - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/implicit-treap.hpp

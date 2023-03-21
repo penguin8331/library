@@ -106,9 +106,9 @@ data:
     \  this->push_back(a);\n        this->push_back(b);\n    }\n    friend ostream\
     \ &operator<<(ostream &s, const Line &l) { return s << '{' << l[0] << \", \" <<\
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
-    \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
-    \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/is-convex.hpp\"\
+    \ Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n \
+    \   friend ostream &operator<<(ostream &s, const Circle &c) { return s << '('\
+    \ << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/is-convex.hpp\"\
     \n\nint ccw_for_isconvex(const Point &a, const Point &b, const Point &c) {\n \
     \   if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS)\
     \ return -1;\n    return 0;\n}\n\nbool isConvex(vector<Point> &ps) {\n    int\
@@ -134,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_B.test.cpp

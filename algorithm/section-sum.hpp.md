@@ -69,21 +69,21 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/section-sum.hpp\"\n\r\ntemplate <class T>\r\nstruct\
-    \ sectionsum {\r\n    vector<T> data;\r\n\r\n    sectionsum(int n) : data(n +\
-    \ 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k + 1]\
-    \ = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < (int)data.size();\
-    \ i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n\
-    \    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
-    \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
-    \    return get(r) - get(l);\r\n    }\r\n};\n"
-  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
-    \ T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n    sectionsum(int n)\
-    \ : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
+    \ sectionsum {\r\n    vector<T> data;\r\n\r\n    explicit sectionsum(int n) :\
+    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
     \ + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i <\
     \ (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\
     \n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
     \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
-    \    return get(r) - get(l);\r\n    }\r\n};"
+    \    return get(r) - get(l);\r\n    }\r\n};\n"
+  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
+    \ T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n    explicit sectionsum(int\
+    \ n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n     \
+    \   data[k + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i\
+    \ = 1; i < (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n\
+    \        }\r\n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 &&\
+    \ r < (int)data.size());\r\n        return data[r];\r\n    }\r\n    T get(int\
+    \ l, int r) const {\r\n        return get(r) - get(l);\r\n    }\r\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -94,7 +94,7 @@ data:
   isVerificationFile: false
   path: algorithm/section-sum.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum.test.cpp

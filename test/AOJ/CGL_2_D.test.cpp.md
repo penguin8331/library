@@ -113,9 +113,9 @@ data:
     \  this->push_back(a);\n        this->push_back(b);\n    }\n    friend ostream\
     \ &operator<<(ostream &s, const Line &l) { return s << '{' << l[0] << \", \" <<\
     \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
-    \ Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n    friend\
-    \ ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x <<\
-    \ \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/projection.hpp\"\
+    \ Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n \
+    \   friend ostream &operator<<(ostream &s, const Circle &c) { return s << '('\
+    \ << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/projection.hpp\"\
     \n\nPoint proj(const Point &p, const Line &l) {\n    DD t = dot(p - l[0], l[1]\
     \ - l[0]) / norm(l[1] - l[0]);\n    return l[0] + (l[1] - l[0]) * t;\n}\nPoint\
     \ refl(const Point &p, const Line &l) {\n    return p + (proj(p, l) - p) * 2;\n\
@@ -164,7 +164,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-21 19:32:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_2_D.test.cpp
