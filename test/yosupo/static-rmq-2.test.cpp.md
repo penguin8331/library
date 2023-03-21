@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -35,17 +35,23 @@ data:
   bundledCode: "#line 1 \"test/yosupo/static-rmq-2.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/staticrmq\"\n#line 2 \"template/template.hpp\"\
     \n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\n\n#define pb push_back\n\
-    #define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n\
-    #define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
-    \ b) ((a + b) * (b - a + 1) / 2)\n#line 3 \"template/alias.hpp\"\n\nusing ll =\
-    \ long long;\nusing ld = long double;\nusing pii = std::pair<int, int>;\nusing\
-    \ pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL\
-    \ << 60;\nconstexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8]\
-    \ = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int\
-    \ MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline\
-    \ bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate\
-    \ <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true)\
-    \ : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
+    #define eb emplace_back\n#define all(x) std::begin(x), std::end(x)\n#define rall(x)\
+    \ std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N)\
+    \ + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define\
+    \ INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)\
+    \     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)    \
+    \    \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...) \
+    \     \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)  \
+    \      \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
+    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#line 3 \"template/alias.hpp\"\
+    \n\nusing ll = long long;\nusing ld = long double;\nusing pii = std::pair<int,\
+    \ int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr\
+    \ ll INF = 1LL << 60;\nconstexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr\
+    \ int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr\
+    \ int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
+    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
+    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
+    \ true) : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
     \ &os, const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n\
     \    return os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
     \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
@@ -107,8 +113,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-rmq-2.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 10:37:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-21 11:42:14+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq-2.test.cpp
 layout: document
