@@ -8,7 +8,7 @@ struct BIT {
     int N;
 
     // [0, n)
-    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {
+    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {
         init(n);
     }
     void init(int n) {

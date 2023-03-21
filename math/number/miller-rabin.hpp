@@ -26,8 +26,9 @@ bool is_prime(long long N) {
     }
     for (auto a : A) {
         if (a % N == 0) return true;
-        long long t, x = pow_mod<__int128_t>(a, d, N);
+        long long x = pow_mod<__int128_t>(a, d, N);
         if (x != 1) {
+            long long t;
             for (t = 0; t < s; ++t) {
                 if (x == N - 1) break;
                 x = __int128_t(x) * x % N;

@@ -5,7 +5,7 @@ template <class T>
 struct BiCoef {
     vector<T> fact_, inv_, finv_;
     constexpr BiCoef() {}
-    constexpr BiCoef(int n) noexcept : fact_(n, 1), inv_(n, 1), finv_(n, 1) {
+    explicit constexpr BiCoef(int n) noexcept : fact_(n, 1), inv_(n, 1), finv_(n, 1) {
         init(n);
     }
     constexpr void init(int n) noexcept {

@@ -5,7 +5,7 @@ struct LCA {
     vector<vector<int>> parent;  // parent[d][v] := 2^d-th parent of v
     vector<int> depth;
     LCA() {}
-    LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }
+    explicit LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }
     void init(const vector<vector<int>>& G, int r = 0) {
         int V = (int)G.size();
         int h = 1;

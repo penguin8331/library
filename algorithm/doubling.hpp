@@ -7,7 +7,7 @@ struct doubling {
     vector<vector<int>> table;
     int SIZE;
     int logK = 1;
-    doubling(vector<int> a, T max) : A(a) {
+    doubling(const vector<int> &a, T max) : A(a) {
         SIZE = A.size();
         while ((1LL << logK) <= max) logK++;
         table.assign(logK, vector<int>(SIZE));

@@ -117,6 +117,7 @@ std::enable_if_t<is_iterable_container_v<C>> out(const C&);
 template <class Tp>
 std::enable_if_t<!is_container_v<Tp>> out(const Tp& arg) {
     os << arg;
+    return;
 }
 
 void out(const char& arg) {
@@ -245,15 +246,17 @@ std::enable_if_t<is_iterable_container_v<Container>> out(const Container& arg) {
         os << ' ';
     });
     os << ']';
+    return;
 }
 
 template <class Tp>
 std::enable_if_t<!is_multidim_container_v<Tp>>
-print(std::string_view name, const Tp& arg) {
+print(const std::string_view& name, const Tp& arg) {
     os << name << ": ";
     out(arg);
     if constexpr (is_container_v<Tp>)
         os << '\n';
+    return;
 }
 
 template <class Tp>
@@ -274,6 +277,7 @@ print(std::string_view name, const Tp& arg) {
                       out(elem);
                       os << '\n';
                   });
+    return;
 }
 
 template <class Tp, class... Ts>

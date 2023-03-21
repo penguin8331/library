@@ -9,7 +9,7 @@ struct Lazy_SegTree_Arthmetic {
     };
     struct F {
         ll a, b;
-        bool operator==(F& other) {
+        bool operator==(const F& other) {
             if (a == other.a && b == other.b)
                 return true;
             else
@@ -36,7 +36,7 @@ struct Lazy_SegTree_Arthmetic {
     };
     int N;
     Lazy_SegTree<S, F> seg;
-    Lazy_SegTree_Arthmetic(int n) : N(n) {
+    explicit Lazy_SegTree_Arthmetic(int n) : N(n) {
         seg.init(N, fm, fa, fc, S({INF, -INF, 0, inf, -inf}), F({INF, INF}));
         for (int i = 0; i < N; i++) {
             seg.set(i, S({0, 0, 0, i, i + 1}));

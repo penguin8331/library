@@ -32,7 +32,7 @@ class BaseImplicitTreap {
             x = x ^ (x << 7);
             return x = x ^ (x >> 9);
         }
-    } rnd;
+    };
 
     struct Node {
         T0 value, acc;

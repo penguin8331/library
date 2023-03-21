@@ -14,7 +14,7 @@ struct SCC {
     SGraph dag;
 
     // constructor
-    SCC(int N) : G(N), rG(N) {}
+    explicit SCC(int N) : G(N), rG(N) {}
 
     // add edge
     void addedge(int u, int v) {

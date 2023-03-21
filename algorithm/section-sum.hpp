@@ -5,7 +5,7 @@ template <class T>
 struct sectionsum {
     vector<T> data;
 
-    sectionsum(int n) : data(n + 1, 0) {}
+    explicit sectionsum(int n) : data(n + 1, 0) {}
 
     void update(int k, const T& x) {
         data[k + 1] = x;

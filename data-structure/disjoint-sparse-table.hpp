@@ -8,7 +8,7 @@ struct DisjointSparseTable {
     vector<vector<SemiGroup>> dat;
     vector<int> height;
 
-    DisjointSparseTable(const Func& f) : F(f) {}
+    explicit DisjointSparseTable(const Func& f) : F(f) {}
     DisjointSparseTable(const Func& f, const vector<SemiGroup>& vec) : F(f) { init(vec); }
     void init(const vector<SemiGroup>& vec) {
         int n = (int)vec.size(), h = 1;

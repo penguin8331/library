@@ -48,6 +48,6 @@ struct Line : vector<Point> {
 /* Circle */
 struct Circle : Point {
     DD r;
-    Circle(Point p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}
+    Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}
     friend ostream &operator<<(ostream &s, const Circle &c) { return s << '(' << c.x << ", " << c.y << ", " << c.r << ')'; }
 };

@@ -7,7 +7,7 @@ struct BIT {
     vector<Abel> dat;
 
     // [0, n)
-    BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}
+    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}
     void init(int n) {
         dat.assign(n, UNITY_SUM);
     }

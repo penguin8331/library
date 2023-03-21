@@ -7,7 +7,7 @@ struct Eratos {
     vector<int> mebius;
     vector<int> min_factor;
 
-    Eratos(int MAX) : primes(),
+    explicit Eratos(int MAX) : primes(),
                       isprime(MAX + 1, true),
                       mebius(MAX + 1, 1),
                       min_factor(MAX + 1, -1) {

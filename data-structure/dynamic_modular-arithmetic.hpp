@@ -1,6 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
+vector<int> MODS;
 template <int IND = 0>
 struct Fp {
     long long val;
