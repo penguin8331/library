@@ -34,25 +34,26 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
   bundledCode: "#line 1 \"test/AOJ/ALDS1_12_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
-    \n\n#define pb push_back\n#define eb emplace_back\n#define all(x) std::begin(x),\
-    \ std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n#define elif else\
-    \ if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a +\
-    \ b) * (b - a + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__; \\\n  \
-    \  scan(__VA_ARGS__)\n#define LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
-    #define STR(...)        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
-    #define CHR(...)      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ DOU(...)        \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#line 3 \"template/alias.hpp\"\
-    \n\nusing ll = long long;\nusing ld = long double;\nusing pii = std::pair<int,\
-    \ int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr\
-    \ ll INF = 1LL << 60;\nconstexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr\
-    \ int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr\
-    \ int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
-    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
-    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
-    \ &os, const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n\
-    \    return os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
+    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
+    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
+    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
+    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
+    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
+    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
+    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
+    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
+    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
+    \ emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing\
+    \ ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
+    \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
+    \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
+    #line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T& a,\
+    \ T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename T>\n\
+    inline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false)); }\n\
+    template <typename T, typename U>\nstd::ostream &operator<<(std::ostream &os,\
+    \ const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n    return\
+    \ os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
     \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
     }\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
     \ &v) {\n    for (auto it = std::begin(v); it != std::end(v);) {\n        os <<\
@@ -106,7 +107,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_12_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 11:42:14+09:00'
+  timestamp: '2023-03-21 18:23:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_12_A.test.cpp

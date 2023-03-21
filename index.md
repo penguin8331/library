@@ -151,7 +151,7 @@ data:
     - icon: ':warning:'
       path: graph/dfs2d.hpp
       title: DFS-2D
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':x:'
@@ -172,16 +172,16 @@ data:
     - icon: ':x:'
       path: graph/lca.hpp
       title: Lowest Common Ancestor
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/scc.hpp
       title: Strongly Connected Component
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -380,16 +380,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_A.test.cpp
       title: test/AOJ/GRL_3_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_B.test.cpp
       title: test/AOJ/GRL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_3_C.test.cpp
       title: test/AOJ/GRL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_4_B.test.cpp
       title: test/AOJ/GRL_4_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
     - icon: ':x:'

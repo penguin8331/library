@@ -152,7 +152,7 @@ data:
   - icon: ':warning:'
     path: graph/dfs2d.hpp
     title: DFS-2D
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':x:'
@@ -176,16 +176,16 @@ data:
   - icon: ':x:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -200,6 +200,9 @@ data:
   - icon: ':x:'
     path: math/combinatorics/modpow.hpp
     title: modpow
+  - icon: ':warning:'
+    path: math/combinatorics/next-combination.hpp
+    title: next_combination
   - icon: ':heavy_check_mark:'
     path: math/number/chinese-remainder-theorem.hpp
     title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
@@ -361,16 +364,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_A.test.cpp
     title: test/AOJ/GRL_3_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_B.test.cpp
     title: test/AOJ/GRL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
   - icon: ':x:'
@@ -444,7 +447,17 @@ data:
     \ << std::setprecision(12);\n    }\n} IOSetup;\n#line 3 \"template/debug.hpp\"\
     \n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n\
     #line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"template/macro.hpp\"\
-    \n\n#define pb push_back\n#define eb emplace_back\n#define all(x) std::begin(x),\
+    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
+    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
+    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
+    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
+    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
+    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
+    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
+    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
+    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
+    \ emplace_back\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\n#define all(x) std::begin(x),\
     \ std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n#define elif else\
     \ if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a +\
     \ b) * (b - a + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__; \\\n  \
@@ -452,17 +465,8 @@ data:
     #define STR(...)        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
     #define CHR(...)      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
     \ DOU(...)        \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\n#define pb push_back\n\
-    #define eb emplace_back\n#define all(x) std::begin(x), std::end(x)\n#define rall(x)\
-    \ std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N)\
-    \ + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define\
-    \ INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)\
-    \     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)    \
-    \    \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...) \
-    \     \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)  \
-    \      \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)"
+    \ LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
+    #define eb emplace_back"
   dependsOn:
   - template/template.hpp
   - template/alias.hpp
@@ -530,6 +534,7 @@ data:
   - geomeny/ccw.hpp
   - math/combinatorics/binomial-coefficient.hpp
   - math/combinatorics/modpow.hpp
+  - math/combinatorics/next-combination.hpp
   - math/combinatorics/inversion-number.hpp
   - math/number/miller-rabin.hpp
   - math/number/pow.hpp
@@ -551,7 +556,7 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/alias.hpp
-  timestamp: '2023-03-21 11:42:14+09:00'
+  timestamp: '2023-03-21 18:23:24+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/scc.test.cpp

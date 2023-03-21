@@ -152,7 +152,7 @@ data:
   - icon: ':warning:'
     path: graph/dfs2d.hpp
     title: DFS-2D
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':x:'
@@ -176,16 +176,16 @@ data:
   - icon: ':x:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -200,6 +200,9 @@ data:
   - icon: ':x:'
     path: math/combinatorics/modpow.hpp
     title: modpow
+  - icon: ':warning:'
+    path: math/combinatorics/next-combination.hpp
+    title: next_combination
   - icon: ':heavy_check_mark:'
     path: math/number/chinese-remainder-theorem.hpp
     title: "\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
@@ -361,16 +364,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_A.test.cpp
     title: test/AOJ/GRL_3_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_B.test.cpp
     title: test/AOJ/GRL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
   - icon: ':x:'
@@ -415,44 +418,44 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define pb push_back\n#define eb emplace_back\n\
-    #define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n\
-    #define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a,\
-    \ b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__;\
-    \ \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n    ll __VA_ARGS__; \\\n\
-    \    scan(__VA_ARGS__)\n#define STR(...)        \\\n    string __VA_ARGS__; \\\
-    \n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n    char __VA_ARGS__; \\\n\
-    \    scan(__VA_ARGS__)\n#define DOU(...)        \\\n    double __VA_ARGS__; \\\
-    \n    scan(__VA_ARGS__)\n#define LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
-    #line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing ld = long double;\n\
-    using pii = std::pair<int, int>;\nusing pll = std::pair<ll, ll>;\nconstexpr int\
-    \ inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[8] = {1, 0,\
-    \ -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\n\
-    constexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\
-    \n\ntemplate <typename T>\ninline bool chmax(T& a, T b) { return ((a < b) ? (a\
-    \ = b, true) : (false)); }\ntemplate <typename T>\ninline bool chmin(T& a, T b)\
-    \ { return ((a > b) ? (a = b, true) : (false)); }\ntemplate <typename T, typename\
-    \ U>\nstd::ostream &operator<<(std::ostream &os, const std::pair<T, U> &p) {\n\
-    \    os << p.first << \" \" << p.second;\n    return os;\n}\ntemplate <typename\
-    \ T, typename U>\nstd::istream &operator>>(std::istream &is, std::pair<T, U> &p)\
-    \ {\n    is >> p.first >> p.second;\n    return is;\n}\ntemplate <typename T>\n\
-    std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {\n    for\
-    \ (auto it = std::begin(v); it != std::end(v);) {\n        os << *it << ((++it)\
-    \ != std::end(v) ? \" \" : \"\");\n    }\n    return os;\n}\ntemplate <typename\
-    \ T>\nstd::istream &operator>>(std::istream &is, std::vector<T> &v) {\n    for\
-    \ (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\ninline void scan()\
-    \ {}\ntemplate <class Head, class... Tail>\ninline void scan(Head &head, Tail\
-    \ &...tail) {\n    std::cin >> head;\n    scan(tail...);\n}\ntemplate <class T>\n\
-    inline void print(const T &t) { std::cout << t << '\\n'; }\ntemplate <class Head,\
-    \ class... Tail>\ninline void print(const Head &head, const Tail &...tail) {\n\
-    \    std::cout << head << ' ';\n    print(tail...);\n}\ntemplate <class... T>\n\
-    inline void fin(const T &...a) {\n    print(a...);\n    exit(0);\n}\n#line 3 \"\
-    template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n        std::cin.tie(nullptr);\n\
-    \        std::ios::sync_with_stdio(false);\n        std::cout.tie(0);\n      \
-    \  std::cout << std::fixed << std::setprecision(12);\n        std::cerr << std::fixed\
-    \ << std::setprecision(12);\n    }\n} IOSetup;\n#line 8 \"template/template.hpp\"\
-    \nusing namespace std;\n#line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include\
-    \ <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n"
+    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
+    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
+    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
+    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
+    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
+    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
+    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
+    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
+    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
+    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
+    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
+    \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
+    \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
+    #line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T& a,\
+    \ T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename T>\n\
+    inline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false)); }\n\
+    template <typename T, typename U>\nstd::ostream &operator<<(std::ostream &os,\
+    \ const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n    return\
+    \ os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
+    \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
+    }\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
+    \ &v) {\n    for (auto it = std::begin(v); it != std::end(v);) {\n        os <<\
+    \ *it << ((++it) != std::end(v) ? \" \" : \"\");\n    }\n    return os;\n}\ntemplate\
+    \ <typename T>\nstd::istream &operator>>(std::istream &is, std::vector<T> &v)\
+    \ {\n    for (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\ninline\
+    \ void scan() {}\ntemplate <class Head, class... Tail>\ninline void scan(Head\
+    \ &head, Tail &...tail) {\n    std::cin >> head;\n    scan(tail...);\n}\ntemplate\
+    \ <class T>\ninline void print(const T &t) { std::cout << t << '\\n'; }\ntemplate\
+    \ <class Head, class... Tail>\ninline void print(const Head &head, const Tail\
+    \ &...tail) {\n    std::cout << head << ' ';\n    print(tail...);\n}\ntemplate\
+    \ <class... T>\ninline void fin(const T &...a) {\n    print(a...);\n    exit(0);\n\
+    }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n      \
+    \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
+    \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 8 \"template/template.hpp\"\nusing namespace std;\n#line 3 \"template/debug.hpp\"\
+    \n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n#define debug(...)\n#endif\n"
   code: '#pragma once
 
     #include "../template/template.hpp"
@@ -534,6 +537,7 @@ data:
   - geomeny/ccw.hpp
   - math/combinatorics/binomial-coefficient.hpp
   - math/combinatorics/modpow.hpp
+  - math/combinatorics/next-combination.hpp
   - math/combinatorics/inversion-number.hpp
   - math/number/miller-rabin.hpp
   - math/number/pow.hpp
@@ -555,7 +559,7 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/alias.hpp
-  timestamp: '2023-03-21 11:42:14+09:00'
+  timestamp: '2023-03-21 18:23:24+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/scc.test.cpp
