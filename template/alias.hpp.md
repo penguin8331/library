@@ -1,6 +1,21 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
+    path: template/func.hpp
+    title: template/func.hpp
+  - icon: ':question:'
+    path: template/macro.hpp
+    title: template/macro.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
+  - icon: ':question:'
+    path: template/util.hpp
+    title: template/util.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: algorithm/compress.hpp
@@ -11,7 +26,7 @@ data:
   - icon: ':warning:'
     path: algorithm/doubling.hpp
     title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: algorithm/section-sum.hpp
     title: "\u7D2F\u7A4D\u548C"
   - icon: ':heavy_check_mark:'
@@ -34,7 +49,7 @@ data:
   - icon: ':warning:'
     path: data-structure/boost-multiprecision.hpp
     title: boost/multiprecision
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
   - icon: ':warning:'
@@ -65,7 +80,7 @@ data:
   - icon: ':warning:'
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
   - icon: ':warning:'
@@ -137,10 +152,10 @@ data:
   - icon: ':warning:'
     path: graph/dfs2d.hpp
     title: DFS-2D
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/dijkstra-route.hpp
     title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
   - icon: ':heavy_check_mark:'
@@ -149,7 +164,7 @@ data:
   - icon: ':warning:'
     path: graph/dijkstra2d.hpp
     title: Dijkstra-2D
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/flow/ford-fullkerson.hpp
     title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - icon: ':warning:'
@@ -158,19 +173,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -182,7 +197,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
     title: "\u8EE2\u5012\u6570"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/combinatorics/modpow.hpp
     title: modpow
   - icon: ':heavy_check_mark:'
@@ -191,7 +206,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/convert-base.hpp
     title: "\u9032\u6570\u5909\u63DB"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
   - icon: ':warning:'
@@ -213,7 +228,7 @@ data:
   - icon: ':warning:'
     path: math/number/pow.hpp
     title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - icon: ':warning:'
@@ -225,12 +240,24 @@ data:
   - icon: ':warning:'
     path: string/rle.hpp
     title: "\u9023\u9577\u5727\u7E2E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: template/debug.hpp
+    title: template/debug.hpp
+  - icon: ':question:'
+    path: template/func.hpp
+    title: template/func.hpp
+  - icon: ':question:'
+    path: template/macro.hpp
+    title: template/macro.hpp
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
+  - icon: ':question:'
+    path: template/util.hpp
+    title: template/util.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
@@ -334,88 +361,95 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_A.test.cpp
     title: test/AOJ/GRL_3_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_3_B.test.cpp
     title: test/AOJ/GRL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_C.test.cpp
     title: test/AOJ/GRL_5_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ITP1_3_D.test.cpp
     title: test/AOJ/ITP1_3_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/NTL_1_A.test.cpp
     title: test/AOJ/NTL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: '#line 2 "template/alias.hpp"
-
-    #include <bits/stdc++.h>
-
-
-    using ll = long long;
-
-    using ld = long double;
-
-    using pii = std::pair<int, int>;
-
-    using pll = std::pair<ll, ll>;
-
-    constexpr int inf = 1 << 30;
-
-    constexpr ll INF = 1LL << 60;
-
-    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};
-
-    constexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};
-
-    constexpr int mod = 998244353;
-
-    constexpr int MOD = 1e9 + 7;
-
-    '
+  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
+    \ 3 \"template/macro.hpp\"\n\n#define pb push_back\n#define all(x) std::begin(x),\
+    \ std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n#define elif else\
+    \ if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a +\
+    \ b) * (b - a + 1) / 2)\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
+    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
+    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
+    \ true) : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
+    \ &os, const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n\
+    \    return os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
+    \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
+    }\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
+    \ &v) {\n    for (auto it = std::begin(v); it != std::end(v);) {\n        os <<\
+    \ *it << ((++it) != std::end(v) ? \" \" : \"\");\n    }\n    return os;\n}\ntemplate\
+    \ <typename T>\nstd::istream &operator>>(std::istream &is, std::vector<T> &v)\
+    \ {\n    for (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\ninline\
+    \ void scan() {}\ntemplate <class Head, class... Tail>\ninline void scan(Head\
+    \ &head, Tail &...tail) {\n    std::cin >> head;\n    scan(tail...);\n}\ntemplate\
+    \ <class T>\ninline void print(const T &t) { std::cout << t << '\\n'; }\ntemplate\
+    \ <class Head, class... Tail>\ninline void print(const Head &head, const Tail\
+    \ &...tail) {\n    std::cout << head << ' ';\n    print(tail...);\n}\ntemplate\
+    \ <class... T>\ninline void fin(const T &...a) {\n    print(a...);\n    exit(0);\n\
+    }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n      \
+    \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
+    \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
+    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
+    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
+    \ std;\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing ld = long\
+    \ double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll, ll>;\n\
+    constexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr int dx[8]\
+    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1, 1, 1, -1,\
+    \ -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n"
   code: '#pragma once
 
-    #include <bits/stdc++.h>
+    #include "../template/template.hpp"
 
 
     using ll = long long;
@@ -430,14 +464,19 @@ data:
 
     constexpr ll INF = 1LL << 60;
 
-    constexpr int dx[] = {1, 0, -1, 0, 1, -1, 1, -1};
+    constexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
 
-    constexpr int dy[] = {0, 1, 0, -1, 1, 1, -1, -1};
+    constexpr int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 
     constexpr int mod = 998244353;
 
     constexpr int MOD = 1e9 + 7;'
-  dependsOn: []
+  dependsOn:
+  - template/template.hpp
+  - template/macro.hpp
+  - template/func.hpp
+  - template/util.hpp
+  - template/debug.hpp
   isVerificationFile: false
   path: template/alias.hpp
   requiredBy:
@@ -516,8 +555,12 @@ data:
   - algorithm/compress2d.hpp
   - algorithm/section-sum.hpp
   - template/template.hpp
-  timestamp: '2023-03-03 15:26:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - template/debug.hpp
+  - template/macro.hpp
+  - template/func.hpp
+  - template/util.hpp
+  timestamp: '2023-03-21 10:37:15+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/scc.test.cpp
   - test/yosupo/shortes-path.test.cpp
