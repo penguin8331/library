@@ -1,5 +1,5 @@
 #pragma once
-#include <bits/stdc++.h>
+#include "../template/template.hpp"
 
 struct IOSetup {
     IOSetup() {

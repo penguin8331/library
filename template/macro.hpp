@@ -1,10 +1,9 @@
 #pragma once
-#include <bits/stdc++.h>
+#include "../template/template.hpp"
 
 #define pb push_back
-#define mp make_pair
-#define all(x) (x).begin(), (x).end()
-#define rall(x) (x).rbegin(), (x).rend()
+#define all(x) std::begin(x), std::end(x)
+#define rall(x) std::rbegin(x), std::rend(x)
 #define elif else if
 #define updiv(N, X) (((N) + (X) - (1)) / (X))
 #define sigma(a, b) ((a + b) * (b - a + 1) / 2)

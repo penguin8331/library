@@ -8,7 +8,7 @@ int main() {
         cin >> a;
         if (a == 0) return 0;
         auto res = convert_base(a, -10);
-        for (int i = 0; i < res.size(); i++) {
+        for (int i = 0; i < (int)res.size(); i++) {
             cout << res[i];
         }
         cout << endl;

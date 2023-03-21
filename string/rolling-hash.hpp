@@ -26,7 +26,7 @@ struct RollingHash {
         if (power.size() < sz + 1) {
             int pre_sz = (int)power.size();
             power.resize(sz + 1);
-            for (int i = pre_sz - 1; i < sz; i++) {
+            for (int i = pre_sz - 1; i < (int)sz; i++) {
                 power[i + 1] = mul(power[i], base);
             }
         }
@@ -37,7 +37,7 @@ struct RollingHash {
     // 文字列Sのハッシュを返す
     vector<uint64_t> build(string S) {
         vector<uint64_t> hash(S.size() + 1);
-        for (int i = 0; i < S.size(); i++) {
+        for (int i = 0; i < (int)S.size(); i++) {
             hash[i + 1] = add(mul(hash[i], base), S[i]);
         }
         return hash;

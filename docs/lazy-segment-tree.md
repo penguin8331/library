@@ -45,7 +45,7 @@ auto fc = [](pii& d, pii e) {
     d.first = d.first * e.first;
     d.second = d.second * e.first + e.second;
 };
-Lazy_SegTree<ll, pii> seg(N, fm, fa, fc, 0, mp(1, 0));
+Lazy_SegTree<ll, pii> seg(N, fm, fa, fc, 0, {1, 0});
 ```
 
 ### 初期化
