@@ -1,4 +1,2 @@
-.clang-format
-*.out
-.vscode/
 run-code/
+.vscode/
