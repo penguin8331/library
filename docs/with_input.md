@@ -1,6 +1,6 @@
 ---
 title: With-Input
-documentation_of: //graph/warshall-floyd.hpp
+documentation_of: //data-structure/with_input.hpp
 ---
 
 ## 概要
