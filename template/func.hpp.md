@@ -91,7 +91,7 @@ data:
     title: UnionFind
   - icon: ':warning:'
     path: data-structure/with_input.hpp
-    title: data-structure/with_input.hpp
+    title: With-Input
   - icon: ':warning:'
     path: dynamic-programming/longest-common-subsequence-restoration.hpp
     title: "LCS (\u5FA9\u5143\u3042\u308A)"
@@ -193,7 +193,7 @@ data:
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
-    title: With-Input
+    title: Warshall Floyd
   - icon: ':warning:'
     path: math/combinatorics/binomial-coefficient.hpp
     title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"

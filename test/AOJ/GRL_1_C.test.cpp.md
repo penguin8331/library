@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
-    title: With-Input
+    title: Warshall Floyd
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp

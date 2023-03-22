@@ -84,7 +84,7 @@ data:
       title: UnionFind
     - icon: ':warning:'
       path: data-structure/with_input.hpp
-      title: data-structure/with_input.hpp
+      title: With-Input
   - name: dynamic-programming
     pages:
     - icon: ':warning:'
@@ -189,7 +189,7 @@ data:
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
-      title: With-Input
+      title: Warshall Floyd
   - name: graph/flow
     pages:
     - icon: ':heavy_check_mark:'

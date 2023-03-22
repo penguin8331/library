@@ -99,8 +99,11 @@ data:
   verifiedWith: []
 documentation_of: data-structure/with_input.hpp
 layout: document
-redirect_from:
-- /library/data-structure/with_input.hpp
-- /library/data-structure/with_input.hpp.html
-title: data-structure/with_input.hpp
+title: With-Input
 ---
+
+## 概要
+
+[もとの文](https://twitter.com/mihatsu_s/status/1636729478369120256)  
+
+基本的には `T` 型と同様に振る舞うがデフォルトコンストラクタで標準入力から値を受け取る
