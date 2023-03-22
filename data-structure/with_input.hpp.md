@@ -65,18 +65,25 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"string/rle.hpp\"\n\r\nvector<pair<char, int>> rle(string s)\
-    \ {\r\n    vector<pair<char, int>> ret;\r\n    int cnt = 1;\r\n    for (int i\
-    \ = 1; i < (int)s.size(); i++) {\r\n        if (s[i] != s[i - 1]) {\r\n      \
-    \      ret.push_back({s[i - 1], cnt});\r\n            cnt = 0;\r\n        }\r\n\
-    \        cnt++;\r\n    }\r\n    ret.push_back({s.back(), cnt});\r\n    return\
-    \ ret;\r\n}\n"
-  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\nvector<pair<char,\
-    \ int>> rle(string s) {\r\n    vector<pair<char, int>> ret;\r\n    int cnt = 1;\r\
-    \n    for (int i = 1; i < (int)s.size(); i++) {\r\n        if (s[i] != s[i - 1])\
-    \ {\r\n            ret.push_back({s[i - 1], cnt});\r\n            cnt = 0;\r\n\
-    \        }\r\n        cnt++;\r\n    }\r\n    ret.push_back({s.back(), cnt});\r\
-    \n    return ret;\r\n}"
+    \ std;\n#line 3 \"data-structure/with_input.hpp\"\n\ntemplate <class T, class\
+    \ = void>\nstruct with_input {};\n\ntemplate <class T>\nstruct with_input<T, std::enable_if_t<!std::is_class_v<T>>>\
+    \ {\n   private:\n    T val;\n\n   public:\n    with_input() {\n        std::cin\
+    \ >> val;\n    }\n    explicit inline with_input(const T& val)\n        : val(val)\
+    \ {}\n    explicit inline with_input(T&& val)\n        : val(static_cast<T&&>(val))\
+    \ {}\n    inline operator const T&() const {\n        return val;\n    }\n   \
+    \ inline operator T&() {\n        return val;\n    }\n};\n\nusing inti = with_input<int>;\n\
+    using lli = with_input<ll>;\nusing stri = with_input<string>;\nusing chai = with_input<char>;\n\
+    using doui = with_input<double>;\nusing ldi = with_input<ld>;\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T,\
+    \ class = void>\nstruct with_input {};\n\ntemplate <class T>\nstruct with_input<T,\
+    \ std::enable_if_t<!std::is_class_v<T>>> {\n   private:\n    T val;\n\n   public:\n\
+    \    with_input() {\n        std::cin >> val;\n    }\n    explicit inline with_input(const\
+    \ T& val)\n        : val(val) {}\n    explicit inline with_input(T&& val)\n  \
+    \      : val(static_cast<T&&>(val)) {}\n    inline operator const T&() const {\n\
+    \        return val;\n    }\n    inline operator T&() {\n        return val;\n\
+    \    }\n};\n\nusing inti = with_input<int>;\nusing lli = with_input<ll>;\nusing\
+    \ stri = with_input<string>;\nusing chai = with_input<char>;\nusing doui = with_input<double>;\n\
+    using ldi = with_input<ld>;"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -85,12 +92,15 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: string/rle.hpp
+  path: data-structure/with_input.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-22 10:09:19+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: string/rle.hpp
+documentation_of: data-structure/with_input.hpp
 layout: document
-title: "\u9023\u9577\u5727\u7E2E"
+redirect_from:
+- /library/data-structure/with_input.hpp
+- /library/data-structure/with_input.hpp.html
+title: data-structure/with_input.hpp
 ---

@@ -17,7 +17,7 @@ data:
     - icon: ':warning:'
       path: algorithm/doubling.hpp
       title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: "\u7D2F\u7A4D\u548C"
     - icon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: data-structure/boost-multiprecision.hpp
       title: boost/multiprecision
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/disjoint-sparse-table.hpp
       title: Disjoint Sparse Table
     - icon: ':warning:'
@@ -73,7 +73,7 @@ data:
     - icon: ':warning:'
       path: data-structure/priority-sum-by-implicit-treap.hpp
       title: PrioritySum (by Implicit Treap)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':warning:'
@@ -82,6 +82,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: UnionFind
+    - icon: ':warning:'
+      path: data-structure/with_input.hpp
+      title: data-structure/with_input.hpp
   - name: dynamic-programming
     pages:
     - icon: ':warning:'
@@ -186,7 +189,7 @@ data:
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
-      title: Warshall Floyd
+      title: With-Input
   - name: graph/flow
     pages:
     - icon: ':heavy_check_mark:'
@@ -252,27 +255,27 @@ data:
     - icon: ':warning:'
       path: string/rle.hpp
       title: "\u9023\u9577\u5727\u7E2E"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -415,19 +418,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum-2.test.cpp
       title: test/yosupo/static-range-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq-2.test.cpp
       title: test/yosupo/static-rmq-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq.test.cpp
       title: test/yosupo/static-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
 layout: toppage

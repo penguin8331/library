@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -100,14 +100,11 @@ data:
   - test/AOJ/GRL_1_C.test.cpp
 documentation_of: graph/warshall-floyd.hpp
 layout: document
-title: Warshall Floyd
+title: With-Input
 ---
 
 ## 概要
 
-`dp[a][b]` := `a` から `b` への距離として初期化しておいて、アルゴリズム終了後には `dp[a][b]` := `a` から `b` への最短距離が格納される。 注意点として、初期化時に `dp[a][a] = 0` となるようにする必要がある。なお負閉路判定に用いることもできて、
+[もとの文](https://twitter.com/mihatsu_s/status/1636729478369120256)  
 
-* 負閉路がなければ、すべての `i` ( `0 <= i <= N` ) に対して `dp[a][a] = 0`
-* 負閉路があったら、ある `i` ( `0 <= i <= N` ) に対して `dp[a][a] = 0`
-  
-辺の追加クエリについては `a` , `b` 間に辺が追加されたとき、すべての `i` -> `j` について `i` -> `a` -> `b` -> `j` を検討するだけで良いため $O(V^2)$
+基本的には `T` 型と同様に振る舞うがデフォルトコンストラクタで標準入力から値を受け取る
