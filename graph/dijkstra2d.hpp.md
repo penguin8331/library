@@ -65,40 +65,40 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/dijkstra2d.hpp\"\n\nint H, W;\nvector<vector<char>> G;\n\
-    void dijkstra(pair<int, int> s, vector<vector<long long>>& dis) {\n    dis.resize(H,\
-    \ vector<long long>(W, INF));\n    priority_queue<pair<long long, pair<int, int>>,\
-    \ vector<pair<long long, pair<int, int>>>, greater<pair<long long, pair<int, int>>>>\
-    \ pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\u300D\u304C\
-    \u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s.first][s.second] = 0;\n\
-    \    pq.emplace(dis[s.first][s.second], s);\n    while (!pq.empty()) {\n     \
-    \   auto p = pq.top();\n        pq.pop();\n        auto v = p.second;\n      \
-    \  if (dis[v.first][v.second] < p.first) {  // \u6700\u77ED\u8DDD\u96E2\u3067\u7121\
-    \u3051\u308C\u3070\u7121\u8996\n            continue;\n        }\n        for\
-    \ (int i = 0; i < 4; i++) {\n            int X = v.first + dx[i];\n          \
-    \  int Y = v.second + dy[i];\n            if (X < 0 || X >= H || Y < 0 || Y >=\
-    \ W) continue;\n            int cost = dis[v.first][v.second] + (G[X][Y] == '#'\
-    \ ? 1 : 0);\n            if (dis[X][Y] > cost) {  // \u6700\u77ED\u8DDD\u96E2\u5019\
-    \u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n                dis[X][Y]\
-    \ = cost;\n                pq.emplace(dis[X][Y], pair<int, int>(X, Y));\n    \
-    \        }\n        }\n    }\n}\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nint H, W;\nvector<vector<char>>\
-    \ G;\nvoid dijkstra(pair<int, int> s, vector<vector<long long>>& dis) {\n    dis.resize(H,\
-    \ vector<long long>(W, INF));\n    priority_queue<pair<long long, pair<int, int>>,\
-    \ vector<pair<long long, pair<int, int>>>, greater<pair<long long, pair<int, int>>>>\
-    \ pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\u300D\u304C\
-    \u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s.first][s.second] = 0;\n\
-    \    pq.emplace(dis[s.first][s.second], s);\n    while (!pq.empty()) {\n     \
-    \   auto p = pq.top();\n        pq.pop();\n        auto v = p.second;\n      \
-    \  if (dis[v.first][v.second] < p.first) {  // \u6700\u77ED\u8DDD\u96E2\u3067\u7121\
-    \u3051\u308C\u3070\u7121\u8996\n            continue;\n        }\n        for\
-    \ (int i = 0; i < 4; i++) {\n            int X = v.first + dx[i];\n          \
-    \  int Y = v.second + dy[i];\n            if (X < 0 || X >= H || Y < 0 || Y >=\
-    \ W) continue;\n            int cost = dis[v.first][v.second] + (G[X][Y] == '#'\
-    \ ? 1 : 0);\n            if (dis[X][Y] > cost) {  // \u6700\u77ED\u8DDD\u96E2\u5019\
-    \u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n                dis[X][Y]\
-    \ = cost;\n                pq.emplace(dis[X][Y], pair<int, int>(X, Y));\n    \
-    \        }\n        }\n    }\n}"
+    \ std;\n#line 3 \"graph/dijkstra2d.hpp\"\n\nvector<vector<long long>> dijkstra(int\
+    \ H, int W, vector<string> G, pair<int, int> s) {\n    vector<vector<long long>>\
+    \ dis(H, vector<long long>(W, INF));\n    priority_queue<pair<long long, pair<int,\
+    \ int>>, vector<pair<long long, pair<int, int>>>, greater<pair<long long, pair<int,\
+    \ int>>>> pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\u300D\
+    \u304C\u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s.first][s.second] =\
+    \ 0;\n    pq.emplace(dis[s.first][s.second], s);\n    while (!pq.empty()) {\n\
+    \        auto p = pq.top();\n        pq.pop();\n        auto v = p.second;\n \
+    \       if (dis[v.first][v.second] < p.first) {  // \u6700\u77ED\u8DDD\u96E2\u3067\
+    \u7121\u3051\u308C\u3070\u7121\u8996\n            continue;\n        }\n     \
+    \   for (int i = 0; i < 4; i++) {\n            int X = v.first + dx[i];\n    \
+    \        int Y = v.second + dy[i];\n            if (X < 0 || X >= H || Y < 0 ||\
+    \ Y >= W) continue;\n            int cost = dis[v.first][v.second] + (G[X][Y]\
+    \ == '#' ? 1 : 0);\n            if (dis[X][Y] > cost) {  // \u6700\u77ED\u8DDD\
+    \u96E2\u5019\u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n           \
+    \     dis[X][Y] = cost;\n                pq.emplace(dis[X][Y], pair<int, int>(X,\
+    \ Y));\n            }\n        }\n    }\n    return dis;\n}\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nvector<vector<long\
+    \ long>> dijkstra(int H, int W, vector<string> G, pair<int, int> s) {\n    vector<vector<long\
+    \ long>> dis(H, vector<long long>(W, INF));\n    priority_queue<pair<long long,\
+    \ pair<int, int>>, vector<pair<long long, pair<int, int>>>, greater<pair<long\
+    \ long, pair<int, int>>>> pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2,\
+    \ \u9802\u70B9\u300D\u304C\u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s.first][s.second]\
+    \ = 0;\n    pq.emplace(dis[s.first][s.second], s);\n    while (!pq.empty()) {\n\
+    \        auto p = pq.top();\n        pq.pop();\n        auto v = p.second;\n \
+    \       if (dis[v.first][v.second] < p.first) {  // \u6700\u77ED\u8DDD\u96E2\u3067\
+    \u7121\u3051\u308C\u3070\u7121\u8996\n            continue;\n        }\n     \
+    \   for (int i = 0; i < 4; i++) {\n            int X = v.first + dx[i];\n    \
+    \        int Y = v.second + dy[i];\n            if (X < 0 || X >= H || Y < 0 ||\
+    \ Y >= W) continue;\n            int cost = dis[v.first][v.second] + (G[X][Y]\
+    \ == '#' ? 1 : 0);\n            if (dis[X][Y] > cost) {  // \u6700\u77ED\u8DDD\
+    \u96E2\u5019\u88DC\u306A\u3089 priority_queue \u306B\u8FFD\u52A0\n           \
+    \     dis[X][Y] = cost;\n                pq.emplace(dis[X][Y], pair<int, int>(X,\
+    \ Y));\n            }\n        }\n    }\n    return dis;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -109,7 +109,7 @@ data:
   isVerificationFile: false
   path: graph/dijkstra2d.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-23 20:26:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/dijkstra2d.hpp
