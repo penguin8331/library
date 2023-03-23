@@ -1,10 +1,8 @@
 #pragma once
 #include "../template/template.hpp"
 
-int H, W;
-vector<vector<char>> G;
-void dijkstra(pair<int, int> s, vector<vector<long long>>& dis) {
-    dis.resize(H, vector<long long>(W, INF));
+vector<vector<long long>> dijkstra(int H, int W, vector<string> G, pair<int, int> s) {
+    vector<vector<long long>> dis(H, vector<long long>(W, INF));
     priority_queue<pair<long long, pair<int, int>>, vector<pair<long long, pair<int, int>>>, greater<pair<long long, pair<int, int>>>> pq;  // 「仮の最短距離, 頂点」が小さい順に並ぶ
     dis[s.first][s.second] = 0;
     pq.emplace(dis[s.first][s.second], s);
@@ -26,4 +24,5 @@ void dijkstra(pair<int, int> s, vector<vector<long long>>& dis) {
             }
         }
     }
+    return dis;
 }
