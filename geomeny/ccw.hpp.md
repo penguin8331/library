@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -137,3 +137,17 @@ documentation_of: geomeny/ccw.hpp
 layout: document
 title: "\u70B9\u3068\u7DDA\u5206\u306E\u4F4D\u7F6E\u95A2\u4FC2"
 ---
+
+## 使い方
+
+`simple_ccw` :
+- `1` ： a-bから見てcは左側(反時計回り)
+- `-1` ： a-bから見てcは右側(時計回り)
+- `0` ： 一直線上
+
+`ccw` :
+- `1` ： a-bから見てcは左側(反時計回り)
+- `-1` ： a-bから見てcは右側(時計回り)
+- `2` ： c-a-bの順に一直線上
+- `-2` : a-b-cの順に一直線上
+- `0` : a-c-bの順に一直線上

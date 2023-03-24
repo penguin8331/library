@@ -73,7 +73,7 @@ data:
     - icon: ':warning:'
       path: data-structure/priority-sum-by-implicit-treap.hpp
       title: PrioritySum (by Implicit Treap)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':warning:'
@@ -249,27 +249,27 @@ data:
     - icon: ':warning:'
       path: string/rle.hpp
       title: "\u9023\u9577\u5727\u7E2E"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -421,10 +421,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq-2.test.cpp
       title: test/yosupo/static-rmq-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq.test.cpp
       title: test/yosupo/static-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
 layout: toppage
