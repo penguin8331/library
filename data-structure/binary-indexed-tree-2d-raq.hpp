@@ -15,8 +15,7 @@ struct BIT2D {
             for (int j = 0; j < 2; ++j)
                 dat[i][j].assign(n + 1, vector<Abel>(m + 1, UNITY_SUM));
     }
-
-    // x1 <= x < x2, y1 <= y < y2, 0-indexed
+    
     inline void subsub_add(int f, int s, int x, int y, Abel v) {
         for (int i = x; i < (int)dat[f][s].size(); i |= i + 1)
             for (int j = y; j < (int)dat[f][s][0].size(); j |= j + 1)
@@ -35,7 +34,6 @@ struct BIT2D {
         sub_add(x2, y2, v);
     }
 
-    // x1 <= x < x2, y1 <= y < y2, 0-indexed
     inline Abel subsub_sum(int f, int s, int x, int y) {
         Abel res = 0;
         for (int i = x; i > 0; i = (i & (i + 1)) - 1)

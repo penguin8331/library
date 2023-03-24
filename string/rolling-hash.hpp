@@ -34,7 +34,6 @@ struct RollingHash {
 
     explicit RollingHash(uint64_t base = generate_base()) : base(base), power{1} {}
 
-    // 文字列Sのハッシュを返す
     vector<uint64_t> build(string S) {
         vector<uint64_t> hash(S.size() + 1);
         for (int i = 0; i < (int)S.size(); i++) {
@@ -43,19 +42,16 @@ struct RollingHash {
         return hash;
     }
 
-    // hashの[l,r)のハッシュ値を返す
     uint64_t query(const vector<uint64_t>& hash, int l, int r) {
         expand(r - l);
         return add(hash[r], mod - mul(hash[l], power[r - l]));
     }
 
-    // ハッシュ値h1と長さh2lenのハッシュ値h2を結合
     uint64_t combine(uint64_t h1, uint64_t h2, size_t h2len) {
         expand(h2len);
         return add(mul(h1, power[h2len]), h2);
     }
 
-    // hash1の区間[l1,r1)とhash2の区間[l2,r2)のlcp(最長共通接頭辞)の長さを返す (二部探索を用いる)
     int lcp(const vector<uint64_t>& hash1, int l1, int r1, const vector<uint64_t>& hash2, int l2, int r2) {
         int len = min(r1 - l1, r2 - l2);
         int ok = 0;

@@ -29,7 +29,6 @@ struct Eratos {
         }
     }
 
-    // 素因数分解
     vector<pair<int, int>> prime_factors(int n) {
         vector<pair<int, int>> res;
         while (n != 1) {
@@ -44,7 +43,6 @@ struct Eratos {
         return res;
     }
 
-    // 約数列挙
     vector<int> divisors(int n) {
         vector<int> res({1});
         auto pf = prime_factors(n);
@@ -61,7 +59,6 @@ struct Eratos {
         return res;
     }
 
-    // 約数個数
     int divisors_num(int n) {
         int res = 1;
         auto pf = prime_factors(n);

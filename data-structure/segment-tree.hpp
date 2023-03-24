@@ -75,7 +75,7 @@ struct SegTree {
             }
             sum = F(sum, dat[l]);
             ++l;
-        } while ((l & -l) != l);  // stop if l = 2^e
+        } while ((l & -l) != l);
         return N;
     }
 

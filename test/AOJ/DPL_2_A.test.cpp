@@ -3,10 +3,12 @@
 #include "../../dynamic-programming/traveling-salesman-problem.hpp"
 
 int main() {
+    int V, E;
     cin >> V >> E;
-    for (int i = 0; i < 20; i++) {
-        for (int j = 0; j < 20; j++) {
-            G[i][j] = inf / 3;
+    vector<vector<ll>> G(V, vector<ll>(V));
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            G[i][j] = inf;
         }
     }
     for (int i = 0; i < E; i++) {
@@ -14,6 +16,7 @@ int main() {
         cin >> s >> t >> d;
         G[s][t] = d;
     }
-    int ans = rec((1 << V) - 1, 0);
-    cout << (ans == inf / 3 ? -1 : ans) << endl;
+    traveling_salesman tsp(G);
+    ll ans = tsp.ans;
+    cout << (ans == inf ? -1 : ans) << endl;
 }

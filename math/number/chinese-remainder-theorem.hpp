@@ -7,8 +7,8 @@ pair<long long, long long> crt(const vector<long long>& vr, const vector<long lo
     long long R = vr[0], M = vm[0];
     for (int i = 1; i < (int)vr.size(); ++i) {
         long long p, q, r = vr[i], m = vm[i];
-        if (M < m) swap(M, m), swap(R, r);  // prevent overflow
-        long long d = extGcd(M, m, p, q);   // p is inv of M/d (mod. m/d)
+        if (M < m) swap(M, m), swap(R, r);
+        long long d = extGcd(M, m, p, q);
         if ((r - R) % d != 0) return make_pair(0, -1);
         long long md = m / d;
         long long tmp = (r - R) / d % md * p % md;

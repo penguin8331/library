@@ -4,9 +4,7 @@
 
 template <typename T0, typename T1, bool ascending = true>
 struct PairQuery {
-    // 累積用。第二要素を管理
     SumUpdateQuery<T1, T1> tr;
-    // 順序管理用
     MinUpdateQuery<pair<T0, T1>, pair<T0, T1>> tr2;
     int cnt = 0;
 
@@ -27,7 +25,6 @@ struct PairQuery {
         cnt++;
     }
 
-    // 第一要素がxのものとxより左側のものに対し第二要素の累積を返す
     T1 query(T0 x) {
         if (ascending) {
             int p = tr2.binary_search(0, tr2.size(), {x, numeric_limits<T1>::max()}, false);

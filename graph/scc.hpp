@@ -5,24 +5,19 @@ struct SCC {
     using Edge = int;
     using SGraph = vector<vector<Edge>>;
 
-    // input
     SGraph G, rG;
 
-    // result
     vector<vector<int>> scc;
     vector<int> cmp;
     SGraph dag;
 
-    // constructor
     explicit SCC(int N) : G(N), rG(N) {}
 
-    // add edge
     void addedge(int u, int v) {
         G[u].push_back(v);
         rG[v].push_back(u);
     }
 
-    // decomp
     vector<bool> seen;
     vector<int> vs, rvs;
     void dfs(int v) {
@@ -39,7 +34,6 @@ struct SCC {
         rvs.push_back(v);
     }
 
-    // reconstruct
     set<pair<int, int>> newEdges;
     void reconstruct() {
         int N = (int)G.size();
@@ -59,16 +53,13 @@ struct SCC {
         }
     }
 
-    // main
     void solve() {
-        // first dfs
         int N = (int)G.size();
         seen.assign(N, false);
         vs.clear();
         for (int v = 0; v < N; ++v)
             if (!seen[v]) dfs(v);
 
-        // back dfs
         int k = 0;
         scc.clear();
         cmp.assign(N, -1);
@@ -81,7 +72,6 @@ struct SCC {
             }
         }
 
-        // reconstruct
         reconstruct();
     }
 };

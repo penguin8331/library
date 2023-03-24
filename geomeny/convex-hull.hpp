@@ -2,7 +2,6 @@
 #include "../template/template.hpp"
 #include "../geomeny/geomeny-template.hpp"
 
-// 一直線上の3点を含めない
 vector<Point> ConvexHull(vector<Point> &ps) {
     int n = (int)ps.size();
     vector<Point> res(2 * n);
@@ -33,7 +32,6 @@ vector<Point> ConvexHull(vector<Point> &ps) {
     return res;
 }
 
-// 一直線上の3点を含める
 vector<Point> ConvexHullCollinearOK(vector<Point> &ps) {
     int n = (int)ps.size();
     vector<Point> res(2 * n);

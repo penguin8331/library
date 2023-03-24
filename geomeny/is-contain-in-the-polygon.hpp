@@ -2,7 +2,6 @@
 #include "../template/template.hpp"
 #include "../geomeny/geomeny-template.hpp"
 
-// 2: in, 1: on, 0: out
 int is_contain(const vector<Point> &pol, const Point &p) {
     int n = (int)pol.size();
     int isin = 0;

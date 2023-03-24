@@ -2,8 +2,8 @@
 #include "../template/template.hpp"
 
 struct LowLink {
-    vector<int> aps;             // 関節点
-    vector<pair<int, int>> brs;  // 橋
+    vector<int> aps;
+    vector<pair<int, int>> brs;
 
     vector<int> seen, ord, low;
     void dfs_lowlink(const vector<vector<int>> &G, int v, int p = -1) {
@@ -11,14 +11,14 @@ struct LowLink {
         seen[v] = true;
         ord[v] = low[v] = time++;
         int num_of_child = 0;
-        bool exist = false;  // for articulation point
+        bool exist = false;
         for (auto ch : G[v]) {
             if (seen[ch]) {
-                if (ch != p) low[v] = min(low[v], ord[ch]);  // back edge
+                if (ch != p) low[v] = min(low[v], ord[ch]);
                 continue;
             }
             dfs_lowlink(G, ch, v);
-            low[v] = min(low[v], low[ch]);  // forward edge of DFS-tree
+            low[v] = min(low[v], low[ch]);
             if (ord[v] < low[ch]) brs.emplace_back(v, ch);
             if (ord[v] <= low[ch]) exist = true;
             ++num_of_child;

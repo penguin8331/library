@@ -2,7 +2,7 @@
 #include "../template/template.hpp"
 
 struct Mo {
-    vector<int> left, right, index;  // the interval's left, right, index
+    vector<int> left, right, index;
     vector<bool> v;
     int window;
     int nl, nr, ptr;

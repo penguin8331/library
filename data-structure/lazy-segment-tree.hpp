@@ -36,14 +36,12 @@ struct Lazy_SegTree {
         lazy.assign(SIZE * 2, IDENTITY_LAZY);
     }
 
-    // set, a is 0-indexed
     void set(int a, const Monoid& v) { dat[a + SIZE] = v; }
     void build() {
         for (int k = SIZE - 1; k > 0; --k)
             dat[k] = FM(dat[k * 2], dat[k * 2 + 1]);
     }
 
-    // update [a, b)
     inline void evaluate(int k) {
         if (lazy[k] == IDENTITY_LAZY) return;
         if (k < SIZE) FC(lazy[k * 2], lazy[k]), FC(lazy[k * 2 + 1], lazy[k]);
@@ -64,7 +62,6 @@ struct Lazy_SegTree {
         update(a, b, v, 1, 0, SIZE);
     }
 
-    // get [a, b)
     inline Monoid get(int a, int b, int k, int l, int r) {
         evaluate(k);
         if (a <= l && r <= b)

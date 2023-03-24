@@ -1,19 +1,13 @@
 #pragma once
 #include "../template/template.hpp"
 
-// T0: 元の配列のモノイド
-// T1: T0に対する作用素モノイド
 template <class T0, class T1>
 class BaseImplicitTreap {
-    // T0上の演算、単位元
     virtual T0 f0(T0, T0) = 0;
     const T0 u0;
-    // T1上の演算、単位元
     virtual T1 f1(T1, T1) = 0;
     const T1 u1;
-    // T0に対するT1の作用
     virtual T0 g(T0, T1) = 0;
-    // 多数のt1(T1)に対するf1の合成
     virtual T1 p(T1, int) = 0;
 
     class xorshift {
@@ -151,7 +145,6 @@ class BaseImplicitTreap {
         return ret;
     }
 
-    // [l, r)の中で左から何番目か
     int find(Tree t, T0 x, int offset, bool left = true) {
         if (f0(t->acc, x) == x) {
             return -1;
@@ -182,7 +175,6 @@ class BaseImplicitTreap {
         merge(t, t1, t2);
     }
 
-    // [l, r)の先頭がmになるようにシフトさせる。std::rotateと同じ仕様
     void rotate(Tree t, int l, int m, int r) {
         reverse(t, l, r);
         reverse(t, l, l + r - m);
@@ -214,8 +206,6 @@ class BaseImplicitTreap {
 
     T0 query(int l, int r) { return query(root, l, r); }
 
-    // 二分探索。[l, r)内のkでf0(tr[k], x) != xとなる最左/最右のもの。存在しない場合は-1
-    // たとえばMinMonoidの場合、x未満の最左/最右の要素の位置を返す
     int binary_search(int l, int r, T0 x, bool left = true) {
         if (l >= r) return -1;
         Tree t1, t2, t3;
@@ -283,27 +273,23 @@ struct SumUpdateQuery : public BaseImplicitTreap<T0, T1> {
 
 template <class T0>
 struct SumAffineQuery : public BaseImplicitTreap<T0, pair<T0, T0>> {
-    using T1 = pair<T0, T0>;  // first * x + second
+    using T1 = pair<T0, T0>;
     using BaseImplicitTreap<T0, T1>::BaseImplicitTreap;
     SumAffineQuery() : SumAffineQuery(0, {1, 0}) {}
     T0 f0(T0 x, T0 y) override { return x + y; }
     T1 f1(T1 x, T1 y) override { return {x.first * y.first, x.second * y.first + y.second}; }
     T0 g(T0 x, T1 y) override { return y.first * x + y.second; }
     T1 p(T1 x, int len) override { return {x.first, x.second * len}; }
-    // update(i, j, {a, b}); // [i, j)にax + bを作用
-    // update(i, j, {0, a}); // update
-    // update(i, j, {1, a}); // 加算
-    // update(i, j, {a, 0}); // 倍
 };
 
 template <class T>
 struct MinmaxAffineQuery : public BaseImplicitTreap<pair<T, T>, pair<T, T>> {
-    using T0 = pair<T, T>;  // {min, max}
-    using T1 = pair<T, T>;  // first * x + second
+    using T0 = pair<T, T>;
+    using T1 = pair<T, T>;
     using BaseImplicitTreap<T0, T1>::BaseImplicitTreap;
     MinmaxAffineQuery()
         : MinmaxAffineQuery({numeric_limits<T>::max(), -numeric_limits<T>::max()}, {1, 0}) {
-    }  // TODO: _u1を使うとコンパイル通らない原因不明
+    }
     T0 f0(T0 x, T0 y) override { return {min(x.first, y.first), max(x.second, y.second)}; }
     T1 f1(T1 x, T1 y) override { return {x.first * y.first, x.second * y.first + y.second}; }
     T0 g(T0 x, T1 y) override {
@@ -312,8 +298,4 @@ struct MinmaxAffineQuery : public BaseImplicitTreap<pair<T, T>, pair<T, T>> {
         return ret;
     }
     T1 p(T1 x, int len) override { return x; }
-    // update(i, j, {a, b}); // [i, j)にax + bを作用
-    // update(i, j, {0, a}); // update
-    // update(i, j, {1, a}); // 加算
-    // update(i, j, {a, 0}); // 倍
 };

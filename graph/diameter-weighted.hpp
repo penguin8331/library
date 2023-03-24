@@ -6,7 +6,7 @@ struct Edge {
     int cost;
 };
 template <typename T>
-pair<T, int> dfs(const vector<vector<Edge>> &G, int u, int par) {  // 最遠点間距離と最遠点を求める
+pair<T, int> dfs(const vector<vector<Edge>> &G, int u, int par) {
     pair<T, int> ret = make_pair((T)0, u);
     for (auto e : G[u]) {
         if (e.to == par) continue;

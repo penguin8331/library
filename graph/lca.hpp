@@ -2,7 +2,7 @@
 #include "../template/template.hpp"
 
 struct LCA {
-    vector<vector<int>> parent;  // parent[d][v] := 2^d-th parent of v
+    vector<vector<int>> parent;
     vector<int> depth;
     LCA() {}
     explicit LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }

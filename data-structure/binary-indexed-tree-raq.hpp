@@ -7,7 +7,6 @@ struct BIT {
     vector<Abel> dat[2];
     int N;
 
-    // [0, n)
     explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {
         init(n);
     }
@@ -16,7 +15,6 @@ struct BIT {
             dat[iter].assign(n + 1, UNITY_SUM);
     }
 
-    // [a, b), a and b are 0-indexed
     inline void sub_add(int p, int a, Abel x) {
         for (int i = a; i < (int)dat[p].size(); i |= i + 1)
             dat[p][i] = dat[p][i] + x;
@@ -28,7 +26,6 @@ struct BIT {
         sub_add(1, b, x * (-1));
     }
 
-    // [a, b), a and b are 0-indexed
     inline Abel sub_sum(int p, int a) {
         Abel res = UNITY_SUM;
         for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)

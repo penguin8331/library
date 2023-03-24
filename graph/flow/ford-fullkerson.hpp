@@ -1,7 +1,6 @@
 #pragma once
 #include "../../template/template.hpp"
 
-// edge class (for network-flow)
 template <class FLOWTYPE>
 struct Edge {
     int rev, from, to;
@@ -15,7 +14,6 @@ struct Edge {
     }
 };
 
-// graph class (for network-flow)
 template <class FLOWTYPE>
 struct Graph {
     vector<vector<Edge<FLOWTYPE> > > list;
@@ -49,7 +47,6 @@ struct Graph {
         list[to].push_back(Edge<FLOWTYPE>((int)list[from].size() - 1, to, from, cap));
     }
 
-    // debug
     friend ostream& operator<<(ostream& s, Graph G) {
         s << endl;
         for (int i = 0; i < G.size(); i++) {
@@ -65,7 +62,7 @@ struct Graph {
 
 template <class FLOWTYPE>
 struct FordFulkerson {
-    const FLOWTYPE INF = 1 << 30;  // to be set
+    const FLOWTYPE INF = 1 << 30;
     vector<int> used;
 
     FordFulkerson() {}
