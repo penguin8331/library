@@ -46,5 +46,7 @@
 "test/yosupo/shortes-path.test.cpp": "2023-03-24 23:12:11 +0900",
 "test/yosupo/static-range-sum-2.test.cpp": "2023-03-21 19:32:40 +0900",
 "test/yosupo/static-range-sum.test.cpp": "2023-03-21 19:32:40 +0900",
-"test/yosupo/static-rmq-2.test.cpp": "2023-03-21 19:32:40 +0900"
+"test/yosupo/static-rmq-2.test.cpp": "2023-03-21 19:32:40 +0900",
+"test/yosupo/static-rmq.test.cpp": "2023-03-24 23:12:11 +0900",
+"test/yosupo/zalgorithm.test.cpp": "2023-03-24 23:12:11 +0900"
 }
