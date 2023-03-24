@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -70,40 +70,38 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/binary-indexed-tree-raq.hpp\"\n\ntemplate <class\
     \ Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat[2];\n   \
-    \ int N;\n\n    // [0, n)\n    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity),\
-    \ N(n) {\n        init(n);\n    }\n    void init(int n) {\n        for (int iter\
-    \ = 0; iter < 2; ++iter)\n            dat[iter].assign(n + 1, UNITY_SUM);\n  \
-    \  }\n\n    // [a, b), a and b are 0-indexed\n    inline void sub_add(int p, int\
-    \ a, Abel x) {\n        for (int i = a; i < (int)dat[p].size(); i |= i + 1)\n\
-    \            dat[p][i] = dat[p][i] + x;\n    }\n    inline void add(int a, int\
-    \ b, Abel x) {\n        sub_add(0, a, x * (-a));\n        sub_add(1, a, x);\n\
-    \        sub_add(0, b, x * b);\n        sub_add(1, b, x * (-1));\n    }\n\n  \
-    \  // [a, b), a and b are 0-indexed\n    inline Abel sub_sum(int p, int a) {\n\
-    \        Abel res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i\
-    \ + 1)) - 1)\n            res = res + dat[p][i];\n        return res;\n    }\n\
-    \    inline Abel sum(int a, int b) {\n        return sub_sum(0, b) + sub_sum(1,\
-    \ b) * b - sub_sum(0, a) - sub_sum(1, a) * a;\n    }\n    \n    friend ostream&\
-    \ operator<<(ostream& os, BIT bit) {\n        os << \"[ \";\n        for (int\
-    \ i = 0; i < bit.N; i++) {\n            os << bit.sum(i, i + 1) << \" \";\n  \
-    \      }\n        os << ']';\n        return os;\n    }\n};\n"
+    \ int N;\n\n    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {\n\
+    \        init(n);\n    }\n    void init(int n) {\n        for (int iter = 0; iter\
+    \ < 2; ++iter)\n            dat[iter].assign(n + 1, UNITY_SUM);\n    }\n\n   \
+    \ inline void sub_add(int p, int a, Abel x) {\n        for (int i = a; i < (int)dat[p].size();\
+    \ i |= i + 1)\n            dat[p][i] = dat[p][i] + x;\n    }\n    inline void\
+    \ add(int a, int b, Abel x) {\n        sub_add(0, a, x * (-a));\n        sub_add(1,\
+    \ a, x);\n        sub_add(0, b, x * b);\n        sub_add(1, b, x * (-1));\n  \
+    \  }\n\n    inline Abel sub_sum(int p, int a) {\n        Abel res = UNITY_SUM;\n\
+    \        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n            res =\
+    \ res + dat[p][i];\n        return res;\n    }\n    inline Abel sum(int a, int\
+    \ b) {\n        return sub_sum(0, b) + sub_sum(1, b) * b - sub_sum(0, a) - sub_sum(1,\
+    \ a) * a;\n    }\n    \n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
+    \        os << \"[ \";\n        for (int i = 0; i < bit.N; i++) {\n          \
+    \  os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
+    \ os;\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Abel>\n\
     struct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat[2];\n    int N;\n\n\
-    \    // [0, n)\n    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n)\
-    \ {\n        init(n);\n    }\n    void init(int n) {\n        for (int iter =\
-    \ 0; iter < 2; ++iter)\n            dat[iter].assign(n + 1, UNITY_SUM);\n    }\n\
-    \n    // [a, b), a and b are 0-indexed\n    inline void sub_add(int p, int a,\
-    \ Abel x) {\n        for (int i = a; i < (int)dat[p].size(); i |= i + 1)\n   \
-    \         dat[p][i] = dat[p][i] + x;\n    }\n    inline void add(int a, int b,\
-    \ Abel x) {\n        sub_add(0, a, x * (-a));\n        sub_add(1, a, x);\n   \
-    \     sub_add(0, b, x * b);\n        sub_add(1, b, x * (-1));\n    }\n\n    //\
-    \ [a, b), a and b are 0-indexed\n    inline Abel sub_sum(int p, int a) {\n   \
-    \     Abel res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i +\
-    \ 1)) - 1)\n            res = res + dat[p][i];\n        return res;\n    }\n \
-    \   inline Abel sum(int a, int b) {\n        return sub_sum(0, b) + sub_sum(1,\
-    \ b) * b - sub_sum(0, a) - sub_sum(1, a) * a;\n    }\n    \n    friend ostream&\
-    \ operator<<(ostream& os, BIT bit) {\n        os << \"[ \";\n        for (int\
-    \ i = 0; i < bit.N; i++) {\n            os << bit.sum(i, i + 1) << \" \";\n  \
-    \      }\n        os << ']';\n        return os;\n    }\n};"
+    \    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), N(n) {\n        init(n);\n\
+    \    }\n    void init(int n) {\n        for (int iter = 0; iter < 2; ++iter)\n\
+    \            dat[iter].assign(n + 1, UNITY_SUM);\n    }\n\n    inline void sub_add(int\
+    \ p, int a, Abel x) {\n        for (int i = a; i < (int)dat[p].size(); i |= i\
+    \ + 1)\n            dat[p][i] = dat[p][i] + x;\n    }\n    inline void add(int\
+    \ a, int b, Abel x) {\n        sub_add(0, a, x * (-a));\n        sub_add(1, a,\
+    \ x);\n        sub_add(0, b, x * b);\n        sub_add(1, b, x * (-1));\n    }\n\
+    \n    inline Abel sub_sum(int p, int a) {\n        Abel res = UNITY_SUM;\n   \
+    \     for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n            res = res\
+    \ + dat[p][i];\n        return res;\n    }\n    inline Abel sum(int a, int b)\
+    \ {\n        return sub_sum(0, b) + sub_sum(1, b) * b - sub_sum(0, a) - sub_sum(1,\
+    \ a) * a;\n    }\n    \n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
+    \        os << \"[ \";\n        for (int i = 0; i < bit.N; i++) {\n          \
+    \  os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
+    \ os;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -114,7 +112,7 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree-raq.hpp
   requiredBy: []
-  timestamp: '2023-03-21 19:32:40+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_G.test.cpp

@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -66,23 +66,15 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/compress.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
-    \ compress(vector<T> &X) {\r\n    // \u30BD\u30FC\u30C8\u3057\u305F\u7D50\u679C\
-    \u3092 vals \u306B\r\n    vector<T> vals = X;\r\n    sort(vals.begin(), vals.end());\r\
-    \n    // \u96A3\u308A\u5408\u3046\u91CD\u8907\u3092\u524A\u9664(unique), \u672B\
-    \u7AEF\u306E\u30B4\u30DF\u3092\u524A\u9664(erase)\r\n    vals.erase(unique(vals.begin(),\
-    \ vals.end()), vals.end());\r\n    // \u5404\u8981\u7D20\u3054\u3068\u306B\u4E8C\
-    \u5206\u63A2\u7D22\u3067\u4F4D\u7F6E\u3092\u6C42\u3081\u308B\r\n    for (int i\
-    \ = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(), vals.end(),\
-    \ X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}\n"
+    \ compress(vector<T> &X) {\r\n    vector<T> vals = X;\r\n    sort(vals.begin(),\
+    \ vals.end());\r\n    vals.erase(unique(vals.begin(), vals.end()), vals.end());\r\
+    \n    for (int i = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(),\
+    \ vals.end(), X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <typename\
-    \ T>\r\nvector<T> compress(vector<T> &X) {\r\n    // \u30BD\u30FC\u30C8\u3057\u305F\
-    \u7D50\u679C\u3092 vals \u306B\r\n    vector<T> vals = X;\r\n    sort(vals.begin(),\
-    \ vals.end());\r\n    // \u96A3\u308A\u5408\u3046\u91CD\u8907\u3092\u524A\u9664\
-    (unique), \u672B\u7AEF\u306E\u30B4\u30DF\u3092\u524A\u9664(erase)\r\n    vals.erase(unique(vals.begin(),\
-    \ vals.end()), vals.end());\r\n    // \u5404\u8981\u7D20\u3054\u3068\u306B\u4E8C\
-    \u5206\u63A2\u7D22\u3067\u4F4D\u7F6E\u3092\u6C42\u3081\u308B\r\n    for (int i\
-    \ = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(), vals.end(),\
-    \ X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}"
+    \ T>\r\nvector<T> compress(vector<T> &X) {\r\n    vector<T> vals = X;\r\n    sort(vals.begin(),\
+    \ vals.end());\r\n    vals.erase(unique(vals.begin(), vals.end()), vals.end());\r\
+    \n    for (int i = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(),\
+    \ vals.end(), X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -93,7 +85,7 @@ data:
   isVerificationFile: false
   path: algorithm/compress.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: algorithm/compress.hpp

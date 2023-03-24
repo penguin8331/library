@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/flow/ford-fullkerson.hpp
     title: "Ford Fullkerson (\u6700\u5927\u6D41)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -72,49 +72,47 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/flow/ford-fullkerson.hpp\"\n\n// edge class (for network-flow)\n\
-    template <class FLOWTYPE>\nstruct Edge {\n    int rev, from, to;\n    FLOWTYPE\
-    \ cap, icap;\n    Edge(int r, int f, int t, FLOWTYPE c) : rev(r), from(f), to(t),\
-    \ cap(c), icap(c) {}\n    friend ostream& operator<<(ostream& s, Edge E) {\n \
-    \       if (E.cap > 0)\n            return s << E.from << \"->\" << E.to << '('\
-    \ << E.cap << ')' << \" \";\n        else\n            return s;\n    }\n};\n\n\
-    // graph class (for network-flow)\ntemplate <class FLOWTYPE>\nstruct Graph {\n\
-    \    vector<vector<Edge<FLOWTYPE> > > list;\n\n    Graph(int n = 0) : list(n)\
-    \ {}\n    void init(int n = 0) {\n        list.clear();\n        list.resize(n);\n\
-    \    }\n    void reset() {\n        for (int i = 0; i < (int)list.size(); ++i)\n\
-    \            for (int j = 0; j < list[i].size(); ++j) list[i][j].cap = list[i][j].icap;\n\
-    \    }\n    inline vector<Edge<FLOWTYPE> >& operator[](int i) { return list[i];\
-    \ }\n    inline const size_t size() const { return list.size(); }\n\n    inline\
-    \ Edge<FLOWTYPE>& redge(Edge<FLOWTYPE> e) {\n        if (e.from != e.to)\n   \
-    \         return list[e.to][e.rev];\n        else\n            return list[e.to][e.rev\
-    \ + 1];\n    }\n\n    void addedge(int from, int to, FLOWTYPE cap) {\n       \
-    \ list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(), from, to, cap));\n\
-    \        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size() - 1, to, from,\
-    \ 0));\n    }\n\n    void add_undirected_edge(int from, int to, FLOWTYPE cap)\
-    \ {\n        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(), from, to,\
-    \ cap));\n        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size() - 1,\
-    \ to, from, cap));\n    }\n\n    // debug\n    friend ostream& operator<<(ostream&\
-    \ s, Graph G) {\n        s << endl;\n        for (int i = 0; i < G.size(); i++)\
-    \ {\n            s << i << \": \";\n            for (Edge<FLOWTYPE> j : G.list[i])\
-    \ {\n                s << j;\n            }\n            s << endl;\n        }\n\
-    \        return s;\n    }\n};\n\ntemplate <class FLOWTYPE>\nstruct FordFulkerson\
-    \ {\n    const FLOWTYPE INF = 1 << 30;  // to be set\n    vector<int> used;\n\n\
-    \    FordFulkerson() {}\n    FLOWTYPE fodfs(Graph<FLOWTYPE>& G, int v, int t,\
-    \ FLOWTYPE f) {\n        if (v == t) return f;\n        used[v] = true;\n    \
-    \    for (auto& e : G[v]) {\n            if (!used[e.to] && e.cap > 0) {\n   \
-    \             int d = fodfs(G, e.to, t, min(f, e.cap));\n                if (d\
-    \ > 0) {\n                    e.cap -= d;\n                    G.redge(e).cap\
-    \ += d;\n                    return d;\n                }\n            }\n   \
-    \     }\n        return 0;\n    }\n    FLOWTYPE solve(Graph<FLOWTYPE>& G, int\
-    \ s, int t) {\n        FLOWTYPE res = 0;\n        while (true) {\n           \
-    \ used.assign((int)G.size(), 0);\n            int flow = fodfs(G, s, t, INF);\n\
-    \            if (flow == 0)\n                return res;\n            else\n \
-    \               res += flow;\n        }\n        return 0;\n    }\n};\n#line 4\
-    \ \"test/AOJ/GRL_6_A.test.cpp\"\n\nint main(){\n    int V, E;\n    cin >> V >>\
-    \ E;\n    Graph<int> G(V);\n    for (int i = 0; i < E; ++i) {\n        int u,\
-    \ v, c;\n        cin >> u >> v >> c;\n        G.addedge(u, v, c);\n    }\n   \
-    \ FordFulkerson<int> ff;\n    int s = 0, t = V - 1;\n    cout << ff.solve(G, s,\
-    \ t) << endl;\n}\n"
+    \ std;\n#line 3 \"graph/flow/ford-fullkerson.hpp\"\n\ntemplate <class FLOWTYPE>\n\
+    struct Edge {\n    int rev, from, to;\n    FLOWTYPE cap, icap;\n    Edge(int r,\
+    \ int f, int t, FLOWTYPE c) : rev(r), from(f), to(t), cap(c), icap(c) {}\n   \
+    \ friend ostream& operator<<(ostream& s, Edge E) {\n        if (E.cap > 0)\n \
+    \           return s << E.from << \"->\" << E.to << '(' << E.cap << ')' << \"\
+    \ \";\n        else\n            return s;\n    }\n};\n\ntemplate <class FLOWTYPE>\n\
+    struct Graph {\n    vector<vector<Edge<FLOWTYPE> > > list;\n\n    Graph(int n\
+    \ = 0) : list(n) {}\n    void init(int n = 0) {\n        list.clear();\n     \
+    \   list.resize(n);\n    }\n    void reset() {\n        for (int i = 0; i < (int)list.size();\
+    \ ++i)\n            for (int j = 0; j < list[i].size(); ++j) list[i][j].cap =\
+    \ list[i][j].icap;\n    }\n    inline vector<Edge<FLOWTYPE> >& operator[](int\
+    \ i) { return list[i]; }\n    inline const size_t size() const { return list.size();\
+    \ }\n\n    inline Edge<FLOWTYPE>& redge(Edge<FLOWTYPE> e) {\n        if (e.from\
+    \ != e.to)\n            return list[e.to][e.rev];\n        else\n            return\
+    \ list[e.to][e.rev + 1];\n    }\n\n    void addedge(int from, int to, FLOWTYPE\
+    \ cap) {\n        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(), from,\
+    \ to, cap));\n        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size()\
+    \ - 1, to, from, 0));\n    }\n\n    void add_undirected_edge(int from, int to,\
+    \ FLOWTYPE cap) {\n        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(),\
+    \ from, to, cap));\n        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size()\
+    \ - 1, to, from, cap));\n    }\n\n    friend ostream& operator<<(ostream& s, Graph\
+    \ G) {\n        s << endl;\n        for (int i = 0; i < G.size(); i++) {\n   \
+    \         s << i << \": \";\n            for (Edge<FLOWTYPE> j : G.list[i]) {\n\
+    \                s << j;\n            }\n            s << endl;\n        }\n \
+    \       return s;\n    }\n};\n\ntemplate <class FLOWTYPE>\nstruct FordFulkerson\
+    \ {\n    const FLOWTYPE INF = 1 << 30;\n    vector<int> used;\n\n    FordFulkerson()\
+    \ {}\n    FLOWTYPE fodfs(Graph<FLOWTYPE>& G, int v, int t, FLOWTYPE f) {\n   \
+    \     if (v == t) return f;\n        used[v] = true;\n        for (auto& e : G[v])\
+    \ {\n            if (!used[e.to] && e.cap > 0) {\n                int d = fodfs(G,\
+    \ e.to, t, min(f, e.cap));\n                if (d > 0) {\n                   \
+    \ e.cap -= d;\n                    G.redge(e).cap += d;\n                    return\
+    \ d;\n                }\n            }\n        }\n        return 0;\n    }\n\
+    \    FLOWTYPE solve(Graph<FLOWTYPE>& G, int s, int t) {\n        FLOWTYPE res\
+    \ = 0;\n        while (true) {\n            used.assign((int)G.size(), 0);\n \
+    \           int flow = fodfs(G, s, t, INF);\n            if (flow == 0)\n    \
+    \            return res;\n            else\n                res += flow;\n   \
+    \     }\n        return 0;\n    }\n};\n#line 4 \"test/AOJ/GRL_6_A.test.cpp\"\n\
+    \nint main(){\n    int V, E;\n    cin >> V >> E;\n    Graph<int> G(V);\n    for\
+    \ (int i = 0; i < E; ++i) {\n        int u, v, c;\n        cin >> u >> v >> c;\n\
+    \        G.addedge(u, v, c);\n    }\n    FordFulkerson<int> ff;\n    int s = 0,\
+    \ t = V - 1;\n    cout << ff.solve(G, s, t) << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/flow/ford-fullkerson.hpp\"\
     \n\nint main(){\n    int V, E;\n    cin >> V >> E;\n    Graph<int> G(V);\n   \
@@ -132,7 +130,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_6_A.test.cpp

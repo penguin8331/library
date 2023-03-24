@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -75,14 +75,12 @@ data:
     \ std;\n#line 3 \"graph/topological-sort.hpp\"\n\nvoid dfs(const vector<vector<int>>\
     \ &G, int v, vector<bool> &used, vector<int> &ans) {\n    used[v] = true;\n  \
     \  for (auto e : G[v]) {\n        if (!used[e]) {\n            dfs(G, e, used,\
-    \ ans);\n        }\n    }\n    ans.push_back(v);  // \u5E30\u308A\u304C\u3051\u306B\
-    push_back\n}\nvector<int> topo_sort(const vector<vector<int>> &G) {  // bfs\n\
-    \    vector<int> ans;\n    int n = (int)G.size();\n    vector<bool> used(n, false);\n\
-    \    for (int v = 0; v < n; v++) {  // \u672A\u63A2\u7D22\u306E\u9802\u70B9\u3054\
-    \u3068\u306BDFS\n        if (!used[v]) dfs(G, v, used, ans);\n    }\n    reverse(ans.begin(),\
-    \ ans.end());  // \u9006\u5411\u304D\u306A\u306E\u3067\u3072\u3063\u304F\u308A\
-    \u8FD4\u3059\n    return ans;\n}\n#line 4 \"test/AOJ/GRL_4_B.test.cpp\"\n\nint\
-    \ main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
+    \ ans);\n        }\n    }\n    ans.push_back(v);\n}\nvector<int> topo_sort(const\
+    \ vector<vector<int>> &G) {\n    vector<int> ans;\n    int n = (int)G.size();\n\
+    \    vector<bool> used(n, false);\n    for (int v = 0; v < n; v++) {\n       \
+    \ if (!used[v]) dfs(G, v, used, ans);\n    }\n    reverse(ans.begin(), ans.end());\n\
+    \    return ans;\n}\n#line 4 \"test/AOJ/GRL_4_B.test.cpp\"\n\nint main() {\n \
+    \   int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
     \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
     \        G[s].push_back(t);\n    }\n    auto ans = topo_sort(G);\n    for (int\
     \ i = 0; i < ans.size(); i++) {\n        cout << ans[i] << endl;\n    }\n}\n"
@@ -104,7 +102,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_4_B.test.cpp

@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -66,14 +66,14 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/mo.hpp\"\n\nstruct Mo {\n    vector<int> left,\
-    \ right, index;  // the interval's left, right, index\n    vector<bool> v;\n \
-    \   int window;\n    int nl, nr, ptr;\n    function<void(int)> insert, erase;\n\
-    \n    Mo(int n, const function<void(int)> INSERT, const function<void(int)> ERASE)\n\
-    \        : window((int)sqrt(n)),\n          nl(0),\n          nr(0),\n       \
-    \   ptr(0),\n          v(n, false),\n          insert(INSERT),\n          erase(ERASE)\
-    \ {}\n\n    /* push */\n    void push(int l, int r) { left.push_back(l), right.push_back(r);\
-    \ }\n\n    /* sort intervals */\n    void build() {\n        index.resize(left.size());\n\
-    \        iota(index.begin(), index.end(), 0);\n\n        sort(begin(index), end(index),\
+    \ right, index;\n    vector<bool> v;\n    int window;\n    int nl, nr, ptr;\n\
+    \    function<void(int)> insert, erase;\n\n    Mo(int n, const function<void(int)>\
+    \ INSERT, const function<void(int)> ERASE)\n        : window((int)sqrt(n)),\n\
+    \          nl(0),\n          nr(0),\n          ptr(0),\n          v(n, false),\n\
+    \          insert(INSERT),\n          erase(ERASE) {}\n\n    /* push */\n    void\
+    \ push(int l, int r) { left.push_back(l), right.push_back(r); }\n\n    /* sort\
+    \ intervals */\n    void build() {\n        index.resize(left.size());\n     \
+    \   iota(index.begin(), index.end(), 0);\n\n        sort(begin(index), end(index),\
     \ [&](int a, int b) {\n            if (left[a] / window != left[b] / window) return\
     \ left[a] < left[b];\n            return right[a] < right[b];\n        });\n \
     \   }\n\n    /* extend-shorten */\n    void extend_shorten(int id) {\n       \
@@ -85,14 +85,14 @@ data:
     \        while (nr > right[id]) extend_shorten(--nr);\n        return index[ptr++];\n\
     \    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Mo {\n    vector<int>\
-    \ left, right, index;  // the interval's left, right, index\n    vector<bool>\
-    \ v;\n    int window;\n    int nl, nr, ptr;\n    function<void(int)> insert, erase;\n\
-    \n    Mo(int n, const function<void(int)> INSERT, const function<void(int)> ERASE)\n\
-    \        : window((int)sqrt(n)),\n          nl(0),\n          nr(0),\n       \
-    \   ptr(0),\n          v(n, false),\n          insert(INSERT),\n          erase(ERASE)\
-    \ {}\n\n    /* push */\n    void push(int l, int r) { left.push_back(l), right.push_back(r);\
-    \ }\n\n    /* sort intervals */\n    void build() {\n        index.resize(left.size());\n\
-    \        iota(index.begin(), index.end(), 0);\n\n        sort(begin(index), end(index),\
+    \ left, right, index;\n    vector<bool> v;\n    int window;\n    int nl, nr, ptr;\n\
+    \    function<void(int)> insert, erase;\n\n    Mo(int n, const function<void(int)>\
+    \ INSERT, const function<void(int)> ERASE)\n        : window((int)sqrt(n)),\n\
+    \          nl(0),\n          nr(0),\n          ptr(0),\n          v(n, false),\n\
+    \          insert(INSERT),\n          erase(ERASE) {}\n\n    /* push */\n    void\
+    \ push(int l, int r) { left.push_back(l), right.push_back(r); }\n\n    /* sort\
+    \ intervals */\n    void build() {\n        index.resize(left.size());\n     \
+    \   iota(index.begin(), index.end(), 0);\n\n        sort(begin(index), end(index),\
     \ [&](int a, int b) {\n            if (left[a] / window != left[b] / window) return\
     \ left[a] < left[b];\n            return right[a] < right[b];\n        });\n \
     \   }\n\n    /* extend-shorten */\n    void extend_shorten(int id) {\n       \
@@ -113,7 +113,7 @@ data:
   isVerificationFile: false
   path: data-structure/mo.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/mo.hpp

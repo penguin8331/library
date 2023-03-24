@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -70,22 +70,20 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"graph/diameter-weighted.hpp\"\n\nstruct Edge {\n    int to;\n\
     \    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
-    \ &G, int u, int par) {  // \u6700\u9060\u70B9\u9593\u8DDD\u96E2\u3068\u6700\u9060\
-    \u70B9\u3092\u6C42\u3081\u308B\n    pair<T, int> ret = make_pair((T)0, u);\n \
-    \   for (auto e : G[u]) {\n        if (e.to == par) continue;\n        auto next\
-    \ = dfs<T>(G, e.to, u);\n        next.first += e.cost;\n        ret = max(ret,\
-    \ next);\n    }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const\
-    \ vector<vector<Edge>> &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T,\
-    \ int> q = dfs<T>(G, p.second, -1);\n    return q.first;\n}\n"
+    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
+    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
+    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
+    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
+    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
+    \ p.second, -1);\n    return q.first;\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Edge {\n  \
     \  int to;\n    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
-    \ &G, int u, int par) {  // \u6700\u9060\u70B9\u9593\u8DDD\u96E2\u3068\u6700\u9060\
-    \u70B9\u3092\u6C42\u3081\u308B\n    pair<T, int> ret = make_pair((T)0, u);\n \
-    \   for (auto e : G[u]) {\n        if (e.to == par) continue;\n        auto next\
-    \ = dfs<T>(G, e.to, u);\n        next.first += e.cost;\n        ret = max(ret,\
-    \ next);\n    }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const\
-    \ vector<vector<Edge>> &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T,\
-    \ int> q = dfs<T>(G, p.second, -1);\n    return q.first;\n}"
+    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
+    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
+    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
+    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
+    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
+    \ p.second, -1);\n    return q.first;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -96,7 +94,7 @@ data:
   isVerificationFile: false
   path: graph/diameter-weighted.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_A.test.cpp

@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -76,17 +76,13 @@ data:
     \   long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
     \ &G, int s) {\n    int N = G.size();\n    vector<long long> dis(N, INF);\n  \
     \  priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long\
-    \ long, int>>> pq;  // \u300C\u4EEE\u306E\u6700\u77ED\u8DDD\u96E2, \u9802\u70B9\
-    \u300D\u304C\u5C0F\u3055\u3044\u9806\u306B\u4E26\u3076\n    dis[s] = 0;\n    pq.emplace(dis[s],\
-    \ s);\n    while (!pq.empty()) {\n        pair<long long, int> p = pq.top();\n\
-    \        pq.pop();\n        int v = p.second;\n        if (dis[v] < p.first) {\
-    \  // \u6700\u77ED\u8DDD\u96E2\u3067\u7121\u3051\u308C\u3070\u7121\u8996\n   \
-    \         continue;\n        }\n        for (auto &e : G[v]) {\n            if\
-    \ (dis[e.to] > dis[v] + e.cost) {  // \u6700\u77ED\u8DDD\u96E2\u5019\u88DC\u306A\
-    \u3089 priority_queue \u306B\u8FFD\u52A0\n                dis[e.to] = dis[v] +\
-    \ e.cost;\n                pq.emplace(dis[e.to], e.to);\n            }\n     \
-    \   }\n    }\n    return dis;\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\n\nint\
-    \ main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
+    \ long, int>>> pq;\n    dis[s] = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty())\
+    \ {\n        pair<long long, int> p = pq.top();\n        pq.pop();\n        int\
+    \ v = p.second;\n        if (dis[v] < p.first) {\n            continue;\n    \
+    \    }\n        for (auto &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost)\
+    \ {\n                dis[e.to] = dis[v] + e.cost;\n                pq.emplace(dis[e.to],\
+    \ e.to);\n            }\n        }\n    }\n    return dis;\n}\n#line 4 \"test/AOJ/GRL_1_A.test.cpp\"\
+    \n\nint main() {\n    int N, E, r;\n    cin >> N >> E >> r;\n    vector<vector<Edge>>\
     \ G(N);\n    for (int i = 0; i < E; i++) {\n        int s, t, d;\n        cin\
     \ >> s >> t >> d;\n        G[s].push_back({t, d});\n    }\n    auto res = dijkstra(G,\
     \ r);\n    for (int i = 0; i < N; i++) {\n        if (res[i] == INF) {\n     \
@@ -111,7 +107,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_A.test.cpp

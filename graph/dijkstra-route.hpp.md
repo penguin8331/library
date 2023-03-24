@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -71,37 +71,31 @@ data:
     \ std;\n#line 3 \"graph/dijkstra-route.hpp\"\n\nstruct Edge {\n    long long to;\n\
     \    long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
     \ &G, int s, vector<int> &prev) {\n    int N = G.size();\n    vector<long long>\
-    \ dis(N, INF);\n    prev.assign(N, -1);  // \u521D\u671F\u5316\n    priority_queue<pair<long\
-    \ long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;\n\
-    \    dis[s] = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty()) {\n    \
-    \    pair<long long, int> p = pq.top();\n        pq.pop();\n        int v = p.second;\n\
-    \        if (dis[v] < p.first) {\n            continue;\n        }\n        for\
-    \ (auto &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {\n       \
-    \         dis[e.to] = dis[v] + e.cost;\n                prev[e.to] = v;  // \u9802\
-    \u70B9 v \u3092\u901A\u3063\u3066 e.to \u306B\u305F\u3069\u308A\u7740\u3044\u305F\
-    \n                pq.emplace(dis[e.to], e.to);\n            }\n        }\n   \
-    \ }\n    return dis;\n}\nvector<int> get_path(const vector<int> &prev, int t)\
-    \ {\n    vector<int> path;\n    for (int cur = t; cur != -1; cur = prev[cur])\
-    \ {\n        path.push_back(cur);\n    }\n    reverse(path.begin(), path.end());\
-    \  // \u9006\u9806\u306A\u306E\u3067\u3072\u3063\u304F\u308A\u8FD4\u3059\n   \
-    \ return path;\n}\n"
+    \ dis(N, INF);\n    prev.assign(N, -1);\n    priority_queue<pair<long long, int>,\
+    \ vector<pair<long long, int>>, greater<pair<long long, int>>> pq;\n    dis[s]\
+    \ = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty()) {\n        pair<long\
+    \ long, int> p = pq.top();\n        pq.pop();\n        int v = p.second;\n   \
+    \     if (dis[v] < p.first) {\n            continue;\n        }\n        for (auto\
+    \ &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {\n             \
+    \   dis[e.to] = dis[v] + e.cost;\n                prev[e.to] = v;\n          \
+    \      pq.emplace(dis[e.to], e.to);\n            }\n        }\n    }\n    return\
+    \ dis;\n}\nvector<int> get_path(const vector<int> &prev, int t) {\n    vector<int>\
+    \ path;\n    for (int cur = t; cur != -1; cur = prev[cur]) {\n        path.push_back(cur);\n\
+    \    }\n    reverse(path.begin(), path.end());\n    return path;\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Edge {\n  \
     \  long long to;\n    long long cost;\n};\nvector<long long> dijkstra(const vector<vector<Edge>>\
     \ &G, int s, vector<int> &prev) {\n    int N = G.size();\n    vector<long long>\
-    \ dis(N, INF);\n    prev.assign(N, -1);  // \u521D\u671F\u5316\n    priority_queue<pair<long\
-    \ long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;\n\
-    \    dis[s] = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty()) {\n    \
-    \    pair<long long, int> p = pq.top();\n        pq.pop();\n        int v = p.second;\n\
-    \        if (dis[v] < p.first) {\n            continue;\n        }\n        for\
-    \ (auto &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {\n       \
-    \         dis[e.to] = dis[v] + e.cost;\n                prev[e.to] = v;  // \u9802\
-    \u70B9 v \u3092\u901A\u3063\u3066 e.to \u306B\u305F\u3069\u308A\u7740\u3044\u305F\
-    \n                pq.emplace(dis[e.to], e.to);\n            }\n        }\n   \
-    \ }\n    return dis;\n}\nvector<int> get_path(const vector<int> &prev, int t)\
-    \ {\n    vector<int> path;\n    for (int cur = t; cur != -1; cur = prev[cur])\
-    \ {\n        path.push_back(cur);\n    }\n    reverse(path.begin(), path.end());\
-    \  // \u9006\u9806\u306A\u306E\u3067\u3072\u3063\u304F\u308A\u8FD4\u3059\n   \
-    \ return path;\n}"
+    \ dis(N, INF);\n    prev.assign(N, -1);\n    priority_queue<pair<long long, int>,\
+    \ vector<pair<long long, int>>, greater<pair<long long, int>>> pq;\n    dis[s]\
+    \ = 0;\n    pq.emplace(dis[s], s);\n    while (!pq.empty()) {\n        pair<long\
+    \ long, int> p = pq.top();\n        pq.pop();\n        int v = p.second;\n   \
+    \     if (dis[v] < p.first) {\n            continue;\n        }\n        for (auto\
+    \ &e : G[v]) {\n            if (dis[e.to] > dis[v] + e.cost) {\n             \
+    \   dis[e.to] = dis[v] + e.cost;\n                prev[e.to] = v;\n          \
+    \      pq.emplace(dis[e.to], e.to);\n            }\n        }\n    }\n    return\
+    \ dis;\n}\nvector<int> get_path(const vector<int> &prev, int t) {\n    vector<int>\
+    \ path;\n    for (int cur = t; cur != -1; cur = prev[cur]) {\n        path.push_back(cur);\n\
+    \    }\n    reverse(path.begin(), path.end());\n    return path;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -112,7 +106,7 @@ data:
   isVerificationFile: false
   path: graph/dijkstra-route.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/shortes-path.test.cpp

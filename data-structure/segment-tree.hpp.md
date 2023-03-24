@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -98,21 +98,21 @@ data:
     \ * 2;\n                    if (f(F(sum, dat[l]))) {\n                       \
     \ sum = F(sum, dat[l]);\n                        ++l;\n                    }\n\
     \                }\n                return l - SIZE_R;\n            }\n      \
-    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\
-    \  // stop if l = 2^e\n        return N;\n    }\n\n    /* get min l that f(get(l,\
-    \ r)) = True (0-indexed), O(log N) */\n    /* f(IDENTITY) need to be True */\n\
-    \    int min_left(const function<bool(Monoid)> f, int r = -1) {\n        if (r\
-    \ == 0) return 0;\n        if (r == -1) r = N;\n        r += SIZE_R;\n       \
-    \ Monoid sum = IDENTITY;\n        do {\n            --r;\n            while (r\
-    \ > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r], sum))) {\n          \
-    \      while (r < SIZE_R) {\n                    r = r * 2 + 1;\n            \
-    \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
-    \                        --r;\n                    }\n                }\n    \
-    \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
-    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
-    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
-    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};\n"
+    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\n\
+    \        return N;\n    }\n\n    /* get min l that f(get(l, r)) = True (0-indexed),\
+    \ O(log N) */\n    /* f(IDENTITY) need to be True */\n    int min_left(const function<bool(Monoid)>\
+    \ f, int r = -1) {\n        if (r == 0) return 0;\n        if (r == -1) r = N;\n\
+    \        r += SIZE_R;\n        Monoid sum = IDENTITY;\n        do {\n        \
+    \    --r;\n            while (r > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r],\
+    \ sum))) {\n                while (r < SIZE_R) {\n                    r = r *\
+    \ 2 + 1;\n                    if (f(F(dat[r], sum))) {\n                     \
+    \   sum = F(dat[r], sum);\n                        --r;\n                    }\n\
+    \                }\n                return r + 1 - SIZE_R;\n            }\n  \
+    \          sum = F(dat[r], sum);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
+    \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
+    \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
+    \ os;\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Monoid>\n\
     struct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n    int\
     \ N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid> dat;\n\
@@ -143,21 +143,21 @@ data:
     \ * 2;\n                    if (f(F(sum, dat[l]))) {\n                       \
     \ sum = F(sum, dat[l]);\n                        ++l;\n                    }\n\
     \                }\n                return l - SIZE_R;\n            }\n      \
-    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\
-    \  // stop if l = 2^e\n        return N;\n    }\n\n    /* get min l that f(get(l,\
-    \ r)) = True (0-indexed), O(log N) */\n    /* f(IDENTITY) need to be True */\n\
-    \    int min_left(const function<bool(Monoid)> f, int r = -1) {\n        if (r\
-    \ == 0) return 0;\n        if (r == -1) r = N;\n        r += SIZE_R;\n       \
-    \ Monoid sum = IDENTITY;\n        do {\n            --r;\n            while (r\
-    \ > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r], sum))) {\n          \
-    \      while (r < SIZE_R) {\n                    r = r * 2 + 1;\n            \
-    \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
-    \                        --r;\n                    }\n                }\n    \
-    \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
-    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
-    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
-    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};"
+    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\n\
+    \        return N;\n    }\n\n    /* get min l that f(get(l, r)) = True (0-indexed),\
+    \ O(log N) */\n    /* f(IDENTITY) need to be True */\n    int min_left(const function<bool(Monoid)>\
+    \ f, int r = -1) {\n        if (r == 0) return 0;\n        if (r == -1) r = N;\n\
+    \        r += SIZE_R;\n        Monoid sum = IDENTITY;\n        do {\n        \
+    \    --r;\n            while (r > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r],\
+    \ sum))) {\n                while (r < SIZE_R) {\n                    r = r *\
+    \ 2 + 1;\n                    if (f(F(dat[r], sum))) {\n                     \
+    \   sum = F(dat[r], sum);\n                        --r;\n                    }\n\
+    \                }\n                return r + 1 - SIZE_R;\n            }\n  \
+    \          sum = F(dat[r], sum);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
+    \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
+    \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
+    \ os;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -168,8 +168,8 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-24 23:12:11+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp

@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -90,25 +90,24 @@ data:
     \ = fa, FC = fc;\n        IDENTITY_MONOID = identity_monoid, IDENTITY_LAZY = identity_lazy;\n\
     \        SIZE = 1, HEIGHT = 0;\n        while (SIZE < n) SIZE <<= 1, ++HEIGHT;\n\
     \        dat.assign(SIZE * 2, IDENTITY_MONOID);\n        lazy.assign(SIZE * 2,\
-    \ IDENTITY_LAZY);\n    }\n\n    // set, a is 0-indexed\n    void set(int a, const\
-    \ Monoid& v) { dat[a + SIZE] = v; }\n    void build() {\n        for (int k =\
-    \ SIZE - 1; k > 0; --k)\n            dat[k] = FM(dat[k * 2], dat[k * 2 + 1]);\n\
-    \    }\n\n    // update [a, b)\n    inline void evaluate(int k) {\n        if\
-    \ (lazy[k] == IDENTITY_LAZY) return;\n        if (k < SIZE) FC(lazy[k * 2], lazy[k]),\
-    \ FC(lazy[k * 2 + 1], lazy[k]);\n        FA(dat[k], lazy[k]);\n        lazy[k]\
-    \ = IDENTITY_LAZY;\n    }\n    inline void update(int a, int b, const Action&\
-    \ v, int k, int l, int r) {\n        evaluate(k);\n        if (a <= l && r <=\
-    \ b)\n            FC(lazy[k], v), evaluate(k);\n        else if (a < r && l <\
-    \ b) {\n            update(a, b, v, k * 2, l, (l + r) >> 1);\n            update(a,\
-    \ b, v, k * 2 + 1, (l + r) >> 1, r);\n            dat[k] = FM(dat[k * 2], dat[k\
-    \ * 2 + 1]);\n        }\n    }\n    inline void update(int a, int b, const Action&\
-    \ v) {\n        update(a, b, v, 1, 0, SIZE);\n    }\n\n    // get [a, b)\n   \
-    \ inline Monoid get(int a, int b, int k, int l, int r) {\n        evaluate(k);\n\
-    \        if (a <= l && r <= b)\n            return dat[k];\n        else if (a\
-    \ < r && l < b)\n            return FM(get(a, b, k * 2, l, (l + r) >> 1),\n  \
-    \                    get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n \
-    \           return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b)\
-    \ {\n        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
+    \ IDENTITY_LAZY);\n    }\n\n    void set(int a, const Monoid& v) { dat[a + SIZE]\
+    \ = v; }\n    void build() {\n        for (int k = SIZE - 1; k > 0; --k)\n   \
+    \         dat[k] = FM(dat[k * 2], dat[k * 2 + 1]);\n    }\n\n    inline void evaluate(int\
+    \ k) {\n        if (lazy[k] == IDENTITY_LAZY) return;\n        if (k < SIZE) FC(lazy[k\
+    \ * 2], lazy[k]), FC(lazy[k * 2 + 1], lazy[k]);\n        FA(dat[k], lazy[k]);\n\
+    \        lazy[k] = IDENTITY_LAZY;\n    }\n    inline void update(int a, int b,\
+    \ const Action& v, int k, int l, int r) {\n        evaluate(k);\n        if (a\
+    \ <= l && r <= b)\n            FC(lazy[k], v), evaluate(k);\n        else if (a\
+    \ < r && l < b) {\n            update(a, b, v, k * 2, l, (l + r) >> 1);\n    \
+    \        update(a, b, v, k * 2 + 1, (l + r) >> 1, r);\n            dat[k] = FM(dat[k\
+    \ * 2], dat[k * 2 + 1]);\n        }\n    }\n    inline void update(int a, int\
+    \ b, const Action& v) {\n        update(a, b, v, 1, 0, SIZE);\n    }\n\n    inline\
+    \ Monoid get(int a, int b, int k, int l, int r) {\n        evaluate(k);\n    \
+    \    if (a <= l && r <= b)\n            return dat[k];\n        else if (a < r\
+    \ && l < b)\n            return FM(get(a, b, k * 2, l, (l + r) >> 1),\n      \
+    \                get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n     \
+    \       return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b) {\n\
+    \        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
     \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
     \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
     \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
@@ -142,7 +141,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp

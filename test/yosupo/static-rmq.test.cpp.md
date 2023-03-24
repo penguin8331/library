@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -102,27 +102,26 @@ data:
     \ * 2;\n                    if (f(F(sum, dat[l]))) {\n                       \
     \ sum = F(sum, dat[l]);\n                        ++l;\n                    }\n\
     \                }\n                return l - SIZE_R;\n            }\n      \
-    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\
-    \  // stop if l = 2^e\n        return N;\n    }\n\n    /* get min l that f(get(l,\
-    \ r)) = True (0-indexed), O(log N) */\n    /* f(IDENTITY) need to be True */\n\
-    \    int min_left(const function<bool(Monoid)> f, int r = -1) {\n        if (r\
-    \ == 0) return 0;\n        if (r == -1) r = N;\n        r += SIZE_R;\n       \
-    \ Monoid sum = IDENTITY;\n        do {\n            --r;\n            while (r\
-    \ > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r], sum))) {\n          \
-    \      while (r < SIZE_R) {\n                    r = r * 2 + 1;\n            \
-    \        if (f(F(dat[r], sum))) {\n                        sum = F(dat[r], sum);\n\
-    \                        --r;\n                    }\n                }\n    \
-    \            return r + 1 - SIZE_R;\n            }\n            sum = F(dat[r],\
-    \ sum);\n        } while ((r & -r) != r);\n        return 0;\n    }\n\n    friend\
-    \ ostream& operator<<(ostream& os, SegTree seg) {\n        os << \"[ \";\n   \
-    \     for (int i = 0; i < seg.N; i++) {\n            os << seg.get(i, i + 1) <<\
-    \ \" \";\n        }\n        os << ']';\n        return os;\n    }\n};\n#line\
-    \ 4 \"test/yosupo/static-rmq.test.cpp\"\n\nint main() {\n    int N, Q;\n    cin\
-    \ >> N >> Q;\n    SegTree<ll> seg(\n        N, [](ll a, ll b) { return min(a,\
-    \ b); }, INF);\n    for (int i = 0; i < N; i++) {\n        ll a;\n        cin\
-    \ >> a;\n        seg.set(i, a);\n    }\n    seg.build();\n    for (int i = 0;\
-    \ i < Q; i++) {\n        int l, r;\n        cin >> l >> r;\n        cout << seg.get(l,\
-    \ r) << endl;\n    }\n}\n"
+    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\n\
+    \        return N;\n    }\n\n    /* get min l that f(get(l, r)) = True (0-indexed),\
+    \ O(log N) */\n    /* f(IDENTITY) need to be True */\n    int min_left(const function<bool(Monoid)>\
+    \ f, int r = -1) {\n        if (r == 0) return 0;\n        if (r == -1) r = N;\n\
+    \        r += SIZE_R;\n        Monoid sum = IDENTITY;\n        do {\n        \
+    \    --r;\n            while (r > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r],\
+    \ sum))) {\n                while (r < SIZE_R) {\n                    r = r *\
+    \ 2 + 1;\n                    if (f(F(dat[r], sum))) {\n                     \
+    \   sum = F(dat[r], sum);\n                        --r;\n                    }\n\
+    \                }\n                return r + 1 - SIZE_R;\n            }\n  \
+    \          sum = F(dat[r], sum);\n        } while ((r & -r) != r);\n        return\
+    \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
+    \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
+    \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
+    \ os;\n    }\n};\n#line 4 \"test/yosupo/static-rmq.test.cpp\"\n\nint main() {\n\
+    \    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n        N, [](ll a,\
+    \ ll b) { return min(a, b); }, INF);\n    for (int i = 0; i < N; i++) {\n    \
+    \    ll a;\n        cin >> a;\n        seg.set(i, a);\n    }\n    seg.build();\n\
+    \    for (int i = 0; i < Q; i++) {\n        int l, r;\n        cin >> l >> r;\n\
+    \        cout << seg.get(l, r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
     ../../template/template.hpp\"\n#include \"../../data-structure/segment-tree.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n  \
@@ -141,8 +140,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-24 23:12:11+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq.test.cpp
 layout: document

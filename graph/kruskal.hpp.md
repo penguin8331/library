@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -86,30 +86,22 @@ data:
     \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
     \        }\n        return res;\n    }\n};\n#line 4 \"graph/kruskal.hpp\"\n\n\
     struct Edge {\n    long long from;\n    long long to;\n    long long cost;\n};\n\
-    bool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }  //\
-    \ \u8FBA\u3092\u76F4\u63A5\u6BD4\u8F03\u3059\u308B\u305F\u3081\u306E\u95A2\u6570\
-    \nstruct Kruskal {\n    UnionFind uft;\n    long long sum;  // \u6700\u5C0F\u5168\
-    \u57DF\u6728\u306E\u91CD\u307F\u306E\u7DCF\u548C\n    vector<Edge> edges;\n  \
-    \  int V;\n    Kruskal(const vector<Edge> &edges_, int V_) : edges(edges_), V(V_)\
-    \ { init(); }\n    void init() {\n        sort(edges.begin(), edges.end(), comp_e);\
-    \  // \u8FBA\u306E\u91CD\u307F\u3067\u30BD\u30FC\u30C8\n        uft = UnionFind(V);\n\
-    \        sum = 0;\n        for (auto e : edges) {\n            if (!uft.issame(e.from,\
-    \ e.to)) {  // \u9589\u8DEF\u306B\u306A\u3089\u306A\u3051\u308C\u3070\u52A0\u3048\
-    \u308B\n                uft.unite(e.from, e.to);\n                sum += e.cost;\n\
-    \            }\n        }\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n#include \"../data-structure/union-find.hpp\"\
-    \n\nstruct Edge {\n    long long from;\n    long long to;\n    long long cost;\n\
-    };\nbool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }\
-    \  // \u8FBA\u3092\u76F4\u63A5\u6BD4\u8F03\u3059\u308B\u305F\u3081\u306E\u95A2\
-    \u6570\nstruct Kruskal {\n    UnionFind uft;\n    long long sum;  // \u6700\u5C0F\
-    \u5168\u57DF\u6728\u306E\u91CD\u307F\u306E\u7DCF\u548C\n    vector<Edge> edges;\n\
+    bool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }\nstruct\
+    \ Kruskal {\n    UnionFind uft;\n    long long sum;\n    vector<Edge> edges;\n\
     \    int V;\n    Kruskal(const vector<Edge> &edges_, int V_) : edges(edges_),\
     \ V(V_) { init(); }\n    void init() {\n        sort(edges.begin(), edges.end(),\
-    \ comp_e);  // \u8FBA\u306E\u91CD\u307F\u3067\u30BD\u30FC\u30C8\n        uft =\
-    \ UnionFind(V);\n        sum = 0;\n        for (auto e : edges) {\n          \
-    \  if (!uft.issame(e.from, e.to)) {  // \u9589\u8DEF\u306B\u306A\u3089\u306A\u3051\
-    \u308C\u3070\u52A0\u3048\u308B\n                uft.unite(e.from, e.to);\n   \
-    \             sum += e.cost;\n            }\n        }\n    }\n};"
+    \ comp_e);\n        uft = UnionFind(V);\n        sum = 0;\n        for (auto e\
+    \ : edges) {\n            if (!uft.issame(e.from, e.to)) {\n                uft.unite(e.from,\
+    \ e.to);\n                sum += e.cost;\n            }\n        }\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n#include \"../data-structure/union-find.hpp\"\
+    \n\nstruct Edge {\n    long long from;\n    long long to;\n    long long cost;\n\
+    };\nbool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }\n\
+    struct Kruskal {\n    UnionFind uft;\n    long long sum;\n    vector<Edge> edges;\n\
+    \    int V;\n    Kruskal(const vector<Edge> &edges_, int V_) : edges(edges_),\
+    \ V(V_) { init(); }\n    void init() {\n        sort(edges.begin(), edges.end(),\
+    \ comp_e);\n        uft = UnionFind(V);\n        sum = 0;\n        for (auto e\
+    \ : edges) {\n            if (!uft.issame(e.from, e.to)) {\n                uft.unite(e.from,\
+    \ e.to);\n                sum += e.cost;\n            }\n        }\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -121,7 +113,7 @@ data:
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2023-03-21 19:32:40+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_2_A.test.cpp

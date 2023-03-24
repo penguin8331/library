@@ -10,22 +10,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -79,54 +79,54 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"geomeny/geomeny-template.hpp\"\n\nusing DD = long double;  //\
-    \ to be set appropriately\nconst DD EPS = 1e-10;    // to be set appropriately\n\
-    const DD PI = acosl(-1.0);\nDD torad(int deg) { return (DD)(deg)*PI / 180; }\n\
-    DD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point */\nstruct Point {\n \
-    \   DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x), y(y) {}\n    friend ostream\
-    \ &operator<<(ostream &s, const Point &p) { return s << '(' << p.x << \", \" <<\
-    \ p.y << ')'; }\n};\ninline Point operator+(const Point &p, const Point &q) {\
-    \ return Point(p.x + q.x, p.y + q.y); }\ninline Point operator-(const Point &p,\
-    \ const Point &q) { return Point(p.x - q.x, p.y - q.y); }\ninline Point operator*(const\
-    \ Point &p, DD a) { return Point(p.x * a, p.y * a); }\ninline Point operator*(DD\
-    \ a, const Point &p) { return Point(a * p.x, a * p.y); }\ninline Point operator*(const\
-    \ Point &p, const Point &q) { return Point(p.x * q.x - p.y * q.y, p.x * q.y +\
-    \ p.y * q.x); }\ninline Point operator/(const Point &p, DD a) { return Point(p.x\
-    \ / a, p.y / a); }\ninline Point conj(const Point &p) { return Point(p.x, -p.y);\
-    \ }\ninline Point rot(const Point &p, DD ang) { return Point(cos(ang) * p.x -\
-    \ sin(ang) * p.y, sin(ang) * p.x + cos(ang) * p.y); }\ninline Point rot90(const\
-    \ Point &p) { return Point(-p.y, p.x); }\ninline DD cross(const Point &p, const\
-    \ Point &q) { return p.x * q.y - p.y * q.x; }\ninline DD dot(const Point &p, const\
-    \ Point &q) { return p.x * q.x + p.y * q.y; }\ninline DD norm(const Point &p)\
-    \ { return dot(p, p); }\ninline DD abs(const Point &p) { return sqrt(dot(p, p));\
-    \ }\ninline DD amp(const Point &p) {\n    DD res = atan2(p.y, p.x);\n    if (res\
-    \ < 0) res += PI * 2;\n    return res;\n}\ninline bool eq(const Point &p, const\
-    \ Point &q) { return abs(p - q) < EPS; }\ninline bool operator<(const Point &p,\
-    \ const Point &q) { return (abs(p.x - q.x) > EPS ? p.x < q.x : p.y < q.y); }\n\
-    inline bool operator>(const Point &p, const Point &q) { return (abs(p.x - q.x)\
-    \ > EPS ? p.x > q.x : p.y > q.y); }\ninline Point operator/(const Point &p, const\
-    \ Point &q) { return p * conj(q) / norm(q); }\n\n/* Line */\nstruct Line : vector<Point>\
-    \ {\n    Line(Point a = Point(0.0, 0.0), Point b = Point(0.0, 0.0)) {\n      \
-    \  this->push_back(a);\n        this->push_back(b);\n    }\n    friend ostream\
-    \ &operator<<(ostream &s, const Line &l) { return s << '{' << l[0] << \", \" <<\
-    \ l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle : Point {\n    DD r;\n   \
-    \ Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0) : Point(p), r(r) {}\n \
-    \   friend ostream &operator<<(ostream &s, const Circle &c) { return s << '('\
-    \ << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n#line 4 \"geomeny/area-polygon.hpp\"\
-    \n\nDD CalcArea(const vector<Point> &pol) {\n    DD res = 0.0;\n    for (int i\
-    \ = 0; i < (int)pol.size(); ++i) {\n        res += cross(pol[i], pol[(i + 1) %\
-    \ pol.size()]);\n    }\n    return res / 2.0L;\n}\n#line 4 \"geomeny/convex-cut.hpp\"\
-    \n\nint ccw_for_convexcut(const Point &a, const Point &b, const Point &c) {\n\
-    \    if (cross(b - a, c - a) > EPS) return 1;\n    if (cross(b - a, c - a) < -EPS)\
-    \ return -1;\n    if (dot(b - a, c - a) < -EPS) return 2;\n    if (norm(b - a)\
-    \ < norm(c - a) - EPS) return -2;\n    return 0;\n}\nvector<Point> crosspoint_for_convexcut(const\
-    \ Line &l, const Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0],\
-    \ l[1] - l[0]);\n    if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0]\
-    \ + (l[1] - l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\n\
-    vector<Point> ConvexCut(const vector<Point> &pol, const Line &l) {\n    vector<Point>\
-    \ res;\n    for (int i = 0; i < (int)pol.size(); ++i) {\n        Point p = pol[i],\
-    \ q = pol[(i + 1) % pol.size()];\n        if (ccw_for_convexcut(l[0], l[1], p)\
-    \ != -1) {\n            if (res.size() == 0)\n                res.push_back(p);\n\
+    \ std;\n#line 3 \"geomeny/geomeny-template.hpp\"\n\nusing DD = long double;\n\
+    const DD EPS = 1e-10;\nconst DD PI = acosl(-1.0);\nDD torad(int deg) { return\
+    \ (DD)(deg)*PI / 180; }\nDD todeg(DD ang) { return ang * 180 / PI; }\n\n/* Point\
+    \ */\nstruct Point {\n    DD x, y;\n    Point(DD x = 0.0, DD y = 0.0) : x(x),\
+    \ y(y) {}\n    friend ostream &operator<<(ostream &s, const Point &p) { return\
+    \ s << '(' << p.x << \", \" << p.y << ')'; }\n};\ninline Point operator+(const\
+    \ Point &p, const Point &q) { return Point(p.x + q.x, p.y + q.y); }\ninline Point\
+    \ operator-(const Point &p, const Point &q) { return Point(p.x - q.x, p.y - q.y);\
+    \ }\ninline Point operator*(const Point &p, DD a) { return Point(p.x * a, p.y\
+    \ * a); }\ninline Point operator*(DD a, const Point &p) { return Point(a * p.x,\
+    \ a * p.y); }\ninline Point operator*(const Point &p, const Point &q) { return\
+    \ Point(p.x * q.x - p.y * q.y, p.x * q.y + p.y * q.x); }\ninline Point operator/(const\
+    \ Point &p, DD a) { return Point(p.x / a, p.y / a); }\ninline Point conj(const\
+    \ Point &p) { return Point(p.x, -p.y); }\ninline Point rot(const Point &p, DD\
+    \ ang) { return Point(cos(ang) * p.x - sin(ang) * p.y, sin(ang) * p.x + cos(ang)\
+    \ * p.y); }\ninline Point rot90(const Point &p) { return Point(-p.y, p.x); }\n\
+    inline DD cross(const Point &p, const Point &q) { return p.x * q.y - p.y * q.x;\
+    \ }\ninline DD dot(const Point &p, const Point &q) { return p.x * q.x + p.y *\
+    \ q.y; }\ninline DD norm(const Point &p) { return dot(p, p); }\ninline DD abs(const\
+    \ Point &p) { return sqrt(dot(p, p)); }\ninline DD amp(const Point &p) {\n   \
+    \ DD res = atan2(p.y, p.x);\n    if (res < 0) res += PI * 2;\n    return res;\n\
+    }\ninline bool eq(const Point &p, const Point &q) { return abs(p - q) < EPS; }\n\
+    inline bool operator<(const Point &p, const Point &q) { return (abs(p.x - q.x)\
+    \ > EPS ? p.x < q.x : p.y < q.y); }\ninline bool operator>(const Point &p, const\
+    \ Point &q) { return (abs(p.x - q.x) > EPS ? p.x > q.x : p.y > q.y); }\ninline\
+    \ Point operator/(const Point &p, const Point &q) { return p * conj(q) / norm(q);\
+    \ }\n\n/* Line */\nstruct Line : vector<Point> {\n    Line(Point a = Point(0.0,\
+    \ 0.0), Point b = Point(0.0, 0.0)) {\n        this->push_back(a);\n        this->push_back(b);\n\
+    \    }\n    friend ostream &operator<<(ostream &s, const Line &l) { return s <<\
+    \ '{' << l[0] << \", \" << l[1] << '}'; }\n};\n\n/* Circle */\nstruct Circle :\
+    \ Point {\n    DD r;\n    Circle(const Point &p = Point(0.0, 0.0), DD r = 0.0)\
+    \ : Point(p), r(r) {}\n    friend ostream &operator<<(ostream &s, const Circle\
+    \ &c) { return s << '(' << c.x << \", \" << c.y << \", \" << c.r << ')'; }\n};\n\
+    #line 4 \"geomeny/area-polygon.hpp\"\n\nDD CalcArea(const vector<Point> &pol)\
+    \ {\n    DD res = 0.0;\n    for (int i = 0; i < (int)pol.size(); ++i) {\n    \
+    \    res += cross(pol[i], pol[(i + 1) % pol.size()]);\n    }\n    return res /\
+    \ 2.0L;\n}\n#line 4 \"geomeny/convex-cut.hpp\"\n\nint ccw_for_convexcut(const\
+    \ Point &a, const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS)\
+    \ return 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a,\
+    \ c - a) < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n\
+    \    return 0;\n}\nvector<Point> crosspoint_for_convexcut(const Line &l, const\
+    \ Line &m) {\n    vector<Point> res;\n    DD d = cross(m[1] - m[0], l[1] - l[0]);\n\
+    \    if (abs(d) < EPS) return vector<Point>();\n    res.push_back(l[0] + (l[1]\
+    \ - l[0]) * cross(m[1] - m[0], m[1] - l[0]) / d);\n    return res;\n}\nvector<Point>\
+    \ ConvexCut(const vector<Point> &pol, const Line &l) {\n    vector<Point> res;\n\
+    \    for (int i = 0; i < (int)pol.size(); ++i) {\n        Point p = pol[i], q\
+    \ = pol[(i + 1) % pol.size()];\n        if (ccw_for_convexcut(l[0], l[1], p) !=\
+    \ -1) {\n            if (res.size() == 0)\n                res.push_back(p);\n\
     \            else if (!eq(p, res[res.size() - 1]))\n                res.push_back(p);\n\
     \        }\n        if (ccw_for_convexcut(l[0], l[1], p) * ccw_for_convexcut(l[0],\
     \ l[1], q) < 0) {\n            vector<Point> temp = crosspoint_for_convexcut(Line(p,\
@@ -160,7 +160,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2023-03-21 19:32:40+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_C.test.cpp

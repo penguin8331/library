@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -77,21 +77,20 @@ data:
     \               if ((j / i) % i == 0)\n                    mebius[j] = 0;\n  \
     \              else\n                    mebius[j] = -mebius[j];\n           \
     \     if (min_factor[j] == -1) min_factor[j] = i;\n            }\n        }\n\
-    \    }\n\n    // \u7D20\u56E0\u6570\u5206\u89E3\n    vector<pair<int, int>> prime_factors(int\
-    \ n) {\n        vector<pair<int, int>> res;\n        while (n != 1) {\n      \
-    \      int prime = min_factor[n];\n            int exp = 0;\n            while\
-    \ (min_factor[n] == prime) {\n                ++exp;\n                n /= prime;\n\
-    \            }\n            res.push_back(make_pair(prime, exp));\n        }\n\
-    \        return res;\n    }\n\n    // \u7D04\u6570\u5217\u6319\n    vector<int>\
-    \ divisors(int n) {\n        vector<int> res({1});\n        auto pf = prime_factors(n);\n\
-    \        for (auto p : pf) {\n            int siz = (int)res.size();\n       \
-    \     for (int i = 0; i < siz; ++i) {\n                int v = 1;\n          \
-    \      for (int j = 0; j < p.second; ++j) {\n                    v *= p.first;\n\
+    \    }\n\n    vector<pair<int, int>> prime_factors(int n) {\n        vector<pair<int,\
+    \ int>> res;\n        while (n != 1) {\n            int prime = min_factor[n];\n\
+    \            int exp = 0;\n            while (min_factor[n] == prime) {\n    \
+    \            ++exp;\n                n /= prime;\n            }\n            res.push_back(make_pair(prime,\
+    \ exp));\n        }\n        return res;\n    }\n\n    vector<int> divisors(int\
+    \ n) {\n        vector<int> res({1});\n        auto pf = prime_factors(n);\n \
+    \       for (auto p : pf) {\n            int siz = (int)res.size();\n        \
+    \    for (int i = 0; i < siz; ++i) {\n                int v = 1;\n           \
+    \     for (int j = 0; j < p.second; ++j) {\n                    v *= p.first;\n\
     \                    res.push_back(res[i] * v);\n                }\n         \
-    \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
-    \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
-    \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};\n"
+    \   }\n        }\n        return res;\n    }\n\n    int divisors_num(int n) {\n\
+    \        int res = 1;\n        auto pf = prime_factors(n);\n        for (auto\
+    \ p : pf) {\n            res *= p.second + 1;\n        }\n        return res;\n\
+    \    }\n};\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n\nstruct Eratos {\n\
     \    vector<int> primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n\
     \    vector<int> min_factor;\n\n    explicit Eratos(int MAX) : primes(),\n   \
@@ -104,21 +103,20 @@ data:
     \ = false;\n                if ((j / i) % i == 0)\n                    mebius[j]\
     \ = 0;\n                else\n                    mebius[j] = -mebius[j];\n  \
     \              if (min_factor[j] == -1) min_factor[j] = i;\n            }\n  \
-    \      }\n    }\n\n    // \u7D20\u56E0\u6570\u5206\u89E3\n    vector<pair<int,\
-    \ int>> prime_factors(int n) {\n        vector<pair<int, int>> res;\n        while\
-    \ (n != 1) {\n            int prime = min_factor[n];\n            int exp = 0;\n\
-    \            while (min_factor[n] == prime) {\n                ++exp;\n      \
-    \          n /= prime;\n            }\n            res.push_back(make_pair(prime,\
-    \ exp));\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u5217\u6319\
-    \n    vector<int> divisors(int n) {\n        vector<int> res({1});\n        auto\
-    \ pf = prime_factors(n);\n        for (auto p : pf) {\n            int siz = (int)res.size();\n\
-    \            for (int i = 0; i < siz; ++i) {\n                int v = 1;\n   \
-    \             for (int j = 0; j < p.second; ++j) {\n                    v *= p.first;\n\
-    \                    res.push_back(res[i] * v);\n                }\n         \
-    \   }\n        }\n        return res;\n    }\n\n    // \u7D04\u6570\u500B\u6570\
-    \n    int divisors_num(int n) {\n        int res = 1;\n        auto pf = prime_factors(n);\n\
-    \        for (auto p : pf) {\n            res *= p.second + 1;\n        }\n  \
-    \      return res;\n    }\n};"
+    \      }\n    }\n\n    vector<pair<int, int>> prime_factors(int n) {\n       \
+    \ vector<pair<int, int>> res;\n        while (n != 1) {\n            int prime\
+    \ = min_factor[n];\n            int exp = 0;\n            while (min_factor[n]\
+    \ == prime) {\n                ++exp;\n                n /= prime;\n         \
+    \   }\n            res.push_back(make_pair(prime, exp));\n        }\n        return\
+    \ res;\n    }\n\n    vector<int> divisors(int n) {\n        vector<int> res({1});\n\
+    \        auto pf = prime_factors(n);\n        for (auto p : pf) {\n          \
+    \  int siz = (int)res.size();\n            for (int i = 0; i < siz; ++i) {\n \
+    \               int v = 1;\n                for (int j = 0; j < p.second; ++j)\
+    \ {\n                    v *= p.first;\n                    res.push_back(res[i]\
+    \ * v);\n                }\n            }\n        }\n        return res;\n  \
+    \  }\n\n    int divisors_num(int n) {\n        int res = 1;\n        auto pf =\
+    \ prime_factors(n);\n        for (auto p : pf) {\n            res *= p.second\
+    \ + 1;\n        }\n        return res;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -129,7 +127,7 @@ data:
   isVerificationFile: false
   path: math/number/eratostenes.hpp
   requiredBy: []
-  timestamp: '2023-03-21 19:32:40+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number/eratostenes.hpp

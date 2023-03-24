@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -72,33 +72,29 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/binary-indexed-tree.hpp\"\n\ntemplate <class\
-    \ Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\n    //\
-    \ [0, n)\n    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity)\
-    \ {}\n    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n   \
-    \ // a is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int i\
-    \ = a; i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n  \
-    \  }\n\n    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n        Abel\
+    \ Abel>\nstruct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\n    explicit\
+    \ BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}\n    void init(int\
+    \ n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n    inline void add(int a,\
+    \ Abel x) {\n        for (int i = a; i < (int)dat.size(); i |= i + 1)\n      \
+    \      dat[i] = dat[i] + x;\n    }\n\n    inline Abel sum(int a) {\n        Abel\
     \ res = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n\
-    \            res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
-    \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
-    \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
-    \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
-    \ {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n\
-    \        return os;\n    }\n};\n"
+    \            res = res + dat[i];\n        return res;\n    }\n\n    inline Abel\
+    \ sum(int a, int b) {\n        return sum(b) - sum(a);\n    }\n\n    friend ostream&\
+    \ operator<<(ostream& os, BIT bit) {\n        os << \"[ \";\n        for (int\
+    \ i = 0; i < (int)bit.dat.size(); i++) {\n            os << bit.sum(i, i + 1)\
+    \ << \" \";\n        }\n        os << ']';\n        return os;\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Abel>\n\
-    struct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\n    // [0, n)\n\
-    \    explicit BIT(int n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}\n\
-    \    void init(int n) {\n        dat.assign(n, UNITY_SUM);\n    }\n\n    // a\
-    \ is 0-indexed\n    inline void add(int a, Abel x) {\n        for (int i = a;\
-    \ i < (int)dat.size(); i |= i + 1)\n            dat[i] = dat[i] + x;\n    }\n\n\
-    \    // [0, a), a is 0-indexed\n    inline Abel sum(int a) {\n        Abel res\
+    struct BIT {\n    Abel UNITY_SUM = 0;\n    vector<Abel> dat;\n\n    explicit BIT(int\
+    \ n, Abel unity = 0) : UNITY_SUM(unity), dat(n, unity) {}\n    void init(int n)\
+    \ {\n        dat.assign(n, UNITY_SUM);\n    }\n\n    inline void add(int a, Abel\
+    \ x) {\n        for (int i = a; i < (int)dat.size(); i |= i + 1)\n           \
+    \ dat[i] = dat[i] + x;\n    }\n\n    inline Abel sum(int a) {\n        Abel res\
     \ = UNITY_SUM;\n        for (int i = a - 1; i >= 0; i = (i & (i + 1)) - 1)\n \
-    \           res = res + dat[i];\n        return res;\n    }\n\n    // [a, b),\
-    \ a and b are 0-indexed\n    inline Abel sum(int a, int b) {\n        return sum(b)\
-    \ - sum(a);\n    }\n\n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
-    \        os << \"[ \";\n        for (int i = 0; i < (int)bit.dat.size(); i++)\
-    \ {\n            os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n\
-    \        return os;\n    }\n};"
+    \           res = res + dat[i];\n        return res;\n    }\n\n    inline Abel\
+    \ sum(int a, int b) {\n        return sum(b) - sum(a);\n    }\n\n    friend ostream&\
+    \ operator<<(ostream& os, BIT bit) {\n        os << \"[ \";\n        for (int\
+    \ i = 0; i < (int)bit.dat.size(); i++) {\n            os << bit.sum(i, i + 1)\
+    \ << \" \";\n        }\n        os << ']';\n        return os;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -110,7 +106,7 @@ data:
   path: data-structure/binary-indexed-tree.hpp
   requiredBy:
   - math/combinatorics/inversion-number.hpp
-  timestamp: '2023-03-21 19:32:40+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

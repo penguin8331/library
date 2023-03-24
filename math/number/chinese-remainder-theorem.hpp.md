@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/ext-gcd.hpp
     title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -79,21 +79,19 @@ data:
     \ long>& vm) {\n    if (vr.empty() || vm.empty()) return make_pair(0, 1);\n  \
     \  long long R = vr[0], M = vm[0];\n    for (int i = 1; i < (int)vr.size(); ++i)\
     \ {\n        long long p, q, r = vr[i], m = vm[i];\n        if (M < m) swap(M,\
-    \ m), swap(R, r);  // prevent overflow\n        long long d = extGcd(M, m, p,\
-    \ q);   // p is inv of M/d (mod. m/d)\n        if ((r - R) % d != 0) return make_pair(0,\
-    \ -1);\n        long long md = m / d;\n        long long tmp = (r - R) / d % md\
-    \ * p % md;\n        R += M * tmp, M *= md;\n    }\n    R %= M;\n    if (R < 0)\
-    \ R += M;\n    return make_pair(R, M);\n}\n"
+    \ m), swap(R, r);\n        long long d = extGcd(M, m, p, q);\n        if ((r -\
+    \ R) % d != 0) return make_pair(0, -1);\n        long long md = m / d;\n     \
+    \   long long tmp = (r - R) / d % md * p % md;\n        R += M * tmp, M *= md;\n\
+    \    }\n    R %= M;\n    if (R < 0) R += M;\n    return make_pair(R, M);\n}\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n#include \"../../math/number/ext-gcd.hpp\"\
     \n\npair<long long, long long> crt(const vector<long long>& vr, const vector<long\
     \ long>& vm) {\n    if (vr.empty() || vm.empty()) return make_pair(0, 1);\n  \
     \  long long R = vr[0], M = vm[0];\n    for (int i = 1; i < (int)vr.size(); ++i)\
     \ {\n        long long p, q, r = vr[i], m = vm[i];\n        if (M < m) swap(M,\
-    \ m), swap(R, r);  // prevent overflow\n        long long d = extGcd(M, m, p,\
-    \ q);   // p is inv of M/d (mod. m/d)\n        if ((r - R) % d != 0) return make_pair(0,\
-    \ -1);\n        long long md = m / d;\n        long long tmp = (r - R) / d % md\
-    \ * p % md;\n        R += M * tmp, M *= md;\n    }\n    R %= M;\n    if (R < 0)\
-    \ R += M;\n    return make_pair(R, M);\n}"
+    \ m), swap(R, r);\n        long long d = extGcd(M, m, p, q);\n        if ((r -\
+    \ R) % d != 0) return make_pair(0, -1);\n        long long md = m / d;\n     \
+    \   long long tmp = (r - R) / d % md * p % md;\n        R += M * tmp, M *= md;\n\
+    \    }\n    R %= M;\n    if (R < 0) R += M;\n    return make_pair(R, M);\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -105,7 +103,7 @@ data:
   isVerificationFile: false
   path: math/number/chinese-remainder-theorem.hpp
   requiredBy: []
-  timestamp: '2023-03-21 18:23:24+09:00'
+  timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2659.test.cpp
