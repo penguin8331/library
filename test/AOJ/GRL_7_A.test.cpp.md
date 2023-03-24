@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph/flow/ford-fullkerson.hpp
+    title: "Ford Fullkerson (\u6700\u5927\u6D41)"
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -20,30 +23,28 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_6_A.test.cpp
-    title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_7_A.test.cpp
-    title: test/AOJ/GRL_7_A.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
-    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
-    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
-    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
-    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
-    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
-    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
-    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
-    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
+  bundledCode: "#line 1 \"test/AOJ/GRL_7_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
+    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
+    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
+    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
+    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
+    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
+    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
+    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
+    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
+    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
+    \ emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing\
+    \ ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
     \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
     \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
     \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
@@ -107,44 +108,21 @@ data:
     \ = 0;\n        while (true) {\n            used.assign((int)G.size(), 0);\n \
     \           int flow = fodfs(G, s, t, INF);\n            if (flow == 0)\n    \
     \            return res;\n            else\n                res += flow;\n   \
-    \     }\n        return 0;\n    }\n};\n"
-  code: "#pragma once\n#include \"../../template/template.hpp\"\n\ntemplate <class\
-    \ FLOWTYPE>\nstruct Edge {\n    int rev, from, to;\n    FLOWTYPE cap, icap;\n\
-    \    Edge(int r, int f, int t, FLOWTYPE c) : rev(r), from(f), to(t), cap(c), icap(c)\
-    \ {}\n    friend ostream& operator<<(ostream& s, Edge E) {\n        if (E.cap\
-    \ > 0)\n            return s << E.from << \"->\" << E.to << '(' << E.cap << ')'\
-    \ << \" \";\n        else\n            return s;\n    }\n};\n\ntemplate <class\
-    \ FLOWTYPE>\nstruct Graph {\n    vector<vector<Edge<FLOWTYPE> > > list;\n\n  \
-    \  Graph(int n = 0) : list(n) {}\n    void init(int n = 0) {\n        list.clear();\n\
-    \        list.resize(n);\n    }\n    void reset() {\n        for (int i = 0; i\
-    \ < (int)list.size(); ++i)\n            for (int j = 0; j < list[i].size(); ++j)\
-    \ list[i][j].cap = list[i][j].icap;\n    }\n    inline vector<Edge<FLOWTYPE> >&\
-    \ operator[](int i) { return list[i]; }\n    inline const size_t size() const\
-    \ { return list.size(); }\n\n    inline Edge<FLOWTYPE>& redge(Edge<FLOWTYPE> e)\
-    \ {\n        if (e.from != e.to)\n            return list[e.to][e.rev];\n    \
-    \    else\n            return list[e.to][e.rev + 1];\n    }\n\n    void addedge(int\
-    \ from, int to, FLOWTYPE cap) {\n        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(),\
-    \ from, to, cap));\n        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size()\
-    \ - 1, to, from, 0));\n    }\n\n    void add_undirected_edge(int from, int to,\
-    \ FLOWTYPE cap) {\n        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(),\
-    \ from, to, cap));\n        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size()\
-    \ - 1, to, from, cap));\n    }\n\n    friend ostream& operator<<(ostream& s, Graph\
-    \ G) {\n        s << endl;\n        for (int i = 0; i < G.size(); i++) {\n   \
-    \         s << i << \": \";\n            for (Edge<FLOWTYPE> j : G.list[i]) {\n\
-    \                s << j;\n            }\n            s << endl;\n        }\n \
-    \       return s;\n    }\n};\n\ntemplate <class FLOWTYPE>\nstruct FordFulkerson\
-    \ {\n    const FLOWTYPE INF = 1 << 30;\n    vector<int> used;\n\n    FordFulkerson()\
-    \ {}\n    FLOWTYPE fodfs(Graph<FLOWTYPE>& G, int v, int t, FLOWTYPE f) {\n   \
-    \     if (v == t) return f;\n        used[v] = true;\n        for (auto& e : G[v])\
-    \ {\n            if (!used[e.to] && e.cap > 0) {\n                int d = fodfs(G,\
-    \ e.to, t, min(f, e.cap));\n                if (d > 0) {\n                   \
-    \ e.cap -= d;\n                    G.redge(e).cap += d;\n                    return\
-    \ d;\n                }\n            }\n        }\n        return 0;\n    }\n\
-    \    FLOWTYPE solve(Graph<FLOWTYPE>& G, int s, int t) {\n        FLOWTYPE res\
-    \ = 0;\n        while (true) {\n            used.assign((int)G.size(), 0);\n \
-    \           int flow = fodfs(G, s, t, INF);\n            if (flow == 0)\n    \
-    \            return res;\n            else\n                res += flow;\n   \
-    \     }\n        return 0;\n    }\n};"
+    \     }\n        return 0;\n    }\n};\n#line 4 \"test/AOJ/GRL_7_A.test.cpp\"\n\
+    \nint main() {\n    INT(X, Y, E);\n    Graph<int> G(X + Y + 2);\n    for (int\
+    \ i = 0; i < X; i++) {\n        G.addedge(0, i + 1, 1);\n    }\n    for (int i\
+    \ = 0; i < E; i++) {\n        INT(x, y);\n        x++;\n        y += X + 1;\n\
+    \        G.addedge(x, y, 1);\n    }\n    for (int i = 0; i < Y; i++) {\n     \
+    \   G.add_undirected_edge(i + X + 1, X + Y + 1, 1);\n    }\n    FordFulkerson<int>\
+    \ ff;\n    cout << ff.solve(G, 0, X + Y + 1) << endl;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
+    \n#include \"template/template.hpp\"\n#include \"graph/flow/ford-fullkerson.hpp\"\
+    \n\nint main() {\n    INT(X, Y, E);\n    Graph<int> G(X + Y + 2);\n    for (int\
+    \ i = 0; i < X; i++) {\n        G.addedge(0, i + 1, 1);\n    }\n    for (int i\
+    \ = 0; i < E; i++) {\n        INT(x, y);\n        x++;\n        y += X + 1;\n\
+    \        G.addedge(x, y, 1);\n    }\n    for (int i = 0; i < Y; i++) {\n     \
+    \   G.add_undirected_edge(i + X + 1, X + Y + 1, 1);\n    }\n    FordFulkerson<int>\
+    \ ff;\n    cout << ff.solve(G, 0, X + Y + 1) << endl;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -152,15 +130,17 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: false
-  path: graph/flow/ford-fullkerson.hpp
+  - graph/flow/ford-fullkerson.hpp
+  isVerificationFile: true
+  path: test/AOJ/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/GRL_6_A.test.cpp
-  - test/AOJ/GRL_7_A.test.cpp
-documentation_of: graph/flow/ford-fullkerson.hpp
+  timestamp: '2023-03-24 23:56:02+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/AOJ/GRL_7_A.test.cpp
 layout: document
-title: "Ford Fullkerson (\u6700\u5927\u6D41)"
+redirect_from:
+- /verify/test/AOJ/GRL_7_A.test.cpp
+- /verify/test/AOJ/GRL_7_A.test.cpp.html
+title: test/AOJ/GRL_7_A.test.cpp
 ---
