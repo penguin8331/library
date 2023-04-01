@@ -83,7 +83,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/static-modular-arithmetic.hpp
     title: Static-ModInt
   - icon: ':heavy_check_mark:'
@@ -188,6 +188,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
     title: Warshall Floyd
+  - icon: ':heavy_check_mark:'
+    path: math/algebra/matrix.hpp
+    title: "Matrix (\u884C\u5217)"
   - icon: ':warning:'
     path: math/combinatorics/binomial-coefficient.hpp
     title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
@@ -392,6 +395,9 @@ data:
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/matrix-det.test.cpp
+    title: test/yosupo/matrix-det.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -550,6 +556,7 @@ data:
   - math/number/prime-factorization.hpp
   - math/number/pollard-rho.hpp
   - math/number/eratostenes.hpp
+  - math/algebra/matrix.hpp
   - algorithm/compress.hpp
   - algorithm/doubling.hpp
   - algorithm/section-sum2d.hpp
@@ -570,6 +577,7 @@ data:
   - test/yosupo/static-range-sum-2.test.cpp
   - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
+  - test/yosupo/matrix-det.test.cpp
   - test/AOJ/0560.test.cpp
   - test/AOJ/ITP1_3_D.test.cpp
   - test/AOJ/0233.test.cpp

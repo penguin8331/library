@@ -76,7 +76,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/static-modular-arithmetic.hpp
       title: Static-ModInt
     - icon: ':heavy_check_mark:'
@@ -189,6 +189,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/flow/ford-fullkerson.hpp
       title: "Ford Fullkerson (\u6700\u5927\u6D41)"
+  - name: math/algebra
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/algebra/matrix.hpp
+      title: "Matrix (\u884C\u5217)"
   - name: math/combinatorics
     pages:
     - icon: ':warning:'
@@ -409,6 +414,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/matrix-det.test.cpp
+      title: test/yosupo/matrix-det.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp

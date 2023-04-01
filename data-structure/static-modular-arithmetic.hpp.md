@@ -20,10 +20,13 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/matrix-det.test.cpp
+    title: test/yosupo/matrix-det.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -140,8 +143,9 @@ data:
   path: data-structure/static-modular-arithmetic.hpp
   requiredBy: []
   timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/matrix-det.test.cpp
 documentation_of: data-structure/static-modular-arithmetic.hpp
 layout: document
 title: Static-ModInt
