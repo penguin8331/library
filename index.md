@@ -39,7 +39,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
       title: BIT
-    - icon: ':x:'
+    - icon: ':warning:'
       path: data-structure/boost-multiprecision.hpp
       title: boost/multiprecision
     - icon: ':heavy_check_mark:'
@@ -182,6 +182,9 @@ data:
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
+      path: graph/two-sat.hpp
+      title: graph/two-sat.hpp
+    - icon: ':heavy_check_mark:'
       path: graph/warshall-floyd.hpp
       title: Warshall Floyd
   - name: graph/flow
@@ -259,22 +262,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -414,9 +417,6 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
-    - icon: ':x:'
-      path: test/yosupo/many_aplusb_128bit.test.cpp
-      title: test/yosupo/many_aplusb_128bit.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/matrix-det.test.cpp
       title: test/yosupo/matrix-det.test.cpp
@@ -438,6 +438,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq.test.cpp
       title: test/yosupo/static-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/two-sat.test.cpp
+      title: test/yosupo/two-sat.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp

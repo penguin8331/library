@@ -5,6 +5,9 @@ data:
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':heavy_check_mark:'
+    path: graph/two-sat.hpp
+    title: graph/two-sat.hpp
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -29,10 +32,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
+    PROBLEM: https://judge.yosupo.jp/problem/two_sat
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
-  bundledCode: "#line 1 \"test/AOJ/GRL_3_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
+    - https://judge.yosupo.jp/problem/two_sat
+  bundledCode: "#line 1 \"test/yosupo/two-sat.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -95,20 +98,40 @@ data:
     \        for (int i = N - 1; i >= 0; --i) {\n            if (!seen[vs[i]]) {\n\
     \                rvs.clear();\n                rdfs(vs[i], k++);\n           \
     \     scc.push_back(rvs);\n            }\n        }\n\n        reconstruct();\n\
-    \    }\n};\n#line 4 \"test/AOJ/GRL_3_C.test.cpp\"\n\nint main() {\n    int V,\
-    \ E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int i = 0; i < E; i++) {\n\
-    \        int a, b;\n        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n\
-    \    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++)\
-    \ {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u] ==\
-    \ scc.cmp[v] ? 1 : 0) << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/scc.hpp\"\n\
-    \nint main() {\n    int V, E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int\
-    \ i = 0; i < E; i++) {\n        int a, b;\n        cin >> a >> b;\n        scc.addedge(a,\
-    \ b);\n    }\n    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0;\
-    \ i < Q; i++) {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u]\
-    \ == scc.cmp[v] ? 1 : 0) << endl;\n    }\n}"
+    \    }\n};\n#line 4 \"graph/two-sat.hpp\"\n\nstruct TwoSat {\n    int N;\n   \
+    \ SCC scc;\n    TwoSat(int n) : N(n), scc(2 * N) {}\n\n    void add(int i, bool\
+    \ f, int j, bool g) {\n        scc.addedge(i + (f ? N : 0), j + (g ? 0 : N));\n\
+    \        scc.addedge(j + (g ? N : 0), i + (f ? 0 : N));\n    }\n    void add_eq(int\
+    \ i, int j) {\n        add(i, true, j, false);\n        add(i, false, j, true);\n\
+    \    }\n    void add_neq(int i, int j) {\n        add(i, true, j, true);\n   \
+    \     add(i, false, j, false);\n    }\n    void add_true(int i) {\n        scc.addedge(i\
+    \ + N, i);\n    }\n    void add_false(int i) {\n        scc.addedge(i, i + N);\n\
+    \    }\n    vector<bool> solve() {\n        scc.solve();\n        vector<bool>\
+    \ ans(N);\n        for (int i = 0; i < N; i++) {\n            if (scc.cmp[i] ==\
+    \ scc.cmp[i + N]) {\n                return vector<bool>();\n            }\n \
+    \           if (scc.cmp[i] > scc.cmp[i + N]) {\n                ans[i] = true;\n\
+    \            } else {\n                ans[i] = false;\n            }\n      \
+    \  }\n        return ans;\n    }\n};\n#line 4 \"test/yosupo/two-sat.test.cpp\"\
+    \n\nint main() {\n    string p, cnf;\n    int N, M;\n    cin >> p >> cnf >> N\
+    \ >> M;\n    TwoSat ts(N);\n    for (int i = 0; i < M; i++) {\n        int a,\
+    \ b;\n        cin >> a >> b;\n        string zero;\n        cin >> zero;\n   \
+    \     ts.add(abs(a) - 1, a > 0, abs(b) - 1, b > 0);\n    }\n    auto ans = ts.solve();\n\
+    \    if ((int)ans.size() == N) {\n        cout << \"s SATISFIABLE\" << endl;\n\
+    \        cout << \"v \";\n        for (int i = 0; i < N; i++) {\n            cout\
+    \ << (ans[i] ? i + 1 : -i - 1) << \" \";\n        }\n        cout << 0 << endl;\n\
+    \    } else {\n        cout << \"s UNSATISFIABLE\" << endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\n#include \"\
+    ../../graph/two-sat.hpp\"\n#include \"../../template/template.hpp\"\n\nint main()\
+    \ {\n    string p, cnf;\n    int N, M;\n    cin >> p >> cnf >> N >> M;\n    TwoSat\
+    \ ts(N);\n    for (int i = 0; i < M; i++) {\n        int a, b;\n        cin >>\
+    \ a >> b;\n        string zero;\n        cin >> zero;\n        ts.add(abs(a) -\
+    \ 1, a > 0, abs(b) - 1, b > 0);\n    }\n    auto ans = ts.solve();\n    if ((int)ans.size()\
+    \ == N) {\n        cout << \"s SATISFIABLE\" << endl;\n        cout << \"v \"\
+    ;\n        for (int i = 0; i < N; i++) {\n            cout << (ans[i] ? i + 1\
+    \ : -i - 1) << \" \";\n        }\n        cout << 0 << endl;\n    } else {\n \
+    \       cout << \"s UNSATISFIABLE\" << endl;\n    }\n}"
   dependsOn:
+  - graph/two-sat.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
@@ -117,15 +140,15 @@ data:
   - template/debug.hpp
   - graph/scc.hpp
   isVerificationFile: true
-  path: test/AOJ/GRL_3_C.test.cpp
+  path: test/yosupo/two-sat.test.cpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
+  timestamp: '2023-04-01 16:33:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/GRL_3_C.test.cpp
+documentation_of: test/yosupo/two-sat.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/GRL_3_C.test.cpp
-- /verify/test/AOJ/GRL_3_C.test.cpp.html
-title: test/AOJ/GRL_3_C.test.cpp
+- /verify/test/yosupo/two-sat.test.cpp
+- /verify/test/yosupo/two-sat.test.cpp.html
+title: test/yosupo/two-sat.test.cpp
 ---

@@ -23,28 +23,27 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/two-sat.test.cpp
+    title: test/yosupo/two-sat.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
-    links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
-  bundledCode: "#line 1 \"test/AOJ/GRL_3_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
-    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
-    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
-    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
-    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
-    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
-    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
-    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
-    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
-    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
-    \ emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing\
-    \ ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    links: []
+  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
+    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
+    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
+    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
+    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
+    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
+    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
+    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
+    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
+    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
+    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
+    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
     \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
     \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
     \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
@@ -95,19 +94,35 @@ data:
     \        for (int i = N - 1; i >= 0; --i) {\n            if (!seen[vs[i]]) {\n\
     \                rvs.clear();\n                rdfs(vs[i], k++);\n           \
     \     scc.push_back(rvs);\n            }\n        }\n\n        reconstruct();\n\
-    \    }\n};\n#line 4 \"test/AOJ/GRL_3_C.test.cpp\"\n\nint main() {\n    int V,\
-    \ E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int i = 0; i < E; i++) {\n\
-    \        int a, b;\n        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n\
-    \    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++)\
-    \ {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u] ==\
-    \ scc.cmp[v] ? 1 : 0) << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/scc.hpp\"\n\
-    \nint main() {\n    int V, E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int\
-    \ i = 0; i < E; i++) {\n        int a, b;\n        cin >> a >> b;\n        scc.addedge(a,\
-    \ b);\n    }\n    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0;\
-    \ i < Q; i++) {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u]\
-    \ == scc.cmp[v] ? 1 : 0) << endl;\n    }\n}"
+    \    }\n};\n#line 4 \"graph/two-sat.hpp\"\n\nstruct TwoSat {\n    int N;\n   \
+    \ SCC scc;\n    TwoSat(int n) : N(n), scc(2 * N) {}\n\n    void add(int i, bool\
+    \ f, int j, bool g) {\n        scc.addedge(i + (f ? N : 0), j + (g ? 0 : N));\n\
+    \        scc.addedge(j + (g ? N : 0), i + (f ? 0 : N));\n    }\n    void add_eq(int\
+    \ i, int j) {\n        add(i, true, j, false);\n        add(i, false, j, true);\n\
+    \    }\n    void add_neq(int i, int j) {\n        add(i, true, j, true);\n   \
+    \     add(i, false, j, false);\n    }\n    void add_true(int i) {\n        scc.addedge(i\
+    \ + N, i);\n    }\n    void add_false(int i) {\n        scc.addedge(i, i + N);\n\
+    \    }\n    vector<bool> solve() {\n        scc.solve();\n        vector<bool>\
+    \ ans(N);\n        for (int i = 0; i < N; i++) {\n            if (scc.cmp[i] ==\
+    \ scc.cmp[i + N]) {\n                return vector<bool>();\n            }\n \
+    \           if (scc.cmp[i] > scc.cmp[i + N]) {\n                ans[i] = true;\n\
+    \            } else {\n                ans[i] = false;\n            }\n      \
+    \  }\n        return ans;\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n#include \"scc.hpp\"\
+    \n\nstruct TwoSat {\n    int N;\n    SCC scc;\n    TwoSat(int n) : N(n), scc(2\
+    \ * N) {}\n\n    void add(int i, bool f, int j, bool g) {\n        scc.addedge(i\
+    \ + (f ? N : 0), j + (g ? 0 : N));\n        scc.addedge(j + (g ? N : 0), i + (f\
+    \ ? 0 : N));\n    }\n    void add_eq(int i, int j) {\n        add(i, true, j,\
+    \ false);\n        add(i, false, j, true);\n    }\n    void add_neq(int i, int\
+    \ j) {\n        add(i, true, j, true);\n        add(i, false, j, false);\n   \
+    \ }\n    void add_true(int i) {\n        scc.addedge(i + N, i);\n    }\n    void\
+    \ add_false(int i) {\n        scc.addedge(i, i + N);\n    }\n    vector<bool>\
+    \ solve() {\n        scc.solve();\n        vector<bool> ans(N);\n        for (int\
+    \ i = 0; i < N; i++) {\n            if (scc.cmp[i] == scc.cmp[i + N]) {\n    \
+    \            return vector<bool>();\n            }\n            if (scc.cmp[i]\
+    \ > scc.cmp[i + N]) {\n                ans[i] = true;\n            } else {\n\
+    \                ans[i] = false;\n            }\n        }\n        return ans;\n\
+    \    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -116,16 +131,17 @@ data:
   - template/util.hpp
   - template/debug.hpp
   - graph/scc.hpp
-  isVerificationFile: true
-  path: test/AOJ/GRL_3_C.test.cpp
+  isVerificationFile: false
+  path: graph/two-sat.hpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: test/AOJ/GRL_3_C.test.cpp
+  timestamp: '2023-04-01 16:33:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/two-sat.test.cpp
+documentation_of: graph/two-sat.hpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/GRL_3_C.test.cpp
-- /verify/test/AOJ/GRL_3_C.test.cpp.html
-title: test/AOJ/GRL_3_C.test.cpp
+- /library/graph/two-sat.hpp
+- /library/graph/two-sat.hpp.html
+title: graph/two-sat.hpp
 ---
