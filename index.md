@@ -39,7 +39,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree.hpp
       title: BIT
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/boost-multiprecision.hpp
       title: boost/multiprecision
     - icon: ':heavy_check_mark:'
@@ -259,22 +259,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -414,6 +414,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':x:'
+      path: test/yosupo/many_aplusb_128bit.test.cpp
+      title: test/yosupo/many_aplusb_128bit.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/matrix-det.test.cpp
       title: test/yosupo/matrix-det.test.cpp
