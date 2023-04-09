@@ -20,13 +20,16 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2667.test.cpp
+    title: test/AOJ/2667.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -108,8 +111,9 @@ data:
   requiredBy:
   - graph/tree/euler-tour-on-nodes.hpp
   timestamp: '2023-04-09 14:01:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/2667.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
 redirect_from:

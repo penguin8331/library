@@ -86,7 +86,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
   - icon: ':heavy_check_mark:'
@@ -191,7 +191,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
   - icon: ':heavy_check_mark:'
@@ -286,6 +286,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2659.test.cpp
     title: test/AOJ/2659.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2667.test.cpp
+    title: test/AOJ/2667.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2842.test.cpp
     title: test/AOJ/2842.test.cpp
@@ -605,6 +608,7 @@ data:
   - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/GRL_1_C.test.cpp
   - test/AOJ/ALDS1_12_A.test.cpp
+  - test/AOJ/2667.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/GRL_6_A.test.cpp
   - test/AOJ/GRL_4_B.test.cpp

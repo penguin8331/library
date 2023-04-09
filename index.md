@@ -79,7 +79,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
     - icon: ':heavy_check_mark:'
@@ -200,7 +200,7 @@ data:
       title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - name: graph/tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/euler-tour-on-nodes.hpp
       title: graph/tree/euler-tour-on-nodes.hpp
   - name: math/algebra
@@ -306,6 +306,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/2659.test.cpp
       title: test/AOJ/2659.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/2667.test.cpp
+      title: test/AOJ/2667.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/2842.test.cpp
       title: test/AOJ/2842.test.cpp

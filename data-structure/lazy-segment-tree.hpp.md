@@ -24,10 +24,13 @@ data:
     path: data-structure/lazy-segment-tree-arthmetic.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2667.test.cpp
+    title: test/AOJ/2667.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
@@ -170,6 +173,7 @@ data:
   timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/2667.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document
