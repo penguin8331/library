@@ -86,6 +86,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
+  - icon: ':warning:'
+    path: data-structure/sparse-table.hpp
+    title: data-structure/sparse-table.hpp
   - icon: ':heavy_check_mark:'
     path: data-structure/static-modular-arithmetic.hpp
     title: Static-ModInt
@@ -552,6 +555,7 @@ data:
   - data-structure/with_input.hpp
   - data-structure/binary-indexed-tree.hpp
   - data-structure/dynamic_modular-arithmetic.hpp
+  - data-structure/sparse-table.hpp
   - data-structure/lazy-segment-tree.hpp
   - data-structure/binary-indexed-tree-raq.hpp
   - data-structure/static-modular-arithmetic.hpp

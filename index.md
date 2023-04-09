@@ -79,6 +79,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
+    - icon: ':warning:'
+      path: data-structure/sparse-table.hpp
+      title: data-structure/sparse-table.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/static-modular-arithmetic.hpp
       title: Static-ModInt
