@@ -18,6 +18,9 @@ data:
       path: algorithm/doubling.hpp
       title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
     - icon: ':heavy_check_mark:'
+      path: algorithm/interval_scheduling.hpp
+      title: algorithm/interval_scheduling.hpp
+    - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: "\u7D2F\u7A4D\u548C"
     - icon: ':heavy_check_mark:'
@@ -444,6 +447,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
+  - name: test/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1995.test.cpp
+      title: test/yukicoder/1995.test.cpp
 layout: toppage
 ---
 [![Tyson8331](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FTyson8331)](https://atcoder.jp/users/Tyson8331)

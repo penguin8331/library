@@ -139,9 +139,9 @@ data:
   timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/GRL_3_C.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/two-sat.test.cpp
-  - test/AOJ/GRL_3_C.test.cpp
 documentation_of: graph/scc.hpp
 layout: document
 title: Strongly Connected Component
