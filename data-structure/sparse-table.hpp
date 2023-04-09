@@ -10,10 +10,12 @@ struct SparseTable {
 
     SparseTable() {}
     SparseTable(
-        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) : F(f) {
-        init(vec);
+        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {
+        init(vec, f);
     }
-    void init(const vector<T> &vec) {
+    void init(
+        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {
+        F = f;
         int n = (int)vec.size(), h = 0;
         while ((1 << h) < n) ++h;
         dat.assign(h, vector<T>(1 << h));
