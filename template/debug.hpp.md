@@ -191,6 +191,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
+  - icon: ':warning:'
+    path: graph/tree/euler-tour-on-nodes.hpp
+    title: graph/tree/euler-tour-on-nodes.hpp
   - icon: ':heavy_check_mark:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
@@ -502,6 +505,7 @@ data:
   requiredBy:
   - string/rolling-hash.hpp
   - string/rle.hpp
+  - graph/tree/euler-tour-on-nodes.hpp
   - graph/kruskal.hpp
   - graph/bfs.hpp
   - graph/diameter-weighted.hpp

@@ -19,7 +19,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/tree/euler-tour-on-nodes.hpp
+    title: graph/tree/euler-tour-on-nodes.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -69,8 +72,9 @@ data:
     \ SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n    using\
     \ Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    SparseTable(\n\
     \        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b);\
-    \ }) : F(f) {\n        init(vec);\n    }\n    void init(const vector<T> &vec)\
-    \ {\n        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
+    \ }) {\n        init(vec, f);\n    }\n    void init(\n        const vector<T>\
+    \ &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n        F = f;\n\
+    \        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
     \        dat.assign(h, vector<T>(1 << h));\n        height.assign(n + 1, 0);\n\
     \        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;\n      \
     \  for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i\
@@ -82,8 +86,9 @@ data:
     struct SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n  \
     \  using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    SparseTable(\n\
     \        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b);\
-    \ }) : F(f) {\n        init(vec);\n    }\n    void init(const vector<T> &vec)\
-    \ {\n        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
+    \ }) {\n        init(vec, f);\n    }\n    void init(\n        const vector<T>\
+    \ &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n        F = f;\n\
+    \        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
     \        dat.assign(h, vector<T>(1 << h));\n        height.assign(n + 1, 0);\n\
     \        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;\n      \
     \  for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i\
@@ -100,8 +105,9 @@ data:
   - template/debug.hpp
   isVerificationFile: false
   path: data-structure/sparse-table.hpp
-  requiredBy: []
-  timestamp: '2023-04-09 12:38:56+09:00'
+  requiredBy:
+  - graph/tree/euler-tour-on-nodes.hpp
+  timestamp: '2023-04-09 14:01:19+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/sparse-table.hpp

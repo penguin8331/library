@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data-structure/lazy-segment-tree.hpp
+    title: Lazy Segment Tree
+  - icon: ':warning:'
+    path: data-structure/sparse-table.hpp
+    title: data-structure/sparse-table.hpp
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -19,21 +25,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: data-structure/lazy-segment-tree-arthmetic.hpp
-    title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
-      \ Tree"
-  - icon: ':warning:'
-    path: graph/tree/euler-tour-on-nodes.hpp
-    title: graph/tree/euler-tour-on-nodes.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/DSL_2_F.test.cpp
-    title: test/AOJ/DSL_2_F.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -114,123 +110,105 @@ data:
     \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
     \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
     \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
-    \      os << ']';\n        return os;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Monoid,\
-    \ class Action>\nstruct Lazy_SegTree {\n    using FuncMonoid = function<Monoid(Monoid,\
-    \ Monoid)>;\n    using FuncAction = function<void(Monoid&, Action)>;\n    using\
-    \ FuncComposition = function<void(Action&, Action)>;\n    FuncMonoid FM;\n   \
-    \ FuncAction FA;\n    FuncComposition FC;\n    Monoid IDENTITY_MONOID;\n    Action\
-    \ IDENTITY_LAZY;\n    int N, SIZE, HEIGHT;\n    vector<Monoid> dat;\n    vector<Action>\
-    \ lazy;\n\n    Lazy_SegTree() {}\n    Lazy_SegTree(int n, const FuncMonoid fm,\
-    \ const FuncAction fa,\n                 const FuncComposition fc,\n         \
-    \        const Monoid& identity_monoid, const Action& identity_lazy)\n       \
-    \ : FM(fm), FA(fa), FC(fc), IDENTITY_MONOID(identity_monoid), IDENTITY_LAZY(identity_lazy),\
-    \ N(n) {\n        SIZE = 1, HEIGHT = 0;\n        while (SIZE < n) SIZE <<= 1,\
-    \ ++HEIGHT;\n        dat.assign(SIZE * 2, IDENTITY_MONOID);\n        lazy.assign(SIZE\
-    \ * 2, IDENTITY_LAZY);\n    }\n    void init(int n, const FuncMonoid fm, const\
-    \ FuncAction fa,\n              const FuncComposition fc,\n              const\
-    \ Monoid& identity_monoid, const Action& identity_lazy) {\n        FM = fm, FA\
-    \ = fa, FC = fc;\n        IDENTITY_MONOID = identity_monoid, IDENTITY_LAZY = identity_lazy;\n\
-    \        SIZE = 1, HEIGHT = 0;\n        while (SIZE < n) SIZE <<= 1, ++HEIGHT;\n\
-    \        dat.assign(SIZE * 2, IDENTITY_MONOID);\n        lazy.assign(SIZE * 2,\
-    \ IDENTITY_LAZY);\n    }\n\n    void set(int a, const Monoid& v) { dat[a + SIZE]\
-    \ = v; }\n    void build() {\n        for (int k = SIZE - 1; k > 0; --k)\n   \
-    \         dat[k] = FM(dat[k * 2], dat[k * 2 + 1]);\n    }\n\n    inline void evaluate(int\
-    \ k) {\n        if (lazy[k] == IDENTITY_LAZY) return;\n        if (k < SIZE) FC(lazy[k\
-    \ * 2], lazy[k]), FC(lazy[k * 2 + 1], lazy[k]);\n        FA(dat[k], lazy[k]);\n\
-    \        lazy[k] = IDENTITY_LAZY;\n    }\n    inline void update(int a, int b,\
-    \ const Action& v, int k, int l, int r) {\n        evaluate(k);\n        if (a\
-    \ <= l && r <= b)\n            FC(lazy[k], v), evaluate(k);\n        else if (a\
-    \ < r && l < b) {\n            update(a, b, v, k * 2, l, (l + r) >> 1);\n    \
-    \        update(a, b, v, k * 2 + 1, (l + r) >> 1, r);\n            dat[k] = FM(dat[k\
-    \ * 2], dat[k * 2 + 1]);\n        }\n    }\n    inline void update(int a, int\
-    \ b, const Action& v) {\n        update(a, b, v, 1, 0, SIZE);\n    }\n\n    inline\
-    \ Monoid get(int a, int b, int k, int l, int r) {\n        evaluate(k);\n    \
-    \    if (a <= l && r <= b)\n            return dat[k];\n        else if (a < r\
-    \ && l < b)\n            return FM(get(a, b, k * 2, l, (l + r) >> 1),\n      \
-    \                get(a, b, k * 2 + 1, (l + r) >> 1, r));\n        else\n     \
-    \       return IDENTITY_MONOID;\n    }\n    inline Monoid get(int a, int b) {\n\
-    \        return get(a, b, 1, 0, SIZE);\n    }\n    inline Monoid operator[](int\
-    \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
-    \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
-    \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
-    \      os << ']';\n        return os;\n    }\n};"
+    \      os << ']';\n        return os;\n    }\n};\n#line 3 \"data-structure/sparse-table.hpp\"\
+    \n\ntemplate <class T>\nstruct SparseTable {\n    vector<vector<T>> dat;\n   \
+    \ vector<int> height;\n    using Func = function<T(T, T)>;\n    Func F;\n\n  \
+    \  SparseTable() {}\n    SparseTable(\n        const vector<T> &vec, const Func\
+    \ f = [](T a, T b) { return min(a, b); }) {\n        init(vec, f);\n    }\n  \
+    \  void init(\n        const vector<T> &vec, const Func f = [](T a, T b) { return\
+    \ min(a, b); }) {\n        F = f;\n        int n = (int)vec.size(), h = 0;\n \
+    \       while ((1 << h) < n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n\
+    \        height.assign(n + 1, 0);\n        for (int i = 2; i <= n; i++) height[i]\
+    \ = height[i >> 1] + 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n\
+    \        for (int i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n\
+    \                dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)),\
+    \ n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return F(dat[height[b\
+    \ - a]][a], dat[height[b - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5\
+    \ \"graph/tree/euler-tour-on-nodes.hpp\"\n\n// Euler Tour\ntemplate <class Node,\
+    \ class Monoid>\nstruct EulerTour {\n    // main results\n    vector<vector<int>>\
+    \ tree;\n    vector<int> depth;\n    vector<int> node;    // the node-number of\
+    \ i-th element of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour\
+    \ of node v\n    vector<int> eid;     // the index of edge e (i*2 + (0: dir to\
+    \ leaf, 1: dir to root))\n    const function<Node(Node, Node)> fm;\n    const\
+    \ function<void(Node &, Monoid)> fa;\n    const function<void(Monoid &, Monoid)>\
+    \ fl;\n\n    // sub results\n    SparseTable<pair<int, int>> st;  // depth (to\
+    \ find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, Monoid> seg;\n\n    // initialization\n\
+    \    EulerTour(const vector<vector<int>> &tree_,\n              const function<Node(Node,\
+    \ Node)> fm_,\n              const function<void(Node &, Monoid)> fa_,\n     \
+    \         const function<void(Monoid &, Monoid)> fl_)\n        : fm(fm_), fa(fa_),\
+    \ fl(fl_) {\n        init(tree_);\n    }\n\n    void init(const vector<vector<int>>\
+    \ &tree_) {\n        tree = tree_;\n        int V = (int)tree.size();\n      \
+    \  depth.resize(V * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n\
+    \        ve.resize(V);\n        eid.resize((V - 1) * 2);\n        seg.init((V\
+    \ - 1) * 2, fm, fa, fl, Node(0, 0), 0);\n        int k = 0;\n        dfs(0, -1,\
+    \ 0, k);\n        vector<pair<int, int>> tmp(int(depth.size()));\n        for\
+    \ (int i = 0; i < int(depth.size()); i++) {\n            tmp[i] = {depth[i], i};\n\
+    \        }\n        st.init(tmp);\n        seg.build();\n    }\n\n    void dfs(int\
+    \ v, int par, int dep, int &ord) {\n        node[ord] = v;\n        depth[ord]\
+    \ = dep;\n        vf[v] = ve[v] = ord;\n        ++ord;\n        for (auto e :\
+    \ tree[v]) {\n            if (e == par) continue;\n            seg.set(ord - 1,\
+    \ Node(0, 1));\n            dfs(e, v, dep + 1, ord);\n            node[ord] =\
+    \ v;\n            depth[ord] = dep;\n            ve[v] = ord;\n            seg.set(ord\
+    \ - 1, Node(0, -1));\n            ++ord;\n        }\n    }\n\n    inline int LCA(int\
+    \ u, int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
+    \        return node[st.get(a, b + 1).second];\n    }\n\n    inline void update(int\
+    \ v, Monoid x) {\n        seg.update(vf[v], ve[v], x);\n    }\n\n    inline Monoid\
+    \ get(int v) {\n        return seg.get(0, vf[v]).first;\n    }\n\n    inline Monoid\
+    \ get(int u, int v) {\n        int lca = LCA(u, v);\n        return get(u) + get(v)\
+    \ - get(lca) * 2;\n    }\n};\n"
+  code: "#pragma once\n#include \"../../data-structure/lazy-segment-tree.hpp\"\n#include\
+    \ \"../../data-structure/sparse-table.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\n// Euler Tour\ntemplate <class Node, class Monoid>\nstruct EulerTour {\n \
+    \   // main results\n    vector<vector<int>> tree;\n    vector<int> depth;\n \
+    \   vector<int> node;    // the node-number of i-th element of Euler-tour\n  \
+    \  vector<int> vf, ve;  // the index of Euler-tour of node v\n    vector<int>\
+    \ eid;     // the index of edge e (i*2 + (0: dir to leaf, 1: dir to root))\n \
+    \   const function<Node(Node, Node)> fm;\n    const function<void(Node &, Monoid)>\
+    \ fa;\n    const function<void(Monoid &, Monoid)> fl;\n\n    // sub results\n\
+    \    SparseTable<pair<int, int>> st;  // depth (to find LCA)\n\n    // segtree\n\
+    \    Lazy_SegTree<Node, Monoid> seg;\n\n    // initialization\n    EulerTour(const\
+    \ vector<vector<int>> &tree_,\n              const function<Node(Node, Node)>\
+    \ fm_,\n              const function<void(Node &, Monoid)> fa_,\n            \
+    \  const function<void(Monoid &, Monoid)> fl_)\n        : fm(fm_), fa(fa_), fl(fl_)\
+    \ {\n        init(tree_);\n    }\n\n    void init(const vector<vector<int>> &tree_)\
+    \ {\n        tree = tree_;\n        int V = (int)tree.size();\n        depth.resize(V\
+    \ * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n\
+    \        eid.resize((V - 1) * 2);\n        seg.init((V - 1) * 2, fm, fa, fl, Node(0,\
+    \ 0), 0);\n        int k = 0;\n        dfs(0, -1, 0, k);\n        vector<pair<int,\
+    \ int>> tmp(int(depth.size()));\n        for (int i = 0; i < int(depth.size());\
+    \ i++) {\n            tmp[i] = {depth[i], i};\n        }\n        st.init(tmp);\n\
+    \        seg.build();\n    }\n\n    void dfs(int v, int par, int dep, int &ord)\
+    \ {\n        node[ord] = v;\n        depth[ord] = dep;\n        vf[v] = ve[v]\
+    \ = ord;\n        ++ord;\n        for (auto e : tree[v]) {\n            if (e\
+    \ == par) continue;\n            seg.set(ord - 1, Node(0, 1));\n            dfs(e,\
+    \ v, dep + 1, ord);\n            node[ord] = v;\n            depth[ord] = dep;\n\
+    \            ve[v] = ord;\n            seg.set(ord - 1, Node(0, -1));\n      \
+    \      ++ord;\n        }\n    }\n\n    inline int LCA(int u, int v) {\n      \
+    \  int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n        return node[st.get(a,\
+    \ b + 1).second];\n    }\n\n    inline void update(int v, Monoid x) {\n      \
+    \  seg.update(vf[v], ve[v], x);\n    }\n\n    inline Monoid get(int v) {\n   \
+    \     return seg.get(0, vf[v]).first;\n    }\n\n    inline Monoid get(int u, int\
+    \ v) {\n        int lca = LCA(u, v);\n        return get(u) + get(v) - get(lca)\
+    \ * 2;\n    }\n};\n"
   dependsOn:
+  - data-structure/lazy-segment-tree.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
+  - data-structure/sparse-table.hpp
   isVerificationFile: false
-  path: data-structure/lazy-segment-tree.hpp
-  requiredBy:
-  - graph/tree/euler-tour-on-nodes.hpp
-  - data-structure/lazy-segment-tree-arthmetic.hpp
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/DSL_2_F.test.cpp
-documentation_of: data-structure/lazy-segment-tree.hpp
+  path: graph/tree/euler-tour-on-nodes.hpp
+  requiredBy: []
+  timestamp: '2023-04-09 14:01:19+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: graph/tree/euler-tour-on-nodes.hpp
 layout: document
-title: Lazy Segment Tree
+redirect_from:
+- /library/graph/tree/euler-tour-on-nodes.hpp
+- /library/graph/tree/euler-tour-on-nodes.hpp.html
+title: graph/tree/euler-tour-on-nodes.hpp
 ---
-
-## 概要
-
-セグメントツリーは「作用つきモノイド」上で定義される
-
-## 使い方
-
-### 宣言
-
-- FM(a, b): 2 つのモノイド間に定義される演算
-- FA(a, d): モノイド元 a への作用素 d による作用
-- FC(d, e): 作用素 d への作用素 e の合成
-- IDENTITY_MONOID: モノイドの単位元
-- IDENTITY_LAZY: 作用素の単位元
-
-```cpp
-Lazy_SegTree<int, int> seg(N, fm, fa, fc, identity_monoid, identity_lazy)
-```
-
-### ex
-
-- starry sky tree (区間加算、区間min取得)
-
-```cpp
-auto fm = [](int a, int b) { return min(a, b); };
-auto fa = [](int& a, int d) { a += d; };
-auto fc = [](int& d, int e) { d += e; };
-Lazy_SegTree<int, int> seg(N, fm, fa, fc, (1LL << 60), 0);
-```
-
-- いろいろできるやつ
-  - `update(i, j, {a, b})` : `[i, j)` に `ax + b` を作用
-  - `update(i, j, {0, a})` : 更新
-  - `update(i, j, {1, a})` : 加算
-  - `update(i, j, {a, 0})` : 倍
-
-```cpp
-auto fm = [](ll a, ll b) { return max(a, b); };
-auto fa = [](ll& a, pii d) { a = a * d.first + d.second; };
-auto fc = [](pii& d, pii e) {
-    d.first = d.first * e.first;
-    d.second = d.second * e.first + e.second;
-};
-Lazy_SegTree<ll, pii> seg(N, fm, fa, fc, 0, {1, 0});
-```
-
-### 初期化
-
-`init(n)` : サイズ `n` に初期化
-
-`set(a, v)` : `a` 番目の値を `v` にセットする
-
-`build()` : `set` した値を元にセグメントツリー全体を構築する $O(N)$
-
-### クエリ
-
-`update(a, b, v)` : 区間 `[a, b)` を作用素 `v` を用いて更新する $O(log N)$
-
-`get(a, b)` : 区間 `[a, b)` についての演算結果を返す $O(log N)$
