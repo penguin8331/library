@@ -3,35 +3,29 @@
 #include "../../data-structure/sparse-table.hpp"
 #include "../../template/template.hpp"
 
-// Euler Tour
-template <class Node, class Monoid>
 struct EulerTour {
+    using Graph = vector<vector<int>>;
+    using Node = pair<long long, int>;
+    const function<Node(Node, Node)> fm = [](Node a, Node b) { return Node(a.first + b.first, a.second + b.second); };
+    const function<void(Node &, long long)> fa = [](Node &a, long long d) { a.first += d * a.second; };
+    const function<void(long long &, long long)> fl = [](long long &d, long long e) { d += e; };
+
     // main results
-    vector<vector<int>> tree;
+    Graph tree;
     vector<int> depth;
     vector<int> node;    // the node-number of i-th element of Euler-tour
     vector<int> vf, ve;  // the index of Euler-tour of node v
     vector<int> eid;     // the index of edge e (i*2 + (0: dir to leaf, 1: dir to root))
-    const function<Node(Node, Node)> fm;
-    const function<void(Node &, Monoid)> fa;
-    const function<void(Monoid &, Monoid)> fl;
 
     // sub results
     SparseTable<pair<int, int>> st;  // depth (to find LCA)
 
     // segtree
-    Lazy_SegTree<Node, Monoid> seg;
+    Lazy_SegTree<Node, long long> seg;
 
     // initialization
-    EulerTour(const vector<vector<int>> &tree_,
-              const function<Node(Node, Node)> fm_,
-              const function<void(Node &, Monoid)> fa_,
-              const function<void(Monoid &, Monoid)> fl_)
-        : fm(fm_), fa(fa_), fl(fl_) {
-        init(tree_);
-    }
-
-    void init(const vector<vector<int>> &tree_) {
+    EulerTour(const Graph &tree_) { init(tree_); }
+    void init(const Graph &tree_) {
         tree = tree_;
         int V = (int)tree.size();
         depth.resize(V * 2 - 1);
@@ -73,15 +67,15 @@ struct EulerTour {
         return node[st.get(a, b + 1).second];
     }
 
-    inline void update(int v, Monoid x) {
+    inline void update(int v, long long x) {
         seg.update(vf[v], ve[v], x);
     }
 
-    inline Monoid get(int v) {
+    inline long long get(int v) {
         return seg.get(0, vf[v]).first;
     }
 
-    inline Monoid get(int u, int v) {
+    inline long long get(int u, int v) {
         int lca = LCA(u, v);
         return get(u) + get(v) - get(lca) * 2;
     }

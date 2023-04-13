@@ -10,10 +10,7 @@ int main() {
         G[a].push_back(b);
         G[b].push_back(a);
     }
-    const auto fm = [](pll a, pll b) { return pll({a.first + b.first, a.second + b.second}); };
-    const auto fa = [](pll &a, long long d) { a.first += d * a.second; };
-    const auto fl = [](long long &d, long long e) { d += e; };
-    EulerTour<pll, ll> et(G, fm, fa, fl);
+    EulerTour et(G);
     for (int i = 0; i < Q; i++) {
         INT(t);
         if (t == 0) {
