@@ -200,6 +200,9 @@ data:
       title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - name: graph/tree
     pages:
+    - icon: ':warning:'
+      path: graph/tree/euler-tour-on-edges.hpp
+      title: graph/tree/euler-tour-on-edges.hpp
     - icon: ':heavy_check_mark:'
       path: graph/tree/euler-tour-on-nodes.hpp
       title: graph/tree/euler-tour-on-nodes.hpp

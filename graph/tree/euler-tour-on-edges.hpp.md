@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data-structure/segment-tree.hpp
+    title: Segment Tree
+  - icon: ':heavy_check_mark:'
+    path: data-structure/sparse-table.hpp
+    title: data-structure/sparse-table.hpp
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -19,17 +25,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: graph/tree/euler-tour-on-edges.hpp
-    title: graph/tree/euler-tour-on-edges.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/static-rmq.test.cpp
-    title: test/yosupo/static-rmq.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -115,106 +115,101 @@ data:
     \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
     \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
     \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
-    \ os;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Monoid>\n\
-    struct SegTree {\n    using Func = function<Monoid(Monoid, Monoid)>;\n    int\
-    \ N;\n    Func F;\n    Monoid IDENTITY;\n    int SIZE_R;\n    vector<Monoid> dat;\n\
-    \n    /* initialization */\n    SegTree() {}\n    SegTree(int n, const Func f,\
-    \ const Monoid& identity)\n        : N(n), F(f), IDENTITY(identity) {\n      \
-    \  SIZE_R = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R\
-    \ * 2, IDENTITY);\n    }\n    void init(int n, const Func f, const Monoid& identity)\
-    \ {\n        N = n;\n        F = f;\n        IDENTITY = identity;\n        SIZE_R\
-    \ = 1;\n        while (SIZE_R < n) SIZE_R *= 2;\n        dat.assign(SIZE_R * 2,\
-    \ IDENTITY);\n    }\n\n    /* set, a is 0-indexed */\n    /* build(): O(N) */\n\
-    \    void set(int a, const Monoid& v) { dat[a + SIZE_R] = v; }\n    void build()\
-    \ {\n        for (int k = SIZE_R - 1; k > 0; --k)\n            dat[k] = F(dat[k\
-    \ * 2], dat[k * 2 + 1]);\n    }\n\n    /* update a, a is 0-indexed, O(log N) */\n\
-    \    void update(int a, const Monoid& v) {\n        int k = a + SIZE_R;\n    \
-    \    dat[k] = v;\n        while (k >>= 1) dat[k] = F(dat[k * 2], dat[k * 2 + 1]);\n\
-    \    }\n\n    /* get [a, b), a and b are 0-indexed, O(log N) */\n    Monoid get(int\
-    \ a, int b) {\n        Monoid vleft = IDENTITY, vright = IDENTITY;\n        for\
-    \ (int left = a + SIZE_R, right = b + SIZE_R; left < right;\n             left\
-    \ >>= 1, right >>= 1) {\n            if (left & 1) vleft = F(vleft, dat[left++]);\n\
-    \            if (right & 1) vright = F(dat[--right], vright);\n        }\n   \
-    \     return F(vleft, vright);\n    }\n    Monoid all_get() { return dat[1]; }\n\
-    \    Monoid operator[](int a) { return dat[a + SIZE_R]; }\n\n    /* get max r\
-    \ that f(get(l, r)) = True (0-indexed), O(log N) */\n    /* f(IDENTITY) need to\
-    \ be True */\n    int max_right(const function<bool(Monoid)> f, int l = 0) {\n\
-    \        if (l == N) return N;\n        l += SIZE_R;\n        Monoid sum = IDENTITY;\n\
-    \        do {\n            while (l % 2 == 0) l >>= 1;\n            if (!f(F(sum,\
-    \ dat[l]))) {\n                while (l < SIZE_R) {\n                    l = l\
-    \ * 2;\n                    if (f(F(sum, dat[l]))) {\n                       \
-    \ sum = F(sum, dat[l]);\n                        ++l;\n                    }\n\
-    \                }\n                return l - SIZE_R;\n            }\n      \
-    \      sum = F(sum, dat[l]);\n            ++l;\n        } while ((l & -l) != l);\n\
-    \        return N;\n    }\n\n    /* get min l that f(get(l, r)) = True (0-indexed),\
-    \ O(log N) */\n    /* f(IDENTITY) need to be True */\n    int min_left(const function<bool(Monoid)>\
-    \ f, int r = -1) {\n        if (r == 0) return 0;\n        if (r == -1) r = N;\n\
-    \        r += SIZE_R;\n        Monoid sum = IDENTITY;\n        do {\n        \
-    \    --r;\n            while (r > 1 && (r % 2)) r >>= 1;\n            if (!f(F(dat[r],\
-    \ sum))) {\n                while (r < SIZE_R) {\n                    r = r *\
-    \ 2 + 1;\n                    if (f(F(dat[r], sum))) {\n                     \
-    \   sum = F(dat[r], sum);\n                        --r;\n                    }\n\
-    \                }\n                return r + 1 - SIZE_R;\n            }\n  \
-    \          sum = F(dat[r], sum);\n        } while ((r & -r) != r);\n        return\
-    \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
-    \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
-    \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
-    \ os;\n    }\n};"
+    \ os;\n    }\n};\n#line 3 \"data-structure/sparse-table.hpp\"\n\ntemplate <class\
+    \ T>\nstruct SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n\
+    \    using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n  \
+    \  SparseTable(\n        const vector<T> &vec, const Func f = [](T a, T b) { return\
+    \ min(a, b); }) {\n        init(vec, f);\n    }\n    void init(\n        const\
+    \ vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n     \
+    \   F = f;\n        int n = (int)vec.size(), h = 0;\n        while ((1 << h) <\
+    \ n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n        height.assign(n\
+    \ + 1, 0);\n        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] +\
+    \ 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int\
+    \ i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n              \
+    \  dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);\n\
+    \    }\n\n    T get(int a, int b) {\n        return F(dat[height[b - a]][a], dat[height[b\
+    \ - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5 \"graph/tree/euler-tour-on-edges.hpp\"\
+    \n\nstruct Edge {\n    int next;\n    long long cost;\n    int idx;\n};\nstruct\
+    \ EulerTour {\n    using pli = pair<long long, int>;\n    vector<int> edge;\n\
+    \    vector<int> node;\n    vector<int> vf, ve;\n    vector<int> ef, ee;\n   \
+    \ vector<int> depth;\n    vector<vector<Edge>> tree;\n    SparseTable<pair<int,\
+    \ int>> st;\n    SegTree<pli> seg;\n    const function<pli(pli, pli)> fm = [](pli\
+    \ a, pli b) { return pli{a.first * a.second + b.first * b.second, 1}; };\n   \
+    \ EulerTour(const vector<vector<Edge>>& tree_) {\n        init(tree_);\n    }\n\
+    \    void init(const vector<vector<Edge>>& tree_) {\n        tree = tree_;\n \
+    \       int V = (int)tree.size();\n        depth.resize(V * 2 - 1);\n        edge.resize(V\
+    \ * 2 - 2);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n\
+    \        ef.resize(V - 1);\n        ee.resize(V - 1);\n        seg.init((V - 1)\
+    \ * 2, fm, pli({0, 0}));\n        int k = 0;\n        dfs(0, -1, 0, k);\n    \
+    \    vector<pair<int, int>> tmp((int)depth.size());\n        for (int i = 0; i\
+    \ < (int)depth.size(); i++) {\n            tmp[i] = {depth[i], i};\n        }\n\
+    \        st.init(tmp);\n        seg.build();\n    }\n    void dfs(int now, int\
+    \ prev, int dep, int& ord) {\n        node[ord] = now;\n        depth[ord] = dep;\n\
+    \        vf[now] = ve[now] = ord;\n        ord++;\n        for (const auto& [next,\
+    \ cost, idx] : tree[now]) {\n            if (next != prev) {\n               \
+    \ seg.set(ord - 1, {cost, 1});\n                edge[ord - 1] = idx;\n       \
+    \         ef[idx] = ord - 1;\n                dfs(next, now, dep + 1, ord);\n\
+    \                node[ord] = now;\n                depth[ord] = dep;\n       \
+    \         ve[next] = ord;\n                ee[idx] = ord - 1;\n              \
+    \  seg.set(ord - 1, {cost, -1});\n                edge[ord - 1] = idx;\n     \
+    \           ord++;\n            }\n        }\n    }\n    inline int LCA(int u,\
+    \ int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
+    \        return node[st.get(a, b + 1).second];\n    }\n    inline void update(int\
+    \ idx, int x) {\n        seg.update(ef[idx], {x, 1});\n        seg.update(ee[idx],\
+    \ {x, -1});\n    }\n    inline long long get(int v) {\n        return seg.get(0,\
+    \ vf[v]).first;\n    }\n    inline long long get(int u, int v) {\n        int\
+    \ lca = LCA(u, v);\n        return get(u) + get(v) - get(lca) * 2;\n    }\n};\n"
+  code: "#pragma once\n#include \"../../data-structure/segment-tree.hpp\"\n#include\
+    \ \"../../data-structure/sparse-table.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nstruct Edge {\n    int next;\n    long long cost;\n    int idx;\n};\nstruct\
+    \ EulerTour {\n    using pli = pair<long long, int>;\n    vector<int> edge;\n\
+    \    vector<int> node;\n    vector<int> vf, ve;\n    vector<int> ef, ee;\n   \
+    \ vector<int> depth;\n    vector<vector<Edge>> tree;\n    SparseTable<pair<int,\
+    \ int>> st;\n    SegTree<pli> seg;\n    const function<pli(pli, pli)> fm = [](pli\
+    \ a, pli b) { return pli{a.first * a.second + b.first * b.second, 1}; };\n   \
+    \ EulerTour(const vector<vector<Edge>>& tree_) {\n        init(tree_);\n    }\n\
+    \    void init(const vector<vector<Edge>>& tree_) {\n        tree = tree_;\n \
+    \       int V = (int)tree.size();\n        depth.resize(V * 2 - 1);\n        edge.resize(V\
+    \ * 2 - 2);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n\
+    \        ef.resize(V - 1);\n        ee.resize(V - 1);\n        seg.init((V - 1)\
+    \ * 2, fm, pli({0, 0}));\n        int k = 0;\n        dfs(0, -1, 0, k);\n    \
+    \    vector<pair<int, int>> tmp((int)depth.size());\n        for (int i = 0; i\
+    \ < (int)depth.size(); i++) {\n            tmp[i] = {depth[i], i};\n        }\n\
+    \        st.init(tmp);\n        seg.build();\n    }\n    void dfs(int now, int\
+    \ prev, int dep, int& ord) {\n        node[ord] = now;\n        depth[ord] = dep;\n\
+    \        vf[now] = ve[now] = ord;\n        ord++;\n        for (const auto& [next,\
+    \ cost, idx] : tree[now]) {\n            if (next != prev) {\n               \
+    \ seg.set(ord - 1, {cost, 1});\n                edge[ord - 1] = idx;\n       \
+    \         ef[idx] = ord - 1;\n                dfs(next, now, dep + 1, ord);\n\
+    \                node[ord] = now;\n                depth[ord] = dep;\n       \
+    \         ve[next] = ord;\n                ee[idx] = ord - 1;\n              \
+    \  seg.set(ord - 1, {cost, -1});\n                edge[ord - 1] = idx;\n     \
+    \           ord++;\n            }\n        }\n    }\n    inline int LCA(int u,\
+    \ int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
+    \        return node[st.get(a, b + 1).second];\n    }\n    inline void update(int\
+    \ idx, int x) {\n        seg.update(ef[idx], {x, 1});\n        seg.update(ee[idx],\
+    \ {x, -1});\n    }\n    inline long long get(int v) {\n        return seg.get(0,\
+    \ vf[v]).first;\n    }\n    inline long long get(int u, int v) {\n        int\
+    \ lca = LCA(u, v);\n        return get(u) + get(v) - get(lca) * 2;\n    }\n};"
   dependsOn:
+  - data-structure/segment-tree.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
+  - data-structure/sparse-table.hpp
   isVerificationFile: false
-  path: data-structure/segment-tree.hpp
-  requiredBy:
-  - graph/tree/euler-tour-on-edges.hpp
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo/static-rmq.test.cpp
-documentation_of: data-structure/segment-tree.hpp
+  path: graph/tree/euler-tour-on-edges.hpp
+  requiredBy: []
+  timestamp: '2023-04-14 03:15:03+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: graph/tree/euler-tour-on-edges.hpp
 layout: document
-title: Segment Tree
+redirect_from:
+- /library/graph/tree/euler-tour-on-edges.hpp
+- /library/graph/tree/euler-tour-on-edges.hpp.html
+title: graph/tree/euler-tour-on-edges.hpp
 ---
-
-## 概要
-
-セグメントツリーは二項演算の定義されたモノイド上で定義される
-
-## 使い方
-
-### 宣言
-
-`SegTree(n, f, unity)` : サイズ `n` に初期化、 `f` は二項演算、 `unity` は単位元 ( `min` なら `INF`, `+` なら `0`)
-
-### ex
-
-- 区間和:
-
-```cpp
-SegTree<int> seg(n, [](int a, int b){ return a + b; }, 0);
-```
-
-- 区間min:
-
-```cpp
-SegTree<int> seg(n, [](int a, int b){ return min(a, b); }, INF);
-```
-
-### 初期化
-
-`init(n)` : サイズ `n` に初期化
-
-`set(a, v)` : `a` 番目の値を `v` にセットする
-
-`build()` : `set` した値を元にセグメントツリー全体を構築する $O(n)$
-
-### クエリ
-
-`update(a, v)` : `a` 番目の値を `v` に更新する $O(log N)$
-
-`get(a, b)`: 区間 `[a, b)` についての演算結果を返す $O(log n)$

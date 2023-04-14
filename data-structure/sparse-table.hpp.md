@@ -20,6 +20,9 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/tree/euler-tour-on-edges.hpp
+    title: graph/tree/euler-tour-on-edges.hpp
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
@@ -110,6 +113,7 @@ data:
   path: data-structure/sparse-table.hpp
   requiredBy:
   - graph/tree/euler-tour-on-nodes.hpp
+  - graph/tree/euler-tour-on-edges.hpp
   timestamp: '2023-04-09 14:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
