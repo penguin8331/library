@@ -127,21 +127,53 @@ data:
     \                dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)),\
     \ n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return F(dat[height[b\
     \ - a]][a], dat[height[b - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5\
-    \ \"graph/tree/euler-tour-on-nodes.hpp\"\n\n// Euler Tour\ntemplate <class Node,\
-    \ class Monoid>\nstruct EulerTour {\n    // main results\n    vector<vector<int>>\
-    \ tree;\n    vector<int> depth;\n    vector<int> node;    // the node-number of\
-    \ i-th element of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour\
+    \ \"graph/tree/euler-tour-on-nodes.hpp\"\n\nstruct EulerTour {\n    using Graph\
+    \ = vector<vector<int>>;\n    using Node = pair<long long, int>;\n    const function<Node(Node,\
+    \ Node)> fm = [](Node a, Node b) { return Node(a.first + b.first, a.second + b.second);\
+    \ };\n    const function<void(Node &, long long)> fa = [](Node &a, long long d)\
+    \ { a.first += d * a.second; };\n    const function<void(long long &, long long)>\
+    \ fl = [](long long &d, long long e) { d += e; };\n\n    // main results\n   \
+    \ Graph tree;\n    vector<int> depth;\n    vector<int> node;    // the node-number\
+    \ of i-th element of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour\
     \ of node v\n    vector<int> eid;     // the index of edge e (i*2 + (0: dir to\
-    \ leaf, 1: dir to root))\n    const function<Node(Node, Node)> fm;\n    const\
-    \ function<void(Node &, Monoid)> fa;\n    const function<void(Monoid &, Monoid)>\
-    \ fl;\n\n    // sub results\n    SparseTable<pair<int, int>> st;  // depth (to\
-    \ find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, Monoid> seg;\n\n    // initialization\n\
-    \    EulerTour(const vector<vector<int>> &tree_,\n              const function<Node(Node,\
-    \ Node)> fm_,\n              const function<void(Node &, Monoid)> fa_,\n     \
-    \         const function<void(Monoid &, Monoid)> fl_)\n        : fm(fm_), fa(fa_),\
-    \ fl(fl_) {\n        init(tree_);\n    }\n\n    void init(const vector<vector<int>>\
-    \ &tree_) {\n        tree = tree_;\n        int V = (int)tree.size();\n      \
-    \  depth.resize(V * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n\
+    \ leaf, 1: dir to root))\n\n    // sub results\n    SparseTable<pair<int, int>>\
+    \ st;  // depth (to find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, long long>\
+    \ seg;\n\n    // initialization\n    EulerTour(const Graph &tree_) { init(tree_);\
+    \ }\n    void init(const Graph &tree_) {\n        tree = tree_;\n        int V\
+    \ = (int)tree.size();\n        depth.resize(V * 2 - 1);\n        node.resize(V\
+    \ * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n        eid.resize((V\
+    \ - 1) * 2);\n        seg.init((V - 1) * 2, fm, fa, fl, Node(0, 0), 0);\n    \
+    \    int k = 0;\n        dfs(0, -1, 0, k);\n        vector<pair<int, int>> tmp(int(depth.size()));\n\
+    \        for (int i = 0; i < int(depth.size()); i++) {\n            tmp[i] = {depth[i],\
+    \ i};\n        }\n        st.init(tmp);\n        seg.build();\n    }\n\n    void\
+    \ dfs(int v, int par, int dep, int &ord) {\n        node[ord] = v;\n        depth[ord]\
+    \ = dep;\n        vf[v] = ve[v] = ord;\n        ++ord;\n        for (auto e :\
+    \ tree[v]) {\n            if (e == par) continue;\n            seg.set(ord - 1,\
+    \ Node(0, 1));\n            dfs(e, v, dep + 1, ord);\n            node[ord] =\
+    \ v;\n            depth[ord] = dep;\n            ve[v] = ord;\n            seg.set(ord\
+    \ - 1, Node(0, -1));\n            ++ord;\n        }\n    }\n\n    inline int LCA(int\
+    \ u, int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
+    \        return node[st.get(a, b + 1).second];\n    }\n\n    inline void update(int\
+    \ v, long long x) {\n        seg.update(vf[v], ve[v], x);\n    }\n\n    inline\
+    \ long long get(int v) {\n        return seg.get(0, vf[v]).first;\n    }\n\n \
+    \   inline long long get(int u, int v) {\n        int lca = LCA(u, v);\n     \
+    \   return get(u) + get(v) - get(lca) * 2;\n    }\n};\n"
+  code: "#pragma once\n#include \"../../data-structure/lazy-segment-tree.hpp\"\n#include\
+    \ \"../../data-structure/sparse-table.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nstruct EulerTour {\n    using Graph = vector<vector<int>>;\n    using Node\
+    \ = pair<long long, int>;\n    const function<Node(Node, Node)> fm = [](Node a,\
+    \ Node b) { return Node(a.first + b.first, a.second + b.second); };\n    const\
+    \ function<void(Node &, long long)> fa = [](Node &a, long long d) { a.first +=\
+    \ d * a.second; };\n    const function<void(long long &, long long)> fl = [](long\
+    \ long &d, long long e) { d += e; };\n\n    // main results\n    Graph tree;\n\
+    \    vector<int> depth;\n    vector<int> node;    // the node-number of i-th element\
+    \ of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour of node v\n\
+    \    vector<int> eid;     // the index of edge e (i*2 + (0: dir to leaf, 1: dir\
+    \ to root))\n\n    // sub results\n    SparseTable<pair<int, int>> st;  // depth\
+    \ (to find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, long long> seg;\n\n\
+    \    // initialization\n    EulerTour(const Graph &tree_) { init(tree_); }\n \
+    \   void init(const Graph &tree_) {\n        tree = tree_;\n        int V = (int)tree.size();\n\
+    \        depth.resize(V * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n\
     \        ve.resize(V);\n        eid.resize((V - 1) * 2);\n        seg.init((V\
     \ - 1) * 2, fm, fa, fl, Node(0, 0), 0);\n        int k = 0;\n        dfs(0, -1,\
     \ 0, k);\n        vector<pair<int, int>> tmp(int(depth.size()));\n        for\
@@ -155,44 +187,10 @@ data:
     \ - 1, Node(0, -1));\n            ++ord;\n        }\n    }\n\n    inline int LCA(int\
     \ u, int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
     \        return node[st.get(a, b + 1).second];\n    }\n\n    inline void update(int\
-    \ v, Monoid x) {\n        seg.update(vf[v], ve[v], x);\n    }\n\n    inline Monoid\
-    \ get(int v) {\n        return seg.get(0, vf[v]).first;\n    }\n\n    inline Monoid\
-    \ get(int u, int v) {\n        int lca = LCA(u, v);\n        return get(u) + get(v)\
-    \ - get(lca) * 2;\n    }\n};\n"
-  code: "#pragma once\n#include \"../../data-structure/lazy-segment-tree.hpp\"\n#include\
-    \ \"../../data-structure/sparse-table.hpp\"\n#include \"../../template/template.hpp\"\
-    \n\n// Euler Tour\ntemplate <class Node, class Monoid>\nstruct EulerTour {\n \
-    \   // main results\n    vector<vector<int>> tree;\n    vector<int> depth;\n \
-    \   vector<int> node;    // the node-number of i-th element of Euler-tour\n  \
-    \  vector<int> vf, ve;  // the index of Euler-tour of node v\n    vector<int>\
-    \ eid;     // the index of edge e (i*2 + (0: dir to leaf, 1: dir to root))\n \
-    \   const function<Node(Node, Node)> fm;\n    const function<void(Node &, Monoid)>\
-    \ fa;\n    const function<void(Monoid &, Monoid)> fl;\n\n    // sub results\n\
-    \    SparseTable<pair<int, int>> st;  // depth (to find LCA)\n\n    // segtree\n\
-    \    Lazy_SegTree<Node, Monoid> seg;\n\n    // initialization\n    EulerTour(const\
-    \ vector<vector<int>> &tree_,\n              const function<Node(Node, Node)>\
-    \ fm_,\n              const function<void(Node &, Monoid)> fa_,\n            \
-    \  const function<void(Monoid &, Monoid)> fl_)\n        : fm(fm_), fa(fa_), fl(fl_)\
-    \ {\n        init(tree_);\n    }\n\n    void init(const vector<vector<int>> &tree_)\
-    \ {\n        tree = tree_;\n        int V = (int)tree.size();\n        depth.resize(V\
-    \ * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n\
-    \        eid.resize((V - 1) * 2);\n        seg.init((V - 1) * 2, fm, fa, fl, Node(0,\
-    \ 0), 0);\n        int k = 0;\n        dfs(0, -1, 0, k);\n        vector<pair<int,\
-    \ int>> tmp(int(depth.size()));\n        for (int i = 0; i < int(depth.size());\
-    \ i++) {\n            tmp[i] = {depth[i], i};\n        }\n        st.init(tmp);\n\
-    \        seg.build();\n    }\n\n    void dfs(int v, int par, int dep, int &ord)\
-    \ {\n        node[ord] = v;\n        depth[ord] = dep;\n        vf[v] = ve[v]\
-    \ = ord;\n        ++ord;\n        for (auto e : tree[v]) {\n            if (e\
-    \ == par) continue;\n            seg.set(ord - 1, Node(0, 1));\n            dfs(e,\
-    \ v, dep + 1, ord);\n            node[ord] = v;\n            depth[ord] = dep;\n\
-    \            ve[v] = ord;\n            seg.set(ord - 1, Node(0, -1));\n      \
-    \      ++ord;\n        }\n    }\n\n    inline int LCA(int u, int v) {\n      \
-    \  int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n        return node[st.get(a,\
-    \ b + 1).second];\n    }\n\n    inline void update(int v, Monoid x) {\n      \
-    \  seg.update(vf[v], ve[v], x);\n    }\n\n    inline Monoid get(int v) {\n   \
-    \     return seg.get(0, vf[v]).first;\n    }\n\n    inline Monoid get(int u, int\
-    \ v) {\n        int lca = LCA(u, v);\n        return get(u) + get(v) - get(lca)\
-    \ * 2;\n    }\n};\n"
+    \ v, long long x) {\n        seg.update(vf[v], ve[v], x);\n    }\n\n    inline\
+    \ long long get(int v) {\n        return seg.get(0, vf[v]).first;\n    }\n\n \
+    \   inline long long get(int u, int v) {\n        int lca = LCA(u, v);\n     \
+    \   return get(u) + get(v) - get(lca) * 2;\n    }\n};"
   dependsOn:
   - data-structure/lazy-segment-tree.hpp
   - template/template.hpp
@@ -205,7 +203,7 @@ data:
   isVerificationFile: false
   path: graph/tree/euler-tour-on-nodes.hpp
   requiredBy: []
-  timestamp: '2023-04-09 14:01:19+09:00'
+  timestamp: '2023-04-14 00:00:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2667.test.cpp
