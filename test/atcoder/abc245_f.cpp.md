@@ -26,13 +26,11 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
-  bundledCode: "#line 1 \"test/AOJ/GRL_3_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
+    - https://atcoder.jp/contests/abc245/tasks/abc245_f
+  bundledCode: "#line 1 \"test/atcoder/abc245_f.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -95,37 +93,50 @@ data:
     \        for (int i = N - 1; i >= 0; --i) {\n            if (!seen[vs[i]]) {\n\
     \                rvs.clear();\n                rdfs(vs[i], k++);\n           \
     \     scc.push_back(rvs);\n            }\n        }\n\n        reconstruct();\n\
-    \    }\n};\n#line 4 \"test/AOJ/GRL_3_C.test.cpp\"\n\nint main() {\n    int V,\
-    \ E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int i = 0; i < E; i++) {\n\
-    \        int a, b;\n        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n\
-    \    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++)\
-    \ {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u] ==\
-    \ scc.cmp[v] ? 1 : 0) << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/scc.hpp\"\n\
-    \nint main() {\n    int V, E;\n    cin >> V >> E;\n    SCC scc(V);\n    for (int\
-    \ i = 0; i < E; i++) {\n        int a, b;\n        cin >> a >> b;\n        scc.addedge(a,\
-    \ b);\n    }\n    scc.solve();\n    int Q;\n    cin >> Q;\n    for (int i = 0;\
-    \ i < Q; i++) {\n        int u, v;\n        cin >> u >> v;\n        cout << (scc.cmp[u]\
-    \ == scc.cmp[v] ? 1 : 0) << endl;\n    }\n}"
+    \    }\n};\n#line 4 \"test/atcoder/abc245_f.cpp\"\n\nvector<vector<int>> G;\n\
+    vector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return true;\n\
+    \    }\n    if (dp[u] != -1) {\n        return dp[u];\n    }\n    for (auto &i\
+    \ : G[u]) {\n        if (dfs(i)) {\n            return dp[u] = true;\n       \
+    \ }\n    }\n    return dp[u] = false;\n}\nint main() {\n    INT(N, M);\n    SCC\
+    \ scc(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n        a--;\n\
+    \        b--;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n    vector<vector<int>>\
+    \ res = scc.scc;\n    dp.resize(N, -1);\n    G = scc.G;\n    for (auto &i : res)\
+    \ {\n        if (i.size() >= 2) {\n            for (auto &j : i) {\n         \
+    \       dp[j] = true;\n            }\n        }\n    }\n    for (int i = 0; i\
+    \ < N; i++) {\n        dfs(i);\n    }\n    int cnt = 0;\n    for (int i = 0; i\
+    \ < N; i++) {\n        cnt += dp[i];\n    }\n    print(cnt);\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\n#include\
+    \ \"graph/scc.hpp\"\n#include \"template/template.hpp\"\n\nvector<vector<int>>\
+    \ G;\nvector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return\
+    \ true;\n    }\n    if (dp[u] != -1) {\n        return dp[u];\n    }\n    for\
+    \ (auto &i : G[u]) {\n        if (dfs(i)) {\n            return dp[u] = true;\n\
+    \        }\n    }\n    return dp[u] = false;\n}\nint main() {\n    INT(N, M);\n\
+    \    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n    \
+    \    a--;\n        b--;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n\
+    \    vector<vector<int>> res = scc.scc;\n    dp.resize(N, -1);\n    G = scc.G;\n\
+    \    for (auto &i : res) {\n        if (i.size() >= 2) {\n            for (auto\
+    \ &j : i) {\n                dp[j] = true;\n            }\n        }\n    }\n\
+    \    for (int i = 0; i < N; i++) {\n        dfs(i);\n    }\n    int cnt = 0;\n\
+    \    for (int i = 0; i < N; i++) {\n        cnt += dp[i];\n    }\n    print(cnt);\n\
+    }"
   dependsOn:
+  - graph/scc.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/scc.hpp
-  isVerificationFile: true
-  path: test/AOJ/GRL_3_C.test.cpp
+  isVerificationFile: false
+  path: test/atcoder/abc245_f.cpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-15 16:59:36+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/AOJ/GRL_3_C.test.cpp
+documentation_of: test/atcoder/abc245_f.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/GRL_3_C.test.cpp
-- /verify/test/AOJ/GRL_3_C.test.cpp.html
-title: test/AOJ/GRL_3_C.test.cpp
+- /library/test/atcoder/abc245_f.cpp
+- /library/test/atcoder/abc245_f.cpp.html
+title: test/atcoder/abc245_f.cpp
 ---
