@@ -26,11 +26,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://atcoder.jp/contests/abc245/tasks/abc245_f
     links:
     - https://atcoder.jp/contests/abc245/tasks/abc245_f
-  bundledCode: "#line 1 \"test/atcoder/abc245_f.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\
+  bundledCode: "#line 1 \"test/atcoder/abc245_f.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -93,18 +95,19 @@ data:
     \        for (int i = N - 1; i >= 0; --i) {\n            if (!seen[vs[i]]) {\n\
     \                rvs.clear();\n                rdfs(vs[i], k++);\n           \
     \     scc.push_back(rvs);\n            }\n        }\n\n        reconstruct();\n\
-    \    }\n};\n#line 4 \"test/atcoder/abc245_f.cpp\"\n\nvector<vector<int>> G;\n\
-    vector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return true;\n\
-    \    }\n    if (dp[u] != -1) {\n        return dp[u];\n    }\n    for (auto &i\
-    \ : G[u]) {\n        if (dfs(i)) {\n            return dp[u] = true;\n       \
-    \ }\n    }\n    return dp[u] = false;\n}\nint main() {\n    INT(N, M);\n    SCC\
-    \ scc(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n        a--;\n\
-    \        b--;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n    vector<vector<int>>\
-    \ res = scc.scc;\n    dp.resize(N, -1);\n    G = scc.G;\n    for (auto &i : res)\
-    \ {\n        if (i.size() >= 2) {\n            for (auto &j : i) {\n         \
-    \       dp[j] = true;\n            }\n        }\n    }\n    for (int i = 0; i\
-    \ < N; i++) {\n        dfs(i);\n    }\n    int cnt = 0;\n    for (int i = 0; i\
-    \ < N; i++) {\n        cnt += dp[i];\n    }\n    print(cnt);\n}\n"
+    \    }\n};\n#line 4 \"test/atcoder/abc245_f.test.cpp\"\n\nvector<vector<int>>\
+    \ G;\nvector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return\
+    \ true;\n    }\n    if (dp[u] != -1) {\n        return dp[u];\n    }\n    for\
+    \ (auto &i : G[u]) {\n        if (dfs(i)) {\n            return dp[u] = true;\n\
+    \        }\n    }\n    return dp[u] = false;\n}\nint main() {\n    INT(N, M);\n\
+    \    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n    \
+    \    a--;\n        b--;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n\
+    \    vector<vector<int>> res = scc.scc;\n    dp.resize(N, -1);\n    G = scc.G;\n\
+    \    for (auto &i : res) {\n        if (i.size() >= 2) {\n            for (auto\
+    \ &j : i) {\n                dp[j] = true;\n            }\n        }\n    }\n\
+    \    for (int i = 0; i < N; i++) {\n        dfs(i);\n    }\n    int cnt = 0;\n\
+    \    for (int i = 0; i < N; i++) {\n        cnt += dp[i];\n    }\n    print(cnt);\n\
+    }\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\n#include\
     \ \"graph/scc.hpp\"\n#include \"template/template.hpp\"\n\nvector<vector<int>>\
     \ G;\nvector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return\
@@ -127,16 +130,16 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: false
-  path: test/atcoder/abc245_f.cpp
+  isVerificationFile: true
+  path: test/atcoder/abc245_f.test.cpp
   requiredBy: []
-  timestamp: '2023-04-15 16:59:36+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2023-04-15 17:01:41+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/atcoder/abc245_f.cpp
+documentation_of: test/atcoder/abc245_f.test.cpp
 layout: document
 redirect_from:
-- /library/test/atcoder/abc245_f.cpp
-- /library/test/atcoder/abc245_f.cpp.html
-title: test/atcoder/abc245_f.cpp
+- /verify/test/atcoder/abc245_f.test.cpp
+- /verify/test/atcoder/abc245_f.test.cpp.html
+title: test/atcoder/abc245_f.test.cpp
 ---

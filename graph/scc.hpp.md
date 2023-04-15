@@ -23,13 +23,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
-  - icon: ':warning:'
-    path: test/atcoder/abc245_f.cpp
-    title: test/atcoder/abc245_f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc245_f.test.cpp
+    title: test/atcoder/abc245_f.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
@@ -139,10 +139,10 @@ data:
   path: graph/scc.hpp
   requiredBy:
   - graph/two-sat.hpp
-  - test/atcoder/abc245_f.cpp
   timestamp: '2023-03-24 23:12:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc245_f.test.cpp
   - test/AOJ/GRL_3_C.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/two-sat.test.cpp

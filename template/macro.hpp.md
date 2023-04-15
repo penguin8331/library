@@ -276,9 +276,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  - icon: ':warning:'
-    path: test/atcoder/abc245_f.cpp
-    title: test/atcoder/abc245_f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
@@ -416,6 +413,9 @@ data:
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc245_f.test.cpp
+    title: test/atcoder/abc245_f.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
   - icon: ':heavy_check_mark:'
@@ -552,7 +552,6 @@ data:
   - template/util.hpp
   - others/date.hpp
   - others/rand-int.hpp
-  - test/atcoder/abc245_f.cpp
   - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/implicit-treap.hpp
   - data-structure/mo.hpp
@@ -598,6 +597,7 @@ data:
   timestamp: '2023-03-21 18:23:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc245_f.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/2659.test.cpp
   - test/AOJ/0233.test.cpp

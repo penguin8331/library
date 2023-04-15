@@ -294,11 +294,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
-  - name: test/atcoder
-    pages:
-    - icon: ':warning:'
-      path: test/atcoder/abc245_f.cpp
-      title: test/atcoder/abc245_f.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -437,6 +432,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_B.test.cpp
       title: test/AOJ/NTL_1_B.test.cpp
+  - name: test/atcoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc245_f.test.cpp
+      title: test/atcoder/abc245_f.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'
