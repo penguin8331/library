@@ -1,9 +1,9 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/diameter-weighted.hpp
-    title: "\u6728\u306E\u76F4\u5F84"
+  - icon: ':question:'
+    path: graph/lca.hpp
+    title: Lowest Common Ancestor
   - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
@@ -24,15 +24,15 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+    PROBLEM: https://atcoder.jp/contests/abc014/tasks/abc014_4
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-  bundledCode: "#line 1 \"test/AOJ/GRL_5_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
+    - https://atcoder.jp/contests/abc014/tasks/abc014_4
+  bundledCode: "#line 1 \"test/atcoder/ABC014_D.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc014/tasks/abc014_4\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -72,44 +72,58 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <algo/debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/diameter-weighted.hpp\"\n\nstruct Edge {\n    int to;\n\
-    \    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
-    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
-    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
-    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
-    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
-    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
-    \ p.second, -1);\n    return q.first;\n}\n#line 4 \"test/AOJ/GRL_5_A.test.cpp\"\
-    \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<Edge>> G(N, vector<Edge>(0));\n\
-    \    for (int i = 0; i < N - 1; i++) {\n        int s, t, w;\n        cin >> s\
-    \ >> t >> w;\n        Edge a, b;\n        a.to = t;\n        b.to = s;\n     \
-    \   a.cost = w;\n        b.cost = w;\n        G[s].push_back(a);\n        G[t].push_back(b);\n\
-    \    }\n    cout << tree_diameter<ll>(G) << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/diameter-weighted.hpp\"\
-    \nint main() {\n    int N;\n    cin >> N;\n    vector<vector<Edge>> G(N, vector<Edge>(0));\n\
-    \    for (int i = 0; i < N - 1; i++) {\n        int s, t, w;\n        cin >> s\
-    \ >> t >> w;\n        Edge a, b;\n        a.to = t;\n        b.to = s;\n     \
-    \   a.cost = w;\n        b.cost = w;\n        G[s].push_back(a);\n        G[t].push_back(b);\n\
-    \    }\n    cout << tree_diameter<ll>(G) << endl;\n}"
+    \ std;\n#line 3 \"graph/lca.hpp\"\n\nstruct LCA {\n    vector<vector<int>> parent;\n\
+    \    vector<int> depth;\n    LCA() {}\n    explicit LCA(const vector<vector<int>>&\
+    \ G, int r = 0) { init(G, r); }\n    void init(const vector<vector<int>>& G, int\
+    \ r = 0) {\n        int V = (int)G.size();\n        int h = 1;\n        while\
+    \ ((1 << h) < V) ++h;\n        parent.assign(h, vector<int>(V, -1));\n       \
+    \ depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n        for (int i = 0; i +\
+    \ 1 < (int)parent.size(); ++i)\n            for (int v = 0; v < V; ++v)\n    \
+    \            if (parent[i][v] != -1)\n                    parent[i + 1][v] = parent[i][parent[i][v]];\n\
+    \    }\n    void dfs(const vector<vector<int>>& G, int v, int p, int d) {\n  \
+    \      parent[0][v] = p;\n        depth[v] = d;\n        for (auto e : G[v])\n\
+    \            if (e != p) dfs(G, e, v, d + 1);\n    }\n    int after(int u, int\
+    \ k) {\n        for (int i = 0; i < (int)parent.size(); i++) {\n            if\
+    \ (k & (1 << i)) {\n                u = parent[i][u];\n            }\n       \
+    \ }\n        return u;\n    }\n    int get(int u, int v) {\n        if (depth[u]\
+    \ > depth[v]) swap(u, v);\n        v = after(v, depth[v] - depth[u]);\n      \
+    \  if (u == v) return u;\n        for (int i = (int)parent.size() - 1; i >= 0;\
+    \ --i) {\n            if (parent[i][u] != parent[i][v]) {\n                u =\
+    \ parent[i][u];\n                v = parent[i][v];\n            }\n        }\n\
+    \        return parent[0][u];\n    }\n    int dist(int u, int v) {\n        return\
+    \ depth[u] + depth[v] - 2 * depth[get(u, v)];\n    }\n    bool is_on_path(int\
+    \ u, int v, int a) {\n        return dist(u, a) + dist(a, v) == dist(u, v);\n\
+    \    }\n};\n#line 4 \"test/atcoder/ABC014_D.test.cpp\"\n\nint main() {\n    INT(N);\n\
+    \    vector<vector<int>> G(N, vector<int>(0));\n    for (int i = 0; i < N - 1;\
+    \ i++) {\n        INT(u, v);\n        u--;\n        v--;\n        G[u].push_back(v);\n\
+    \        G[v].push_back(u);\n    }\n    LCA lca(G);\n    INT(Q);\n    for (int\
+    \ i = 0; i < Q; i++) {\n        INT(a, b);\n        a--;\n        b--;\n     \
+    \   print(lca.dist(a, b) + 1);\n    }\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc014/tasks/abc014_4\"\n#include\
+    \ \"../../graph/lca.hpp\"\n#include \"../../template/template.hpp\"\n\nint main()\
+    \ {\n    INT(N);\n    vector<vector<int>> G(N, vector<int>(0));\n    for (int\
+    \ i = 0; i < N - 1; i++) {\n        INT(u, v);\n        u--;\n        v--;\n \
+    \       G[u].push_back(v);\n        G[v].push_back(u);\n    }\n    LCA lca(G);\n\
+    \    INT(Q);\n    for (int i = 0; i < Q; i++) {\n        INT(a, b);\n        a--;\n\
+    \        b--;\n        print(lca.dist(a, b) + 1);\n    }\n}"
   dependsOn:
+  - graph/lca.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/diameter-weighted.hpp
   isVerificationFile: true
-  path: test/AOJ/GRL_5_A.test.cpp
+  path: test/atcoder/ABC014_D.test.cpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-15 16:22:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/AOJ/GRL_5_A.test.cpp
+documentation_of: test/atcoder/ABC014_D.test.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/GRL_5_A.test.cpp
-- /verify/test/AOJ/GRL_5_A.test.cpp.html
-title: test/AOJ/GRL_5_A.test.cpp
+- /verify/test/atcoder/ABC014_D.test.cpp
+- /verify/test/atcoder/ABC014_D.test.cpp.html
+title: test/atcoder/ABC014_D.test.cpp
 ---

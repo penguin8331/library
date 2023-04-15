@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -176,7 +176,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
   - icon: ':heavy_check_mark:'
@@ -261,19 +261,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedVerifiedWith:
@@ -412,6 +412,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/ABC014_D.test.cpp
+    title: test/atcoder/ABC014_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
@@ -442,9 +445,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -605,8 +608,9 @@ data:
   - dynamic-programming/longest-common-subsequence.hpp
   - dynamic-programming/traveling-salesman-problem.hpp
   timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/atcoder/ABC014_D.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/2659.test.cpp
   - test/AOJ/0233.test.cpp

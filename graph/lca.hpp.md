@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -24,9 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_C.test.cpp
     title: test/AOJ/GRL_5_C.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/atcoder/ABC014_D.test.cpp
+    title: test/atcoder/ABC014_D.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -123,8 +126,9 @@ data:
   path: graph/lca.hpp
   requiredBy: []
   timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/atcoder/ABC014_D.test.cpp
   - test/AOJ/GRL_5_C.test.cpp
 documentation_of: graph/lca.hpp
 layout: document
