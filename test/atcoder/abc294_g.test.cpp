@@ -4,6 +4,16 @@
 
 int main() {
     INT(N);
+    if (N == 1) {
+        INT(Q);
+        for (int i = 0; i < Q; i++) {
+            INT(a, b, c);
+            if (a == 2) {
+                print(0);
+            }
+        }
+        return 0;
+    }
     vector<vector<Edge>> G(N);
     for (int i = 0; i < N - 1; i++) {
         INT(u, v, w);
