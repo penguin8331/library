@@ -5,6 +5,12 @@ data:
     path: data-structure/segment-tree.hpp
     title: Segment Tree
   - icon: ':question:'
+    path: data-structure/sparse-table.hpp
+    title: data-structure/sparse-table.hpp
+  - icon: ':x:'
+    path: graph/tree/euler-tour-on-edges.hpp
+    title: graph/tree/euler-tour-on-edges.hpp
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':question:'
@@ -24,15 +30,15 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/staticrmq
+    PROBLEM: https://atcoder.jp/contests/abc245/tasks/abc245_f
     links:
-    - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"test/yosupo/static-rmq.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\
+    - https://atcoder.jp/contests/abc245/tasks/abc245_f
+  bundledCode: "#line 1 \"test/atcoder/abc294_g.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -116,37 +122,86 @@ data:
     \ 0;\n    }\n\n    friend ostream& operator<<(ostream& os, SegTree seg) {\n  \
     \      os << \"[ \";\n        for (int i = 0; i < seg.N; i++) {\n            os\
     \ << seg.get(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
-    \ os;\n    }\n};\n#line 4 \"test/yosupo/static-rmq.test.cpp\"\n\nint main() {\n\
-    \    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n        N, [](ll a,\
-    \ ll b) { return min(a, b); }, INF);\n    for (int i = 0; i < N; i++) {\n    \
-    \    ll a;\n        cin >> a;\n        seg.set(i, a);\n    }\n    seg.build();\n\
-    \    for (int i = 0; i < Q; i++) {\n        int l, r;\n        cin >> l >> r;\n\
-    \        cout << seg.get(l, r) << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
-    ../../template/template.hpp\"\n#include \"../../data-structure/segment-tree.hpp\"\
-    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n  \
-    \      N, [](ll a, ll b) { return min(a, b); }, INF);\n    for (int i = 0; i <\
-    \ N; i++) {\n        ll a;\n        cin >> a;\n        seg.set(i, a);\n    }\n\
-    \    seg.build();\n    for (int i = 0; i < Q; i++) {\n        int l, r;\n    \
-    \    cin >> l >> r;\n        cout << seg.get(l, r) << endl;\n    }\n}"
+    \ os;\n    }\n};\n#line 3 \"data-structure/sparse-table.hpp\"\n\ntemplate <class\
+    \ T>\nstruct SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n\
+    \    using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n  \
+    \  SparseTable(\n        const vector<T> &vec, const Func f = [](T a, T b) { return\
+    \ min(a, b); }) {\n        init(vec, f);\n    }\n    void init(\n        const\
+    \ vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n     \
+    \   F = f;\n        int n = (int)vec.size(), h = 0;\n        while ((1 << h) <\
+    \ n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n        height.assign(n\
+    \ + 1, 0);\n        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] +\
+    \ 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int\
+    \ i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n              \
+    \  dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);\n\
+    \    }\n\n    T get(int a, int b) {\n        return F(dat[height[b - a]][a], dat[height[b\
+    \ - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5 \"graph/tree/euler-tour-on-edges.hpp\"\
+    \n\nstruct Edge {\n    int next;\n    long long cost;\n    int idx;\n};\nstruct\
+    \ EulerTour {\n    using pli = pair<long long, int>;\n    vector<int> edge;\n\
+    \    vector<int> node;\n    vector<int> vf, ve;\n    vector<int> ef, ee;\n   \
+    \ vector<int> depth;\n    vector<vector<Edge>> tree;\n    SparseTable<pair<int,\
+    \ int>> st;\n    SegTree<pli> seg;\n    const function<pli(pli, pli)> fm = [](pli\
+    \ a, pli b) { return pli{a.first * a.second + b.first * b.second, 1}; };\n   \
+    \ EulerTour(const vector<vector<Edge>>& tree_) {\n        init(tree_);\n    }\n\
+    \    void init(const vector<vector<Edge>>& tree_) {\n        tree = tree_;\n \
+    \       int V = (int)tree.size();\n        depth.resize(V * 2 - 1);\n        edge.resize(V\
+    \ * 2 - 2);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n\
+    \        ef.resize(V - 1);\n        ee.resize(V - 1);\n        seg.init((V - 1)\
+    \ * 2, fm, pli({0, 0}));\n        int k = 0;\n        dfs(0, -1, 0, k);\n    \
+    \    vector<pair<int, int>> tmp((int)depth.size());\n        for (int i = 0; i\
+    \ < (int)depth.size(); i++) {\n            tmp[i] = {depth[i], i};\n        }\n\
+    \        st.init(tmp);\n        seg.build();\n    }\n    void dfs(int now, int\
+    \ prev, int dep, int& ord) {\n        node[ord] = now;\n        depth[ord] = dep;\n\
+    \        vf[now] = ve[now] = ord;\n        ord++;\n        for (const auto& [next,\
+    \ cost, idx] : tree[now]) {\n            if (next != prev) {\n               \
+    \ seg.set(ord - 1, {cost, 1});\n                edge[ord - 1] = idx;\n       \
+    \         ef[idx] = ord - 1;\n                dfs(next, now, dep + 1, ord);\n\
+    \                node[ord] = now;\n                depth[ord] = dep;\n       \
+    \         ve[next] = ord;\n                ee[idx] = ord - 1;\n              \
+    \  seg.set(ord - 1, {cost, -1});\n                edge[ord - 1] = idx;\n     \
+    \           ord++;\n            }\n        }\n    }\n    inline int LCA(int u,\
+    \ int v) {\n        int a = vf[u], b = vf[v];\n        if (a > b) swap(a, b);\n\
+    \        return node[st.get(a, b + 1).second];\n    }\n    inline void update(int\
+    \ idx, int x) {\n        seg.update(ef[idx], {x, 1});\n        seg.update(ee[idx],\
+    \ {x, -1});\n    }\n    inline long long get(int v) {\n        return seg.get(0,\
+    \ vf[v]).first;\n    }\n    inline long long get(int u, int v) {\n        int\
+    \ lca = LCA(u, v);\n        return get(u) + get(v) - get(lca) * 2;\n    }\n};\n\
+    #line 4 \"test/atcoder/abc294_g.test.cpp\"\n\nint main() {\n    INT(N);\n    vector<vector<Edge>>\
+    \ G(N);\n    for (int i = 0; i < N - 1; i++) {\n        INT(u, v, w);\n      \
+    \  u--;\n        v--;\n        G[u].push_back({v, w, i});\n        G[v].push_back({u,\
+    \ w, i});\n    }\n    EulerTour et(G);\n    INT(Q);\n    for (int i = 0; i < Q;\
+    \ i++) {\n        INT(t, a, b);\n        if (t == 1) {\n            a--;\n   \
+    \         et.update(a, b);\n        } else {\n            a--;\n            b--;\n\
+    \            print(et.get(a, b));\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\n#include\
+    \ \"../../graph/tree/euler-tour-on-edges.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nint main() {\n    INT(N);\n    vector<vector<Edge>> G(N);\n    for (int i\
+    \ = 0; i < N - 1; i++) {\n        INT(u, v, w);\n        u--;\n        v--;\n\
+    \        G[u].push_back({v, w, i});\n        G[v].push_back({u, w, i});\n    }\n\
+    \    EulerTour et(G);\n    INT(Q);\n    for (int i = 0; i < Q; i++) {\n      \
+    \  INT(t, a, b);\n        if (t == 1) {\n            a--;\n            et.update(a,\
+    \ b);\n        } else {\n            a--;\n            b--;\n            print(et.get(a,\
+    \ b));\n        }\n    }\n}"
   dependsOn:
+  - graph/tree/euler-tour-on-edges.hpp
+  - data-structure/segment-tree.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/segment-tree.hpp
+  - data-structure/sparse-table.hpp
   isVerificationFile: true
-  path: test/yosupo/static-rmq.test.cpp
+  path: test/atcoder/abc294_g.test.cpp
   requiredBy: []
-  timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-16 20:40:03+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/yosupo/static-rmq.test.cpp
+documentation_of: test/atcoder/abc294_g.test.cpp
 layout: document
 redirect_from:
-- /verify/test/yosupo/static-rmq.test.cpp
-- /verify/test/yosupo/static-rmq.test.cpp.html
-title: test/yosupo/static-rmq.test.cpp
+- /verify/test/atcoder/abc294_g.test.cpp
+- /verify/test/atcoder/abc294_g.test.cpp.html
+title: test/atcoder/abc294_g.test.cpp
 ---

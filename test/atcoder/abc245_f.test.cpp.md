@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc245/tasks/abc245_f
@@ -109,7 +109,7 @@ data:
     \    for (int i = 0; i < N; i++) {\n        cnt += dp[i];\n    }\n    print(cnt);\n\
     }\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\n#include\
-    \ \"graph/scc.hpp\"\n#include \"template/template.hpp\"\n\nvector<vector<int>>\
+    \ \"../../graph/scc.hpp\"\n#include \"../../template/template.hpp\"\n\nvector<vector<int>>\
     \ G;\nvector<int> dp;\nbool dfs(int u) {\n    if (dp[u] == 1) {\n        return\
     \ true;\n    }\n    if (dp[u] != -1) {\n        return dp[u];\n    }\n    for\
     \ (auto &i : G[u]) {\n        if (dfs(i)) {\n            return dp[u] = true;\n\
@@ -133,8 +133,8 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc245_f.test.cpp
   requiredBy: []
-  timestamp: '2023-04-15 17:01:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-16 20:40:03+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc245_f.test.cpp
 layout: document

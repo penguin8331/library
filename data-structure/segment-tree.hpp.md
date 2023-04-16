@@ -1,35 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/tree/euler-tour-on-edges.hpp
     title: graph/tree/euler-tour-on-edges.hpp
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/atcoder/abc294_g.test.cpp
+    title: test/atcoder/abc294_g.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -173,8 +176,9 @@ data:
   requiredBy:
   - graph/tree/euler-tour-on-edges.hpp
   timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/atcoder/abc294_g.test.cpp
   - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp
 layout: document

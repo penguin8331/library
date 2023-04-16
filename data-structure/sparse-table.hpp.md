@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/tree/euler-tour-on-edges.hpp
     title: graph/tree/euler-tour-on-edges.hpp
   - icon: ':heavy_check_mark:'
@@ -30,9 +30,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2667.test.cpp
     title: test/AOJ/2667.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/atcoder/abc294_g.test.cpp
+    title: test/atcoder/abc294_g.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -115,8 +118,9 @@ data:
   - graph/tree/euler-tour-on-nodes.hpp
   - graph/tree/euler-tour-on-edges.hpp
   timestamp: '2023-04-09 14:01:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/atcoder/abc294_g.test.cpp
   - test/AOJ/2667.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
