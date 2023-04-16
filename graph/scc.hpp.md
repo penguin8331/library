@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc245_f.test.cpp
     title: test/atcoder/abc245_f.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two-sat.test.cpp
     title: test/yosupo/two-sat.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -140,7 +140,7 @@ data:
   requiredBy:
   - graph/two-sat.hpp
   timestamp: '2023-03-24 23:12:11+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc245_f.test.cpp
   - test/AOJ/GRL_3_C.test.cpp

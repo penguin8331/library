@@ -185,7 +185,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':heavy_check_mark:'
@@ -412,7 +412,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc245_f.test.cpp
     title: test/atcoder/abc245_f.test.cpp
   - icon: ':x:'
