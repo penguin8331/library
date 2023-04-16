@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/abc245/tasks/abc245_f"
-#include "graph/scc.hpp"
-#include "template/template.hpp"
+#include "../../graph/scc.hpp"
+#include "../../template/template.hpp"
 
 vector<vector<int>> G;
 vector<int> dp;
