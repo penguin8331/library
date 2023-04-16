@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -83,10 +83,10 @@ data:
   - icon: ':warning:'
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
   - icon: ':heavy_check_mark:'
@@ -191,7 +191,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':warning:'
     path: graph/tree/euler-tour-on-edges.hpp
     title: graph/tree/euler-tour-on-edges.hpp
   - icon: ':heavy_check_mark:'
@@ -261,19 +261,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedVerifiedWith:
@@ -415,9 +415,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc245_f.test.cpp
     title: test/atcoder/abc245_f.test.cpp
-  - icon: ':x:'
-    path: test/atcoder/abc294_g.test.cpp
-    title: test/atcoder/abc294_g.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
@@ -448,9 +445,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -606,9 +603,8 @@ data:
   - dynamic-programming/longest-common-subsequence.hpp
   - dynamic-programming/traveling-salesman-problem.hpp
   timestamp: '2023-03-21 18:23:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc294_g.test.cpp
   - test/atcoder/abc245_f.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/2659.test.cpp
