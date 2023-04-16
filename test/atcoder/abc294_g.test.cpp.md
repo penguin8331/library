@@ -166,22 +166,28 @@ data:
     \ {x, -1});\n    }\n    inline long long get(int v) {\n        return seg.get(0,\
     \ vf[v]).first;\n    }\n    inline long long get(int u, int v) {\n        int\
     \ lca = LCA(u, v);\n        return get(u) + get(v) - get(lca) * 2;\n    }\n};\n\
-    #line 4 \"test/atcoder/abc294_g.test.cpp\"\n\nint main() {\n    INT(N);\n    vector<vector<Edge>>\
-    \ G(N);\n    for (int i = 0; i < N - 1; i++) {\n        INT(u, v, w);\n      \
-    \  u--;\n        v--;\n        G[u].push_back({v, w, i});\n        G[v].push_back({u,\
+    #line 4 \"test/atcoder/abc294_g.test.cpp\"\n\nint main() {\n    INT(N);\n    if\
+    \ (N == 1) {\n        INT(Q);\n        for (int i = 0; i < Q; i++) {\n       \
+    \     INT(a, b, c);\n            if (a == 2) {\n                print(0);\n  \
+    \          }\n        }\n        return 0;\n    }\n    vector<vector<Edge>> G(N);\n\
+    \    for (int i = 0; i < N - 1; i++) {\n        INT(u, v, w);\n        u--;\n\
+    \        v--;\n        G[u].push_back({v, w, i});\n        G[v].push_back({u,\
     \ w, i});\n    }\n    EulerTour et(G);\n    INT(Q);\n    for (int i = 0; i < Q;\
     \ i++) {\n        INT(t, a, b);\n        if (t == 1) {\n            a--;\n   \
     \         et.update(a, b);\n        } else {\n            a--;\n            b--;\n\
     \            print(et.get(a, b));\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc245/tasks/abc245_f\"\n#include\
     \ \"../../graph/tree/euler-tour-on-edges.hpp\"\n#include \"../../template/template.hpp\"\
-    \n\nint main() {\n    INT(N);\n    vector<vector<Edge>> G(N);\n    for (int i\
-    \ = 0; i < N - 1; i++) {\n        INT(u, v, w);\n        u--;\n        v--;\n\
-    \        G[u].push_back({v, w, i});\n        G[v].push_back({u, w, i});\n    }\n\
-    \    EulerTour et(G);\n    INT(Q);\n    for (int i = 0; i < Q; i++) {\n      \
-    \  INT(t, a, b);\n        if (t == 1) {\n            a--;\n            et.update(a,\
-    \ b);\n        } else {\n            a--;\n            b--;\n            print(et.get(a,\
-    \ b));\n        }\n    }\n}"
+    \n\nint main() {\n    INT(N);\n    if (N == 1) {\n        INT(Q);\n        for\
+    \ (int i = 0; i < Q; i++) {\n            INT(a, b, c);\n            if (a == 2)\
+    \ {\n                print(0);\n            }\n        }\n        return 0;\n\
+    \    }\n    vector<vector<Edge>> G(N);\n    for (int i = 0; i < N - 1; i++) {\n\
+    \        INT(u, v, w);\n        u--;\n        v--;\n        G[u].push_back({v,\
+    \ w, i});\n        G[v].push_back({u, w, i});\n    }\n    EulerTour et(G);\n \
+    \   INT(Q);\n    for (int i = 0; i < Q; i++) {\n        INT(t, a, b);\n      \
+    \  if (t == 1) {\n            a--;\n            et.update(a, b);\n        } else\
+    \ {\n            a--;\n            b--;\n            print(et.get(a, b));\n  \
+    \      }\n    }\n}"
   dependsOn:
   - graph/tree/euler-tour-on-edges.hpp
   - data-structure/segment-tree.hpp
@@ -195,7 +201,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc294_g.test.cpp
   requiredBy: []
-  timestamp: '2023-04-16 20:40:03+09:00'
+  timestamp: '2023-04-16 20:54:20+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc294_g.test.cpp
