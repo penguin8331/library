@@ -24,12 +24,12 @@ data:
     path: graph/tree/euler-tour-on-edges.hpp
     title: graph/tree/euler-tour-on-edges.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -173,7 +173,7 @@ data:
   requiredBy:
   - graph/tree/euler-tour-on-edges.hpp
   timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq.test.cpp
 documentation_of: data-structure/segment-tree.hpp

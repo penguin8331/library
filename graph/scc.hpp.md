@@ -20,7 +20,7 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
   _extendedVerifiedWith:
@@ -30,10 +30,10 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc245_f.test.cpp
     title: test/atcoder/abc245_f.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/two-sat.test.cpp
     title: test/yosupo/two-sat.test.cpp
   _isVerificationFailed: true

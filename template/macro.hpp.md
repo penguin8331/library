@@ -26,10 +26,10 @@ data:
   - icon: ':warning:'
     path: algorithm/doubling.hpp
     title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/interval_scheduling.hpp
     title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/section-sum.hpp
     title: "\u7D2F\u7A4D\u548C"
   - icon: ':heavy_check_mark:'
@@ -52,7 +52,7 @@ data:
   - icon: ':warning:'
     path: data-structure/boost-multiprecision.hpp
     title: boost/multiprecision
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
   - icon: ':warning:'
@@ -83,13 +83,13 @@ data:
   - icon: ':warning:'
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/static-modular-arithmetic.hpp
     title: Static-ModInt
   - icon: ':heavy_check_mark:'
@@ -158,7 +158,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra-route.hpp
     title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
   - icon: ':heavy_check_mark:'
@@ -167,7 +167,7 @@ data:
   - icon: ':warning:'
     path: graph/dijkstra2d.hpp
     title: Dijkstra-2D
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/flow/ford-fullkerson.hpp
     title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - icon: ':warning:'
@@ -176,7 +176,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/lca.hpp
     title: Lowest Common Ancestor
   - icon: ':heavy_check_mark:'
@@ -197,13 +197,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
     title: Warshall Floyd
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/algebra/matrix.hpp
     title: "Matrix (\u884C\u5217)"
   - icon: ':warning:'
@@ -212,7 +212,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
     title: "\u8EE2\u5012\u6570"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/modpow.hpp
     title: modpow
   - icon: ':warning:'
@@ -224,7 +224,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/convert-base.hpp
     title: "\u9032\u6570\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
   - icon: ':warning:'
@@ -246,7 +246,7 @@ data:
   - icon: ':warning:'
     path: math/number/pow.hpp
     title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - icon: ':warning:'
@@ -258,7 +258,7 @@ data:
   - icon: ':warning:'
     path: string/rle.hpp
     title: "\u9023\u9577\u5727\u7E2E"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - icon: ':question:'
@@ -394,55 +394,55 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_C.test.cpp
     title: test/AOJ/GRL_5_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ITP1_3_D.test.cpp
     title: test/AOJ/ITP1_3_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_A.test.cpp
     title: test/AOJ/NTL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':x:'
     path: test/atcoder/abc245_f.test.cpp
     title: test/atcoder/abc245_f.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/two-sat.test.cpp
     title: test/yosupo/two-sat.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
   _isVerificationFailed: true
