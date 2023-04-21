@@ -2,7 +2,7 @@
 #include "../template/template.hpp"
 
 #ifdef LOCAL
-#include <algo/debug.hpp>
+#include <debug_print.hpp>
 #else
 #define debug(...)
 #endif
