@@ -19,7 +19,7 @@ data:
       title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
     - icon: ':heavy_check_mark:'
       path: algorithm/interval_scheduling.hpp
-      title: algorithm/interval_scheduling.hpp
+      title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
     - icon: ':heavy_check_mark:'
       path: algorithm/section-sum.hpp
       title: "\u7D2F\u7A4D\u548C"

@@ -94,8 +94,5 @@ data:
   - test/yukicoder/1995.test.cpp
 documentation_of: algorithm/interval_scheduling.hpp
 layout: document
-redirect_from:
-- /library/algorithm/interval_scheduling.hpp
-- /library/algorithm/interval_scheduling.hpp.html
-title: algorithm/interval_scheduling.hpp
+title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
 ---
