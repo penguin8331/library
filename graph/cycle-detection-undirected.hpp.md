@@ -68,8 +68,8 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/cycle-detection-undirected.hpp\"\n\nvoid solve(int N,\
-    \ int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
+    \ std;\n#line 3 \"graph/cycle-detection-undirected.hpp\"\n\nvoid cycle_detection(int\
+    \ N, int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
     \ V, vector<int>& E) {\n    // dfs tree\n    vector<bool> used_e(M);\n    vector<pair<int,\
     \ int>> par(N, {-1, -1});  // (vid, eid)\n    vector<int> dep(N, -1);\n    auto\
     \ dfs = [&](auto& dfs, int v, int d) -> void {\n        assert(dep[v] == -1);\n\
@@ -93,8 +93,8 @@ data:
     \        while (V.back() != a) {\n            auto [v, e] = par[V.back()];\n \
     \           V.push_back(v);\n            E.push_back(e);\n        }\n        E.push_back(eid);\n\
     \        assert(check(V, E));\n        return;\n    }\n    return;\n}\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nvoid solve(int N,\
-    \ int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nvoid cycle_detection(int\
+    \ N, int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
     \ V, vector<int>& E) {\n    // dfs tree\n    vector<bool> used_e(M);\n    vector<pair<int,\
     \ int>> par(N, {-1, -1});  // (vid, eid)\n    vector<int> dep(N, -1);\n    auto\
     \ dfs = [&](auto& dfs, int v, int d) -> void {\n        assert(dep[v] == -1);\n\
@@ -128,7 +128,7 @@ data:
   isVerificationFile: false
   path: graph/cycle-detection-undirected.hpp
   requiredBy: []
-  timestamp: '2023-04-22 17:52:13+09:00'
+  timestamp: '2023-04-22 18:00:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/cycle-detection-undirected.test.cpp

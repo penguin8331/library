@@ -73,8 +73,8 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/cycle-detection-undirected.hpp\"\n\nvoid solve(int N,\
-    \ int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
+    \ std;\n#line 3 \"graph/cycle-detection-undirected.hpp\"\n\nvoid cycle_detection(int\
+    \ N, int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>&\
     \ V, vector<int>& E) {\n    // dfs tree\n    vector<bool> used_e(M);\n    vector<pair<int,\
     \ int>> par(N, {-1, -1});  // (vid, eid)\n    vector<int> dep(N, -1);\n    auto\
     \ dfs = [&](auto& dfs, int v, int d) -> void {\n        assert(dep[v] == -1);\n\
@@ -102,8 +102,8 @@ data:
     \ M);\n    // (to, eid)\n    vector<pair<int, int>> edges;\n    vector<vector<pair<int,\
     \ int>>> G(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n      \
     \  edges.pb({a, b});\n        G[a].pb({i, b});\n        G[b].pb({i, a});\n   \
-    \ }\n    int L;\n    vector<int> cycle_v, cycle_e;\n    solve(N, M, edges, G,\
-    \ cycle_v, cycle_e);\n    if ((int)cycle_v.size() == 0) {\n        fin(-1);\n\
+    \ }\n    int L;\n    vector<int> cycle_v, cycle_e;\n    cycle_detection(N, M,\
+    \ edges, G, cycle_v, cycle_e);\n    if ((int)cycle_v.size() == 0) {\n        fin(-1);\n\
     \    }\n    print(cycle_v.size());\n    print(cycle_v);\n    print(cycle_e);\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cycle_detection_undirected\"\
@@ -112,8 +112,8 @@ data:
     \ edges;\n    vector<vector<pair<int, int>>> G(N);\n    for (int i = 0; i < M;\
     \ i++) {\n        INT(a, b);\n        edges.pb({a, b});\n        G[a].pb({i, b});\n\
     \        G[b].pb({i, a});\n    }\n    int L;\n    vector<int> cycle_v, cycle_e;\n\
-    \    solve(N, M, edges, G, cycle_v, cycle_e);\n    if ((int)cycle_v.size() ==\
-    \ 0) {\n        fin(-1);\n    }\n    print(cycle_v.size());\n    print(cycle_v);\n\
+    \    cycle_detection(N, M, edges, G, cycle_v, cycle_e);\n    if ((int)cycle_v.size()\
+    \ == 0) {\n        fin(-1);\n    }\n    print(cycle_v.size());\n    print(cycle_v);\n\
     \    print(cycle_e);\n}"
   dependsOn:
   - graph/cycle-detection-undirected.hpp
@@ -126,7 +126,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/cycle-detection-undirected.test.cpp
   requiredBy: []
-  timestamp: '2023-04-22 17:52:13+09:00'
+  timestamp: '2023-04-22 18:00:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/cycle-detection-undirected.test.cpp
