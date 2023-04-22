@@ -15,7 +15,7 @@ int main() {
     }
     int L;
     vector<int> cycle_v, cycle_e;
-    solve(N, M, edges, G, cycle_v, cycle_e);
+    cycle_detection(N, M, edges, G, cycle_v, cycle_e);
     if ((int)cycle_v.size() == 0) {
         fin(-1);
     }

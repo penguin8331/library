@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-void solve(int N, int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>& V, vector<int>& E) {
+void cycle_detection(int N, int M, vector<pair<int, int>> edges, vector<vector<pair<int, int>>> G, vector<int>& V, vector<int>& E) {
     // dfs tree
     vector<bool> used_e(M);
     vector<pair<int, int>> par(N, {-1, -1});  // (vid, eid)
