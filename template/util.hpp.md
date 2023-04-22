@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
@@ -156,6 +156,9 @@ data:
     path: graph/bfs2d.hpp
     title: BFS-2D
   - icon: ':heavy_check_mark:'
+    path: graph/cycle-detection-undirected.hpp
+    title: graph/cycle-detection-undirected.hpp
+  - icon: ':heavy_check_mark:'
     path: graph/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':heavy_check_mark:'
@@ -185,7 +188,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':heavy_check_mark:'
@@ -261,19 +264,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedVerifiedWith:
@@ -412,9 +415,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':x:'
-    path: test/atcoder/abc245_f.test.cpp
-    title: test/atcoder/abc245_f.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/cycle-detection-undirected.test.cpp
+    title: test/yosupo/cycle-detection-undirected.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
@@ -445,9 +448,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -516,6 +519,7 @@ data:
   - graph/dijkstra.hpp
   - graph/is_biparite.hpp
   - graph/prim.hpp
+  - graph/cycle-detection-undirected.hpp
   - graph/dijkstra-route.hpp
   - graph/two-sat.hpp
   - graph/bellman-ford.hpp
@@ -588,9 +592,8 @@ data:
   - dynamic-programming/longest-common-subsequence.hpp
   - dynamic-programming/traveling-salesman-problem.hpp
   timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc245_f.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/AOJ/2659.test.cpp
   - test/AOJ/0233.test.cpp
@@ -639,6 +642,7 @@ data:
   - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/static-rmq.test.cpp
   - test/yosupo/matrix-det.test.cpp
+  - test/yosupo/cycle-detection-undirected.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
   - test/yosupo/shortes-path.test.cpp

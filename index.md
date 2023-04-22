@@ -150,6 +150,9 @@ data:
       path: graph/bfs2d.hpp
       title: BFS-2D
     - icon: ':heavy_check_mark:'
+      path: graph/cycle-detection-undirected.hpp
+      title: graph/cycle-detection-undirected.hpp
+    - icon: ':heavy_check_mark:'
       path: graph/diameter-weighted.hpp
       title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':heavy_check_mark:'
@@ -176,7 +179,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: Strongly Connected Component
     - icon: ':heavy_check_mark:'
@@ -271,22 +274,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -427,13 +430,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_B.test.cpp
       title: test/AOJ/NTL_1_B.test.cpp
-  - name: test/atcoder
-    pages:
-    - icon: ':x:'
-      path: test/atcoder/abc245_f.test.cpp
-      title: test/atcoder/abc245_f.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/cycle-detection-undirected.test.cpp
+      title: test/yosupo/cycle-detection-undirected.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/matrix-det.test.cpp
       title: test/yosupo/matrix-det.test.cpp
