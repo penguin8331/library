@@ -47,9 +47,6 @@ data:
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: Dynamic-ModInt
     - icon: ':warning:'
-      path: data-structure/ext-pbds.hpp
-      title: ext/pbds
-    - icon: ':warning:'
       path: data-structure/ext-rope.hpp
       title: ext/rope
     - icon: ':warning:'
@@ -71,6 +68,9 @@ data:
     - icon: ':warning:'
       path: data-structure/priority-sum-by-implicit-treap.hpp
       title: PrioritySum (by Implicit Treap)
+    - icon: ':warning:'
+      path: data-structure/randomized-binary-search-tree.hpp
+      title: data-structure/randomized-binary-search-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
