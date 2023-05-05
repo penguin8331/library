@@ -55,7 +55,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/dynamic_modular-arithmetic.hpp
     title: Dynamic-ModInt
   - icon: ':warning:'
@@ -209,7 +209,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/algebra/matrix.hpp
     title: "Matrix (\u884C\u5217)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/binomial-coefficient.hpp
     title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
   - icon: ':heavy_check_mark:'
@@ -415,6 +415,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
+    title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/cycle-detection-undirected.test.cpp
     title: test/yosupo/cycle-detection-undirected.test.cpp
@@ -652,6 +655,7 @@ data:
   - test/yosupo/static-rmq.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/static-range-sum-2.test.cpp
+  - test/yosupo/binomial-cofficient-prime-mod.test.cpp
   - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/cycle-detection-undirected.test.cpp
   - test/yosupo/matrix-det.test.cpp

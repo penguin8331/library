@@ -20,10 +20,13 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
+    title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -110,8 +113,9 @@ data:
   path: math/combinatorics/binomial-coefficient.hpp
   requiredBy: []
   timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/binomial-cofficient-prime-mod.test.cpp
 documentation_of: math/combinatorics/binomial-coefficient.hpp
 layout: document
 title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
