@@ -44,6 +44,7 @@
 "test/AOJ/ITP1_3_D.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/AOJ/NTL_1_A.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/AOJ/NTL_1_B.test.cpp": "2023-04-21 23:32:11 +0900",
+"test/yosupo/binomial-cofficient-prime-mod.test.cpp": "2023-05-05 19:45:19 +0900",
 "test/yosupo/cycle-detection-undirected.test.cpp": "2023-04-22 18:00:44 +0900",
 "test/yosupo/matrix-det.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/scc.test.cpp": "2023-04-21 23:32:11 +0900",
