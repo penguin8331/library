@@ -16,7 +16,7 @@ struct rand_int {
             ret[i] = i;
         }
         for (int i = N - 1; i >= 0; i--) {
-            int j = get(i, N - 1);
+            int j = get(0, i);
             swap(ret[i], ret[j]);
         }
         return ret;
