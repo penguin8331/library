@@ -65,14 +65,22 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct ran {\n    mt19937 mt;\n   \
-    \ ran() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
+    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct rand_int {\n    mt19937 mt;\n\
+    \    rand_int() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
     \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
-    \ B);\n        return dist(mt);\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct ran {\n   \
-    \ mt19937 mt;\n    ran() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
+    \ B);\n        return dist(mt);\n    }\n    vector<int> get_permutation(int N)\
+    \ {\n        vector<int> ret(N);\n        for (int i = 0; i < N; i++) {\n    \
+    \        ret[i] = i;\n        }\n        for (int i = N - 1; i >= 0; i--) {\n\
+    \            int j = get(i, N - 1);\n            swap(ret[i], ret[j]);\n     \
+    \   }\n        return ret;\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct rand_int {\n\
+    \    mt19937 mt;\n    rand_int() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
     \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
-    \ B);\n        return dist(mt);\n    }\n};"
+    \ B);\n        return dist(mt);\n    }\n    vector<int> get_permutation(int N)\
+    \ {\n        vector<int> ret(N);\n        for (int i = 0; i < N; i++) {\n    \
+    \        ret[i] = i;\n        }\n        for (int i = N - 1; i >= 0; i--) {\n\
+    \            int j = get(i, N - 1);\n            swap(ret[i], ret[j]);\n     \
+    \   }\n        return ret;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -83,7 +91,7 @@ data:
   isVerificationFile: false
   path: others/rand-int.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-05-20 19:54:32+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: others/rand-int.hpp
