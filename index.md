@@ -264,6 +264,9 @@ data:
     - icon: ':warning:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
+    - icon: ':warning:'
+      path: others/timer.hpp
+      title: others/timer.hpp
   - name: string
     pages:
     - icon: ':warning:'

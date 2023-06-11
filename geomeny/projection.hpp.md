@@ -141,9 +141,9 @@ data:
   timestamp: '2023-04-21 23:32:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/CGL_1_A.test.cpp
   - test/AOJ/CGL_2_D.test.cpp
-  - test/AOJ/CGL_2_B.test.cpp
 documentation_of: geomeny/projection.hpp
 layout: document
 title: "\u5C04\u5F71"

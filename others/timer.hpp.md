@@ -19,23 +19,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: graph/kruskal.hpp
-    title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/1160.test.cpp
-    title: test/AOJ/1160.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/DSL_1_A.test.cpp
-    title: test/AOJ/DSL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_2_A.test.cpp
-    title: test/AOJ/GRL_2_A.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -77,34 +65,23 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"data-structure/union-find.hpp\"\n\nstruct UnionFind {\n    vector<int>\
-    \ par;\n\n    UnionFind() {}\n    explicit UnionFind(int n) : par(n, -1) {}\n\
-    \    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n      \
-    \  if (par[x] < 0)\n            return x;\n        else\n            return par[x]\
-    \ = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return root(x)\
-    \ == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
-    \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
-    \ par[y]) swap(x, y);\n        par[x] += par[y];\n        par[y] = x;\n      \
-    \  return true;\n    }\n\n    int size(int x) {\n        return -par[root(x)];\n\
-    \    }\n\n    vector<vector<int>> groups() {\n        map<int, vector<int>> root_buf;\n\
-    \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
-    \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
-    \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
-    \        }\n        return res;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct UnionFind {\n\
-    \    vector<int> par;\n\n    UnionFind() {}\n    explicit UnionFind(int n) : par(n,\
-    \ -1) {}\n    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n\
-    \        if (par[x] < 0)\n            return x;\n        else\n            return\
-    \ par[x] = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return\
-    \ root(x) == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
-    \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
-    \ par[y]) swap(x, y);\n        par[x] += par[y];\n        par[y] = x;\n      \
-    \  return true;\n    }\n\n    int size(int x) {\n        return -par[root(x)];\n\
-    \    }\n\n    vector<vector<int>> groups() {\n        map<int, vector<int>> root_buf;\n\
-    \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
-    \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
-    \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
-    \        }\n        return res;\n    }\n};"
+    \ std;\n#line 3 \"others/timer.hpp\"\n\nstruct Timer {\n    chrono::high_resolution_clock::time_point\
+    \ start, end;\n    double limit;\n\n    Timer() { start = chrono::high_resolution_clock::now();\
+    \ }\n    Timer(double l) {\n        start = chrono::high_resolution_clock::now();\n\
+    \        limit = l;\n    }\n    double get_time() {\n        end = chrono::high_resolution_clock::now();\n\
+    \        return chrono::duration<double>(end - start).count();\n    }\n    bool\
+    \ is_over() { return get_time() > limit; }\n    bool is_under() { return get_time()\
+    \ <= limit; }\n    void set_limit(double l) { limit = l; }\n    void set_start()\
+    \ { start = chrono::high_resolution_clock::now(); }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Timer {\n \
+    \   chrono::high_resolution_clock::time_point start, end;\n    double limit;\n\
+    \n    Timer() { start = chrono::high_resolution_clock::now(); }\n    Timer(double\
+    \ l) {\n        start = chrono::high_resolution_clock::now();\n        limit =\
+    \ l;\n    }\n    double get_time() {\n        end = chrono::high_resolution_clock::now();\n\
+    \        return chrono::duration<double>(end - start).count();\n    }\n    bool\
+    \ is_over() { return get_time() > limit; }\n    bool is_under() { return get_time()\
+    \ <= limit; }\n    void set_limit(double l) { limit = l; }\n    void set_start()\
+    \ { start = chrono::high_resolution_clock::now(); }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -113,16 +90,15 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: data-structure/union-find.hpp
-  requiredBy:
-  - graph/kruskal.hpp
-  timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/1160.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
-  - test/AOJ/DSL_1_A.test.cpp
-documentation_of: data-structure/union-find.hpp
+  path: others/timer.hpp
+  requiredBy: []
+  timestamp: '2023-06-11 20:11:36+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: others/timer.hpp
 layout: document
-title: UnionFind
+redirect_from:
+- /library/others/timer.hpp
+- /library/others/timer.hpp.html
+title: others/timer.hpp
 ---

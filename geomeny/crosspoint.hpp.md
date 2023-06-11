@@ -167,9 +167,9 @@ data:
   timestamp: '2023-04-21 23:32:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/CGL_7_D.test.cpp
   - test/AOJ/CGL_2_C.test.cpp
   - test/AOJ/CGL_7_E.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
 documentation_of: geomeny/crosspoint.hpp
 layout: document
 title: "\u4EA4\u70B9"
