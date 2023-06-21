@@ -1,0 +1,42 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ アクティブなファイルのビルド",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=gnu++17",
+                "-Og",
+                "-g",
+                "-ftrapv",
+                "-fstack-protector-all",
+                "-D_GLIBCXX_DEBUG",
+                "-DLOCAL",
+                "-I/opt/boost/gcc/include",
+                "-L/opt/boost/gcc/include",
+                "-I/opt/aclibrary",
+                "-I.",
+                "-o",
+                "${fileDirname}/a.out",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "デバッガーによって生成されたタスク。"
+        },
+        {
+            "label": "bundle",
+            "type": "shell",
+            "command": "oj-bundle ${file} > submission.cpp"
+        },
+    ],
+    "version": "2.0.0"
+}
