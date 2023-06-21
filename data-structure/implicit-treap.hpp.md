@@ -320,8 +320,8 @@ data:
   isVerificationFile: false
   path: data-structure/implicit-treap.hpp
   requiredBy:
-  - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
   timestamp: '2023-06-21 22:42:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
