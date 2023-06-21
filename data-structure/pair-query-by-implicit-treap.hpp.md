@@ -76,20 +76,20 @@ data:
     \            x = rnd();\n            for (int i = 0; i < 100; i++) {\n       \
     \         random();\n            }\n        }\n\n        uint64_t random() {\n\
     \            x = x ^ (x << 7);\n            return x = x ^ (x >> 9);\n       \
-    \ }\n    };\n\n    struct Node {\n        T0 value, acc;\n        T1 lazy;\n \
-    \       int priority, cnt;\n        bool rev;\n        Node *l, *r;\n\n      \
-    \  Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n            : value(value_),\
-    \ acc(u0_), lazy(u1_), priority(priority_), cnt(1), rev(false), l(nullptr), r(nullptr)\
-    \ {}\n    }* root = nullptr;\n\n    using Tree = Node*;\n\n    int cnt(Tree t)\
-    \ { return t ? t->cnt : 0; }\n\n    T0 acc(Tree t) { return t ? t->acc : u0; }\n\
-    \n    void update_cnt(Tree t) {\n        if (t) {\n            t->cnt = 1 + cnt(t->l)\
-    \ + cnt(t->r);\n        }\n    }\n\n    void update_acc(Tree t) {\n        if\
-    \ (t) {\n            t->acc = f0(acc(t->l), f0(t->value, acc(t->r)));\n      \
-    \  }\n    }\n\n    void pushup(Tree t) { update_cnt(t), update_acc(t); }\n\n \
-    \   void pushdown(Tree t) {\n        if (t && t->rev) {\n            t->rev =\
-    \ false;\n            swap(t->l, t->r);\n            if (t->l) t->l->rev ^= 1;\n\
-    \            if (t->r) t->r->rev ^= 1;\n        }\n        if (t && t->lazy !=\
-    \ u1) {\n            if (t->l) {\n                t->l->lazy = f1(t->l->lazy,\
+    \ }\n    };\n\n    xorshift rnd;\n\n    struct Node {\n        T0 value, acc;\n\
+    \        T1 lazy;\n        int priority, cnt;\n        bool rev;\n        Node\
+    \ *l, *r;\n\n        Node(T0 value_, int priority_, T0 u0_, T1 u1_)\n        \
+    \    : value(value_), acc(u0_), lazy(u1_), priority(priority_), cnt(1), rev(false),\
+    \ l(nullptr), r(nullptr) {}\n    }* root = nullptr;\n\n    using Tree = Node*;\n\
+    \n    int cnt(Tree t) { return t ? t->cnt : 0; }\n\n    T0 acc(Tree t) { return\
+    \ t ? t->acc : u0; }\n\n    void update_cnt(Tree t) {\n        if (t) {\n    \
+    \        t->cnt = 1 + cnt(t->l) + cnt(t->r);\n        }\n    }\n\n    void update_acc(Tree\
+    \ t) {\n        if (t) {\n            t->acc = f0(acc(t->l), f0(t->value, acc(t->r)));\n\
+    \        }\n    }\n\n    void pushup(Tree t) { update_cnt(t), update_acc(t); }\n\
+    \n    void pushdown(Tree t) {\n        if (t && t->rev) {\n            t->rev\
+    \ = false;\n            swap(t->l, t->r);\n            if (t->l) t->l->rev ^=\
+    \ 1;\n            if (t->r) t->r->rev ^= 1;\n        }\n        if (t && t->lazy\
+    \ != u1) {\n            if (t->l) {\n                t->l->lazy = f1(t->l->lazy,\
     \ t->lazy);\n                t->l->acc = g(t->l->acc, p(t->lazy, cnt(t->l)));\n\
     \            }\n            if (t->r) {\n                t->r->lazy = f1(t->r->lazy,\
     \ t->lazy);\n                t->r->acc = g(t->r->acc, p(t->lazy, cnt(t->r)));\n\
@@ -242,7 +242,7 @@ data:
   isVerificationFile: false
   path: data-structure/pair-query-by-implicit-treap.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-06-21 22:42:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/pair-query-by-implicit-treap.hpp
