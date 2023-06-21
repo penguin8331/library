@@ -49,7 +49,7 @@ data:
     - icon: ':warning:'
       path: data-structure/ext-rope.hpp
       title: ext/rope
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/implicit-treap.hpp
       title: ImplicitTreap
     - icon: ':warning:'
@@ -459,7 +459,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq-2.test.cpp
       title: test/yosupo/static-rmq-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/static-rmq-3.test.cpp
       title: test/yosupo/static-rmq-3.test.cpp
     - icon: ':heavy_check_mark:'

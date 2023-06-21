@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
   - icon: ':heavy_check_mark:'

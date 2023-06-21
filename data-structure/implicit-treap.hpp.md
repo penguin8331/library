@@ -26,10 +26,13 @@ data:
   - icon: ':warning:'
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq-3.test.cpp
+    title: test/yosupo/static-rmq-3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -317,11 +320,12 @@ data:
   isVerificationFile: false
   path: data-structure/implicit-treap.hpp
   requiredBy:
-  - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
   timestamp: '2023-06-21 22:42:36+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/static-rmq-3.test.cpp
 documentation_of: data-structure/implicit-treap.hpp
 layout: document
 title: ImplicitTreap
