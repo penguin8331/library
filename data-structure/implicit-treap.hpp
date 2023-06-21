@@ -28,6 +28,8 @@ class BaseImplicitTreap {
         }
     };
 
+    xorshift rnd;
+
     struct Node {
         T0 value, acc;
         T1 lazy;
