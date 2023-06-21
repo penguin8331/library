@@ -52,6 +52,7 @@
 "test/yosupo/static-range-sum-2.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/static-range-sum.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/static-rmq-2.test.cpp": "2023-04-21 23:32:11 +0900",
+"test/yosupo/static-rmq-3.test.cpp": "2023-06-21 22:51:59 +0900",
 "test/yosupo/static-rmq.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/two-sat.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/zalgorithm.test.cpp": "2023-04-21 23:32:11 +0900",
