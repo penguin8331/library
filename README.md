@@ -1,4 +1,3 @@
-[![](https://img.shields.io/badge/license-MIT_License-blue.svg)](https://github.com/penguin8331/library/blob/master/LICENSE)
 [![Actions Status](https://github.com/penguin8331/library/workflows/verify/badge.svg)](https://github.com/penguin8331/library/actions)
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=penguin8331'sLibrary+&color=brightgreen&logo=github)](https://penguin8331.github.io/library/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/penguin8331/library?style=flat-square)
