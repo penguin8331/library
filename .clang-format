@@ -1,14 +1,3 @@
 BasedOnStyle: 'Google'
+Language: Cpp
 IndentWidth: 4
-ColumnLimit: 0
-AlwaysBreakTemplateDeclarations: false
-# AccessModifierOffset: -2
-
-# # for competitive programing
-# AllowShortFunctionsOnASingleLine: All
-# AllowShortIfStatementsOnASingleLine: true
-# AllowShortLoopsOnASingleLine: true
-# AlwaysBreakTemplateDeclarations: true
-# AlignConsecutiveAssignments: true
-# AllowShortFunctionsOnASingleLine: All
-# BinPackArguments: false
