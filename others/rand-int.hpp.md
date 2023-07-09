@@ -19,11 +19,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data-structure/implicit-treap.hpp
+    title: ImplicitTreap
+  - icon: ':warning:'
+    path: data-structure/pair-query-by-implicit-treap.hpp
+    title: PairQuery (by Implicit Treap)
+  - icon: ':warning:'
+    path: data-structure/priority-sum-by-implicit-treap.hpp
+    title: PrioritySum (by Implicit Treap)
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq-3.test.cpp
+    title: test/yosupo/static-rmq-3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -65,22 +77,16 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct rand_int {\n    mt19937 mt;\n\
-    \    rand_int() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
-    \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
-    \ B);\n        return dist(mt);\n    }\n    vector<int> get_permutation(int N)\
-    \ {\n        vector<int> ret(N);\n        for (int i = 0; i < N; i++) {\n    \
-    \        ret[i] = i;\n        }\n        for (int i = N - 1; i >= 0; i--) {\n\
-    \            int j = get(0, i);\n            swap(ret[i], ret[j]);\n        }\n\
-    \        return ret;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct rand_int {\n\
-    \    mt19937 mt;\n    rand_int() {\n        mt.seed(std::chrono::system_clock::now().time_since_epoch().count());\n\
-    \    }\n    ll get(ll A, ll B) {\n        uniform_int_distribution<ll> dist(A,\
-    \ B);\n        return dist(mt);\n    }\n    vector<int> get_permutation(int N)\
-    \ {\n        vector<int> ret(N);\n        for (int i = 0; i < N; i++) {\n    \
-    \        ret[i] = i;\n        }\n        for (int i = N - 1; i >= 0; i--) {\n\
-    \            int j = get(0, i);\n            swap(ret[i], ret[j]);\n        }\n\
-    \        return ret;\n    }\n};"
+    \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct Rand {\n    mt19937 mt;\n\n\
+    \    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
+    \ {}\n    explicit Rand(ResultType seed) : mt(seed) {}\n\n    template <typename\
+    \ T = uint64_t>\n    T get(T l, T r) {\n        uniform_int_distribution<T> dist(l,\
+    \ r);\n        return dist(mt);\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Rand {\n  \
+    \  mt19937 mt;\n\n    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
+    \ {}\n    explicit Rand(ResultType seed) : mt(seed) {}\n\n    template <typename\
+    \ T = uint64_t>\n    T get(T l, T r) {\n        uniform_int_distribution<T> dist(l,\
+    \ r);\n        return dist(mt);\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -90,10 +96,14 @@ data:
   - template/debug.hpp
   isVerificationFile: false
   path: others/rand-int.hpp
-  requiredBy: []
-  timestamp: '2023-05-20 20:14:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - data-structure/implicit-treap.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
+  timestamp: '2023-07-09 09:45:13+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/static-rmq-3.test.cpp
 documentation_of: others/rand-int.hpp
 layout: document
 title: "\u4E71\u6570\u751F\u6210"

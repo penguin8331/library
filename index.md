@@ -261,7 +261,7 @@ data:
     - icon: ':warning:'
       path: others/date.hpp
       title: "\u65E5\u4ED8,\u66DC\u65E5"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
     - icon: ':warning:'
