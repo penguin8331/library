@@ -213,64 +213,88 @@ data:
     \ [i, j)\u306Bax + b\u3092\u4F5C\u7528\n    // update(i, j, {0, a}); // update\n\
     \    // update(i, j, {1, a}); // \u52A0\u7B97\n    // update(i, j, {a, 0}); //\
     \ \u500D\n};\n#line 4 \"data-structure/pair-query-by-implicit-treap.hpp\"\n\n\
-    template <typename T0, typename T1, bool ascending = true>\nstruct PairQuery {\n\
-    \    SumUpdateQuery<T1, T1> tr;\n    MinUpdateQuery<pair<T0, T1>, pair<T0, T1>>\
-    \ tr2;\n    int cnt = 0;\n\n    void add(const pair<T0, T1>& a) {\n        int\
-    \ p = tr2.binary_search(0, tr2.size(), a, !ascending);\n        if (ascending)\
-    \ {\n            tr.insert(p + 1, a.second);\n            tr2.insert(p + 1, a);\n\
-    \        } else {\n            if (p == -1) {\n                tr.insert(tr.size(),\
-    \ a.second);\n                tr2.insert(tr2.size(), a);\n            } else {\n\
-    \                tr.insert(p, a.second);\n                tr2.insert(p, a);\n\
-    \            }\n        }\n        cnt++;\n    }\n\n    T1 query(T0 x) {\n   \
-    \     if (ascending) {\n            int p = tr2.binary_search(0, tr2.size(), {x,\
-    \ numeric_limits<T1>::max()}, false);\n            p++;\n            return tr.query(0,\
-    \ p);\n        } else {\n            int p = tr2.binary_search(0, tr2.size(),\
-    \ {x, numeric_limits<T1>::min()});\n            if (p == -1) p = cnt;\n      \
-    \      return tr.query(0, p);\n        }\n    }\n\n    void erase_at(int k) {\n\
-    \        assert(0 <= k && k < cnt);\n        tr.erase(k);\n        tr2.erase(k);\n\
-    \        cnt--;\n    }\n\n    void erase_value(const pair<T0, T1>& a) {\n    \
-    \    int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n        if (ascending)\
-    \ {\n            p++;\n        } else {\n            if (p == -1) p = cnt;\n \
-    \           p--;\n        }\n        assert(0 <= p && p < cnt && tr2[p] == a);\n\
-    \        erase_at(p);\n    }\n\n    int size() const { return cnt; }\n\n    T1\
-    \ sum(int k) { return tr.query(0, k); }\n\n    pair<T0, T1> operator[](int k)\
-    \ { return tr2[k]; }\n\n    void dump() { tr2.dump(); }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n#include \"../data-structure/implicit-treap.hpp\"\
-    \n\ntemplate <typename T0, typename T1, bool ascending = true>\nstruct PairQuery\
-    \ {\n    SumUpdateQuery<T1, T1> tr;\n    MinUpdateQuery<pair<T0, T1>, pair<T0,\
-    \ T1>> tr2;\n    int cnt = 0;\n\n    void add(const pair<T0, T1>& a) {\n     \
-    \   int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n        if (ascending)\
-    \ {\n            tr.insert(p + 1, a.second);\n            tr2.insert(p + 1, a);\n\
-    \        } else {\n            if (p == -1) {\n                tr.insert(tr.size(),\
-    \ a.second);\n                tr2.insert(tr2.size(), a);\n            } else {\n\
-    \                tr.insert(p, a.second);\n                tr2.insert(p, a);\n\
-    \            }\n        }\n        cnt++;\n    }\n\n    T1 query(T0 x) {\n   \
-    \     if (ascending) {\n            int p = tr2.binary_search(0, tr2.size(), {x,\
-    \ numeric_limits<T1>::max()}, false);\n            p++;\n            return tr.query(0,\
-    \ p);\n        } else {\n            int p = tr2.binary_search(0, tr2.size(),\
-    \ {x, numeric_limits<T1>::min()});\n            if (p == -1) p = cnt;\n      \
-    \      return tr.query(0, p);\n        }\n    }\n\n    void erase_at(int k) {\n\
-    \        assert(0 <= k && k < cnt);\n        tr.erase(k);\n        tr2.erase(k);\n\
-    \        cnt--;\n    }\n\n    void erase_value(const pair<T0, T1>& a) {\n    \
-    \    int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n        if (ascending)\
-    \ {\n            p++;\n        } else {\n            if (p == -1) p = cnt;\n \
-    \           p--;\n        }\n        assert(0 <= p && p < cnt && tr2[p] == a);\n\
-    \        erase_at(p);\n    }\n\n    int size() const { return cnt; }\n\n    T1\
-    \ sum(int k) { return tr.query(0, k); }\n\n    pair<T0, T1> operator[](int k)\
-    \ { return tr2[k]; }\n\n    void dump() { tr2.dump(); }\n};"
+    namespace std {\ntemplate <typename T0, typename T1>\nclass numeric_limits<pair<T0,\
+    \ T1>> {\n   public:\n    static constexpr pair<T0, T1> min() {\n        return\
+    \ {numeric_limits<T0>::min(), numeric_limits<T1>::min()};\n    }\n    static constexpr\
+    \ pair<T0, T1> max() {\n        return {numeric_limits<T0>::max(), numeric_limits<T1>::max()};\n\
+    \    }\n};\n}  // namespace std\n\n// \u30DA\u30A2\u306E\u7B2C\u4E00\u8981\u7D20\
+    \u3067\u30BD\u30FC\u30C8\u3057\u3001\u7B2C\u4E00\u8981\u7D20\u304Cx\u306E\u3082\
+    \u306E\u3068x\u3088\u308A\u5DE6\u5074\u306E\u3082\u306E\u306B\u5BFE\u3057\u7B2C\
+    \u4E8C\u8981\u7D20\u306E\u7D2F\u7A4D\u3092\u8FD4\u3059\ntemplate <typename T0,\
+    \ typename T1, bool ascending = true>\nstruct PairQuery {\n    // \u7D2F\u7A4D\
+    \u7528\u3002\u7B2C\u4E8C\u8981\u7D20\u3092\u7BA1\u7406\n    SumUpdateQuery<T1,\
+    \ T1> tr;\n    // \u9806\u5E8F\u7BA1\u7406\u7528\n    MinUpdateQuery<pair<T0,\
+    \ T1>, pair<T0, T1>> tr2;\n    int cnt = 0;\n\n    void add(const pair<T0, T1>\
+    \ &a) {\n        int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n  \
+    \      if (ascending) {\n            tr.insert(p + 1, a.second);\n           \
+    \ tr2.insert(p + 1, a);\n        } else {\n            if (p == -1) {\n      \
+    \          tr.insert(tr.size(), a.second);\n                tr2.insert(tr2.size(),\
+    \ a);\n            } else {\n                tr.insert(p, a.second);\n       \
+    \         tr2.insert(p, a);\n            }\n        }\n        cnt++;\n    }\n\
+    \n    // \u7B2C\u4E00\u8981\u7D20\u304Cx\u306E\u3082\u306E\u3068x\u3088\u308A\u5DE6\
+    \u5074\u306E\u3082\u306E\u306B\u5BFE\u3057\u7B2C\u4E8C\u8981\u7D20\u306E\u7D2F\
+    \u7A4D\u3092\u8FD4\u3059\n    T1 query(T0 x) {\n        if (ascending) {\n   \
+    \         int p = tr2.binary_search(0, tr2.size(), {x, numeric_limits<T1>::max()},\
+    \ false);\n            p++;\n            return tr.query(0, p);\n        } else\
+    \ {\n            int p = tr2.binary_search(0, tr2.size(), {x, numeric_limits<T1>::min()});\n\
+    \            if (p == -1) p = cnt;\n            return tr.query(0, p);\n     \
+    \   }\n    }\n\n    void erase_at(int k) {\n        assert(0 <= k && k < cnt);\n\
+    \        tr.erase(k);\n        tr2.erase(k);\n        cnt--;\n    }\n\n    void\
+    \ erase_value(const pair<T0, T1> &a) {\n        int p = tr2.binary_search(0, tr2.size(),\
+    \ a, !ascending);\n        if (ascending) {\n            p++;\n        } else\
+    \ {\n            if (p == -1) p = cnt;\n            p--;\n        }\n        assert(0\
+    \ <= p && p < cnt && tr2[p] == a);\n        erase_at(p);\n    }\n\n    int size()\
+    \ const { return cnt; }\n\n    T1 sum(int k) { return tr.query(0, k); }\n\n  \
+    \  pair<T0, T1> operator[](int k) { return tr2[k]; }\n\n    void dump() { tr2.dump();\
+    \ }\n};\n"
+  code: "#pragma once\n#include \"../data-structure/implicit-treap.hpp\"\n#include\
+    \ \"../template/template.hpp\"\n\nnamespace std {\ntemplate <typename T0, typename\
+    \ T1>\nclass numeric_limits<pair<T0, T1>> {\n   public:\n    static constexpr\
+    \ pair<T0, T1> min() {\n        return {numeric_limits<T0>::min(), numeric_limits<T1>::min()};\n\
+    \    }\n    static constexpr pair<T0, T1> max() {\n        return {numeric_limits<T0>::max(),\
+    \ numeric_limits<T1>::max()};\n    }\n};\n}  // namespace std\n\n// \u30DA\u30A2\
+    \u306E\u7B2C\u4E00\u8981\u7D20\u3067\u30BD\u30FC\u30C8\u3057\u3001\u7B2C\u4E00\
+    \u8981\u7D20\u304Cx\u306E\u3082\u306E\u3068x\u3088\u308A\u5DE6\u5074\u306E\u3082\
+    \u306E\u306B\u5BFE\u3057\u7B2C\u4E8C\u8981\u7D20\u306E\u7D2F\u7A4D\u3092\u8FD4\
+    \u3059\ntemplate <typename T0, typename T1, bool ascending = true>\nstruct PairQuery\
+    \ {\n    // \u7D2F\u7A4D\u7528\u3002\u7B2C\u4E8C\u8981\u7D20\u3092\u7BA1\u7406\
+    \n    SumUpdateQuery<T1, T1> tr;\n    // \u9806\u5E8F\u7BA1\u7406\u7528\n    MinUpdateQuery<pair<T0,\
+    \ T1>, pair<T0, T1>> tr2;\n    int cnt = 0;\n\n    void add(const pair<T0, T1>\
+    \ &a) {\n        int p = tr2.binary_search(0, tr2.size(), a, !ascending);\n  \
+    \      if (ascending) {\n            tr.insert(p + 1, a.second);\n           \
+    \ tr2.insert(p + 1, a);\n        } else {\n            if (p == -1) {\n      \
+    \          tr.insert(tr.size(), a.second);\n                tr2.insert(tr2.size(),\
+    \ a);\n            } else {\n                tr.insert(p, a.second);\n       \
+    \         tr2.insert(p, a);\n            }\n        }\n        cnt++;\n    }\n\
+    \n    // \u7B2C\u4E00\u8981\u7D20\u304Cx\u306E\u3082\u306E\u3068x\u3088\u308A\u5DE6\
+    \u5074\u306E\u3082\u306E\u306B\u5BFE\u3057\u7B2C\u4E8C\u8981\u7D20\u306E\u7D2F\
+    \u7A4D\u3092\u8FD4\u3059\n    T1 query(T0 x) {\n        if (ascending) {\n   \
+    \         int p = tr2.binary_search(0, tr2.size(), {x, numeric_limits<T1>::max()},\
+    \ false);\n            p++;\n            return tr.query(0, p);\n        } else\
+    \ {\n            int p = tr2.binary_search(0, tr2.size(), {x, numeric_limits<T1>::min()});\n\
+    \            if (p == -1) p = cnt;\n            return tr.query(0, p);\n     \
+    \   }\n    }\n\n    void erase_at(int k) {\n        assert(0 <= k && k < cnt);\n\
+    \        tr.erase(k);\n        tr2.erase(k);\n        cnt--;\n    }\n\n    void\
+    \ erase_value(const pair<T0, T1> &a) {\n        int p = tr2.binary_search(0, tr2.size(),\
+    \ a, !ascending);\n        if (ascending) {\n            p++;\n        } else\
+    \ {\n            if (p == -1) p = cnt;\n            p--;\n        }\n        assert(0\
+    \ <= p && p < cnt && tr2[p] == a);\n        erase_at(p);\n    }\n\n    int size()\
+    \ const { return cnt; }\n\n    T1 sum(int k) { return tr.query(0, k); }\n\n  \
+    \  pair<T0, T1> operator[](int k) { return tr2[k]; }\n\n    void dump() { tr2.dump();\
+    \ }\n};"
   dependsOn:
+  - data-structure/implicit-treap.hpp
+  - others/rand-int.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/implicit-treap.hpp
-  - others/rand-int.hpp
   isVerificationFile: false
   path: data-structure/pair-query-by-implicit-treap.hpp
   requiredBy: []
-  timestamp: '2023-07-09 09:45:13+09:00'
+  timestamp: '2023-07-09 11:54:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/pair-query-by-implicit-treap.hpp
