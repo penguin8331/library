@@ -5,7 +5,7 @@
 int main() {
     int N, Q;
     cin >> N >> Q;
-    sectionsum<ll> A(N);
+    SectionSum<ll> A(N);
     for (int i = 0; i < N; i++) {
         int a;
         cin >> a;

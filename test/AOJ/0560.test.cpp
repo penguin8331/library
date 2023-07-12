@@ -5,7 +5,7 @@
 int main() {
     int H, W, Q;
     cin >> H >> W >> Q;
-    sectionsum2d<int> JJ(H, W), OO(H, W), II(H, W);
+    SectionSum2D<int> JJ(H, W), OO(H, W), II(H, W);
     for (int i = 0; i < H; i++) {
         for (int j = 0; j < W; j++) {
             char c;
