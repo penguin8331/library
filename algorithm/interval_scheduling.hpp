@@ -3,7 +3,7 @@
 
 template <class T>
 int interval_scheduling(vector<pair<T, T>> A) {
-    sort(all(A), [](pair<T, T> &a, pair<T, T> &b) {
+    sort(all(A), [](const pair<T, T> &a, const pair<T, T> &b) {
         return a.second < b.second;
     });
 

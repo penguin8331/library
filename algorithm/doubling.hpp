@@ -1,28 +1,31 @@
 #pragma once
 #include "../template/template.hpp"
 
-template <class T>
-struct doubling {
-    vector<int> A;
+struct Doubling {
     vector<vector<int>> table;
-    int SIZE;
-    int logK = 1;
-    doubling(const vector<int> &a, T max) : A(a) {
-        SIZE = A.size();
-        while ((1LL << logK) <= max) logK++;
-        table.assign(logK, vector<int>(SIZE));
-        table[0] = A;
-        for (int k = 0; k < logK - 1; k++) {
-            for (int i = 0; i < SIZE; i++) {
+    const vector<int> data;
+    int sz;
+    int LOG;
+    unsigned long long MAX;
+
+    Doubling(const vector<int> &data, const unsigned long long &MAX)
+        : data(data), MAX(MAX), LOG(64 - __builtin_clzll(MAX)) {
+        sz = data.size();
+        table.assign(LOG, vector<int>(sz));
+        table[0] = data;
+        for (int k = 0; k < LOG - 1; k++) {
+            for (int i = 0; i < sz; i++) {
                 table[k + 1][i] = table[k][table[k][i]];
             }
         }
     }
-    int get(int a, T b) {
-        int now = a;
-        for (int k = 0; b > 0; k++) {
-            if (b & 1) now = table[k][now];
-            b = b >> 1;
+
+    int get(int v, unsigned long long k) {
+        assert(k <= MAX);
+        int now = v;
+        for (int i = 0; i < LOG; i++) {
+            if (k & 1) now = table[i][now];
+            k = k >> 1;
         }
         return now;
     }
