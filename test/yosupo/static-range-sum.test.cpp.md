@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/section-sum.hpp
     title: "\u7D2F\u7A4D\u548C"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -81,13 +81,13 @@ data:
     \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
     \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
     \ }\r\n};\n#line 4 \"test/yosupo/static-range-sum.test.cpp\"\n\nint main() {\n\
-    \    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n    for (int i =\
+    \    int N, Q;\n    cin >> N >> Q;\n    SectionSum<ll> A(N);\n    for (int i =\
     \ 0; i < N; i++) {\n        int a;\n        cin >> a;\n        A.update(i, a);\n\
     \    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n        int l, r;\n\
     \        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ \"../../template/template.hpp\"\n#include \"../../algorithm/section-sum.hpp\"\
-    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n\
+    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    SectionSum<ll> A(N);\n\
     \    for (int i = 0; i < N; i++) {\n        int a;\n        cin >> a;\n      \
     \  A.update(i, a);\n    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n\
     \        int l, r;\n        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n\
@@ -103,8 +103,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-07-12 16:12:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-07-12 18:18:39+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/static-range-sum.test.cpp
 layout: document
