@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -65,16 +65,30 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"algorithm/compress.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
-    \ compress(vector<T> &X) {\r\n    vector<T> vals = X;\r\n    sort(vals.begin(),\
-    \ vals.end());\r\n    vals.erase(unique(vals.begin(), vals.end()), vals.end());\r\
-    \n    for (int i = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(),\
-    \ vals.end(), X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}\n"
+    \ std;\n#line 3 \"algorithm/compress.hpp\"\n\r\ntemplate <typename T>\r\nstruct\
+    \ Compress {\r\n    vector<T> xs;\r\n\r\n    Compress() {}\r\n\r\n    explicit\
+    \ Compress(const vector<T>& vs) { add(vs); }\r\n\r\n    explicit Compress(const\
+    \ initializer_list<vector<T>>& vs) { add(vs); }\r\n\r\n    void add(const vector<T>&\
+    \ vs) { xs.insert(xs.end(), vs.begin(), vs.end()); }\r\n\r\n    void add(const\
+    \ T& x) { xs.push_back(x); }\r\n\r\n    void build() {\r\n        sort(all(xs));\r\
+    \n        xs.erase(unique(all(xs)), xs.end());\r\n    }\r\n\r\n    vector<int>\
+    \ get(const vector<T>& vs) const {\r\n        vector<int> ret;\r\n        transform(all(vs),\
+    \ back_inserter(ret), [&](const T& x) {\r\n            return lower_bound(all(xs),\
+    \ x) - xs.begin();\r\n        });\r\n        return ret;\r\n    }\r\n\r\n    int\
+    \ get(const T& x) const { return lower_bound(all(xs), x) - xs.begin(); }\r\n\r\
+    \n    const T& operator[](int k) const { return xs[k]; }\r\n};\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <typename\
-    \ T>\r\nvector<T> compress(vector<T> &X) {\r\n    vector<T> vals = X;\r\n    sort(vals.begin(),\
-    \ vals.end());\r\n    vals.erase(unique(vals.begin(), vals.end()), vals.end());\r\
-    \n    for (int i = 0; i < (int)X.size(); i++) {\r\n        X[i] = lower_bound(vals.begin(),\
-    \ vals.end(), X[i]) - vals.begin();\r\n    }\r\n    return vals;\r\n}"
+    \ T>\r\nstruct Compress {\r\n    vector<T> xs;\r\n\r\n    Compress() {}\r\n\r\n\
+    \    explicit Compress(const vector<T>& vs) { add(vs); }\r\n\r\n    explicit Compress(const\
+    \ initializer_list<vector<T>>& vs) { add(vs); }\r\n\r\n    void add(const vector<T>&\
+    \ vs) { xs.insert(xs.end(), vs.begin(), vs.end()); }\r\n\r\n    void add(const\
+    \ T& x) { xs.push_back(x); }\r\n\r\n    void build() {\r\n        sort(all(xs));\r\
+    \n        xs.erase(unique(all(xs)), xs.end());\r\n    }\r\n\r\n    vector<int>\
+    \ get(const vector<T>& vs) const {\r\n        vector<int> ret;\r\n        transform(all(vs),\
+    \ back_inserter(ret), [&](const T& x) {\r\n            return lower_bound(all(xs),\
+    \ x) - xs.begin();\r\n        });\r\n        return ret;\r\n    }\r\n\r\n    int\
+    \ get(const T& x) const { return lower_bound(all(xs), x) - xs.begin(); }\r\n\r\
+    \n    const T& operator[](int k) const { return xs[k]; }\r\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -85,10 +99,19 @@ data:
   isVerificationFile: false
   path: algorithm/compress.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-07-12 16:12:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: algorithm/compress.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"
 ---
+
+# クエリ
+
+- `add(vs)` : 配列 `vs` 内の座標を追加
+- `add(x)` : 座標 `x` を追加
+- `build()` : ビルドする
+- `get(vs)` : `vs` 内の座標を座標圧縮したものを返す
+- `get(x)` : 座標 `x` を座標圧縮したものを返す
+- `[k]` : 座標圧縮後の `k` が示すもとの座標を返す

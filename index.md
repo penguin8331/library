@@ -15,10 +15,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/interval_scheduling.hpp
       title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: algorithm/section-sum.hpp
       title: "\u7D2F\u7A4D\u548C"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: algorithm/section-sum2d.hpp
       title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - name: data-structure
@@ -277,22 +277,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -301,7 +301,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/0233.test.cpp
       title: test/AOJ/0233.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/0560.test.cpp
       title: test/AOJ/0560.test.cpp
     - icon: ':heavy_check_mark:'
@@ -453,7 +453,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static-range-sum-2.test.cpp
       title: test/yosupo/static-range-sum-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
     - icon: ':heavy_check_mark:'

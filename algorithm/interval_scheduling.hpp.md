@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -69,15 +69,15 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/interval_scheduling.hpp\"\n\ntemplate <class T>\n\
-    int interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](pair<T, T>\
-    \ &a, pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\n    int\
-    \ res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l < x) continue;\n\
-    \        res++;\n        x = r;\n    }\n    return res;\n}\n"
+    int interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](const pair<T,\
+    \ T> &a, const pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\
+    \n    int res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l\
+    \ < x) continue;\n        res++;\n        x = r;\n    }\n    return res;\n}\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
-    int interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](pair<T, T>\
-    \ &a, pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\n    int\
-    \ res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l < x) continue;\n\
-    \        res++;\n        x = r;\n    }\n    return res;\n}"
+    int interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](const pair<T,\
+    \ T> &a, const pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\
+    \n    int res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l\
+    \ < x) continue;\n        res++;\n        x = r;\n    }\n    return res;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -88,7 +88,7 @@ data:
   isVerificationFile: false
   path: algorithm/interval_scheduling.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-07-12 16:12:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1995.test.cpp

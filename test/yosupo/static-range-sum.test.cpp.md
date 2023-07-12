@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: algorithm/section-sum.hpp
     title: "\u7D2F\u7A4D\u548C"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -73,18 +73,18 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/section-sum.hpp\"\n\r\ntemplate <class T>\r\nstruct\
-    \ sectionsum {\r\n    vector<T> data;\r\n\r\n    explicit sectionsum(int n) :\
-    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
-    \ + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i <\
-    \ (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\
-    \n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
-    \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
-    \    return get(r) - get(l);\r\n    }\r\n};\n#line 4 \"test/yosupo/static-range-sum.test.cpp\"\
-    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n\
-    \    for (int i = 0; i < N; i++) {\n        int a;\n        cin >> a;\n      \
-    \  A.update(i, a);\n    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n\
-    \        int l, r;\n        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n\
-    \    }\n}\n"
+    \ SectionSum {\r\n    vector<T> data;\r\n\r\n    explicit SectionSum(int n) :\
+    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) { data[k + 1] =\
+    \ x; }\r\n\r\n    void push_back(const T& x) { data.push_back(x); }\r\n\r\n  \
+    \  void build() {\r\n        for (int i = 1; i < (int)data.size(); i++) {\r\n\
+    \            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int\
+    \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
+    \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
+    \ }\r\n};\n#line 4 \"test/yosupo/static-range-sum.test.cpp\"\n\nint main() {\n\
+    \    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n    for (int i =\
+    \ 0; i < N; i++) {\n        int a;\n        cin >> a;\n        A.update(i, a);\n\
+    \    }\n    A.build();\n    for (int i = 0; i < Q; i++) {\n        int l, r;\n\
+    \        cin >> l >> r;\n        cout << A.get(l, r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ \"../../template/template.hpp\"\n#include \"../../algorithm/section-sum.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    sectionsum<ll> A(N);\n\
@@ -103,8 +103,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/static-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-12 16:12:13+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-range-sum.test.cpp
 layout: document

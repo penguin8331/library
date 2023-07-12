@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum.test.cpp
     title: test/yosupo/static-range-sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -69,21 +69,23 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"algorithm/section-sum.hpp\"\n\r\ntemplate <class T>\r\nstruct\
-    \ sectionsum {\r\n    vector<T> data;\r\n\r\n    explicit sectionsum(int n) :\
-    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n        data[k\
-    \ + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i <\
-    \ (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n        }\r\
-    \n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\
-    \n        return data[r];\r\n    }\r\n    T get(int l, int r) const {\r\n    \
-    \    return get(r) - get(l);\r\n    }\r\n};\n"
+    \ SectionSum {\r\n    vector<T> data;\r\n\r\n    explicit SectionSum(int n) :\
+    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) { data[k + 1] =\
+    \ x; }\r\n\r\n    void push_back(const T& x) { data.push_back(x); }\r\n\r\n  \
+    \  void build() {\r\n        for (int i = 1; i < (int)data.size(); i++) {\r\n\
+    \            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int\
+    \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
+    \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
+    \ }\r\n};\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
-    \ T>\r\nstruct sectionsum {\r\n    vector<T> data;\r\n\r\n    explicit sectionsum(int\
-    \ n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) {\r\n     \
-    \   data[k + 1] = x;\r\n    }\r\n\r\n    void build() {\r\n        for (int i\
-    \ = 1; i < (int)data.size(); i++) {\r\n            data[i] += data[i - 1];\r\n\
-    \        }\r\n    }\r\n\r\n    T get(int r) const {\r\n        assert(r >= 0 &&\
-    \ r < (int)data.size());\r\n        return data[r];\r\n    }\r\n    T get(int\
-    \ l, int r) const {\r\n        return get(r) - get(l);\r\n    }\r\n};"
+    \ T>\r\nstruct SectionSum {\r\n    vector<T> data;\r\n\r\n    explicit SectionSum(int\
+    \ n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) { data[k +\
+    \ 1] = x; }\r\n\r\n    void push_back(const T& x) { data.push_back(x); }\r\n\r\
+    \n    void build() {\r\n        for (int i = 1; i < (int)data.size(); i++) {\r\
+    \n            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int\
+    \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
+    \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
+    \ }\r\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -94,8 +96,8 @@ data:
   isVerificationFile: false
   path: algorithm/section-sum.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-12 16:12:13+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-range-sum.test.cpp
 documentation_of: algorithm/section-sum.hpp
