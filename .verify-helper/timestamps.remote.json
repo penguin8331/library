@@ -1,5 +1,6 @@
 {
 "test/AOJ/0233.test.cpp": "2023-04-21 23:32:11 +0900",
+"test/AOJ/0560.test.cpp": "2023-07-12 18:18:39 +0900",
 "test/AOJ/1160.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/AOJ/2659.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/AOJ/2667.test.cpp": "2023-04-21 23:32:11 +0900",
@@ -49,6 +50,7 @@
 "test/yosupo/scc.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/shortes-path.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/static-range-sum-2.test.cpp": "2023-04-21 23:32:11 +0900",
+"test/yosupo/static-range-sum.test.cpp": "2023-07-12 18:18:39 +0900",
 "test/yosupo/static-rmq-2.test.cpp": "2023-04-21 23:32:11 +0900",
 "test/yosupo/static-rmq-3.test.cpp": "2023-07-09 09:45:13 +0900",
 "test/yosupo/static-rmq.test.cpp": "2023-04-21 23:32:11 +0900",
