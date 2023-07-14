@@ -61,7 +61,6 @@ struct Eratos {
     }
 
     int divisors_num(int n) {
-        int res = 1;
         auto pf = prime_factors(n);
         int res = accumulate(all(pf), 1, [](int a, pair<int, int> b) {
             return a * (b.second + 1);
