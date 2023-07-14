@@ -7,10 +7,11 @@ struct Eratos {
     vector<int> mebius;
     vector<int> min_factor;
 
-    explicit Eratos(int MAX) : primes(),
-                      isprime(MAX + 1, true),
-                      mebius(MAX + 1, 1),
-                      min_factor(MAX + 1, -1) {
+    explicit Eratos(int MAX)
+        : primes(),
+          isprime(MAX + 1, true),
+          mebius(MAX + 1, 1),
+          min_factor(MAX + 1, -1) {
         isprime[0] = isprime[1] = false;
         min_factor[0] = 0, min_factor[1] = 1;
         for (int i = 2; i <= MAX; ++i) {
@@ -62,9 +63,9 @@ struct Eratos {
     int divisors_num(int n) {
         int res = 1;
         auto pf = prime_factors(n);
-        for (auto p : pf) {
-            res *= p.second + 1;
-        }
+        int res = accumulate(all(pf), 1, [](int a, pair<int, int> b) {
+            return a * (b.second + 1);
+        });
         return res;
     }
 };
