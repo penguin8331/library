@@ -9,12 +9,14 @@ struct SparseTable {
     Func F;
 
     SparseTable() {}
-    SparseTable(
-        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {
+    explicit SparseTable(
+        const vector<T> &vec,
+        const Func f = [](T a, T b) { return min(a, b); }) {
         init(vec, f);
     }
     void init(
-        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b); }) {
+        const vector<T> &vec,
+        const Func f = [](T a, T b) { return min(a, b); }) {
         F = f;
         int n = (int)vec.size(), h = 0;
         while ((1 << h) < n) ++h;
@@ -24,10 +26,12 @@ struct SparseTable {
         for (int i = 0; i < n; ++i) dat[0][i] = vec[i];
         for (int i = 1; i < h; ++i)
             for (int j = 0; j < n; ++j)
-                dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);
+                dat[i][j] = F(dat[i - 1][j],
+                              dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);
     }
 
     T get(int a, int b) {
-        return F(dat[height[b - a]][a], dat[height[b - a]][b - (1 << height[b - a])]);
+        return F(dat[height[b - a]][a],
+                 dat[height[b - a]][b - (1 << height[b - a])]);
     }
 };
