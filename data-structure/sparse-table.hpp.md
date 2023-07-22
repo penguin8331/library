@@ -76,32 +76,34 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/sparse-table.hpp\"\n\ntemplate <class T>\nstruct\
     \ SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n    using\
-    \ Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    SparseTable(\n\
-    \        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b);\
-    \ }) {\n        init(vec, f);\n    }\n    void init(\n        const vector<T>\
-    \ &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n        F = f;\n\
-    \        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
-    \        dat.assign(h, vector<T>(1 << h));\n        height.assign(n + 1, 0);\n\
-    \        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;\n      \
-    \  for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i\
-    \ < h; ++i)\n            for (int j = 0; j < n; ++j)\n                dat[i][j]\
-    \ = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);\n    }\n\n \
-    \   T get(int a, int b) {\n        return F(dat[height[b - a]][a], dat[height[b\
-    \ - a]][b - (1 << height[b - a])]);\n    }\n};\n"
+    \ Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    explicit\
+    \ SparseTable(\n        const vector<T> &vec,\n        const Func f = [](T a,\
+    \ T b) { return min(a, b); }) {\n        init(vec, f);\n    }\n    void init(\n\
+    \        const vector<T> &vec,\n        const Func f = [](T a, T b) { return min(a,\
+    \ b); }) {\n        F = f;\n        int n = (int)vec.size(), h = 0;\n        while\
+    \ ((1 << h) < n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n        height.assign(n\
+    \ + 1, 0);\n        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] +\
+    \ 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int\
+    \ i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n              \
+    \  dat[i][j] = F(dat[i - 1][j],\n                              dat[i - 1][min(j\
+    \ + (1 << (i - 1)), n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return\
+    \ F(dat[height[b - a]][a],\n                 dat[height[b - a]][b - (1 << height[b\
+    \ - a])]);\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
     struct SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n  \
-    \  using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    SparseTable(\n\
-    \        const vector<T> &vec, const Func f = [](T a, T b) { return min(a, b);\
-    \ }) {\n        init(vec, f);\n    }\n    void init(\n        const vector<T>\
-    \ &vec, const Func f = [](T a, T b) { return min(a, b); }) {\n        F = f;\n\
-    \        int n = (int)vec.size(), h = 0;\n        while ((1 << h) < n) ++h;\n\
-    \        dat.assign(h, vector<T>(1 << h));\n        height.assign(n + 1, 0);\n\
-    \        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;\n      \
-    \  for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i\
-    \ < h; ++i)\n            for (int j = 0; j < n; ++j)\n                dat[i][j]\
-    \ = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);\n    }\n\n \
-    \   T get(int a, int b) {\n        return F(dat[height[b - a]][a], dat[height[b\
-    \ - a]][b - (1 << height[b - a])]);\n    }\n};"
+    \  using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    explicit\
+    \ SparseTable(\n        const vector<T> &vec,\n        const Func f = [](T a,\
+    \ T b) { return min(a, b); }) {\n        init(vec, f);\n    }\n    void init(\n\
+    \        const vector<T> &vec,\n        const Func f = [](T a, T b) { return min(a,\
+    \ b); }) {\n        F = f;\n        int n = (int)vec.size(), h = 0;\n        while\
+    \ ((1 << h) < n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n        height.assign(n\
+    \ + 1, 0);\n        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] +\
+    \ 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int\
+    \ i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n              \
+    \  dat[i][j] = F(dat[i - 1][j],\n                              dat[i - 1][min(j\
+    \ + (1 << (i - 1)), n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return\
+    \ F(dat[height[b - a]][a],\n                 dat[height[b - a]][b - (1 << height[b\
+    \ - a])]);\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -114,7 +116,7 @@ data:
   requiredBy:
   - graph/tree/euler-tour-on-nodes.hpp
   - graph/tree/euler-tour-on-edges.hpp
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-07-22 08:13:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2667.test.cpp

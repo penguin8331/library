@@ -67,20 +67,20 @@ data:
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"math/number/eratostenes.hpp\"\n\nstruct Eratos {\n    vector<int>\
     \ primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n    vector<int>\
-    \ min_factor;\n\n    explicit Eratos(int MAX) : primes(),\n                  \
-    \    isprime(MAX + 1, true),\n                      mebius(MAX + 1, 1),\n    \
-    \                  min_factor(MAX + 1, -1) {\n        isprime[0] = isprime[1]\
-    \ = false;\n        min_factor[0] = 0, min_factor[1] = 1;\n        for (int i\
-    \ = 2; i <= MAX; ++i) {\n            if (!isprime[i]) continue;\n            primes.push_back(i);\n\
-    \            mebius[i] = -1;\n            min_factor[i] = i;\n            for\
-    \ (int j = i * 2; j <= MAX; j += i) {\n                isprime[j] = false;\n \
-    \               if ((j / i) % i == 0)\n                    mebius[j] = 0;\n  \
-    \              else\n                    mebius[j] = -mebius[j];\n           \
-    \     if (min_factor[j] == -1) min_factor[j] = i;\n            }\n        }\n\
-    \    }\n\n    vector<pair<int, int>> prime_factors(int n) {\n        vector<pair<int,\
-    \ int>> res;\n        while (n != 1) {\n            int prime = min_factor[n];\n\
-    \            int exp = 0;\n            while (min_factor[n] == prime) {\n    \
-    \            ++exp;\n                n /= prime;\n            }\n            res.push_back(make_pair(prime,\
+    \ min_factor;\n\n    explicit Eratos(int MAX)\n        : primes(),\n         \
+    \ isprime(MAX + 1, true),\n          mebius(MAX + 1, 1),\n          min_factor(MAX\
+    \ + 1, -1) {\n        isprime[0] = isprime[1] = false;\n        min_factor[0]\
+    \ = 0, min_factor[1] = 1;\n        for (int i = 2; i <= MAX; ++i) {\n        \
+    \    if (!isprime[i]) continue;\n            primes.push_back(i);\n          \
+    \  mebius[i] = -1;\n            min_factor[i] = i;\n            for (int j = i\
+    \ * 2; j <= MAX; j += i) {\n                isprime[j] = false;\n            \
+    \    if ((j / i) % i == 0)\n                    mebius[j] = 0;\n             \
+    \   else\n                    mebius[j] = -mebius[j];\n                if (min_factor[j]\
+    \ == -1) min_factor[j] = i;\n            }\n        }\n    }\n\n    vector<pair<int,\
+    \ int>> prime_factors(int n) {\n        vector<pair<int, int>> res;\n        while\
+    \ (n != 1) {\n            int prime = min_factor[n];\n            int exp = 0;\n\
+    \            while (min_factor[n] == prime) {\n                ++exp;\n      \
+    \          n /= prime;\n            }\n            res.push_back(make_pair(prime,\
     \ exp));\n        }\n        return res;\n    }\n\n    vector<int> divisors(int\
     \ n) {\n        vector<int> res({1});\n        auto pf = prime_factors(n);\n \
     \       for (auto p : pf) {\n            int siz = (int)res.size();\n        \
@@ -88,35 +88,35 @@ data:
     \     for (int j = 0; j < p.second; ++j) {\n                    v *= p.first;\n\
     \                    res.push_back(res[i] * v);\n                }\n         \
     \   }\n        }\n        return res;\n    }\n\n    int divisors_num(int n) {\n\
-    \        int res = 1;\n        auto pf = prime_factors(n);\n        for (auto\
-    \ p : pf) {\n            res *= p.second + 1;\n        }\n        return res;\n\
-    \    }\n};\n"
+    \        auto pf = prime_factors(n);\n        int res = accumulate(all(pf), 1,\
+    \ [](int a, pair<int, int> b) {\n            return a * (b.second + 1);\n    \
+    \    });\n        return res;\n    }\n};\n"
   code: "#pragma once\n#include \"../../template/template.hpp\"\n\nstruct Eratos {\n\
     \    vector<int> primes;\n    vector<bool> isprime;\n    vector<int> mebius;\n\
-    \    vector<int> min_factor;\n\n    explicit Eratos(int MAX) : primes(),\n   \
-    \                   isprime(MAX + 1, true),\n                      mebius(MAX\
-    \ + 1, 1),\n                      min_factor(MAX + 1, -1) {\n        isprime[0]\
-    \ = isprime[1] = false;\n        min_factor[0] = 0, min_factor[1] = 1;\n     \
-    \   for (int i = 2; i <= MAX; ++i) {\n            if (!isprime[i]) continue;\n\
-    \            primes.push_back(i);\n            mebius[i] = -1;\n            min_factor[i]\
-    \ = i;\n            for (int j = i * 2; j <= MAX; j += i) {\n                isprime[j]\
-    \ = false;\n                if ((j / i) % i == 0)\n                    mebius[j]\
-    \ = 0;\n                else\n                    mebius[j] = -mebius[j];\n  \
-    \              if (min_factor[j] == -1) min_factor[j] = i;\n            }\n  \
-    \      }\n    }\n\n    vector<pair<int, int>> prime_factors(int n) {\n       \
-    \ vector<pair<int, int>> res;\n        while (n != 1) {\n            int prime\
-    \ = min_factor[n];\n            int exp = 0;\n            while (min_factor[n]\
-    \ == prime) {\n                ++exp;\n                n /= prime;\n         \
-    \   }\n            res.push_back(make_pair(prime, exp));\n        }\n        return\
-    \ res;\n    }\n\n    vector<int> divisors(int n) {\n        vector<int> res({1});\n\
-    \        auto pf = prime_factors(n);\n        for (auto p : pf) {\n          \
-    \  int siz = (int)res.size();\n            for (int i = 0; i < siz; ++i) {\n \
-    \               int v = 1;\n                for (int j = 0; j < p.second; ++j)\
-    \ {\n                    v *= p.first;\n                    res.push_back(res[i]\
-    \ * v);\n                }\n            }\n        }\n        return res;\n  \
-    \  }\n\n    int divisors_num(int n) {\n        int res = 1;\n        auto pf =\
-    \ prime_factors(n);\n        for (auto p : pf) {\n            res *= p.second\
-    \ + 1;\n        }\n        return res;\n    }\n};"
+    \    vector<int> min_factor;\n\n    explicit Eratos(int MAX)\n        : primes(),\n\
+    \          isprime(MAX + 1, true),\n          mebius(MAX + 1, 1),\n          min_factor(MAX\
+    \ + 1, -1) {\n        isprime[0] = isprime[1] = false;\n        min_factor[0]\
+    \ = 0, min_factor[1] = 1;\n        for (int i = 2; i <= MAX; ++i) {\n        \
+    \    if (!isprime[i]) continue;\n            primes.push_back(i);\n          \
+    \  mebius[i] = -1;\n            min_factor[i] = i;\n            for (int j = i\
+    \ * 2; j <= MAX; j += i) {\n                isprime[j] = false;\n            \
+    \    if ((j / i) % i == 0)\n                    mebius[j] = 0;\n             \
+    \   else\n                    mebius[j] = -mebius[j];\n                if (min_factor[j]\
+    \ == -1) min_factor[j] = i;\n            }\n        }\n    }\n\n    vector<pair<int,\
+    \ int>> prime_factors(int n) {\n        vector<pair<int, int>> res;\n        while\
+    \ (n != 1) {\n            int prime = min_factor[n];\n            int exp = 0;\n\
+    \            while (min_factor[n] == prime) {\n                ++exp;\n      \
+    \          n /= prime;\n            }\n            res.push_back(make_pair(prime,\
+    \ exp));\n        }\n        return res;\n    }\n\n    vector<int> divisors(int\
+    \ n) {\n        vector<int> res({1});\n        auto pf = prime_factors(n);\n \
+    \       for (auto p : pf) {\n            int siz = (int)res.size();\n        \
+    \    for (int i = 0; i < siz; ++i) {\n                int v = 1;\n           \
+    \     for (int j = 0; j < p.second; ++j) {\n                    v *= p.first;\n\
+    \                    res.push_back(res[i] * v);\n                }\n         \
+    \   }\n        }\n        return res;\n    }\n\n    int divisors_num(int n) {\n\
+    \        auto pf = prime_factors(n);\n        int res = accumulate(all(pf), 1,\
+    \ [](int a, pair<int, int> b) {\n            return a * (b.second + 1);\n    \
+    \    });\n        return res;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -127,7 +127,7 @@ data:
   isVerificationFile: false
   path: math/number/eratostenes.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-07-14 22:58:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number/eratostenes.hpp

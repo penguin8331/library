@@ -116,37 +116,38 @@ data:
     \      os << ']';\n        return os;\n    }\n};\n#line 3 \"data-structure/sparse-table.hpp\"\
     \n\ntemplate <class T>\nstruct SparseTable {\n    vector<vector<T>> dat;\n   \
     \ vector<int> height;\n    using Func = function<T(T, T)>;\n    Func F;\n\n  \
-    \  SparseTable() {}\n    SparseTable(\n        const vector<T> &vec, const Func\
-    \ f = [](T a, T b) { return min(a, b); }) {\n        init(vec, f);\n    }\n  \
-    \  void init(\n        const vector<T> &vec, const Func f = [](T a, T b) { return\
-    \ min(a, b); }) {\n        F = f;\n        int n = (int)vec.size(), h = 0;\n \
-    \       while ((1 << h) < n) ++h;\n        dat.assign(h, vector<T>(1 << h));\n\
-    \        height.assign(n + 1, 0);\n        for (int i = 2; i <= n; i++) height[i]\
-    \ = height[i >> 1] + 1;\n        for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n\
-    \        for (int i = 1; i < h; ++i)\n            for (int j = 0; j < n; ++j)\n\
-    \                dat[i][j] = F(dat[i - 1][j], dat[i - 1][min(j + (1 << (i - 1)),\
-    \ n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return F(dat[height[b\
-    \ - a]][a], dat[height[b - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5\
-    \ \"graph/tree/euler-tour-on-nodes.hpp\"\n\nstruct EulerTour {\n    using Graph\
-    \ = vector<vector<int>>;\n    using Node = pair<long long, int>;\n    const function<Node(Node,\
-    \ Node)> fm = [](Node a, Node b) { return Node(a.first + b.first, a.second + b.second);\
-    \ };\n    const function<void(Node &, long long)> fa = [](Node &a, long long d)\
-    \ { a.first += d * a.second; };\n    const function<void(long long &, long long)>\
-    \ fl = [](long long &d, long long e) { d += e; };\n\n    // main results\n   \
-    \ Graph tree;\n    vector<int> depth;\n    vector<int> node;    // the node-number\
-    \ of i-th element of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour\
-    \ of node v\n    vector<int> eid;     // the index of edge e (i*2 + (0: dir to\
-    \ leaf, 1: dir to root))\n\n    // sub results\n    SparseTable<pair<int, int>>\
-    \ st;  // depth (to find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, long long>\
-    \ seg;\n\n    // initialization\n    EulerTour(const Graph &tree_) { init(tree_);\
-    \ }\n    void init(const Graph &tree_) {\n        tree = tree_;\n        int V\
-    \ = (int)tree.size();\n        depth.resize(V * 2 - 1);\n        node.resize(V\
-    \ * 2 - 1);\n        vf.resize(V);\n        ve.resize(V);\n        eid.resize((V\
-    \ - 1) * 2);\n        seg.init((V - 1) * 2, fm, fa, fl, Node(0, 0), 0);\n    \
-    \    int k = 0;\n        dfs(0, -1, 0, k);\n        vector<pair<int, int>> tmp(int(depth.size()));\n\
-    \        for (int i = 0; i < int(depth.size()); i++) {\n            tmp[i] = {depth[i],\
-    \ i};\n        }\n        st.init(tmp);\n        seg.build();\n    }\n\n    void\
-    \ dfs(int v, int par, int dep, int &ord) {\n        node[ord] = v;\n        depth[ord]\
+    \  SparseTable() {}\n    explicit SparseTable(\n        const vector<T> &vec,\n\
+    \        const Func f = [](T a, T b) { return min(a, b); }) {\n        init(vec,\
+    \ f);\n    }\n    void init(\n        const vector<T> &vec,\n        const Func\
+    \ f = [](T a, T b) { return min(a, b); }) {\n        F = f;\n        int n = (int)vec.size(),\
+    \ h = 0;\n        while ((1 << h) < n) ++h;\n        dat.assign(h, vector<T>(1\
+    \ << h));\n        height.assign(n + 1, 0);\n        for (int i = 2; i <= n; i++)\
+    \ height[i] = height[i >> 1] + 1;\n        for (int i = 0; i < n; ++i) dat[0][i]\
+    \ = vec[i];\n        for (int i = 1; i < h; ++i)\n            for (int j = 0;\
+    \ j < n; ++j)\n                dat[i][j] = F(dat[i - 1][j],\n                \
+    \              dat[i - 1][min(j + (1 << (i - 1)), n - 1)]);\n    }\n\n    T get(int\
+    \ a, int b) {\n        return F(dat[height[b - a]][a],\n                 dat[height[b\
+    \ - a]][b - (1 << height[b - a])]);\n    }\n};\n#line 5 \"graph/tree/euler-tour-on-nodes.hpp\"\
+    \n\nstruct EulerTour {\n    using Graph = vector<vector<int>>;\n    using Node\
+    \ = pair<long long, int>;\n    const function<Node(Node, Node)> fm = [](Node a,\
+    \ Node b) { return Node(a.first + b.first, a.second + b.second); };\n    const\
+    \ function<void(Node &, long long)> fa = [](Node &a, long long d) { a.first +=\
+    \ d * a.second; };\n    const function<void(long long &, long long)> fl = [](long\
+    \ long &d, long long e) { d += e; };\n\n    // main results\n    Graph tree;\n\
+    \    vector<int> depth;\n    vector<int> node;    // the node-number of i-th element\
+    \ of Euler-tour\n    vector<int> vf, ve;  // the index of Euler-tour of node v\n\
+    \    vector<int> eid;     // the index of edge e (i*2 + (0: dir to leaf, 1: dir\
+    \ to root))\n\n    // sub results\n    SparseTable<pair<int, int>> st;  // depth\
+    \ (to find LCA)\n\n    // segtree\n    Lazy_SegTree<Node, long long> seg;\n\n\
+    \    // initialization\n    EulerTour(const Graph &tree_) { init(tree_); }\n \
+    \   void init(const Graph &tree_) {\n        tree = tree_;\n        int V = (int)tree.size();\n\
+    \        depth.resize(V * 2 - 1);\n        node.resize(V * 2 - 1);\n        vf.resize(V);\n\
+    \        ve.resize(V);\n        eid.resize((V - 1) * 2);\n        seg.init((V\
+    \ - 1) * 2, fm, fa, fl, Node(0, 0), 0);\n        int k = 0;\n        dfs(0, -1,\
+    \ 0, k);\n        vector<pair<int, int>> tmp(int(depth.size()));\n        for\
+    \ (int i = 0; i < int(depth.size()); i++) {\n            tmp[i] = {depth[i], i};\n\
+    \        }\n        st.init(tmp);\n        seg.build();\n    }\n\n    void dfs(int\
+    \ v, int par, int dep, int &ord) {\n        node[ord] = v;\n        depth[ord]\
     \ = dep;\n        vf[v] = ve[v] = ord;\n        ++ord;\n        for (auto e :\
     \ tree[v]) {\n            if (e == par) continue;\n            seg.set(ord - 1,\
     \ Node(0, 1));\n            dfs(e, v, dep + 1, ord);\n            node[ord] =\
@@ -203,7 +204,7 @@ data:
   isVerificationFile: false
   path: graph/tree/euler-tour-on-nodes.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-07-22 08:13:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2667.test.cpp
