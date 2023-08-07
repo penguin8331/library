@@ -13,4 +13,13 @@ struct Rand {
         uniform_int_distribution<T> dist(l, r);
         return dist(mt);
     }
+
+    vector<int> shuffle(int n) {
+        vector<int> res(n);
+        iota(res.begin(), res.end(), 0);
+        for (int i = n - 1; i >= 0; i--) {
+            swap(res[i], res[get(0, i)]);
+        }
+        return res;
+    }
 };
