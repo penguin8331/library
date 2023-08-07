@@ -81,12 +81,18 @@ data:
     \    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
     \ {}\n    explicit Rand(ResultType seed) : mt(seed) {}\n\n    template <typename\
     \ T = uint64_t>\n    T get(T l, T r) {\n        uniform_int_distribution<T> dist(l,\
-    \ r);\n        return dist(mt);\n    }\n};\n"
+    \ r);\n        return dist(mt);\n    }\n\n    vector<int> shuffle(int n) {\n \
+    \       vector<int> res(n);\n        iota(res.begin(), res.end(), 0);\n      \
+    \  for (int i = n - 1; i >= 0; i--) {\n            swap(res[i], res[get(0, i)]);\n\
+    \        }\n        return res;\n    }\n};\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Rand {\n  \
     \  mt19937 mt;\n\n    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
     \ {}\n    explicit Rand(ResultType seed) : mt(seed) {}\n\n    template <typename\
     \ T = uint64_t>\n    T get(T l, T r) {\n        uniform_int_distribution<T> dist(l,\
-    \ r);\n        return dist(mt);\n    }\n};"
+    \ r);\n        return dist(mt);\n    }\n\n    vector<int> shuffle(int n) {\n \
+    \       vector<int> res(n);\n        iota(res.begin(), res.end(), 0);\n      \
+    \  for (int i = n - 1; i >= 0; i--) {\n            swap(res[i], res[get(0, i)]);\n\
+    \        }\n        return res;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -97,10 +103,10 @@ data:
   isVerificationFile: false
   path: others/rand-int.hpp
   requiredBy:
-  - data-structure/implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
-  timestamp: '2023-07-09 09:45:13+09:00'
+  - data-structure/implicit-treap.hpp
+  timestamp: '2023-08-08 00:02:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq-3.test.cpp

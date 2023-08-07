@@ -119,9 +119,9 @@ data:
   timestamp: '2023-04-21 23:32:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_2_A.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
   - test/AOJ/1160.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document
 title: UnionFind

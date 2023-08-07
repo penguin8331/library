@@ -75,7 +75,10 @@ data:
     \    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
     \ {}\n    explicit Rand(ResultType seed) : mt(seed) {}\n\n    template <typename\
     \ T = uint64_t>\n    T get(T l, T r) {\n        uniform_int_distribution<T> dist(l,\
-    \ r);\n        return dist(mt);\n    }\n};\n#line 4 \"data-structure/implicit-treap.hpp\"\
+    \ r);\n        return dist(mt);\n    }\n\n    vector<int> shuffle(int n) {\n \
+    \       vector<int> res(n);\n        iota(res.begin(), res.end(), 0);\n      \
+    \  for (int i = n - 1; i >= 0; i--) {\n            swap(res[i], res[get(0, i)]);\n\
+    \        }\n        return res;\n    }\n};\n#line 4 \"data-structure/implicit-treap.hpp\"\
     \n\n// T0: \u5143\u306E\u914D\u5217\u306E\u30E2\u30CE\u30A4\u30C9\n// T1: T0\u306B\
     \u5BFE\u3059\u308B\u4F5C\u7528\u7D20\u30E2\u30CE\u30A4\u30C9\ntemplate <class\
     \ T0, class T1>\nclass BaseImplicitTreap {\n    // T0\u4E0A\u306E\u6F14\u7B97\u3001\
@@ -294,7 +297,7 @@ data:
   isVerificationFile: false
   path: data-structure/pair-query-by-implicit-treap.hpp
   requiredBy: []
-  timestamp: '2023-07-09 11:54:24+09:00'
+  timestamp: '2023-08-08 00:02:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/pair-query-by-implicit-treap.hpp
