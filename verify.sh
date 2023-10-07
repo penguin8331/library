@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source .env
+export $(cat .env| grep -v "#" | xargs)
 oj-verify all

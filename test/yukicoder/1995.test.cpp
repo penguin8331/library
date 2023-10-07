@@ -6,5 +6,5 @@ int main() {
     INT(N, M);
     vector<pii> A(M);
     scan(A);
-    cout << (N - 1) * 2 - interval_scheduling(A) << endl;
+    print((N - 1) * 2 - interval_scheduling(A));
 }
