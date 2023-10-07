@@ -168,13 +168,13 @@ data:
   isVerificationFile: false
   path: data-structure/lazy-segment-tree.hpp
   requiredBy:
-  - data-structure/lazy-segment-tree-arthmetic.hpp
   - graph/tree/euler-tour-on-nodes.hpp
+  - data-structure/lazy-segment-tree-arthmetic.hpp
   timestamp: '2023-04-21 23:32:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/2667.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/2667.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document
 title: Lazy Segment Tree
