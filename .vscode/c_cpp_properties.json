@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/boost/gcc/include",
-                "/opt/aclibrary"
+                "/opt/ac-library"
             ],
             "defines": [
                 "_DEBUG",
