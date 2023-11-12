@@ -75,18 +75,18 @@ data:
     \ par;\n\n    UnionFind() {}\n    explicit UnionFind(int n) : par(n, -1) {}\n\
     \    void init(int n) { par.assign(n, -1); }\n\n    int root(int x) {\n      \
     \  if (par[x] < 0)\n            return x;\n        else\n            return par[x]\
-    \ = root(par[x]);\n    }\n\n    bool issame(int x, int y) {\n        return root(x)\
-    \ == root(y);\n    }\n\n    bool unite(int x, int y) {\n        x = root(x);\n\
-    \        y = root(y);\n        if (x == y) return false;\n        if (par[x] >\
-    \ par[y]) swap(x, y);\n        par[x] += par[y];\n        par[y] = x;\n      \
-    \  return true;\n    }\n\n    int size(int x) {\n        return -par[root(x)];\n\
-    \    }\n\n    vector<vector<int>> groups() {\n        map<int, vector<int>> root_buf;\n\
-    \        for (int i = 0; i < (int)par.size(); ++i) {\n            int r = root(i);\n\
-    \            root_buf[r].push_back(i);\n        }\n        vector<vector<int>>\
-    \ res;\n        for (const auto& i : root_buf) {\n            res.push_back(i.second);\n\
-    \        }\n        return res;\n    }\n};\n#line 4 \"graph/kruskal.hpp\"\n\n\
-    struct Edge {\n    long long from;\n    long long to;\n    long long cost;\n};\n\
-    bool comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }\nstruct\
+    \ = root(par[x]);\n    }\n\n    bool issame(int x, int y) { return root(x) ==\
+    \ root(y); }\n\n    bool unite(int x, int y) {\n        x = root(x);\n       \
+    \ y = root(y);\n        if (x == y) return false;\n        if (par[x] > par[y])\
+    \ swap(x, y);\n        par[x] += par[y];\n        par[y] = x;\n        return\
+    \ true;\n    }\n\n    int size(int x) { return -par[root(x)]; }\n\n    vector<vector<int>>\
+    \ groups() {\n        vector<vector<int>> member(par.size());\n        for (int\
+    \ v = 0; v < (int)par.size(); ++v) {\n            member[root(v)].push_back(v);\n\
+    \        }\n        vector<vector<int>> res;\n        for (int v = 0; v < (int)par.size();\
+    \ ++v) {\n            if (!member[v].empty()) res.push_back(member[v]);\n    \
+    \    }\n        return res;\n    }\n};\n#line 4 \"graph/kruskal.hpp\"\n\nstruct\
+    \ Edge {\n    long long from;\n    long long to;\n    long long cost;\n};\nbool\
+    \ comp_e(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }\nstruct\
     \ Kruskal {\n    UnionFind uft;\n    long long sum;\n    vector<Edge> edges;\n\
     \    int V;\n    Kruskal(const vector<Edge> &edges_, int V_) : edges(edges_),\
     \ V(V_) { init(); }\n    void init() {\n        sort(edges.begin(), edges.end(),\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2023-11-12 18:33:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_2_A.test.cpp
