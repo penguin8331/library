@@ -15,9 +15,7 @@ struct UnionFind {
             return par[x] = root(par[x]);
     }
 
-    bool issame(int x, int y) {
-        return root(x) == root(y);
-    }
+    bool issame(int x, int y) { return root(x) == root(y); }
 
     bool unite(int x, int y) {
         x = root(x);
@@ -29,19 +27,16 @@ struct UnionFind {
         return true;
     }
 
-    int size(int x) {
-        return -par[root(x)];
-    }
+    int size(int x) { return -par[root(x)]; }
 
     vector<vector<int>> groups() {
-        map<int, vector<int>> root_buf;
-        for (int i = 0; i < (int)par.size(); ++i) {
-            int r = root(i);
-            root_buf[r].push_back(i);
+        vector<vector<int>> member(par.size());
+        for (int v = 0; v < (int)par.size(); ++v) {
+            member[root(v)].push_back(v);
         }
         vector<vector<int>> res;
-        for (const auto& i : root_buf) {
-            res.push_back(i.second);
+        for (int v = 0; v < (int)par.size(); ++v) {
+            if (!member[v].empty()) res.push_back(member[v]);
         }
         return res;
     }
