@@ -436,6 +436,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_B.test.cpp
       title: test/AOJ/NTL_1_B.test.cpp
+  - name: test/atcoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc256_a.test.cpp
+      title: test/atcoder/abc256_a.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

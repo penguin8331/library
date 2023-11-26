@@ -103,9 +103,9 @@ data:
   isVerificationFile: false
   path: others/rand-int.hpp
   requiredBy:
+  - data-structure/implicit-treap.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
-  - data-structure/implicit-treap.hpp
   timestamp: '2023-08-08 00:02:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
