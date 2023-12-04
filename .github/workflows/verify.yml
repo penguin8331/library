@@ -18,10 +18,25 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U online-judge-verify-helper
 
+    - name: Get dropbox token
+      env:
+        DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+        DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+        DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+      run: |
+        {
+          echo 'DROPBOX_TOKEN<<EOF'
+          curl -s https://api.dropbox.com/oauth2/token \
+          -u ${DROPBOX_APP_KEY}:${DROPBOX_APP_SECRET} \
+          -d grant_type=refresh_token \
+          -d refresh_token={DROPBOX_REFRESH_TOKEN} \
+          | jq -r .access_token
+          echo 'EOF'
+        } >> "$GITHUB_ENV"
+
     - name: Run tests
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
-        DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
       run: oj-verify all
