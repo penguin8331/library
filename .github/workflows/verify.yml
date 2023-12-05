@@ -23,7 +23,7 @@ jobs:
         DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
         DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
-      run: 
+      run: |
         DROPBOX_TOKEN=hogehoge
         echo "::add-mask::$DROPBOX_TOKEN"
         echo $DROPBOX_TOKEN > $GITHUB_ENV
