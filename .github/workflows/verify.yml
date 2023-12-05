@@ -24,7 +24,13 @@ jobs:
         DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
       run: |
-        DROPBOX_TOKEN=hogehoge
+        DROPBOX_TOKEN=$(
+        curl -s https://api.dropbox.com/oauth2/token \
+        -u ${DROPBOX_APP_KEY}:${DROPBOX_APP_SECRET} \
+        -d grant_type=refresh_token \
+        -d refresh_token=${DROPBOX_REFRESH_TOKEN} \
+        | jq -r '.access_token'
+        )
         echo "::add-mask::$DROPBOX_TOKEN"
         echo "DROPBOX_TOKEN=$DROPBOX_TOKEN" >> $GITHUB_ENV
 
