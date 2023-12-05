@@ -3,5 +3,5 @@
 
 int main() {
     INT(N);
-    cout << (1 << N) << endl;
+    print(1 << N);
 }
