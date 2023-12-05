@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc256/tasks/abc256_a
@@ -70,10 +70,10 @@ data:
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"test/atcoder/abc256_a.test.cpp\"\n\nint main() {\n    INT(N);\n\
-    \    cout << (1 << N) << endl;\n}\n"
+    \    print(1 << N);\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc256/tasks/abc256_a\"\n#include\
-    \ \"../../template/template.hpp\"\n\nint main() {\n    INT(N);\n    cout << (1\
-    \ << N) << endl;\n}"
+    \ \"../../template/template.hpp\"\n\nint main() {\n    INT(N);\n    print(1 <<\
+    \ N);\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -84,8 +84,8 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc256_a.test.cpp
   requiredBy: []
-  timestamp: '2023-11-26 13:12:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-12-05 17:09:25+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc256_a.test.cpp
 layout: document
