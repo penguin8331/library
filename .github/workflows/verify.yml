@@ -26,7 +26,7 @@ jobs:
       run: |
         DROPBOX_TOKEN=hogehoge
         echo "::add-mask::$DROPBOX_TOKEN"
-        echo $DROPBOX_TOKEN > $GITHUB_ENV
+        echo $DROPBOX_TOKEN >> "$GITHUB_ENV"
 
     - name: Run tests
       env:
