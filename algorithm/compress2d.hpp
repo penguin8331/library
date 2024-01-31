@@ -6,7 +6,7 @@ vector<T> compress(vector<T> &C1, vector<T> &C2) {
     vector<T> vals;
     int N = (int)C1.size();
     for (int i = 0; i < N; i++) {
-        for (T d = 0; d < 1; d++) {
+        for (T d = 0; d <= 1; d++) {
             T tc1 = C1[i] + d;
             T tc2 = C2[i] + d;
             vals.push_back(tc1);
