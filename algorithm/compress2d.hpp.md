@@ -71,7 +71,7 @@ data:
     \ std;\n#line 3 \"algorithm/compress2d.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
     \ compress(vector<T> &C1, vector<T> &C2) {\r\n    vector<T> vals;\r\n    int N\
     \ = (int)C1.size();\r\n    for (int i = 0; i < N; i++) {\r\n        for (T d =\
-    \ 0; d < 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n            T tc2 = C2[i]\
+    \ 0; d <= 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n            T tc2 = C2[i]\
     \ + d;\r\n            vals.push_back(tc1);\r\n            vals.push_back(tc2);\r\
     \n        }\r\n    }\r\n    sort(vals.begin(), vals.end());\r\n    vals.erase(unique(vals.begin(),\
     \ vals.end()), vals.end());\r\n    for (int i = 0; i < N; i++) {\r\n        C1[i]\
@@ -81,8 +81,8 @@ data:
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <typename\
     \ T>\r\nvector<T> compress(vector<T> &C1, vector<T> &C2) {\r\n    vector<T> vals;\r\
     \n    int N = (int)C1.size();\r\n    for (int i = 0; i < N; i++) {\r\n       \
-    \ for (T d = 0; d < 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n          \
-    \  T tc2 = C2[i] + d;\r\n            vals.push_back(tc1);\r\n            vals.push_back(tc2);\r\
+    \ for (T d = 0; d <= 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n         \
+    \   T tc2 = C2[i] + d;\r\n            vals.push_back(tc1);\r\n            vals.push_back(tc2);\r\
     \n        }\r\n    }\r\n    sort(vals.begin(), vals.end());\r\n    vals.erase(unique(vals.begin(),\
     \ vals.end()), vals.end());\r\n    for (int i = 0; i < N; i++) {\r\n        C1[i]\
     \ = lower_bound(vals.begin(), vals.end(), C1[i]) - vals.begin();\r\n        C2[i]\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: algorithm/compress2d.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2024-01-31 22:08:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_4_A.test.cpp

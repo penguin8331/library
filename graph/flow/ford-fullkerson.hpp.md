@@ -158,8 +158,8 @@ data:
   timestamp: '2023-04-21 23:32:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_7_A.test.cpp
   - test/AOJ/GRL_6_A.test.cpp
+  - test/AOJ/GRL_7_A.test.cpp
 documentation_of: graph/flow/ford-fullkerson.hpp
 layout: document
 title: "Ford Fullkerson (\u6700\u5927\u6D41)"
