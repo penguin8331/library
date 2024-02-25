@@ -46,5 +46,16 @@
 "test/AOJ/NTL_1_B.test.cpp": "2024-02-25 20:07:13 +0900",
 "test/atcoder/abc256_a.test.cpp": "2024-02-25 20:07:13 +0900",
 "test/yosupo/binomial-cofficient-prime-mod.test.cpp": "2024-02-25 20:07:13 +0900",
-"test/yosupo/cycle-detection-undirected.test.cpp": "2024-02-25 20:07:13 +0900"
+"test/yosupo/cycle-detection-undirected.test.cpp": "2024-02-25 20:24:14 +0900",
+"test/yosupo/matrix-det.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/scc.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/shortes-path.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/static-range-sum-2.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/static-range-sum.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/static-rmq-2.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/static-rmq-3.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/static-rmq.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/two-sat.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yosupo/zalgorithm.test.cpp": "2024-02-25 20:07:13 +0900",
+"test/yukicoder/1995.test.cpp": "2024-02-25 20:07:13 +0900"
 }
