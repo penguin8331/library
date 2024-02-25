@@ -4,17 +4,18 @@
             "name": "WSL",
             "includePath": [
                 "${workspaceFolder}/**",
+                "/opt/ac-library",
                 "/opt/boost/gcc/include",
-                "/opt/ac-library"
+                "/usr/include/eigen3",
+                "~/vscode/cpp/library"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++17",
+            "compilerPath": "/usr/bin/g++-12",
+            "cppStandard": "gnu++23",
             "intelliSenseMode": "linux-gcc-x64"
         }
     ],

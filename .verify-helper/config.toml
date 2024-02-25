@@ -1,2 +1,2 @@
 [[languages.cpp.environments]]
-CXX = "g++"
+CXX = "g++-12"

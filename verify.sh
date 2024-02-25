@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export $(cat .env| grep -v "#" | xargs)
 export DROPBOX_TOKEN=$(

@@ -2,8 +2,10 @@
     "window.zoomLevel": 0, // 拡大率
     "editor.fontSize": 14, //  文字サイズ
     "code-runner.executorMap": {
-        "cpp": "cd $workspaceRoot && sh $workspaceRoot/run.sh $dirWithoutTrailingSlash $fileName",
+        "cpp": "cd $workspaceRoot && sh run.sh $dirWithoutTrailingSlash $fileName",
     },
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "code-runner.customCommand": "cd $workspaceRoot && oj-bundle $fileName >submission.cpp 2>/dev/null",
     "code-runner.runInTerminal": true,
     "C_Cpp.errorSquiggles": "enabled", //波線を引くか
     "files.associations": {
@@ -99,6 +101,11 @@
         "strstream": "cpp",
         "internal_math": "cpp",
         "internal_type_traits": "cpp",
-        "rope": "cpp"
-    }
+        "rope": "cpp",
+        "*.inc": "cpp"
+    },
+    "c-cpp-flylint.lizard.enable": false,
+    "c-cpp-flylint.flawfinder.enable": false,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.clang.enable": false,
 }
