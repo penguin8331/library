@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -63,7 +63,7 @@ data:
     \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
     \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"graph/bfs2d.hpp\"\n\nvector<vector<int>> BFS(int H, int W, const\
     \ vector<string> &G, pair<int, int> s) {\n    vector<vector<int>> dist(H, vector<int>(W,\
@@ -95,7 +95,7 @@ data:
   isVerificationFile: false
   path: graph/bfs2d.hpp
   requiredBy: []
-  timestamp: '2023-04-21 23:32:11+09:00'
+  timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/bfs2d.hpp

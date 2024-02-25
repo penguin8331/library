@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -30,12 +30,12 @@ data:
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-3.test.cpp
     title: test/yosupo/static-rmq-3.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -75,7 +75,7 @@ data:
     \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
     \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"others/rand-int.hpp\"\n\nstruct Rand {\n    mt19937 mt;\n\n\
     \    using ResultType = mt19937::result_type;\n    Rand() : Rand(random_device()())\
@@ -373,8 +373,8 @@ data:
   requiredBy:
   - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
-  timestamp: '2023-08-08 00:02:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-02-25 20:07:13+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/static-rmq-3.test.cpp
 documentation_of: data-structure/implicit-treap.hpp

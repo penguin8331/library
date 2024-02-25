@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -69,7 +69,7 @@ data:
     \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
     \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/union-find.hpp\"\n\nstruct UnionFind {\n    vector<int>\
     \ par;\n\n    UnionFind() {}\n    explicit UnionFind(int n) : par(n, -1) {}\n\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2023-11-12 18:33:55+09:00'
+  timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_2_A.test.cpp

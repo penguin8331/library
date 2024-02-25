@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/binomial-coefficient.hpp
     title: "\u4E8C\u9805\u4FC2\u6570\u30C6\u30FC\u30D6\u30EB"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -74,7 +74,7 @@ data:
     \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
     \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"data-structure/dynamic_modular-arithmetic.hpp\"\n\nvector<int>\
     \ MODS;\ntemplate <int IND = 0>\nstruct Fp {\n    long long val;\n    constexpr\
@@ -149,7 +149,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
   requiredBy: []
-  timestamp: '2023-05-05 19:45:19+09:00'
+  timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/binomial-cofficient-prime-mod.test.cpp

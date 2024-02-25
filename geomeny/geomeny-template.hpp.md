@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -129,7 +129,7 @@ data:
     \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
     \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug_print.hpp>\n#else\n\
+    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
     \ std;\n#line 3 \"geomeny/geomeny-template.hpp\"\n\nusing DD = long double;\n\
     const DD EPS = 1e-10;\nconst DD PI = acosl(-1.0);\nDD torad(int deg) { return\
@@ -207,31 +207,31 @@ data:
   isVerificationFile: false
   path: geomeny/geomeny-template.hpp
   requiredBy:
-  - geomeny/convex-cut.hpp
-  - geomeny/ccw.hpp
-  - geomeny/is-inter.hpp
+  - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/convex-hull.hpp
-  - geomeny/crosspoint.hpp
+  - geomeny/area-polygon.hpp
   - geomeny/projection.hpp
   - geomeny/distance.hpp
-  - geomeny/area-polygon.hpp
-  - geomeny/is-contain-in-the-polygon.hpp
+  - geomeny/ccw.hpp
+  - geomeny/convex-cut.hpp
+  - geomeny/crosspoint.hpp
   - geomeny/is-convex.hpp
-  timestamp: '2023-04-21 23:32:11+09:00'
+  - geomeny/is-inter.hpp
+  timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/CGL_7_D.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_3_C.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
   - test/AOJ/CGL_3_B.test.cpp
-  - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_7_E.test.cpp
   - test/AOJ/CGL_1_A.test.cpp
+  - test/AOJ/CGL_3_A.test.cpp
   - test/AOJ/CGL_4_C.test.cpp
   - test/AOJ/CGL_2_C.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
-  - test/AOJ/CGL_4_A.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
-  - test/AOJ/CGL_7_E.test.cpp
 documentation_of: geomeny/geomeny-template.hpp
 layout: document
 title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
