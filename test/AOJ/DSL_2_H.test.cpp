@@ -1,4 +1,5 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H"
 #include "../../data-structure/lazy-segment-tree.hpp"
 #include "../../template/template.hpp"
 
@@ -8,6 +9,7 @@ int main() {
     auto fa = [](int& a, int d) { a += d; };
     auto fc = [](int& d, int e) { d += e; };
     Lazy_SegTree<int, int> seg(N, fm, fa, fc, inf, 0);
+    for (int i = 0; i < N; i++) seg.set(i, 0);
     while (Q--) {
         INT(T, L, R);
         if (T == 0) {
