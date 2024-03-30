@@ -10,6 +10,7 @@ int main() {
     auto fc = [](int& d, int e) { d += e; };
     Lazy_SegTree<int, int> seg(N, fm, fa, fc, inf, 0);
     for (int i = 0; i < N; i++) seg.set(i, 0);
+    seg.build();
     while (Q--) {
         INT(T, L, R);
         if (T == 0) {
