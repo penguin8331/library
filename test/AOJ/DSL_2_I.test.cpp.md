@@ -26,11 +26,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
-  bundledCode: "#line 1 \"test/AOJ/DSL_2_H.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
+  bundledCode: "#line 1 \"test/AOJ/DSL_2_I.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -109,21 +111,23 @@ data:
     \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
     \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
     \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
-    \      os << ']';\n        return os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_H.cpp\"\
-    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](int a, int b) { return min(a,\
-    \ b); };\n    auto fa = [](int& a, int d) { a += d; };\n    auto fc = [](int&\
-    \ d, int e) { d += e; };\n    Lazy_SegTree<int, int> seg(N, fm, fa, fc, inf, 0);\n\
+    \      os << ']';\n        return os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_I.test.cpp\"\
+    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](pii a, pii b) {\n        return\
+    \ pii(a.first + b.first, a.second + b.second);\n    };\n    auto fa = [](pii&\
+    \ a, int d) { a.first = d * a.second; };\n    auto fc = [](int& d, int e) { d\
+    \ = e; };\n    Lazy_SegTree<pii, int> seg(N, fm, fa, fc, {0, 1}, -inf);\n    seg.build();\n\
     \    while (Q--) {\n        INT(T, L, R);\n        if (T == 0) {\n           \
     \ INT(V);\n            seg.update(L, R + 1, V);\n        } else {\n          \
-    \  print(seg.get(L, R + 1));\n        }\n    }\n}\n"
+    \  print(seg.get(L, R + 1).first);\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n#include \"../../data-structure/lazy-segment-tree.hpp\"\n#include \"../../template/template.hpp\"\
-    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](int a, int b) { return min(a,\
-    \ b); };\n    auto fa = [](int& a, int d) { a += d; };\n    auto fc = [](int&\
-    \ d, int e) { d += e; };\n    Lazy_SegTree<int, int> seg(N, fm, fa, fc, inf, 0);\n\
+    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](pii a, pii b) {\n        return\
+    \ pii(a.first + b.first, a.second + b.second);\n    };\n    auto fa = [](pii&\
+    \ a, int d) { a.first = d * a.second; };\n    auto fc = [](int& d, int e) { d\
+    \ = e; };\n    Lazy_SegTree<pii, int> seg(N, fm, fa, fc, {0, 1}, -inf);\n    seg.build();\n\
     \    while (Q--) {\n        INT(T, L, R);\n        if (T == 0) {\n           \
     \ INT(V);\n            seg.update(L, R + 1, V);\n        } else {\n          \
-    \  print(seg.get(L, R + 1));\n        }\n    }\n}"
+    \  print(seg.get(L, R + 1).first);\n        }\n    }\n}"
   dependsOn:
   - data-structure/lazy-segment-tree.hpp
   - template/template.hpp
@@ -132,16 +136,16 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: false
-  path: test/AOJ/DSL_2_H.cpp
+  isVerificationFile: true
+  path: test/AOJ/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2024-03-30 18:16:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-03-30 19:39:33+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/AOJ/DSL_2_H.cpp
+documentation_of: test/AOJ/DSL_2_I.test.cpp
 layout: document
 redirect_from:
-- /library/test/AOJ/DSL_2_H.cpp
-- /library/test/AOJ/DSL_2_H.cpp.html
-title: test/AOJ/DSL_2_H.cpp
+- /verify/test/AOJ/DSL_2_I.test.cpp
+- /verify/test/AOJ/DSL_2_I.test.cpp.html
+title: test/AOJ/DSL_2_I.test.cpp
 ---

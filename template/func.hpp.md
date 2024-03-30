@@ -282,12 +282,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  - icon: ':warning:'
-    path: test/AOJ/DSL_2_H.cpp
-    title: test/AOJ/DSL_2_H.cpp
-  - icon: ':warning:'
-    path: test/AOJ/DSL_2_I.cpp
-    title: test/AOJ/DSL_2_I.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
@@ -376,6 +370,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_H.test.cpp
+    title: test/AOJ/DSL_2_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_I.test.cpp
+    title: test/AOJ/DSL_2_I.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_4_A.test.cpp
     title: test/AOJ/DSL_4_A.test.cpp
@@ -625,14 +625,13 @@ data:
   - others/rand-int.hpp
   - others/timer.hpp
   - others/date.hpp
-  - test/AOJ/DSL_2_H.cpp
-  - test/AOJ/DSL_2_I.cpp
   timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_3_B.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
   - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
   - test/AOJ/GRL_3_A.test.cpp
@@ -663,6 +662,7 @@ data:
   - test/AOJ/CGL_1_A.test.cpp
   - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/CGL_2_C.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/CGL_3_A.test.cpp
   - test/AOJ/GRL_4_B.test.cpp
   - test/AOJ/1160.test.cpp

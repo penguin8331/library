@@ -27,12 +27,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
-  - icon: ':warning:'
-    path: test/AOJ/DSL_2_H.cpp
-    title: test/AOJ/DSL_2_H.cpp
-  - icon: ':warning:'
-    path: test/AOJ/DSL_2_I.cpp
-    title: test/AOJ/DSL_2_I.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2667.test.cpp
@@ -40,6 +34,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_H.test.cpp
+    title: test/AOJ/DSL_2_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_I.test.cpp
+    title: test/AOJ/DSL_2_I.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -176,12 +176,12 @@ data:
   requiredBy:
   - data-structure/lazy-segment-tree-arthmetic.hpp
   - graph/tree/euler-tour-on-nodes.hpp
-  - test/AOJ/DSL_2_H.cpp
-  - test/AOJ/DSL_2_I.cpp
   timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ/DSL_2_H.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/2667.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document

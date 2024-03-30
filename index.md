@@ -303,14 +303,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
-  - name: test/AOJ
-    pages:
-    - icon: ':warning:'
-      path: test/AOJ/DSL_2_H.cpp
-      title: test/AOJ/DSL_2_H.cpp
-    - icon: ':warning:'
-      path: test/AOJ/DSL_2_I.cpp
-      title: test/AOJ/DSL_2_I.cpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -401,6 +393,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_2_G.test.cpp
       title: test/AOJ/DSL_2_G.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DSL_2_H.test.cpp
+      title: test/AOJ/DSL_2_H.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ/DSL_2_I.test.cpp
+      title: test/AOJ/DSL_2_I.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_4_A.test.cpp
       title: test/AOJ/DSL_4_A.test.cpp
