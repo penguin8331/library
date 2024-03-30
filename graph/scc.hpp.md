@@ -140,8 +140,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_3_C.test.cpp
-  - test/yosupo/scc.test.cpp
   - test/yosupo/two-sat.test.cpp
+  - test/yosupo/scc.test.cpp
 documentation_of: graph/scc.hpp
 layout: document
 title: Strongly Connected Component

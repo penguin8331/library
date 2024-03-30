@@ -27,6 +27,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
+  - icon: ':warning:'
+    path: test/AOJ/DSL_2_H.cpp
+    title: test/AOJ/DSL_2_H.cpp
+  - icon: ':warning:'
+    path: test/AOJ/DSL_2_I.cpp
+    title: test/AOJ/DSL_2_I.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2667.test.cpp
@@ -168,8 +174,10 @@ data:
   isVerificationFile: false
   path: data-structure/lazy-segment-tree.hpp
   requiredBy:
-  - graph/tree/euler-tour-on-nodes.hpp
   - data-structure/lazy-segment-tree-arthmetic.hpp
+  - graph/tree/euler-tour-on-nodes.hpp
+  - test/AOJ/DSL_2_H.cpp
+  - test/AOJ/DSL_2_I.cpp
   timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -206,7 +214,28 @@ Lazy_SegTree<int, int> seg(N, fm, fa, fc, identity_monoid, identity_lazy)
 auto fm = [](int a, int b) { return min(a, b); };
 auto fa = [](int& a, int d) { a += d; };
 auto fc = [](int& d, int e) { d += e; };
-Lazy_SegTree<int, int> seg(N, fm, fa, fc, (1LL << 60), 0);
+Lazy_SegTree<int, int> seg(N, fm, fa, fc, inf, 0);
+```
+
+- RMQ and RUQ (区間更新、区間min取得)
+
+```cpp
+auto fm = [](int a, int b) { return min(a, b); };
+auto fa = [](int& a, int d) { a = d; };
+auto fc = [](int& d, int e) { d = e; };
+Lazy_SegTree<int, int> seg(N, fm, fa, fc, INT_MAX, -1);
+```
+
+- RSQ and RUQ (区間更新、区間sum取得)
+
+```cpp
+auto fm = [](pii a, pii b) {
+    return pii(a.first + b.first, a.second + b.second);
+};
+auto fa = [](pii& a, int d) { a.first = d * a.second; };
+auto fc = [](int& d, int e) { d = e; };
+Lazy_SegTree<pii, int> seg(N, fm, fa, fc, {0, 1}, -inf);
+seg.build();
 ```
 
 - いろいろできるやつ

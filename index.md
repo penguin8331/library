@@ -303,6 +303,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
+  - name: test/AOJ
+    pages:
+    - icon: ':warning:'
+      path: test/AOJ/DSL_2_H.cpp
+      title: test/AOJ/DSL_2_H.cpp
+    - icon: ':warning:'
+      path: test/AOJ/DSL_2_I.cpp
+      title: test/AOJ/DSL_2_I.cpp
   verificationCategories:
   - name: test/AOJ
     pages:

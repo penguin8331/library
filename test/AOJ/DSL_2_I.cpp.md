@@ -26,13 +26,11 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-  bundledCode: "#line 1 \"test/AOJ/DSL_2_F.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
+  bundledCode: "#line 1 \"test/AOJ/DSL_2_I.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
@@ -111,21 +109,23 @@ data:
     \ a) {\n        return get(a, a + 1);\n    }\n\n    friend ostream& operator<<(ostream&\
     \ os, Lazy_SegTree seg) {\n        os << \"[ \";\n        for (int i = 0; i <\
     \ seg.N; i++) {\n            os << seg.get(i, i + 1) << \" \";\n        }\n  \
-    \      os << ']';\n        return os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_F.test.cpp\"\
-    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](int a, int b) { return min(a,\
-    \ b); };\n    auto fa = [](int& a, int d) { a = d; };\n    auto fc = [](int& d,\
-    \ int e) { d = e; };\n    Lazy_SegTree<int, int> seg(N, fm, fa, fc, INT_MAX, -1);\n\
+    \      os << ']';\n        return os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_I.cpp\"\
+    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](pii a, pii b) {\n        return\
+    \ pii(a.first + b.first, a.second + b.second);\n    };\n    auto fa = [](pii&\
+    \ a, int d) { a.first = d * a.second; };\n    auto fc = [](int& d, int e) { d\
+    \ = e; };\n    Lazy_SegTree<pii, int> seg(N, fm, fa, fc, {0, 1}, -inf);\n    seg.build();\n\
     \    while (Q--) {\n        INT(T, L, R);\n        if (T == 0) {\n           \
     \ INT(V);\n            seg.update(L, R + 1, V);\n        } else {\n          \
-    \  print(seg.get(L, R + 1));\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    \  print(seg.get(L, R + 1).first);\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n#include \"../../data-structure/lazy-segment-tree.hpp\"\n#include \"../../template/template.hpp\"\
-    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](int a, int b) { return min(a,\
-    \ b); };\n    auto fa = [](int& a, int d) { a = d; };\n    auto fc = [](int& d,\
-    \ int e) { d = e; };\n    Lazy_SegTree<int, int> seg(N, fm, fa, fc, INT_MAX, -1);\n\
+    \n\nint main() {\n    INT(N, Q);\n    auto fm = [](pii a, pii b) {\n        return\
+    \ pii(a.first + b.first, a.second + b.second);\n    };\n    auto fa = [](pii&\
+    \ a, int d) { a.first = d * a.second; };\n    auto fc = [](int& d, int e) { d\
+    \ = e; };\n    Lazy_SegTree<pii, int> seg(N, fm, fa, fc, {0, 1}, -inf);\n    seg.build();\n\
     \    while (Q--) {\n        INT(T, L, R);\n        if (T == 0) {\n           \
     \ INT(V);\n            seg.update(L, R + 1, V);\n        } else {\n          \
-    \  print(seg.get(L, R + 1));\n        }\n    }\n}"
+    \  print(seg.get(L, R + 1).first);\n        }\n    }\n}"
   dependsOn:
   - data-structure/lazy-segment-tree.hpp
   - template/template.hpp
@@ -134,16 +134,16 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: true
-  path: test/AOJ/DSL_2_F.test.cpp
+  isVerificationFile: false
+  path: test/AOJ/DSL_2_I.cpp
   requiredBy: []
   timestamp: '2024-03-30 18:16:20+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/AOJ/DSL_2_F.test.cpp
+documentation_of: test/AOJ/DSL_2_I.cpp
 layout: document
 redirect_from:
-- /verify/test/AOJ/DSL_2_F.test.cpp
-- /verify/test/AOJ/DSL_2_F.test.cpp.html
-title: test/AOJ/DSL_2_F.test.cpp
+- /library/test/AOJ/DSL_2_I.cpp
+- /library/test/AOJ/DSL_2_I.cpp.html
+title: test/AOJ/DSL_2_I.cpp
 ---
