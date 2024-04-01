@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,8 +35,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
-  bundledCode: "#line 1 \"test/AOJ/CGL_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/CGL_1_C.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -114,39 +115,37 @@ data:
     \ const Point &b, const Point &c) {\n    if (cross(b - a, c - a) > EPS) return\
     \ 1;\n    if (cross(b - a, c - a) < -EPS) return -1;\n    if (dot(b - a, c - a)\
     \ < -EPS) return 2;\n    if (norm(b - a) < norm(c - a) - EPS) return -2;\n   \
-    \ return 0;\n}\n#line 4 \"test/AOJ/CGL_1_C.test.cpp\"\n\nint main() {\n    Point\
+    \ return 0;\n}\n#line 5 \"test/AOJ/CGL_1_C.test.cpp\"\n\nint main() {\n    Point\
     \ a, b;\n    cin >> a.x >> a.y >> b.x >> b.y;\n    int Q;\n    cin >> Q;\n   \
     \ for (int i = 0; i < Q; i++) {\n        Point c;\n        cin >> c.x >> c.y;\n\
     \        int res = ccw(a, b, c);\n        if (res == -1) {\n            cout <<\
-    \ \"CLOCKWISE\" << endl;\n        }\n        elif (res == 1) {\n            cout\
-    \ << \"COUNTER_CLOCKWISE\" << endl;\n        }\n        elif (res == 2) {\n  \
-    \          cout << \"ONLINE_BACK\" << endl;\n        }\n        elif (res == -2)\
-    \ {\n            cout << \"ONLINE_FRONT\" << endl;\n        }\n        else {\n\
+    \ \"CLOCKWISE\" << endl;\n        }\n        elif (res == 1) { cout << \"COUNTER_CLOCKWISE\"\
+    \ << endl; }\n        elif (res == 2) { cout << \"ONLINE_BACK\" << endl; }\n \
+    \       elif (res == -2) { cout << \"ONLINE_FRONT\" << endl; }\n        else {\n\
     \            cout << \"ON_SEGMENT\" << endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../geomeny/ccw.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
+    \n#include \"../../geomeny/ccw.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    Point a, b;\n    cin >> a.x >> a.y >> b.x >> b.y;\n    int\
     \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point c;\n   \
     \     cin >> c.x >> c.y;\n        int res = ccw(a, b, c);\n        if (res ==\
     \ -1) {\n            cout << \"CLOCKWISE\" << endl;\n        }\n        elif (res\
-    \ == 1) {\n            cout << \"COUNTER_CLOCKWISE\" << endl;\n        }\n   \
-    \     elif (res == 2) {\n            cout << \"ONLINE_BACK\" << endl;\n      \
-    \  }\n        elif (res == -2) {\n            cout << \"ONLINE_FRONT\" << endl;\n\
-    \        }\n        else {\n            cout << \"ON_SEGMENT\" << endl;\n    \
-    \    }\n    }\n}"
+    \ == 1) { cout << \"COUNTER_CLOCKWISE\" << endl; }\n        elif (res == 2) {\
+    \ cout << \"ONLINE_BACK\" << endl; }\n        elif (res == -2) { cout << \"ONLINE_FRONT\"\
+    \ << endl; }\n        else {\n            cout << \"ON_SEGMENT\" << endl;\n  \
+    \      }\n    }\n}"
   dependsOn:
+  - geomeny/ccw.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - geomeny/ccw.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_C.test.cpp

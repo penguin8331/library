@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/isprime.hpp
     title: "\u7D20\u6570\u5224\u5B9A\u6CD5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
-  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \r\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C.test.cpp\"\n#define PROBLEM \\\r\n  \
+    \  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\r\n\
+    #line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -75,27 +76,27 @@ data:
     \ std;\n#line 3 \"math/number/isprime.hpp\"\n\r\nbool is_prime(long long n) {\r\
     \n    if (n <= 1) return false;\r\n    for (long long p = 2; p * p <= n; ++p)\
     \ {\r\n        if (n % p == 0) return false;\r\n    }\r\n    return true;\r\n\
-    }\n#line 4 \"test/AOJ/ALDS1_1_C.test.cpp\"\n\r\nint main() {\r\n    int N;\r\n\
+    }\n#line 5 \"test/AOJ/ALDS1_1_C.test.cpp\"\n\r\nint main() {\r\n    int N;\r\n\
     \    cin >> N;\r\n    int ans = 0;\r\n    for (int i = 0; i < N; i++) {\r\n  \
     \      int a;\r\n        cin >> a;\r\n        ans += is_prime(a);\r\n    }\r\n\
     \    cout << ans << endl;\r\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/number/isprime.hpp\"\
+  code: "#define PROBLEM \\\r\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+    \r\n#include \"../../math/number/isprime.hpp\"\r\n#include \"../../template/template.hpp\"\
     \r\n\r\nint main() {\r\n    int N;\r\n    cin >> N;\r\n    int ans = 0;\r\n  \
     \  for (int i = 0; i < N; i++) {\r\n        int a;\r\n        cin >> a;\r\n  \
     \      ans += is_prime(a);\r\n    }\r\n    cout << ans << endl;\r\n}"
   dependsOn:
+  - math/number/isprime.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - math/number/isprime.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

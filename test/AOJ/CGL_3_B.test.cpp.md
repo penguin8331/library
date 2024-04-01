@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/is-convex.hpp
     title: "\u51F8\u6027\u5224\u5B9A"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,8 +35,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B
-  bundledCode: "#line 1 \"test/AOJ/CGL_3_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/CGL_3_B.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -113,28 +114,28 @@ data:
     \    if (cross(b - a, c - a) < -EPS) return -1;\n    return 0;\n}\n\nbool isConvex(vector<Point>\
     \ &ps) {\n    int n = (int)ps.size();\n    for (int i = 0; i < n; ++i) {\n   \
     \     if (ccw_for_isconvex(ps[i], ps[(i + 1) % n], ps[(i + 2) % n]) == -1) return\
-    \ false;\n    }\n    return true;\n}\n#line 4 \"test/AOJ/CGL_3_B.test.cpp\"\n\n\
+    \ false;\n    }\n    return true;\n}\n#line 5 \"test/AOJ/CGL_3_B.test.cpp\"\n\n\
     int main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int\
     \ i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    cout << isConvex(G)\
     \ << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../geomeny/is-convex.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B\"\
+    \n#include \"../../geomeny/is-convex.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for\
     \ (int i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    cout\
     \ << isConvex(G) << endl;\n}"
   dependsOn:
+  - geomeny/is-convex.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - geomeny/is-convex.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_B.test.cpp

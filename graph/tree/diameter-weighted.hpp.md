@@ -3,10 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
-  _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -17,23 +18,27 @@ data:
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../algorithm/interval_scheduling.hpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../template/template.hpp:\
     \ line -1: no such header\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/1995\"\n#include \"../../algorithm/interval_scheduling.hpp\"\
-    \n#include \"../../template/template.hpp\"\n\nint main() {\n    INT(N, M);\n \
-    \   vector<pii> A(M);\n    scan(A);\n    print((N - 1) * 2 - interval_scheduling(A));\n\
-    }"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Edge {\n  \
+    \  int to;\n    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
+    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
+    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
+    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
+    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
+    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
+    \ p.second, -1);\n    return q.first;\n}"
   dependsOn: []
-  isVerificationFile: true
-  path: test/yukicoder/1995.test.cpp
+  isVerificationFile: false
+  path: graph/tree/diameter-weighted.hpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/yukicoder/1995.test.cpp
+documentation_of: graph/tree/diameter-weighted.hpp
 layout: document
 redirect_from:
-- /verify/test/yukicoder/1995.test.cpp
-- /verify/test/yukicoder/1995.test.cpp.html
-title: test/yukicoder/1995.test.cpp
+- /library/graph/tree/diameter-weighted.hpp
+- /library/graph/tree/diameter-weighted.hpp.html
+title: graph/tree/diameter-weighted.hpp
 ---

@@ -1,35 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -225,25 +225,25 @@ data:
     \ i = 0; i < Q; i++) {\n        INT(l, r);\n        print(solve.query(l, r));\n\
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
-    ../../template/template.hpp\"\n#include \"../../data-structure/implicit-treap.hpp\"\
+    ../../data-structure/implicit-treap.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    MinUpdateQuery<int, int> solve;\n    INT(N, Q);\n    for\
     \ (int i = 0; i < N; i++) {\n        INT(a);\n        solve.insert(i, a);\n  \
     \  }\n    for (int i = 0; i < Q; i++) {\n        INT(l, r);\n        print(solve.query(l,\
     \ r));\n    }\n}"
   dependsOn:
+  - data-structure/implicit-treap.hpp
+  - others/rand-int.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/implicit-treap.hpp
-  - others/rand-int.hpp
   isVerificationFile: true
   path: test/yosupo/static-rmq-3.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq-3.test.cpp
 layout: document

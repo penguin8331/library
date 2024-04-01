@@ -1,32 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_5_A.test.cpp
-    title: test/AOJ/GRL_5_A.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -68,22 +65,16 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"graph/diameter-weighted.hpp\"\n\nstruct Edge {\n    int to;\n\
-    \    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
-    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
-    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
-    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
-    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
-    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
-    \ p.second, -1);\n    return q.first;\n}\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Edge {\n  \
-    \  int to;\n    int cost;\n};\ntemplate <typename T>\npair<T, int> dfs(const vector<vector<Edge>>\
-    \ &G, int u, int par) {\n    pair<T, int> ret = make_pair((T)0, u);\n    for (auto\
-    \ e : G[u]) {\n        if (e.to == par) continue;\n        auto next = dfs<T>(G,\
-    \ e.to, u);\n        next.first += e.cost;\n        ret = max(ret, next);\n  \
-    \  }\n    return ret;\n}\ntemplate <typename T>\nT tree_diameter(const vector<vector<Edge>>\
-    \ &G) {\n    pair<T, int> p = dfs<T>(G, 0, -1);\n    pair<T, int> q = dfs<T>(G,\
-    \ p.second, -1);\n    return q.first;\n}"
+    \ std;\n#line 3 \"others/interval_scheduling.hpp\"\n\ntemplate <class T>\nint\
+    \ interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](const pair<T,\
+    \ T> &a, const pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\
+    \n    int res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l\
+    \ < x) continue;\n        res++;\n        x = r;\n    }\n    return res;\n}\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
+    int interval_scheduling(vector<pair<T, T>> A) {\n    sort(all(A), [](const pair<T,\
+    \ T> &a, const pair<T, T> &b) {\n        return a.second < b.second;\n    });\n\
+    \n    int res = 0;\n    T x = 0;\n    for (auto &[l, r] : A) {\n        if (l\
+    \ < x) continue;\n        res++;\n        x = r;\n    }\n    return res;\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -92,13 +83,12 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: graph/diameter-weighted.hpp
+  path: others/interval_scheduling.hpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/GRL_5_A.test.cpp
-documentation_of: graph/diameter-weighted.hpp
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: others/interval_scheduling.hpp
 layout: document
-title: "\u6728\u306E\u76F4\u5F84"
+title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
 ---

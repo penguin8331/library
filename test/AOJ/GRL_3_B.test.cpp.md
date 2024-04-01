@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
-  bundledCode: "#line 1 \"test/AOJ/GRL_3_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_3_B.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -86,7 +87,7 @@ data:
     \    }\n    void solve(const vector<vector<int>> &G) {\n        int N = (int)G.size();\n\
     \        seen.assign(N, 0);\n        ord.resize(N);\n        low.resize(N);\n\
     \        aps.clear();\n        brs.clear();\n        for (int v = 0; v < N; ++v)\n\
-    \            if (!seen[v]) dfs_lowlink(G, v);\n    }\n};\n#line 4 \"test/AOJ/GRL_3_B.test.cpp\"\
+    \            if (!seen[v]) dfs_lowlink(G, v);\n    }\n};\n#line 5 \"test/AOJ/GRL_3_B.test.cpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
     \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
     \     cin >> s >> t;\n        G[s].push_back(t);\n        G[t].push_back(s);\n\
@@ -95,8 +96,8 @@ data:
     \           swap(ans[i].first, ans[i].second);\n        }\n    }\n    sort(all(ans));\n\
     \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
     \ \" << ans[i].second << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/low-link.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
+    \n#include \"../../graph/low-link.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
     \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
     \     cin >> s >> t;\n        G[s].push_back(t);\n        G[t].push_back(s);\n\
@@ -106,17 +107,17 @@ data:
     \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i].first << \"\
     \ \" << ans[i].second << endl;\n    }\n}\n"
   dependsOn:
+  - graph/low-link.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/low-link.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_3_B.test.cpp

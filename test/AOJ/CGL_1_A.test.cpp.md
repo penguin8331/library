@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/projection.hpp
     title: "\u5C04\u5F71"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -36,10 +36,11 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A
-  bundledCode: "#line 1 \"test/AOJ/CGL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
-    \n#define ERROR 0.00000001\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n\
-    #line 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n\
-    #define rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
+  bundledCode: "#line 1 \"test/AOJ/CGL_1_A.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\n#define ERROR\
+    \ 0.00000001\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
+    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
+    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
     \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
     #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
     \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
@@ -112,31 +113,31 @@ data:
     #line 4 \"geomeny/projection.hpp\"\n\nPoint proj(const Point &p, const Line &l)\
     \ {\n    DD t = dot(p - l[0], l[1] - l[0]) / norm(l[1] - l[0]);\n    return l[0]\
     \ + (l[1] - l[0]) * t;\n}\nPoint refl(const Point &p, const Line &l) {\n    return\
-    \ p + (proj(p, l) - p) * 2;\n}\n#line 5 \"test/AOJ/CGL_1_A.test.cpp\"\n\nint main()\
+    \ p + (proj(p, l) - p) * 2;\n}\n#line 6 \"test/AOJ/CGL_1_A.test.cpp\"\n\nint main()\
     \ {\n    Line a(2);\n    cin >> a[0].x >> a[0].y >> a[1].x >> a[1].y;\n    int\
     \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point b;\n   \
     \     cin >> b.x >> b.y;\n        auto res = proj(b, a);\n        cout << res.x\
     \ << \" \" << res.y << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
-    \n#define ERROR 0.00000001\n#include \"../../template/template.hpp\"\n#include\
-    \ \"../../geomeny/projection.hpp\"\n\nint main() {\n    Line a(2);\n    cin >>\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
+    \n#define ERROR 0.00000001\n#include \"../../geomeny/projection.hpp\"\n#include\
+    \ \"../../template/template.hpp\"\n\nint main() {\n    Line a(2);\n    cin >>\
     \ a[0].x >> a[0].y >> a[1].x >> a[1].y;\n    int Q;\n    cin >> Q;\n    for (int\
     \ i = 0; i < Q; i++) {\n        Point b;\n        cin >> b.x >> b.y;\n       \
     \ auto res = proj(b, a);\n        cout << res.x << \" \" << res.y << endl;\n \
     \   }\n}"
   dependsOn:
+  - geomeny/projection.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - geomeny/projection.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_1_A.test.cpp

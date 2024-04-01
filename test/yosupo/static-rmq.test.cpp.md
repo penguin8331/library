@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -123,25 +123,25 @@ data:
     \    for (int i = 0; i < Q; i++) {\n        int l, r;\n        cin >> l >> r;\n\
     \        cout << seg.get(l, r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
-    ../../template/template.hpp\"\n#include \"../../data-structure/segment-tree.hpp\"\
+    ../../data-structure/segment-tree.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    SegTree<ll> seg(\n  \
     \      N, [](ll a, ll b) { return min(a, b); }, INF);\n    for (int i = 0; i <\
     \ N; i++) {\n        ll a;\n        cin >> a;\n        seg.set(i, a);\n    }\n\
     \    seg.build();\n    for (int i = 0; i < Q; i++) {\n        int l, r;\n    \
     \    cin >> l >> r;\n        cout << seg.get(l, r) << endl;\n    }\n}"
   dependsOn:
+  - data-structure/segment-tree.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/segment-tree.hpp
   isVerificationFile: true
   path: test/yosupo/static-rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static-rmq.test.cpp
 layout: document

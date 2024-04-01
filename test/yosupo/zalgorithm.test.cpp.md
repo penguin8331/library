@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -104,24 +104,24 @@ data:
     \    cout << N;\n    for (int i = 1; i < N; i++) {\n        cout << \" \" << rh.lcp(res,\
     \ i, N, res, 0, N);\n    }\n    cout << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n#include\
-    \ \"../../template/template.hpp\"\n#include \"../../string/rolling-hash.hpp\"\n\
+    \ \"../../string/rolling-hash.hpp\"\n#include \"../../template/template.hpp\"\n\
     \nint main() {\n    string S;\n    cin >> S;\n    RollingHash rh;\n    auto res\
     \ = rh.build(S);\n    int N = S.size();\n    cout << N;\n    for (int i = 1; i\
     \ < N; i++) {\n        cout << \" \" << rh.lcp(res, i, N, res, 0, N);\n    }\n\
     \    cout << endl;\n}"
   dependsOn:
+  - string/rolling-hash.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - string/rolling-hash.hpp
   isVerificationFile: true
   path: test/yosupo/zalgorithm.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/zalgorithm.test.cpp
 layout: document

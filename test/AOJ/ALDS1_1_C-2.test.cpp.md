@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/miller-rabin.hpp
     title: "\u78BA\u7387\u7684\u7D20\u6570\u5224\u5B9A (Miller-Rabin \u6CD5)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
-  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\n#define PROBLEM \\\n  \
+    \  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\n#line\
+    \ 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -84,27 +85,27 @@ data:
     \ d, N);\n        if (x != 1) {\n            long long t;\n            for (t\
     \ = 0; t < s; ++t) {\n                if (x == N - 1) break;\n               \
     \ x = __int128_t(x) * x % N;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}\n#line 4 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\
+    \        }\n    }\n    return true;\n}\n#line 5 \"test/AOJ/ALDS1_1_C-2.test.cpp\"\
     \n\nint main() {\n    int Q;\n    cin >> Q;\n    int cnt = 0;\n    for (int i\
     \ = 0; i < Q; i++) {\n        int N;\n        cin >> N;\n        cnt += is_prime(N);\n\
     \    }\n    cout << cnt << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/number/miller-rabin.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+    \n#include \"../../math/number/miller-rabin.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int Q;\n    cin >> Q;\n    int cnt = 0;\n    for (int i\
     \ = 0; i < Q; i++) {\n        int N;\n        cin >> N;\n        cnt += is_prime(N);\n\
     \    }\n    cout << cnt << endl;\n}"
   dependsOn:
+  - math/number/miller-rabin.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - math/number/miller-rabin.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C-2.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C-2.test.cpp

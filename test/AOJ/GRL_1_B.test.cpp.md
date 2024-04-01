@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/bellman-ford.hpp
     title: "Bellman\u2013Ford"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
-  bundledCode: "#line 1 \"test/AOJ/GRL_1_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_1_B.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -79,7 +80,7 @@ data:
     \      for (auto e : Es) {\n            if (dis[e.from] != INF && dis[e.from]\
     \ + e.cost < dis[e.to]) {\n                dis[e.to] = dis[e.from] + e.cost;\n\
     \                end = false;\n            }\n        }\n        if (end) break;\n\
-    \        cnt++;\n    }\n    return (cnt == V);\n}\n#line 4 \"test/AOJ/GRL_1_B.test.cpp\"\
+    \        cnt++;\n    }\n    return (cnt == V);\n}\n#line 5 \"test/AOJ/GRL_1_B.test.cpp\"\
     \n\nint main() {\n    int V, E, r;\n    cin >> V >> E >> r;\n    vector<Edge>\
     \ es(E);\n    for (int i = 0; i < E; i++) {\n        Edge a;\n        cin >> a.from\
     \ >> a.to >> a.cost;\n        es[i] = a;\n    }\n    vector<ll> dis(V);\n    if\
@@ -87,8 +88,8 @@ data:
     \    } else {\n        for (int i = 0; i < V; i++) {\n            if (dis[i] ==\
     \ INF) {\n                cout << \"INF\" << endl;\n            } else {\n   \
     \             cout << dis[i] << endl;\n            }\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/bellman-ford.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+    \n#include \"../../graph/bellman-ford.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int V, E, r;\n    cin >> V >> E >> r;\n    vector<Edge>\
     \ es(E);\n    for (int i = 0; i < E; i++) {\n        Edge a;\n        cin >> a.from\
     \ >> a.to >> a.cost;\n        es[i] = a;\n    }\n    vector<ll> dis(V);\n    if\
@@ -97,17 +98,17 @@ data:
     \ INF) {\n                cout << \"INF\" << endl;\n            } else {\n   \
     \             cout << dis[i] << endl;\n            }\n        }\n    }\n}"
   dependsOn:
+  - graph/bellman-ford.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/bellman-ford.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_B.test.cpp

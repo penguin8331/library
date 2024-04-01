@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/geomeny-template.hpp
     title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -36,10 +36,11 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E
-  bundledCode: "#line 1 \"test/AOJ/CGL_7_E.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
-    \n#define ERROR 0.000001\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n\
-    #line 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n\
-    #define rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
+  bundledCode: "#line 1 \"test/AOJ/CGL_7_E.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\n#define ERROR\
+    \ 0.000001\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
+    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
+    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
     \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
     #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
     \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
@@ -129,36 +130,37 @@ data:
     \    else if (e.r - rcos < EPS)\n        rsin = 0;\n    else\n        rsin = sqrt(e.r\
     \ * e.r - rcos * rcos);\n    Point dir = (l[1] - l[0]) / abs(l[1] - l[0]);\n \
     \   Point p1 = p + dir * rsin;\n    Point p2 = p - dir * rsin;\n    res.push_back(p1);\n\
-    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 5 \"test/AOJ/CGL_7_E.test.cpp\"\
+    \    if (!eq(p1, p2)) res.push_back(p2);\n    return res;\n}\n#line 6 \"test/AOJ/CGL_7_E.test.cpp\"\
     \n\nint main() {\n    Circle a, b;\n    cin >> a.x >> a.y >> a.r >> b.x >> b.y\
     \ >> b.r;\n    auto res = crosspoint(a, b);\n    sort(all(res), [](Point a, Point\
     \ b) {\n        if (a.x != b.x) {\n            return a.x < b.x;\n        }\n\
     \        return a.y < b.y;\n    });\n    if (res.size() == 1) {\n        cout\
-    \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \" << res[0].y <<\
-    \ endl;\n    } else {\n        cout << res[0].x << \" \" << res[0].y << \" \"\
-    \ << res[1].x << \" \" << res[1].y << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
-    \n#define ERROR 0.000001\n#include \"../../template/template.hpp\"\n#include \"\
-    ../../geomeny/crosspoint.hpp\"\n\nint main() {\n    Circle a, b;\n    cin >> a.x\
-    \ >> a.y >> a.r >> b.x >> b.y >> b.r;\n    auto res = crosspoint(a, b);\n    sort(all(res),\
-    \ [](Point a, Point b) {\n        if (a.x != b.x) {\n            return a.x <\
-    \ b.x;\n        }\n        return a.y < b.y;\n    });\n    if (res.size() == 1)\
-    \ {\n        cout << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \"\
-    \ \" << res[0].y << endl;\n    } else {\n        cout << res[0].x << \" \" <<\
-    \ res[0].y << \" \" << res[1].x << \" \" << res[1].y << endl;\n    }\n}"
+    \ << res[0].x << \" \" << res[0].y << \" \" << res[0].x << \" \"\n           \
+    \  << res[0].y << endl;\n    } else {\n        cout << res[0].x << \" \" << res[0].y\
+    \ << \" \" << res[1].x << \" \"\n             << res[1].y << endl;\n    }\n}\n"
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E\"\
+    \n#define ERROR 0.000001\n#include \"../../geomeny/crosspoint.hpp\"\n#include\
+    \ \"../../template/template.hpp\"\n\nint main() {\n    Circle a, b;\n    cin >>\
+    \ a.x >> a.y >> a.r >> b.x >> b.y >> b.r;\n    auto res = crosspoint(a, b);\n\
+    \    sort(all(res), [](Point a, Point b) {\n        if (a.x != b.x) {\n      \
+    \      return a.x < b.x;\n        }\n        return a.y < b.y;\n    });\n    if\
+    \ (res.size() == 1) {\n        cout << res[0].x << \" \" << res[0].y << \" \"\
+    \ << res[0].x << \" \"\n             << res[0].y << endl;\n    } else {\n    \
+    \    cout << res[0].x << \" \" << res[0].y << \" \" << res[1].x << \" \"\n   \
+    \          << res[1].y << endl;\n    }\n}"
   dependsOn:
+  - geomeny/crosspoint.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - geomeny/crosspoint.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_7_E.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_7_E.test.cpp

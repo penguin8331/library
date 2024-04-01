@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/modpow.hpp
     title: modpow
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
-  bundledCode: "#line 1 \"test/AOJ/NTL_1_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \r\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/NTL_1_B.test.cpp\"\n#define PROBLEM \\\r\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\r\n#line 2\
+    \ \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -75,25 +76,25 @@ data:
     \ std;\n#line 3 \"math/combinatorics/modpow.hpp\"\n\r\nlong long modpow(long long\
     \ a, long long n, long long mod) {\r\n    long long res = 1;\r\n    while (n >\
     \ 0) {\r\n        if (n & 1) res = res * a % mod;\r\n        a = a * a % mod;\r\
-    \n        n >>= 1;\r\n    }\r\n    return res;\r\n}\n#line 4 \"test/AOJ/NTL_1_B.test.cpp\"\
+    \n        n >>= 1;\r\n    }\r\n    return res;\r\n}\n#line 5 \"test/AOJ/NTL_1_B.test.cpp\"\
     \n\r\nint main() {\r\n    int m, n;\r\n    cin >> m >> n;\r\n    cout << modpow(m,\
-    \ n, MOD)<<endl;\r\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/combinatorics/modpow.hpp\"\
+    \ n, MOD) << endl;\r\n}\n"
+  code: "#define PROBLEM \\\r\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
+    \r\n#include \"../../math/combinatorics/modpow.hpp\"\r\n#include \"../../template/template.hpp\"\
     \r\n\r\nint main() {\r\n    int m, n;\r\n    cin >> m >> n;\r\n    cout << modpow(m,\
-    \ n, MOD)<<endl;\r\n}"
+    \ n, MOD) << endl;\r\n}"
   dependsOn:
+  - math/combinatorics/modpow.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - math/combinatorics/modpow.hpp
   isVerificationFile: true
   path: test/AOJ/NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_B.test.cpp

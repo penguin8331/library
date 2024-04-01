@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/flow/ford-fullkerson.hpp
     title: "Ford Fullkerson (\u6700\u5927\u6D41)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
-  bundledCode: "#line 1 \"test/AOJ/GRL_7_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_7_A.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -108,15 +109,15 @@ data:
     \ = 0;\n        while (true) {\n            used.assign((int)G.size(), 0);\n \
     \           int flow = fodfs(G, s, t, INF);\n            if (flow == 0)\n    \
     \            return res;\n            else\n                res += flow;\n   \
-    \     }\n        return 0;\n    }\n};\n#line 4 \"test/AOJ/GRL_7_A.test.cpp\"\n\
+    \     }\n        return 0;\n    }\n};\n#line 5 \"test/AOJ/GRL_7_A.test.cpp\"\n\
     \nint main() {\n    INT(X, Y, E);\n    Graph<int> G(X + Y + 2);\n    for (int\
     \ i = 0; i < X; i++) {\n        G.addedge(0, i + 1, 1);\n    }\n    for (int i\
     \ = 0; i < E; i++) {\n        INT(x, y);\n        x++;\n        y += X + 1;\n\
     \        G.addedge(x, y, 1);\n    }\n    for (int i = 0; i < Y; i++) {\n     \
     \   G.add_undirected_edge(i + X + 1, X + Y + 1, 1);\n    }\n    FordFulkerson<int>\
     \ ff;\n    cout << ff.solve(G, 0, X + Y + 1) << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
-    \n#include \"template/template.hpp\"\n#include \"graph/flow/ford-fullkerson.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
+    \n#include \"graph/flow/ford-fullkerson.hpp\"\n#include \"template/template.hpp\"\
     \n\nint main() {\n    INT(X, Y, E);\n    Graph<int> G(X + Y + 2);\n    for (int\
     \ i = 0; i < X; i++) {\n        G.addedge(0, i + 1, 1);\n    }\n    for (int i\
     \ = 0; i < E; i++) {\n        INT(x, y);\n        x++;\n        y += X + 1;\n\
@@ -124,17 +125,17 @@ data:
     \   G.add_undirected_edge(i + X + 1, X + Y + 1, 1);\n    }\n    FordFulkerson<int>\
     \ ff;\n    cout << ff.solve(G, 0, X + Y + 1) << endl;\n}"
   dependsOn:
+  - graph/flow/ford-fullkerson.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/flow/ford-fullkerson.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_7_A.test.cpp

@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: geomeny/is-contain-in-the-polygon.hpp
     title: "\u70B9\u3068\u591A\u89D2\u5F62\u306E\u5305\u542B\u95A2\u4FC2"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,8 +35,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
-  bundledCode: "#line 1 \"test/AOJ/CGL_3_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/CGL_3_C.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -114,30 +115,30 @@ data:
     \ 1) % n] - p;\n        if (a.y > b.y) swap(a, b);\n        if (a.y <= 0 && b.y\
     \ > 0)\n            if (cross(a, b) < 0) isin = 1 - isin;\n        if (cross(a,\
     \ b) == 0 && dot(a, b) <= 0) return 1;\n    }\n    if (isin)\n        return 2;\n\
-    \    else\n        return 0;\n}\n#line 4 \"test/AOJ/CGL_3_C.test.cpp\"\n\nint\
+    \    else\n        return 0;\n}\n#line 5 \"test/AOJ/CGL_3_C.test.cpp\"\n\nint\
     \ main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for (int i\
     \ = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int Q;\n  \
     \  cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point a;\n        cin\
     \ >> a.x >> a.y;\n        cout << is_contain(G, a) << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../geomeny/is-contain-in-the-polygon.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C\"\
+    \n#include \"../../geomeny/is-contain-in-the-polygon.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    vector<Point> G(N);\n    for\
     \ (int i = 0; i < N; i++) {\n        cin >> G[i].x >> G[i].y;\n    }\n    int\
     \ Q;\n    cin >> Q;\n    for (int i = 0; i < Q; i++) {\n        Point a;\n   \
     \     cin >> a.x >> a.y;\n        cout << is_contain(G, a) << endl;\n    }\n}"
   dependsOn:
+  - geomeny/is-contain-in-the-polygon.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/geomeny-template.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_3_C.test.cpp

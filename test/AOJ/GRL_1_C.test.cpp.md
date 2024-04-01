@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/warshall-floyd.hpp
     title: Warshall Floyd
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
-  bundledCode: "#line 1 \"test/AOJ/GRL_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_1_C.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -78,7 +79,7 @@ data:
     \    dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);\n            }\n        }\n\
     \    }\n}\nbool isnegative(vector<vector<long long>> dp, int V) {\n    bool isnegative\
     \ = false;\n    for (int v = 0; v < V; ++v) {\n        if (dp[v][v] < 0) isnegative\
-    \ = true;\n    }\n    return isnegative;\n}\n#line 4 \"test/AOJ/GRL_1_C.test.cpp\"\
+    \ = true;\n    }\n    return isnegative;\n}\n#line 5 \"test/AOJ/GRL_1_C.test.cpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    ll maxi = INF / 12;\n\
     \    vector<vector<ll>> dp(V, vector<ll>(V, maxi));\n    for (int i = 0; i < V;\
     \ i++) {\n        dp[i][i] = 0;\n    }\n    for (int i = 0; i < E; i++) {\n  \
@@ -91,8 +92,8 @@ data:
     \                    cout << \" INF\";\n                } else {\n           \
     \         cout << \" \" << dp[i][j];\n                }\n            }\n     \
     \       cout << endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/warshall-floyd.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
+    \n#include \"../../graph/warshall-floyd.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    ll maxi = INF / 12;\n\
     \    vector<vector<ll>> dp(V, vector<ll>(V, maxi));\n    for (int i = 0; i < V;\
     \ i++) {\n        dp[i][i] = 0;\n    }\n    for (int i = 0; i < E; i++) {\n  \
@@ -106,17 +107,17 @@ data:
     \         cout << \" \" << dp[i][j];\n                }\n            }\n     \
     \       cout << endl;\n        }\n    }\n}"
   dependsOn:
+  - graph/warshall-floyd.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/warshall-floyd.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_C.test.cpp

@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/traveling-salesman-problem.hpp
     title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A
-  bundledCode: "#line 1 \"test/AOJ/DPL_2_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/DPL_2_A.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -82,33 +83,34 @@ data:
     \ & (1 << v)) == 0) {\n            return inf;\n        }\n        ll& ret = dp[S][v];\n\
     \        if (ret != 0) return ret;\n        ret = inf;\n        for (int u = 0;\
     \ u < V; u++) {\n            chmin(ret, solve(S ^ (1 << v), u) + G[u][v]);\n \
-    \       }\n        return ret;\n    }\n};\n#line 4 \"test/AOJ/DPL_2_A.test.cpp\"\
+    \       }\n        return ret;\n    }\n};\n#line 5 \"test/AOJ/DPL_2_A.test.cpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<ll>> G(V,\
     \ vector<ll>(V));\n    for (int i = 0; i < V; i++) {\n        for (int j = 0;\
     \ j < V; j++) {\n            G[i][j] = inf;\n        }\n    }\n    for (int i\
     \ = 0; i < E; i++) {\n        int s, t, d;\n        cin >> s >> t >> d;\n    \
     \    G[s][t] = d;\n    }\n    traveling_salesman tsp(G);\n    ll ans = tsp.ans;\n\
     \    cout << (ans == inf ? -1 : ans) << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../dynamic-programming/traveling-salesman-problem.hpp\"\
-    \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<ll>> G(V,\
-    \ vector<ll>(V));\n    for (int i = 0; i < V; i++) {\n        for (int j = 0;\
-    \ j < V; j++) {\n            G[i][j] = inf;\n        }\n    }\n    for (int i\
-    \ = 0; i < E; i++) {\n        int s, t, d;\n        cin >> s >> t >> d;\n    \
-    \    G[s][t] = d;\n    }\n    traveling_salesman tsp(G);\n    ll ans = tsp.ans;\n\
-    \    cout << (ans == inf ? -1 : ans) << endl;\n}"
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A\"\
+    \n#include \"../../dynamic-programming/traveling-salesman-problem.hpp\"\n#include\
+    \ \"../../template/template.hpp\"\n\nint main() {\n    int V, E;\n    cin >> V\
+    \ >> E;\n    vector<vector<ll>> G(V, vector<ll>(V));\n    for (int i = 0; i <\
+    \ V; i++) {\n        for (int j = 0; j < V; j++) {\n            G[i][j] = inf;\n\
+    \        }\n    }\n    for (int i = 0; i < E; i++) {\n        int s, t, d;\n \
+    \       cin >> s >> t >> d;\n        G[s][t] = d;\n    }\n    traveling_salesman\
+    \ tsp(G);\n    ll ans = tsp.ans;\n    cout << (ans == inf ? -1 : ans) << endl;\n\
+    }"
   dependsOn:
+  - dynamic-programming/traveling-salesman-problem.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - dynamic-programming/traveling-salesman-problem.hpp
   isVerificationFile: true
   path: test/AOJ/DPL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DPL_2_A.test.cpp

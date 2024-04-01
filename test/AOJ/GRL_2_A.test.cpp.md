@@ -7,22 +7,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -35,8 +35,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
-  bundledCode: "#line 1 \"test/AOJ/GRL_2_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_2_A.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -97,28 +98,28 @@ data:
     \ comp_e);\n        uft = UnionFind(V);\n        sum = 0;\n        for (auto e\
     \ : edges) {\n            if (!uft.issame(e.from, e.to)) {\n                uft.unite(e.from,\
     \ e.to);\n                sum += e.cost;\n            }\n        }\n    }\n};\n\
-    #line 4 \"test/AOJ/GRL_2_A.test.cpp\"\n\nint main() {\n    int V, E;\n    cin\
+    #line 5 \"test/AOJ/GRL_2_A.test.cpp\"\n\nint main() {\n    int V, E;\n    cin\
     \ >> V >> E;\n    vector<Edge> es(E);\n    for (int i = 0; i < E; i++) {\n   \
     \     cin >> es[i].from >> es[i].to >> es[i].cost;\n    }\n    Kruskal A(es, V);\n\
     \    cout << A.sum << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/kruskal.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+    \n#include \"../../graph/kruskal.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<Edge> es(E);\n\
     \    for (int i = 0; i < E; i++) {\n        cin >> es[i].from >> es[i].to >> es[i].cost;\n\
     \    }\n    Kruskal A(es, V);\n    cout << A.sum << endl;\n}"
   dependsOn:
+  - graph/kruskal.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/kruskal.hpp
   - data-structure/union-find.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_2_A.test.cpp

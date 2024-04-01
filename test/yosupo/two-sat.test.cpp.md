@@ -1,35 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
@@ -111,17 +111,18 @@ data:
     \ scc.cmp[i + N]) {\n                return vector<bool>();\n            }\n \
     \           if (scc.cmp[i] > scc.cmp[i + N]) {\n                ans[i] = true;\n\
     \            } else {\n                ans[i] = false;\n            }\n      \
-    \  }\n        return ans;\n    }\n};\n#line 4 \"test/yosupo/two-sat.test.cpp\"\
-    \n\nint main() {\n    string p, cnf;\n    int N, M;\n    cin >> p >> cnf >> N\
-    \ >> M;\n    TwoSat ts(N);\n    for (int i = 0; i < M; i++) {\n        int a,\
-    \ b;\n        cin >> a >> b;\n        string zero;\n        cin >> zero;\n   \
-    \     ts.add(abs(a) - 1, a > 0, abs(b) - 1, b > 0);\n    }\n    auto ans = ts.solve();\n\
-    \    if ((int)ans.size() == N) {\n        cout << \"s SATISFIABLE\" << endl;\n\
-    \        cout << \"v \";\n        for (int i = 0; i < N; i++) {\n            cout\
-    \ << (ans[i] ? i + 1 : -i - 1) << \" \";\n        }\n        cout << 0 << endl;\n\
-    \    } else {\n        cout << \"s UNSATISFIABLE\" << endl;\n    }\n}\n"
+    \  }\n        return ans;\n    }\n};\n#line 3 \"test/yosupo/two-sat.test.cpp\"\
+    \n\n#line 5 \"test/yosupo/two-sat.test.cpp\"\n\nint main() {\n    string p, cnf;\n\
+    \    int N, M;\n    cin >> p >> cnf >> N >> M;\n    TwoSat ts(N);\n    for (int\
+    \ i = 0; i < M; i++) {\n        int a, b;\n        cin >> a >> b;\n        string\
+    \ zero;\n        cin >> zero;\n        ts.add(abs(a) - 1, a > 0, abs(b) - 1, b\
+    \ > 0);\n    }\n    auto ans = ts.solve();\n    if ((int)ans.size() == N) {\n\
+    \        cout << \"s SATISFIABLE\" << endl;\n        cout << \"v \";\n       \
+    \ for (int i = 0; i < N; i++) {\n            cout << (ans[i] ? i + 1 : -i - 1)\
+    \ << \" \";\n        }\n        cout << 0 << endl;\n    } else {\n        cout\
+    \ << \"s UNSATISFIABLE\" << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\n#include \"\
-    ../../graph/two-sat.hpp\"\n#include \"../../template/template.hpp\"\n\nint main()\
+    ../../graph/two-sat.hpp\"\n\n#include \"../../template/template.hpp\"\n\nint main()\
     \ {\n    string p, cnf;\n    int N, M;\n    cin >> p >> cnf >> N >> M;\n    TwoSat\
     \ ts(N);\n    for (int i = 0; i < M; i++) {\n        int a, b;\n        cin >>\
     \ a >> b;\n        string zero;\n        cin >> zero;\n        ts.add(abs(a) -\
@@ -142,8 +143,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/two-sat.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/two-sat.test.cpp
 layout: document

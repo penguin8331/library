@@ -1,32 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/static-range-sum.test.cpp
-    title: test/yosupo/static-range-sum.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -68,24 +65,26 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"algorithm/section-sum.hpp\"\n\r\ntemplate <class T>\r\nstruct\
-    \ SectionSum {\r\n    vector<T> data;\r\n\r\n    explicit SectionSum(int n) :\
-    \ data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) { data[k + 1] =\
-    \ x; }\r\n\r\n    void push_back(const T& x) { data.push_back(x); }\r\n\r\n  \
-    \  void build() {\r\n        for (int i = 1; i < (int)data.size(); i++) {\r\n\
-    \            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int\
-    \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
-    \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
-    \ }\r\n};\n"
+    \ std;\n#line 3 \"dynamic-programming/section-sum2d.hpp\"\n\r\ntemplate <class\
+    \ T>\r\nstruct SectionSum2D {\r\n    vector<vector<T>> data;\r\n\r\n    SectionSum2D(int\
+    \ H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x,\
+    \ int y, const T& z) {\r\n        x++;\r\n        y++;\r\n        data[x][y] =\
+    \ z;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < data.size();\
+    \ i++) {\r\n            for (int j = 1; j < data[i].size(); j++) {\r\n       \
+    \         data[i][j] +=\r\n                    data[i][j - 1] + data[i - 1][j]\
+    \ - data[i - 1][j - 1];\r\n            }\r\n        }\r\n    }\r\n\r\n    T get(int\
+    \ lx, int ly, int rx, int ry) const {\r\n        return (data[rx][ry] - data[lx][ry]\
+    \ - data[rx][ly] + data[lx][ly]);\r\n    }\r\n};\n"
   code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
-    \ T>\r\nstruct SectionSum {\r\n    vector<T> data;\r\n\r\n    explicit SectionSum(int\
-    \ n) : data(n + 1, 0) {}\r\n\r\n    void update(int k, const T& x) { data[k +\
-    \ 1] = x; }\r\n\r\n    void push_back(const T& x) { data.push_back(x); }\r\n\r\
-    \n    void build() {\r\n        for (int i = 1; i < (int)data.size(); i++) {\r\
-    \n            data[i] += data[i - 1];\r\n        }\r\n    }\r\n\r\n    T get(int\
-    \ r) const {\r\n        assert(r >= 0 && r < (int)data.size());\r\n        return\
-    \ data[r];\r\n    }\r\n    T get(int l, int r) const { return get(r) - get(l);\
-    \ }\r\n};"
+    \ T>\r\nstruct SectionSum2D {\r\n    vector<vector<T>> data;\r\n\r\n    SectionSum2D(int\
+    \ H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x,\
+    \ int y, const T& z) {\r\n        x++;\r\n        y++;\r\n        data[x][y] =\
+    \ z;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < data.size();\
+    \ i++) {\r\n            for (int j = 1; j < data[i].size(); j++) {\r\n       \
+    \         data[i][j] +=\r\n                    data[i][j - 1] + data[i - 1][j]\
+    \ - data[i - 1][j - 1];\r\n            }\r\n        }\r\n    }\r\n\r\n    T get(int\
+    \ lx, int ly, int rx, int ry) const {\r\n        return (data[rx][ry] - data[lx][ry]\
+    \ - data[rx][ly] + data[lx][ly]);\r\n    }\r\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -94,13 +93,15 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: algorithm/section-sum.hpp
+  path: dynamic-programming/section-sum2d.hpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo/static-range-sum.test.cpp
-documentation_of: algorithm/section-sum.hpp
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: dynamic-programming/section-sum2d.hpp
 layout: document
-title: "\u7D2F\u7A4D\u548C"
+redirect_from:
+- /library/dynamic-programming/section-sum2d.hpp
+- /library/dynamic-programming/section-sum2d.hpp.html
+title: dynamic-programming/section-sum2d.hpp
 ---

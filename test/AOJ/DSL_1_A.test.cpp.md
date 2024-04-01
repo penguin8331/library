@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-  bundledCode: "#line 1 \"test/AOJ/DSL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/DSL_1_A.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -85,29 +86,29 @@ data:
     \ v = 0; v < (int)par.size(); ++v) {\n            member[root(v)].push_back(v);\n\
     \        }\n        vector<vector<int>> res;\n        for (int v = 0; v < (int)par.size();\
     \ ++v) {\n            if (!member[v].empty()) res.push_back(member[v]);\n    \
-    \    }\n        return res;\n    }\n};\n#line 4 \"test/AOJ/DSL_1_A.test.cpp\"\n\
+    \    }\n        return res;\n    }\n};\n#line 5 \"test/AOJ/DSL_1_A.test.cpp\"\n\
     \nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n    for\
     \ (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >> x >>\
     \ y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else {\n\
     \            cout << uf.issame(x, y) << endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../data-structure/union-find.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
+    \n#include \"../../data-structure/union-find.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uf(N);\n  \
     \  for (int i = 0; i < Q; i++) {\n        int com, x, y;\n        cin >> com >>\
     \ x >> y;\n        if (com == 0) {\n            uf.unite(x, y);\n        } else\
     \ {\n            cout << uf.issame(x, y) << endl;\n        }\n    }\n}"
   dependsOn:
+  - data-structure/union-find.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/union-find.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_A.test.cpp

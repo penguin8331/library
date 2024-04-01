@@ -1,40 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: algorithm/compress.hpp
-    title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':heavy_check_mark:'
-    path: algorithm/compress2d.hpp
-    title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':warning:'
-    path: algorithm/doubling.hpp
-    title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
-  - icon: ':heavy_check_mark:'
-    path: algorithm/interval_scheduling.hpp
-    title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
-  - icon: ':heavy_check_mark:'
-    path: algorithm/section-sum.hpp
-    title: "\u7D2F\u7A4D\u548C"
-  - icon: ':heavy_check_mark:'
-    path: algorithm/section-sum2d.hpp
-    title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - icon: ':warning:'
     path: data-structure/binary-indexed-tree-2d-raq.hpp
     title: "BIT-2D (\u9818\u57DF\u52A0\u7B97, \u9818\u57DF\u548C\u53D6\u5F97\u306B\
@@ -52,7 +34,7 @@ data:
   - icon: ':warning:'
     path: data-structure/boost-multiprecision.hpp
     title: boost/multiprecision
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/disjoint-sparse-table.hpp
     title: Disjoint Sparse Table
   - icon: ':heavy_check_mark:'
@@ -61,7 +43,7 @@ data:
   - icon: ':warning:'
     path: data-structure/ext-rope.hpp
     title: ext/rope
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
   - icon: ':warning:'
@@ -72,9 +54,6 @@ data:
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
   - icon: ':warning:'
-    path: data-structure/mo.hpp
-    title: Mo's algorithm
-  - icon: ':warning:'
     path: data-structure/pair-query-by-implicit-treap.hpp
     title: PairQuery (by Implicit Treap)
   - icon: ':warning:'
@@ -83,7 +62,7 @@ data:
   - icon: ':warning:'
     path: data-structure/randomized-binary-search-tree.hpp
     title: data-structure/randomized-binary-search-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/segment-tree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
@@ -110,6 +89,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/longest-increasing-subsequence.hpp
     title: LIS
+  - icon: ':warning:'
+    path: dynamic-programming/section-sum.hpp
+    title: dynamic-programming/section-sum.hpp
+  - icon: ':warning:'
+    path: dynamic-programming/section-sum2d.hpp
+    title: dynamic-programming/section-sum2d.hpp
   - icon: ':heavy_check_mark:'
     path: dynamic-programming/traveling-salesman-problem.hpp
     title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
@@ -155,12 +140,9 @@ data:
   - icon: ':warning:'
     path: graph/bfs2d.hpp
     title: BFS-2D
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/cycle-detection-undirected.hpp
     title: graph/cycle-detection-undirected.hpp
-  - icon: ':heavy_check_mark:'
-    path: graph/diameter-weighted.hpp
-    title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra-route.hpp
     title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
@@ -180,15 +162,12 @@ data:
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
   - icon: ':heavy_check_mark:'
-    path: graph/lca.hpp
-    title: Lowest Common Ancestor
-  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
   - icon: ':heavy_check_mark:'
@@ -200,7 +179,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two-sat.hpp
     title: graph/two-sat.hpp
   - icon: ':heavy_check_mark:'
@@ -253,9 +232,24 @@ data:
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - icon: ':warning:'
+    path: others/compress.hpp
+    title: "\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':heavy_check_mark:'
+    path: others/compress2d.hpp
+    title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':warning:'
     path: others/date.hpp
     title: "\u65E5\u4ED8,\u66DC\u65E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: others/doubling.hpp
+    title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
+  - icon: ':warning:'
+    path: others/interval_scheduling.hpp
+    title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
+  - icon: ':warning:'
+    path: others/mo.hpp
+    title: Mo's algorithm
+  - icon: ':x:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
   - icon: ':warning:'
@@ -264,31 +258,28 @@ data:
   - icon: ':warning:'
     path: string/rle.hpp
     title: "\u9023\u9577\u5727\u7E2E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/0233.test.cpp
     title: test/AOJ/0233.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/0560.test.cpp
-    title: test/AOJ/0560.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/1160.test.cpp
     title: test/AOJ/1160.test.cpp
@@ -404,12 +395,6 @@ data:
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_5_A.test.cpp
-    title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_5_C.test.cpp
-    title: test/AOJ/GRL_5_C.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -430,45 +415,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
     title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/cycle-detection-undirected.test.cpp
     title: test/yosupo/cycle-detection-undirected.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix-det.test.cpp
     title: test/yosupo/matrix-det.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/shortes-path.test.cpp
     title: test/yosupo/shortes-path.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/static-range-sum.test.cpp
-    title: test/yosupo/static-range-sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq-3.test.cpp
     title: test/yosupo/static-rmq-3.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/two-sat.test.cpp
     title: test/yosupo/two-sat.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1995.test.cpp
-    title: test/yukicoder/1995.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -537,9 +516,11 @@ data:
   requiredBy:
   - dynamic-programming/longest-increasing-subsequence-restoration.hpp
   - dynamic-programming/longest-increasing-subsequence.hpp
+  - dynamic-programming/section-sum2d.hpp
   - dynamic-programming/traveling-salesman-problem.hpp
   - dynamic-programming/longest-common-subsequence.hpp
   - dynamic-programming/longest-common-subsequence-restoration.hpp
+  - dynamic-programming/section-sum.hpp
   - string/rolling-hash.hpp
   - string/rle.hpp
   - math/combinatorics/modpow.hpp
@@ -557,12 +538,6 @@ data:
   - math/number/divisors.hpp
   - math/number/chinese-remainder-theorem.hpp
   - math/algebra/matrix.hpp
-  - algorithm/section-sum2d.hpp
-  - algorithm/compress2d.hpp
-  - algorithm/doubling.hpp
-  - algorithm/interval_scheduling.hpp
-  - algorithm/compress.hpp
-  - algorithm/section-sum.hpp
   - template/alias.hpp
   - template/util.hpp
   - template/macro.hpp
@@ -580,7 +555,6 @@ data:
   - geomeny/ccw.hpp
   - geomeny/distance.hpp
   - data-structure/static-modular-arithmetic.hpp
-  - data-structure/mo.hpp
   - data-structure/binary-indexed-tree-raq.hpp
   - data-structure/disjoint-sparse-table.hpp
   - data-structure/ext-rope.hpp
@@ -603,7 +577,6 @@ data:
   - graph/topological-sort.hpp
   - graph/bellman-ford.hpp
   - graph/low-link.hpp
-  - graph/lca.hpp
   - graph/warshall-floyd.hpp
   - graph/is_biparite.hpp
   - graph/scc.hpp
@@ -615,15 +588,19 @@ data:
   - graph/kruskal.hpp
   - graph/two-sat.hpp
   - graph/dijkstra2d.hpp
-  - graph/diameter-weighted.hpp
   - graph/tree/euler-tour-on-edges.hpp
   - graph/tree/euler-tour-on-nodes.hpp
   - graph/bfs2d.hpp
+  - others/mo.hpp
+  - others/compress2d.hpp
+  - others/doubling.hpp
   - others/rand-int.hpp
   - others/timer.hpp
+  - others/interval_scheduling.hpp
   - others/date.hpp
+  - others/compress.hpp
   timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_3_B.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
@@ -634,12 +611,10 @@ data:
   - test/AOJ/GRL_3_A.test.cpp
   - test/AOJ/CGL_2_B.test.cpp
   - test/AOJ/2842.test.cpp
-  - test/AOJ/GRL_5_C.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
   - test/AOJ/GRL_3_C.test.cpp
   - test/AOJ/GRL_1_B.test.cpp
   - test/AOJ/CGL_4_C.test.cpp
-  - test/AOJ/0560.test.cpp
   - test/AOJ/ALDS1_10_C.test.cpp
   - test/AOJ/NTL_1_B.test.cpp
   - test/AOJ/CGL_3_C.test.cpp
@@ -671,12 +646,9 @@ data:
   - test/AOJ/DPL_1_d.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
   - test/AOJ/GRL_1_A.test.cpp
-  - test/AOJ/GRL_5_A.test.cpp
-  - test/yukicoder/1995.test.cpp
   - test/yosupo/static-rmq-3.test.cpp
   - test/yosupo/matrix-det.test.cpp
   - test/yosupo/cycle-detection-undirected.test.cpp
-  - test/yosupo/static-range-sum.test.cpp
   - test/yosupo/binomial-cofficient-prime-mod.test.cpp
   - test/yosupo/two-sat.test.cpp
   - test/yosupo/static-rmq.test.cpp

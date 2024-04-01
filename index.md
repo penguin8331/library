@@ -1,26 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: algorithm
-    pages:
-    - icon: ':warning:'
-      path: algorithm/compress.hpp
-      title: "\u5EA7\u6A19\u5727\u7E2E"
-    - icon: ':heavy_check_mark:'
-      path: algorithm/compress2d.hpp
-      title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
-    - icon: ':warning:'
-      path: algorithm/doubling.hpp
-      title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
-    - icon: ':heavy_check_mark:'
-      path: algorithm/interval_scheduling.hpp
-      title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
-    - icon: ':heavy_check_mark:'
-      path: algorithm/section-sum.hpp
-      title: "\u7D2F\u7A4D\u548C"
-    - icon: ':heavy_check_mark:'
-      path: algorithm/section-sum2d.hpp
-      title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
   - name: data-structure
     pages:
     - icon: ':warning:'
@@ -40,7 +20,7 @@ data:
     - icon: ':warning:'
       path: data-structure/boost-multiprecision.hpp
       title: boost/multiprecision
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/disjoint-sparse-table.hpp
       title: Disjoint Sparse Table
     - icon: ':heavy_check_mark:'
@@ -49,7 +29,7 @@ data:
     - icon: ':warning:'
       path: data-structure/ext-rope.hpp
       title: ext/rope
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/implicit-treap.hpp
       title: ImplicitTreap
     - icon: ':warning:'
@@ -60,9 +40,6 @@ data:
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':warning:'
-      path: data-structure/mo.hpp
-      title: Mo's algorithm
-    - icon: ':warning:'
       path: data-structure/pair-query-by-implicit-treap.hpp
       title: PairQuery (by Implicit Treap)
     - icon: ':warning:'
@@ -71,7 +48,7 @@ data:
     - icon: ':warning:'
       path: data-structure/randomized-binary-search-tree.hpp
       title: data-structure/randomized-binary-search-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
     - icon: ':heavy_check_mark:'
@@ -108,6 +85,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/longest-increasing-subsequence.hpp
       title: LIS
+    - icon: ':warning:'
+      path: dynamic-programming/section-sum.hpp
+      title: dynamic-programming/section-sum.hpp
+    - icon: ':warning:'
+      path: dynamic-programming/section-sum2d.hpp
+      title: dynamic-programming/section-sum2d.hpp
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
       title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
@@ -157,12 +140,9 @@ data:
     - icon: ':warning:'
       path: graph/bfs2d.hpp
       title: BFS-2D
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/cycle-detection-undirected.hpp
       title: graph/cycle-detection-undirected.hpp
-    - icon: ':heavy_check_mark:'
-      path: graph/diameter-weighted.hpp
-      title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra-route.hpp
       title: "Dijkstra (\u7D4C\u8DEF\u5FA9\u5143\u3042\u308A)"
@@ -179,21 +159,18 @@ data:
       path: graph/kruskal.hpp
       title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
     - icon: ':heavy_check_mark:'
-      path: graph/lca.hpp
-      title: Lowest Common Ancestor
-    - icon: ':heavy_check_mark:'
       path: graph/low-link.hpp
       title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: graph/prim.hpp
       title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/scc.hpp
       title: Strongly Connected Component
     - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/two-sat.hpp
       title: graph/two-sat.hpp
     - icon: ':heavy_check_mark:'
@@ -207,11 +184,17 @@ data:
   - name: graph/tree
     pages:
     - icon: ':warning:'
+      path: graph/tree/diameter-weighted.hpp
+      title: graph/tree/diameter-weighted.hpp
+    - icon: ':warning:'
       path: graph/tree/euler-tour-on-edges.hpp
       title: graph/tree/euler-tour-on-edges.hpp
     - icon: ':heavy_check_mark:'
       path: graph/tree/euler-tour-on-nodes.hpp
       title: graph/tree/euler-tour-on-nodes.hpp
+    - icon: ':warning:'
+      path: graph/tree/lca.hpp
+      title: graph/tree/lca.hpp
   - name: math/algebra
     pages:
     - icon: ':heavy_check_mark:'
@@ -267,9 +250,24 @@ data:
   - name: others
     pages:
     - icon: ':warning:'
+      path: others/compress.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
+    - icon: ':heavy_check_mark:'
+      path: others/compress2d.hpp
+      title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
+    - icon: ':warning:'
       path: others/date.hpp
       title: "\u65E5\u4ED8,\u66DC\u65E5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: others/doubling.hpp
+      title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
+    - icon: ':warning:'
+      path: others/interval_scheduling.hpp
+      title: "\u533A\u9593\u30B9\u30B1\u30B8\u30E5\u30FC\u30EA\u30F3\u30B0"
+    - icon: ':warning:'
+      path: others/mo.hpp
+      title: Mo's algorithm
+    - icon: ':x:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
     - icon: ':warning:'
@@ -280,27 +278,27 @@ data:
     - icon: ':warning:'
       path: string/rle.hpp
       title: "\u9023\u9577\u5727\u7E2E"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/rolling-hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -309,7 +307,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/0233.test.cpp
       title: test/AOJ/0233.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/0560.test.cpp
       title: test/AOJ/0560.test.cpp
     - icon: ':heavy_check_mark:'
@@ -426,10 +424,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_4_B.test.cpp
       title: test/AOJ/GRL_4_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/GRL_5_C.test.cpp
       title: test/AOJ/GRL_5_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -457,42 +455,42 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
       title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/cycle-detection-undirected.test.cpp
       title: test/yosupo/cycle-detection-undirected.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/matrix-det.test.cpp
       title: test/yosupo/matrix-det.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/shortes-path.test.cpp
       title: test/yosupo/shortes-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-range-sum-2.test.cpp
       title: test/yosupo/static-range-sum-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-range-sum.test.cpp
       title: test/yosupo/static-range-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-rmq-2.test.cpp
       title: test/yosupo/static-rmq-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-rmq-3.test.cpp
       title: test/yosupo/static-rmq-3.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/static-rmq.test.cpp
       title: test/yosupo/static-rmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/two-sat.test.cpp
       title: test/yosupo/two-sat.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1995.test.cpp
       title: test/yukicoder/1995.test.cpp
 layout: toppage

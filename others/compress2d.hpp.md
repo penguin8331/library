@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/AOJ/0560.test.cpp
-    title: test/AOJ/0560.test.cpp
+    path: test/AOJ/DSL_4_A.test.cpp
+    title: test/AOJ/DSL_4_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -68,26 +68,26 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"algorithm/section-sum2d.hpp\"\n\r\ntemplate <class T>\r\nstruct\
-    \ SectionSum2D {\r\n    vector<vector<T>> data;\r\n\r\n    SectionSum2D(int H,\
-    \ int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x, int\
-    \ y, const T& z) {\r\n        x++;\r\n        y++;\r\n        data[x][y] = z;\r\
-    \n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < data.size();\
-    \ i++) {\r\n            for (int j = 1; j < data[i].size(); j++) {\r\n       \
-    \         data[i][j] +=\r\n                    data[i][j - 1] + data[i - 1][j]\
-    \ - data[i - 1][j - 1];\r\n            }\r\n        }\r\n    }\r\n\r\n    T get(int\
-    \ lx, int ly, int rx, int ry) const {\r\n        return (data[rx][ry] - data[lx][ry]\
-    \ - data[rx][ly] + data[lx][ly]);\r\n    }\r\n};\n"
-  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <class\
-    \ T>\r\nstruct SectionSum2D {\r\n    vector<vector<T>> data;\r\n\r\n    SectionSum2D(int\
-    \ H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}\r\n\r\n    void update(int x,\
-    \ int y, const T& z) {\r\n        x++;\r\n        y++;\r\n        data[x][y] =\
-    \ z;\r\n    }\r\n\r\n    void build() {\r\n        for (int i = 1; i < data.size();\
-    \ i++) {\r\n            for (int j = 1; j < data[i].size(); j++) {\r\n       \
-    \         data[i][j] +=\r\n                    data[i][j - 1] + data[i - 1][j]\
-    \ - data[i - 1][j - 1];\r\n            }\r\n        }\r\n    }\r\n\r\n    T get(int\
-    \ lx, int ly, int rx, int ry) const {\r\n        return (data[rx][ry] - data[lx][ry]\
-    \ - data[rx][ly] + data[lx][ly]);\r\n    }\r\n};"
+    \ std;\n#line 3 \"others/compress2d.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
+    \ compress(vector<T> &C1, vector<T> &C2) {\r\n    vector<T> vals;\r\n    int N\
+    \ = (int)C1.size();\r\n    for (int i = 0; i < N; i++) {\r\n        for (T d =\
+    \ 0; d <= 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n            T tc2 = C2[i]\
+    \ + d;\r\n            vals.push_back(tc1);\r\n            vals.push_back(tc2);\r\
+    \n        }\r\n    }\r\n    sort(vals.begin(), vals.end());\r\n    vals.erase(unique(vals.begin(),\
+    \ vals.end()), vals.end());\r\n    for (int i = 0; i < N; i++) {\r\n        C1[i]\
+    \ = lower_bound(vals.begin(), vals.end(), C1[i]) - vals.begin();\r\n        C2[i]\
+    \ = lower_bound(vals.begin(), vals.end(), C2[i]) - vals.begin();\r\n    }\r\n\
+    \    return vals;\r\n}\n"
+  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <typename\
+    \ T>\r\nvector<T> compress(vector<T> &C1, vector<T> &C2) {\r\n    vector<T> vals;\r\
+    \n    int N = (int)C1.size();\r\n    for (int i = 0; i < N; i++) {\r\n       \
+    \ for (T d = 0; d <= 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n         \
+    \   T tc2 = C2[i] + d;\r\n            vals.push_back(tc1);\r\n            vals.push_back(tc2);\r\
+    \n        }\r\n    }\r\n    sort(vals.begin(), vals.end());\r\n    vals.erase(unique(vals.begin(),\
+    \ vals.end()), vals.end());\r\n    for (int i = 0; i < N; i++) {\r\n        C1[i]\
+    \ = lower_bound(vals.begin(), vals.end(), C1[i]) - vals.begin();\r\n        C2[i]\
+    \ = lower_bound(vals.begin(), vals.end(), C2[i]) - vals.begin();\r\n    }\r\n\
+    \    return vals;\r\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -96,13 +96,13 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: algorithm/section-sum2d.hpp
+  path: others/compress2d.hpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/0560.test.cpp
-documentation_of: algorithm/section-sum2d.hpp
+  - test/AOJ/DSL_4_A.test.cpp
+documentation_of: others/compress2d.hpp
 layout: document
-title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
+title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
 ---

@@ -2,24 +2,24 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algorithm/compress2d.hpp
+    path: others/compress2d.hpp
     title: "\u4E8C\u6B21\u5143\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -72,7 +72,7 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"algorithm/compress2d.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
+    \ std;\n#line 3 \"others/compress2d.hpp\"\n\r\ntemplate <typename T>\r\nvector<T>\
     \ compress(vector<T> &C1, vector<T> &C2) {\r\n    vector<T> vals;\r\n    int N\
     \ = (int)C1.size();\r\n    for (int i = 0; i < N; i++) {\r\n        for (T d =\
     \ 0; d <= 1; d++) {\r\n            T tc1 = C1[i] + d;\r\n            T tc2 = C2[i]\
@@ -97,7 +97,7 @@ data:
     \ - X[x]) * (Y[y + 1] - Y[y]);\n            }\n        }\n    }\n    cout << ans\
     \ << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../algorithm/compress2d.hpp\"\
+    \n#include \"../../template/template.hpp\"\n#include \"../../others/compress2d.hpp\"\
     \n\nint main() {\n    int N;\n    cin >> N;\n    vector<long long> X1(N), Y1(N),\
     \ X2(N), Y2(N);\n    for (int i = 0; i < N; i++) {\n        cin >> X1.at(i) >>\
     \ Y1.at(i) >> X2.at(i) >> Y2.at(i);\n    }\n    vector<long long> X = compress(X1,\
@@ -119,11 +119,11 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - algorithm/compress2d.hpp
+  - others/compress2d.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_4_A.test.cpp

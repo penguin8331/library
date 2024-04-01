@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
-  bundledCode: "#line 1 \"test/AOJ/GRL_4_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/GRL_4_B.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -79,30 +80,30 @@ data:
     \ vector<vector<int>> &G) {\n    vector<int> ans;\n    int n = (int)G.size();\n\
     \    vector<bool> used(n, false);\n    for (int v = 0; v < n; v++) {\n       \
     \ if (!used[v]) dfs(G, v, used, ans);\n    }\n    reverse(ans.begin(), ans.end());\n\
-    \    return ans;\n}\n#line 4 \"test/AOJ/GRL_4_B.test.cpp\"\n\nint main() {\n \
+    \    return ans;\n}\n#line 5 \"test/AOJ/GRL_4_B.test.cpp\"\n\nint main() {\n \
     \   int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V, vector<int>(0));\n\
     \    for (int i = 0; i < E; i++) {\n        int s, t;\n        cin >> s >> t;\n\
     \        G[s].push_back(t);\n    }\n    auto ans = topo_sort(G);\n    for (int\
     \ i = 0; i < ans.size(); i++) {\n        cout << ans[i] << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../graph/topological-sort.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\
+    \n#include \"../../graph/topological-sort.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int V, E;\n    cin >> V >> E;\n    vector<vector<int>> G(V,\
     \ vector<int>(0));\n    for (int i = 0; i < E; i++) {\n        int s, t;\n   \
     \     cin >> s >> t;\n        G[s].push_back(t);\n    }\n    auto ans = topo_sort(G);\n\
     \    for (int i = 0; i < ans.size(); i++) {\n        cout << ans[i] << endl;\n\
     \    }\n}"
   dependsOn:
+  - graph/topological-sort.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/topological-sort.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_4_B.test.cpp

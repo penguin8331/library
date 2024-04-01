@@ -5,22 +5,22 @@ data:
     path: data-structure/binary-indexed-tree-raq.hpp
     title: "BIT (\u533A\u9593\u52A0\u7B97, \u533A\u9593\u548C\u53D6\u5F97\u306B\u4E21\
       \u5BFE\u5FDC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -33,8 +33,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
-  bundledCode: "#line 1 \"test/AOJ/DSL_2_G.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
-    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/DSL_2_G.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\n#line 2 \"\
+    template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -89,14 +90,14 @@ data:
     \ a) * a;\n    }\n    \n    friend ostream& operator<<(ostream& os, BIT bit) {\n\
     \        os << \"[ \";\n        for (int i = 0; i < bit.N; i++) {\n          \
     \  os << bit.sum(i, i + 1) << \" \";\n        }\n        os << ']';\n        return\
-    \ os;\n    }\n};\n#line 4 \"test/AOJ/DSL_2_G.test.cpp\"\n\nint main() {\n    int\
+    \ os;\n    }\n};\n#line 5 \"test/AOJ/DSL_2_G.test.cpp\"\n\nint main() {\n    int\
     \ N, Q;\n    cin >> N >> Q;\n    BIT<ll> bit(N);\n    for (int i = 0; i < Q; i++)\
     \ {\n        int t;\n        cin >> t;\n        if (t == 0) {\n            int\
     \ l, r, v;\n            cin >> l >> r >> v;\n            bit.add(l, r + 1, v);\n\
     \        } else {\n            int l, r;\n            cin >> l >> r;\n       \
     \     cout << bit.sum(l, r + 1) << endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../data-structure/binary-indexed-tree-raq.hpp\"\
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
+    \n#include \"../../data-structure/binary-indexed-tree-raq.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    BIT<ll> bit(N);\n   \
     \ for (int i = 0; i < Q; i++) {\n        int t;\n        cin >> t;\n        if\
     \ (t == 0) {\n            int l, r, v;\n            cin >> l >> r >> v;\n    \
@@ -104,17 +105,17 @@ data:
     \        cin >> l >> r;\n            cout << bit.sum(l, r + 1) << endl;\n    \
     \    }\n    }\n}"
   dependsOn:
+  - data-structure/binary-indexed-tree-raq.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - data-structure/binary-indexed-tree-raq.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_G.test.cpp

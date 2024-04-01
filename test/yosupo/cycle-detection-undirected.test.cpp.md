@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/cycle-detection-undirected.hpp
     title: graph/cycle-detection-undirected.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cycle_detection_undirected
@@ -97,16 +97,17 @@ data:
     \u3089\u3001\u30B5\u30A4\u30AF\u30EB\u304C\u51FA\u6765\u308B\n        V = {b};\n\
     \        while (V.back() != a) {\n            auto [v, e] = par[V.back()];\n \
     \           V.push_back(v);\n            E.push_back(e);\n        }\n        E.push_back(eid);\n\
-    \        assert(check(V, E));\n        return;\n    }\n    return;\n}\n#line 4\
-    \ \"test/yosupo/cycle-detection-undirected.test.cpp\"\n\nint main() {\n    INT(N,\
-    \ M);\n    // (to, eid)\n    vector<pair<int, int>> edges;\n    vector<vector<pair<int,\
-    \ int>>> G(N);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n      \
-    \  edges.pb({a, b});\n        G[a].pb({i, b});\n        G[b].pb({i, a});\n   \
-    \ }\n    vector<int> cycle_v, cycle_e;\n    cycle_detection(N, M, edges, G, cycle_v,\
-    \ cycle_e);\n    if ((int)cycle_v.size() == 0) {\n        fin(-1);\n    }\n  \
-    \  print(cycle_v.size());\n    print(cycle_v);\n    print(cycle_e);\n}\n"
+    \        assert(check(V, E));\n        return;\n    }\n    return;\n}\n#line 3\
+    \ \"test/yosupo/cycle-detection-undirected.test.cpp\"\n\n#line 5 \"test/yosupo/cycle-detection-undirected.test.cpp\"\
+    \n\nint main() {\n    INT(N, M);\n    // (to, eid)\n    vector<pair<int, int>>\
+    \ edges;\n    vector<vector<pair<int, int>>> G(N);\n    for (int i = 0; i < M;\
+    \ i++) {\n        INT(a, b);\n        edges.pb({a, b});\n        G[a].pb({i, b});\n\
+    \        G[b].pb({i, a});\n    }\n    vector<int> cycle_v, cycle_e;\n    cycle_detection(N,\
+    \ M, edges, G, cycle_v, cycle_e);\n    if ((int)cycle_v.size() == 0) {\n     \
+    \   fin(-1);\n    }\n    print(cycle_v.size());\n    print(cycle_v);\n    print(cycle_e);\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cycle_detection_undirected\"\
-    \n#include \"../../graph/cycle-detection-undirected.hpp\"\n#include \"../../template/template.hpp\"\
+    \n#include \"../../graph/cycle-detection-undirected.hpp\"\n\n#include \"../../template/template.hpp\"\
     \n\nint main() {\n    INT(N, M);\n    // (to, eid)\n    vector<pair<int, int>>\
     \ edges;\n    vector<vector<pair<int, int>>> G(N);\n    for (int i = 0; i < M;\
     \ i++) {\n        INT(a, b);\n        edges.pb({a, b});\n        G[a].pb({i, b});\n\
@@ -125,8 +126,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/cycle-detection-undirected.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:24:14+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/cycle-detection-undirected.test.cpp
 layout: document

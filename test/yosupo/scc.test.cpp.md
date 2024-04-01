@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -95,33 +95,34 @@ data:
     \        for (int i = N - 1; i >= 0; --i) {\n            if (!seen[vs[i]]) {\n\
     \                rvs.clear();\n                rdfs(vs[i], k++);\n           \
     \     scc.push_back(rvs);\n            }\n        }\n\n        reconstruct();\n\
-    \    }\n};\n#line 4 \"test/yosupo/scc.test.cpp\"\n\nint main() {\n    int N, M;\n\
+    \    }\n};\n#line 3 \"test/yosupo/scc.test.cpp\"\n\n#line 5 \"test/yosupo/scc.test.cpp\"\
+    \n\nint main() {\n    int N, M;\n    cin >> N >> M;\n    SCC scc(N);\n    for\
+    \ (int i = 0; i < M; i++) {\n        int a, b;\n        cin >> a >> b;\n     \
+    \   scc.addedge(a, b);\n    }\n    scc.solve();\n    auto ans = scc.scc;\n   \
+    \ cout << ans.size() << endl;\n    for (const auto& i : ans) {\n        cout <<\
+    \ i.size();\n        for (const auto& j : i) {\n            cout << \" \" << j;\n\
+    \        }\n        cout << endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#include \"../../graph/scc.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\nint main() {\n    int N, M;\n\
     \    cin >> N >> M;\n    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n    \
     \    int a, b;\n        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n  \
     \  scc.solve();\n    auto ans = scc.scc;\n    cout << ans.size() << endl;\n  \
     \  for (const auto& i : ans) {\n        cout << i.size();\n        for (const\
     \ auto& j : i) {\n            cout << \" \" << j;\n        }\n        cout <<\
-    \ endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#include \"../../template/template.hpp\"\
-    \n#include \"../../graph/scc.hpp\"\n\nint main() {\n    int N, M;\n    cin >>\
-    \ N >> M;\n    SCC scc(N);\n    for (int i = 0; i < M; i++) {\n        int a,\
-    \ b;\n        cin >> a >> b;\n        scc.addedge(a, b);\n    }\n    scc.solve();\n\
-    \    auto ans = scc.scc;\n    cout << ans.size() << endl;\n    for (const auto&\
-    \ i : ans) {\n        cout << i.size();\n        for (const auto& j : i) {\n \
-    \           cout << \" \" << j;\n        }\n        cout << endl;\n    }\n}"
+    \ endl;\n    }\n}"
   dependsOn:
+  - graph/scc.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - graph/scc.hpp
   isVerificationFile: true
   path: test/yosupo/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-01 15:21:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/scc.test.cpp
 layout: document

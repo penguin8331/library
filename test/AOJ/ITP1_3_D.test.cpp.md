@@ -4,22 +4,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -32,8 +32,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D
-  bundledCode: "#line 1 \"test/AOJ/ITP1_3_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\
-    \r\n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+  bundledCode: "#line 1 \"test/AOJ/ITP1_3_D.test.cpp\"\n#define PROBLEM \\\r\n   \
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\r\n#line\
+    \ 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
     \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
     \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
     \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
@@ -77,29 +78,29 @@ data:
     \ <= n; ++i) {\r\n        if (n % i == 0) {\r\n            res.push_back(i);\r\
     \n            long long j = n / i;\r\n            if (j != i) res.push_back(j);\r\
     \n        }\r\n    }\r\n    sort(res.begin(), res.end());\r\n    return res;\r\
-    \n}\n#line 4 \"test/AOJ/ITP1_3_D.test.cpp\"\n\r\nint main() {\r\n    int a, b,\
+    \n}\n#line 5 \"test/AOJ/ITP1_3_D.test.cpp\"\n\r\nint main() {\r\n    int a, b,\
     \ c;\r\n    cin >> a >> b >> c;\r\n    auto res = divisors(c);\r\n    int ans\
     \ = 0;\r\n    for (int i = 0; i < (int)res.size(); i++) {\r\n        if (res[i]\
     \ >= a && res[i] <= b) {\r\n            ans++;\r\n        }\r\n    }\r\n    cout\
     \ << ans << endl;\r\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\
-    \r\n#include \"../../template/template.hpp\"\r\n#include \"../../math/number/divisors.hpp\"\
+  code: "#define PROBLEM \\\r\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_D\"\
+    \r\n#include \"../../math/number/divisors.hpp\"\r\n#include \"../../template/template.hpp\"\
     \r\n\r\nint main() {\r\n    int a, b, c;\r\n    cin >> a >> b >> c;\r\n    auto\
     \ res = divisors(c);\r\n    int ans = 0;\r\n    for (int i = 0; i < (int)res.size();\
     \ i++) {\r\n        if (res[i] >= a && res[i] <= b) {\r\n            ans++;\r\n\
     \        }\r\n    }\r\n    cout << ans << endl;\r\n}"
   dependsOn:
+  - math/number/divisors.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  - math/number/divisors.hpp
   isVerificationFile: true
   path: test/AOJ/ITP1_3_D.test.cpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ITP1_3_D.test.cpp

@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -65,30 +65,28 @@ data:
     \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
     #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
     #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"algorithm/compress.hpp\"\n\r\ntemplate <typename T>\r\nstruct\
-    \ Compress {\r\n    vector<T> xs;\r\n\r\n    Compress() {}\r\n\r\n    explicit\
-    \ Compress(const vector<T>& vs) { add(vs); }\r\n\r\n    explicit Compress(const\
-    \ initializer_list<vector<T>>& vs) { add(vs); }\r\n\r\n    void add(const vector<T>&\
-    \ vs) { xs.insert(xs.end(), vs.begin(), vs.end()); }\r\n\r\n    void add(const\
-    \ T& x) { xs.push_back(x); }\r\n\r\n    void build() {\r\n        sort(all(xs));\r\
-    \n        xs.erase(unique(all(xs)), xs.end());\r\n    }\r\n\r\n    vector<int>\
-    \ get(const vector<T>& vs) const {\r\n        vector<int> ret;\r\n        transform(all(vs),\
-    \ back_inserter(ret), [&](const T& x) {\r\n            return lower_bound(all(xs),\
-    \ x) - xs.begin();\r\n        });\r\n        return ret;\r\n    }\r\n\r\n    int\
-    \ get(const T& x) const { return lower_bound(all(xs), x) - xs.begin(); }\r\n\r\
-    \n    const T& operator[](int k) const { return xs[k]; }\r\n};\n"
-  code: "#pragma once\r\n#include \"../template/template.hpp\"\r\n\r\ntemplate <typename\
-    \ T>\r\nstruct Compress {\r\n    vector<T> xs;\r\n\r\n    Compress() {}\r\n\r\n\
-    \    explicit Compress(const vector<T>& vs) { add(vs); }\r\n\r\n    explicit Compress(const\
-    \ initializer_list<vector<T>>& vs) { add(vs); }\r\n\r\n    void add(const vector<T>&\
-    \ vs) { xs.insert(xs.end(), vs.begin(), vs.end()); }\r\n\r\n    void add(const\
-    \ T& x) { xs.push_back(x); }\r\n\r\n    void build() {\r\n        sort(all(xs));\r\
-    \n        xs.erase(unique(all(xs)), xs.end());\r\n    }\r\n\r\n    vector<int>\
-    \ get(const vector<T>& vs) const {\r\n        vector<int> ret;\r\n        transform(all(vs),\
-    \ back_inserter(ret), [&](const T& x) {\r\n            return lower_bound(all(xs),\
-    \ x) - xs.begin();\r\n        });\r\n        return ret;\r\n    }\r\n\r\n    int\
-    \ get(const T& x) const { return lower_bound(all(xs), x) - xs.begin(); }\r\n\r\
-    \n    const T& operator[](int k) const { return xs[k]; }\r\n};"
+    \ std;\n#line 3 \"others/doubling.hpp\"\n\nstruct Doubling {\n    vector<vector<int>>\
+    \ table;\n    const vector<int> data;\n    int sz;\n    int LOG;\n    unsigned\
+    \ long long MAX;\n\n    Doubling(const vector<int> &data, const unsigned long\
+    \ long &MAX)\n        : data(data), MAX(MAX), LOG(64 - __builtin_clzll(MAX)) {\n\
+    \        sz = data.size();\n        table.assign(LOG, vector<int>(sz));\n    \
+    \    table[0] = data;\n        for (int k = 0; k < LOG - 1; k++) {\n         \
+    \   for (int i = 0; i < sz; i++) {\n                table[k + 1][i] = table[k][table[k][i]];\n\
+    \            }\n        }\n    }\n\n    int get(int v, unsigned long long k) {\n\
+    \        assert(k <= MAX);\n        int now = v;\n        for (int i = 0; i <\
+    \ LOG; i++) {\n            if (k & 1) now = table[i][now];\n            k = k\
+    \ >> 1;\n        }\n        return now;\n    }\n};\n"
+  code: "#pragma once\n#include \"../template/template.hpp\"\n\nstruct Doubling {\n\
+    \    vector<vector<int>> table;\n    const vector<int> data;\n    int sz;\n  \
+    \  int LOG;\n    unsigned long long MAX;\n\n    Doubling(const vector<int> &data,\
+    \ const unsigned long long &MAX)\n        : data(data), MAX(MAX), LOG(64 - __builtin_clzll(MAX))\
+    \ {\n        sz = data.size();\n        table.assign(LOG, vector<int>(sz));\n\
+    \        table[0] = data;\n        for (int k = 0; k < LOG - 1; k++) {\n     \
+    \       for (int i = 0; i < sz; i++) {\n                table[k + 1][i] = table[k][table[k][i]];\n\
+    \            }\n        }\n    }\n\n    int get(int v, unsigned long long k) {\n\
+    \        assert(k <= MAX);\n        int now = v;\n        for (int i = 0; i <\
+    \ LOG; i++) {\n            if (k & 1) now = table[i][now];\n            k = k\
+    \ >> 1;\n        }\n        return now;\n    }\n};"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -97,21 +95,12 @@ data:
   - template/util.hpp
   - template/debug.hpp
   isVerificationFile: false
-  path: algorithm/compress.hpp
+  path: others/doubling.hpp
   requiredBy: []
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-04-01 15:21:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: algorithm/compress.hpp
+documentation_of: others/doubling.hpp
 layout: document
-title: "\u5EA7\u6A19\u5727\u7E2E"
+title: "\u30C0\u30D6\u30EA\u30F3\u30B0"
 ---
-
-# クエリ
-
-- `add(vs)` : 配列 `vs` 内の座標を追加
-- `add(x)` : 座標 `x` を追加
-- `build()` : ビルドする
-- `get(vs)` : `vs` 内の座標を座標圧縮したものを返す
-- `get(x)` : 座標 `x` を座標圧縮したものを返す
-- `[k]` : 座標圧縮後の `k` が示すもとの座標を返す
