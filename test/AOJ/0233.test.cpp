@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0233"
-#include "../../template/template.hpp"
 #include "../../math/number/convert-base.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     while (true) {

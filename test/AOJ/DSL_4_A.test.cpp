@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A"
 #include "../../template/template.hpp"
-#include "../../algorithm/compress2d.hpp"
+#include "../../others/compress2d.hpp"
 
 int main() {
     int N;

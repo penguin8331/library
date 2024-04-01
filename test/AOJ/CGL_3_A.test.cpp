@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A"
 #include "../../geomeny/area-polygon.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     cout << fixed << setprecision(1);

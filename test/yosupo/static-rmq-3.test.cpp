@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
-#include "../../template/template.hpp"
 #include "../../data-structure/implicit-treap.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     MinUpdateQuery<int, int> solve;

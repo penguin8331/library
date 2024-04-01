@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A"
-#include "template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A"
 #include "graph/flow/ford-fullkerson.hpp"
+#include "template/template.hpp"
 
 int main() {
     INT(X, Y, E);

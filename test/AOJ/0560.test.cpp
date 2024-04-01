@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560"
-#include "../../template/template.hpp"
 #include "../../algorithm/section-sum2d.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int H, W, Q;
@@ -13,9 +13,7 @@ int main() {
             if (c == 'J') {
                 JJ.update(i, j, 1);
             }
-            elif (c == 'O') {
-                OO.update(i, j, 1);
-            }
+            elif (c == 'O') { OO.update(i, j, 1); }
             else {
                 II.update(i, j, 1);
             }
@@ -29,6 +27,7 @@ int main() {
         cin >> sx >> sy >> gx >> gy;
         sx--;
         sy--;
-        cout << JJ.get(sx, sy, gx, gy) << " " << OO.get(sx, sy, gx, gy) << " " << II.get(sx, sy, gx, gy) << endl;
+        cout << JJ.get(sx, sy, gx, gy) << " " << OO.get(sx, sy, gx, gy) << " "
+             << II.get(sx, sy, gx, gy) << endl;
     }
 }

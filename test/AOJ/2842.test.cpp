@@ -42,7 +42,8 @@ int main() {
             cin >> h >> w >> h1 >> w1;
             h--;
             w--;
-            cout << fini.sum(h, h1, w, w1) << " " << mada.sum(h, h1, w, w1) << endl;
+            cout << fini.sum(h, h1, w, w1) << " " << mada.sum(h, h1, w, w1)
+                 << endl;
         }
     }
 }

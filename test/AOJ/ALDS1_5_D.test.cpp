@@ -1,6 +1,7 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 #include "../../math/combinatorics/inversion-number.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N;

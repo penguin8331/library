@@ -1,8 +1,9 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A"
 #include "../../graph/flow/ford-fullkerson.hpp"
+#include "../../template/template.hpp"
 
-int main(){
+int main() {
     int V, E;
     cin >> V >> E;
     Graph<int> G(V);

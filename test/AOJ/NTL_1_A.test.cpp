@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
 #include "../../math/number/prime-factorization.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N;

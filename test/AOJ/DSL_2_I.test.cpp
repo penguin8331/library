@@ -1,4 +1,5 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I"
 #include "../../data-structure/lazy-segment-tree.hpp"
 #include "../../template/template.hpp"
 

@@ -1,6 +1,6 @@
 ---
 title: 座標圧縮
-documentation_of: //algorithm/compress.hpp
+documentation_of: //others/compress.hpp
 ---
 
 # クエリ

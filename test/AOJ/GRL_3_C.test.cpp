@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C"
 #include "../../graph/scc.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int V, E;

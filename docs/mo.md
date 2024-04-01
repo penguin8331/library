@@ -1,6 +1,6 @@
 ---
 title: Mo's algorithm
-documentation_of: //data-structure/mo.hpp
+documentation_of: //others/mo.hpp
 ---
 
 ## 概要

@@ -1,8 +1,9 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C"
 #define ERROR 0.00001
-#include "../../template/template.hpp"
 #include "../../geomeny/area-polygon.hpp"
 #include "../../geomeny/convex-cut.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N;

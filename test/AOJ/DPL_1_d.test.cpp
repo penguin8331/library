@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D"
 #include "../../dynamic-programming/longest-increasing-subsequence.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N;

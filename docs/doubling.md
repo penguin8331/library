@@ -1,4 +1,4 @@
 ---
 title: ダブリング
-documentation_of: //algorithm/doubling.hpp
+documentation_of: //others/doubling.hpp
 ---

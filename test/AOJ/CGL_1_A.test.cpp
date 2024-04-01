@@ -1,7 +1,8 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A"
 #define ERROR 0.00000001
-#include "../../template/template.hpp"
 #include "../../geomeny/projection.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     Line a(2);

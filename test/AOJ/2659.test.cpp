@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659"
-#include "../../template/template.hpp"
 #include "../../math/number/chinese-remainder-theorem.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     long long N;

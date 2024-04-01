@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C"
 #include "../../geomeny/ccw.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     Point a, b;
@@ -14,15 +15,9 @@ int main() {
         if (res == -1) {
             cout << "CLOCKWISE" << endl;
         }
-        elif (res == 1) {
-            cout << "COUNTER_CLOCKWISE" << endl;
-        }
-        elif (res == 2) {
-            cout << "ONLINE_BACK" << endl;
-        }
-        elif (res == -2) {
-            cout << "ONLINE_FRONT" << endl;
-        }
+        elif (res == 1) { cout << "COUNTER_CLOCKWISE" << endl; }
+        elif (res == 2) { cout << "ONLINE_BACK" << endl; }
+        elif (res == -2) { cout << "ONLINE_FRONT" << endl; }
         else {
             cout << "ON_SEGMENT" << endl;
         }

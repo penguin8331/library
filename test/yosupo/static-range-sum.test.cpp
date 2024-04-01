@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
-#include "../../template/template.hpp"
 #include "../../algorithm/section-sum.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N, Q;

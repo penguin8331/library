@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C"
 #include "../../geomeny/is-contain-in-the-polygon.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int N;

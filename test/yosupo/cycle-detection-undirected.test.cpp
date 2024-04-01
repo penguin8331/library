@@ -1,5 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection_undirected"
 #include "../../graph/cycle-detection-undirected.hpp"
+
 #include "../../template/template.hpp"
 
 int main() {

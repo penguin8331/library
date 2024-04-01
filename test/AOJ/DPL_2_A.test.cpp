@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A"
-#include "../../template/template.hpp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A"
 #include "../../dynamic-programming/traveling-salesman-problem.hpp"
+#include "../../template/template.hpp"
 
 int main() {
     int V, E;
