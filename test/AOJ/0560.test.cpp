@@ -1,5 +1,5 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560"
-#include "../../algorithm/section-sum2d.hpp"
+#include "../../dynamic-programming/section-sum2d.hpp"
 #include "../../template/template.hpp"
 
 int main() {

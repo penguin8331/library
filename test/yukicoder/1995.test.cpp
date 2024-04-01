@@ -1,5 +1,5 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1995"
-#include "../../algorithm/interval_scheduling.hpp"
+#include "../../others/interval_scheduling.hpp"
 #include "../../template/template.hpp"
 
 int main() {

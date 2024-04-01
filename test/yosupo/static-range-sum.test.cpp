@@ -1,5 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
-#include "../../algorithm/section-sum.hpp"
+#include "../../dynamic-programming/section-sum.hpp"
 #include "../../template/template.hpp"
 
 int main() {
