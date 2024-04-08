@@ -273,6 +273,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
+    - icon: ':x:'
+      path: others/range-set.hpp
+      title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
     - icon: ':warning:'
       path: others/timer.hpp
       title: others/timer.hpp
@@ -286,22 +289,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -450,6 +453,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/atcoder
     pages:
+    - icon: ':x:'
+      path: test/atcoder/abc214_e.test.cpp
+      title: test/atcoder/abc214_e.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc256_a.test.cpp
       title: test/atcoder/abc256_a.test.cpp

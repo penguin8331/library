@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -261,6 +261,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
+  - icon: ':x:'
+    path: others/range-set.hpp
+    title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
   - icon: ':warning:'
     path: others/timer.hpp
     title: others/timer.hpp
@@ -270,19 +273,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedVerifiedWith:
@@ -427,6 +430,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/abc214_e.test.cpp
+    title: test/atcoder/abc214_e.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc256_a.test.cpp
     title: test/atcoder/abc256_a.test.cpp
@@ -469,9 +475,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -623,6 +629,7 @@ data:
   - graph/bfs2d.hpp
   - others/mo.hpp
   - others/compress2d.hpp
+  - others/range-set.hpp
   - others/doubling.hpp
   - others/rand-int.hpp
   - others/timer.hpp
@@ -630,7 +637,7 @@ data:
   - others/date.hpp
   - others/compress.hpp
   timestamp: '2024-02-25 20:07:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/CGL_3_B.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
@@ -692,6 +699,7 @@ data:
   - test/yosupo/shortes-path.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
+  - test/atcoder/abc214_e.test.cpp
   - test/atcoder/abc256_a.test.cpp
 documentation_of: template/func.hpp
 layout: document
