@@ -261,7 +261,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
-  - icon: ':x:'
+  - icon: ':question:'
     path: others/range-set.hpp
     title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
   - icon: ':warning:'
@@ -475,6 +475,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1995.test.cpp
     title: test/yukicoder/1995.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/674.test.cpp
+    title: test/yukicoder/674.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -539,160 +542,161 @@ data:
   isVerificationFile: false
   path: template/macro.hpp
   requiredBy:
-  - dynamic-programming/longest-increasing-subsequence-restoration.hpp
-  - dynamic-programming/longest-increasing-subsequence.hpp
-  - dynamic-programming/section-sum2d.hpp
-  - dynamic-programming/traveling-salesman-problem.hpp
-  - dynamic-programming/longest-common-subsequence.hpp
-  - dynamic-programming/longest-common-subsequence-restoration.hpp
-  - dynamic-programming/section-sum.hpp
-  - string/rolling-hash.hpp
+  - others/interval_scheduling.hpp
+  - others/compress2d.hpp
+  - others/doubling.hpp
+  - others/timer.hpp
+  - others/compress.hpp
+  - others/date.hpp
+  - others/range-set.hpp
+  - others/rand-int.hpp
+  - others/mo.hpp
   - string/rle.hpp
-  - math/combinatorics/modpow.hpp
-  - math/combinatorics/next-combination.hpp
-  - math/combinatorics/binomial-coefficient.hpp
-  - math/combinatorics/inversion-number.hpp
-  - math/number/isprime.hpp
-  - math/number/pollard-rho.hpp
-  - math/number/prime-factorization.hpp
-  - math/number/pow.hpp
-  - math/number/ext-gcd.hpp
-  - math/number/eratostenes.hpp
-  - math/number/miller-rabin.hpp
-  - math/number/convert-base.hpp
-  - math/number/divisors.hpp
-  - math/number/chinese-remainder-theorem.hpp
-  - math/algebra/matrix.hpp
+  - string/rolling-hash.hpp
+  - template/func.hpp
+  - template/debug.hpp
   - template/alias.hpp
   - template/util.hpp
   - template/template.hpp
-  - template/func.hpp
-  - template/debug.hpp
-  - geomeny/is-inter.hpp
-  - geomeny/area-polygon.hpp
-  - geomeny/convex-hull.hpp
-  - geomeny/geomeny-template.hpp
-  - geomeny/convex-cut.hpp
-  - geomeny/is-convex.hpp
-  - geomeny/crosspoint.hpp
-  - geomeny/projection.hpp
-  - geomeny/is-contain-in-the-polygon.hpp
-  - geomeny/ccw.hpp
   - geomeny/distance.hpp
-  - data-structure/static-modular-arithmetic.hpp
-  - data-structure/binary-indexed-tree-raq.hpp
-  - data-structure/disjoint-sparse-table.hpp
-  - data-structure/ext-rope.hpp
-  - data-structure/segment-tree.hpp
-  - data-structure/union-find.hpp
-  - data-structure/binary-indexed-tree-2d.hpp
-  - data-structure/randomized-binary-search-tree.hpp
-  - data-structure/pair-query-by-implicit-treap.hpp
-  - data-structure/boost-multiprecision.hpp
-  - data-structure/implicit-treap.hpp
-  - data-structure/sparse-table.hpp
-  - data-structure/binary-indexed-tree.hpp
-  - data-structure/binary-indexed-tree-2d-raq.hpp
-  - data-structure/sparse-table-2d.hpp
-  - data-structure/with_input.hpp
-  - data-structure/priority-sum-by-implicit-treap.hpp
-  - data-structure/dynamic_modular-arithmetic.hpp
-  - data-structure/lazy-segment-tree.hpp
-  - data-structure/lazy-segment-tree-arthmetic.hpp
-  - graph/flow/ford-fullkerson.hpp
-  - graph/topological-sort.hpp
+  - geomeny/is-convex.hpp
+  - geomeny/geomeny-template.hpp
+  - geomeny/area-polygon.hpp
+  - geomeny/crosspoint.hpp
+  - geomeny/convex-hull.hpp
+  - geomeny/is-contain-in-the-polygon.hpp
+  - geomeny/is-inter.hpp
+  - geomeny/convex-cut.hpp
+  - geomeny/projection.hpp
+  - geomeny/ccw.hpp
+  - math/algebra/matrix.hpp
+  - math/combinatorics/inversion-number.hpp
+  - math/combinatorics/binomial-coefficient.hpp
+  - math/combinatorics/modpow.hpp
+  - math/combinatorics/next-combination.hpp
+  - math/number/pollard-rho.hpp
+  - math/number/miller-rabin.hpp
+  - math/number/chinese-remainder-theorem.hpp
+  - math/number/eratostenes.hpp
+  - math/number/convert-base.hpp
+  - math/number/prime-factorization.hpp
+  - math/number/ext-gcd.hpp
+  - math/number/divisors.hpp
+  - math/number/isprime.hpp
+  - math/number/pow.hpp
+  - dynamic-programming/longest-increasing-subsequence-restoration.hpp
+  - dynamic-programming/section-sum2d.hpp
+  - dynamic-programming/section-sum.hpp
+  - dynamic-programming/traveling-salesman-problem.hpp
+  - dynamic-programming/longest-common-subsequence-restoration.hpp
+  - dynamic-programming/longest-common-subsequence.hpp
+  - dynamic-programming/longest-increasing-subsequence.hpp
   - graph/bellman-ford.hpp
-  - graph/low-link.hpp
-  - graph/warshall-floyd.hpp
-  - graph/is_biparite.hpp
-  - graph/scc.hpp
-  - graph/dijkstra-route.hpp
-  - graph/bfs.hpp
   - graph/prim.hpp
+  - graph/warshall-floyd.hpp
+  - graph/low-link.hpp
   - graph/cycle-detection-undirected.hpp
-  - graph/dijkstra.hpp
-  - graph/kruskal.hpp
-  - graph/two-sat.hpp
+  - graph/topological-sort.hpp
   - graph/dijkstra2d.hpp
   - graph/tree/lca.hpp
   - graph/tree/euler-tour-on-edges.hpp
   - graph/tree/euler-tour-on-nodes.hpp
   - graph/tree/diameter-weighted.hpp
+  - graph/two-sat.hpp
+  - graph/kruskal.hpp
+  - graph/dijkstra-route.hpp
+  - graph/is_biparite.hpp
+  - graph/bfs.hpp
+  - graph/dijkstra.hpp
+  - graph/flow/ford-fullkerson.hpp
   - graph/bfs2d.hpp
-  - others/mo.hpp
-  - others/compress2d.hpp
-  - others/range-set.hpp
-  - others/doubling.hpp
-  - others/rand-int.hpp
-  - others/timer.hpp
-  - others/interval_scheduling.hpp
-  - others/date.hpp
-  - others/compress.hpp
+  - graph/scc.hpp
+  - data-structure/disjoint-sparse-table.hpp
+  - data-structure/ext-rope.hpp
+  - data-structure/lazy-segment-tree.hpp
+  - data-structure/randomized-binary-search-tree.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
+  - data-structure/sparse-table-2d.hpp
+  - data-structure/binary-indexed-tree-raq.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/dynamic_modular-arithmetic.hpp
+  - data-structure/implicit-treap.hpp
+  - data-structure/lazy-segment-tree-arthmetic.hpp
+  - data-structure/static-modular-arithmetic.hpp
+  - data-structure/with_input.hpp
+  - data-structure/union-find.hpp
+  - data-structure/sparse-table.hpp
+  - data-structure/segment-tree.hpp
+  - data-structure/binary-indexed-tree-2d-raq.hpp
+  - data-structure/binary-indexed-tree-2d.hpp
+  - data-structure/binary-indexed-tree.hpp
+  - data-structure/boost-multiprecision.hpp
   timestamp: '2024-02-25 20:07:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/AOJ/CGL_3_B.test.cpp
-  - test/AOJ/DSL_2_G.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
-  - test/AOJ/DSL_2_H.test.cpp
-  - test/AOJ/DSL_1_A.test.cpp
-  - test/AOJ/DSL_2_F.test.cpp
-  - test/AOJ/GRL_3_A.test.cpp
-  - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/2842.test.cpp
-  - test/AOJ/GRL_5_C.test.cpp
-  - test/AOJ/CGL_4_A.test.cpp
-  - test/AOJ/GRL_3_C.test.cpp
-  - test/AOJ/GRL_1_B.test.cpp
-  - test/AOJ/CGL_4_C.test.cpp
-  - test/AOJ/0560.test.cpp
-  - test/AOJ/ALDS1_10_C.test.cpp
-  - test/AOJ/NTL_1_B.test.cpp
-  - test/AOJ/CGL_3_C.test.cpp
-  - test/AOJ/ALDS1_11_C.test.cpp
-  - test/AOJ/DSL_4_A.test.cpp
-  - test/AOJ/GRL_1_C.test.cpp
-  - test/AOJ/CGL_7_E.test.cpp
-  - test/AOJ/GRL_3_B.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
-  - test/AOJ/ALDS1_12_A.test.cpp
-  - test/AOJ/ALDS1_1_C-2.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
-  - test/AOJ/DPL_2_A.test.cpp
-  - test/AOJ/0233.test.cpp
-  - test/AOJ/NTL_1_A.test.cpp
-  - test/AOJ/2659.test.cpp
-  - test/AOJ/CGL_1_A.test.cpp
-  - test/AOJ/CGL_1_C.test.cpp
-  - test/AOJ/CGL_2_C.test.cpp
-  - test/AOJ/DSL_2_I.test.cpp
-  - test/AOJ/CGL_3_A.test.cpp
-  - test/AOJ/GRL_4_B.test.cpp
-  - test/AOJ/1160.test.cpp
-  - test/AOJ/2667.test.cpp
-  - test/AOJ/GRL_7_A.test.cpp
-  - test/AOJ/GRL_6_A.test.cpp
-  - test/AOJ/ALDS1_1_C.test.cpp
-  - test/AOJ/ITP1_3_D.test.cpp
-  - test/AOJ/DPL_1_d.test.cpp
-  - test/AOJ/ALDS1_5_D.test.cpp
-  - test/AOJ/GRL_1_A.test.cpp
-  - test/AOJ/GRL_5_A.test.cpp
-  - test/yukicoder/1995.test.cpp
-  - test/yosupo/static-rmq-3.test.cpp
-  - test/yosupo/matrix-det.test.cpp
-  - test/yosupo/cycle-detection-undirected.test.cpp
-  - test/yosupo/static-range-sum.test.cpp
-  - test/yosupo/binomial-cofficient-prime-mod.test.cpp
-  - test/yosupo/two-sat.test.cpp
-  - test/yosupo/static-rmq.test.cpp
-  - test/yosupo/zalgorithm.test.cpp
-  - test/yosupo/static-range-sum-2.test.cpp
-  - test/yosupo/shortes-path.test.cpp
-  - test/yosupo/scc.test.cpp
-  - test/yosupo/static-rmq-2.test.cpp
-  - test/atcoder/abc214_e.test.cpp
   - test/atcoder/abc256_a.test.cpp
+  - test/atcoder/abc214_e.test.cpp
+  - test/yosupo/static-rmq.test.cpp
+  - test/yosupo/two-sat.test.cpp
+  - test/yosupo/binomial-cofficient-prime-mod.test.cpp
+  - test/yosupo/matrix-det.test.cpp
+  - test/yosupo/shortes-path.test.cpp
+  - test/yosupo/static-range-sum.test.cpp
+  - test/yosupo/zalgorithm.test.cpp
+  - test/yosupo/static-rmq-2.test.cpp
+  - test/yosupo/cycle-detection-undirected.test.cpp
+  - test/yosupo/scc.test.cpp
+  - test/yosupo/static-rmq-3.test.cpp
+  - test/yosupo/static-range-sum-2.test.cpp
+  - test/yukicoder/1995.test.cpp
+  - test/yukicoder/674.test.cpp
+  - test/AOJ/CGL_3_C.test.cpp
+  - test/AOJ/CGL_7_E.test.cpp
+  - test/AOJ/2842.test.cpp
+  - test/AOJ/ALDS1_1_C.test.cpp
+  - test/AOJ/CGL_3_B.test.cpp
+  - test/AOJ/CGL_2_C.test.cpp
+  - test/AOJ/ALDS1_11_C.test.cpp
+  - test/AOJ/NTL_1_B.test.cpp
+  - test/AOJ/DPL_2_A.test.cpp
+  - test/AOJ/2659.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
+  - test/AOJ/1160.test.cpp
+  - test/AOJ/GRL_7_A.test.cpp
+  - test/AOJ/GRL_1_A.test.cpp
+  - test/AOJ/ALDS1_12_A.test.cpp
+  - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_1_C.test.cpp
+  - test/AOJ/GRL_6_A.test.cpp
+  - test/AOJ/DPL_1_d.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
+  - test/AOJ/0233.test.cpp
+  - test/AOJ/GRL_1_C.test.cpp
+  - test/AOJ/ALDS1_1_C-2.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
+  - test/AOJ/GRL_5_A.test.cpp
+  - test/AOJ/GRL_3_C.test.cpp
+  - test/AOJ/DSL_4_A.test.cpp
+  - test/AOJ/GRL_3_B.test.cpp
+  - test/AOJ/ALDS1_5_D.test.cpp
+  - test/AOJ/NTL_1_A.test.cpp
+  - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/ALDS1_10_C.test.cpp
+  - test/AOJ/0560.test.cpp
+  - test/AOJ/DSL_1_A.test.cpp
+  - test/AOJ/2667.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/GRL_3_A.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/ITP1_3_D.test.cpp
+  - test/AOJ/GRL_4_B.test.cpp
+  - test/AOJ/CGL_7_D.test.cpp
+  - test/AOJ/GRL_1_B.test.cpp
+  - test/AOJ/GRL_5_C.test.cpp
+  - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/CGL_4_C.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
 documentation_of: template/macro.hpp
 layout: document
 redirect_from:

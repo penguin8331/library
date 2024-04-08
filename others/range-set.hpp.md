@@ -24,9 +24,12 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc214_e.test.cpp
     title: test/atcoder/abc214_e.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/674.test.cpp
+    title: test/yukicoder/674.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -175,9 +178,10 @@ data:
   path: others/range-set.hpp
   requiredBy: []
   timestamp: '2024-04-08 19:57:37+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/atcoder/abc214_e.test.cpp
+  - test/yukicoder/674.test.cpp
 documentation_of: others/range-set.hpp
 layout: document
 title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
@@ -193,13 +197,13 @@ RangeSet<T> hoge;
 
 ### クエリ
 
-`convered(T l, T r)` : 区間 `[l,r]` がカバーされているか
-`convered_by(T l, T r)` : 区間 `[l,r]` がカバーされている場合その区間
-`insert(T l, T r)` : 区間 `[l,r]` を挿入
-`erase(T l, T r)` : 区間 `[l,r]` を削除
+`convered(T l, T r)` : 区間 `[l,r]` がカバーされているか  
+`convered_by(T l, T r)` : 区間 `[l,r]` が**完全に**カバーされている区間が存在する場合その区間を返す  
+`insert(T l, T r)` : 区間 `[l,r]` を挿入  
+`erase(T l, T r)` : 区間 `[l,r]` を削除  
 `mex(T x)` : `x` 以上ではじめにカバーされていない場所を返す
 
 ## 参考
 
-https://mugen1337.hatenablog.com/entry/2020/10/14/134022
-https://rsk0315.hatenablog.com/entry/2020/10/11/125049
+[区間をsetで管理するやつでもうバグらせたくない-むげんのぶろぐ](https://mugen1337.hatenablog.com/entry/2020/10/14/134022)  
+[要素の追加・削除と mex を対数時間で処理するよ-えびちゃんの日記](https://rsk0315.hatenablog.com/entry/2020/10/11/125049)

@@ -173,6 +173,6 @@ title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segmen
   \ Tree"
 ---
 
-## 概要
+## 参考
 
-[記事](https://null-mn.hatenablog.com/entry/2021/08/22/064325)
+[区間に等差数列を作用させる遅延セグメントツリー-null mn](https://null-mn.hatenablog.com/entry/2021/08/22/064325)

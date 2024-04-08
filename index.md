@@ -273,7 +273,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
-    - icon: ':x:'
+    - icon: ':question:'
       path: others/range-set.hpp
       title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
     - icon: ':warning:'
@@ -502,6 +502,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1995.test.cpp
       title: test/yukicoder/1995.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/674.test.cpp
+      title: test/yukicoder/674.test.cpp
 layout: toppage
 ---
 [![Tyson8331](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2FTyson8331)](https://atcoder.jp/users/Tyson8331)
