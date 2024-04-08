@@ -3,6 +3,6 @@ title: ext/pbds
 documentation_of: //data-structure/ext-pbds.hpp
 ---
 
-## 概要
+## 参考
 
-[記事](https://xuzijian629.hatenablog.com/entry/2018/12/01/000010)
+[Policy Based Data Structures-Joeの精進記録](https://xuzijian629.hatenablog.com/entry/2018/12/01/000010)
