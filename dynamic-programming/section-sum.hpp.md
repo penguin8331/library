@@ -102,8 +102,5 @@ data:
   - test/yosupo/static-range-sum.test.cpp
 documentation_of: dynamic-programming/section-sum.hpp
 layout: document
-redirect_from:
-- /library/dynamic-programming/section-sum.hpp
-- /library/dynamic-programming/section-sum.hpp.html
-title: dynamic-programming/section-sum.hpp
+title: "\u7D2F\u7A4D\u548C"
 ---

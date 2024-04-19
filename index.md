@@ -90,10 +90,10 @@ data:
       title: LIS
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/section-sum.hpp
-      title: dynamic-programming/section-sum.hpp
+      title: "\u7D2F\u7A4D\u548C"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/section-sum2d.hpp
-      title: dynamic-programming/section-sum2d.hpp
+      title: "\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C"
     - icon: ':heavy_check_mark:'
       path: dynamic-programming/traveling-salesman-problem.hpp
       title: "\u5DE1\u56DE\u30BB\u30FC\u30EB\u30B9\u30DE\u30F3\u554F\u984C (by bitDP)"
@@ -188,10 +188,10 @@ data:
     pages:
     - icon: ':warning:'
       path: graph/tree/auxiliary-tree.hpp
-      title: graph/tree/auxiliary-tree.hpp
+      title: Auxiliary Tree
     - icon: ':heavy_check_mark:'
       path: graph/tree/diameter-weighted.hpp
-      title: graph/tree/diameter-weighted.hpp
+      title: "\u6728\u306E\u76F4\u5F84"
     - icon: ':warning:'
       path: graph/tree/euler-tour-on-edges.hpp
       title: graph/tree/euler-tour-on-edges.hpp
@@ -200,7 +200,7 @@ data:
       title: graph/tree/euler-tour-on-nodes.hpp
     - icon: ':heavy_check_mark:'
       path: graph/tree/lca.hpp
-      title: Auxiliary Tree
+      title: Lowest Common Ancestor
   - name: math/algebra
     pages:
     - icon: ':heavy_check_mark:'

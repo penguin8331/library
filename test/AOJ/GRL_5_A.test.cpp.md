@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/tree/diameter-weighted.hpp
-    title: graph/tree/diameter-weighted.hpp
+    title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp

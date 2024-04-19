@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/tree/lca.hpp
-    title: Auxiliary Tree
+    title: Lowest Common Ancestor
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
@@ -157,8 +157,5 @@ data:
   verifiedWith: []
 documentation_of: graph/tree/auxiliary-tree.hpp
 layout: document
-redirect_from:
-- /library/graph/tree/auxiliary-tree.hpp
-- /library/graph/tree/auxiliary-tree.hpp.html
-title: graph/tree/auxiliary-tree.hpp
+title: Auxiliary Tree
 ---

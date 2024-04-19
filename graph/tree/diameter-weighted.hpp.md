@@ -100,8 +100,5 @@ data:
   - test/AOJ/GRL_5_A.test.cpp
 documentation_of: graph/tree/diameter-weighted.hpp
 layout: document
-redirect_from:
-- /library/graph/tree/diameter-weighted.hpp
-- /library/graph/tree/diameter-weighted.hpp.html
-title: graph/tree/diameter-weighted.hpp
+title: "\u6728\u306E\u76F4\u5F84"
 ---

@@ -22,7 +22,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: graph/tree/auxiliary-tree.hpp
-    title: graph/tree/auxiliary-tree.hpp
+    title: Auxiliary Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_C.test.cpp
@@ -132,5 +132,5 @@ data:
   - test/AOJ/GRL_5_C.test.cpp
 documentation_of: graph/tree/lca.hpp
 layout: document
-title: Auxiliary Tree
+title: Lowest Common Ancestor
 ---
