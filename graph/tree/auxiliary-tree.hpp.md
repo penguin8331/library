@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph/tree/lca.hpp
+    title: Auxiliary Tree
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -19,17 +22,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: graph/tree/auxiliary-tree.hpp
-    title: graph/tree/auxiliary-tree.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/GRL_5_C.test.cpp
-    title: test/AOJ/GRL_5_C.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -92,29 +89,58 @@ data:
     \        return parent[0][u];\n    }\n    int dist(int u, int v) {\n        return\
     \ depth[u] + depth[v] - 2 * depth[get(u, v)];\n    }\n    bool is_on_path(int\
     \ u, int v, int a) {\n        return dist(u, a) + dist(a, v) == dist(u, v);\n\
+    \    }\n};\n#line 4 \"graph/tree/auxiliary-tree.hpp\"\n\nstruct AuxiliaryTree\
+    \ : LCA {\n    using super = LCA;\n\n    vector<int> idx;\n    vector<vector<int>>\
+    \ T;\n    explicit AuxiliaryTree(const vector<vector<int>> &G, int r = 0)\n  \
+    \      : super(G, r) {\n        build(G, r);\n    }\n\n    void dfs(const vector<vector<int>>\
+    \ &G, int v, int p, int &pos) {\n        idx[v] = pos++;\n        for (int u :\
+    \ G[v])\n            if (u != p) dfs(G, u, v, pos);\n    }\n\n    void build(const\
+    \ vector<vector<int>> &G, int r = 0) {\n        int V = (int)G.size();\n     \
+    \   idx.assign(V, 0);\n        T.assign(V, vector<int>());\n        int pos =\
+    \ 0;\n        dfs(G, r, -1, pos);\n    }\n\n    void add_aux_edge(int u, int v)\
+    \ {\n        T[u].emplace_back(v);\n        T[v].emplace_back(u);\n    }\n\n \
+    \   using super::get, super::depth;\n    void query(vector<int> &vs) {\n     \
+    \   assert(!vs.empty());\n        sort(vs.begin(), vs.end(),\n             [&](int\
+    \ a, int b) { return idx[a] < idx[b]; });\n        vs.erase(unique(vs.begin(),\
+    \ vs.end()), vs.end());\n\n        int k = vs.size();\n        stack<int> st;\n\
+    \        st.emplace(vs[0]);\n        for (int i = 0; i + 1 < k; i++) {\n     \
+    \       int w = get(vs[i], vs[i + 1]);\n            if (w != vs[i]) {\n      \
+    \          int l = st.top();\n                st.pop();\n                while\
+    \ (!st.empty() and depth[w] < depth[st.top()]) {\n                    add_aux_edge(st.top(),\
+    \ l);\n                    l = st.top();\n                    st.pop();\n    \
+    \            }\n                if (st.empty() or st.top() != w) {\n         \
+    \           st.emplace(w);\n                    vs.emplace_back(w);\n        \
+    \        }\n                add_aux_edge(w, l);\n            }\n            st.emplace(vs[i\
+    \ + 1]);\n        }\n\n        while (st.size() > 1) {\n            int c = st.top();\n\
+    \            st.pop();\n            add_aux_edge(st.top(), c);\n        }\n  \
+    \  }\n\n    void clear(const vector<int> &ws) {\n        for (int w : ws) T[w].clear();\n\
     \    }\n};\n"
-  code: "#pragma once\n#include \"../../template/template.hpp\"\n\nstruct LCA {\n\
-    \    vector<vector<int>> parent;\n    vector<int> depth;\n    LCA() {}\n    explicit\
-    \ LCA(const vector<vector<int>>& G, int r = 0) { init(G, r); }\n    void init(const\
-    \ vector<vector<int>>& G, int r = 0) {\n        int V = (int)G.size();\n     \
-    \   int h = 1;\n        while ((1 << h) < V) ++h;\n        parent.assign(h, vector<int>(V,\
-    \ -1));\n        depth.assign(V, -1);\n        dfs(G, r, -1, 0);\n        for\
-    \ (int i = 0; i + 1 < (int)parent.size(); ++i)\n            for (int v = 0; v\
-    \ < V; ++v)\n                if (parent[i][v] != -1)\n                    parent[i\
-    \ + 1][v] = parent[i][parent[i][v]];\n    }\n    void dfs(const vector<vector<int>>&\
-    \ G, int v, int p, int d) {\n        parent[0][v] = p;\n        depth[v] = d;\n\
-    \        for (auto e : G[v])\n            if (e != p) dfs(G, e, v, d + 1);\n \
-    \   }\n    int after(int u, int k) {\n        for (int i = 0; i < (int)parent.size();\
-    \ i++) {\n            if (k & (1 << i)) {\n                u = parent[i][u];\n\
-    \            }\n        }\n        return u;\n    }\n    int get(int u, int v)\
-    \ {\n        if (depth[u] > depth[v]) swap(u, v);\n        v = after(v, depth[v]\
-    \ - depth[u]);\n        if (u == v) return u;\n        for (int i = (int)parent.size()\
-    \ - 1; i >= 0; --i) {\n            if (parent[i][u] != parent[i][v]) {\n     \
-    \           u = parent[i][u];\n                v = parent[i][v];\n           \
-    \ }\n        }\n        return parent[0][u];\n    }\n    int dist(int u, int v)\
-    \ {\n        return depth[u] + depth[v] - 2 * depth[get(u, v)];\n    }\n    bool\
-    \ is_on_path(int u, int v, int a) {\n        return dist(u, a) + dist(a, v) ==\
-    \ dist(u, v);\n    }\n};"
+  code: "#pragma once\n#include \"../../template/template.hpp\"\n#include \"lca.hpp\"\
+    \n\nstruct AuxiliaryTree : LCA {\n    using super = LCA;\n\n    vector<int> idx;\n\
+    \    vector<vector<int>> T;\n    explicit AuxiliaryTree(const vector<vector<int>>\
+    \ &G, int r = 0)\n        : super(G, r) {\n        build(G, r);\n    }\n\n   \
+    \ void dfs(const vector<vector<int>> &G, int v, int p, int &pos) {\n        idx[v]\
+    \ = pos++;\n        for (int u : G[v])\n            if (u != p) dfs(G, u, v, pos);\n\
+    \    }\n\n    void build(const vector<vector<int>> &G, int r = 0) {\n        int\
+    \ V = (int)G.size();\n        idx.assign(V, 0);\n        T.assign(V, vector<int>());\n\
+    \        int pos = 0;\n        dfs(G, r, -1, pos);\n    }\n\n    void add_aux_edge(int\
+    \ u, int v) {\n        T[u].emplace_back(v);\n        T[v].emplace_back(u);\n\
+    \    }\n\n    using super::get, super::depth;\n    void query(vector<int> &vs)\
+    \ {\n        assert(!vs.empty());\n        sort(vs.begin(), vs.end(),\n      \
+    \       [&](int a, int b) { return idx[a] < idx[b]; });\n        vs.erase(unique(vs.begin(),\
+    \ vs.end()), vs.end());\n\n        int k = vs.size();\n        stack<int> st;\n\
+    \        st.emplace(vs[0]);\n        for (int i = 0; i + 1 < k; i++) {\n     \
+    \       int w = get(vs[i], vs[i + 1]);\n            if (w != vs[i]) {\n      \
+    \          int l = st.top();\n                st.pop();\n                while\
+    \ (!st.empty() and depth[w] < depth[st.top()]) {\n                    add_aux_edge(st.top(),\
+    \ l);\n                    l = st.top();\n                    st.pop();\n    \
+    \            }\n                if (st.empty() or st.top() != w) {\n         \
+    \           st.emplace(w);\n                    vs.emplace_back(w);\n        \
+    \        }\n                add_aux_edge(w, l);\n            }\n            st.emplace(vs[i\
+    \ + 1]);\n        }\n\n        while (st.size() > 1) {\n            int c = st.top();\n\
+    \            st.pop();\n            add_aux_edge(st.top(), c);\n        }\n  \
+    \  }\n\n    void clear(const vector<int> &ws) {\n        for (int w : ws) T[w].clear();\n\
+    \    }\n};\n"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
@@ -122,15 +148,17 @@ data:
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
+  - graph/tree/lca.hpp
   isVerificationFile: false
-  path: graph/tree/lca.hpp
-  requiredBy:
-  - graph/tree/auxiliary-tree.hpp
-  timestamp: '2024-04-01 15:56:18+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/AOJ/GRL_5_C.test.cpp
-documentation_of: graph/tree/lca.hpp
+  path: graph/tree/auxiliary-tree.hpp
+  requiredBy: []
+  timestamp: '2024-04-19 22:00:18+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: graph/tree/auxiliary-tree.hpp
 layout: document
-title: Auxiliary Tree
+redirect_from:
+- /library/graph/tree/auxiliary-tree.hpp
+- /library/graph/tree/auxiliary-tree.hpp.html
+title: graph/tree/auxiliary-tree.hpp
 ---

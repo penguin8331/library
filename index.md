@@ -186,6 +186,9 @@ data:
       title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - name: graph/tree
     pages:
+    - icon: ':warning:'
+      path: graph/tree/auxiliary-tree.hpp
+      title: graph/tree/auxiliary-tree.hpp
     - icon: ':heavy_check_mark:'
       path: graph/tree/diameter-weighted.hpp
       title: graph/tree/diameter-weighted.hpp
@@ -197,7 +200,7 @@ data:
       title: graph/tree/euler-tour-on-nodes.hpp
     - icon: ':heavy_check_mark:'
       path: graph/tree/lca.hpp
-      title: graph/tree/lca.hpp
+      title: Auxiliary Tree
   - name: math/algebra
     pages:
     - icon: ':heavy_check_mark:'
@@ -273,7 +276,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: others/rand-int.hpp
       title: "\u4E71\u6570\u751F\u6210"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: others/range-set.hpp
       title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
     - icon: ':warning:'
@@ -289,22 +292,22 @@ data:
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/debug.hpp
       title: template/debug.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/util.hpp
       title: template/util.hpp
   verificationCategories:
@@ -453,7 +456,7 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/atcoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/atcoder/abc214_e.test.cpp
       title: test/atcoder/abc214_e.test.cpp
     - icon: ':heavy_check_mark:'
