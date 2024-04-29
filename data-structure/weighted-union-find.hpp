@@ -25,11 +25,10 @@ struct WeightedUnionFind {
             return par[x] = r;
         }
     }
-    bool same(int x, int y) { return root(x) == root(y); }
-    int size(int x) { return -par[root(x)]; }
+    bool issame(int x, int y) { return root(x) == root(y); }
 
     // v[y] - v[x] = w
-    bool merge(int x, int y, T w) {
+    bool unite(int x, int y, T w) {
         w += get_weight(x), w -= get_weight(y);
         x = root(x), y = root(y);
         if (x == y) return false;
@@ -39,6 +38,8 @@ struct WeightedUnionFind {
         weight[y] = w;
         return true;
     }
+
+    int size(int x) { return -par[root(x)]; }
 
     // get v[x]
     T get_weight(int x) {
