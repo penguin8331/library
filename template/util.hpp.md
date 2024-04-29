@@ -78,6 +78,9 @@ data:
     path: data-structure/union-find.hpp
     title: UnionFind
   - icon: ':warning:'
+    path: data-structure/weighted-union-find.hpp
+    title: data-structure/weighted-union-find.hpp
+  - icon: ':warning:'
     path: data-structure/with_input.hpp
     title: With-Input
   - icon: ':warning:'
@@ -540,6 +543,7 @@ data:
   requiredBy:
   - data-structure/dynamic_modular-arithmetic.hpp
   - data-structure/implicit-treap.hpp
+  - data-structure/weighted-union-find.hpp
   - data-structure/binary-indexed-tree-2d.hpp
   - data-structure/lazy-segment-tree.hpp
   - data-structure/ext-rope.hpp
