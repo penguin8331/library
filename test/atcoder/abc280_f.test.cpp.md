@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data-structure/weighted-union-find.hpp
+    title: WeightedUnionFind
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -20,27 +23,28 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc280_f.test.cpp
-    title: test/atcoder/abc280_f.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
-    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
-    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
-    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
-    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
-    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
-    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
-    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
-    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://atcoder.jp/contests/abc280/tasks/abc280_f
+    links:
+    - https://atcoder.jp/contests/abc280/tasks/abc280_f
+  bundledCode: "#line 1 \"test/atcoder/abc280_f.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc280/tasks/abc280_f\"\
+    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
+    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
+    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
+    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
+    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
+    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
+    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
+    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
+    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
+    \ emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing\
+    \ ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
     \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
     \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
     \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
@@ -89,48 +93,51 @@ data:
     \ v = 0; v < (int)par.size(); ++v) {\n            member[root(v)].push_back(v);\n\
     \        }\n        vector<vector<int>> res;\n        for (int v = 0; v < (int)par.size();\
     \ ++v) {\n            if (!member[v].empty()) res.push_back(member[v]);\n    \
-    \    }\n        return res;\n    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
-    struct WeightedUnionFind {\n    // core member\n    vector<int> par;\n    vector<T>\
-    \ weight;\n\n    // constructor\n    WeightedUnionFind() {}\n    WeightedUnionFind(int\
-    \ N, T zero = 0) : par(N, -1), weight(N, zero) {}\n    void init(int N, T zero\
-    \ = 0) {\n        par.assign(N, -1);\n        weight.assign(N, zero);\n    }\n\
-    \n    // core methods\n    int root(int x) {\n        if (par[x] < 0)\n      \
-    \      return x;\n        else {\n            int r = root(par[x]);\n        \
-    \    weight[x] += weight[par[x]];\n            return par[x] = r;\n        }\n\
-    \    }\n    bool issame(int x, int y) { return root(x) == root(y); }\n\n    //\
-    \ v[y] - v[x] = w\n    bool unite(int x, int y, T w) {\n        w += get_weight(x),\
-    \ w -= get_weight(y);\n        x = root(x), y = root(y);\n        if (x == y)\
-    \ return false;\n        if (par[x] > par[y]) swap(x, y), w = -w;  // merge technique\n\
-    \        par[x] += par[y];\n        par[y] = x;\n        weight[y] = w;\n    \
-    \    return true;\n    }\n\n    int size(int x) { return -par[root(x)]; }\n\n\
-    \    // get v[x]\n    T get_weight(int x) {\n        root(x);\n        return\
-    \ weight[x];\n    }\n\n    // get v[y] - v[x]\n    T get_diff(int x, int y) {\
-    \ return get_weight(y) - get_weight(x); }\n\n    // get groups\n    vector<vector<int>>\
-    \ groups() {\n        vector<vector<int>> member(par.size());\n        for (int\
-    \ v = 0; v < (int)par.size(); ++v) {\n            member[root(v)].push_back(v);\n\
-    \        }\n        vector<vector<int>> res;\n        for (int v = 0; v < (int)par.size();\
-    \ ++v) {\n            if (!member[v].empty()) res.push_back(member[v]);\n    \
-    \    }\n        return res;\n    }\n};"
+    \    }\n        return res;\n    }\n};\n#line 4 \"test/atcoder/abc280_f.test.cpp\"\
+    \n\nint main() {\n    INT(N, M, Q);\n    WeightedUnionFind<ll> uf(N);\n    vector<bool>\
+    \ isinf(N, false);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n  \
+    \      a--, b--;\n        LL(c);\n        if (uf.issame(a, b) && uf.get_diff(a,\
+    \ b) != c) {\n            isinf[a] = true;\n        } else {\n            uf.unite(a,\
+    \ b, c);\n        }\n    }\n    for (auto v : uf.groups()) {\n        bool flag\
+    \ = false;\n        for (auto x : v) {\n            if (isinf[x]) {\n        \
+    \        flag = true;\n                break;\n            }\n        }\n    \
+    \    if (flag) {\n            for (auto x : v) isinf[x] = true;\n        }\n \
+    \   }\n    for (int i = 0; i < Q; i++) {\n        INT(a, b);\n        a--, b--;\n\
+    \        if (!uf.issame(a, b)) {\n            print(\"nan\");\n        }\n   \
+    \     elif (isinf[a]) { print(\"inf\"); }\n        else {\n            print(uf.get_diff(a,\
+    \ b));\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc280/tasks/abc280_f\"\n#include\
+    \ \"../../data-structure/weighted-union-find.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nint main() {\n    INT(N, M, Q);\n    WeightedUnionFind<ll> uf(N);\n    vector<bool>\
+    \ isinf(N, false);\n    for (int i = 0; i < M; i++) {\n        INT(a, b);\n  \
+    \      a--, b--;\n        LL(c);\n        if (uf.issame(a, b) && uf.get_diff(a,\
+    \ b) != c) {\n            isinf[a] = true;\n        } else {\n            uf.unite(a,\
+    \ b, c);\n        }\n    }\n    for (auto v : uf.groups()) {\n        bool flag\
+    \ = false;\n        for (auto x : v) {\n            if (isinf[x]) {\n        \
+    \        flag = true;\n                break;\n            }\n        }\n    \
+    \    if (flag) {\n            for (auto x : v) isinf[x] = true;\n        }\n \
+    \   }\n    for (int i = 0; i < Q; i++) {\n        INT(a, b);\n        a--, b--;\n\
+    \        if (!uf.issame(a, b)) {\n            print(\"nan\");\n        }\n   \
+    \     elif (isinf[a]) { print(\"inf\"); }\n        else {\n            print(uf.get_diff(a,\
+    \ b));\n        }\n    }\n}"
   dependsOn:
+  - data-structure/weighted-union-find.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: false
-  path: data-structure/weighted-union-find.hpp
+  isVerificationFile: true
+  path: test/atcoder/abc280_f.test.cpp
   requiredBy: []
   timestamp: '2024-04-29 11:27:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/atcoder/abc280_f.test.cpp
-documentation_of: data-structure/weighted-union-find.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/atcoder/abc280_f.test.cpp
 layout: document
-title: WeightedUnionFind
+redirect_from:
+- /verify/test/atcoder/abc280_f.test.cpp
+- /verify/test/atcoder/abc280_f.test.cpp.html
+title: test/atcoder/abc280_f.test.cpp
 ---
-
-## 注意
-
-`diff(x, y)` を投げるとき、先に同じ連結成分に属しているかどうか確認する

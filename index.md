@@ -63,9 +63,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.hpp
       title: UnionFind
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/weighted-union-find.hpp
-      title: data-structure/weighted-union-find.hpp
+      title: WeightedUnionFind
     - icon: ':warning:'
       path: data-structure/with_input.hpp
       title: With-Input
@@ -462,6 +462,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc256_a.test.cpp
       title: test/atcoder/abc256_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc280_f.test.cpp
+      title: test/atcoder/abc280_f.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

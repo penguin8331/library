@@ -77,9 +77,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/weighted-union-find.hpp
-    title: data-structure/weighted-union-find.hpp
+    title: WeightedUnionFind
   - icon: ':warning:'
     path: data-structure/with_input.hpp
     title: With-Input
@@ -443,6 +443,9 @@ data:
     path: test/atcoder/abc256_a.test.cpp
     title: test/atcoder/abc256_a.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc280_f.test.cpp
+    title: test/atcoder/abc280_f.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
     title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
   - icon: ':heavy_check_mark:'
@@ -714,6 +717,7 @@ data:
   - test/AOJ/GRL_1_B.test.cpp
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
+  - test/atcoder/abc280_f.test.cpp
   - test/atcoder/abc214_e.test.cpp
   - test/atcoder/abc256_a.test.cpp
   - test/yukicoder/674.test.cpp
