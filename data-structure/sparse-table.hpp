@@ -18,8 +18,7 @@ struct SparseTable {
         const vector<T> &vec,
         const Func f = [](T a, T b) { return min(a, b); }) {
         F = f;
-        int n = (int)vec.size(), h = 0;
-        while ((1 << h) < n) ++h;
+        int n = (int)vec.size(), h = 32 - __builtin_clz(n);
         dat.assign(h, vector<T>(1 << h));
         height.assign(n + 1, 0);
         for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;
