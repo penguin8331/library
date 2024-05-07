@@ -473,6 +473,9 @@ data:
     path: test/yosupo/static-rmq-3.test.cpp
     title: test/yosupo/static-rmq-3.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static-rmq-4.test.cpp
+    title: test/yosupo/static-rmq-4.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq.test.cpp
     title: test/yosupo/static-rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -668,6 +671,7 @@ data:
   - test/yosupo/static-rmq-2.test.cpp
   - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/static-rmq-3.test.cpp
+  - test/yosupo/static-rmq-4.test.cpp
   - test/yosupo/matrix-det.test.cpp
   - test/yosupo/shortes-path.test.cpp
   - test/AOJ/GRL_3_C.test.cpp

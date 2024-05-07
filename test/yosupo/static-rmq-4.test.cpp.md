@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data-structure/sparse-table.hpp
+    title: data-structure/sparse-table.hpp
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -19,35 +22,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: graph/tree/euler-tour-on-edges.hpp
-    title: graph/tree/euler-tour-on-edges.hpp
-  - icon: ':heavy_check_mark:'
-    path: graph/tree/euler-tour-on-nodes.hpp
-    title: graph/tree/euler-tour-on-nodes.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/AOJ/2667.test.cpp
-    title: test/AOJ/2667.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/static-rmq-4.test.cpp
-    title: test/yosupo/static-rmq-4.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
-    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
-    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
-    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
-    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
-    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
-    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/staticrmq
+    links:
+    - https://judge.yosupo.jp/problem/staticrmq
+  bundledCode: "#line 1 \"test/yosupo/static-rmq-4.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/staticrmq\"\n#line 2 \"template/template.hpp\"\
+    \n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x),\
+    \ std::end(x)\n#define rall(x) std::rbegin(x), std::rend(x)\n#define elif else\
+    \ if\n#define updiv(N, X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a +\
+    \ b) * (b - a + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__; \\\n  \
+    \  scan(__VA_ARGS__)\n#define LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
+    #define STR(...)        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
+    #define CHR(...)      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
+    \ DOU(...)        \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
+    \ LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
     #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
     using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
     \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
@@ -91,43 +86,33 @@ data:
     \ = F(dat[i - 1][j],\n                              dat[i - 1][min(j + (1 << (i\
     \ - 1)), n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return F(dat[height[b\
     \ - a]][a],\n                 dat[height[b - a]][b - (1 << height[b - a])]);\n\
-    \    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class T>\n\
-    struct SparseTable {\n    vector<vector<T>> dat;\n    vector<int> height;\n  \
-    \  using Func = function<T(T, T)>;\n    Func F;\n\n    SparseTable() {}\n    explicit\
-    \ SparseTable(\n        const vector<T> &vec,\n        const Func f = [](T a,\
-    \ T b) { return min(a, b); }) {\n        init(vec, f);\n    }\n    void init(\n\
-    \        const vector<T> &vec,\n        const Func f = [](T a, T b) { return min(a,\
-    \ b); }) {\n        F = f;\n        int n = (int)vec.size(), h = 32 - __builtin_clz(n);\n\
-    \        dat.assign(h, vector<T>(1 << h));\n        height.assign(n + 1, 0);\n\
-    \        for (int i = 2; i <= n; i++) height[i] = height[i >> 1] + 1;\n      \
-    \  for (int i = 0; i < n; ++i) dat[0][i] = vec[i];\n        for (int i = 1; i\
-    \ < h; ++i)\n            for (int j = 0; j < n; ++j)\n                dat[i][j]\
-    \ = F(dat[i - 1][j],\n                              dat[i - 1][min(j + (1 << (i\
-    \ - 1)), n - 1)]);\n    }\n\n    T get(int a, int b) {\n        return F(dat[height[b\
-    \ - a]][a],\n                 dat[height[b - a]][b - (1 << height[b - a])]);\n\
-    \    }\n};"
+    \    }\n};\n#line 4 \"test/yosupo/static-rmq-4.test.cpp\"\n\nint main() {\n  \
+    \  INT(N, Q);\n    vector<int> A(N);\n    scan(A);\n    SparseTable<int> st(A);\n\
+    \    while (Q--) {\n        INT(l, r);\n        print(st.get(l, r));\n    }\n\
+    }\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
+    ../../data-structure/sparse-table.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nint main() {\n    INT(N, Q);\n    vector<int> A(N);\n    scan(A);\n    SparseTable<int>\
+    \ st(A);\n    while (Q--) {\n        INT(l, r);\n        print(st.get(l, r));\n\
+    \    }\n}"
   dependsOn:
+  - data-structure/sparse-table.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/func.hpp
   - template/util.hpp
   - template/debug.hpp
-  isVerificationFile: false
-  path: data-structure/sparse-table.hpp
-  requiredBy:
-  - graph/tree/euler-tour-on-edges.hpp
-  - graph/tree/euler-tour-on-nodes.hpp
+  isVerificationFile: true
+  path: test/yosupo/static-rmq-4.test.cpp
+  requiredBy: []
   timestamp: '2024-05-07 23:05:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo/static-rmq-4.test.cpp
-  - test/AOJ/2667.test.cpp
-documentation_of: data-structure/sparse-table.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/yosupo/static-rmq-4.test.cpp
 layout: document
 redirect_from:
-- /library/data-structure/sparse-table.hpp
-- /library/data-structure/sparse-table.hpp.html
-title: data-structure/sparse-table.hpp
+- /verify/test/yosupo/static-rmq-4.test.cpp
+- /verify/test/yosupo/static-rmq-4.test.cpp.html
+title: test/yosupo/static-rmq-4.test.cpp
 ---
