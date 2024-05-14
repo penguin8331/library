@@ -2,6 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
+    title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+      \ Tree"
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
   - icon: ':heavy_check_mark:'
@@ -23,27 +27,28 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc177_f.test.cpp
-    title: test/atcoder/abc177_f.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
-    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
-    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
-    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
-    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
-    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
-    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
-    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
-    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://atcoder.jp/contests/abc177/tasks/abc177_f
+    links:
+    - https://atcoder.jp/contests/abc177/tasks/abc177_f
+  bundledCode: "#line 1 \"test/atcoder/abc177_f.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc177/tasks/abc177_f\"\
+    \n#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line 3 \"template/macro.hpp\"\
+    \n\n#define all(x) std::begin(x), std::end(x)\n#define rall(x) std::rbegin(x),\
+    \ std::rend(x)\n#define elif else if\n#define updiv(N, X) (((N) + (X) - (1)) /\
+    \ (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n#define INT(...)    \
+    \ \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n\
+    \    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)        \\\n \
+    \   string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n\
+    \    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...)        \\\n\
+    \    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)     \\\n \
+    \   ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n#define eb\
+    \ emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\nusing\
+    \ ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
     \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
     \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
     \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
@@ -132,31 +137,20 @@ data:
     \ v[i], v[i], i, i + 1}));\n        }\n        seg.build();\n    }\n    void update(int\
     \ l, int r, F f) {\n        seg.update(l, r, F({f.a, f.b - f.a * seg.get(l, l\
     \ + 1).l}));\n    }\n    S get(int l, int r) {\n        return seg.get(l, r);\n\
-    \    }\n};\n"
-  code: "#pragma once\n#include \"../template/template.hpp\"\n#include \"../data-structure/lazy-segment-tree.hpp\"\
-    \n\nstruct Lazy_SegTree_Arthmetic {\n    struct S {\n        ll min, max, sum;\n\
-    \        int l, r;\n    };\n    struct F {\n        ll a, b;\n        bool operator==(const\
-    \ F& other) {\n            if (a == other.a && b == other.b)\n               \
-    \ return true;\n            else\n                return false;\n        }\n \
-    \   };\n    function<S(S, S)> fm = [](S s, S t) -> S { return {min(s.min, t.min),\
-    \ max(s.max, t.max), s.sum + t.sum, min(s.l, t.l), max(s.r, t.r)}; };\n    function<void(S&,\
-    \ F)> fa = [](S& s, F f) {\n        if (f.a == INF) {\n            return;\n \
-    \       }\n        if (f.a >= 0) {\n            s = {f.a * s.l + f.b, f.a * (s.r\
-    \ - 1) + f.b, (f.a * (s.l + s.r - 1) + f.b * 2) * (s.r - s.l) / 2, s.l, s.r};\n\
-    \            return;\n        } else {\n            s = {f.a * (s.r - 1) + f.b,\
-    \ f.a * s.l + f.b, (f.a * (s.l + s.r - 1) + f.b * 2) * (s.r - s.l) / 2, s.l, s.r};\n\
-    \            return;\n        }\n    };\n    function<void(F&, F)> fc = [](F&\
-    \ f, F g) {\n        if (g.a != INF) {\n            f = g;\n        }\n    };\n\
-    \    int N;\n    Lazy_SegTree<S, F> seg;\n    explicit Lazy_SegTree_Arthmetic(int\
-    \ n) : N(n) {\n        seg.init(N, fm, fa, fc, S({INF, -INF, 0, inf, -inf}), F({INF,\
-    \ INF}));\n        for (int i = 0; i < N; i++) {\n            seg.set(i, S({0,\
-    \ 0, 0, i, i + 1}));\n        }\n        seg.build();\n    }\n    void init(vector<int>\
-    \ v) {\n        for (int i = 0; i < N; i++) {\n            seg.set(i, S({v[i],\
-    \ v[i], v[i], i, i + 1}));\n        }\n        seg.build();\n    }\n    void update(int\
-    \ l, int r, F f) {\n        seg.update(l, r, F({f.a, f.b - f.a * seg.get(l, l\
-    \ + 1).l}));\n    }\n    S get(int l, int r) {\n        return seg.get(l, r);\n\
-    \    }\n};"
+    \    }\n};\n#line 4 \"test/atcoder/abc177_f.test.cpp\"\n\nint main() {\n    INT(H,\
+    \ W);\n    Lazy_SegTree_Arthmetic seg(W);\n    for (int i = 0; i < H; i++) {\n\
+    \        INT(l, r);\n        l--;\n        ll x = (l > 0 ? seg.get(l - 1, l).min\
+    \ : INF);\n        seg.update(l, r, {1, x + 1});\n        ll ans = seg.get(0,\
+    \ W).min;\n        print(ans >= INF ? -1 : ans + i + 1);\n    }\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc177/tasks/abc177_f\"\n#include\
+    \ \"../../data-structure/lazy-segment-tree-arthmetic-ruq.hpp\"\n#include \"../../template/template.hpp\"\
+    \n\nint main() {\n    INT(H, W);\n    Lazy_SegTree_Arthmetic seg(W);\n    for\
+    \ (int i = 0; i < H; i++) {\n        INT(l, r);\n        l--;\n        ll x =\
+    \ (l > 0 ? seg.get(l - 1, l).min : INF);\n        seg.update(l, r, {1, x + 1});\n\
+    \        ll ans = seg.get(0, W).min;\n        print(ans >= INF ? -1 : ans + i\
+    \ + 1);\n    }\n}"
   dependsOn:
+  - data-structure/lazy-segment-tree-arthmetic-ruq.hpp
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
@@ -164,24 +158,16 @@ data:
   - template/util.hpp
   - template/debug.hpp
   - data-structure/lazy-segment-tree.hpp
-  isVerificationFile: false
-  path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
+  isVerificationFile: true
+  path: test/atcoder/abc177_f.test.cpp
   requiredBy: []
-  timestamp: '2024-05-14 16:34:20+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/atcoder/abc177_f.test.cpp
-documentation_of: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
+  timestamp: '2024-05-14 20:47:48+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/atcoder/abc177_f.test.cpp
 layout: document
-title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
-  \ Tree"
+redirect_from:
+- /verify/test/atcoder/abc177_f.test.cpp
+- /verify/test/atcoder/abc177_f.test.cpp.html
+title: test/atcoder/abc177_f.test.cpp
 ---
-
-## 概要
-
-区間に等差数列を作用させる遅延セグメントツリー
-RMQ, RSQ, RUQ に対応
-
-## 参考
-
-[区間に等差数列を作用させる遅延セグメントツリー-null mn](https://null-mn.hatenablog.com/entry/2021/08/22/064325)

@@ -36,7 +36,7 @@ data:
       path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
       title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
         \ Tree"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
       title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
         \ Tree"
@@ -460,6 +460,9 @@ data:
       title: test/AOJ/NTL_1_B.test.cpp
   - name: test/atcoder
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc177_f.test.cpp
+      title: test/atcoder/abc177_f.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc214_e.test.cpp
       title: test/atcoder/abc214_e.test.cpp

@@ -50,7 +50,7 @@ data:
     path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
@@ -441,6 +441,9 @@ data:
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc177_f.test.cpp
+    title: test/atcoder/abc177_f.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc214_e.test.cpp
     title: test/atcoder/abc214_e.test.cpp
   - icon: ':heavy_check_mark:'
@@ -717,6 +720,7 @@ data:
   - test/AOJ/ALDS1_11_C.test.cpp
   - test/AOJ/GRL_3_B.test.cpp
   - test/atcoder/abc280_f.test.cpp
+  - test/atcoder/abc177_f.test.cpp
   - test/atcoder/abc214_e.test.cpp
   - test/atcoder/abc256_a.test.cpp
   - test/yukicoder/674.test.cpp
