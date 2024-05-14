@@ -1,7 +1,12 @@
 ---
 title: 等差数列を作用させる Lazy Segment Tree
-documentation_of: //data-structure/lazy-segment-tree-arthmetic.hpp
+documentation_of: //data-structure/lazy-segment-tree-arthmetic-raq.hpp
 ---
+
+## 概要
+
+区間に等差数列を作用させる遅延セグメントツリー
+RSQ, RAQ に対応
 
 ## 参考
 
