@@ -47,7 +47,11 @@ data:
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
   - icon: ':warning:'
-    path: data-structure/lazy-segment-tree-arthmetic.hpp
+    path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
+    title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+      \ Tree"
+  - icon: ':warning:'
+    path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
   - icon: ':heavy_check_mark:'
@@ -567,8 +571,8 @@ data:
   - data-structure/weighted-union-find.hpp
   - data-structure/binary-indexed-tree-2d.hpp
   - data-structure/lazy-segment-tree.hpp
+  - data-structure/lazy-segment-tree-arthmetic-raq.hpp
   - data-structure/ext-rope.hpp
-  - data-structure/lazy-segment-tree-arthmetic.hpp
   - data-structure/sparse-table-2d.hpp
   - data-structure/binary-indexed-tree-raq.hpp
   - data-structure/boost-multiprecision.hpp
@@ -577,6 +581,7 @@ data:
   - data-structure/binary-indexed-tree.hpp
   - data-structure/segment-tree.hpp
   - data-structure/binary-indexed-tree-2d-raq.hpp
+  - data-structure/lazy-segment-tree-arthmetic-ruq.hpp
   - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/union-find.hpp
   - data-structure/sparse-table.hpp

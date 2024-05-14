@@ -33,7 +33,11 @@ data:
       path: data-structure/implicit-treap.hpp
       title: ImplicitTreap
     - icon: ':warning:'
-      path: data-structure/lazy-segment-tree-arthmetic.hpp
+      path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
+      title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
+        \ Tree"
+    - icon: ':warning:'
+      path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
       title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
         \ Tree"
     - icon: ':heavy_check_mark:'
