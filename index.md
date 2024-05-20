@@ -294,6 +294,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
+    - icon: ':warning:'
+      path: string/trie.hpp
+      title: string/trie.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'

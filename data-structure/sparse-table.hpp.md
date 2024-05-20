@@ -117,13 +117,13 @@ data:
   isVerificationFile: false
   path: data-structure/sparse-table.hpp
   requiredBy:
-  - graph/tree/euler-tour-on-edges.hpp
   - graph/tree/euler-tour-on-nodes.hpp
+  - graph/tree/euler-tour-on-edges.hpp
   timestamp: '2024-05-07 23:05:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/static-rmq-4.test.cpp
   - test/AOJ/2667.test.cpp
+  - test/yosupo/static-rmq-4.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
 redirect_from:
