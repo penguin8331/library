@@ -26,6 +26,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/dynamic_modular-arithmetic.hpp
       title: Dynamic-ModInt
+    - icon: ':heavy_check_mark:'
+      path: data-structure/ext-pb_ds.hpp
+      title: ext/pb_ds
     - icon: ':warning:'
       path: data-structure/ext-rope.hpp
       title: ext/rope
@@ -521,6 +524,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1995.test.cpp
       title: test/yukicoder/1995.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/649.test.cpp
+      title: test/yukicoder/649.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/674.test.cpp
       title: test/yukicoder/674.test.cpp
