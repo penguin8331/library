@@ -20,4 +20,5 @@ int main() {
             }
         }
     }
+    gp_hash_table<int, int> h;
 }
