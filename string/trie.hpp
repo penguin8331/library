@@ -8,7 +8,7 @@ struct Trie {
         vector<int> accept;  // 末端がこの頂点になる単語の word_id を保存
         int c;       // base からの間隔をint型で表現したもの
         int common;  // いくつの単語がこの頂点を共有しているか
-        Node(int c_) : c(c_), common(0) { next.assign(char_size, -1); }
+        explicit Node(int c_) : c(c_), common(0) { next.assign(char_size, -1); }
     };
     vector<Node> nodes;  // trie 木本体
     int root;
