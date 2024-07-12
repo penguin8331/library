@@ -31,6 +31,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree.hpp
     title: BIT
+  - icon: ':heavy_check_mark:'
+    path: data-structure/binary-trie.hpp
+    title: data-structure/binary-trie.hpp
   - icon: ':warning:'
     path: data-structure/boost-multiprecision.hpp
     title: boost/multiprecision
@@ -53,11 +56,11 @@ data:
     path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree.hpp
     title: Lazy Segment Tree
   - icon: ':warning:'
@@ -84,7 +87,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/union-find.hpp
     title: UnionFind
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/weighted-union-find.hpp
     title: WeightedUnionFind
   - icon: ':warning:'
@@ -165,7 +168,7 @@ data:
   - icon: ':warning:'
     path: graph/dijkstra2d.hpp
     title: Dijkstra-2D
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/flow/ford-fullkerson.hpp
     title: "Ford Fullkerson (\u6700\u5927\u6D41)"
   - icon: ':warning:'
@@ -174,22 +177,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728) $O(E log V)$"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/low-link.hpp
     title: "Low-Link (\u6A4B, \u95A2\u7BC0\u70B9\u5217\u6319)"
   - icon: ':heavy_check_mark:'
     path: graph/prim.hpp
     title: "Prim (\u6700\u5C0F\u5168\u57DF\u6728) $O(V log E)$"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/scc.hpp
     title: Strongly Connected Component
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
   - icon: ':warning:'
     path: graph/tree/auxiliary-tree.hpp
     title: Auxiliary Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/diameter-weighted.hpp
     title: "\u6728\u306E\u76F4\u5F84"
   - icon: ':warning:'
@@ -198,7 +201,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/euler-tour-on-nodes.hpp
     title: graph/tree/euler-tour-on-nodes.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/lca.hpp
     title: Lowest Common Ancestor
   - icon: ':x:'
@@ -216,7 +219,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combinatorics/inversion-number.hpp
     title: "\u8EE2\u5012\u6570"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/modpow.hpp
     title: modpow
   - icon: ':warning:'
@@ -228,7 +231,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number/convert-base.hpp
     title: "\u9032\u6570\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number/divisors.hpp
     title: "\u7D04\u6570\u5217\u6319"
   - icon: ':warning:'
@@ -250,7 +253,7 @@ data:
   - icon: ':warning:'
     path: math/number/pow.hpp
     title: "\u7D2F\u4E57 (\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number/prime-factorization.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - icon: ':warning:'
@@ -274,7 +277,7 @@ data:
   - icon: ':x:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
-  - icon: ':x:'
+  - icon: ':question:'
     path: others/range-set.hpp
     title: "\u533A\u9593\u3092set\u3067\u7BA1\u7406\u3059\u308B\u30C6\u30AF"
   - icon: ':warning:'
@@ -413,51 +416,54 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_A.test.cpp
     title: test/AOJ/GRL_3_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_B.test.cpp
     title: test/AOJ/GRL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_3_C.test.cpp
     title: test/AOJ/GRL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_4_B.test.cpp
     title: test/AOJ/GRL_4_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_C.test.cpp
     title: test/AOJ/GRL_5_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ITP1_3_D.test.cpp
     title: test/AOJ/ITP1_3_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_A.test.cpp
     title: test/AOJ/NTL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_B.test.cpp
     title: test/AOJ/NTL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_f.test.cpp
     title: test/atcoder/abc177_f.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc214_e.test.cpp
     title: test/atcoder/abc214_e.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc256_a.test.cpp
     title: test/atcoder/abc256_a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc280_f.test.cpp
     title: test/atcoder/abc280_f.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc281_e.test.cpp
+    title: test/atcoder/abc281_e.test.cpp
   - icon: ':x:'
     path: test/yosupo/binomial-cofficient-prime-mod.test.cpp
     title: test/yosupo/binomial-cofficient-prime-mod.test.cpp
@@ -609,6 +615,7 @@ data:
   - data-structure/binary-indexed-tree-2d.hpp
   - data-structure/lazy-segment-tree-arthmetic-ruq.hpp
   - data-structure/ext-pb_ds.hpp
+  - data-structure/binary-trie.hpp
   - data-structure/binary-indexed-tree.hpp
   - data-structure/dynamic_modular-arithmetic.hpp
   - data-structure/segment-tree.hpp
@@ -745,6 +752,7 @@ data:
   - test/atcoder/abc280_f.test.cpp
   - test/atcoder/abc256_a.test.cpp
   - test/atcoder/abc214_e.test.cpp
+  - test/atcoder/abc281_e.test.cpp
 documentation_of: template/macro.hpp
 layout: document
 redirect_from:
