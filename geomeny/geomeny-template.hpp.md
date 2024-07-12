@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -93,26 +93,31 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define all(x) std::begin(x), std::end(x)\n#define\
-    \ rall(x) std::rbegin(x), std::rend(x)\n#define elif else if\n#define updiv(N,\
-    \ X) (((N) + (X) - (1)) / (X))\n#define sigma(a, b) ((a + b) * (b - a + 1) / 2)\n\
-    #define INT(...)     \\\n    int __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define\
-    \ LL(...)     \\\n    ll __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define STR(...)\
-    \        \\\n    string __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define CHR(...)\
-    \      \\\n    char __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define DOU(...) \
-    \       \\\n    double __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define LD(...)\
-    \     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n#define pb push_back\n\
-    #define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\nusing ll = long long;\n\
-    using ld = long double;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
-    \ ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF = 1LL << 60;\nconstexpr\
-    \ int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr int dy[8] = {0, 1, 0, -1,\
-    \ 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr int MOD = 1e9 + 7;\n\
-    #line 3 \"template/func.hpp\"\n\ntemplate <typename T>\ninline bool chmax(T& a,\
-    \ T b) { return ((a < b) ? (a = b, true) : (false)); }\ntemplate <typename T>\n\
-    inline bool chmin(T& a, T b) { return ((a > b) ? (a = b, true) : (false)); }\n\
-    template <typename T, typename U>\nstd::ostream &operator<<(std::ostream &os,\
-    \ const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n    return\
-    \ os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
+    \ 3 \"template/macro.hpp\"\n\n#define overload3(_1, _2, _3, name, ...) name\n\
+    #define all1(v) std::begin(v), std::end(v)\n#define all2(v, a) std::begin(v),\
+    \ std::begin(v) + a\n#define all3(v, a, b) std::begin(v) + a, std::begin(v) +\
+    \ b\n#define all(...) overload3(__VA_ARGS__, all3, all2, all1)(__VA_ARGS__)\n\
+    #define rall1(v) std::rbegin(v), std::rend(v)\n#define rall2(v, a) std::rbegin(v),\
+    \ std::rbegin(v) + a\n#define rall3(v, a, b) std::rbegin(v) + a, std::rbegin(v)\
+    \ + b\n#define rall(...) overload3(__VA_ARGS__, rall3, rall2, rall1)(__VA_ARGS__)\n\
+    #define elif else if\n#define updiv(N, X) (((N) + (X) - 1) / (X))\n#define sigma(a,\
+    \ b) (((a) + (b)) * ((b) - (a) + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__;\
+    \ \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n    ll __VA_ARGS__; \\\n\
+    \    scan(__VA_ARGS__)\n#define STR(...)        \\\n    string __VA_ARGS__; \\\
+    \n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n    char __VA_ARGS__; \\\n\
+    \    scan(__VA_ARGS__)\n#define DOU(...)        \\\n    double __VA_ARGS__; \\\
+    \n    scan(__VA_ARGS__)\n#define LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
+    #define pb push_back\n#define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\
+    \nusing ll = long long;\nusing ld = long double;\nusing pii = std::pair<int, int>;\n\
+    using pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF\
+    \ = 1LL << 60;\nconstexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr\
+    \ int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr\
+    \ int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
+    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
+    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
+    \ true) : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
+    \ &os, const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n\
+    \    return os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
     \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
     }\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
     \ &v) {\n    for (auto it = std::begin(v); it != std::end(v);) {\n        os <<\
@@ -207,31 +212,31 @@ data:
   isVerificationFile: false
   path: geomeny/geomeny-template.hpp
   requiredBy:
-  - geomeny/convex-cut.hpp
-  - geomeny/projection.hpp
-  - geomeny/convex-hull.hpp
-  - geomeny/is-contain-in-the-polygon.hpp
-  - geomeny/area-polygon.hpp
+  - geomeny/crosspoint.hpp
   - geomeny/is-convex.hpp
   - geomeny/ccw.hpp
+  - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/distance.hpp
+  - geomeny/convex-hull.hpp
+  - geomeny/convex-cut.hpp
+  - geomeny/area-polygon.hpp
+  - geomeny/projection.hpp
   - geomeny/is-inter.hpp
-  - geomeny/crosspoint.hpp
-  timestamp: '2024-02-25 20:07:13+09:00'
+  timestamp: '2024-07-12 09:17:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/CGL_2_C.test.cpp
-  - test/AOJ/CGL_3_A.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
-  - test/AOJ/CGL_3_C.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
-  - test/AOJ/CGL_4_C.test.cpp
-  - test/AOJ/CGL_7_E.test.cpp
   - test/AOJ/CGL_1_A.test.cpp
-  - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/CGL_1_C.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
   - test/AOJ/CGL_3_B.test.cpp
+  - test/AOJ/CGL_7_E.test.cpp
+  - test/AOJ/CGL_3_C.test.cpp
+  - test/AOJ/CGL_4_C.test.cpp
+  - test/AOJ/CGL_7_D.test.cpp
+  - test/AOJ/CGL_1_C.test.cpp
+  - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_2_C.test.cpp
 documentation_of: geomeny/geomeny-template.hpp
 layout: document
 title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
