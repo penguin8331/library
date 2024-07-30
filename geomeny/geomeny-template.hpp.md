@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
@@ -212,31 +212,31 @@ data:
   isVerificationFile: false
   path: geomeny/geomeny-template.hpp
   requiredBy:
-  - geomeny/crosspoint.hpp
   - geomeny/is-convex.hpp
+  - geomeny/crosspoint.hpp
   - geomeny/ccw.hpp
+  - geomeny/area-polygon.hpp
   - geomeny/is-contain-in-the-polygon.hpp
   - geomeny/distance.hpp
-  - geomeny/convex-hull.hpp
-  - geomeny/convex-cut.hpp
-  - geomeny/area-polygon.hpp
   - geomeny/projection.hpp
   - geomeny/is-inter.hpp
+  - geomeny/convex-hull.hpp
+  - geomeny/convex-cut.hpp
   timestamp: '2024-07-12 09:17:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/CGL_1_A.test.cpp
-  - test/AOJ/CGL_4_A.test.cpp
-  - test/AOJ/CGL_3_B.test.cpp
-  - test/AOJ/CGL_7_E.test.cpp
-  - test/AOJ/CGL_3_C.test.cpp
   - test/AOJ/CGL_4_C.test.cpp
-  - test/AOJ/CGL_7_D.test.cpp
-  - test/AOJ/CGL_1_C.test.cpp
-  - test/AOJ/CGL_2_B.test.cpp
-  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/CGL_7_E.test.cpp
   - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_1_C.test.cpp
+  - test/AOJ/CGL_3_B.test.cpp
+  - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/CGL_7_D.test.cpp
+  - test/AOJ/CGL_3_C.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
+  - test/AOJ/CGL_1_A.test.cpp
   - test/AOJ/CGL_2_C.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
 documentation_of: geomeny/geomeny-template.hpp
 layout: document
 title: "\u5E7E\u4F55\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
