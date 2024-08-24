@@ -3,11 +3,9 @@
         {
             "name": "WSL",
             "includePath": [
-                "${workspaceFolder}/**",
                 "/opt/ac-library",
                 "/opt/boost/gcc/include",
-                "/usr/include/eigen3",
-                "~/vscode/cpp/library"
+                "/usr/include/eigen3"
             ],
             "defines": [
                 "_DEBUG",
