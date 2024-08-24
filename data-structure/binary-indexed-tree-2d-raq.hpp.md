@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/debug.hpp
     title: template/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy: []
@@ -26,78 +26,20 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
-    \ 3 \"template/macro.hpp\"\n\n#define overload3(_1, _2, _3, name, ...) name\n\
-    #define all1(v) std::begin(v), std::end(v)\n#define all2(v, a) std::begin(v),\
-    \ std::begin(v) + a\n#define all3(v, a, b) std::begin(v) + a, std::begin(v) +\
-    \ b\n#define all(...) overload3(__VA_ARGS__, all3, all2, all1)(__VA_ARGS__)\n\
-    #define rall1(v) std::rbegin(v), std::rend(v)\n#define rall2(v, a) std::rbegin(v),\
-    \ std::rbegin(v) + a\n#define rall3(v, a, b) std::rbegin(v) + a, std::rbegin(v)\
-    \ + b\n#define rall(...) overload3(__VA_ARGS__, rall3, rall2, rall1)(__VA_ARGS__)\n\
-    #define elif else if\n#define updiv(N, X) (((N) + (X) - 1) / (X))\n#define sigma(a,\
-    \ b) (((a) + (b)) * ((b) - (a) + 1) / 2)\n#define INT(...)     \\\n    int __VA_ARGS__;\
-    \ \\\n    scan(__VA_ARGS__)\n#define LL(...)     \\\n    ll __VA_ARGS__; \\\n\
-    \    scan(__VA_ARGS__)\n#define STR(...)        \\\n    string __VA_ARGS__; \\\
-    \n    scan(__VA_ARGS__)\n#define CHR(...)      \\\n    char __VA_ARGS__; \\\n\
-    \    scan(__VA_ARGS__)\n#define DOU(...)        \\\n    double __VA_ARGS__; \\\
-    \n    scan(__VA_ARGS__)\n#define LD(...)     \\\n    ld __VA_ARGS__; \\\n    scan(__VA_ARGS__)\n\
-    #define pb push_back\n#define eb emplace_back\n#line 3 \"template/alias.hpp\"\n\
-    \nusing ll = long long;\nusing ld = long double;\nusing pii = std::pair<int, int>;\n\
-    using pll = std::pair<ll, ll>;\nconstexpr int inf = 1 << 30;\nconstexpr ll INF\
-    \ = 1LL << 60;\nconstexpr int dx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconstexpr\
-    \ int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconstexpr int mod = 998244353;\nconstexpr\
-    \ int MOD = 1e9 + 7;\n#line 3 \"template/func.hpp\"\n\ntemplate <typename T>\n\
-    inline bool chmax(T& a, T b) { return ((a < b) ? (a = b, true) : (false)); }\n\
-    template <typename T>\ninline bool chmin(T& a, T b) { return ((a > b) ? (a = b,\
-    \ true) : (false)); }\ntemplate <typename T, typename U>\nstd::ostream &operator<<(std::ostream\
-    \ &os, const std::pair<T, U> &p) {\n    os << p.first << \" \" << p.second;\n\
-    \    return os;\n}\ntemplate <typename T, typename U>\nstd::istream &operator>>(std::istream\
-    \ &is, std::pair<T, U> &p) {\n    is >> p.first >> p.second;\n    return is;\n\
-    }\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
-    \ &v) {\n    for (auto it = std::begin(v); it != std::end(v);) {\n        os <<\
-    \ *it << ((++it) != std::end(v) ? \" \" : \"\");\n    }\n    return os;\n}\ntemplate\
-    \ <typename T>\nstd::istream &operator>>(std::istream &is, std::vector<T> &v)\
-    \ {\n    for (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\ninline\
-    \ void scan() {}\ntemplate <class Head, class... Tail>\ninline void scan(Head\
-    \ &head, Tail &...tail) {\n    std::cin >> head;\n    scan(tail...);\n}\ntemplate\
-    \ <class T>\ninline void print(const T &t) { std::cout << t << '\\n'; }\ntemplate\
-    \ <class Head, class... Tail>\ninline void print(const Head &head, const Tail\
-    \ &...tail) {\n    std::cout << head << ' ';\n    print(tail...);\n}\ntemplate\
-    \ <class... T>\ninline void fin(const T &...a) {\n    print(a...);\n    exit(0);\n\
-    }\n#line 3 \"template/util.hpp\"\n\nstruct IOSetup {\n    IOSetup() {\n      \
-    \  std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n       \
-    \ std::cout.tie(0);\n        std::cout << std::fixed << std::setprecision(12);\n\
-    \        std::cerr << std::fixed << std::setprecision(12);\n    }\n} IOSetup;\n\
-    #line 3 \"template/debug.hpp\"\n\n#ifdef LOCAL\n#include <debug.hpp>\n#else\n\
-    #define debug(...)\n#endif\n#line 8 \"template/template.hpp\"\nusing namespace\
-    \ std;\n#line 3 \"data-structure/binary-indexed-tree-2d-raq.hpp\"\n\ntemplate\
-    \ <class Abel>\nstruct BIT2D {\n    const Abel UNITY_SUM = 0;\n    vector<vector<Abel>\
-    \ > dat[2][2];\n    int N, M;\n\n    BIT2D(int n, int m, Abel unity = 0) : UNITY_SUM(unity),\
-    \ N(n), M(m) {\n        init(n, m);\n    }\n    void init(int n, int m) {\n  \
-    \      for (int i = 0; i < 2; ++i)\n            for (int j = 0; j < 2; ++j)\n\
-    \                dat[i][j].assign(n + 1, vector<Abel>(m + 1, UNITY_SUM));\n  \
-    \  }\n    \n    inline void subsub_add(int f, int s, int x, int y, Abel v) {\n\
-    \        for (int i = x; i < (int)dat[f][s].size(); i |= i + 1)\n            for\
-    \ (int j = y; j < (int)dat[f][s][0].size(); j |= j + 1)\n                dat[f][s][i][j]\
-    \ = dat[f][s][i][j] + v;\n    }\n    inline void sub_add(int x, int y, Abel v)\
-    \ {\n        subsub_add(0, 0, x, y, v * x * y);\n        subsub_add(1, 0, x, y,\
-    \ -v * x);\n        subsub_add(0, 1, x, y, -v * y);\n        subsub_add(1, 1,\
-    \ x, y, v);\n    }\n    inline void add(int x1, int x2, int y1, int y2, Abel v)\
-    \ {\n        sub_add(x1, y1, v);\n        sub_add(x1, y2, -v);\n        sub_add(x2,\
-    \ y1, -v);\n        sub_add(x2, y2, v);\n    }\n\n    inline Abel subsub_sum(int\
-    \ f, int s, int x, int y) {\n        Abel res = 0;\n        for (int i = x; i\
-    \ > 0; i = (i & (i + 1)) - 1)\n            for (int j = y; j > 0; j = (j & (j\
-    \ + 1)) - 1)\n                res = res + dat[f][s][i][j];\n        return res;\n\
-    \    }\n    inline Abel sub_sum(int x, int y) {\n        Abel res = 0;\n     \
-    \   res += subsub_sum(0, 0, x, y);\n        res += subsub_sum(1, 0, x, y) * y;\n\
-    \        res += subsub_sum(0, 1, x, y) * x;\n        res += subsub_sum(1, 1, x,\
-    \ y) * x * y;\n        return res;\n    }\n    inline Abel sum(int x1, int x2,\
-    \ int y1, int y2) {\n        return sub_sum(x2, y2) - sub_sum(x1, y2) - sub_sum(x2,\
-    \ y1) + sub_sum(x1, y1);\n    }\n\n    friend ostream& operator<<(ostream& os,\
-    \ BIT2D bit) {\n        for (int i = 0; i < bit.N; i++) {\n            os << \"\
-    [ \";\n            for (int j = 0; j < bit.M; j++) {\n                os << bit.sum(i,\
-    \ i + 1, j, j + 1) << \" \";\n            }\n            os << ']';\n        }\n\
-    \        return os;\n    }\n};\n"
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ template/debug.hpp: line 5: unable to process #include in #if / #ifdef / #ifndef\
+    \ other than include guards\n"
   code: "#pragma once\n#include \"../template/template.hpp\"\n\ntemplate <class Abel>\n\
     struct BIT2D {\n    const Abel UNITY_SUM = 0;\n    vector<vector<Abel> > dat[2][2];\n\
     \    int N, M;\n\n    BIT2D(int n, int m, Abel unity = 0) : UNITY_SUM(unity),\
@@ -136,7 +78,7 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree-2d-raq.hpp
   requiredBy: []
-  timestamp: '2024-07-12 09:17:29+09:00'
+  timestamp: '2024-08-24 11:31:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/binary-indexed-tree-2d-raq.hpp
