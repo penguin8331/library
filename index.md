@@ -79,11 +79,11 @@ data:
     - icon: ':warning:'
       path: data-structure/with_input.hpp
       title: With-Input
-  - name: dump
+  - name: .
     pages:
     - icon: ':warning:'
-      path: dump/dump.hpp
-      title: dump/dump.hpp
+      path: dump.hpp
+      title: dump.hpp
   - name: dynamic-programming
     pages:
     - icon: ':warning:'
