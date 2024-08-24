@@ -3,6 +3,7 @@
         {
             "name": "WSL",
             "includePath": [
+                "~/vscode/cpp/dump",
                 "/opt/ac-library",
                 "/opt/boost/gcc/include",
                 "/usr/include/eigen3"
