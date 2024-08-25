@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"dump.hpp\"\n#include <bits/stdc++.h>\n\n#ifndef DEBUG_PRINT_HPP\n\
+  bundledCode: "#line 1 \"dump/dump.hpp\"\n#include <bits/stdc++.h>\n\n#ifndef DEBUG_PRINT_HPP\n\
     #define DEBUG_PRINT_HPP\n#define debug(...) debug_print::multi_print(#__VA_ARGS__,\
     \ __VA_ARGS__)\n\n#define INCLUDED(n) ((defined _GLIBCXX_##n) || (defined _LIBCPP_##n))\n\
     \n#if __cplusplus < 201703L\n#warning Please use C++17 (or later version).\n#endif\n\
@@ -292,15 +292,15 @@ data:
     \n#endif // DEBUG_PRINT_HPP"
   dependsOn: []
   isVerificationFile: false
-  path: dump.hpp
+  path: dump/dump.hpp
   requiredBy: []
-  timestamp: '2024-08-24 11:53:34+09:00'
+  timestamp: '2024-08-25 17:17:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: dump.hpp
+documentation_of: dump/dump.hpp
 layout: document
 redirect_from:
-- /library/dump.hpp
-- /library/dump.hpp.html
-title: dump.hpp
+- /library/dump/dump.hpp
+- /library/dump/dump.hpp.html
+title: dump/dump.hpp
 ---

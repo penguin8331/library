@@ -24,7 +24,7 @@ data:
     path: data-structure/lazy-segment-tree-arthmetic-raq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lazy-segment-tree-arthmetic-ruq.hpp
     title: "\u7B49\u5DEE\u6570\u5217\u3092\u4F5C\u7528\u3055\u305B\u308B Lazy Segment\
       \ Tree"
@@ -44,12 +44,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_f.test.cpp
     title: test/atcoder/abc177_f.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -190,7 +190,7 @@ data:
   - data-structure/lazy-segment-tree-arthmetic-raq.hpp
   - data-structure/lazy-segment-tree-arthmetic-ruq.hpp
   timestamp: '2024-08-24 11:50:18+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc177_f.test.cpp
   - test/AOJ/2667.test.cpp
