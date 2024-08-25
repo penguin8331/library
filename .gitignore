@@ -1,4 +1,4 @@
-a.out
-/check/
-input.txt
+*.out
 .env
+input.txt
+output.txt

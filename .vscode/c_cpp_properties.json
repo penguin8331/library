@@ -3,12 +3,13 @@
         {
             "name": "WSL",
             "includePath": [
-                "~/vscode/cpp/dump",
+                "/home/penguin8331/vscode/cpp/library/dump",
                 "/opt/ac-library",
                 "/opt/boost/gcc/include",
                 "/usr/include/eigen3"
             ],
             "defines": [
+                "LOCAL",
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"

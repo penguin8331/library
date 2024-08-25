@@ -1,0 +1,94 @@
+{
+    "fo-i": {
+        "prefix": "fo-i",
+        "body": [
+            "for(int i=0;i<$1;i++){$0",
+            "}"
+        ]
+    },
+    "fo-j": {
+        "prefix": "fo-j",
+        "body": [
+            "for(int j=0;j<$1;j++){$0",
+            "}"
+        ]
+    },
+    "fo-k": {
+        "prefix": "fo-k",
+        "body": [
+            "for(int k=0;k<$1;k++){$0",
+            "}"
+        ]
+    },
+    "fo-l": {
+        "prefix": "fo-l",
+        "body": [
+            "for(int l=0;l<$1;l++){$0",
+            "}"
+        ]
+    },
+    "for-i": {
+        "prefix": "for-i",
+        "body": [
+            "for(int i=$1;i<$2;i$3){$0",
+            "}"
+        ]
+    },
+    "forj": {
+        "prefix": "for-j",
+        "body": [
+            "for(int j=$1;j<$2;j$3){$0",
+            "}"
+        ]
+    },
+    "fork": {
+        "prefix": "for-k",
+        "body": [
+            "for(int k=$1;k<$2;k$3){$0",
+            "}"
+        ]
+    },
+    "forl": {
+        "prefix": "for-l",
+        "body": [
+            "for(int l=$1;l<$2;l$4){$0",
+            "}"
+        ]
+    },
+    "fobit": {
+        "prefix": "fo-bit",
+        "body": [
+            "for(int bit=0;bit<(1<<$1);bit++){",
+            "    for(int i=0;i<$1;i++){",
+            "        if((1<<i)&bit){$0",
+            "        }",
+            "    }",
+            "}"
+        ]
+    },
+    "foauto": {
+        "prefix": "fo-auto",
+        "body": [
+            "for(auto &$1:$2){$0",
+            "}"
+        ]
+    },
+    "vector-1": {
+        "prefix": "V",
+        "body": [
+            "vector<$1>$2($3);$0"
+        ]
+    },
+    "vector-2": {
+        "prefix": "VV",
+        "body": [
+            "vector<vector<$1>>$2($3,vector<$1>($4));$0"
+        ]
+    },
+    "vector-3": {
+        "prefix": "VVV",
+        "body": [
+            "vector<vector<vector<$1>>>$2($3,vector<vector<$1>>($4,vector<$1>($5)));"
+        ]
+    }
+}
