@@ -21,15 +21,15 @@ data:
     title: template/util.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-range-sum-2.test.cpp
     title: test/yosupo/static-range-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq-2.test.cpp
     title: test/yosupo/static-rmq-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -123,10 +123,10 @@ data:
   path: data-structure/disjoint-sparse-table.hpp
   requiredBy: []
   timestamp: '2024-08-24 11:50:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/static-rmq-2.test.cpp
   - test/yosupo/static-range-sum-2.test.cpp
+  - test/yosupo/static-rmq-2.test.cpp
 documentation_of: data-structure/disjoint-sparse-table.hpp
 layout: document
 title: Disjoint Sparse Table

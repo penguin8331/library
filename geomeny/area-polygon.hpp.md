@@ -133,8 +133,8 @@ data:
   timestamp: '2024-08-24 11:50:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/CGL_4_C.test.cpp
   - test/AOJ/CGL_3_A.test.cpp
+  - test/AOJ/CGL_4_C.test.cpp
 documentation_of: geomeny/area-polygon.hpp
 layout: document
 title: "\u591A\u89D2\u5F62\u306E\u9762\u7A4D"

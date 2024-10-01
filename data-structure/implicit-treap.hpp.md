@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
   - icon: ':question:'
@@ -30,12 +30,12 @@ data:
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq-3.test.cpp
     title: test/yosupo/static-rmq-3.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -376,10 +376,10 @@ data:
   isVerificationFile: false
   path: data-structure/implicit-treap.hpp
   requiredBy:
-  - data-structure/pair-query-by-implicit-treap.hpp
   - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
   timestamp: '2024-08-24 11:50:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq-3.test.cpp
 documentation_of: data-structure/implicit-treap.hpp

@@ -20,7 +20,7 @@ data:
     path: template/util.hpp
     title: template/util.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
   - icon: ':warning:'
@@ -30,12 +30,12 @@ data:
     path: data-structure/priority-sum-by-implicit-treap.hpp
     title: PrioritySum (by Implicit Treap)
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static-rmq-3.test.cpp
     title: test/yosupo/static-rmq-3.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -108,11 +108,11 @@ data:
   isVerificationFile: false
   path: others/rand-int.hpp
   requiredBy:
-  - data-structure/pair-query-by-implicit-treap.hpp
-  - data-structure/priority-sum-by-implicit-treap.hpp
   - data-structure/implicit-treap.hpp
+  - data-structure/priority-sum-by-implicit-treap.hpp
+  - data-structure/pair-query-by-implicit-treap.hpp
   timestamp: '2024-08-24 11:50:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static-rmq-3.test.cpp
 documentation_of: others/rand-int.hpp

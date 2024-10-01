@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/implicit-treap.hpp
     title: ImplicitTreap
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: others/rand-int.hpp
     title: "\u4E71\u6570\u751F\u6210"
   - icon: ':question:'

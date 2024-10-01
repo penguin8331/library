@@ -164,8 +164,8 @@ data:
   timestamp: '2024-08-24 11:50:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/CGL_2_D.test.cpp
   - test/AOJ/CGL_2_B.test.cpp
+  - test/AOJ/CGL_2_D.test.cpp
 documentation_of: geomeny/is-inter.hpp
 layout: document
 title: "\u4EA4\u5DEE\u5224\u5B9A"

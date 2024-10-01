@@ -24,12 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc214_e.test.cpp
     title: test/atcoder/abc214_e.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/674.test.cpp
     title: test/yukicoder/674.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#include <bits/stdc++.h>\n#line\
@@ -183,7 +183,7 @@ data:
   path: others/range-set.hpp
   requiredBy: []
   timestamp: '2024-08-24 11:50:18+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc214_e.test.cpp
   - test/yukicoder/674.test.cpp
