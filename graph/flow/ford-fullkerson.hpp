@@ -1,96 +1,126 @@
 #pragma once
 #include "../../template/template.hpp"
 
-template <class FLOWTYPE>
-struct Edge {
+// edge class (for network-flow)
+template<class FLOWTYPE> struct FlowEdge {
+    // core members
     int rev, from, to;
-    FLOWTYPE cap, icap;
-    Edge(int r, int f, int t, FLOWTYPE c) : rev(r), from(f), to(t), cap(c), icap(c) {}
-    friend ostream& operator<<(ostream& s, Edge E) {
-        if (E.cap > 0)
-            return s << E.from << "->" << E.to << '(' << E.cap << ')' << " ";
-        else
-            return s;
+    FLOWTYPE cap, icap, flow;
+    
+    // constructor
+    FlowEdge(int r, int f, int t, FLOWTYPE c)
+    : rev(r), from(f), to(t), cap(c), icap(c), flow(0) {}
+    void reset() { cap = icap, flow = 0; }
+    
+    // debug
+    friend ostream& operator << (ostream& s, const FlowEdge& E) {
+        return s << E.from << "->" << E.to << '(' << E.flow << '/' << E.icap << ')';
     }
 };
 
-template <class FLOWTYPE>
-struct Graph {
-    vector<vector<Edge<FLOWTYPE> > > list;
-
-    Graph(int n = 0) : list(n) {}
+// graph class (for network-flow)
+template<class FLOWTYPE> struct FlowGraph {
+    // core members
+    vector<vector<FlowEdge<FLOWTYPE>>> list;
+    vector<pair<int,int>> pos;  // pos[i] := {vertex, order of list[vertex]} of i-th edge
+    
+    // constructor
+    FlowGraph(int n = 0) : list(n) { }
     void init(int n = 0) {
-        list.clear();
-        list.resize(n);
+        list.assign(n, FlowEdge<FLOWTYPE>());
+        pos.clear();
     }
-    void reset() {
-        for (int i = 0; i < (int)list.size(); ++i)
-            for (int j = 0; j < list[i].size(); ++j) list[i][j].cap = list[i][j].icap;
+    
+    // getter
+    vector<FlowEdge<FLOWTYPE>> &operator [] (int i) {
+        return list[i];
     }
-    inline vector<Edge<FLOWTYPE> >& operator[](int i) { return list[i]; }
-    inline const size_t size() const { return list.size(); }
-
-    inline Edge<FLOWTYPE>& redge(Edge<FLOWTYPE> e) {
-        if (e.from != e.to)
-            return list[e.to][e.rev];
-        else
-            return list[e.to][e.rev + 1];
+    const vector<FlowEdge<FLOWTYPE>> &operator [] (int i) const {
+        return list[i];
     }
-
-    void addedge(int from, int to, FLOWTYPE cap) {
-        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(), from, to, cap));
-        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size() - 1, to, from, 0));
+    size_t size() const {
+        return list.size();
     }
-
-    void add_undirected_edge(int from, int to, FLOWTYPE cap) {
-        list[from].push_back(Edge<FLOWTYPE>((int)list[to].size(), from, to, cap));
-        list[to].push_back(Edge<FLOWTYPE>((int)list[from].size() - 1, to, from, cap));
+    FlowEdge<FLOWTYPE> &get_rev_edge(const FlowEdge<FLOWTYPE> &e) {
+        if (e.from != e.to) return list[e.to][e.rev];
+        else return list[e.to][e.rev + 1];
     }
-
-    friend ostream& operator<<(ostream& s, Graph G) {
-        s << endl;
-        for (int i = 0; i < G.size(); i++) {
-            s << i << ": ";
-            for (Edge<FLOWTYPE> j : G.list[i]) {
-                s << j;
-            }
-            s << endl;
+    FlowEdge<FLOWTYPE> &get_edge(int i) {
+        return list[pos[i].first][pos[i].second];
+    }
+    const FlowEdge<FLOWTYPE> &get_edge(int i) const {
+        return list[pos[i].first][pos[i].second];
+    }
+    vector<FlowEdge<FLOWTYPE>> get_edges() const {
+        vector<FlowEdge<FLOWTYPE>> edges;
+        for (int i = 0; i < (int)pos.size(); ++i) {
+            edges.push_back(get_edge(i));
         }
+        return edges;
+    }
+    
+    // change edges
+    void reset() {
+        for (int i = 0; i < (int)list.size(); ++i) {
+            for (FlowEdge<FLOWTYPE> &e : list[i]) e.reset();
+        }
+    }
+    void change_edge(FlowEdge<FLOWTYPE> &e, FLOWTYPE new_cap, FLOWTYPE new_flow) {
+        FlowEdge<FLOWTYPE> &re = get_rev_edge(e);
+        e.cap = new_cap - new_flow, e.icap = new_cap, e.flow = new_flow;
+        re.cap = new_flow;
+    }
+    
+    // add_edge
+    void add_edge(int from, int to, FLOWTYPE cap) {
+        pos.emplace_back(from, (int)list[from].size());
+        list[from].push_back(FlowEdge<FLOWTYPE>((int)list[to].size(), from, to, cap));
+        list[to].push_back(FlowEdge<FLOWTYPE>((int)list[from].size() - 1, to, from, 0));
+    }
+
+    // debug
+    friend ostream& operator << (ostream& s, const FlowGraph &G) {
+        const auto &edges = G.get_edges();
+        for (const auto &e : edges) s << e << endl;
         return s;
     }
 };
 
-template <class FLOWTYPE>
-struct FordFulkerson {
-    const FLOWTYPE INF = 1 << 30;
-    vector<int> used;
-
-    FordFulkerson() {}
-    FLOWTYPE fodfs(Graph<FLOWTYPE>& G, int v, int t, FLOWTYPE f) {
-        if (v == t) return f;
+// Ford-Fulkerson
+template<class FLOWTYPE> FLOWTYPE FordFulkerson
+ (FlowGraph<FLOWTYPE> &G, int s, int t, FLOWTYPE limit_flow)
+{
+    FLOWTYPE current_flow = 0;
+    
+    // DFS
+    vector<bool> used((int)G.size(), false);
+    auto dfs = [&](auto self, int v, FLOWTYPE up_flow) {
+        if (v == t) return up_flow;
+        FLOWTYPE res_flow = 0;
         used[v] = true;
-        for (auto& e : G[v]) {
-            if (!used[e.to] && e.cap > 0) {
-                int d = fodfs(G, e.to, t, min(f, e.cap));
-                if (d > 0) {
-                    e.cap -= d;
-                    G.redge(e).cap += d;
-                    return d;
-                }
-            }
+        for (FlowEdge<FLOWTYPE> &e : G[v]) {
+            if (used[e.to] || e.cap == 0) continue;
+            FLOWTYPE flow = self(self, e.to, min(up_flow - res_flow, e.cap));
+            FlowEdge<FLOWTYPE> &re = G.get_rev_edge(e);
+            if (flow <= 0) continue;
+            res_flow += flow;
+            e.cap -= flow, e.flow += flow;
+            re.cap += flow, re.flow -= flow;
+            if (res_flow == up_flow) break;
         }
-        return 0;
+        return res_flow;
+    };
+    
+    // flow
+    while (current_flow < limit_flow) {
+        used.assign((int)G.size(), false);
+        FLOWTYPE flow = dfs(dfs, s, limit_flow - current_flow);
+        if (!flow) break;
+        current_flow += flow;
     }
-    FLOWTYPE solve(Graph<FLOWTYPE>& G, int s, int t) {
-        FLOWTYPE res = 0;
-        while (true) {
-            used.assign((int)G.size(), 0);
-            int flow = fodfs(G, s, t, INF);
-            if (flow == 0)
-                return res;
-            else
-                res += flow;
-        }
-        return 0;
-    }
+    return current_flow;
 };
+
+template<class FLOWTYPE> FLOWTYPE FordFulkerson(FlowGraph<FLOWTYPE> &G, int s, int t) {
+    return FordFulkerson(G, s, t, numeric_limits<FLOWTYPE>::max());
+}
