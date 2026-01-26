@@ -125,8 +125,8 @@ data:
   timestamp: '2024-08-24 11:50:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/static-range-sum-2.test.cpp
   - test/yosupo/static-rmq-2.test.cpp
+  - test/yosupo/static-range-sum-2.test.cpp
 documentation_of: data-structure/disjoint-sparse-table.hpp
 layout: document
 title: Disjoint Sparse Table

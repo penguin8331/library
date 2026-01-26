@@ -79,11 +79,6 @@ data:
     - icon: ':warning:'
       path: data-structure/with_input.hpp
       title: With-Input
-  - name: dump
-    pages:
-    - icon: ':warning:'
-      path: dump/dump.hpp
-      title: dump/dump.hpp
   - name: dynamic-programming
     pages:
     - icon: ':warning:'
@@ -214,6 +209,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/lca.hpp
       title: Lowest Common Ancestor
+  - name: include
+    pages:
+    - icon: ':warning:'
+      path: include/dump.hpp
+      title: include/dump.hpp
   - name: math/algebra
     pages:
     - icon: ':heavy_check_mark:'

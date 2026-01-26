@@ -124,8 +124,8 @@ data:
   timestamp: '2024-08-24 11:50:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/1160.test.cpp
   - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/1160.test.cpp
   - test/AOJ/DSL_1_A.test.cpp
 documentation_of: data-structure/union-find.hpp
 layout: document

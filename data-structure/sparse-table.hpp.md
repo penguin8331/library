@@ -122,8 +122,8 @@ data:
   isVerificationFile: false
   path: data-structure/sparse-table.hpp
   requiredBy:
-  - graph/tree/euler-tour-on-nodes.hpp
   - graph/tree/euler-tour-on-edges.hpp
+  - graph/tree/euler-tour-on-nodes.hpp
   timestamp: '2024-08-24 11:50:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
